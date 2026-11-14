@@ -116,7 +116,7 @@
     <div class="list" id="all"></div>
   </section>
 
-  <footer>التقدم محفوظ على هذا الجهاز · جلستان كل يوم: 6 صباحاً و6 مساءً</footer>
+  <footer><span id="syncNote">التقدم محفوظ على هذا الجهاز</span> · جلستان كل يوم: 6 صباحاً و6 مساءً</footer>
 </div>
 
 <script src="assets/plan.js"></script>
@@ -187,6 +187,12 @@ $("all").innerHTML=L.map(function(l){var s=S[l.subject],d=Lab.isDone(l.id);
   return '<a class="item" style="'+sv(l.subject)+'" href="'+esc(l.url)+'"><time datetime="'+l.date+'">'+l.date+'</time><span class="t"><span class="chip" style="'+sv(l.subject)+'">'+esc(s.name)+'</span><b>'+esc(l.title)+'</b></span><span class="check'+(d?' on':'')+'" aria-label="'+(d?"منجز":"لم ينجز")+'">'+(d?"✓":"")+'</span></a>';
 }).join("")||'<div class="empty">لا دروس بعد.</div>';
 })();
+</script>
+<script>
+(function(){var n=document.getElementById("syncNote");if(!n||!window.Lab)return;
+function paint(){var st=Lab.syncState;if(!st.linked)return;var t=null;try{t=localStorage.getItem("masar.lastSync");}catch(e){}
+n.textContent=t?("التقدم محفوظ ومتزامن ✓ "+new Date(t).toLocaleTimeString("ar",{hour:"numeric",minute:"2-digit"})):"التقدم محفوظ · ينتظر المزامنة";}
+paint();window.addEventListener("masar-sync",paint);})();
 </script>
 </body>
 </html>

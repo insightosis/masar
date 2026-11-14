@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>مسار · متابعة ولي الأمر</title>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/site.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+.panel{padding:20px 22px;border-radius:var(--r);background:var(--card);box-shadow:var(--clay);margin-top:16px}
+.panel h2{margin:0 0 8px;font-size:1.25rem}
+.panel p{margin:6px 0}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.field{flex:1 1 220px;min-width:0;padding:12px 16px;border-radius:18px;border:0;background:var(--bg);color:var(--text);box-shadow:var(--press);font:inherit;font-family:var(--mono);direction:ltr;text-align:left}
+.code{font-family:var(--mono);font-size:clamp(1.2rem,5vw,1.6rem);font-weight:700;letter-spacing:.06em;direction:ltr;display:inline-block;padding:10px 16px;border-radius:16px;background:var(--p-butter);box-shadow:var(--clay-sm);word-break:break-all}
+.linkbox{font-family:var(--mono);font-size:13px;direction:ltr;text-align:left;padding:10px 14px;border-radius:14px;background:var(--bg);box-shadow:var(--press);word-break:break-all}
+.warn{color:var(--pink-ink);font-weight:700}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:16px}
+.stat{padding:14px 16px;border-radius:22px;background:var(--card);box-shadow:var(--clay-sm)}
+.stat span{display:block;font-size:13px;color:var(--muted)}
+.stat b{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,6vw,2.3rem);line-height:1.15;font-variant-numeric:tabular-nums}
+.stat small{color:var(--muted);margin-inline-start:4px}
+.stat:nth-child(5n+1){background:var(--p-peach)}.stat:nth-child(5n+2){background:var(--p-mint)}.stat:nth-child(5n+3){background:var(--p-pink)}.stat:nth-child(5n+4){background:var(--p-lav)}.stat:nth-child(5n+5){background:var(--p-sky)}
+.chart{padding:16px 16px 10px;border-radius:var(--r);background:var(--card);box-shadow:var(--clay)}
+.chart svg{display:block;width:100%;height:auto}
+.subs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.subj{padding:14px 16px;border-radius:24px;background:var(--soft);box-shadow:var(--clay-sm);color:var(--ink)}
+.subj h3{margin:0 0 6px;font-size:1.1rem;color:var(--text);display:flex;align-items:center;gap:8px}
+.subj dl{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;margin:8px 0 0;font-size:14px}
+.subj dt{color:var(--muted)}.subj dd{margin:0;font-weight:700;color:var(--text)}
+.bar{height:12px;border-radius:9px;background:var(--card);box-shadow:var(--press);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--sc);border-radius:9px}
+.list{display:grid;gap:8px}
+.item{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:10px 14px;border-radius:18px;background:var(--card);box-shadow:var(--clay-sm)}
+.item .dot{width:12px;height:12px;border-radius:50%;background:var(--sc)}
+.item time{font-family:var(--mono);font-size:12.5px;color:var(--muted);direction:ltr;white-space:nowrap}
+.item .t{min-width:0}
+.item .t b{font-weight:700}
+.item .t span{color:var(--muted);font-size:13.5px}
+.ok{color:var(--ok);font-weight:700}.no{color:var(--pink-ink);font-weight:700}
+.tools{display:grid;gap:12px}
+.small{font-size:13.5px;color:var(--muted)}
+[hidden]{display:none!important}
+</style>
+</head>
+<body data-subject="hub">
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="index.html"><span class="dot"></span>مسار · متابعة ولي الأمر</a>
+    <nav class="nav" aria-label="أقسام الموقع">
+      <a href="index.html">لوحة الطالب</a>
+      <a href="plan.html">الخطة</a>
+    </nav>
+  </header>
+
+  <!-- not set up on this device -->
+  <section id="setup" hidden>
+    <div class="panel">
+      <h2>عندك رمز المتابعة؟</h2>
+      <p class="muted">اكتبه هنا مرة وحدة، ويبقى محفوظاً على هذا الجهاز.</p>
+      <div class="row" style="margin-top:10px">
+        <input class="field" id="codeIn" inputmode="latin" autocomplete="off" spellcheck="false" placeholder="رمز المتابعة">
+        <button class="btn" id="codeGo" type="button">دخول ←</button>
+      </div>
+      <p class="warn" id="codeErr" hidden></p>
+    </div>
+    <div class="panel">
+      <h2>أول مرة؟</h2>
+      <p class="muted">هذا ينشئ رمز المتابعة لك ورابطاً تفتحه مرة وحدة على آيباد الطالب. يشتغل مرة وحدة فقط؛ بعدها يحتاج الرمز.</p>
+      <button class="btn" id="claim" type="button" style="margin-top:10px">إنشاء الربط</button>
+      <p class="warn" id="claimErr" hidden></p>
+    </div>
+  </section>
+
+  <!-- just created -->
+  <section id="fresh" hidden>
+    <div class="panel">
+      <h2>تم الربط ✓</h2>
+      <p>هذا <b>رمز المتابعة</b>. احفظه في مكان آمن؛ به تفتح هذه الصفحة من أي جهاز:</p>
+      <p><span class="code" id="freshCode"></span></p>
+      <p style="margin-top:14px">وهذا <b>رابط الآيباد</b>: افتحه مرة وحدة على آيباد الطالب، وبعدها كل تقدمه يوصل هنا تلقائياً.</p>
+      <div class="linkbox" id="freshLink"></div>
+      <div class="row" style="margin-top:10px"><button class="btn" id="freshCopy" type="button">نسخ الرابط</button><button class="btn" id="freshOn" type="button">عرض المتابعة ←</button></div>
+    </div>
+  </section>
+
+  <!-- the report -->
+  <section id="report" hidden>
+    <p class="small" id="updated" style="margin-top:14px"></p>
+    <div class="stats" id="stats"></div>
+
+    <section class="sec" aria-labelledby="h-week">
+      <h2 id="h-week">وقت الدراسة في آخر 14 يوماً</h2>
+      <p class="muted" style="margin-top:-6px">بالدقائق، الوقت الذي كانت فيه صفحة الدرس مفتوحة أمامه فعلاً.</p>
+      <div class="chart" id="chart"></div>
+    </section>
+
+    <section class="sec" aria-labelledby="h-subj">
+      <h2 id="h-subj">المواد</h2>
+      <div class="subs" id="subs"></div>
+    </section>
+
+    <section class="sec" aria-labelledby="h-late" id="lateSec">
+      <h2 id="h-late">دروس فاتت مواعيدها</h2>
+      <p class="muted" style="margin-top:-6px">موعدها في الخطة مضى ولم تُنجز بعد.</p>
+      <div class="list" id="late"></div>
+    </section>
+
+    <section class="sec" aria-labelledby="h-act">
+      <h2 id="h-act">آخر النشاطات</h2>
+      <div class="list" id="acts"></div>
+    </section>
+
+    <section class="sec" aria-labelledby="h-tools">
+      <h2 id="h-tools">الربط والأجهزة</h2>
+      <div class="tools">
+        <div class="panel" style="margin-top:0">
+          <p>إذا انمسحت بيانات المتصفح على الآيباد، أو تبي تربط جهازاً جديداً، افتح عليه هذا الرابط مرة وحدة. التقدم المحفوظ يرجع له تلقائياً.</p>
+          <div class="row"><button class="btn" id="showLink" type="button">إظهار رابط الآيباد</button><button class="btn" id="copyLink" type="button" hidden>نسخ</button></div>
+          <div class="linkbox" id="linkBox" hidden style="margin-top:10px"></div>
+        </div>
+        <div class="panel" style="margin-top:0">
+          <p>إلغاء رابط الآيباد الحالي وإنشاء رابط جديد (إذا وصل الرابط لشخص ثاني). بعدها لازم تفتح الرابط الجديد على الآيباد.</p>
+          <button class="btn" id="rotate" type="button">رابط جديد</button>
+          <p class="warn" id="rotateAsk" hidden>متأكد؟ اضغط مرة ثانية للتأكيد.</p>
+        </div>
+        <div class="panel" style="margin-top:0">
+          <p>رمز المتابعة محفوظ على هذا الجهاز. <button class="btn" id="logout" type="button" style="margin-inline-start:8px">إزالته من هذا الجهاز</button></p>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <footer>صفحة ولي الأمر · لا يظهر فيها شيء بدون رمز المتابعة</footer>
+</div>
+
+<script src="assets/plan.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/lab.js"></script>
+<script>
+(function(){
+"use strict";
+var API="https://masar-sync.insightosis.workers.dev", PKEY="masar.parent.v1";
+var D=window.LAB, S=D.subjects, P=window.PLAN;
+var SITE=location.origin+location.pathname.replace(/parent\.html$/,"");
+function $(id){return document.getElementById(id);}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+function sv(k){var s=S[k]||{color:"#8b86b3"};return "--sc:"+s.color;}
+function code(){try{return localStorage.getItem(PKEY)||"";}catch(e){return "";}}
+function setCode(c){try{if(c)localStorage.setItem(PKEY,c);else localStorage.removeItem(PKEY);}catch(e){}}
+function api(path,opt){
+  opt=opt||{}; var h={}; if(opt.auth)h.Authorization="Bearer "+opt.auth;
+  return fetch(API+path,{method:opt.method||"GET",headers:h}).then(function(r){
+    return r.json().catch(function(){return {};}).then(function(j){if(!r.ok){var e=new Error(j.error||("HTTP "+r.status));e.status=r.status;throw e;}return j;});
+  });
+}
+function show(id){["setup","fresh","report"].forEach(function(s){$(s).hidden=(s!==id);});}
+function ipadLink(tok){return SITE+"?link="+tok;}
+function copy(text,btn){
+  var done=function(){var o=btn.textContent;btn.textContent="تم النسخ ✓";setTimeout(function(){btn.textContent=o;},1600);};
+  if(navigator.clipboard)navigator.clipboard.writeText(text).then(done,function(){});
+}
+
+/* ---------- setup ---------- */
+$("codeGo").addEventListener("click",function(){
+  var c=$("codeIn").value.trim().toLowerCase(); if(!c)return;
+  $("codeErr").hidden=true;
+  api("/report",{auth:c}).then(function(rep){setCode(c);render(rep);}).catch(function(e){
+    $("codeErr").textContent=e.status===401?"الرمز غير صحيح.":"تعذّر الاتصال، جرّب بعد قليل.";$("codeErr").hidden=false;
+  });
+});
+$("claim").addEventListener("click",function(){
+  $("claimErr").hidden=true;
+  api("/claim",{method:"POST"}).then(function(j){
+    setCode(j.parentCode);
+    $("freshCode").textContent=j.parentCode;
+    $("freshLink").textContent=ipadLink(j.writeToken);
+    show("fresh");
+  }).catch(function(e){
+    $("claimErr").textContent=e.status===409?"الربط موجود من قبل. استخدم رمز المتابعة اللي حفظته.":"تعذّر الاتصال، جرّب بعد قليل.";$("claimErr").hidden=false;
+  });
+});
+$("freshCopy").addEventListener("click",function(){copy($("freshLink").textContent,this);});
+$("freshOn").addEventListener("click",load);
+
+/* ---------- tools ---------- */
+$("showLink").addEventListener("click",function(){
+  api("/link",{auth:code()}).then(function(j){$("linkBox").textContent=ipadLink(j.writeToken);$("linkBox").hidden=false;$("copyLink").hidden=false;});
+});
+$("copyLink").addEventListener("click",function(){copy($("linkBox").textContent,this);});
+var armed=false;
+$("rotate").addEventListener("click",function(){
+  if(!armed){armed=true;$("rotateAsk").hidden=false;setTimeout(function(){armed=false;$("rotateAsk").hidden=true;},6000);return;}
+  armed=false;$("rotateAsk").hidden=true;
+  api("/rotate",{method:"POST",auth:code()}).then(function(j){$("linkBox").textContent=ipadLink(j.writeToken);$("linkBox").hidden=false;$("copyLink").hidden=false;});
+});
+$("logout").addEventListener("click",function(){setCode("");show("setup");});
+
+/* ---------- report ---------- */
+function dayKey(iso){var d=new Date(iso);return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
+function fmtDay(k){try{return new Date(k+"T12:00:00").toLocaleDateString("ar",{weekday:"short",day:"numeric",month:"short"});}catch(e){return k;}}
+function fmtWhen(iso){try{var d=new Date(iso);return d.toLocaleDateString("ar",{weekday:"short",day:"numeric"})+" "+d.toLocaleTimeString("ar",{hour:"numeric",minute:"2-digit"});}catch(e){return iso;}}
+function title(id){var c=P&&P.catalog.filter(function(x){return x.id===id;})[0];if(c)return c;var l=Lab.lesson(id);return l?{title:l.title,subject:l.subject,code:""}:{title:id,subject:"",code:""};}
+function plannedDates(){
+  var m={}; if(!P)return m;
+  P.days.forEach(function(d){["am","pm"].forEach(function(s){((d.sessions||{})[s]||[]).forEach(function(it){if(it.type==="new"&&it.lesson&&!m[it.lesson])m[it.lesson]=d.date;});});});
+  return m;
+}
+
+function render(rep){
+  show("report");
+  var prog=rep.progress||{}, ev=rep.events||[], today=Lab.today(), pd=plannedDates();
+  $("updated").textContent=rep.updatedAt?("آخر تحديث من الآيباد: "+fmtWhen(rep.updatedAt)):"لم يصل أي تقدم من الآيباد بعد. افتح رابط الآيباد عليه مرة وحدة.";
+
+  var ids=Object.keys(pd), due=ids.filter(function(id){return pd[id]<=today;});
+  var doneIds=Object.keys(prog).filter(function(id){return prog[id].done;});
+  var late=due.filter(function(id){return !(prog[id]&&prog[id].done);}).sort(function(a,b){return pd[a]<pd[b]?-1:1;});
+  var qs=doneIds.map(function(id){return prog[id].quiz;}).filter(function(q){return q&&q.total;});
+  var avg=qs.length?Math.round(100*qs.reduce(function(a,q){return a+q.score/q.total;},0)/qs.length):null;
+  var weekAgo=new Date(Date.now()-6*864e5); weekAgo.setHours(0,0,0,0);
+  var weekMin=Math.round(ev.filter(function(e){return e.type==="time"&&new Date(e.t)>=weekAgo;}).reduce(function(a,e){return a+(e.sec||0);},0)/60);
+  var days={}; doneIds.forEach(function(id){if(prog[id].date)days[prog[id].date]=1;});
+  var streak=0,d=new Date(); if(!days[today])d.setDate(d.getDate()-1);
+  for(;;){var k=dayKey(d.toISOString());if(!days[k])break;streak++;d.setDate(d.getDate()-1);}
+
+  $("stats").innerHTML=[
+    ["دروس أنجزها",doneIds.length+" / "+(ids.length||doneIds.length),""],
+    ["المطلوب حتى اليوم",due.length,"درس"],
+    ["دروس متأخرة",late.length,""],
+    ["متوسط الاختبارات",avg===null?"–":avg,avg===null?"":"%"],
+    ["دراسة آخر 7 أيام",weekMin,"دقيقة"],
+    ["أيام متتالية",streak,"يوم"]
+  ].map(function(s){return '<div class="stat"><span>'+s[0]+'</span><b>'+s[1]+'</b><small>'+s[2]+'</small></div>';}).join("");
+
+  /* 14-day minutes chart */
+  var keys=[],mins={}; for(var i=13;i>=0;i--){var x=new Date();x.setDate(x.getDate()-i);var k2=dayKey(x.toISOString());keys.push(k2);mins[k2]=0;}
+  ev.forEach(function(e){if(e.type==="time"){var k3=dayKey(e.t);if(k3 in mins)mins[k3]+=(e.sec||0)/60;}});
+  var max=Math.max(30,Math.ceil(Math.max.apply(null,keys.map(function(k){return mins[k];}))/30)*30);
+  var W=700,H=220,pl=10,pr=40,pt=12,pb=40,bw=(W-pl-pr)/14;
+  var svg='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="دقائق الدراسة يومياً">';
+  for(var g=0;g<=2;g++){var gy=pt+(H-pt-pb)*(1-g/2);svg+='<line x1="'+pl+'" x2="'+(W-pr)+'" y1="'+gy+'" y2="'+gy+'" stroke="var(--line)" stroke-width="1"/><text x="'+(W-pr+6)+'" y="'+(gy+4)+'" font-size="12" fill="var(--muted)" font-family="var(--mono)">'+(max*g/2)+'</text>';}
+  keys.slice().reverse().forEach(function(k,j){
+    var v=mins[k],h=(H-pt-pb)*v/max,x=pl+j*bw+bw*.18,w=bw*.64,y=H-pb-h;
+    svg+='<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+Math.max(h,v>0?3:0)+'" rx="6" fill="var(--accent)"><title>'+esc(fmtDay(k))+': '+Math.round(v)+' دقيقة</title></rect>';
+    if(v>=1)svg+='<text x="'+(x+w/2)+'" y="'+(y-5)+'" font-size="11.5" text-anchor="middle" fill="var(--text)" font-family="var(--mono)">'+Math.round(v)+'</text>';
+    var dd=new Date(k+"T12:00:00");
+    svg+='<text x="'+(x+w/2)+'" y="'+(H-pb+17)+'" font-size="11.5" text-anchor="middle" fill="var(--muted)" font-family="var(--mono)">'+dd.getDate()+'</text>';
+    if(k===today)svg+='<text x="'+(x+w/2)+'" y="'+(H-pb+33)+'" font-size="11" text-anchor="middle" fill="var(--pink-ink)">اليوم</text>';
+  });
+  $("chart").innerHTML=svg+'</svg>';
+
+  /* subjects */
+  var checks={}; ev.forEach(function(e){if(e.type==="check"&&e.id){var s=title(e.id).subject;checks[s]=checks[s]||{n:0,ok:0};checks[s].n++;if(e.ok)checks[s].ok++;}});
+  $("subs").innerHTML=Object.keys(S).map(function(k){
+    var all=ids.filter(function(id){return title(id).subject===k;}), dueK=all.filter(function(id){return pd[id]<=today;});
+    var dn=all.filter(function(id){return prog[id]&&prog[id].done;});
+    var q=dn.map(function(id){return prog[id].quiz;}).filter(function(x){return x&&x.total;});
+    var qa=q.length?Math.round(100*q.reduce(function(a,x){return a+x.score/x.total;},0)/q.length)+"%":"–";
+    var c=checks[k], ca=c&&c.n?Math.round(100*c.ok/c.n)+"%":"–";
+    var pct=all.length?Math.round(100*dn.length/all.length):0;
+    return '<div class="subj" style="'+sv(k)+'"><h3>'+Lab.icon(S[k].icon,20)+esc(S[k].name)+'</h3>'
+      +'<div class="bar" role="img" aria-label="'+pct+'%"><i style="width:'+pct+'%"></i></div>'
+      +'<dl><dt>أنجز</dt><dd>'+dn.length+' من '+all.length+'</dd><dt>المطلوب حتى اليوم</dt><dd>'+dueK.length+'</dd><dt>الاختبارات</dt><dd>'+qa+'</dd><dt>صح من أول محاولة</dt><dd>'+ca+'</dd></dl></div>';
+  }).join("");
+
+  /* late */
+  $("lateSec").hidden=!late.length;
+  $("late").innerHTML=late.slice(0,30).map(function(id){var c=title(id);
+    return '<div class="item" style="'+sv(c.subject)+'"><span class="dot"></span><div class="t"><b>'+esc(c.title)+'</b> <span>'+esc((S[c.subject]||{}).name||"")+(c.code?' · '+esc(c.code):'')+'</span></div><time>'+esc(fmtDay(pd[id]))+'</time></div>';}).join("");
+
+  /* activity */
+  var shown=ev.filter(function(e){return e.type!=="open";}).slice(-40).reverse();
+  var merged=[];shown.forEach(function(e){var prev=merged[merged.length-1];if(e.type==="check"&&prev&&prev.type==="checks"&&prev.id===e.id){prev.n++;if(e.ok)prev.ok++;return;}
+    if(e.type==="check"){merged.push({type:"checks",id:e.id,t:e.t,n:1,ok:e.ok?1:0});return;} merged.push(e);});
+  $("acts").innerHTML=merged.slice(0,25).map(function(e){var c=title(e.id||"");var txt;
+    if(e.type==="done")txt='أنهى الدرس';
+    else if(e.type==="quiz")txt='اختبار الدرس: <span class="'+(e.score/e.total>=.7?"ok":"no")+'">'+e.score+' من '+e.total+'</span>';
+    else if(e.type==="time")txt='درس '+Math.max(1,Math.round(e.sec/60))+' دقيقة';
+    else if(e.type==="checks")txt='أنشطة تفاعلية: '+e.ok+' من '+e.n+' صح من أول محاولة';
+    else txt=esc(e.type);
+    return '<div class="item" style="'+sv(c.subject)+'"><span class="dot"></span><div class="t"><b>'+esc(c.title)+'</b> <span>'+txt+'</span></div><time>'+esc(fmtWhen(e.t))+'</time></div>';}).join("")||'<p class="muted">لا يوجد نشاط بعد.</p>';
+}
+
+function load(){
+  var c=code(); if(!c){show("setup");return;}
+  api("/report",{auth:c}).then(render).catch(function(e){
+    if(e.status===401){setCode("");show("setup");}
+    else{show("setup");$("codeErr").textContent="تعذّر الاتصال بخدمة المتابعة. إذا كانت أول مرة، يمكن ما انتشرت بعد.";$("codeErr").hidden=false;}
+  });
+}
+load();
+})();
+</script>
+</body>
+</html>

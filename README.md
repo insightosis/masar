@@ -54,9 +54,9 @@ images (a ball, a lift, a car on cruise control), one idea at a time, little tex
    **اكتب الجواب** (type a number, tolerant check, hint button). Each gives a reason on a wrong answer.
 5. Worked example (hide-solution toggle), **النقاط الذهبية** (labels: سؤال مكرر / قاعدة سريعة / فخ),
    daily life, 3 quiz questions, a 3-line summary, links, finish button.
-- Every check calls `record(key, firstTryCorrect)`; the score is saved with the lesson.
+- Every check calls `record(key, firstTryCorrect)`; the score is saved with the lesson, and `record` also calls `Lab.check(key, ok)` so the parent sees it (copy `record` from `lessons/phy-u1-1-3.html`).
 - Loads nothing from other domains; fonts come from `../assets/fonts.css`.
-- Include `../assets/plan.js`, `../assets/data.js` and `../assets/lab.js`, and set `LESSON_ID`.
+- Include `../assets/plan.js`, `../assets/data.js` and `../assets/lab.js`, and set the id globally: `var LESSON_ID=window.LESSON_ID="<id>";` (lab.js uses it to log time spent and checks for the parent page).
 
 ## Saturday
 
@@ -98,3 +98,13 @@ Kuwait time), builds that session's lessons, and rewrites `latest.html` with tha
   more lesson pages) and starts each page with retrieval questions on the previous day's lessons.
 - When the official per-subject timetable is published, fill `exams` in `tools/build_plan.py`
   (`{"subject":..., "date":...}`) and rebuild; the evening before each exam becomes that subject's review.
+
+## Progress sync (Cloudflare)
+
+- `sync/worker.js` is the `masar-sync` Worker (https://masar-sync.insightosis.workers.dev), KV namespace `masar-progress`.
+  `.github/workflows/sync.yml` deploys it on every push to `sync/**` once the repo secret `CLOUDFLARE_API_TOKEN` exists.
+- `assets/lab.js` queues every finished lesson, quiz, check and minutes-on-page and pushes them; offline work waits in the queue.
+  A device is linked by opening any page once with `?link=<token>`; a wiped device gets its progress back the same way.
+- `parent.html` is the parent's page: first-time setup creates the parent code and the iPad link; after that it shows
+  done vs. planned, late lessons, quiz and first-try accuracy per subject, minutes per day, and recent activity.
+- Never put the parent code or the iPad link in this repo (it is public).

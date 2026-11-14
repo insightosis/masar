@@ -1,4 +1,4 @@
-/* Shared helpers: progress kept in this browser only (v1), subject icons, lookups. */
+/* Shared helpers: progress (this browser + synced to the masar-sync worker), subject icons, lookups. */
 (function () {
   "use strict";
   var KEY = "lab11.progress.v1";
@@ -41,15 +41,112 @@
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", themeButton); else themeButton();
 
+  /* ---------- sync to Cloudflare (masar-sync worker) ----------
+     The iPad is linked once by opening any page with ?link=<token>; after that every
+     finished lesson, quiz and check is queued here and pushed. Nothing is lost offline:
+     the queue stays in this browser until the worker accepts it. */
+  var SYNC_URL = "https://masar-sync.insightosis.workers.dev";
+  var SKEY = "masar.sync.v1", QKEY = "masar.queue.v1";
+  function syncToken() { try { return localStorage.getItem(SKEY) || ""; } catch (e) { return ""; } }
+  (function takeLink() {
+    try {
+      var u = new URL(location.href), t = u.searchParams.get("link");
+      if (t && /^[0-9a-f]{32}$/.test(t)) {
+        localStorage.setItem(SKEY, t);
+        u.searchParams.delete("link");
+        history.replaceState(null, "", u.pathname + (u.search || "") + u.hash);
+        sessionStorage.setItem("masar.justLinked", "1");
+      }
+    } catch (e) {}
+  })();
+  function queue() { try { return JSON.parse(localStorage.getItem(QKEY)) || []; } catch (e) { return []; } }
+  function setQueue(q) { try { localStorage.setItem(QKEY, JSON.stringify(q.slice(-1500))); } catch (e) {} }
+  function eid() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 8); }
+  function log(type, data) {
+    var e = Object.assign({ t: new Date().toISOString(), type: type, eid: eid() }, data || {});
+    var q = queue(); q.push(e); setQueue(q); schedulePush();
+  }
+  function mergeInto(local, remote) {
+    var changed = false, id;
+    for (id in remote) {
+      var r = remote[id] || {}, l = local[id] || {};
+      if (r.done && !l.done) { l.done = true; l.date = r.date; changed = true; }
+      if (r.quiz && !l.quiz) { l.quiz = r.quiz; changed = true; }
+      local[id] = l;
+    }
+    return changed;
+  }
+  var pushTimer = null, pushing = false;
+  var syncState = { linked: !!syncToken(), last: null, error: null };
+  function schedulePush(ms) { if (!syncToken()) return; clearTimeout(pushTimer); pushTimer = setTimeout(push, ms == null ? 1200 : ms); }
+  function push(keepalive) {
+    var tok = syncToken(); if (!tok || pushing) return;
+    var q = queue(), sent = q.length;
+    pushing = true;
+    return fetch(SYNC_URL + "/push", {
+      method: "POST", keepalive: !!keepalive,
+      headers: { "Authorization": "Bearer " + tok, "Content-Type": "application/json" },
+      body: JSON.stringify({ progress: load(), events: q.slice(0, 400) })
+    }).then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.json();
+    }).then(function () {
+      setQueue(queue().slice(Math.min(sent, 400)));
+      syncState.last = new Date().toISOString(); syncState.error = null;
+      try { localStorage.setItem("masar.lastSync", syncState.last); } catch (e) {}
+      window.dispatchEvent(new Event("masar-sync"));
+      if (queue().length) schedulePush(300);
+    }).catch(function (e) { syncState.error = String(e.message || e); })
+      .then(function () { pushing = false; });
+  }
+  function pull() {
+    var tok = syncToken(); if (!tok) return;
+    fetch(SYNC_URL + "/state", { headers: { "Authorization": "Bearer " + tok } })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (s) {
+        var p = load();
+        if (mergeInto(p, s.progress || {})) {
+          save(p);
+          if (!sessionStorage.getItem("masar.restored")) { sessionStorage.setItem("masar.restored", "1"); location.reload(); return; }
+        }
+        push();
+      }).catch(function (e) { syncState.error = String(e.message || e); });
+  }
+
+  /* lesson pages: time actually spent with the page visible, sent when the page is left */
+  function trackLesson() {
+    var id = window.LESSON_ID; if (!id) return;
+    log("open", { id: id });
+    var acc = 0, since = document.visibilityState === "visible" ? Date.now() : 0;
+    function flush(final) {
+      if (since) { acc += (Date.now() - since) / 1000; since = 0; }
+      if (acc >= 5) { log("time", { id: id, sec: Math.round(acc) }); acc = 0; }
+      if (final) push(true);
+    }
+    document.addEventListener("visibilitychange", function () {
+      if (document.visibilityState === "visible") since = Date.now(); else flush(true);
+    });
+    window.addEventListener("pagehide", function () { flush(true); });
+  }
+  function boot() { trackLesson(); pull(); }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot); else setTimeout(boot, 0);
+
   window.Lab = {
+    syncState: syncState,
+    log: log,
+    /* every interactive check in a lesson: Lab.check("order", true) */
+    check: function (key, ok) { if (window.LESSON_ID) log("check", { id: window.LESSON_ID, key: key, ok: !!ok }); },
     progress: load,
     isDone: function (id) { return !!(load()[id] && load()[id].done); },
     markDone: function (id, quiz) {
       var p = load(); p[id] = Object.assign({}, p[id], { done: true, date: today() });
       if (quiz) p[id].quiz = quiz;
-      save(p); return p[id];
+      save(p); log("done", { id: id }); return p[id];
     },
-    setQuiz: function (id, quiz) { var p = load(); p[id] = Object.assign({}, p[id], { quiz: quiz }); save(p); },
+    setQuiz: function (id, quiz) {
+      var p = load(); p[id] = Object.assign({}, p[id], { quiz: quiz }); save(p);
+      log("quiz", { id: id, score: quiz.score, total: quiz.total });
+    },
     today: today,
     icon: function (key, size) {
       return '<svg viewBox="0 0 24 24" width="' + (size || 22) + '" height="' + (size || 22) + '" aria-hidden="true">' + (ICONS[key] || "") + "</svg>";
