@@ -14,6 +14,33 @@
     geology: '<path d="M2 20l6-10 4 6 3-4 7 8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M5 16h14M3.5 18.5h17" stroke="currentColor" stroke-width="1.2" opacity=".6"/>'
   };
 
+
+  /* light / dark: follows the device until the student picks one; the choice stays on this device */
+  var TKEY = "masar.theme";
+  function curTheme() {
+    var t = document.documentElement.getAttribute("data-theme");
+    if (t) return t;
+    return window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+  function themeButton() {
+    var host = document.querySelector(".top .nav") || document.querySelector(".top");
+    if (!host || document.querySelector(".theme-btn")) return;
+    var b = document.createElement("button");
+    b.className = "theme-btn"; b.type = "button";
+    function paint() { var d = curTheme() === "dark"; b.textContent = d ? "☀" : "☾"; b.setAttribute("aria-label", d ? "الوضع النهاري" : "الوضع الليلي"); }
+    paint();
+    b.addEventListener("click", function () {
+      var next = curTheme() === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try { localStorage.setItem(TKEY, next); } catch (e) {}
+      paint();
+      window.dispatchEvent(new Event("masar-theme"));
+    });
+    host.appendChild(b);
+    if (window.matchMedia) matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () { paint(); window.dispatchEvent(new Event("masar-theme")); });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", themeButton); else themeButton();
+
   window.Lab = {
     progress: load,
     isDone: function (id) { return !!(load()[id] && load()[id].done); },

@@ -113,14 +113,19 @@ PREFIX = {"math":"math","physics":"phy","chemistry":"chem","biology":"bio","geol
 PACE = {"math":3.2,"physics":3.0,"chemistry":3.0,"biology":2.2,"geology":2.2}
 
 START = dt.date(2026,11,15)      # first plan day
-BUILD_END = dt.date(2026,12,10)  # every lesson learned by this day
+BUILD_END = dt.date(2026,12,11)  # every lesson learned by this day (Fri)
 EXAM_START = dt.date(2026,12,20) # MOE window for grades 10-11: 20-31 Dec 2026
 EXAM_END = dt.date(2026,12,31)
 # Official per-subject dates, filled in when the MOE timetable is published: {"math": "2026-12-20", ...}
 EXAMS = {}
 # Kuwait weekend is Fri/Sat: more time then
-CAP = {4:150, 5:150}             # weekday() 4=Fri 5=Sat
+# Minutes of NEW lessons a day. Saturday is a review day (no new lessons); see the timetable in assets/schedule.js.
+CAP = {4:150, 5:0}               # weekday() 4=Fri 5=Sat
 CAP_SCHOOL = 95
+PM_CAP = {4:95}                  # evening session limit; the rest of the day's lessons go to the morning
+PM_CAP_SCHOOL = 85
+AM_CAP = {4:75}                  # morning lessons (recall comes on top); school mornings are short
+AM_CAP_SCHOOL = 28
 DAYS_AR = ["الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت","الأحد"]
 
 def lesson_id(s,u,code): return f"{PREFIX[s]}-u{u}-{code}"
@@ -148,11 +153,8 @@ for s in SYL:
     for c in q:
         seq.append(((run+c["minutes"]/2)/tot, list(SYL).index(s), c)); run+=c["minutes"]
 seq.sort(key=lambda x:(x[0],x[1]))
-caps=[]
-for i,d in enumerate(build_days):
-    c=CAP.get(d.weekday(),CAP_SCHOOL)
-    if d.weekday()==5 and i>0: c-=25
-    caps.append(c)
+caps=[CAP.get(d.weekday(),CAP_SCHOOL) for d in build_days]
+# lay the sequence on the calendar by cumulative time: each lesson goes to the day where its midpoint falls
 cum=[];acc=0
 for c in caps: acc+=c; cum.append(acc)
 total_min=sum(c["minutes"] for _,_,c in seq)
@@ -160,20 +162,24 @@ plan=[{"date":d.isoformat(),"phase":"build","items":[]} for d in build_days]
 run=0
 for _,_,c in seq:
     mid=(run+c["minutes"]/2)/total_min*cum[-1]; run+=c["minutes"]
-    k=next(i for i,v in enumerate(cum) if v>=mid)
+    k=next(i for i,v in enumerate(cum) if v>=mid and caps[i]>0)
     plan[k]["items"].append({"type":"new","lesson":c["id"]})
+week_ids=[]
 for i,d in enumerate(build_days):
-    if d.weekday()==5 and i>0:
-        plan[i]["items"].append({"type":"weekly","minutes":25,"note":"مراجعة الأسبوع: أسئلة استرجاع من كل دروس الأسبوع"})
+    week_ids += [it["lesson"] for it in plan[i]["items"] if it["type"]=="new"]
+    if d.weekday()==5:
+        plan[i]["items"]=[{"type":"weekly-am","minutes":45,"lessons":week_ids[:],"title":"مراجعة الأسبوع: النقاط الأساسية والرموز والقوانين"},
+                          {"type":"weekly-pm","minutes":90,"lessons":week_ids[:],"title":"تحدي الأسبوع: اختبارات وتطبيقات تفاعلية على دروس الأسبوع"}]
+        week_ids=[]
 queues={s:[] for s in SYL}
 # anything left (should be none) goes to the last build days
 left=[c for q in queues.values() for c in q]
 assert not left, f"unscheduled: {[c['id'] for c in left]}"
 
 # ---------- phase 2: consolidate (one subject per day, units summaries + applications book + timed quiz)
-CONS = [("math","مراجعة الرياضيات (1): الوحدات 1 إلى 3"),("physics","مراجعة الفيزياء: الفصول 1 إلى 4"),
+CONS = [("math","مراجعة الرياضيات: الوحدات 1 إلى 6"),("physics","مراجعة الفيزياء: الفصول 1 إلى 4"),
         ("chemistry","مراجعة الكيمياء: الوحدات 1 إلى 3"),("biology","مراجعة الأحياء: النباتات والوراثة"),
-        ("geology","مراجعة الجيولوجيا: الوحدات 1 إلى 4"),("math","مراجعة الرياضيات (2): الوحدات 4 إلى 6"),
+        ("geology","مراجعة الجيولوجيا: الوحدات 1 إلى 4"),
         ("mixed","نقاط الضعف: إعادة الدروس الأقل درجة في الاختبارات القصيرة")]
 for d,(s,title) in zip(days(BUILD_END+dt.timedelta(days=1),dt.date(2026,12,17)),CONS):
     plan.append({"date":d.isoformat(),"phase":"consolidate","items":[{"type":"review","subject":s,"title":title,
@@ -203,38 +209,34 @@ for d in days(EXAM_START-dt.timedelta(days=1),EXAM_END):
         continue
     plan.append({"date":d.isoformat(),"phase":"exams","items":[item]})
 
-# ---------- two sittings a day: 6:00 (before school) and 18:00. Mornings are short on school days.
-AM_SHARE = {4:0.5, 5:0.5}   # Fri/Sat split evenly; school days get about a third in the morning
+# ---------- two sittings a day: 06:00 (before school, short) and 18:00 (the main one).
 lesson_min={c["id"]:c["minutes"] for c in catalog}
 def mins(it): return lesson_min[it["lesson"]] if it["type"]=="new" else it.get("minutes",0)
 for day in plan:
     d=dt.date.fromisoformat(day["date"]); items=day.pop("items")
-    share=AM_SHARE.get(d.weekday(),0.35)
-    am=[];pm=[]
     news=[i for i in items if i["type"]=="new"]; other=[i for i in items if i["type"]!="new"]
-    if len(news)>=2:
-        total=sum(mins(i) for i in news); target=total*share; acc=0
-        # keep book order inside a subject: fill the morning from the shortest lessons first
-        for it in sorted(news,key=mins):
-            if acc+mins(it)<=target*1.25 or not am: am.append(it); acc+=mins(it)
-            else: pm.append(it)
-        if not pm: pm.append(am.pop())
-        order={id(i):k for k,i in enumerate(news)}
-        am.sort(key=lambda i:order[id(i)]); pm.sort(key=lambda i:order[id(i)])
-    elif news:
-        pm=news[:]
+    am=[];pm=news[:]
+    cap=PM_CAP.get(d.weekday(),PM_CAP_SCHOOL)
+    # move the shortest lessons to the morning until the evening fits its limit (keep at least one in the evening)
+    am_cap=AM_CAP.get(d.weekday(),AM_CAP_SCHOOL)
+    while len(pm)>1 and sum(mins(i) for i in pm)>cap:
+        it=min(pm,key=mins)
+        if sum(mins(i) for i in am)+mins(it)>am_cap: break
+        pm.remove(it); am.append(it)
+    order={id(i):k for k,i in enumerate(news)}
+    am.sort(key=lambda i:order[id(i)]); pm.sort(key=lambda i:order[id(i)])
     for it in other:
-        (am if it["type"] in ("weekly",) else pm).append(it)
-    if day["phase"] in ("consolidate",) and not am:
-        rv=pm[0]; half=dict(rv); half["minutes"]=round(rv["minutes"]*share); rv["minutes"]-=half["minutes"]
-        half["title"]=rv["title"]+" · الجزء الأول"; rv["title"]=rv["title"]+" · الجزء الثاني"; am=[half]
+        (am if it["type"] in ("weekly-am",) else pm).append(it)
+    if day["phase"]=="consolidate":
+        rv=pm[0]; half=dict(rv); half["minutes"]=45 if d.weekday() in (4,5) else 30; rv["minutes"]=90
+        half["title"]=rv["title"]+" · الملخصات والنقاط الذهبية"; rv["title"]=rv["title"]+" · تمارين كتاب التطبيقات واختبار قصير"; am=[half]
     if day["phase"]=="mock" and len(pm)>1 and not am: am=[pm.pop(0)]
-    if not am and day["phase"]=="exams":
+    if day["phase"]=="exams" and not am:
         am=[{"type":"warmup","minutes":20,"title":"إحماء قبل الاختبار: النقاط الذهبية للمادة فقط، بدون دروس جديدة"}]
-    elif not am:
-        am=[{"type":"recall","minutes":15,"title":"أسئلة استرجاع سريعة على دروس أمس"}]
-    elif day["phase"]=="build":
+    if day["phase"]=="build" and d.weekday()!=5:
         am.insert(0,{"type":"recall","minutes":10,"title":"استرجاع سريع على دروس أمس"})
+        if len(am)==1 and pm:
+            am.append({"type":"preview","minutes":10,"title":"تمهيد: رموز ومصطلحات دروس المساء"})
     day["sessions"]={"am":am,"pm":pm}
 
 out = {"generated":dt.date.today().isoformat(),
@@ -244,7 +246,7 @@ out = {"generated":dt.date.today().isoformat(),
        "sessions":{"am":{"name":"جلسة الصباح","time":"06:00"},"pm":{"name":"جلسة المساء","time":"18:00"}},
        "exams":[{"subject":k,"date":v} for k,v in sorted(EXAMS.items(),key=lambda x:x[1])],
        "phases":{"build":{"name":"تعلّم","from":START.isoformat(),"to":BUILD_END.isoformat()},
-                 "consolidate":{"name":"تثبيت","from":"2026-12-11","to":"2026-12-17"},
+                 "consolidate":{"name":"تثبيت","from":"2026-12-12","to":"2026-12-17"},
                  "mock":{"name":"اختبارات تجريبية","from":"2026-12-18","to":"2026-12-19"},
                  "exams":{"name":"الاختبارات","from":EXAM_START.isoformat(),"to":EXAM_END.isoformat()}},
        "catalog":catalog,"days":plan}

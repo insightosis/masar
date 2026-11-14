@@ -20,9 +20,16 @@ Served by GitHub Pages at https://insightosis.github.io/masar/
 
 ## Rules for every lesson
 
-**Look:** pastel claymorphism on a light background. Puffy rounded tiles (`--clay` shadows from `assets/site.css`),
+**Look:** pastel claymorphism with a light and a dark theme (tokens in `assets/site.css`; the ☾/☀ button switches).
+Never hard-code a light-only colour: use the tokens (`--card`, `--text`, `--p-peach`, `--p-sky`, `--sky`, `--ground`...).
+Canvas drawings read the tokens and redraw on the `masar-theme` event.
+**No decoration may sit over text**: animations and shapes go in their own row or reserved space, never `position:absolute` over copy. Puffy rounded tiles (`--clay` shadows from `assets/site.css`),
 light pastel fills, the rounded display face (Baloo Bhaijaan 2) for headings, IBM Plex Sans Arabic for text.
 Each subject keeps its own pastel identity (`LAB.subjects[*].color` for ink, `.soft` for fills). No dark themes.
+
+**Book first:** read the lesson's pages in the student book before writing. Use the book's notation and values
+(e.g. physics uses g = 10 m/s², v0x, v0y, Δx, Δy, t′, h_max, R and the word "عجلة"), cover every objective listed on the
+lesson's first page, and put the page range in the header and footer.
 
 **Voice:** explain as to a student a little younger than grade 11, without talking down: short sentences, everyday
 images (a ball, a lift, a car on cruise control), one idea at a time, little text, lots of visuals drawn in the page.
@@ -42,6 +49,18 @@ images (a ball, a lift, a car on cruise control), one idea at a time, little tex
 - Every check calls `record(key, firstTryCorrect)`; the score is saved with the lesson.
 - Loads nothing from other domains; fonts come from `../assets/fonts.css`.
 - Include `../assets/plan.js`, `../assets/data.js` and `../assets/lab.js`, and set `LESSON_ID`.
+
+## Saturday
+
+No new lessons. Morning (`weekly-am`): the week's key symbols, laws and golden points as quick-fire cards.
+Evening (`weekly-pm`): mixed tests across the week's lessons plus interactive applications (order / fill / type,
+lab challenges), interleaving subjects. Both items list the week's lesson ids in `lessons`.
+
+## Daily timetable
+
+`assets/schedule.js` holds the day templates (school day, Friday, Saturday, exam day): school, homework and notebook,
+school project, the 1-hour course (هندسة الأجيال), play split into two blocks, both Masar sessions, wind-down from 21:30,
+sleep at 22:00. The dashboard draws today's timeline; the plan page shows every template.
 
 ## Two sessions a day
 

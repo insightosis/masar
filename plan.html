@@ -6,16 +6,17 @@
 <title>الخطة · مسار · الصف الحادي عشر</title>
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/site.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <style>
 .intro{display:grid;grid-template-columns:1.3fr 1fr;gap:16px;margin-top:18px;align-items:stretch}
 @media (max-width:780px){.intro{grid-template-columns:1fr}}
-.count{padding:22px 24px;background:linear-gradient(160deg,#ffe3ec,#fff 75%);position:relative;overflow:hidden}
+.count{padding:22px 24px;background:linear-gradient(160deg,var(--p-pink),var(--card) 75%);position:relative;overflow:hidden}
 .count h1{font-size:clamp(2rem,6vw,2.8rem);margin:0 0 4px}
-.count .big{font-family:var(--display);font-weight:800;font-size:clamp(3.4rem,12vw,5rem);line-height:1;color:#d1557a;font-variant-numeric:tabular-nums}
+.count .big{font-family:var(--display);font-weight:800;font-size:clamp(3.4rem,12vw,5rem);line-height:1;color:var(--pink-ink);font-variant-numeric:tabular-nums}
 .count .big small{font-family:var(--body);font-weight:500;font-size:1rem;color:var(--muted);margin-inline-start:8px}
 .count p{margin:8px 0 0;color:var(--muted);font-size:14.5px;max-width:52ch}
 .count .two{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.count .two span{font-size:13.5px;font-weight:700;padding:4px 12px;border-radius:99px;background:#fff;box-shadow:var(--clay-sm)}
+.count .two span{font-size:13.5px;font-weight:700;padding:4px 12px;border-radius:99px;background:var(--card);box-shadow:var(--clay-sm)}
 .phases{display:grid;gap:10px}
 .ph{display:grid;grid-template-columns:18px 1fr auto;gap:10px;align-items:center;padding:10px 16px;border-radius:20px;background:var(--card);box-shadow:var(--clay-sm)}
 .ph i{width:18px;height:18px;border-radius:50%;background:var(--pc);box-shadow:var(--clay-sm)}
@@ -23,11 +24,11 @@
 .ph span{font-family:var(--mono);font-size:13px;color:var(--muted);direction:ltr}
 .ph.now{background:var(--pcs)}
 
-.track{display:flex;height:16px;border-radius:12px;overflow:hidden;margin:18px 0 4px;background:#fff;box-shadow:var(--press);position:relative}
+.track{display:flex;height:16px;border-radius:12px;overflow:hidden;margin:18px 0 4px;background:var(--card);box-shadow:var(--press);position:relative}
 .track i{display:block;height:100%}
 .track .needle{position:absolute;top:-5px;bottom:-5px;width:6px;background:var(--text);border-radius:4px}
 .cover{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
-.cv{padding:12px 16px;border-radius:24px;background:var(--soft);box-shadow:var(--clay-sm);color:var(--sc)}
+.cv{padding:12px 16px;border-radius:24px;background:var(--soft);box-shadow:var(--clay-sm);color:var(--ink)}
 .cv .row{display:flex;justify-content:space-between;align-items:center}
 .cv h3{margin:0;font-size:1.1rem;color:var(--text)}
 .cv p{margin:4px 0 0;font-size:13.5px;color:var(--muted)}
@@ -37,7 +38,7 @@
 .week h3{font-size:1.1rem;margin:0 0 10px;color:var(--muted)}
 .days{display:grid;gap:12px}
 .day{padding:14px 16px;border-radius:24px;background:var(--card);box-shadow:var(--clay-sm);border-inline-start:8px solid var(--pc)}
-.day.today{background:#fff8e7;box-shadow:var(--clay)}
+.day.today{background:var(--p-butter);box-shadow:var(--clay)}
 .day.past{opacity:.6}
 .dh{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin-bottom:8px}
 .dh b{font-family:var(--display);font-size:1.15rem;font-weight:800}
@@ -46,17 +47,20 @@
 .ss{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 @media (max-width:620px){.ss{grid-template-columns:1fr}}
 .s{border-radius:18px;padding:8px 12px 10px;background:var(--sb)}
-.s.am{--sb:#fff6dc}.s.pm{--sb:#efeaff}
+.s.am{--sb:var(--p-butter)}.s.pm{--sb:var(--p-lav)}
 .s h4{margin:0 0 4px;font-size:13px;color:var(--muted);font-weight:700;display:flex;gap:6px;align-items:center}
 .s h4 span{font-family:var(--mono);font-weight:500;direction:ltr}
 .it{display:flex;flex-wrap:wrap;align-items:center;gap:2px 8px;font-size:14.5px;padding:3px 0}
-.it .code{font-size:12.5px;font-weight:700;color:var(--sc)}
+.it .code{font-size:12.5px;font-weight:700;color:var(--ink)}
 .it a{text-decoration:none;border-bottom:2px solid var(--sc)}
-.it .tag{font-size:12px;font-weight:700;padding:0 8px;border-radius:8px;background:#fff;color:var(--muted)}
-.it .tag.live{background:var(--sc);color:#fff}
+.it .tag{font-size:12px;font-weight:700;padding:0 8px;border-radius:8px;background:var(--card);color:var(--muted)}
+.it .tag.live{background:var(--sc);color:var(--card)}
 .it .ok{color:var(--ok);font-weight:700}
 .it .m{font-size:12.5px;color:var(--muted)}
 .dot{width:10px;height:10px;border-radius:50%;background:var(--sc);flex:none}
+.tabs-s{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.tabs-s button{font:inherit;font-weight:700;cursor:pointer;border:0;color:var(--muted);padding:6px 16px;border-radius:16px;background:var(--card);box-shadow:var(--clay-sm)}
+.tabs-s button[aria-selected=true]{color:var(--text);background:var(--accent-soft)}
 </style>
 </head>
 <body>
@@ -81,9 +85,16 @@
     <div class="cover" id="cover"></div>
   </section>
 
+  <section class="sec" id="schedule" aria-labelledby="h-sch">
+    <h2 id="h-sch">الجدول اليومي</h2>
+    <p class="muted" style="margin-top:-6px">كل يوم ينتهي عند 9:30 مساءً، ثم نصف ساعة للاستعداد للنوم. أوقات المدرسة تقديرية وتُعدّل من ملف الجدول.</p>
+    <div class="tabs-s" role="tablist" id="schTabs"></div>
+    <div class="tl" id="schView"></div>
+  </section>
+
   <section class="sec" aria-labelledby="h-days">
     <h2 id="h-days">يوماً بيوم</h2>
-    <p class="muted" style="margin-top:-6px">جلسة الصباح قصيرة قبل المدرسة وتبدأ بأسئلة على دروس أمس، والدروس الأطول في المساء. كل سبت مراجعة للأسبوع كله.</p>
+    <p class="muted" style="margin-top:-6px">جلسة الصباح قصيرة قبل المدرسة وتبدأ بأسئلة على دروس أمس، والدروس الأطول في المساء. السبت يوم مراجعة بلا دروس جديدة: صباحاً النقاط الأساسية، ومساءً اختبارات وتطبيقات تفاعلية على دروس الأسبوع.</p>
     <div id="weeks"></div>
   </section>
 
@@ -92,18 +103,19 @@
 <script src="assets/plan.js"></script>
 <script src="assets/data.js"></script>
 <script src="assets/lab.js"></script>
+<script src="assets/schedule.js"></script>
 <script>
 (function(){
 "use strict";
 var P=window.PLAN,S=window.LAB.subjects,T=Lab.today();
-var PC={build:["#7cc8f5","#e3f4ff"],consolidate:["#a58bf0","#efeaff"],mock:["#f08aa6","#ffe3ec"],exams:["#f2b33d","#fff3d6"]};
+var PC={build:["#7cc8f5","var(--p-sky)"],consolidate:["#a58bf0","var(--p-lav)"],mock:["#f08aa6","var(--p-pink)"],exams:["#f2b33d","var(--p-butter)"]};
 var DAY=["الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"];
 var cat={};P.catalog.forEach(function(c){cat[c.id]=c;});
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
 function d0(s){return new Date(s+"T12:00:00");}
 function diff(a,b){return Math.round((d0(b)-d0(a))/864e5);}
 function fmt(s){return d0(s).toLocaleDateString("ar",{day:"numeric",month:"long"});}
-function sv(k){var s=S[k]||{color:"#7b7899",soft:"#f4f1fb"};return "--sc:"+s.color+";--soft:"+s.soft;}
+function sv(k){var s=S[k]||{color:"#8b86b3"};return "--sc:"+s.color;}
 function mins(it){return it.type==="new"?cat[it.lesson].minutes:(it.minutes||0);}
 
 var left=diff(T,P.examWindow.start);
@@ -131,7 +143,7 @@ function item(it){
     var t=pub?'<a href="'+esc(pub.url)+'">'+esc(c.title)+'</a>':esc(c.title);
     return '<div class="it" style="'+sv(c.subject)+'"><span class="dot"></span><span class="code">'+esc(s.name)+' '+c.code+'</span>'+t
       +(pub?' <span class="tag live">منشور</span>':'')+(done?' <span class="ok">✓</span>':'')+'<span class="m">'+c.minutes+' د · ص '+c.pages[0]+'–'+c.pages[1]+'</span></div>';}
-  var label={weekly:"مراجعة",review:"تثبيت",mock:"تجريبي",eve:"ليلة الاختبار",recall:"استرجاع",warmup:"إحماء"}[it.type]||"";
+  var label={"weekly-am":"مراجعة","weekly-pm":"تحدي الأسبوع",preview:"تمهيد",review:"تثبيت",mock:"تجريبي",eve:"ليلة الاختبار",recall:"استرجاع",warmup:"إحماء"}[it.type]||"";
   return '<div class="it" style="'+sv(it.subject)+'"><span class="dot"></span><span class="tag">'+label+'</span>'+esc(it.title||it.note||"")+'<span class="m">'+(it.minutes||"")+' د</span></div>';
 }
 var weeks=[],cur=null;
@@ -144,6 +156,12 @@ document.getElementById("weeks").innerHTML=weeks.map(function(w,i){
       +'<div class="ss"><div class="s am"><h4>☀ الصباح <span>06:00</span></h4>'+d.sessions.am.map(item).join("")+'</div><div class="s pm"><h4>☾ المساء <span>18:00</span></h4>'+d.sessions.pm.map(item).join("")+'</div></div></div>';
   }).join("")+'</div></div>';}).join("");
 var el=document.getElementById("d-"+T); if(el&&location.hash==="#today")el.scrollIntoView({block:"center"});
+/* timetable tabs */
+var SC=window.SCHEDULE,tabs=document.getElementById("schTabs"),view=document.getElementById("schView"),todayKind=SC.kindFor(T);
+function showTpl(k){[].forEach.call(tabs.children,function(b){b.setAttribute("aria-selected",String(b.dataset.k===k));});SC.render(view,k===todayKind?T:null,k);}
+tabs.innerHTML=Object.keys(SC.templates).map(function(k){return '<button role="tab" data-k="'+k+'" aria-selected="false">'+esc(SC.templates[k].name)+'</button>';}).join("");
+tabs.addEventListener("click",function(e){var b=e.target.closest("button");if(b)showTpl(b.dataset.k);});
+showTpl(todayKind);
 })();
 </script>
 </body>
