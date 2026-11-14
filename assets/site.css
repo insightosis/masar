@@ -1,52 +1,64 @@
 :root{
-  /* Masar hub: soft clay on a lilac sky (light) or a plum night (dark). Every card is a puffy clay tile;
-     each subject brings its own colour through --sc, from which --soft (fills) and --ink (text) are derived. */
-  --bg:#f3eeff;
-  --card:#ffffff;
-  --text:#2c2550;
-  --muted:#686489;
-  --line:rgba(110,92,190,.18);
-  --accent:#ff5f8f;
-  --accent-soft:#ffd6e3;
-  --pink-ink:#d63b6c;
-  --ok:#14a466;
-  --ok-soft:#cff5e2;
-  --bad:#e0365f;
-  --p-peach:#ffe2c4; --p-mint:#cdf6e4; --p-pink:#ffd9e6; --p-lav:#e6dcff; --p-sky:#d6ecff; --p-butter:#fff0b8;
-  --hook-ink:#80580a;
-  --sky:#dcefff; --ground:#bfeaa6; --ground-line:#7fcf63; --gridline:rgba(90,130,210,.22);
-  --clay:9px 12px 24px rgba(108,86,190,.18), inset -5px -7px 12px rgba(108,86,190,.10), inset 5px 6px 12px rgba(255,255,255,.9);
-  --clay-sm:5px 7px 14px rgba(108,86,190,.16), inset -3px -4px 8px rgba(108,86,190,.09), inset 3px 4px 8px rgba(255,255,255,.9);
-  --press:inset 4px 5px 10px rgba(108,86,190,.20), inset -3px -4px 8px rgba(255,255,255,.85);
-  --glow1:#ffd3e2; --glow2:#cfe9ff; --glow3:#e2d6ff;
+  /* Masar colour system (after QElite/StudyCore): a near-neutral ground tinted by the page's hue pair,
+     the hue doing its work in accents and washes. The hub uses lilac→pink; each lesson sets
+     data-subject on <html> to its own pair. Pastel fills (--p-*) are a fixed shared set and may mix. */
+  --hue:292; --hue2:332;
   --r:26px;
   --display:"Baloo Bhaijaan 2","IBM Plex Sans Arabic",system-ui,sans-serif;
   --body:"IBM Plex Sans Arabic",system-ui,"Segoe UI",Tahoma,sans-serif;
   --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+:root[data-subject="physics"]  {--hue:58; --hue2:28}
+:root[data-subject="chemistry"]{--hue:168;--hue2:196}
+:root[data-subject="biology"]  {--hue:136;--hue2:110}
+:root[data-subject="math"]     {--hue:292;--hue2:262}
+:root[data-subject="geology"]  {--hue:38; --hue2:12}
+:root{
+  --bg:oklch(.975 .012 var(--hue));
+  --card:oklch(1 0 0);
+  --text:oklch(.26 .04 var(--hue));
+  --muted:oklch(.50 .035 var(--hue));
+  --line:oklch(.86 .03 var(--hue));
+  --accent:oklch(.62 .18 var(--hue2));
+  --accent-soft:oklch(.92 .055 var(--hue2));
+  --pink-ink:oklch(.52 .19 var(--hue2));
+  --wash:oklch(.95 .045 var(--hue)); --wash2:oklch(.94 .05 var(--hue2));
+  --ok:#139a5f; --ok-soft:#d3f4e3; --bad:#dc2f5a;
+  --p-peach:oklch(.93 .06 60); --p-mint:oklch(.94 .055 165); --p-pink:oklch(.93 .055 0); --p-lav:oklch(.93 .05 295); --p-sky:oklch(.93 .05 235); --p-butter:oklch(.95 .07 95);
+  --hook-ink:oklch(.45 .1 75);
+  --sky:oklch(.94 .04 235); --ground:oklch(.88 .1 135); --ground-line:oklch(.74 .16 138); --gridline:oklch(.6 .08 250 / .25);
+  --clay:9px 12px 24px oklch(.45 .08 var(--hue) / .16), inset -5px -7px 12px oklch(.45 .08 var(--hue) / .09), inset 5px 6px 12px rgba(255,255,255,.9);
+  --clay-sm:5px 7px 14px oklch(.45 .08 var(--hue) / .15), inset -3px -4px 8px oklch(.45 .08 var(--hue) / .08), inset 3px 4px 8px rgba(255,255,255,.9);
+  --press:inset 4px 5px 10px oklch(.45 .08 var(--hue) / .18), inset -3px -4px 8px rgba(255,255,255,.85);
+  --glow1:oklch(.94 .04 var(--hue)); --glow2:oklch(.95 .035 var(--hue2)); --glow3:oklch(.96 .03 var(--hue));
   color-scheme:light;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#181430; --card:#272149; --text:#f2eeff; --muted:#b1aad6; --line:rgba(200,185,255,.16);
-  --accent:#ff6f9b; --accent-soft:#5a2b4a; --pink-ink:#ff8fb3; --ok:#4fdc98; --ok-soft:#1d4a3a; --bad:#ff6f8f;
-  --p-peach:#4a3326; --p-mint:#1f4438; --p-pink:#4d2a3f; --p-lav:#3a2f66; --p-sky:#22395c; --p-butter:#4a4020;
-  --hook-ink:#ffd77a;
-  --sky:#1e2a4d; --ground:#2c4a2a; --ground-line:#5fae4a; --gridline:rgba(150,170,255,.16);
-  --clay:9px 12px 26px rgba(0,0,0,.45), inset -5px -7px 12px rgba(0,0,0,.28), inset 5px 6px 12px rgba(255,255,255,.08);
-  --clay-sm:5px 7px 14px rgba(0,0,0,.4), inset -3px -4px 8px rgba(0,0,0,.25), inset 3px 4px 8px rgba(255,255,255,.07);
+  --bg:oklch(.18 .018 var(--hue)); --card:oklch(.245 .024 var(--hue)); --text:oklch(.96 .012 var(--hue)); --muted:oklch(.74 .035 var(--hue)); --line:oklch(.38 .03 var(--hue));
+  --accent:oklch(.76 .15 var(--hue2)); --accent-soft:oklch(.36 .08 var(--hue2)); --pink-ink:oklch(.80 .14 var(--hue2));
+  --wash:oklch(.30 .06 var(--hue)); --wash2:oklch(.29 .06 var(--hue2));
+  --ok:#4fdc98; --ok-soft:#1d4a3a; --bad:#ff6f8f;
+  --p-peach:oklch(.34 .06 60); --p-mint:oklch(.34 .055 165); --p-pink:oklch(.34 .06 0); --p-lav:oklch(.34 .06 295); --p-sky:oklch(.34 .06 235); --p-butter:oklch(.36 .06 95);
+  --hook-ink:oklch(.88 .12 90);
+  --sky:oklch(.27 .05 250); --ground:oklch(.36 .07 140); --ground-line:oklch(.62 .14 140); --gridline:oklch(.8 .06 250 / .16);
+  --clay:9px 12px 26px rgba(0,0,0,.45), inset -5px -7px 12px rgba(0,0,0,.28), inset 5px 6px 12px rgba(255,255,255,.07);
+  --clay-sm:5px 7px 14px rgba(0,0,0,.4), inset -3px -4px 8px rgba(0,0,0,.25), inset 3px 4px 8px rgba(255,255,255,.06);
   --press:inset 4px 5px 10px rgba(0,0,0,.45), inset -3px -4px 8px rgba(255,255,255,.06);
-  --glow1:#3b1f45; --glow2:#1b2c52; --glow3:#2c2160;
+  --glow1:oklch(.25 .05 var(--hue)); --glow2:oklch(.24 .05 var(--hue2)); --glow3:oklch(.22 .04 var(--hue));
   color-scheme:dark;
 }}
 :root[data-theme="dark"]{
-  --bg:#181430; --card:#272149; --text:#f2eeff; --muted:#b1aad6; --line:rgba(200,185,255,.16);
-  --accent:#ff6f9b; --accent-soft:#5a2b4a; --pink-ink:#ff8fb3; --ok:#4fdc98; --ok-soft:#1d4a3a; --bad:#ff6f8f;
-  --p-peach:#4a3326; --p-mint:#1f4438; --p-pink:#4d2a3f; --p-lav:#3a2f66; --p-sky:#22395c; --p-butter:#4a4020;
-  --hook-ink:#ffd77a;
-  --sky:#1e2a4d; --ground:#2c4a2a; --ground-line:#5fae4a; --gridline:rgba(150,170,255,.16);
-  --clay:9px 12px 26px rgba(0,0,0,.45), inset -5px -7px 12px rgba(0,0,0,.28), inset 5px 6px 12px rgba(255,255,255,.08);
-  --clay-sm:5px 7px 14px rgba(0,0,0,.4), inset -3px -4px 8px rgba(0,0,0,.25), inset 3px 4px 8px rgba(255,255,255,.07);
+  --bg:oklch(.18 .018 var(--hue)); --card:oklch(.245 .024 var(--hue)); --text:oklch(.96 .012 var(--hue)); --muted:oklch(.74 .035 var(--hue)); --line:oklch(.38 .03 var(--hue));
+  --accent:oklch(.76 .15 var(--hue2)); --accent-soft:oklch(.36 .08 var(--hue2)); --pink-ink:oklch(.80 .14 var(--hue2));
+  --wash:oklch(.30 .06 var(--hue)); --wash2:oklch(.29 .06 var(--hue2));
+  --ok:#4fdc98; --ok-soft:#1d4a3a; --bad:#ff6f8f;
+  --p-peach:oklch(.34 .06 60); --p-mint:oklch(.34 .055 165); --p-pink:oklch(.34 .06 0); --p-lav:oklch(.34 .06 295); --p-sky:oklch(.34 .06 235); --p-butter:oklch(.36 .06 95);
+  --hook-ink:oklch(.88 .12 90);
+  --sky:oklch(.27 .05 250); --ground:oklch(.36 .07 140); --ground-line:oklch(.62 .14 140); --gridline:oklch(.8 .06 250 / .16);
+  --clay:9px 12px 26px rgba(0,0,0,.45), inset -5px -7px 12px rgba(0,0,0,.28), inset 5px 6px 12px rgba(255,255,255,.07);
+  --clay-sm:5px 7px 14px rgba(0,0,0,.4), inset -3px -4px 8px rgba(0,0,0,.25), inset 3px 4px 8px rgba(255,255,255,.06);
   --press:inset 4px 5px 10px rgba(0,0,0,.45), inset -3px -4px 8px rgba(255,255,255,.06);
-  --glow1:#3b1f45; --glow2:#1b2c52; --glow3:#2c2160;
+  --glow1:oklch(.25 .05 var(--hue)); --glow2:oklch(.24 .05 var(--hue2)); --glow3:oklch(.22 .04 var(--hue));
   color-scheme:dark;
 }
 /* subject colour: any element that sets --sc gets a matching fill and a readable text colour for the theme */

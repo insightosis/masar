@@ -27,7 +27,7 @@ Canvas drawings read the tokens and redraw on the `masar-theme` event.
 light pastel fills, the rounded display face (Baloo Bhaijaan 2) for headings, IBM Plex Sans Arabic for text.
 Each subject keeps its own pastel identity (`LAB.subjects[*].color` for ink, `.soft` for fills). No dark themes.
 
-**Book first:** read the lesson's pages in the student book before writing. Use the book's notation and values
+**Book first (non-negotiable):** every lesson is built from its pages in the student book. Read the lesson's pages in the student book before writing. Use the book's notation and values
 (e.g. physics uses g = 10 m/s², v0x, v0y, Δx, Δy, t′, h_max, R and the word "عجلة"), cover every objective listed on the
 lesson's first page, and put the page range in the header and footer.
 
@@ -73,7 +73,10 @@ Kuwait time), builds that session's lessons, and rewrites `latest.html` with tha
 1. Write `lessons/<id>.html`.
 2. Append the lesson to `LAB.lessons` in `assets/data.js` (with `terms`, `gold`, `prereq`, `related`, `next`).
    Add any new concepts it links to; when a concept gets its own lesson, set `concept.lesson`.
-3. Rewrite every field of `latest.html` (one LESSON-ID line per lesson of the session, plus the session name).
+3. Rewrite every field of `latest.html`: one `LESSON-ID:` line per lesson of the session, the session name, date,
+   subject, title, minutes, link, three `KEY-POINT:` lines (from the book) and one `HOOK-SEED:` line (a curiosity
+   question the lesson answers). The ChatGPT task on the student's iPad builds its message and its follow-up
+   questions from these lines only.
 4. Commit and push to `main`.
 
 ## Study plan

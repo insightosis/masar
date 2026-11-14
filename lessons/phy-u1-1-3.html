@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-subject="physics">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,7 +15,7 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--path:#ff9a4d;--vx:#5aaeff;--vy:#ff6f93;--g:#a98bff}}
 :root[data-theme="dark"]{--path:#ff9a4d;--vx:#5aaeff;--vy:#ff6f93;--g:#a98bff}
 .top .brand{font-size:1.05rem}
-.hero{margin-top:14px;padding:24px 24px 14px;border-radius:30px;background:linear-gradient(170deg,var(--p-sky) 0%,var(--p-peach) 100%);box-shadow:var(--clay)}
+.hero{margin-top:14px;padding:24px 24px 14px;border-radius:30px;background:linear-gradient(160deg,var(--wash) 0%,var(--card) 55%,var(--wash2) 100%);box-shadow:var(--clay)}
 .hero .eyebrow{margin:0;font-weight:700;color:var(--ink)}
 .hero h1{font-size:clamp(2.5rem,9vw,4.2rem);margin:.05em 0 .15em}
 .hero p{max-width:58ch;font-size:1.1rem;margin:0}
@@ -66,6 +66,7 @@ svg{max-width:100%;height:auto;display:block}
 .sym{display:grid;grid-template-columns:64px 1fr;gap:12px;align-items:start;padding:14px;border-radius:24px;background:var(--card);box-shadow:var(--clay-sm)}
 .sym .bub{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:var(--bb,var(--p-peach));box-shadow:var(--clay-sm);font-family:"Noto Serif",Georgia,serif;font-style:italic;font-weight:700;font-size:1.45rem;color:var(--bc,var(--ink));direction:ltr}
 .sym .bub sub{font-size:.55em}
+.sym .bub.sm{font-size:1.1rem}
 .sym h3{margin:0;font-size:1.1rem}
 .sym .en{direction:ltr;unicode-bidi:isolate;font-size:12.5px;color:var(--muted);font-weight:500}
 .sym p{margin:2px 0 0;font-size:14.5px;line-height:1.65}
@@ -139,7 +140,7 @@ svg{max-width:100%;height:auto;display:block}
 .q .opts button:disabled{cursor:default}
 .why{margin:10px 0 0;font-size:14.5px;color:var(--muted)}
 .why[hidden]{display:none}
-.sum{padding:22px;border-radius:30px;background:linear-gradient(150deg,var(--p-peach),var(--p-sky));box-shadow:var(--clay)}
+.sum{padding:22px;border-radius:30px;background:linear-gradient(150deg,var(--wash),var(--wash2));box-shadow:var(--clay)}
 .sum ol{margin:0;padding-inline-start:1.3em;display:grid;gap:6px;font-size:1.05rem}
 .more{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:14px;color:var(--muted);font-size:15px}
 .links{display:grid;gap:10px}
@@ -207,12 +208,12 @@ svg{max-width:100%;height:auto;display:block}
   <div class="syms">
     <div class="sym"><span class="bub"><span>v<sub>0</sub></span></span><div><h3>السرعة الابتدائية <span class="en">Initial velocity</span></h3><p>سرعة الكرة لحظة خروجها من يدك (م/ث).</p><span class="hook">الصفر = لحظة الصفر، بداية الرحلة.</span></div></div>
     <div class="sym"><span class="bub"><span>θ</span></span><div><h3>زاوية الإطلاق <span class="en">Launch angle</span></h3><p>الزاوية بين اتجاه الرمية والأرض (المحور الأفقي).</p><span class="hook">تخيّل عقرب ساعة يرتفع عن خط الأرض.</span></div></div>
-    <div class="sym" style="--bb:var(--p-sky);--bc:var(--vx)"><span class="bub"><span>v<sub>0x</sub></span></span><div><h3>المركبة الأفقية للسرعة <span class="en">Horizontal component</span></h3><p>الجزء من السرعة الذي يمشي مع الأرض. <b>ثابت</b> طوال الرحلة، لذلك v<sub>x</sub> = v<sub>0x</sub>.</p><span class="hook">x خط ممدود على الأرض، مثل سيارة على مثبت السرعة.</span></div></div>
-    <div class="sym" style="--bb:var(--p-pink);--bc:var(--vy)"><span class="bub"><span>v<sub>0y</sub></span></span><div><h3>المركبة الرأسية للسرعة <span class="en">Vertical component</span></h3><p>الجزء الذي يصعد بالكرة. بعد الرمي نسميه v<sub>y</sub>، ويتناقص حتى يصير صفراً عند القمة.</p><span class="hook">y مثل المصعد ↑↓.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky);--bc:var(--vx)"><span class="bub sm"><span>v<sub>0x</sub></span></span><div><h3>المركبة الأفقية للسرعة <span class="en">Horizontal component</span></h3><p>الجزء من السرعة الذي يمشي مع الأرض. <b>ثابت</b> طوال الرحلة، لذلك v<sub>x</sub> = v<sub>0x</sub>.</p><span class="hook">x خط ممدود على الأرض، مثل سيارة على مثبت السرعة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink);--bc:var(--vy)"><span class="bub sm"><span>v<sub>0y</sub></span></span><div><h3>المركبة الرأسية للسرعة <span class="en">Vertical component</span></h3><p>الجزء الذي يصعد بالكرة. بعد الرمي نسميه v<sub>y</sub>، ويتناقص حتى يصير صفراً عند القمة.</p><span class="hook">y مثل المصعد ↑↓.</span></div></div>
     <div class="sym" style="--bb:var(--p-lav);--bc:var(--g)"><span class="bub"><span>g</span></span><div><h3>عجلة الجاذبية <span class="en">Gravitational acceleration</span></h3><p>الكتاب يسمي التسارع "عجلة". مقدارها نحو 10 م/ث² في المسائل، واتجاهها لأسفل دائماً، لذلك a<sub>y</sub> = −g.</p><span class="hook">g من Gravity: الأرض تشدّ.</span></div></div>
-    <div class="sym"><span class="bub"><span>Δx Δy</span></span><div><h3>الإزاحة <span class="en">Displacement</span></h3><p>Δx كم تقدمت الكرة أفقياً، و Δy كم ارتفعت أو نزلت.</p><span class="hook">Δ (دلتا) تعني "التغيّر في".</span></div></div>
+    <div class="sym"><span class="bub"><span>Δ</span></span><div><h3>الإزاحة Δx و Δy <span class="en">Displacement</span></h3><p>Δx كم تقدمت الكرة أفقياً، و Δy كم ارتفعت أو نزلت.</p><span class="hook">Δ (دلتا) تعني "التغيّر في".</span></div></div>
     <div class="sym"><span class="bub"><span>t′</span></span><div><h3>الزمن الكلي <span class="en">Time of flight</span></h3><p>t زمن الوصول لأعلى نقطة، و t′ زمن الرحلة كلها: t′ = 2t.</p><span class="hook">الشَرطة على t′ = "الرحلة كاملة".</span></div></div>
-    <div class="sym"><span class="bub"><span>h<sub>max</sub></span></span><div><h3>أقصى ارتفاع <span class="en">Maximum height</span></h3><p>أعلى نقطة تصلها الكرة، وعندها v<sub>y</sub> = 0.</p><span class="hook">max = الأكبر، القمة.</span></div></div>
+    <div class="sym"><span class="bub sm"><span>h<sub>max</sub></span></span><div><h3>أقصى ارتفاع <span class="en">Maximum height</span></h3><p>أعلى نقطة تصلها الكرة، وعندها v<sub>y</sub> = 0.</p><span class="hook">max = الأكبر، القمة.</span></div></div>
     <div class="sym"><span class="bub"><span>R</span></span><div><h3>المدى الأفقي <span class="en">Range</span></h3><p>المسافة على الأرض بين نقطة الإطلاق ونقطة الوصول على نفس المستوى.</p><span class="hook">R من Range: طول الرحلة على الأرض.</span></div></div>
   </div>
 </section>
@@ -292,7 +293,7 @@ svg{max-width:100%;height:auto;display:block}
 
 <section class="sec" style="--sc:#f07c2a" aria-labelledby="s5">
   <div class="sec-head"><span class="num">5</span><h2 id="s5">رحلة الكرة خطوة بخطوة</h2></div>
-  <div class="boxv"><svg id="anat" viewBox="0 0 720 320" role="img" aria-label="خمس نقاط على المسار: السهم الأزرق بنفس الطول، والسهم الأحمر يقصر حتى يختفي عند القمة ثم يكبر للأسفل"></svg></div>
+  <div class="boxv"><svg id="anat" viewBox="0 0 720 350" role="img" aria-label="خمس نقاط على المسار: السهم الأزرق بنفس الطول، والسهم الأحمر يقصر حتى يختفي عند القمة ثم يكبر للأسفل"></svg></div>
   <ul class="pts" style="margin-top:12px">
     <li style="--b:var(--vx)">السهم <span class="x">الأزرق</span> بنفس الطول في كل نقطة: المركبة الأفقية ثابتة.</li>
     <li style="--b:var(--vy)">السهم <span class="y">الأحمر</span> يقصر حتى يختفي عند القمة، ثم يكبر للأسفل. بدون هواء، تصطدم الكرة بالأرض بنفس سرعة الإطلاق.</li>
@@ -500,7 +501,7 @@ $("#dropBtn").addEventListener("click",playDrop);
 function drawAnat(){var s=solve(20,55),ox=70,oy=272,ka=3.4,h="",k=Math.min(590/s.R,215/s.H);
   function mk(id,col){return '<marker id="'+id+'" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="'+col+'"/></marker>';}
   h+="<defs>"+mk("ac","var(--vx)")+mk("ar","var(--vy)")+mk("ag","var(--g)")+"</defs>";
-  h+='<rect x="0" y="'+oy+'" width="720" height="48" fill="var(--ground)"/><line x1="0" y1="'+oy+'" x2="720" y2="'+oy+'" stroke="var(--ground-line)" stroke-width="3"/>';
+  h+='<rect x="0" y="'+oy+'" width="720" height="78" fill="var(--ground)"/><line x1="0" y1="'+oy+'" x2="720" y2="'+oy+'" stroke="var(--ground-line)" stroke-width="3"/>';
   var d="";for(var i=0;i<=80;i++){var t=s.T*i/80,p=posAt(s,t);d+=(i?"L":"M")+(ox+p.x*k).toFixed(1)+" "+(oy-p.y*k).toFixed(1);}
   h+='<path d="'+d+'" fill="none" stroke="var(--path)" stroke-width="4" stroke-linecap="round"/>';
   [0,.25,.5,.75,1].forEach(function(f){var t=s.T*f,p=posAt(s,t),vy=s.vy-G*t,px=ox+p.x*k,py=oy-Math.max(0,p.y)*k;
@@ -511,8 +512,9 @@ function drawAnat(){var s=solve(20,55),ox=70,oy=272,ka=3.4,h="",k=Math.min(590/s
   h+='<line x1="'+(px-26)+'" y1="'+(py+10)+'" x2="'+(px-26)+'" y2="'+(py+10+G*ka)+'" stroke="var(--g)" stroke-width="3.5" marker-end="url(#ag)"/><text x="'+(px-42)+'" y="'+(py+36)+'" fill="var(--g)" font-family="Noto Serif,serif" font-style="italic" font-size="18" text-anchor="middle">g</text>';
   var T='font-family="IBM Plex Sans Arabic,sans-serif" font-weight="700" font-size="17" text-anchor="middle" style="direction:rtl"';
   h+='<text x="'+px+'" y="'+Math.max(22,py-22)+'" fill="var(--text)" '+T+'>القمة: السرعة الرأسية صفر</text>';
-  h+='<text x="'+(ox+30)+'" y="'+(oy+34)+'" fill="var(--vy)" '+T+'>صعود سريع ↑</text>';
-  h+='<text x="'+Math.min(640,ox+s.R*k-10)+'" y="'+(oy+34)+'" fill="var(--vy)" '+T+'>هبوط بنفس السرعة ↓</text>';
+  var lx=ox+s.R*k;
+  h+='<text x="'+(ox+95)+'" y="'+(oy+44)+'" fill="var(--vy)" '+T+'>صعود سريع ↑</text>';
+  h+='<text x="'+(lx-125)+'" y="'+(oy+44)+'" fill="var(--vy)" '+T+'>هبوط بنفس السرعة ↓</text>';
   $("#anat").innerHTML=h;}
 
 /* ---------- activities ---------- */
