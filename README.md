@@ -73,19 +73,33 @@ sleep at 22:00. The dashboard draws today's timeline; the plan page shows every 
 ## Two sessions a day
 
 `plan.json` gives each day `sessions.am` (06:00, short, before school, starts with recall of yesterday) and
-`sessions.pm` (18:00, the longer lessons). The lesson task runs before each session (about 05:30 and 17:30
-Kuwait time), builds that session's lessons, and rewrites `latest.html` with that session's LESSON-ID(s).
+`sessions.pm` (18:00, the longer lessons). A scheduled task runs before each session (about 05:30 and 17:30
+Kuwait time). Each run:
 
-## Publishing a lesson
+1. **Publishes this session.** For every `new` item: take `masar-books/ready/<id>.html` if it is there,
+   otherwise build it now (next section) into `ready/`. Then
+   `python3 tools/publish.py --date YYYY-MM-DD --session am|pm --ready ../masar-books/ready <ids>`
+   copies the pages, adds the `LAB.lessons` entries and rewrites `latest.html`. Saturday `weekly-am` /
+   `weekly-pm` items and the December `review` / `mock` / `warmup` items are pages built the same way
+   (ids like `weekly-2026-11-21-am`, `review-math`, `mock-math`) from the lessons they list.
+2. **Builds ahead.** Builds the next session's `new` lessons into `masar-books/ready/` (not published), so one
+   failed run never leaves the student without a lesson: the next run publishes what is ready.
+3. Commits and pushes both repos.
 
-1. Write `lessons/<id>.html`.
-2. Append the lesson to `LAB.lessons` in `assets/data.js` (with `terms`, `gold`, `prereq`, `related`, `next`).
-   Add any new concepts it links to; when a concept gets its own lesson, set `concept.lesson`.
-3. Rewrite every field of `latest.html`: one `LESSON-ID:` line per lesson of the session, the session name, date,
-   subject, title, minutes, link, three `KEY-POINT:` lines (from the book) and one `HOOK-SEED:` line (a curiosity
-   question the lesson answers). The ChatGPT task on the student's iPad builds its message and its follow-up
-   questions from these lines only.
-4. Commit and push to `main`.
+## Building a lesson
+
+- Source: `masar-books/books/<subject>/pNNN.txt` (OCR) and `pNNN.jpg` (look at the images for every law,
+  equation, table, figure and worked example). Pages are in `masar-books/index.json` and `plan.json`.
+- Template: `masar-books/ready/geo-u1-1-1.html` (non-maths), `math-u1-1-1.html` (radicals, formulas),
+  `chem-u1-1-1.html` (formulas, sub/superscripts). Link `../assets/lesson.css` and `../assets/lesson.js`,
+  put `style="--sc:<subject colour>"` on `<body>`, and finish with `Lesson.init({id:"<id>"})`. Activities are
+  markup only (see the header of `assets/lesson.js`): `sort`, `match`, `order`, `gap`, `type`, plus `.q` quiz
+  questions. Pick 2 or 3 activities that fit the content; every one counts for the parent page.
+- Add `<id>: {entry, latest}` to `masar-books/ready/entries.json`: `entry` = the LAB.lessons record without
+  `date` (`terms`, `gold`, `prereq`, `related`, `next`, `minutes` from plan.json), `latest` = three
+  `keypoints` straight from the book and one `hook` (a curiosity question the lesson answers, no answer).
+- Check before publishing: open the page at 400 px wide in light and dark (Playwright + system Chrome),
+  no console errors, nothing wider than the screen, no decoration over text, every activity solvable.
 
 ## Study plan
 

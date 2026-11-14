@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="geology">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>علم الأرض (الجيولوجيا) · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+body{--rock1:#e9b48f;--rock2:#d98f68;--rock3:#c4724f;--rock4:#a85c3f;--lava:#ff6a3d}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--rock1:#8a5a43;--rock2:#7a4a35;--rock3:#6a3d2b;--rock4:#58301f}}
+:root[data-theme="dark"] body{--rock1:#8a5a43;--rock2:#7a4a35;--rock3:#6a3d2b;--rock4:#58301f}
+.split{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;margin:6px 0 14px}
+.split .w{padding:10px 18px;border-radius:20px;background:var(--card);box-shadow:var(--clay-sm);text-align:center}
+.split .w b{display:block;font-family:var(--display);font-size:1.6rem;direction:ltr;color:var(--ink)}
+.split .w span{font-size:14px;color:var(--muted)}
+.split .op{font-family:var(--display);font-weight:800;font-size:1.6rem;color:var(--muted)}
+.fields{display:flex;flex-wrap:wrap;gap:8px}
+.fields span{font-size:13.5px;padding:4px 12px;border-radius:14px;background:var(--card);box-shadow:var(--clay-sm)}
+.fields span i{font-style:normal;color:var(--muted);font-size:12px;margin-inline-start:6px;direction:ltr;unicode-bidi:isolate}
+.mtn{display:block;width:100%;height:auto;border-radius:22px;background:var(--sky);box-shadow:var(--press)}
+.presets{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.clock{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.clock .box b{font-family:var(--display);font-size:1.5rem;color:var(--ink);direction:ltr;unicode-bidi:isolate}
+.help{display:inline-block;font-size:12px;font-weight:700;padding:1px 9px;border-radius:9px;background:var(--p-sky);color:var(--text);margin-inline-end:6px}
+</style>
+</head>
+<body style="--sc:#e2653f">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الجيولوجيا</span><span class="chip">الدرس 1 · ص 14 إلى 18</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الأولى: الكون والأرض · الفصل الأول: مقدمة في علم الأرض</p>
+  <h1 id="t">علم الأرض (الجيولوجيا)</h1>
+  <p>الأرض اللي تحت رجلك تتغيّر الحين وأنت تقرأ هذه الجملة. <mark>بعض التغيّر سريع مثل بركان، وأغلبه بطيء جداً لدرجة إن عمر الإنسان كله ما يكفي ليلاحظه.</mark> الجيولوجيا هي العلم اللي يقرأ هذا التغيّر.</p>
+  <svg class="art" viewBox="0 0 520 90" aria-hidden="true">
+    <path d="M0 90 L0 62 Q70 50 120 58 L190 26 L230 34 L262 10 L300 40 Q380 56 440 46 L520 52 L520 90Z" fill="var(--rock2)"/>
+    <path d="M0 90 L0 72 Q120 64 260 70 Q400 76 520 66 L520 90Z" fill="var(--rock3)"/>
+    <path d="M0 90 L0 82 Q160 78 300 84 Q420 88 520 80 L520 90Z" fill="var(--rock4)"/>
+    <circle cx="262" cy="8" r="5" fill="var(--lava)" opacity=".9"><animate attributeName="cy" values="10;-6;10" dur="2.6s" repeatCount="indefinite"/><animate attributeName="opacity" values=".9;0;.9" dur="2.6s" repeatCount="indefinite"/></circle>
+    <circle cx="256" cy="10" r="3.5" fill="var(--lava)"><animate attributeName="cy" values="10;-2;10" dur="2s" begin=".6s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0;1" dur="2s" begin=".6s" repeatCount="indefinite"/></circle>
+  </svg>
+</section>
+
+<section class="panel" id="lab-sec" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">آلة الزمن: جبل يتآكل</h2><span class="legend">التعرية تُنزل جبال أمريكا الشمالية نحو 3 cm كل 1000 سنة</span></div>
+  <svg class="mtn" id="mtn" viewBox="0 0 600 240" role="img" aria-label="جبل ارتفاعه يتغير مع الزمن"></svg>
+  <div class="tiles" style="margin-top:10px">
+    <div class="tile"><span>مرّ من الزمن</span><b id="tY">0</b><small id="tYu">سنة</small></div>
+    <div class="tile"><span>نزلت القمة</span><b id="tD">0</b><small id="tDu">m</small></div>
+    <div class="tile"><span>الارتفاع الباقي</span><b id="tH">3000</b><small>m</small></div>
+  </div>
+  <div class="controls"><div class="ctl"><label for="yr">حرّك الزمن <b id="yrL">0</b></label><input type="range" id="yr" min="0" max="1000" value="0" aria-describedby="yrL"></div></div>
+  <div class="presets">
+    <button class="tg" type="button" data-y="80">عمر إنسان (80 سنة)</button>
+    <button class="tg" type="button" data-y="10000">منذ آخر عصر جليدي</button>
+    <button class="tg" type="button" data-y="65000000">منذ انقراض الديناصورات</button>
+    <button class="tg" type="button" data-y="100000000">100 مليون سنة</button>
+  </div>
+  <p class="msg" id="mMsg" aria-live="polite">جبل ارتفاعه 3000 متر. اختر زمناً وراقب.</p>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">مصطلحات الدرس</h2></div>
+  <p class="muted" style="margin-top:-4px">ست كلمات، وكل الدرس يدور حولها.</p>
+  <div class="syms">
+    <div class="sym"><span class="bub sm"><span>Geo</span></span><div><h3>الجيولوجيا (علم الأرض) <span class="en">Geology</span></h3><p>علم يدرس الأرض: نشأتها، وعلاقتها بالأجرام السماوية، وتركيبها، وأحداثها، والعوامل اللي ما زالت تغيّرها.</p><span class="hook">Geo = أرض، logy = علم. "علم الأرض" حرفياً.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span>⚙</span></span><div><h3>الجيولوجيا الفيزيائية <span class="en">Physical Geology</span></h3><p>تدرس المواد اللي تتكوّن منها الأرض، والعمليات اللي تصير تحت سطحها أو فوقه.</p><span class="hook">فيزيائية = "كيف تشتغل الأرض الحين؟"</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span>⏳</span></span><div><h3>الجيولوجيا التاريخية <span class="en">Historical Geology</span></h3><p>ترتّب زمنياً التغيّرات الفيزيائية والبيولوجية اللي صارت في الماضي الجيولوجي.</p><span class="hook">تاريخية = "وش صار، وبأي ترتيب؟"</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub"><span>💥</span></span><div><h3>نظرية الكوارث <span class="en">Catastrophism</span></h3><p>الجبال والوديان تكوّنت فجأة بكوارث هائلة، أسبابها ما كانت معروفة للعلماء وقتها.</p><span class="hook">كارثة = ضربة وحدة كبيرة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub"><span>🔑</span></span><div><h3>الانتظام المستديم (الوتيرة الواحدة) <span class="en">Uniformitarianism</span></h3><p>القوانين الفيزيائية والكيميائية والبيولوجية اليوم هي نفسها في الماضي الجيولوجي.</p><span class="hook">"الحاضر هو مفتاح الماضي".</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub sm"><span>4.5</span></span><div><h3>الزمن الجيولوجي <span class="en">Geological Time</span></h3><p>الزمن الطويل جداً لتاريخ الأرض. عمرها نحو 4.5 مليار سنة، عُرف بالنظائر المشعّة.</p><span class="hook">4.5 مليار = 4,500 مليون سنة.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">ما هي الجيولوجيا؟</h2></div>
+  <div class="split" aria-label="أصل الكلمة">
+    <div class="w"><b>Geo</b><span>الأرض</span></div><span class="op">+</span><div class="w"><b>logos</b><span>العلم</span></div><span class="op">=</span><div class="w"><b>Geology</b><span>علم الأرض</span></div>
+  </div>
+  <p>علم يبحث في <b>كل ما يتعلق بالأرض</b>: كيف نشأت، وعلاقتها بالأجرام السماوية، ومم تتركب، والأحداث اللي مرّت بها، والعوامل الداخلية والخارجية اللي ما زالت تؤثّر فيها. وفهمه يحتاج الفيزياء والكيمياء والأحياء مع بعض.</p>
+  <h3 style="margin:18px 0 10px">مجالان كبيران</h3>
+  <div class="vs">
+    <div class="box sky"><h3>الجيولوجيا الفيزيائية</h3><p>المواد المكوّنة للأرض، والعمليات تحت سطح الأرض أو على سطحها. مثال: صخرة بركانية تخبرنا إنها كانت كتلة منصهرة في أعماق الأرض.</p></div>
+    <span class="mid">و</span>
+    <div class="box butter"><h3>الجيولوجيا التاريخية</h3><p>تضع ترتيباً زمنياً للتغيّرات الفيزيائية والبيولوجية في الأزمنة الجيولوجية الماضية.</p></div>
+  </div>
+  <p class="tip" style="margin-top:14px"><b>ليش ندرس الفيزيائية أولاً؟</b> لأن علينا نفهم كيف تعمل الأرض قبل ما نحاول نحل لغز ماضيها. مثل المحقق: يعرف أولاً كيف تنطبع آثار الأقدام على الرمل، وبعدين يقرأ آثاراً قديمة.</p>
+
+  <div class="act" data-act="sort" data-key="sort" data-bins='["الجيولوجيا الفيزيائية","الجيولوجيا التاريخية"]'
+       data-items='[["كيف يثور البركان",0],["مم تتكوّن الصخور",0],["كيف تحدث الزلازل",0],["متى انقرضت الديناصورات",1],["ترتيب أحداث تاريخ الأرض",1],["تغيّر الكائنات الحية عبر الأزمنة",1]]'
+       data-ok="ممتاز! الفيزيائية: مواد وعمليات. التاريخية: ترتيب زمني لما حدث.">
+    <h3>صنّف <span class="k">نشاط</span></h3>
+    <p>كل سؤال من هذه الأسئلة يخص أي مجال؟</p>
+  </div>
+
+  <h3 style="margin:22px 0 10px">تخصصات كثيرة تحت المجالين <span class="muted" style="font-size:14px;font-weight:500">(جدول 1 في الكتاب)</span></h3>
+  <div class="fields">
+    <span>علم المعادن<i>Mineralogy</i></span><span>علم البلّورات<i>Crystallography</i></span><span>علم الصخور<i>Petrology</i></span><span>علم الرسوبيات<i>Sedimentology</i></span>
+    <span>جيولوجيا النفط<i>Petroleum Geology</i></span><span>جيولوجيا المياه<i>Hydrogeology</i></span><span>الجيوكيمياء<i>Geochemistry</i></span><span>الجيوفيزياء<i>Geophysics</i></span>
+    <span>علم الزلازل<i>Seismology</i></span><span>علم البراكين<i>Volcanology</i></span><span>علم المحيطات<i>Oceanology</i></span><span>الجيومورفولوجيا (شكل الأرض)<i>Geomorphology</i></span>
+    <span>الجيولوجيا التركيبية<i>Structural Geology</i></span><span>الجيولوجيا الاقتصادية<i>Economic Geology</i></span><span>جيولوجيا التعدين<i>Mining Geology</i></span><span>علم الأحافير<i>Paleontology</i></span>
+    <span>جيولوجيا الآثار القديمة<i>Archeological Geology</i></span><span>جيولوجيا الكواكب<i>Planetary Geology</i></span><span>علم المناخ القديم<i>Paleoclimatology</i></span><span>علم وصف الطبقات<i>Stratigraphy</i></span>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">علم الأرض يتكلم مع بقية العلوم</h2></div>
+  <p>الخريطة الذهنية في الكتاب (شكل 3) تربط علم الأرض بخمسة علوم. كل علم يعطيه فروعاً:</p>
+  <div class="grid2">
+    <div class="box lav"><h3>الفيزياء</h3><p>علم الزلازل، علم البراكين، الجيوفيزياء، الجيولوجيا التركيبية</p></div>
+    <div class="box mint"><h3>الكيمياء</h3><p>علم المعادن، علم الصخور، جيولوجيا النفط</p></div>
+    <div class="box pink"><h3>الأحياء</h3><p>علم الأحافير</p></div>
+    <div class="box sky"><h3>الفلك</h3><p>جيولوجيا الكواكب</p></div>
+    <div class="box peach"><h3>البحار</h3><p>علم المحيطات، علم الرسوبيات</p></div>
+  </div>
+  <div class="act" data-act="match" data-key="match"
+       data-pairs='[["الفيزياء","علم الزلازل"],["الكيمياء","علم المعادن"],["الأحياء","علم الأحافير"],["الفلك","جيولوجيا الكواكب"],["البحار","علم المحيطات"]]'
+       data-ok="كل الأزواج صحيحة! الآن تقدر ترسم الخريطة الذهنية من ذاكرتك.">
+    <h3>وصّل كل علم بفرعه <span class="k">نشاط</span></h3>
+    <p>اختر علماً من اليمين، ثم فرعه من اليسار.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">الأرض دائمة التغيّر</h2></div>
+  <div class="grid2">
+    <div class="box pink"><h3>تغيّر سريع وعنيف</h3><p>البراكين تغيّر شكل السطح في أيام، والانزلاقات الأرضية، والزلازل في قاع المحيط تسبّب أمواج تسونامي تغمر اليابسة.</p></div>
+    <div class="box sky"><h3>تغيّر بطيء جداً</h3><p>أغلب التغيّرات بطيئة لدرجة إنها تكاد لا تُلاحظ طوال حياة الإنسان، مثل تآكل الجبال اللي جرّبته فوق.</p></div>
+  </div>
+  <h3 style="margin:18px 0 8px">وفي الكويت نفسها</h3>
+  <ul class="pts">
+    <li style="--b:var(--sc)"><b>وادي الباطن</b> على حدود الكويت الغربية كان نهراً في الماضي.</li>
+    <li style="--b:var(--sc)"><b>منطقة الرقة</b> كانت مليئة بالغابات، والدليل بقايا أشجار متحجّرة اكتُشفت فيها.</li>
+    <li style="--b:var(--sc)">حديث النبي ﷺ: «لا تقوم الساعة حتى تعود أرض العرب مروجاً وأنهاراً» (رواه مسلم): كانت كذلك، وستعود.</li>
+    <li style="--b:var(--sc)">مرّت الأرض بعصور جليدية كثيرة، آخرها قبل نحو عشرة آلاف سنة.</li>
+  </ul>
+</section>
+
+<section class="sec" aria-labelledby="s5">
+  <div class="sec-head"><span class="num">5</span><h2 id="s5">رحلة الفكرة عبر التاريخ</h2></div>
+  <ol class="tline">
+    <li><span class="yr">-2300</span><div class="ev"><b>اليونانيون</b><span>كتبوا عن الأحافير والزلازل والبراكين قبل أكثر من 2300 سنة، لكن مع خرافات: الأرض قرص مسطّح يحيطه الماء، ثم أسطوانة. علومهم قامت على الفلسفة والرؤى.</span></div></li>
+    <li><span class="yr">العرب</span><div class="ev"><b>العلماء العرب والمسلمون</b><span>بنوا على تفسير الظواهر والبحث العلمي: <b>إبراهيم الفزاري</b> صنع أول جهاز استخدمه العرب لقياس ارتفاع النجوم، <b>البيروني</b> قاس محيط الأرض ووجد الوزن النوعي لبعض الفلزات والأحجار الكريمة، <b>ابن سينا</b> أول من درس المعادن دراسة علمية وكتب عن البحار وتكوّن الصخور الرسوبية، و<b>السيوطي</b> سجّل الزلازل وتواريخها وأضرارها.</span></div></li>
+    <li><span class="yr">1564</span><div class="ev"><b>جاليليو (1564 إلى 1642)</b><span>أول من برهن أن الأرض تدور حول محورها من الغرب إلى الشرق.</span></div></li>
+    <li><span class="yr">1600s</span><div class="ev"><b>نظرية الكوارث</b><span>سيطرت في القرنين السابع عشر والثامن عشر.</span></div></li>
+    <li><span class="yr">1795</span><div class="ev"><b>جيمس هاتون</b><span>نشر كتاب "نظرية الأرض" ووضع مبدأ الانتظام المستديم، ركيزة الجيولوجيا الحديثة.</span></div></li>
+    <li><span class="yr">1905</span><div class="ev"><b>أول تحديد لعمر الأرض</b><span>باستخدام الطاقة الإشعاعية، ثم النظائر المشعّة والأجهزة الحديثة.</span></div></li>
+    <li><span class="yr">القرن 20</span><div class="ev"><b>د. فاروق الباز</b><span>جيولوجي عربي عمل مع ناسا: اختار مواقع هبوط بعثات أبولو على القمر، ودرّب روّاد الفضاء، وطوّر الاستشعار عن بُعد لاكتشاف آثار مصرية.</span></div></li>
+  </ol>
+</section>
+
+<section class="sec" aria-labelledby="s6">
+  <div class="sec-head"><span class="num">6</span><h2 id="s6">فكرتان تتصارعان</h2></div>
+  <div class="vs">
+    <div class="box pink"><h3>💥 نظرية الكوارث</h3><p>الجبال والوديان تكوّنت <b>فجأة</b> بعد كوارث هائلة، بعوامل ما عرفها العلماء وقتها.</p></div>
+    <span class="mid">ضد</span>
+    <div class="box mint"><h3>🔑 الانتظام المستديم</h3><p>القوى والعمليات اللي تشكّل الأرض اليوم هي نفسها من زمن طويل، فالتغيّر <b>تراكم بطيء</b> لعمليات نراها الآن.</p></div>
+  </div>
+  <div class="qbox" style="margin-top:14px"><b>"الحاضر هو مفتاح الماضي"</b>: لنفهم صخرة عمرها ملايين السنين، ندرس كيف تتكوّن صخور مثلها اليوم. نهر اليوم يرسّب الرمل في طبقات، فإذا وجدنا طبقات رمل قديمة نعرف أن نهراً مرّ هنا، مثل وادي الباطن.</div>
+</section>
+
+<section class="sec" aria-labelledby="s7">
+  <div class="sec-head"><span class="num">7</span><h2 id="s7">كم عمر الأرض؟</h2></div>
+  <p>هاتون وغيره عرفوا أن الزمن الجيولوجي طويل جداً، لكن ما كان عندهم طريقة لقياسه. أول محاولة كانت في <b>1905</b> بالطاقة الإشعاعية، واليوم بالنظائر المشعّة نعرف أزمنة دقيقة:</p>
+  <div class="clock">
+    <div class="box peach"><span class="muted">عمر الأرض</span><br><b>≈ 4.5</b> مليار سنة</div>
+    <div class="box lav"><span class="muted">انقراض الديناصورات</span><br><b>≈ 65</b> مليون سنة</div>
+    <div class="box sky"><span class="muted">آخر عصر جليدي</span><br><b>≈ 10,000</b> سنة</div>
+  </div>
+  <p class="tip" style="margin-top:14px"><span class="help">مساعدة للفهم</span>لو ضغطنا عمر الأرض كله في يوم واحد من 24 ساعة: الديناصورات تنقرض قبل منتصف الليل بـ 21 دقيقة تقريباً، وآخر عصر جليدي قبل منتصف الليل بأقل من ثانية!</p>
+  <div class="act" data-act="type" data-key="type" data-answer="100" data-tol="0"
+       data-ok="صح! 3000 m = 300,000 cm، وكل 3 cm تأخذ 1000 سنة: 100,000 × 1000 = 100 مليون سنة."
+       data-hint="حوّل 3000 m إلى cm، اقسم على 3، واضرب في 1000 سنة."
+       data-no="ليست هذه. احسب كم مرة تتكرر الـ 3 cm في 3000 m.">
+    <h3>احسبها <span class="k">نشاط</span></h3>
+    <p>قمة ارتفاعها 3000 m، والتعرية تُنزلها 3 cm كل 1000 سنة. كم <b>مليون سنة</b> تحتاج لتصل لمستوى سطح البحر؟</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">8</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">9</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>الجيولوجيا التي تتناول المواد المكوّنة للأرض والعمليات تحت سطحها وعليه هي:</p>
+      <div class="opts"><button>التاريخية</button><button data-ok>الفيزيائية</button><button>الاقتصادية</button></div>
+      <p class="why" hidden>الصحيح: الفيزيائية. التاريخية ترتّب الأحداث زمنياً.</p></div>
+    <div class="q"><p>العبارة «الحاضر هو مفتاح الماضي» تلخّص:</p>
+      <div class="opts"><button>نظرية الكوارث</button><button data-ok>مبدأ الانتظام المستديم</button><button>دوران الأرض حول محورها</button></div>
+      <p class="why" hidden>الصحيح: الانتظام المستديم، الذي وضعه جيمس هاتون سنة 1795.</p></div>
+    <div class="q"><p>يعتقد كثيرون أن الأرض ثابتة لا تتغيّر لأن:</p>
+      <div class="opts"><button>الأرض توقفت عن التغيّر</button><button data-ok>أغلب التغيّرات بطيئة جداً لا تُلاحظ خلال حياة الإنسان</button><button>التغيّرات تحدث في الفضاء فقط</button></div>
+      <p class="why" hidden>الصحيح: التغيّر مستمر، لكن أغلبه بطيء جداً. جبل يتآكل 2.4 mm فقط خلال 80 سنة.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li>الجيولوجيا مجالان: <b>فيزيائية</b> (مواد وعمليات) و<b>تاريخية</b> (ترتيب زمني للأحداث)، والفيزيائية تُدرس أولاً.</li>
+      <li><b>الكوارث</b>: تغيّر مفاجئ بكوارث هائلة. <b>الانتظام المستديم</b> (هاتون 1795): القوانين نفسها، والحاضر مفتاح الماضي.</li>
+      <li>عمر الأرض ≈ <b>4.5 مليار سنة</b> بالنظائر المشعّة، والديناصورات انقرضت قبل ≈ 65 مليون سنة.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الجيولوجيا، الصف الحادي عشر، الوحدة الأولى، ص 14 إلى 18</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"geo-u1-1-1"});
+(function(){
+"use strict";
+var RATE=0.03/1000, H0=3000, svg=document.getElementById("mtn"), yr=document.getElementById("yr");
+function $(i){return document.getElementById(i);}
+/* slider 0..1000 maps to 0 .. 100 million years on a log scale so tiny and huge times both fit */
+function toYears(v){return v<=0?0:Math.round(Math.pow(10,8*v/1000));}
+function toSlider(y){return y<=0?0:Math.round(1000*Math.log10(y)/8);}
+function fmtY(y){if(y>=1e6)return [(y/1e6).toLocaleString("ar",{maximumFractionDigits:1}),"مليون سنة"];if(y>=1e3)return [Math.round(y).toLocaleString("ar"),"سنة"];return [String(y),"سنة"];}
+function fmtD(m){if(m<0.01)return [(m*1000).toLocaleString("ar",{maximumFractionDigits:1}),"mm"];if(m<1)return [(m*100).toLocaleString("ar",{maximumFractionDigits:1}),"cm"];return [Math.round(m).toLocaleString("ar"),"m"];}
+function draw(y){
+  var d=Math.min(H0,y*RATE), h=H0-d, top=200-170*(h/H0), w=600;
+  var s='<rect x="0" y="0" width="600" height="240" fill="var(--sky)"/>';
+  s+='<line x1="0" y1="'+(200-170)+'" x2="600" y2="'+(200-170)+'" stroke="var(--gridline)" stroke-dasharray="4 6"/><text x="590" y="'+(200-174)+'" font-size="12" text-anchor="end" fill="var(--muted)" font-family="var(--mono)">3000 m</text>';
+  var peak='M40 200 L'+(300-150*(0.35+0.65*h/H0))+' '+(200-0.45*(200-top))+' L300 '+top+' L'+(300+150*(0.35+0.65*h/H0))+' '+(200-0.5*(200-top))+' L560 200Z';
+  s+='<path d="'+peak+'" fill="var(--rock2)"/>';
+  s+='<clipPath id="cp"><path d="'+peak+'"/></clipPath><g clip-path="url(#cp)"><rect x="0" y="'+(200-(200-top)*0.62)+'" width="600" height="300" fill="var(--rock3)"/><rect x="0" y="'+(200-(200-top)*0.3)+'" width="600" height="300" fill="var(--rock4)"/></g>';
+  s+='<rect x="0" y="200" width="600" height="40" fill="var(--ground)"/><line x1="0" y1="200" x2="600" y2="200" stroke="var(--ground-line)" stroke-width="2"/>';
+  s+='<text x="12" y="224" font-size="13" fill="var(--muted)">مستوى سطح البحر</text>';
+  svg.innerHTML=s;
+  var a=fmtY(y),b=fmtD(d);$("tY").textContent=a[0];$("tYu").textContent=a[1];$("tD").textContent=b[0];$("tDu").textContent=b[1];
+  $("tH").textContent=Math.max(0,Math.round(h)).toLocaleString("ar");$("yrL").textContent=a[0]+" "+a[1];
+  var m=$("mMsg");
+  if(y===0)m.textContent="جبل ارتفاعه 3000 متر. اختر زمناً وراقب.";
+  else if(d<1)m.textContent="الفرق أصغر من أن تراه! لهذا يظن كثيرون أن الأرض ثابتة لا تتغيّر.";
+  else if(h>1)m.textContent="الآن صار التغيّر واضحاً. الزمن الجيولوجي طويل لدرجة تذيب الجبال.";
+  else m.textContent="وصلت القمة لمستوى سطح البحر بعد 100 مليون سنة، كما يقول الكتاب.";
+  m.className="msg"+(h<=1?" ok":"");
+}
+yr.addEventListener("input",function(){draw(toYears(+yr.value));});
+[].forEach.call(document.querySelectorAll(".presets .tg"),function(b){b.addEventListener("click",function(){var y=+b.dataset.y;yr.value=toSlider(y);draw(y);});});
+draw(0);
+})();
+</script>
+</body>
+</html>
