@@ -118,7 +118,7 @@ var lastDay={};P.days.forEach(function(d){d.items.forEach(function(it){if(it.typ
 document.getElementById("cover").innerHTML=Object.keys(S).map(function(k){
   var ls=P.catalog.filter(function(c){return c.subject===k;}),mins=ls.reduce(function(a,c){return a+c.minutes;},0),dn=ls.filter(function(c){return Lab.isDone(c.id);}).length;
   return '<div class="cv" style="--sc:'+S[k].color+'"><div class="row"><h3>'+esc(S[k].name)+'</h3>'+Lab.icon(S[k].icon,22)+'</div>'
-   +'<p><b>'+ls.length+'</b> درساً · ≈ <b>'+Math.round(mins/60)+'</b> ساعة</p><p>ينتهي التعلّم: <b>'+fmt(lastDay[k])+'</b></p><p>أنجزت <b>'+dn+'</b> من '+ls.length+'</p></div>';}).join("");
+   +'<p><b>'+ls.length+'</b> درساً · ≈ <b>'+Math.round(mins/60)+'</b> ساعة</p><p>ينتهي التعلّم: <strong style="color:var(--text);font-weight:600">'+fmt(lastDay[k])+'</strong></p><p>أنجزت <b>'+dn+'</b> من '+ls.length+'</p></div>';}).join("");
 
 /* days by week (weeks start Sunday) */
 var weeks=[],cur=null;
