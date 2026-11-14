@@ -7,58 +7,67 @@
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/site.css">
 <style>
-.hero{display:grid;grid-template-columns:1.35fr 1fr;gap:14px;margin-top:18px}
+.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:16px;margin-top:18px}
 @media (max-width:780px){.hero{grid-template-columns:1fr}}
-.today{position:relative;overflow:hidden;border-radius:22px;padding:22px;border:1px solid var(--line);background:linear-gradient(150deg,#1d2763,#111840 70%)}
-.today::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:6px;background:var(--sc)}
-.today .arc{position:absolute;inset-inline-end:-40px;bottom:-60px;width:260px;opacity:.5;pointer-events:none}
-.eyebrow{margin:0;font-weight:700;font-size:14px;color:var(--sc)}
-.today h1{font-size:clamp(2rem,6.5vw,3.2rem);margin:.15em 0 .2em}
-.meta{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;color:var(--muted);font-size:14.5px}
-.cta{display:inline-flex;align-items:center;gap:10px;margin-top:16px;background:var(--sc);color:#141005;text-decoration:none;font-weight:700;padding:10px 22px;border-radius:14px}
-.cta:hover{filter:brightness(1.08)}
+.today{position:relative;overflow:hidden;padding:24px 24px 22px;background:linear-gradient(160deg,var(--soft) 0%,#fff 75%)}
+.today .blob{position:absolute;inset-inline-end:-50px;top:-50px;width:190px;height:190px;border-radius:50%;background:var(--soft);box-shadow:var(--clay);opacity:.9}
+.today .ball{position:absolute;inset-inline-end:34px;top:38px;width:38px;height:38px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff 0 16%,var(--sc) 17% 100%);box-shadow:var(--clay-sm);animation:bob 3.2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-10px)}}
+.eyebrow{margin:0;font-weight:700;font-size:14px;color:var(--sc);position:relative}
+.today h1{font-size:clamp(2.1rem,7vw,3.3rem);margin:.1em 0 .15em;position:relative}
+.meta{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;color:var(--muted);font-size:14.5px;position:relative}
+.today .btn{margin-top:16px;background:var(--soft);position:relative}
 .done-badge{display:inline-flex;align-items:center;gap:6px;color:var(--ok);font-weight:700;font-size:14px}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.stat{border:1px solid var(--line);border-radius:16px;padding:12px 14px;background:rgba(20,28,69,.75)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat{padding:14px 16px;border-radius:22px;background:var(--card);box-shadow:var(--clay-sm)}
 .stat span{display:block;font-size:13px;color:var(--muted)}
-.stat b{font-family:var(--mono);font-size:clamp(1.6rem,5vw,2.2rem);font-variant-numeric:tabular-nums}
+.stat b{font-family:var(--display);font-weight:800;font-size:clamp(1.9rem,6vw,2.5rem);line-height:1.1;font-variant-numeric:tabular-nums}
 .stat small{color:var(--muted);margin-inline-start:4px}
+.stat:nth-child(1){background:#fff4e6}.stat:nth-child(2){background:#e9fbf2}.stat:nth-child(3){background:#fde9f0}.stat:nth-child(4){background:#efeaff}
 
-.subjects{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
-.subj{border:1px solid var(--line);border-radius:16px;padding:12px 14px;background:rgba(20,28,69,.75);color:var(--sc)}
+.sessions{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:700px){.sessions{grid-template-columns:1fr}}
+.sess{padding:16px 18px;border-radius:var(--r);background:var(--card);box-shadow:var(--clay)}
+.sess h3{margin:0 0 10px;font-size:1.15rem;display:flex;align-items:center;gap:10px}
+.sess h3 .time{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--muted);direction:ltr}
+.sess h3 .ic{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;box-shadow:var(--clay-sm)}
+.sess.am h3 .ic{background:#fff1c9}.sess.pm h3 .ic{background:#e2dcff}
+.pt{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;padding:9px 12px;border-radius:16px;background:var(--soft,#f4f1fb);margin-top:8px}
+.pt b{font-weight:700}.pt .code{font-size:12.5px;font-weight:700;color:var(--sc)}.pt .m{font-size:13px;color:var(--muted)}
+.pt a{text-decoration:none;border-bottom:2px solid var(--sc)}
+.more-link{display:inline-block;margin-top:12px;font-weight:700;color:#d1557a;text-decoration:none}
+
+.subjects{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
+.subj{padding:14px 16px;border-radius:24px;background:var(--soft);box-shadow:var(--clay-sm);color:var(--sc)}
 .subj .row{display:flex;align-items:center;justify-content:space-between;gap:8px}
-.subj h3{margin:0;font-size:1.1rem;color:var(--text)}
+.subj .row .ic{width:42px;height:42px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:var(--clay-sm)}
+.subj h3{margin:0;font-size:1.15rem;color:var(--text)}
 .subj p{margin:6px 0 8px;font-size:13.5px;color:var(--muted)}
-.bar{height:7px;border-radius:9px;background:rgba(255,255,255,.07);overflow:hidden}
+.bar{height:12px;border-radius:9px;background:#fff;box-shadow:var(--press);overflow:hidden}
 .bar i{display:block;height:100%;background:var(--sc);border-radius:9px}
 
 .chains{display:grid;gap:12px}
-.chain{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:12px 14px;border-radius:16px;border:1px solid var(--line);background:rgba(20,28,69,.6)}
+.chain{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:14px 16px;border-radius:24px;background:var(--card);box-shadow:var(--clay-sm)}
 .chain .grp{display:flex;flex-wrap:wrap;gap:6px}
-.node{display:inline-flex;align-items:center;gap:6px;font-size:14px;padding:4px 12px;border-radius:12px;border:1px solid var(--sc);color:var(--text);background:color-mix(in srgb,var(--sc) 10%,transparent);text-decoration:none}
-.node.soon{border-style:dashed;color:var(--muted);background:none}
-.node.main{font-weight:700;font-size:15px;background:color-mix(in srgb,var(--sc) 22%,transparent)}
+.node{display:inline-flex;align-items:center;gap:6px;font-size:14px;padding:5px 12px;border-radius:14px;color:var(--text);background:var(--soft);text-decoration:none;box-shadow:var(--clay-sm)}
+.node.soon{box-shadow:none;background:transparent;border:2px dashed color-mix(in srgb,var(--sc) 45%,#fff);color:var(--muted)}
+.node.main{font-weight:800;font-size:15px}
 .node .ic{color:var(--sc);display:inline-flex}
-.arr{color:var(--muted);font-family:var(--mono)}
-.lbl{font-size:12px;color:var(--muted);width:100%}
+.arr{color:var(--muted);font-weight:700}
+.lbl{font-size:12.5px;color:var(--muted);width:100%}
 
-.plan-today{display:grid;gap:8px}
-.pt{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;padding:10px 14px;border-radius:14px;border:1px solid var(--line);border-inline-start:4px solid var(--sc);background:rgba(20,28,69,.75)}
-.pt b{font-weight:600}.pt .code{font-family:var(--mono);font-size:12.5px;color:var(--sc);direction:ltr}.pt .m{font-size:13px;color:var(--muted)}
-.pt a{text-decoration:none;border-bottom:1px solid var(--sc)}
-.more-link{font-size:14px;color:var(--accent)}
-.exams{display:grid;gap:8px}
-.exam{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px;border-radius:14px;border:1px solid var(--line);background:rgba(20,28,69,.75)}
-.exam b{font-family:var(--mono);color:var(--accent)}
+.exams{display:grid;gap:10px}
+.exam{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px;border-radius:20px;background:#fff4e6;box-shadow:var(--clay-sm)}
+.exam b{font-family:var(--display);font-weight:800;font-size:1.2rem;color:#d9772e;white-space:nowrap}
 
-.list{display:grid;gap:6px}
-.item{display:grid;grid-template-columns:96px 1fr auto;gap:12px;align-items:center;padding:10px 14px;border-radius:14px;border:1px solid var(--line);background:rgba(20,28,69,.6);text-decoration:none}
-.item:hover{border-color:var(--sc)}
+.list{display:grid;gap:10px}
+.item{display:grid;grid-template-columns:96px 1fr auto;gap:12px;align-items:center;padding:12px 16px;border-radius:20px;background:var(--card);box-shadow:var(--clay-sm);text-decoration:none}
+.item:hover{background:var(--soft)}
 .item time{font-family:var(--mono);font-size:13px;color:var(--muted);direction:ltr;text-align:end}
 .item .t{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center}
-.item .t b{font-weight:600}
-.check{width:24px;height:24px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-size:13px}
-.check.on{background:var(--ok);border-color:var(--ok);color:#06281a}
+.item .t b{font-weight:700}
+.check{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:14px;background:#fff;box-shadow:var(--press)}
+.check.on{background:var(--ok);color:#fff;box-shadow:var(--clay-sm)}
 @media (max-width:480px){.item{grid-template-columns:1fr auto}.item time{display:none}}
 </style>
 </head>
@@ -73,14 +82,15 @@
     </nav>
   </header>
 
-  <section class="hero" aria-label="درس اليوم">
-    <div class="today" id="today"></div>
+  <section class="hero" aria-label="آخر درس">
+    <div class="today clay" id="today"></div>
     <div class="stats" id="stats"></div>
   </section>
 
   <section class="sec" aria-labelledby="h-plan">
-    <h2 id="h-plan">اليوم في الخطة</h2>
-    <div class="plan-today" id="ptoday"></div>
+    <h2 id="h-plan">جلسات اليوم</h2>
+    <div class="sessions" id="ptoday"></div>
+    <a class="more-link" href="plan.html#today">الخطة كاملة ←</a>
   </section>
 
   <section class="sec" aria-labelledby="h-subj">
@@ -100,11 +110,11 @@
   </section>
 
   <section class="sec" aria-labelledby="h-all">
-    <h2 id="h-all">كل الدروس</h2>
+    <h2 id="h-all">كل الدروس المنشورة</h2>
     <div class="list" id="all"></div>
   </section>
 
-  <footer>التقدم محفوظ على هذا الجهاز · الدروس الجديدة تُنشر حسب الجدول</footer>
+  <footer>التقدم محفوظ على هذا الجهاز · جلستان كل يوم: 6 صباحاً و6 مساءً</footer>
 </div>
 
 <script src="assets/plan.js"></script>
@@ -113,48 +123,62 @@
 <script>
 (function(){
 "use strict";
-var D=window.LAB, S=D.subjects, L=(D.lessons||[]).slice().sort(function(a,b){return a.date<b.date?1:-1;});
+var D=window.LAB, S=D.subjects, P=window.PLAN, L=(D.lessons||[]).slice().sort(function(a,b){return a.date<b.date?1:-1;});
 function $(id){return document.getElementById(id);}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
 function fmt(d){try{return new Date(d+"T12:00:00").toLocaleDateString("ar",{weekday:"long",day:"numeric",month:"long"});}catch(e){return d;}}
 function daysTo(d){return Math.round((new Date(d+"T00:00:00")-new Date(Lab.today()+"T00:00:00"))/864e5);}
+function sv(k){var s=S[k]||{color:"#7b7899",soft:"#f4f1fb"};return "--sc:"+s.color+";--soft:"+s.soft;}
 
-/* today */
+/* latest lesson */
 var t=L[0], el=$("today");
 if(t){
-  var sc=S[t.subject];
-  el.style.setProperty("--sc",sc.color);
-  el.innerHTML='<svg class="arc" viewBox="0 0 260 160" aria-hidden="true"><path d="M10 150 Q130 -40 250 150" fill="none" stroke="'+sc.color+'" stroke-width="2.5" stroke-dasharray="2 10" stroke-linecap="round"/></svg>'
-    +'<p class="eyebrow">'+(t.date===Lab.today()?"درس اليوم":"آخر درس")+' · '+esc(fmt(t.date))+'</p>'
+  var sc=S[t.subject]; el.setAttribute("style",sv(t.subject));
+  el.innerHTML='<span class="blob"></span><span class="ball"></span>'
+    +'<p class="eyebrow">'+(t.date===Lab.today()?"درس اليوم":"آخر درس منشور")+' · '+esc(fmt(t.date))+'</p>'
     +'<h1>'+esc(t.title)+'</h1>'
-    +'<div class="meta"><span class="chip" style="color:'+sc.color+'">'+Lab.icon(S[t.subject].icon,15)+esc(sc.name)+'</span><span>'+esc(t.unit)+'</span><span>≈ '+t.minutes+' دقيقة</span>'
+    +'<div class="meta"><span class="chip" style="'+sv(t.subject)+'">'+Lab.icon(sc.icon,15)+esc(sc.name)+'</span><span>'+esc(t.unit)+'</span><span>≈ '+t.minutes+' دقيقة</span>'
     +(Lab.isDone(t.id)?'<span class="done-badge">✓ أنجزته</span>':'')+'</div>'
-    +'<a class="cta" href="'+esc(t.url)+'">'+(Lab.isDone(t.id)?"راجع الدرس":"ابدأ الدرس")+' ←</a>';
-}else{el.style.setProperty("--sc","#ffb547");el.innerHTML='<p class="eyebrow">قريباً</p><h1>أول درس في الطريق</h1>';}
+    +'<a class="btn" href="'+esc(t.url)+'">'+(Lab.isDone(t.id)?"راجع الدرس":"ابدأ الدرس")+' ←</a>';
+}else{el.innerHTML='<p class="eyebrow">قريباً</p><h1>أول درس في الطريق</h1>';}
 
 /* stats */
-var P=Lab.progress(), done=L.filter(function(l){return P[l.id]&&P[l.id].done;}), qs=[];
-L.forEach(function(l){var q=P[l.id]&&P[l.id].quiz;if(q&&q.total)qs.push(q.score/q.total);});
+var Pg=Lab.progress(), done=L.filter(function(l){return Pg[l.id]&&Pg[l.id].done;}), qs=[];
+L.forEach(function(l){var q=Pg[l.id]&&Pg[l.id].quiz;if(q&&q.total)qs.push(q.score/q.total);});
 var avg=qs.length?Math.round(100*qs.reduce(function(a,b){return a+b;},0)/qs.length):null;
-$("stats").innerHTML=[
-  ["الدروس المنشورة",L.length,""],["أنجزت منها",done.length,""],
-  ["أيام متتالية",Lab.streak(),"يوم"],["متوسط الاختبارات",avg===null?"–":avg,avg===null?"":"%"]
-].map(function(s){return '<div class="stat"><span>'+s[0]+'</span><b>'+s[1]+'</b><small>'+s[2]+'</small></div>';}).join("");
+var total=P?P.catalog.length:L.length;
+$("stats").innerHTML=[["دروس المنهج",total,""],["أنجزت منها",done.length,""],["أيام متتالية",Lab.streak(),"يوم"],["متوسط الاختبارات",avg===null?"–":avg,avg===null?"":"%"]]
+ .map(function(s){return '<div class="stat"><span>'+s[0]+'</span><b>'+s[1]+'</b><small>'+s[2]+'</small></div>';}).join("");
+
+/* today's two sessions */
+var cat={};(P?P.catalog:[]).forEach(function(c){cat[c.id]=c;});
+var pd=P?P.days.filter(function(d){return d.date===Lab.today();})[0]:null;
+var SUN='<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="#f2b33d"/><g stroke="#f2b33d" stroke-width="2" stroke-linecap="round"><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></g></svg>';
+var MOON='<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M19 15.5A8 8 0 0 1 8.5 5a8 8 0 1 0 10.5 10.5z" fill="#8a6be0"/></svg>';
+function pitem(it){
+  if(it.type==="new"){var c=cat[it.lesson],s=S[c.subject],pub=Lab.lesson(c.id);
+    return '<div class="pt" style="'+sv(c.subject)+'"><span class="code">'+esc(s.name)+' '+c.code+'</span>'+(pub?'<a href="'+esc(pub.url)+'"><b>'+esc(c.title)+'</b></a>':'<b>'+esc(c.title)+'</b>')+'<span class="m">≈ '+c.minutes+' د</span>'+(Lab.isDone(c.id)?' <span class="done-badge">✓</span>':'')+'</div>';}
+  return '<div class="pt" style="'+sv(it.subject)+'"><b>'+esc(it.title||it.note)+'</b><span class="m">≈ '+it.minutes+' د</span></div>';
+}
+if(pd){
+  $("ptoday").innerHTML=[["am","جلسة الصباح","06:00",SUN],["pm","جلسة المساء","18:00",MOON]].map(function(x){
+    return '<div class="sess '+x[0]+'"><h3><span class="ic">'+x[3]+'</span>'+x[1]+' <span class="time">'+x[2]+'</span></h3>'+pd.sessions[x[0]].map(pitem).join("")+'</div>';}).join("");
+}else{$("ptoday").innerHTML='<div class="empty">لا جلسات اليوم. الخطة تبدأ '+(P?esc(fmt(P.days[0].date)):"قريباً")+'.</div>';}
 
 /* subjects */
 $("subjects").innerHTML=Object.keys(S).map(function(k){
-  var all=L.filter(function(l){return l.subject===k;}), dn=all.filter(function(l){return Lab.isDone(l.id);});
+  var all=P?P.catalog.filter(function(c){return c.subject===k;}):[], dn=all.filter(function(c){return Lab.isDone(c.id);});
   var pct=all.length?Math.round(100*dn.length/all.length):0;
-  return '<div class="subj" style="--sc:'+S[k].color+'"><div class="row"><h3>'+esc(S[k].name)+'</h3>'+Lab.icon(S[k].icon,26)+'</div>'
-    +'<p>'+(all.length?dn.length+' من '+all.length+' دروس':'لا دروس بعد')+'</p><div class="bar" role="img" aria-label="'+pct+'%"><i style="width:'+pct+'%"></i></div></div>';
+  return '<div class="subj" style="'+sv(k)+'"><div class="row"><h3>'+esc(S[k].name)+'</h3><span class="ic">'+Lab.icon(S[k].icon,24)+'</span></div>'
+    +'<p>'+dn.length+' من '+all.length+' دروس</p><div class="bar" role="img" aria-label="'+pct+'%"><i style="width:'+pct+'%"></i></div></div>';
 }).join("");
 
-/* chains */
+/* link map */
 function nodeHtml(id,main){
   var n=Lab.node(id); if(!n)return "";
-  var c=S[n.subject].color, ic='<span class="ic">'+Lab.icon(S[n.subject].icon,15)+'</span>';
-  if(!n.url)return '<span class="node soon" style="--sc:'+c+'">'+ic+esc(n.title)+'</span>';
-  return '<a class="node'+(main?' main':'')+'" style="--sc:'+c+'" href="'+esc(n.url)+'">'+ic+esc(n.title)+(n.done?' ✓':'')+'</a>';
+  var ic='<span class="ic">'+Lab.icon(S[n.subject].icon,15)+'</span>';
+  if(!n.url)return '<span class="node soon" style="'+sv(n.subject)+'">'+ic+esc(n.title)+'</span>';
+  return '<a class="node'+(main?' main':'')+'" style="'+sv(n.subject)+'" href="'+esc(n.url)+'">'+ic+esc(n.title)+(n.done?' ✓':'')+'</a>';
 }
 $("chains").innerHTML=L.slice(0,8).map(function(l){
   var pre=(l.prereq||[]).map(function(i){return nodeHtml(i);}).join(""), nx=(l.next||[]).map(function(i){return nodeHtml(i);}).join(""), rel=(l.related||[]).map(function(i){return nodeHtml(i);}).join("");
@@ -162,27 +186,15 @@ $("chains").innerHTML=L.slice(0,8).map(function(l){
     +(rel?'<span class="lbl">يرتبط أيضاً بـ</span><div class="grp">'+rel+'</div>':'')+'</div>';
 }).join("")||'<div class="empty">تظهر الروابط مع أول درس.</div>';
 
-
-/* today in plan */
-var P=window.PLAN,cat={};(P?P.catalog:[]).forEach(function(c){cat[c.id]=c;});
-var pd=P?P.days.filter(function(d){return d.date===Lab.today();})[0]:null;
-$("ptoday").innerHTML=(pd?pd.items.map(function(it){
-  if(it.type==="new"){var c=cat[it.lesson],s=S[c.subject],pub=Lab.lesson(c.id);
-    return '<div class="pt" style="--sc:'+s.color+'"><span class="code">'+esc(s.name)+' '+c.code+'</span>'+(pub?'<a href="'+esc(pub.url)+'"><b>'+esc(c.title)+'</b></a>':'<b>'+esc(c.title)+'</b>')+'<span class="m">≈ '+c.minutes+' دقيقة</span>'+(Lab.isDone(c.id)?' <span class="done-badge">✓</span>':'')+'</div>';}
-  var sc=it.subject&&S[it.subject]?S[it.subject].color:"#9ba6d8";
-  return '<div class="pt" style="--sc:'+sc+'"><b>'+esc(it.title||it.note)+'</b><span class="m">≈ '+it.minutes+' دقيقة</span></div>';
-}).join(""):'<div class="empty">لا مهام لليوم. الخطة تبدأ '+(P?esc(fmt(P.days[0].date)):"قريباً")+'.</div>')+'<a class="more-link" href="plan.html#today">الخطة كاملة ←</a>';
-
 /* exams */
 var ex=((P&&P.exams.length?P.exams:D.exams)||[]).filter(function(e){return daysTo(e.date)>=0;}).sort(function(a,b){return a.date<b.date?-1:1;});
-if(!ex.length&&P&&daysTo(P.examWindow.end)>=0)ex=[{subject:"",title:"فترة اختبارات نهاية الفصل الأول ("+fmt(P.examWindow.start)+" إلى "+fmt(P.examWindow.end)+")، ومواعيد المواد تُضاف عند نشر الجدول",date:P.examWindow.start}];
-$("exams").innerHTML=ex.length?ex.map(function(e){var s=S[e.subject]||{name:"",color:"#ffb547"};var n=daysTo(e.date);
-  return '<div class="exam"><span>'+(s.name?'<span class="chip" style="color:'+s.color+'">'+esc(s.name)+'</span> ':'')+esc(e.title||"")+'</span><b>'+(n===0?"اليوم":n+" يوم")+'</b></div>';}).join("")
-  :'<div class="empty">مواعيد الاختبارات تُضاف عند تحديد الجدول، وبعدها يبدأ العد التنازلي هنا.</div>';
+if(!ex.length&&P&&daysTo(P.examWindow.end)>=0)ex=[{subject:"",title:"فترة اختبارات نهاية الفصل الأول، ومواعيد المواد تُضاف عند نشر الجدول",date:P.examWindow.start}];
+$("exams").innerHTML=ex.map(function(e){var s=S[e.subject];var n=daysTo(e.date);
+  return '<div class="exam"><span>'+(s?'<span class="chip" style="'+sv(e.subject)+'">'+esc(s.name)+'</span> ':'')+esc(e.title||"")+'</span><b>'+(n===0?"اليوم":"بعد "+n+" يوم")+'</b></div>';}).join("")||'<div class="empty">لا اختبارات قادمة.</div>';
 
-/* all lessons */
+/* published lessons */
 $("all").innerHTML=L.map(function(l){var s=S[l.subject],d=Lab.isDone(l.id);
-  return '<a class="item" style="--sc:'+s.color+'" href="'+esc(l.url)+'"><time datetime="'+l.date+'">'+l.date+'</time><span class="t"><span class="chip" style="color:'+s.color+'">'+esc(s.name)+'</span><b>'+esc(l.title)+'</b></span><span class="check'+(d?' on':'')+'" aria-label="'+(d?"منجز":"لم ينجز")+'">'+(d?"✓":"")+'</span></a>';
+  return '<a class="item" style="'+sv(l.subject)+'" href="'+esc(l.url)+'"><time datetime="'+l.date+'">'+l.date+'</time><span class="t"><span class="chip" style="'+sv(l.subject)+'">'+esc(s.name)+'</span><b>'+esc(l.title)+'</b></span><span class="check'+(d?' on':'')+'" aria-label="'+(d?"منجز":"لم ينجز")+'">'+(d?"✓":"")+'</span></a>';
 }).join("")||'<div class="empty">لا دروس بعد.</div>';
 })();
 </script>

@@ -199,14 +199,49 @@ for d in days(EXAM_START-dt.timedelta(days=1),EXAM_END):
         item={"type":"eve","subject":"tbd","title":"مراجعة ليلة الاختبار حسب الجدول الرسمي","minutes":60}
     if d<EXAM_START:  # eve of an exam on the first day falls on the last mock day
         for day in plan:
-            if day["date"]==d.isoformat(): day["items"].append(item)
+            if day["date"]==d.isoformat(): day["items"].append(item)  # split into sessions below
         continue
     plan.append({"date":d.isoformat(),"phase":"exams","items":[item]})
+
+# ---------- two sittings a day: 6:00 (before school) and 18:00. Mornings are short on school days.
+AM_SHARE = {4:0.5, 5:0.5}   # Fri/Sat split evenly; school days get about a third in the morning
+lesson_min={c["id"]:c["minutes"] for c in catalog}
+def mins(it): return lesson_min[it["lesson"]] if it["type"]=="new" else it.get("minutes",0)
+for day in plan:
+    d=dt.date.fromisoformat(day["date"]); items=day.pop("items")
+    share=AM_SHARE.get(d.weekday(),0.35)
+    am=[];pm=[]
+    news=[i for i in items if i["type"]=="new"]; other=[i for i in items if i["type"]!="new"]
+    if len(news)>=2:
+        total=sum(mins(i) for i in news); target=total*share; acc=0
+        # keep book order inside a subject: fill the morning from the shortest lessons first
+        for it in sorted(news,key=mins):
+            if acc+mins(it)<=target*1.25 or not am: am.append(it); acc+=mins(it)
+            else: pm.append(it)
+        if not pm: pm.append(am.pop())
+        order={id(i):k for k,i in enumerate(news)}
+        am.sort(key=lambda i:order[id(i)]); pm.sort(key=lambda i:order[id(i)])
+    elif news:
+        pm=news[:]
+    for it in other:
+        (am if it["type"] in ("weekly",) else pm).append(it)
+    if day["phase"] in ("consolidate",) and not am:
+        rv=pm[0]; half=dict(rv); half["minutes"]=round(rv["minutes"]*share); rv["minutes"]-=half["minutes"]
+        half["title"]=rv["title"]+" · الجزء الأول"; rv["title"]=rv["title"]+" · الجزء الثاني"; am=[half]
+    if day["phase"]=="mock" and len(pm)>1 and not am: am=[pm.pop(0)]
+    if not am and day["phase"]=="exams":
+        am=[{"type":"warmup","minutes":20,"title":"إحماء قبل الاختبار: النقاط الذهبية للمادة فقط، بدون دروس جديدة"}]
+    elif not am:
+        am=[{"type":"recall","minutes":15,"title":"أسئلة استرجاع سريعة على دروس أمس"}]
+    elif day["phase"]=="build":
+        am.insert(0,{"type":"recall","minutes":10,"title":"استرجاع سريع على دروس أمس"})
+    day["sessions"]={"am":am,"pm":pm}
 
 out = {"generated":dt.date.today().isoformat(),
        "source":"جداول محتويات كتب الطالب، الصف الحادي عشر علمي، الفصل الأول 2026-2027، وزارة التربية الكويت",
        "examWindow":{"start":EXAM_START.isoformat(),"end":EXAM_END.isoformat(),
                      "note":"فترة اختبارات نهاية الفصل الأول للصفين العاشر والحادي عشر. مواعيد المواد تُضاف عند نشر الجدول الرسمي."},
+       "sessions":{"am":{"name":"جلسة الصباح","time":"06:00"},"pm":{"name":"جلسة المساء","time":"18:00"}},
        "exams":[{"subject":k,"date":v} for k,v in sorted(EXAMS.items(),key=lambda x:x[1])],
        "phases":{"build":{"name":"تعلّم","from":START.isoformat(),"to":BUILD_END.isoformat()},
                  "consolidate":{"name":"تثبيت","from":"2026-12-11","to":"2026-12-17"},
@@ -219,11 +254,11 @@ out = {"generated":dt.date.today().isoformat(),
 # report
 by={}
 for day in plan:
-    for it in day["items"]:
+    for it in day["sessions"]["am"]+day["sessions"]["pm"]:
         if it["type"]=="new": by.setdefault(day["date"],[]).append(it["lesson"])
 mins={c["id"]:c["minutes"] for c in catalog}
 for day in plan[:len(build_days)]:
     d=dt.date.fromisoformat(day["date"])
-    ls=[it["lesson"] for it in day["items"] if it["type"]=="new"]
-    print(day["date"],DAYS_AR[d.weekday()],sum(mins[l] for l in ls),"min",ls)
+    a=[it.get("lesson",it["type"]) for it in day["sessions"]["am"]]; b=[it.get("lesson",it["type"]) for it in day["sessions"]["pm"]]
+    print(day["date"],DAYS_AR[d.weekday()],"AM",a,"| PM",b)
 print("lessons",len(catalog),"build days",len(build_days))

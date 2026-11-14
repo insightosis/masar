@@ -6,6 +6,16 @@
   "end": "2026-12-31",
   "note": "فترة اختبارات نهاية الفصل الأول للصفين العاشر والحادي عشر. مواعيد المواد تُضاف عند نشر الجدول الرسمي."
  },
+ "sessions": {
+  "am": {
+   "name": "جلسة الصباح",
+   "time": "06:00"
+  },
+  "pm": {
+   "name": "جلسة المساء",
+   "time": "18:00"
+  }
+ },
  "exams": [],
  "phases": {
   "build": {
@@ -1114,775 +1124,1195 @@
   {
    "date": "2026-11-15",
    "phase": "build",
-   "items": [
-    {
-     "type": "new",
-     "lesson": "math-u1-1-1"
-    },
-    {
-     "type": "new",
-     "lesson": "geo-u1-1-1"
-    },
-    {
-     "type": "new",
-     "lesson": "chem-u1-1-1"
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "recall",
+      "minutes": 10,
+      "title": "استرجاع سريع على دروس أمس"
+     },
+     {
+      "type": "new",
+      "lesson": "geo-u1-1-1"
+     }
+    ],
+    "pm": [
+     {
+      "type": "new",
+      "lesson": "math-u1-1-1"
+     },
+     {
+      "type": "new",
+      "lesson": "chem-u1-1-1"
+     }
+    ]
+   }
   },
   {
    "date": "2026-11-16",
    "phase": "build",
-   "items": [
-    {
-     "type": "new",
-     "lesson": "bio-u1-1-1"
-    },
-    {
-     "type": "new",
-     "lesson": "phy-u1-1-1"
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "recall",
+      "minutes": 10,
+      "title": "استرجاع سريع على دروس أمس"
+     },
+     {
+      "type": "new",
+      "lesson": "bio-u1-1-1"
+     }
+    ],
+    "pm": [
+     {
+      "type": "new",
+      "lesson": "phy-u1-1-1"
+     }
+    ]
+   }
   },
   {
    "date": "2026-11-17",
    "phase": "build",
-   "items": [
-    {
-     "type": "new",
-     "lesson": "math-u1-1-2"
-    },
-    {
-     "type": "new",
-     "lesson": "geo-u1-2-1"
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "recall",
+      "minutes": 10,
+      "title": "استرجاع سريع على دروس أمس"
+     },
+     {
+      "type": "new",
+      "lesson": "geo-u1-2-1"
+     }
+    ],
+    "pm": [
+     {
+      "type": "new",
+      "lesson": "math-u1-1-2"
+     }
+    ]
+   }
   },
   {
    "date": "2026-11-18",
    "phase": "build",
-   "items": [
-    {
-     "type": "new",
-     "lesson": "math-u1-1-3"
-    },
-    {
-     "type": "new",
-     "lesson": "chem-u1-2-1"
-    },
-    {
-     "type": "new",
-     "lesson": "geo-u1-2-2"
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "recall",
+      "minutes": 10,
+      "title": "استرجاع سريع على دروس أمس"
+     },
+     {
+      "type": "new",
+      "lesson": "geo-u1-2-2"
+     }
+    ],
+    "pm": [
+     {
+      "type": "new",
+      "lesson": "math-u1-1-3"
+     },
+     {
+      "type": "new",
+      "lesson": "chem-u1-2-1"
+     }
+    ]
+   }
   },
   {
    "date": "2026-11-19",
    "phase": "build",
-   "items": [
-    {
-     "type": "new",
-     "lesson": "phy-u1-1-2"
-    },
-    {
-     "type": "new",
-     "lesson": "math-u2-2-1"
-    },
-    {
-     "type": "new",
-     "lesson": "bio-u1-1-2"
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "recall",
+      "minutes": 10,
+      "title": "استرجاع سريع على دروس أمس"
+     },
+     {
+      "type": "new",
+      "lesson": "phy-u1-1-2"
+     }
+    ],
+    "pm": [
+     {
+      "type": "new",
+      "lesson": "math-u2-2-1"
+     },
+     {
+      "type": "new",
+      "lesson": "bio-u1-1-2"
+     }
+    ]
+   }
   },
   {
    "date": "2026-11-20",
    "phase": "build",
-   "items": [
-    {
-     "type": "new",
-     "lesson": "math-u2-2-2"
-    },
-    {
-     "type": "new",
-     "lesson": "geo-u1-2-3"
-    },
-    {
-     "type": "new",
-     "lesson": "chem-u2-1-1"
-    },
-    {
-     "type": "new",
-     "lesson": "math-u2-2-3"
-    },
-    {
-     "type": "new",
-     "lesson": "phy-u1-1-3"
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "recall",
+      "minutes": 10,
+      "title": "استرجاع سريع على دروس أمس"
+     },
+     {
+      "type": "new",
+      "lesson": "math-u2-2-2"
+     },
+     {
+      "type": "new",
+      "lesson": "geo-u1-2-3"
+     },
+     {
+      "type": "new",
+      "lesson": "chem-u2-1-1"
+     }
+    ],
+    "pm": [
+     {
+      "type": "new",
+      "lesson": "math-u2-2-3"
+     },
+     {
+      "type": "new",
+      "lesson": "phy-u1-1-3"
+     }
+    ]
+   }
   },
   {
    "date": "2026-11-21",
    "phase": "build",
-   "items": [
-    {
-     "type": "new",
-     "lesson": "geo-u2-1-1"
-    },
-    {
-     "type": "new",
-     "lesson": "math-u2-2-4"
-    },
-    {
-     "type": "new",
-     "lesson": "bio-u1-1-3"
-    },
-    {
-     "type": "new",
-     "lesson": "math-u2-2-5"
-    },
-    {
-     "type": "weekly",
-     "minutes": 25,
-     "note": "مراجعة الأسبوع: أسئلة استرجاع من كل دروس الأسبوع"
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "recall",
+      "minutes": 10,
+      "title": "استرجاع سريع على دروس أمس"
+     },
+     {
+      "type": "new",
+      "lesson": "geo-u2-1-1"
+     },
+     {
+      "type": "new",
+      "lesson": "math-u2-2-4"
+     },
+     {
+      "type": "weekly",
+      "minutes": 25,
+      "note": "مراجعة الأسبوع: أسئلة استرجاع من كل دروس الأسبوع"
+     }
+    ],
+    "pm": [
+     {
+      "type": "new",
+      "lesson": "bio-u1-1-3"
+     },
+     {
+      "type": "new",
+      "lesson": "math-u2-2-5"
+     }
+    ]
+   }
   },
   {
    "date": "2026-11-22",
    "phase": "build",
-   "items": [
-    {
-     "type": "new",
-     "lesson": "chem-u2-1-2"
-    },
-    {
-     "type": "new",
-     "lesson": "geo-u2-1-2"
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "recall",
+      "minutes": 10,
+      "title": "استرجاع سريع على دروس أمس"
+     },
+     {
+      "type": "new",
+      "lesson": "chem-u2-1-2"
+     }
+    ],
+    "pm": [
+     {
+      "type": "new",
+      "lesson": "geo-u2-1-2"
+     }
+    ]
+   }
   },
   {
    "date": "2026-11-23",
    "phase": "build",
-   "items": [
-    {
-     "type": "new",
-     "lesson": "math-u2-2-6"
-    },
-    {
-     "type": "new",
-     "lesson": "phy-u1-2-1"
-    },
-    {
-     "type": "new",
-     "lesson": "geo-u2-1-3"
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "recall",
+      "minutes": 10,
+      "title": "استرجاع سريع على دروس أمس"
+     },
+     {
+      "type": "new",
+      "lesson": "geo-u2-1-3"
+     }
+    ],
+    "pm": [
+     {
+      "type": "new",
+      "lesson": "math-u2-2-6"
+     },
+     {
+      "type": "new",
+      "lesson": "phy-u1-2-1"
+     }
+    ]
+   }
   },
   {
    "date": "2026-11-24",
    "phase": "build",
-   "items": [
-    {
-     "type": "new",
-     "lesson": "bio-u1-1-4"
-    },
-    {
-     "type": "new",
-     "lesson": "math-u3-3-1"
-    },
-    {
-     "type": "new",
-     "lesson": "chem-u2-1-3"
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "recall",
+      "minutes": 10,
+      "title": "استرجاع سريع على دروس أمس"
+     },
+     {
+      "type": "new",
+      "lesson": "chem-u2-1-3"
+     }
+    ],
+    "pm": [
+     {
+      "type": "new",
+      "lesson": "bio-u1-1-4"
+     },
+     {
+      "type": "new",
+      "lesson": "math-u3-3-1"
+     }
+    ]
+   }
   },
   {
    "date": "2026-11-25",
    "phase": "build",
-   "items": [
-    {
-     "type": "new",
-     "lesson": "math-u3-3-2"
-    },
-    {
-     "type": "new",
-     "lesson": "geo-u2-1-4"
-    },
-    {
-     "type": "new",
-     "lesson": "math-u3-3-3"
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "recall",
+      "minutes": 10,
+      "title": "استرجاع سريع على دروس أمس"
+     },
+     {
+      "type": "new",
+      "lesson": "geo-u2-1-4"
+     }
+    ],
+    "pm": [
+     {
+      "type": "new",
+      "lesson": "math-u3-3-2"
+     },
+     {
+      "type": "new",
+      "lesson": "math-u3-3-3"
+     }
+    ]
+   }
   },
   {
    "date": "2026-11-26",
    "phase": "build",
-   "items": [
-    {
-     "type": "new",
-     "lesson": "phy-u1-2-2"
-    },
-    {
-     "type": "new",
-     "lesson": "bio-u1-2-1"
-    },
-    {
-     "type": "new",
-     "lesson": "geo-u2-1-5"
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "recall",
+      "minutes": 10,
+      "title": "استرجاع سريع على دروس أمس"
+     },
+     {
+      "type": "new",
+      "lesson": "geo-u2-1-5"
+     }
+    ],
+    "pm": [
+     {
+      "type": "new",
+      "lesson": "phy-u1-2-2"
+     },
+     {
+      "type": "new",
+      "lesson": "bio-u1-2-1"
+     }
+    ]
+   }
   },
   {
    "date": "2026-11-27",
    "phase": "build",
-   "items": [
-    {
-     "type": "new",
-     "lesson": "math-u3-3-4"
-    },
-    {
-     "type": "new",
-     "lesson": "chem-u2-2-1"
-    },
-    {
-     "type": "new",
-     "lesson": "math-u3-3-5"
-    },
-    {
-     "type": "new",
-     "lesson": "geo-u3-1-1"
-    },
-    {
-     "type": "new",
-     "lesson": "bio-u1-2-2"
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "recall",
+      "minutes": 10,
+      "title": "استرجاع سريع على دروس أمس"
+     },
+     {
+      "type": "new",
+      "lesson": "chem-u2-2-1"
+     },
+     {
+      "type": "new",
+      "lesson": "geo-u3-1-1"
+     },
+     {
+      "type": "new",
+      "lesson": "bio-u1-2-2"
+     }
+    ],
+    "pm": [
+     {
+      "type": "new",
+      "lesson": "math-u3-3-4"
+     },
+     {
+      "type": "new",
+      "lesson": "math-u3-3-5"
+     }
+    ]
+   }
   },
   {
    "date": "2026-11-28",
    "phase": "build",
-   "items": [
-    {
-     "type": "new",
-     "lesson": "phy-u1-2-3"
-    },
-    {
-     "type": "new",
-     "lesson": "math-u4-4-1"
-    },
-    {
-     "type": "new",
-     "lesson": "geo-u3-1-2"
-    },
-    {
-     "type": "weekly",
-     "minutes": 25,
-     "note": "مراجعة الأسبوع: أسئلة استرجاع من كل دروس الأسبوع"
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "recall",
+      "minutes": 10,
+      "title": "استرجاع سريع على دروس أمس"
+     },
+     {
+      "type": "new",
+      "lesson": "phy-u1-2-3"
+     },
+     {
+      "type": "weekly",
+      "minutes": 25,
+      "note": "مراجعة الأسبوع: أسئلة استرجاع من كل دروس الأسبوع"
+     }
+    ],
+    "pm": [
+     {
+      "type": "new",
+      "lesson": "math-u4-4-1"
+     },
+     {
+      "type": "new",
+      "lesson": "geo-u3-1-2"
+     }
+    ]
+   }
   },
   {
    "date": "2026-11-29",
    "phase": "build",
-   "items": [
-    {
-     "type": "new",
-     "lesson": "math-u4-4-2"
-    },
-    {
-     "type": "new",
-     "lesson": "phy-u2-3-1"
-    },
-    {
-     "type": "new",
-     "lesson": "chem-u2-2-2"
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "recall",
+      "minutes": 10,
+      "title": "استرجاع سريع على دروس أمس"
+     },
+     {
+      "type": "new",
+      "lesson": "phy-u2-3-1"
+     }
+    ],
+    "pm": [
+     {
+      "type": "new",
+      "lesson": "math-u4-4-2"
+     },
+     {
+      "type": "new",
+      "lesson": "chem-u2-2-2"
+     }
+    ]
+   }
   },
   {
    "date": "2026-11-30",
    "phase": "build",
-   "items": [
-    {
-     "type": "new",
-     "lesson": "bio-u1-2-3"
-    },
-    {
-     "type": "new",
-     "lesson": "math-u4-4-3"
-    },
-    {
-     "type": "new",
-     "lesson": "math-u4-4-4"
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "recall",
+      "minutes": 10,
+      "title": "استرجاع سريع على دروس أمس"
+     },
+     {
+      "type": "new",
+      "lesson": "bio-u1-2-3"
+     }
+    ],
+    "pm": [
+     {
+      "type": "new",
+      "lesson": "math-u4-4-3"
+     },
+     {
+      "type": "new",
+      "lesson": "math-u4-4-4"
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-01",
    "phase": "build",
-   "items": [
-    {
-     "type": "new",
-     "lesson": "phy-u2-3-2"
-    },
-    {
-     "type": "new",
-     "lesson": "geo-u3-2-1"
-    },
-    {
-     "type": "new",
-     "lesson": "bio-u2-1-1"
-    },
-    {
-     "type": "new",
-     "lesson": "math-u4-4-5"
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "recall",
+      "minutes": 10,
+      "title": "استرجاع سريع على دروس أمس"
+     },
+     {
+      "type": "new",
+      "lesson": "phy-u2-3-2"
+     },
+     {
+      "type": "new",
+      "lesson": "geo-u3-2-1"
+     }
+    ],
+    "pm": [
+     {
+      "type": "new",
+      "lesson": "bio-u2-1-1"
+     },
+     {
+      "type": "new",
+      "lesson": "math-u4-4-5"
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-02",
    "phase": "build",
-   "items": [
-    {
-     "type": "new",
-     "lesson": "geo-u3-2-2"
-    },
-    {
-     "type": "new",
-     "lesson": "phy-u2-3-3"
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "recall",
+      "minutes": 10,
+      "title": "استرجاع سريع على دروس أمس"
+     },
+     {
+      "type": "new",
+      "lesson": "geo-u3-2-2"
+     }
+    ],
+    "pm": [
+     {
+      "type": "new",
+      "lesson": "phy-u2-3-3"
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-03",
    "phase": "build",
-   "items": [
-    {
-     "type": "new",
-     "lesson": "math-u4-4-6"
-    },
-    {
-     "type": "new",
-     "lesson": "chem-u2-2-3"
-    },
-    {
-     "type": "new",
-     "lesson": "geo-u3-2-3"
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "recall",
+      "minutes": 10,
+      "title": "استرجاع سريع على دروس أمس"
+     },
+     {
+      "type": "new",
+      "lesson": "geo-u3-2-3"
+     }
+    ],
+    "pm": [
+     {
+      "type": "new",
+      "lesson": "math-u4-4-6"
+     },
+     {
+      "type": "new",
+      "lesson": "chem-u2-2-3"
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-04",
    "phase": "build",
-   "items": [
-    {
-     "type": "new",
-     "lesson": "math-u5-5-1"
-    },
-    {
-     "type": "new",
-     "lesson": "bio-u2-1-2"
-    },
-    {
-     "type": "new",
-     "lesson": "phy-u2-3-4"
-    },
-    {
-     "type": "new",
-     "lesson": "geo-u3-3-1"
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "recall",
+      "minutes": 10,
+      "title": "استرجاع سريع على دروس أمس"
+     },
+     {
+      "type": "new",
+      "lesson": "phy-u2-3-4"
+     },
+     {
+      "type": "new",
+      "lesson": "geo-u3-3-1"
+     }
+    ],
+    "pm": [
+     {
+      "type": "new",
+      "lesson": "math-u5-5-1"
+     },
+     {
+      "type": "new",
+      "lesson": "bio-u2-1-2"
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-05",
    "phase": "build",
-   "items": [
-    {
-     "type": "new",
-     "lesson": "math-u5-5-2"
-    },
-    {
-     "type": "new",
-     "lesson": "chem-u2-2-4"
-    },
-    {
-     "type": "new",
-     "lesson": "math-u5-5-3"
-    },
-    {
-     "type": "new",
-     "lesson": "geo-u3-3-2"
-    },
-    {
-     "type": "weekly",
-     "minutes": 25,
-     "note": "مراجعة الأسبوع: أسئلة استرجاع من كل دروس الأسبوع"
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "recall",
+      "minutes": 10,
+      "title": "استرجاع سريع على دروس أمس"
+     },
+     {
+      "type": "new",
+      "lesson": "chem-u2-2-4"
+     },
+     {
+      "type": "new",
+      "lesson": "geo-u3-3-2"
+     },
+     {
+      "type": "weekly",
+      "minutes": 25,
+      "note": "مراجعة الأسبوع: أسئلة استرجاع من كل دروس الأسبوع"
+     }
+    ],
+    "pm": [
+     {
+      "type": "new",
+      "lesson": "math-u5-5-2"
+     },
+     {
+      "type": "new",
+      "lesson": "math-u5-5-3"
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-06",
    "phase": "build",
-   "items": [
-    {
-     "type": "new",
-     "lesson": "bio-u2-1-3"
-    },
-    {
-     "type": "new",
-     "lesson": "phy-u2-3-5"
-    },
-    {
-     "type": "new",
-     "lesson": "math-u6-6-1"
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "recall",
+      "minutes": 10,
+      "title": "استرجاع سريع على دروس أمس"
+     },
+     {
+      "type": "new",
+      "lesson": "bio-u2-1-3"
+     }
+    ],
+    "pm": [
+     {
+      "type": "new",
+      "lesson": "phy-u2-3-5"
+     },
+     {
+      "type": "new",
+      "lesson": "math-u6-6-1"
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-07",
    "phase": "build",
-   "items": [
-    {
-     "type": "new",
-     "lesson": "math-u6-6-2"
-    },
-    {
-     "type": "new",
-     "lesson": "geo-u4-1-1"
-    },
-    {
-     "type": "new",
-     "lesson": "bio-u2-1-4"
-    },
-    {
-     "type": "new",
-     "lesson": "phy-u2-3-6"
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "recall",
+      "minutes": 10,
+      "title": "استرجاع سريع على دروس أمس"
+     },
+     {
+      "type": "new",
+      "lesson": "geo-u4-1-1"
+     },
+     {
+      "type": "new",
+      "lesson": "phy-u2-3-6"
+     }
+    ],
+    "pm": [
+     {
+      "type": "new",
+      "lesson": "math-u6-6-2"
+     },
+     {
+      "type": "new",
+      "lesson": "bio-u2-1-4"
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-08",
    "phase": "build",
-   "items": [
-    {
-     "type": "new",
-     "lesson": "math-u6-6-3"
-    },
-    {
-     "type": "new",
-     "lesson": "geo-u4-1-2"
-    },
-    {
-     "type": "new",
-     "lesson": "chem-u3-1-1"
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "recall",
+      "minutes": 10,
+      "title": "استرجاع سريع على دروس أمس"
+     },
+     {
+      "type": "new",
+      "lesson": "geo-u4-1-2"
+     }
+    ],
+    "pm": [
+     {
+      "type": "new",
+      "lesson": "math-u6-6-3"
+     },
+     {
+      "type": "new",
+      "lesson": "chem-u3-1-1"
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-09",
    "phase": "build",
-   "items": [
-    {
-     "type": "new",
-     "lesson": "math-u6-6-4"
-    },
-    {
-     "type": "new",
-     "lesson": "math-u6-6-5"
-    },
-    {
-     "type": "new",
-     "lesson": "bio-u2-1-5"
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "recall",
+      "minutes": 10,
+      "title": "استرجاع سريع على دروس أمس"
+     },
+     {
+      "type": "new",
+      "lesson": "math-u6-6-4"
+     }
+    ],
+    "pm": [
+     {
+      "type": "new",
+      "lesson": "math-u6-6-5"
+     },
+     {
+      "type": "new",
+      "lesson": "bio-u2-1-5"
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-10",
    "phase": "build",
-   "items": [
-    {
-     "type": "new",
-     "lesson": "phy-u2-4-1"
-    },
-    {
-     "type": "new",
-     "lesson": "geo-u4-1-3"
-    },
-    {
-     "type": "new",
-     "lesson": "math-u6-6-6"
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "recall",
+      "minutes": 10,
+      "title": "استرجاع سريع على دروس أمس"
+     },
+     {
+      "type": "new",
+      "lesson": "geo-u4-1-3"
+     }
+    ],
+    "pm": [
+     {
+      "type": "new",
+      "lesson": "phy-u2-4-1"
+     },
+     {
+      "type": "new",
+      "lesson": "math-u6-6-6"
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-11",
    "phase": "consolidate",
-   "items": [
-    {
-     "type": "review",
-     "subject": "math",
-     "title": "مراجعة الرياضيات (1): الوحدات 1 إلى 3",
-     "minutes": 150
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "review",
+      "subject": "math",
+      "title": "مراجعة الرياضيات (1): الوحدات 1 إلى 3 · الجزء الأول",
+      "minutes": 75
+     }
+    ],
+    "pm": [
+     {
+      "type": "review",
+      "subject": "math",
+      "title": "مراجعة الرياضيات (1): الوحدات 1 إلى 3 · الجزء الثاني",
+      "minutes": 75
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-12",
    "phase": "consolidate",
-   "items": [
-    {
-     "type": "review",
-     "subject": "physics",
-     "title": "مراجعة الفيزياء: الفصول 1 إلى 4",
-     "minutes": 150
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "review",
+      "subject": "physics",
+      "title": "مراجعة الفيزياء: الفصول 1 إلى 4 · الجزء الأول",
+      "minutes": 75
+     }
+    ],
+    "pm": [
+     {
+      "type": "review",
+      "subject": "physics",
+      "title": "مراجعة الفيزياء: الفصول 1 إلى 4 · الجزء الثاني",
+      "minutes": 75
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-13",
    "phase": "consolidate",
-   "items": [
-    {
-     "type": "review",
-     "subject": "chemistry",
-     "title": "مراجعة الكيمياء: الوحدات 1 إلى 3",
-     "minutes": 95
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "review",
+      "subject": "chemistry",
+      "title": "مراجعة الكيمياء: الوحدات 1 إلى 3 · الجزء الأول",
+      "minutes": 33
+     }
+    ],
+    "pm": [
+     {
+      "type": "review",
+      "subject": "chemistry",
+      "title": "مراجعة الكيمياء: الوحدات 1 إلى 3 · الجزء الثاني",
+      "minutes": 62
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-14",
    "phase": "consolidate",
-   "items": [
-    {
-     "type": "review",
-     "subject": "biology",
-     "title": "مراجعة الأحياء: النباتات والوراثة",
-     "minutes": 95
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "review",
+      "subject": "biology",
+      "title": "مراجعة الأحياء: النباتات والوراثة · الجزء الأول",
+      "minutes": 33
+     }
+    ],
+    "pm": [
+     {
+      "type": "review",
+      "subject": "biology",
+      "title": "مراجعة الأحياء: النباتات والوراثة · الجزء الثاني",
+      "minutes": 62
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-15",
    "phase": "consolidate",
-   "items": [
-    {
-     "type": "review",
-     "subject": "geology",
-     "title": "مراجعة الجيولوجيا: الوحدات 1 إلى 4",
-     "minutes": 95
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "review",
+      "subject": "geology",
+      "title": "مراجعة الجيولوجيا: الوحدات 1 إلى 4 · الجزء الأول",
+      "minutes": 33
+     }
+    ],
+    "pm": [
+     {
+      "type": "review",
+      "subject": "geology",
+      "title": "مراجعة الجيولوجيا: الوحدات 1 إلى 4 · الجزء الثاني",
+      "minutes": 62
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-16",
    "phase": "consolidate",
-   "items": [
-    {
-     "type": "review",
-     "subject": "math",
-     "title": "مراجعة الرياضيات (2): الوحدات 4 إلى 6",
-     "minutes": 95
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "review",
+      "subject": "math",
+      "title": "مراجعة الرياضيات (2): الوحدات 4 إلى 6 · الجزء الأول",
+      "minutes": 33
+     }
+    ],
+    "pm": [
+     {
+      "type": "review",
+      "subject": "math",
+      "title": "مراجعة الرياضيات (2): الوحدات 4 إلى 6 · الجزء الثاني",
+      "minutes": 62
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-17",
    "phase": "consolidate",
-   "items": [
-    {
-     "type": "review",
-     "subject": "mixed",
-     "title": "نقاط الضعف: إعادة الدروس الأقل درجة في الاختبارات القصيرة",
-     "minutes": 95
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "review",
+      "subject": "mixed",
+      "title": "نقاط الضعف: إعادة الدروس الأقل درجة في الاختبارات القصيرة · الجزء الأول",
+      "minutes": 33
+     }
+    ],
+    "pm": [
+     {
+      "type": "review",
+      "subject": "mixed",
+      "title": "نقاط الضعف: إعادة الدروس الأقل درجة في الاختبارات القصيرة · الجزء الثاني",
+      "minutes": 62
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-18",
    "phase": "mock",
-   "items": [
-    {
-     "type": "mock",
-     "subject": "math",
-     "title": "اختبار تجريبي كامل: الرياضيات",
-     "minutes": 60
-    },
-    {
-     "type": "mock",
-     "subject": "physics",
-     "title": "اختبار تجريبي كامل: الفيزياء",
-     "minutes": 60
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "mock",
+      "subject": "math",
+      "title": "اختبار تجريبي كامل: الرياضيات",
+      "minutes": 60
+     }
+    ],
+    "pm": [
+     {
+      "type": "mock",
+      "subject": "physics",
+      "title": "اختبار تجريبي كامل: الفيزياء",
+      "minutes": 60
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-19",
    "phase": "mock",
-   "items": [
-    {
-     "type": "mock",
-     "subject": "chemistry",
-     "title": "اختبار تجريبي كامل: الكيمياء",
-     "minutes": 60
-    },
-    {
-     "type": "mock",
-     "subject": "biology",
-     "title": "اختبار تجريبي كامل: الأحياء",
-     "minutes": 60
-    },
-    {
-     "type": "mock",
-     "subject": "geology",
-     "title": "اختبار تجريبي كامل: الجيولوجيا",
-     "minutes": 60
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "mock",
+      "subject": "chemistry",
+      "title": "اختبار تجريبي كامل: الكيمياء",
+      "minutes": 60
+     }
+    ],
+    "pm": [
+     {
+      "type": "mock",
+      "subject": "biology",
+      "title": "اختبار تجريبي كامل: الأحياء",
+      "minutes": 60
+     },
+     {
+      "type": "mock",
+      "subject": "geology",
+      "title": "اختبار تجريبي كامل: الجيولوجيا",
+      "minutes": 60
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-20",
    "phase": "exams",
-   "items": [
-    {
-     "type": "eve",
-     "subject": "tbd",
-     "title": "مراجعة ليلة الاختبار حسب الجدول الرسمي",
-     "minutes": 60
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "warmup",
+      "minutes": 20,
+      "title": "إحماء قبل الاختبار: النقاط الذهبية للمادة فقط، بدون دروس جديدة"
+     }
+    ],
+    "pm": [
+     {
+      "type": "eve",
+      "subject": "tbd",
+      "title": "مراجعة ليلة الاختبار حسب الجدول الرسمي",
+      "minutes": 60
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-21",
    "phase": "exams",
-   "items": [
-    {
-     "type": "eve",
-     "subject": "tbd",
-     "title": "مراجعة ليلة الاختبار حسب الجدول الرسمي",
-     "minutes": 60
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "warmup",
+      "minutes": 20,
+      "title": "إحماء قبل الاختبار: النقاط الذهبية للمادة فقط، بدون دروس جديدة"
+     }
+    ],
+    "pm": [
+     {
+      "type": "eve",
+      "subject": "tbd",
+      "title": "مراجعة ليلة الاختبار حسب الجدول الرسمي",
+      "minutes": 60
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-22",
    "phase": "exams",
-   "items": [
-    {
-     "type": "eve",
-     "subject": "tbd",
-     "title": "مراجعة ليلة الاختبار حسب الجدول الرسمي",
-     "minutes": 60
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "warmup",
+      "minutes": 20,
+      "title": "إحماء قبل الاختبار: النقاط الذهبية للمادة فقط، بدون دروس جديدة"
+     }
+    ],
+    "pm": [
+     {
+      "type": "eve",
+      "subject": "tbd",
+      "title": "مراجعة ليلة الاختبار حسب الجدول الرسمي",
+      "minutes": 60
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-23",
    "phase": "exams",
-   "items": [
-    {
-     "type": "eve",
-     "subject": "tbd",
-     "title": "مراجعة ليلة الاختبار حسب الجدول الرسمي",
-     "minutes": 60
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "warmup",
+      "minutes": 20,
+      "title": "إحماء قبل الاختبار: النقاط الذهبية للمادة فقط، بدون دروس جديدة"
+     }
+    ],
+    "pm": [
+     {
+      "type": "eve",
+      "subject": "tbd",
+      "title": "مراجعة ليلة الاختبار حسب الجدول الرسمي",
+      "minutes": 60
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-24",
    "phase": "exams",
-   "items": [
-    {
-     "type": "eve",
-     "subject": "tbd",
-     "title": "مراجعة ليلة الاختبار حسب الجدول الرسمي",
-     "minutes": 60
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "warmup",
+      "minutes": 20,
+      "title": "إحماء قبل الاختبار: النقاط الذهبية للمادة فقط، بدون دروس جديدة"
+     }
+    ],
+    "pm": [
+     {
+      "type": "eve",
+      "subject": "tbd",
+      "title": "مراجعة ليلة الاختبار حسب الجدول الرسمي",
+      "minutes": 60
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-25",
    "phase": "exams",
-   "items": [
-    {
-     "type": "eve",
-     "subject": "tbd",
-     "title": "مراجعة ليلة الاختبار حسب الجدول الرسمي",
-     "minutes": 60
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "warmup",
+      "minutes": 20,
+      "title": "إحماء قبل الاختبار: النقاط الذهبية للمادة فقط، بدون دروس جديدة"
+     }
+    ],
+    "pm": [
+     {
+      "type": "eve",
+      "subject": "tbd",
+      "title": "مراجعة ليلة الاختبار حسب الجدول الرسمي",
+      "minutes": 60
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-26",
    "phase": "exams",
-   "items": [
-    {
-     "type": "eve",
-     "subject": "tbd",
-     "title": "مراجعة ليلة الاختبار حسب الجدول الرسمي",
-     "minutes": 60
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "warmup",
+      "minutes": 20,
+      "title": "إحماء قبل الاختبار: النقاط الذهبية للمادة فقط، بدون دروس جديدة"
+     }
+    ],
+    "pm": [
+     {
+      "type": "eve",
+      "subject": "tbd",
+      "title": "مراجعة ليلة الاختبار حسب الجدول الرسمي",
+      "minutes": 60
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-27",
    "phase": "exams",
-   "items": [
-    {
-     "type": "eve",
-     "subject": "tbd",
-     "title": "مراجعة ليلة الاختبار حسب الجدول الرسمي",
-     "minutes": 60
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "warmup",
+      "minutes": 20,
+      "title": "إحماء قبل الاختبار: النقاط الذهبية للمادة فقط، بدون دروس جديدة"
+     }
+    ],
+    "pm": [
+     {
+      "type": "eve",
+      "subject": "tbd",
+      "title": "مراجعة ليلة الاختبار حسب الجدول الرسمي",
+      "minutes": 60
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-28",
    "phase": "exams",
-   "items": [
-    {
-     "type": "eve",
-     "subject": "tbd",
-     "title": "مراجعة ليلة الاختبار حسب الجدول الرسمي",
-     "minutes": 60
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "warmup",
+      "minutes": 20,
+      "title": "إحماء قبل الاختبار: النقاط الذهبية للمادة فقط، بدون دروس جديدة"
+     }
+    ],
+    "pm": [
+     {
+      "type": "eve",
+      "subject": "tbd",
+      "title": "مراجعة ليلة الاختبار حسب الجدول الرسمي",
+      "minutes": 60
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-29",
    "phase": "exams",
-   "items": [
-    {
-     "type": "eve",
-     "subject": "tbd",
-     "title": "مراجعة ليلة الاختبار حسب الجدول الرسمي",
-     "minutes": 60
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "warmup",
+      "minutes": 20,
+      "title": "إحماء قبل الاختبار: النقاط الذهبية للمادة فقط، بدون دروس جديدة"
+     }
+    ],
+    "pm": [
+     {
+      "type": "eve",
+      "subject": "tbd",
+      "title": "مراجعة ليلة الاختبار حسب الجدول الرسمي",
+      "minutes": 60
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-30",
    "phase": "exams",
-   "items": [
-    {
-     "type": "eve",
-     "subject": "tbd",
-     "title": "مراجعة ليلة الاختبار حسب الجدول الرسمي",
-     "minutes": 60
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "warmup",
+      "minutes": 20,
+      "title": "إحماء قبل الاختبار: النقاط الذهبية للمادة فقط، بدون دروس جديدة"
+     }
+    ],
+    "pm": [
+     {
+      "type": "eve",
+      "subject": "tbd",
+      "title": "مراجعة ليلة الاختبار حسب الجدول الرسمي",
+      "minutes": 60
+     }
+    ]
+   }
   },
   {
    "date": "2026-12-31",
    "phase": "exams",
-   "items": [
-    {
-     "type": "eve",
-     "subject": "tbd",
-     "title": "مراجعة ليلة الاختبار حسب الجدول الرسمي",
-     "minutes": 60
-    }
-   ]
+   "sessions": {
+    "am": [
+     {
+      "type": "warmup",
+      "minutes": 20,
+      "title": "إحماء قبل الاختبار: النقاط الذهبية للمادة فقط، بدون دروس جديدة"
+     }
+    ],
+    "pm": [
+     {
+      "type": "eve",
+      "subject": "tbd",
+      "title": "مراجعة ليلة الاختبار حسب الجدول الرسمي",
+      "minutes": 60
+     }
+    ]
+   }
   }
  ]
 }

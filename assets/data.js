@@ -5,11 +5,11 @@ window.LAB = {
   title: "مسار · الصف الحادي عشر",
   base: "https://insightosis.github.io/masar/",
   subjects: {
-    physics:   { name: "الفيزياء",   color: "#ffb547", icon: "physics" },
-    chemistry: { name: "الكيمياء",   color: "#3fe0c5", icon: "chemistry" },
-    biology:   { name: "الأحياء",    color: "#7ddc6a", icon: "biology" },
-    math:      { name: "الرياضيات",  color: "#9d8cff", icon: "math" },
-    geology:   { name: "الجيولوجيا", color: "#e08a5a", icon: "geology" }
+    physics:   { name: "الفيزياء",   color: "#d9772e", soft: "#ffe3cc", icon: "physics" },
+    chemistry: { name: "الكيمياء",   color: "#2f9e78", soft: "#cdf2e4", icon: "chemistry" },
+    biology:   { name: "الأحياء",    color: "#5c9a33", soft: "#e0f4c9", icon: "biology" },
+    math:      { name: "الرياضيات",  color: "#7a5ad8", soft: "#e6ddff", icon: "math" },
+    geology:   { name: "الجيولوجيا", color: "#c4664a", soft: "#fbdcd2", icon: "geology" }
   },
   /* { subject, title, date: "YYYY-MM-DD" } */
   exams: [],
@@ -20,25 +20,21 @@ window.LAB = {
       date: "2026-11-14",
       subject: "physics",
       unit: "الحركة · الدرس 1-3",
-      title: "حركة المقذوفات",
+      title: "حركة القذيفة",
       url: "lessons/phy-u1-1-3.html",
-      minutes: 15,
+      minutes: 37,
       prereq: ["phy-u1-1-1", "phy-u1-1-2", "math-u5-5-1"],
       related: ["math-u2-2-3"],
       next: ["phy-u1-2-1"],
       terms: [
-        { ar: "المقذوف", en: "Projectile", def: "جسم يُطلق في الهواء ثم يتحرك بتأثير الجاذبية وحدها." },
-        { ar: "المسار", en: "Trajectory", def: "الطريق الذي يرسمه الجسم في الهواء، وشكله قطع مكافئ." },
-        { ar: "زاوية الإطلاق", en: "Launch angle (θ)", def: "الزاوية بين اتجاه السرعة الابتدائية والخط الأفقي." },
-        { ar: "المركبة الأفقية", en: "Horizontal component (vx)", def: "جزء السرعة الموازي للأرض، ثابت طوال الحركة." },
-        { ar: "المركبة الرأسية", en: "Vertical component (vy)", def: "جزء السرعة العمودي على الأرض، يتغير بسبب الجاذبية." },
-        { ar: "السقوط الحر", en: "Free fall", def: "حركة لا تؤثر فيها إلا الجاذبية، بتسارع ثابت للأسفل." },
-        { ar: "تسارع الجاذبية", en: "Gravitational acceleration (g)", def: "مقداره 9.8 م/ث² تقريباً، واتجاهه دائماً لأسفل." },
-        { ar: "زمن التحليق", en: "Time of flight (T)", def: "الزمن من لحظة الإطلاق حتى لحظة الهبوط." },
-        { ar: "أقصى ارتفاع", en: "Maximum height (H)", def: "أعلى نقطة يصلها الجسم، وعندها السرعة الرأسية صفر." },
-        { ar: "المدى الأفقي", en: "Horizontal range (R)", def: "المسافة الأفقية بين نقطة الإطلاق ونقطة الهبوط." },
-        { ar: "زاويتان متتامتان", en: "Complementary angles", def: "مجموعهما 90°، مثل 30° و 60°، وتعطيان نفس المدى." },
-        { ar: "تحليل المتجه", en: "Vector resolution", def: "تفكيك متجه مائل إلى مركبتين متعامدتين باستخدام cos و sin." }
+        { ar: "السرعة الابتدائية", en: "v0 · Initial velocity", def: "سرعة الكرة لحظة خروجها من يدك. الصفر يعني لحظة البداية." },
+        { ar: "زاوية الإطلاق", en: "θ · Launch angle", def: "كم رفعت اتجاه الرمية عن الأرض: 0° على الأرض و90° للأعلى تماماً." },
+        { ar: "السرعة الأفقية", en: "vx · Horizontal velocity", def: "جزء السرعة الذي يمشي مع الأرض، ثابت لا يتغير. x خط ممدود على الأرض." },
+        { ar: "السرعة الرأسية", en: "vy · Vertical velocity", def: "جزء السرعة الذي يصعد أو ينزل، مثل المصعد. يصير صفراً عند القمة." },
+        { ar: "تسارع الجاذبية", en: "g · Gravity", def: "شدّ الأرض: 9.8 م/ث² للأسفل دائماً، حتى عند القمة." },
+        { ar: "زمن التحليق", en: "T · Time of flight", def: "كم ثانية بقيت الكرة في الهواء. T من Time." },
+        { ar: "أقصى ارتفاع", en: "H · Maximum height", def: "أعلى نقطة تصلها الكرة. H من Height." },
+        { ar: "المدى", en: "R · Range", def: "المسافة على الأرض بين مكان الرمي ومكان الهبوط. R من Range." }
       ],
       gold: [
         { type: "exam", text: "عند القمة السرعة الرأسية صفر، لكن السرعة الكلية تساوي vx، والتسارع يساوي g وليس صفراً." },

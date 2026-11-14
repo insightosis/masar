@@ -20,20 +20,41 @@ Served by GitHub Pages at https://insightosis.github.io/masar/
 
 ## Rules for every lesson
 
-- Loads nothing from other domains (no Google Fonts, no CDNs): the student's browser only allows this site.
-  Fonts come from `../assets/fonts.css`. External links are fine but may be blocked on the device.
-- Sections, in order: lab/hook, **مصطلحات الدرس** (Arabic, English, symbol, one-line definition),
-  core ideas with Claude-drawn visuals, laws, worked example, **النقاط الذهبية** (labels: سؤال مكرر / قاعدة سريعة / فخ),
-  daily life, 3 quiz questions, summary, links, finish button.
-- Subject colour from `LAB.subjects`; each subject keeps its own visual identity.
-- Include `../assets/data.js` and `../assets/lab.js`, set `LESSON_ID`, keep the quiz and finish wiring.
+**Look:** pastel claymorphism on a light background. Puffy rounded tiles (`--clay` shadows from `assets/site.css`),
+light pastel fills, the rounded display face (Baloo Bhaijaan 2) for headings, IBM Plex Sans Arabic for text.
+Each subject keeps its own pastel identity (`LAB.subjects[*].color` for ink, `.soft` for fills). No dark themes.
+
+**Voice:** explain as to a student a little younger than grade 11, without talking down: short sentences, everyday
+images (a ball, a lift, a car on cruise control), one idea at a time, little text, lots of visuals drawn in the page.
+
+**Sections, in order:**
+1. Hook and a hands-on lab or animation.
+2. **رموز الدرس**: only the symbols and terms the lesson's equations use (e.g. v0, θ, vx, vy, g, T, H, R), each as a
+   clay card: the symbol in a bubble, Arabic name, English name, what it means in one plain line, and a one-line
+   memory hook (`.hook`). Not every word of the chapter.
+3. Core ideas with drawn visuals, then the laws.
+4. Two or three short interactive checks woven in where they fit, not stacked at the end. Pick from:
+   **رتّب القانون** (tap shuffled formula pieces into order, with one decoy piece),
+   **أكمل الناقص** (choose the missing piece of a formula),
+   **اكتب الجواب** (type a number, tolerant check, hint button). Each gives a reason on a wrong answer.
+5. Worked example (hide-solution toggle), **النقاط الذهبية** (labels: سؤال مكرر / قاعدة سريعة / فخ),
+   daily life, 3 quiz questions, a 3-line summary, links, finish button.
+- Every check calls `record(key, firstTryCorrect)`; the score is saved with the lesson.
+- Loads nothing from other domains; fonts come from `../assets/fonts.css`.
+- Include `../assets/plan.js`, `../assets/data.js` and `../assets/lab.js`, and set `LESSON_ID`.
+
+## Two sessions a day
+
+`plan.json` gives each day `sessions.am` (06:00, short, before school, starts with recall of yesterday) and
+`sessions.pm` (18:00, the longer lessons). The lesson task runs before each session (about 05:30 and 17:30
+Kuwait time), builds that session's lessons, and rewrites `latest.html` with that session's LESSON-ID(s).
 
 ## Publishing a lesson
 
 1. Write `lessons/<id>.html`.
 2. Append the lesson to `LAB.lessons` in `assets/data.js` (with `terms`, `gold`, `prereq`, `related`, `next`).
    Add any new concepts it links to; when a concept gets its own lesson, set `concept.lesson`.
-3. Rewrite every field of `latest.html`.
+3. Rewrite every field of `latest.html` (one LESSON-ID line per lesson of the session, plus the session name).
 4. Commit and push to `main`.
 
 ## Study plan
