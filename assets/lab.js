@@ -28,15 +28,14 @@
       return '<svg viewBox="0 0 24 24" width="' + (size || 22) + '" height="' + (size || 22) + '" aria-hidden="true">' + (ICONS[key] || "") + "</svg>";
     },
     lesson: function (id) { return (window.LAB.lessons || []).filter(function (l) { return l.id === id; })[0] || null; },
-    concept: function (id) { return (window.LAB.concepts || []).filter(function (c) { return c.id === id; })[0] || null; },
+    planned: function (id) { var P = window.PLAN; return P ? (P.catalog.filter(function (c) { return c.id === id; })[0] || null) : null; },
     /* Resolve an id that may be a lesson or a concept into {title, subject, url|null}. */
     node: function (id, prefix) {
       var l = this.lesson(id);
       if (l) return { id: id, title: l.title, subject: l.subject, url: (prefix || "") + l.url, done: this.isDone(id) };
-      var c = this.concept(id);
+      var c = this.planned(id);
       if (!c) return null;
-      if (c.lesson) { var cl = this.lesson(c.lesson); if (cl) return { id: cl.id, title: cl.title, subject: cl.subject, url: (prefix || "") + cl.url, done: this.isDone(cl.id) }; }
-      return { id: id, title: c.title, subject: c.subject, url: null, done: false };
+      return { id: id, title: c.title, subject: c.subject, url: null, done: false, code: c.code };
     },
     streak: function () {
       var p = load(), days = {}, k;

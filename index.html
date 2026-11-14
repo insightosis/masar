@@ -42,6 +42,11 @@
 .arr{color:var(--muted);font-family:var(--mono)}
 .lbl{font-size:12px;color:var(--muted);width:100%}
 
+.plan-today{display:grid;gap:8px}
+.pt{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;padding:10px 14px;border-radius:14px;border:1px solid var(--line);border-inline-start:4px solid var(--sc);background:rgba(20,28,69,.75)}
+.pt b{font-weight:600}.pt .code{font-family:var(--mono);font-size:12.5px;color:var(--sc);direction:ltr}.pt .m{font-size:13px;color:var(--muted)}
+.pt a{text-decoration:none;border-bottom:1px solid var(--sc)}
+.more-link{font-size:14px;color:var(--accent)}
 .exams{display:grid;gap:8px}
 .exam{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px;border-radius:14px;border:1px solid var(--line);background:rgba(20,28,69,.75)}
 .exam b{font-family:var(--mono);color:var(--accent)}
@@ -63,6 +68,7 @@
     <a class="brand" href="index.html"><span class="dot"></span>مسار · الصف الحادي عشر</a>
     <nav class="nav" aria-label="أقسام الموقع">
       <a href="index.html" aria-current="page">لوحة التتبع</a>
+      <a href="plan.html">الخطة</a>
       <a href="review.html">المراجعة</a>
     </nav>
   </header>
@@ -70,6 +76,11 @@
   <section class="hero" aria-label="درس اليوم">
     <div class="today" id="today"></div>
     <div class="stats" id="stats"></div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-plan">
+    <h2 id="h-plan">اليوم في الخطة</h2>
+    <div class="plan-today" id="ptoday"></div>
   </section>
 
   <section class="sec" aria-labelledby="h-subj">
@@ -96,6 +107,7 @@
   <footer>التقدم محفوظ على هذا الجهاز · الدروس الجديدة تُنشر حسب الجدول</footer>
 </div>
 
+<script src="assets/plan.js"></script>
 <script src="assets/data.js"></script>
 <script src="assets/lab.js"></script>
 <script>
@@ -150,10 +162,22 @@ $("chains").innerHTML=L.slice(0,8).map(function(l){
     +(rel?'<span class="lbl">يرتبط أيضاً بـ</span><div class="grp">'+rel+'</div>':'')+'</div>';
 }).join("")||'<div class="empty">تظهر الروابط مع أول درس.</div>';
 
+
+/* today in plan */
+var P=window.PLAN,cat={};(P?P.catalog:[]).forEach(function(c){cat[c.id]=c;});
+var pd=P?P.days.filter(function(d){return d.date===Lab.today();})[0]:null;
+$("ptoday").innerHTML=(pd?pd.items.map(function(it){
+  if(it.type==="new"){var c=cat[it.lesson],s=S[c.subject],pub=Lab.lesson(c.id);
+    return '<div class="pt" style="--sc:'+s.color+'"><span class="code">'+esc(s.name)+' '+c.code+'</span>'+(pub?'<a href="'+esc(pub.url)+'"><b>'+esc(c.title)+'</b></a>':'<b>'+esc(c.title)+'</b>')+'<span class="m">≈ '+c.minutes+' دقيقة</span>'+(Lab.isDone(c.id)?' <span class="done-badge">✓</span>':'')+'</div>';}
+  var sc=it.subject&&S[it.subject]?S[it.subject].color:"#9ba6d8";
+  return '<div class="pt" style="--sc:'+sc+'"><b>'+esc(it.title||it.note)+'</b><span class="m">≈ '+it.minutes+' دقيقة</span></div>';
+}).join(""):'<div class="empty">لا مهام لليوم. الخطة تبدأ '+(P?esc(fmt(P.days[0].date)):"قريباً")+'.</div>')+'<a class="more-link" href="plan.html#today">الخطة كاملة ←</a>';
+
 /* exams */
-var ex=(D.exams||[]).filter(function(e){return daysTo(e.date)>=0;}).sort(function(a,b){return a.date<b.date?-1:1;});
+var ex=((P&&P.exams.length?P.exams:D.exams)||[]).filter(function(e){return daysTo(e.date)>=0;}).sort(function(a,b){return a.date<b.date?-1:1;});
+if(!ex.length&&P&&daysTo(P.examWindow.end)>=0)ex=[{subject:"",title:"فترة اختبارات نهاية الفصل الأول ("+fmt(P.examWindow.start)+" إلى "+fmt(P.examWindow.end)+")، ومواعيد المواد تُضاف عند نشر الجدول",date:P.examWindow.start}];
 $("exams").innerHTML=ex.length?ex.map(function(e){var s=S[e.subject]||{name:"",color:"#ffb547"};var n=daysTo(e.date);
-  return '<div class="exam"><span><span class="chip" style="color:'+s.color+'">'+esc(s.name)+'</span> '+esc(e.title)+'</span><b>'+(n===0?"اليوم":n+" يوم")+'</b></div>';}).join("")
+  return '<div class="exam"><span>'+(s.name?'<span class="chip" style="color:'+s.color+'">'+esc(s.name)+'</span> ':'')+esc(e.title||"")+'</span><b>'+(n===0?"اليوم":n+" يوم")+'</b></div>';}).join("")
   :'<div class="empty">مواعيد الاختبارات تُضاف عند تحديد الجدول، وبعدها يبدأ العد التنازلي هنا.</div>';
 
 /* all lessons */

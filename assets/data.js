@@ -13,26 +13,19 @@ window.LAB = {
   },
   /* { subject, title, date: "YYYY-MM-DD" } */
   exams: [],
-  /* Concepts that are not lessons yet but that lessons link to.
-     When a lesson for one is published, set its lesson field to the lesson id. */
-  concepts: [
-    { id: "math-trig",     subject: "math",    title: "النسب المثلثية sin و cos", lesson: null },
-    { id: "math-parabola", subject: "math",    title: "الدالة التربيعية والقطع المكافئ", lesson: null },
-    { id: "phy-freefall",  subject: "physics", title: "السقوط الحر", lesson: null },
-    { id: "phy-circular",  subject: "physics", title: "الحركة الدائرية المنتظمة", lesson: null }
-  ],
+  /* Lessons not published yet are looked up in PLAN.catalog (assets/plan.js), so links to them show as "قريباً". */
   lessons: [
     {
-      id: "phy-001",
+      id: "phy-u1-1-3",
       date: "2026-11-14",
       subject: "physics",
-      unit: "الحركة في بُعدين",
+      unit: "الحركة · الدرس 1-3",
       title: "حركة المقذوفات",
-      url: "lessons/phy-001.html",
+      url: "lessons/phy-u1-1-3.html",
       minutes: 15,
-      prereq: ["math-trig", "phy-freefall"],
-      related: ["math-parabola"],
-      next: ["phy-circular"],
+      prereq: ["phy-u1-1-1", "phy-u1-1-2", "math-u5-5-1"],
+      related: ["math-u2-2-3"],
+      next: ["phy-u1-2-1"],
       terms: [
         { ar: "المقذوف", en: "Projectile", def: "جسم يُطلق في الهواء ثم يتحرك بتأثير الجاذبية وحدها." },
         { ar: "المسار", en: "Trajectory", def: "الطريق الذي يرسمه الجسم في الهواء، وشكله قطع مكافئ." },
