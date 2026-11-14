@@ -27,9 +27,17 @@ Canvas drawings read the tokens and redraw on the `masar-theme` event.
 light pastel fills, the rounded display face (Baloo Bhaijaan 2) for headings, IBM Plex Sans Arabic for text.
 Each subject keeps its own pastel identity (`LAB.subjects[*].color` for ink, `.soft` for fills). No dark themes.
 
-**Book first (non-negotiable):** every lesson is built from its pages in the student book. Read the lesson's pages in the student book before writing. Use the book's notation and values
-(e.g. physics uses g = 10 m/s², v0x, v0y, Δx, Δy, t′, h_max, R and the word "عجلة"), cover every objective listed on the
-lesson's first page, and put the page range in the header and footer.
+**The book sets the scope, not the script (non-negotiable):** read the lesson's pages in the student book before
+writing, then:
+- **Never less than the book:** every objective on the lesson's first page, every law, definition and type of
+  problem the book has is covered, with the book's notation and values (e.g. physics: g = 10 m/s², v0x, v0y, Δx, Δy,
+  t′, h_max, R, the word "عجلة"), so the student recognises them in the exam.
+- **Nothing extra without a reason:** no topics or laws beyond the book unless they make a book idea easier to
+  understand (and then labelled as help, not exam content).
+- **Free in how it teaches:** do not copy the book's wording, order, pictures or examples. Explain naturally, with
+  our own analogies, everyday examples (a cannon, a kicked ball, a water hose), drawings, labs and interactive
+  checks, whenever they explain better than the book does.
+- Put the page range in the header and footer.
 
 **Voice:** explain as to a student a little younger than grade 11, without talking down: short sentences, everyday
 images (a ball, a lift, a car on cruise control), one idea at a time, little text, lots of visuals drawn in the page.
