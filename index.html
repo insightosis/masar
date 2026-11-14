@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مسار · الصف الحادي عشر</title>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.hero{display:grid;grid-template-columns:1.35fr 1fr;gap:14px;margin-top:18px}
+@media (max-width:780px){.hero{grid-template-columns:1fr}}
+.today{position:relative;overflow:hidden;border-radius:22px;padding:22px;border:1px solid var(--line);background:linear-gradient(150deg,#1d2763,#111840 70%)}
+.today::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:6px;background:var(--sc)}
+.today .arc{position:absolute;inset-inline-end:-40px;bottom:-60px;width:260px;opacity:.5;pointer-events:none}
+.eyebrow{margin:0;font-weight:700;font-size:14px;color:var(--sc)}
+.today h1{font-size:clamp(2rem,6.5vw,3.2rem);margin:.15em 0 .2em}
+.meta{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;color:var(--muted);font-size:14.5px}
+.cta{display:inline-flex;align-items:center;gap:10px;margin-top:16px;background:var(--sc);color:#141005;text-decoration:none;font-weight:700;padding:10px 22px;border-radius:14px}
+.cta:hover{filter:brightness(1.08)}
+.done-badge{display:inline-flex;align-items:center;gap:6px;color:var(--ok);font-weight:700;font-size:14px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat{border:1px solid var(--line);border-radius:16px;padding:12px 14px;background:rgba(20,28,69,.75)}
+.stat span{display:block;font-size:13px;color:var(--muted)}
+.stat b{font-family:var(--mono);font-size:clamp(1.6rem,5vw,2.2rem);font-variant-numeric:tabular-nums}
+.stat small{color:var(--muted);margin-inline-start:4px}
+
+.subjects{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.subj{border:1px solid var(--line);border-radius:16px;padding:12px 14px;background:rgba(20,28,69,.75);color:var(--sc)}
+.subj .row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.subj h3{margin:0;font-size:1.1rem;color:var(--text)}
+.subj p{margin:6px 0 8px;font-size:13.5px;color:var(--muted)}
+.bar{height:7px;border-radius:9px;background:rgba(255,255,255,.07);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--sc);border-radius:9px}
+
+.chains{display:grid;gap:12px}
+.chain{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:12px 14px;border-radius:16px;border:1px solid var(--line);background:rgba(20,28,69,.6)}
+.chain .grp{display:flex;flex-wrap:wrap;gap:6px}
+.node{display:inline-flex;align-items:center;gap:6px;font-size:14px;padding:4px 12px;border-radius:12px;border:1px solid var(--sc);color:var(--text);background:color-mix(in srgb,var(--sc) 10%,transparent);text-decoration:none}
+.node.soon{border-style:dashed;color:var(--muted);background:none}
+.node.main{font-weight:700;font-size:15px;background:color-mix(in srgb,var(--sc) 22%,transparent)}
+.node .ic{color:var(--sc);display:inline-flex}
+.arr{color:var(--muted);font-family:var(--mono)}
+.lbl{font-size:12px;color:var(--muted);width:100%}
+
+.exams{display:grid;gap:8px}
+.exam{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px;border-radius:14px;border:1px solid var(--line);background:rgba(20,28,69,.75)}
+.exam b{font-family:var(--mono);color:var(--accent)}
+
+.list{display:grid;gap:6px}
+.item{display:grid;grid-template-columns:96px 1fr auto;gap:12px;align-items:center;padding:10px 14px;border-radius:14px;border:1px solid var(--line);background:rgba(20,28,69,.6);text-decoration:none}
+.item:hover{border-color:var(--sc)}
+.item time{font-family:var(--mono);font-size:13px;color:var(--muted);direction:ltr;text-align:end}
+.item .t{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center}
+.item .t b{font-weight:600}
+.check{width:24px;height:24px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-size:13px}
+.check.on{background:var(--ok);border-color:var(--ok);color:#06281a}
+@media (max-width:480px){.item{grid-template-columns:1fr auto}.item time{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="index.html"><span class="dot"></span>مسار · الصف الحادي عشر</a>
+    <nav class="nav" aria-label="أقسام الموقع">
+      <a href="index.html" aria-current="page">لوحة التتبع</a>
+      <a href="review.html">المراجعة</a>
+    </nav>
+  </header>
+
+  <section class="hero" aria-label="درس اليوم">
+    <div class="today" id="today"></div>
+    <div class="stats" id="stats"></div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-subj">
+    <h2 id="h-subj">المواد</h2>
+    <div class="subjects" id="subjects"></div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-map">
+    <h2 id="h-map">خريطة الترابط</h2>
+    <p class="muted" style="margin-top:-6px">ما تحتاجه قبل كل درس، وإلى أين يقودك بعده. المنقّط لم يُنشر بعد.</p>
+    <div class="chains" id="chains"></div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-ex">
+    <h2 id="h-ex">الاختبارات القادمة</h2>
+    <div class="exams" id="exams"></div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-all">
+    <h2 id="h-all">كل الدروس</h2>
+    <div class="list" id="all"></div>
+  </section>
+
+  <footer>التقدم محفوظ على هذا الجهاز · الدروس الجديدة تُنشر حسب الجدول</footer>
+</div>
+
+<script src="assets/data.js"></script>
+<script src="assets/lab.js"></script>
+<script>
+(function(){
+"use strict";
+var D=window.LAB, S=D.subjects, L=(D.lessons||[]).slice().sort(function(a,b){return a.date<b.date?1:-1;});
+function $(id){return document.getElementById(id);}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+function fmt(d){try{return new Date(d+"T12:00:00").toLocaleDateString("ar",{weekday:"long",day:"numeric",month:"long"});}catch(e){return d;}}
+function daysTo(d){return Math.round((new Date(d+"T00:00:00")-new Date(Lab.today()+"T00:00:00"))/864e5);}
+
+/* today */
+var t=L[0], el=$("today");
+if(t){
+  var sc=S[t.subject];
+  el.style.setProperty("--sc",sc.color);
+  el.innerHTML='<svg class="arc" viewBox="0 0 260 160" aria-hidden="true"><path d="M10 150 Q130 -40 250 150" fill="none" stroke="'+sc.color+'" stroke-width="2.5" stroke-dasharray="2 10" stroke-linecap="round"/></svg>'
+    +'<p class="eyebrow">'+(t.date===Lab.today()?"درس اليوم":"آخر درس")+' · '+esc(fmt(t.date))+'</p>'
+    +'<h1>'+esc(t.title)+'</h1>'
+    +'<div class="meta"><span class="chip" style="color:'+sc.color+'">'+Lab.icon(S[t.subject].icon,15)+esc(sc.name)+'</span><span>'+esc(t.unit)+'</span><span>≈ '+t.minutes+' دقيقة</span>'
+    +(Lab.isDone(t.id)?'<span class="done-badge">✓ أنجزته</span>':'')+'</div>'
+    +'<a class="cta" href="'+esc(t.url)+'">'+(Lab.isDone(t.id)?"راجع الدرس":"ابدأ الدرس")+' ←</a>';
+}else{el.style.setProperty("--sc","#ffb547");el.innerHTML='<p class="eyebrow">قريباً</p><h1>أول درس في الطريق</h1>';}
+
+/* stats */
+var P=Lab.progress(), done=L.filter(function(l){return P[l.id]&&P[l.id].done;}), qs=[];
+L.forEach(function(l){var q=P[l.id]&&P[l.id].quiz;if(q&&q.total)qs.push(q.score/q.total);});
+var avg=qs.length?Math.round(100*qs.reduce(function(a,b){return a+b;},0)/qs.length):null;
+$("stats").innerHTML=[
+  ["الدروس المنشورة",L.length,""],["أنجزت منها",done.length,""],
+  ["أيام متتالية",Lab.streak(),"يوم"],["متوسط الاختبارات",avg===null?"–":avg,avg===null?"":"%"]
+].map(function(s){return '<div class="stat"><span>'+s[0]+'</span><b>'+s[1]+'</b><small>'+s[2]+'</small></div>';}).join("");
+
+/* subjects */
+$("subjects").innerHTML=Object.keys(S).map(function(k){
+  var all=L.filter(function(l){return l.subject===k;}), dn=all.filter(function(l){return Lab.isDone(l.id);});
+  var pct=all.length?Math.round(100*dn.length/all.length):0;
+  return '<div class="subj" style="--sc:'+S[k].color+'"><div class="row"><h3>'+esc(S[k].name)+'</h3>'+Lab.icon(S[k].icon,26)+'</div>'
+    +'<p>'+(all.length?dn.length+' من '+all.length+' دروس':'لا دروس بعد')+'</p><div class="bar" role="img" aria-label="'+pct+'%"><i style="width:'+pct+'%"></i></div></div>';
+}).join("");
+
+/* chains */
+function nodeHtml(id,main){
+  var n=Lab.node(id); if(!n)return "";
+  var c=S[n.subject].color, ic='<span class="ic">'+Lab.icon(S[n.subject].icon,15)+'</span>';
+  if(!n.url)return '<span class="node soon" style="--sc:'+c+'">'+ic+esc(n.title)+'</span>';
+  return '<a class="node'+(main?' main':'')+'" style="--sc:'+c+'" href="'+esc(n.url)+'">'+ic+esc(n.title)+(n.done?' ✓':'')+'</a>';
+}
+$("chains").innerHTML=L.slice(0,8).map(function(l){
+  var pre=(l.prereq||[]).map(function(i){return nodeHtml(i);}).join(""), nx=(l.next||[]).map(function(i){return nodeHtml(i);}).join(""), rel=(l.related||[]).map(function(i){return nodeHtml(i);}).join("");
+  return '<div class="chain">'+(pre?'<div class="grp">'+pre+'</div><span class="arr">←</span>':'')+nodeHtml(l.id,true)+(nx?'<span class="arr">←</span><div class="grp">'+nx+'</div>':'')
+    +(rel?'<span class="lbl">يرتبط أيضاً بـ</span><div class="grp">'+rel+'</div>':'')+'</div>';
+}).join("")||'<div class="empty">تظهر الروابط مع أول درس.</div>';
+
+/* exams */
+var ex=(D.exams||[]).filter(function(e){return daysTo(e.date)>=0;}).sort(function(a,b){return a.date<b.date?-1:1;});
+$("exams").innerHTML=ex.length?ex.map(function(e){var s=S[e.subject]||{name:"",color:"#ffb547"};var n=daysTo(e.date);
+  return '<div class="exam"><span><span class="chip" style="color:'+s.color+'">'+esc(s.name)+'</span> '+esc(e.title)+'</span><b>'+(n===0?"اليوم":n+" يوم")+'</b></div>';}).join("")
+  :'<div class="empty">مواعيد الاختبارات تُضاف عند تحديد الجدول، وبعدها يبدأ العد التنازلي هنا.</div>';
+
+/* all lessons */
+$("all").innerHTML=L.map(function(l){var s=S[l.subject],d=Lab.isDone(l.id);
+  return '<a class="item" style="--sc:'+s.color+'" href="'+esc(l.url)+'"><time datetime="'+l.date+'">'+l.date+'</time><span class="t"><span class="chip" style="color:'+s.color+'">'+esc(s.name)+'</span><b>'+esc(l.title)+'</b></span><span class="check'+(d?' on':'')+'" aria-label="'+(d?"منجز":"لم ينجز")+'">'+(d?"✓":"")+'</span></a>';
+}).join("")||'<div class="empty">لا دروس بعد.</div>';
+})();
+</script>
+</body>
+</html>
