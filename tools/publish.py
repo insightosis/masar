@@ -5,7 +5,7 @@ usage: python3 tools/publish.py --date 2026-11-15 --session am|pm --ready DIR id
 
 DIR holds <id>.html and entries.json ({id: {entry: {...}, latest: {keypoints: [3], hook: str}}}).
 Copies lessons/<id>.html, adds/replaces the LAB.lessons entry in assets/data.js (with the date),
-and rewrites latest.html for the notification tasks. Idempotent: re-running replaces, never duplicates."""
+and rewrites latest.html and latest.txt for the notification tasks. Idempotent: re-running replaces, never duplicates."""
 import argparse, html, json, os, re, shutil, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -65,6 +65,14 @@ def main():
     L.append(f'<p>HOOK-SEED: {html.escape(meta[a.ids[0]]["latest"]["hook"])}</p>')
     L.append(f'<p><a href="{BASE}">لوحة التتبع</a></p>\n</body>\n</html>\n')
     open(os.path.join(ROOT, "latest.html"), "w", encoding="utf-8").write("\n".join(L))
+    # same content as plain text (some fetch tools read text/plain more reliably than HTML)
+    T = [f"LESSON-ID: {lid}" for lid in a.ids] + [f"الجلسة: {SESS[a.session]}", f"التاريخ: {a.date}"]
+    for lid in a.ids:
+        e = meta[lid]["entry"]; lt = meta[lid]["latest"]
+        T += ["", f"المادة: {SUBJ[e['subject']]}", f"العنوان: {e['title']}", f"المدة: {e['minutes']} دقيقة", f"الرابط: {BASE}{e['url']}"]
+        T += [f"KEY-POINT: {k}" for k in lt["keypoints"]]
+    T += ["", f"HOOK-SEED: {meta[a.ids[0]]['latest']['hook']}", ""]
+    open(os.path.join(ROOT, "latest.txt"), "w", encoding="utf-8").write("\n".join(T))
     print("published", ", ".join(a.ids), "for", a.date, a.session)
 
 if __name__ == "__main__":
