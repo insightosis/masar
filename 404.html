@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>مسار · الصفحة غير جاهزة</title>
+<!-- GitHub Pages serves this for every missing path, at any depth: keep every URL absolute. -->
+<link rel="stylesheet" href="/masar/assets/fonts.css">
+<link rel="stylesheet" href="/masar/assets/site.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+.card{margin-top:22px;padding:26px 24px;border-radius:var(--r);background:linear-gradient(135deg,var(--wash),var(--card) 55%,var(--wash2));box-shadow:var(--clay);text-align:center}
+.card h1{font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,6vw,2.3rem);margin:6px 0 8px;line-height:1.3}
+.card p{margin:8px auto;max-width:34em}
+.when{display:inline-block;margin-top:8px;padding:10px 18px;border-radius:20px;background:var(--card);box-shadow:var(--clay-sm);font-weight:700}
+.icon{font-size:2.6rem}
+.row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:18px}
+[hidden]{display:none!important}
+</style>
+</head>
+<body data-subject="hub">
+<div class="wrap">
+  <header class="top"><a class="brand" href="/masar/"><span class="dot"></span>مسار · الصف الحادي عشر</a></header>
+  <section class="card" aria-live="polite">
+    <div class="icon" aria-hidden="true">🌱</div>
+    <h1 id="h">هذه الصفحة غير موجودة</h1>
+    <p id="p">يمكن الرابط فيه خطأ بسيط. ارجع للوحة التتبع وتلقى كل دروسك.</p>
+    <span class="when" id="w" hidden></span>
+    <div class="row"><a class="btn" href="/masar/">لوحة التتبع ←</a><button class="btn" type="button" id="re" hidden>جرّب مرة ثانية</button></div>
+  </section>
+</div>
+<script src="/masar/assets/plan.js"></script>
+<script>
+(function(){
+  var m=location.pathname.match(/\/lessons\/([a-z]+-[a-z0-9-]+?)(?:\.html)?$/), P=window.PLAN;
+  if(!m||!P)return;
+  var id=m[1], c=P.catalog.filter(function(x){return x.id===id;})[0];
+  if(!c)return;
+  var when=null;
+  P.days.some(function(d){return ["am","pm"].some(function(s){
+    if(((d.sessions||{})[s]||[]).some(function(it){return it.lesson===id;})){when={date:d.date,s:s};return true;}
+  });});
+  document.getElementById("h").textContent=c.title;
+  var p=document.getElementById("p"), w=document.getElementById("w"), re=document.getElementById("re");
+  if(!when){p.textContent="هذا الدرس في الخطة، وينزل في موعده.";return;}
+  var t=new Date(when.date+"T"+(when.s==="am"?"06:00":"18:00")+":00+03:00");
+  var label=new Date(when.date+"T12:00:00").toLocaleDateString("ar",{weekday:"long",day:"numeric",month:"long"})+" · "+(when.s==="am"?"الساعة 6 الصبح":"الساعة 6 المسا");
+  w.textContent="موعده: "+label; w.hidden=false;
+  if(Date.now()<t.getTime()-60*60*1000){p.textContent="هذا الدرس لسا ما نزل. يجهز قبل موعده بشوي، وتلقاه هنا وفي لوحة التتبع.";}
+  else{p.textContent="الدرس يتجهّز الحين، ويكون جاهز خلال دقائق.";re.hidden=false;re.addEventListener("click",function(){location.reload();});}
+})();
+</script>
+</body>
+</html>
