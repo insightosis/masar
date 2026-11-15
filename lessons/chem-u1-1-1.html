@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="chemistry">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الأفلاك الجزيئية · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+body{--orbA:#2fb6f0;--orbB:#ff7aa8;--mix:#8a63f2;--nuc:#2b2346}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--nuc:#f4efff}}
+:root[data-theme="dark"] body{--nuc:#f4efff}
+.ov{display:block;width:100%;height:auto;border-radius:22px;background:var(--sky);box-shadow:var(--press)}
+.pick{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.cfg{direction:ltr;unicode-bidi:isolate;font-family:"Noto Serif",Georgia,serif;font-size:1.15rem}
+.cfg sup{font-size:.62em}
+.cfg sub{font-size:.62em}
+.badge{display:inline-grid;place-items:center;min-width:46px;height:46px;border-radius:50%;font-family:"Noto Serif",Georgia,serif;font-style:italic;font-weight:700;font-size:1.5rem;background:var(--card);box-shadow:var(--clay-sm);color:var(--ink)}
+.mol{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.mol .box h3{display:flex;align-items:center;gap:10px}
+.mol svg{background:var(--sky);border-radius:16px;margin-top:8px}
+.ftbl{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-top:10px}
+.ftbl div{padding:10px;border-radius:18px;background:var(--card);box-shadow:var(--clay-sm);text-align:center}
+.ftbl b{display:block;font-family:var(--display);font-size:1.5rem;color:var(--ink);direction:ltr}
+.ftbl span{font-size:13.5px;color:var(--muted)}
+</style>
+</head>
+<body style="--sc:#17b388">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الكيمياء</span><span class="chip">الدرس 1-1 · ص 14 إلى 18</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الأولى: الإلكترونات في الذرّة · الفصل الأول</p>
+  <h1 id="t">الأفلاك الجزيئية</h1>
+  <p>الرابطة التساهمية = ذرّتان تتقاسمان زوج إلكترونات. لكن كل إلكترون "ساكن" في فلك. <mark>فلما تتقاسمان، الفلكان يتداخلان، وطريقة التداخل تحدد نوع الرابطة: σ أو π.</mark></p>
+  <svg class="art" viewBox="0 0 520 80" aria-hidden="true">
+    <ellipse cx="200" cy="40" rx="70" ry="30" fill="var(--orbA)" opacity=".45"><animate attributeName="cx" values="150;205;205;150" dur="5s" repeatCount="indefinite"/></ellipse>
+    <ellipse cx="320" cy="40" rx="70" ry="30" fill="var(--orbB)" opacity=".45"><animate attributeName="cx" values="370;315;315;370" dur="5s" repeatCount="indefinite"/></ellipse>
+    <circle cx="200" cy="40" r="5" fill="var(--nuc)"><animate attributeName="cx" values="150;205;205;150" dur="5s" repeatCount="indefinite"/></circle>
+    <circle cx="320" cy="40" r="5" fill="var(--nuc)"><animate attributeName="cx" values="370;315;315;370" dur="5s" repeatCount="indefinite"/></circle>
+  </svg>
+</section>
+
+<section class="panel" id="lab-sec" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">قرّب الذرّتين</h2><span class="legend"><span><i style="background:var(--orbA)"></i>فلك الذرّة الأولى</span><span><i style="background:var(--orbB)"></i>فلك الذرّة الثانية</span><span><i style="background:var(--mix)"></i>منطقة التداخل</span></span></div>
+  <svg class="ov" id="ov" viewBox="0 0 600 260" role="img" aria-label="فلكان يقتربان ويتداخلان"></svg>
+  <div class="pick" role="group" aria-label="اختر الجزيء">
+    <button class="tg" type="button" data-m="H2" aria-pressed="true">H₂ : s مع s</button>
+    <button class="tg" type="button" data-m="HCl" aria-pressed="false">HCl : s مع p</button>
+    <button class="tg" type="button" data-m="Cl2" aria-pressed="false">Cl₂ : p مع p رأساً لرأس</button>
+    <button class="tg" type="button" data-m="pi" aria-pressed="false">p مع p جنباً إلى جنب</button>
+  </div>
+  <div class="controls"><div class="ctl"><label for="dist">المسافة بين النواتين <b id="dL">بعيدة</b></label><input type="range" id="dist" min="0" max="100" value="0"></div></div>
+  <p class="msg" id="oMsg" aria-live="polite">حرّك المؤشّر لتقريب الذرّتين.</p>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">رموز الدرس قبل أي شيء</h2></div>
+  <div class="syms">
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span>s</span></span><div><h3>الفلك s <span class="en">s orbital</span></h3><p>فلك كروي الشكل حول النواة. ذرّة الهيدروجين إلكترونها في 1s.</p><span class="hook">s = sphere: كرة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub sm"><span>p<sub>x</sub></span></span><div><h3>الأفلاك p <span class="en">p<sub>x</sub>, p<sub>y</sub>, p<sub>z</sub></span></h3><p>كل فلك p فصّان بيضاويان متقابلان، وهي ثلاثة باتجاه المحاور x و y و z.</p><span class="hook">الحرف الصغير تحت p يخبرك على أي محور يمتد.</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub sm"><span>1s<sup>1</sup></span></span><div><h3>الترتيب الإلكتروني <span class="en">Electron configuration</span></h3><p>الرقم الكبير = المستوى، الحرف = نوع الفلك، الأس = عدد الإلكترونات فيه.</p><span class="hook">3p<sup>5</sup>: في المستوى 3، أفلاك p، فيها 5 إلكترونات.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub"><span>σ</span></span><div><h3>الرابطة سيجما <span class="en">Sigma bond</span></h3><p>من تداخل محوري، رأساً لرأس، على المحور بين النواتين.</p><span class="hook">σ تقابل حرف s بالإنجليزي: أول رابطة وأقواها.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span>π</span></span><div><h3>الرابطة باي <span class="en">Pi bond</span></h3><p>من تداخل جانبي، جنباً إلى جنب، بين فلكين p محوراهما متوازيان.</p><span class="hook">π تقابل p: تأتي من أفلاك p المتوازية فقط.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub sm"><span>MO</span></span><div><h3>الفلك الجزيئي <span class="en">Molecular Orbital</span></h3><p>فلك جديد يتكوّن من تداخل الأفلاك الذرّية ويغطي النواتين معاً.</p><span class="hook">ذرّي = لذرّة وحدة. جزيئي = للجزيء كله.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">نظريتان تفسّران الرابطة</h2></div>
+  <div class="vs">
+    <div class="box sky"><h3>نظرية رابطة التكافؤ</h3><p>الإلكترونات في الجزيء تبقى في <b>الأفلاك الذرّية</b>، والرابطة تنتج من تداخل فلكين.</p></div>
+    <span class="mid">و</span>
+    <div class="box lav"><h3>نظرية الفلك الجزيئي</h3><p>الأفلاك الذرّية تكوّن <b>فلكاً جزيئياً</b> يغطي النواتين المترابطتين، والإلكترونات تشغله.</p></div>
+  </div>
+  <p class="note">العالم الأمريكي <b>روبرت موليكن</b> من أوائل من عملوا على نظرية الفلك الجزيئي، وحصل على جائزة نوبل في الكيمياء سنة 1966.</p>
+  <p class="tip"><b>تشبيه:</b> شخصان كل واحد معه مظلّة. "رابطة التكافؤ" تقول: كل واحد تحت مظلّته والمظلتان متداخلتان. "الفلك الجزيئي" تقول: صارت فوقهما مظلّة واحدة كبيرة تغطيهما معاً.</p>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">التداخل المحوري: الرابطة σ</h2></div>
+  <p>الفلكان يتقابلان <b>رأساً لرأس</b> على المحور الذي يصل النواتين. الكثافة الإلكترونية تتوزع بتماثل حول هذا المحور، <b>تزيد بين النواتين وتقل خارجهما</b>. ثلاث حالات في الكتاب:</p>
+  <div class="mol">
+    <div class="box sky"><h3><span class="badge">σ</span>H₂ : s مع s</h3><p class="cfg">H : 1s<sup>1</sup></p><p>الفلكان 1s (كرويان) يتداخلان، فينتج فلك جزيئي يحيط بالنواتين.</p>
+      <svg viewBox="0 0 220 70" aria-hidden="true"><circle cx="88" cy="35" r="26" fill="var(--orbA)" opacity=".55"/><circle cx="132" cy="35" r="26" fill="var(--orbB)" opacity=".55"/><circle cx="88" cy="35" r="3.5" fill="var(--nuc)"/><circle cx="132" cy="35" r="3.5" fill="var(--nuc)"/></svg></div>
+    <div class="box pink"><h3><span class="badge">σ</span>HCl : s مع p</h3><p class="cfg">Cl : 1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>2</sup> 3p<sup>5</sup></p><p>إلكترون H المنفرد في 1s، وإلكترون Cl المنفرد في 3p<sub>x</sub>. يتداخلان رأساً لرأس على محور x.</p>
+      <svg viewBox="0 0 220 70" aria-hidden="true"><circle cx="70" cy="35" r="22" fill="var(--orbA)" opacity=".55"/><ellipse cx="118" cy="35" rx="26" ry="15" fill="var(--orbB)" opacity=".55"/><ellipse cx="170" cy="35" rx="26" ry="15" fill="var(--orbB)" opacity=".3"/><circle cx="70" cy="35" r="3.5" fill="var(--nuc)"/><circle cx="144" cy="35" r="3.5" fill="var(--nuc)"/></svg></div>
+    <div class="box lav"><h3><span class="badge">σ</span>Cl₂ : p مع p</h3><p class="cfg">3p<sub>x</sub> + 3p<sub>x</sub></p><p>كل ذرّة كلور فيها إلكترون منفرد في 3p<sub>x</sub>، والفلكان يتداخلان رأساً لرأس.</p>
+      <svg viewBox="0 0 220 70" aria-hidden="true"><ellipse cx="34" cy="35" rx="24" ry="14" fill="var(--orbA)" opacity=".3"/><ellipse cx="84" cy="35" rx="26" ry="15" fill="var(--orbA)" opacity=".55"/><ellipse cx="136" cy="35" rx="26" ry="15" fill="var(--orbB)" opacity=".55"/><ellipse cx="186" cy="35" rx="24" ry="14" fill="var(--orbB)" opacity=".3"/><circle cx="58" cy="35" r="3.5" fill="var(--nuc)"/><circle cx="162" cy="35" r="3.5" fill="var(--nuc)"/></svg></div>
+  </div>
+  <h3 style="margin:18px 0 8px">خواص الرابطة σ</h3>
+  <ul class="pts">
+    <li style="--b:var(--sc)">موجودة في <b>كل</b> رابطة تساهمية أحادية.</li>
+    <li style="--b:var(--sc)">محور تداخل الفلكين هو <b>محور التناظر</b>.</li>
+    <li style="--b:var(--sc)">كلما <b>زاد التداخل</b> كانت أقوى.</li>
+    <li style="--b:var(--sc)">طاقتها تعتمد على <b>المسافة بين الذرّتين</b> وعلى <b>عدد الروابط</b> التي تكوّنانها.</li>
+  </ul>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">التداخل الجانبي: الرابطة π</h2></div>
+  <p>فلكا p <b>محوراهما متوازيان</b> يتداخلان <b>جنباً إلى جنب</b>، فوق المحور وتحته. والقاعدة المهمة: <b>لا تتكوّن π إلا إذا سبقتها σ</b>.</p>
+  <div class="box butter"><h3>أفضل مثال: جزيء النيتروجين N₂</h3>
+    <p class="cfg">N : 1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>3</sup> &nbsp; → &nbsp; 2p<sub>x</sub><sup>1</sup> 2p<sub>y</sub><sup>1</sup> 2p<sub>z</sub><sup>1</sup></p>
+    <p>كل ذرّة فيها 3 إلكترونات منفردة في 2p. فلك واحد من كل ذرّة (2p<sub>x</sub>) يتداخل رأساً لرأس ← <b>رابطة σ</b>. والفلكان الباقيان (2p<sub>y</sub> و 2p<sub>z</sub>) متوازيان مع مثيليهما، فيتداخلان جانبياً ← <b>رابطتان π</b>.</p>
+  </div>
+  <div class="ftbl">
+    <div><b>N≡N</b><span>رابطة ثلاثية</span></div>
+    <div><b>1 σ</b><span>رأساً لرأس</span></div>
+    <div><b>2 π</b><span>جنباً إلى جنب</span></div>
+  </div>
+  <h3 style="margin:18px 0 8px">خواص الرابطة π</h3>
+  <ul class="pts">
+    <li style="--b:var(--mix)">توجد في الجزيئات ذات الروابط <b>الثنائية والثلاثية</b>.</li>
+    <li style="--b:var(--mix)"><b>أضعف</b> من الرابطة σ.</li>
+    <li style="--b:var(--mix)">لا تتكوّن إلا إذا تكوّنت σ قبلها.</li>
+    <li style="--b:var(--mix)">الجزيئات التي فيها π تدخل في <b>تفاعلات إضافة</b>، خاصة في الكيمياء العضوية.</li>
+  </ul>
+  <p class="tip" style="margin-top:12px"><b>قاعدة العد السريع:</b> أحادية = σ. ثنائية = σ + π. ثلاثية = σ + 2π.</p>
+
+  <div class="act" data-act="sort" data-key="sort" data-bins='["الرابطة σ","الرابطة π"]'
+       data-items='[["تداخل رأساً لرأس",0],["الأقوى",0],["في كل رابطة أحادية",0],["تداخل جنباً إلى جنب",1],["لا تتكوّن إلا بعد غيرها",1],["تجعل الجزيء يدخل تفاعلات إضافة",1]]'
+       data-ok="ممتاز! σ: رأساً لرأس، أقوى، وأولاً. π: جانبية، أضعف، وبعدها.">
+    <h3>صنّف الخواص <span class="k">نشاط</span></h3>
+    <p>كل صفة لأي رابطة؟</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s5">
+  <div class="sec-head"><span class="num">5</span><h2 id="s5">طبّق: عُدّ الروابط</h2></div>
+  <p>تمرين الكتاب: حدّد عدد روابط σ و π. ارسم الجزيء أولاً، ثم عُدّ كل خط بالقاعدة السريعة.</p>
+  <div class="qbox">مثال: CO₂ تركيبه <b dir="ltr">O=C=O</b>: رابطتان ثنائيتان، كل وحدة σ + π ← المجموع <b>2σ و 2π</b>.</div>
+  <div class="act" data-act="gap" data-key="gap" data-ok="صح! في NH₃ ثلاث روابط أحادية N–H، وكل أحادية σ فقط: 3σ و 0π.">
+    <h3>أكمل <span class="k">نشاط</span></h3>
+    <p>جزيء الأمونيا NH₃ فيه: <span class="gap">؟</span></p>
+    <div class="opts"><button class="pc" data-no="ما في روابط ثنائية في NH₃، فمن أين π؟">2σ و 1π</button><button class="pc" data-ok>3σ و 0π</button><button class="pc" data-no="π تحتاج σ قبلها، وروابط N–H كلها أحادية.">0σ و 3π</button></div>
+  </div>
+  <div class="act" data-act="type" data-key="type" data-answer="4" data-tol="0"
+       data-ok="صح! CH₄ فيه 4 روابط أحادية C–H، فهي 4 روابط σ."
+       data-hint="الكربون يكوّن 4 روابط مع 4 ذرّات هيدروجين. ما نوع كل رابطة أحادية؟">
+    <h3>اكتب الرقم <span class="k">نشاط</span></h3>
+    <p>كم رابطة σ في جزيء الميثان CH₄؟</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">6</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">7</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>تداخل الأفلاك رأساً لرأس ينتج رابطة:</p>
+      <div class="opts"><button data-ok>سيجما σ</button><button>باي π</button><button>أيونية</button></div>
+      <p class="why" hidden>الصحيح: σ. التداخل الجانبي هو اللي ينتج π.</p></div>
+    <div class="q"><p>جزيء النيتروجين N₂ يحتوي على:</p>
+      <div class="opts"><button>3 روابط σ</button><button data-ok>رابطة σ ورابطتي π</button><button>3 روابط π</button></div>
+      <p class="why" hidden>الصحيح: σ واحدة (2p<sub>x</sub> رأساً لرأس) و π اثنتان (2p<sub>y</sub> و 2p<sub>z</sub> جانبياً).</p></div>
+    <div class="q"><p>أي عبارة صحيحة؟</p>
+      <div class="opts"><button>π أقوى من σ</button><button>π تتكوّن قبل σ</button><button data-ok>π توجد في الروابط الثنائية والثلاثية فقط</button></div>
+      <p class="why" hidden>الصحيح: π في الثنائية والثلاثية فقط، وهي أضعف من σ، ولا تتكوّن إلا بعدها.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li>رأساً لرأس ← <b>σ</b> (H₂ و HCl و Cl₂). جنباً إلى جنب لأفلاك p متوازية ← <b>π</b>.</li>
+      <li>σ أقوى وتوجد في كل رابطة أحادية. π أضعف، ولا تتكوّن إلا بعد σ.</li>
+      <li>أحادية = σ، ثنائية = σ + π، ثلاثية = σ + 2π (مثل N₂).</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الكيمياء، الصف الحادي عشر، الوحدة الأولى، ص 14 إلى 18</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"chem-u1-1-1"});
+(function(){
+"use strict";
+var svg=document.getElementById("ov"),dist=document.getElementById("dist"),M="H2";
+function $(i){return document.getElementById(i);}
+/* shapes per atom: s = circle, p (axial) = two lobes along x, p (side) = two lobes along y */
+function sOrb(cx,col,id){return '<circle cx="'+cx+'" cy="130" r="58" fill="'+col+'" fill-opacity=".45" id="'+id+'"/>';}
+function pAxial(cx,col,dir){var n=cx+dir*62,f=cx-dir*58;return '<ellipse cx="'+n+'" cy="130" rx="60" ry="32" fill="'+col+'" fill-opacity=".5"/><ellipse cx="'+f+'" cy="130" rx="56" ry="30" fill="'+col+'" fill-opacity=".22"/>';}
+function pSide(cx,col){return '<ellipse cx="'+cx+'" cy="78" rx="30" ry="52" fill="'+col+'" fill-opacity=".45"/><ellipse cx="'+cx+'" cy="182" rx="30" ry="52" fill="'+col+'" fill-opacity=".45"/>';}
+function nuc(cx){return '<circle cx="'+cx+'" cy="130" r="6" fill="var(--nuc)"/>';}
+function draw(){
+  var v=+dist.value/100, gap=330-v*(M==="pi"?300:M==="H2"?250:M==="HCl"?190:126), a=300-gap/2, b=300+gap/2, s="";
+  s+='<line x1="20" y1="130" x2="580" y2="130" stroke="var(--gridline)" stroke-dasharray="4 6"/>';
+  if(M==="H2"){s+=sOrb(a,"var(--orbA)","")+sOrb(b,"var(--orbB)","");}
+  else if(M==="HCl"){s+=sOrb(a,"var(--orbA)","")+pAxial(b,"var(--orbB)",-1);}
+  else if(M==="Cl2"){s+=pAxial(a,"var(--orbA)",1)+pAxial(b,"var(--orbB)",-1);}
+  else{s+=pSide(a,"var(--orbA)")+pSide(b,"var(--orbB)");}
+  var reachA=M==="pi"?30:(M==="H2"||M==="HCl")?58:122, reachB=M==="pi"?30:M==="H2"?58:122;
+  var ov=(a+reachA)-(b-reachB), bonded=ov>8;
+  if(bonded){
+    if(M==="pi"){s+='<ellipse cx="300" cy="78" rx="'+Math.min(40,ov/2+6)+'" ry="40" fill="var(--mix)" fill-opacity=".55"/><ellipse cx="300" cy="182" rx="'+Math.min(40,ov/2+6)+'" ry="40" fill="var(--mix)" fill-opacity=".55"/>';}
+    else s+='<ellipse cx="300" cy="130" rx="'+Math.min(60,ov/2+6)+'" ry="'+(M==="H2"?44:28)+'" fill="var(--mix)" fill-opacity=".55"/>';
+  }
+  s+=nuc(a)+nuc(b);
+  var lab={H2:["H","H"],HCl:["H","Cl"],Cl2:["Cl","Cl"],pi:["N","N"]}[M];
+  s+='<text x="'+a+'" y="240" text-anchor="middle" font-size="16" font-weight="700" fill="var(--text)">'+lab[0]+'</text><text x="'+b+'" y="240" text-anchor="middle" font-size="16" font-weight="700" fill="var(--text)">'+lab[1]+'</text>';
+  if(bonded)s+='<text x="300" y="28" text-anchor="middle" font-size="26" font-style="italic" font-weight="700" fill="var(--mix)" font-family="Noto Serif, Georgia, serif">'+(M==="pi"?"π":"σ")+'</text>';
+  svg.innerHTML=s;
+  $("dL").textContent=v<.3?"بعيدة":v<.75?"تقترب":"متداخلة";
+  var m=$("oMsg");
+  if(!bonded){m.textContent="الفلكان لم يتداخلا بعد. قرّب أكثر.";m.className="msg";}
+  else if(M==="pi"){m.textContent="تداخل جانبي فوق المحور وتحته ← رابطة π. في N₂ تحدث مرتين، بعد σ.";m.className="msg ok";}
+  else{m.textContent="تداخل رأساً لرأس على المحور بين النواتين ← رابطة σ. الكثافة أكبر بين النواتين.";m.className="msg ok";}
+}
+dist.addEventListener("input",draw);
+[].forEach.call(document.querySelectorAll(".pick .tg"),function(b){b.addEventListener("click",function(){M=b.dataset.m;[].forEach.call(document.querySelectorAll(".pick .tg"),function(x){x.setAttribute("aria-pressed",String(x===b));});draw();});});
+draw();
+})();
+</script>
+</body>
+</html>
