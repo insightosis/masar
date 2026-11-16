@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="physics">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الكميات العددية والكميات المتجهة · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+.vec{position:relative;display:inline-block;padding-top:.32em;line-height:1}
+.vec::before{content:"";position:absolute;top:.08em;left:.05em;right:.05em;height:2px;background:currentColor;border-radius:2px}
+.vec::after{content:"";position:absolute;top:-.06em;right:0;border:.16em solid transparent;border-left:.28em solid currentColor;border-right:0}
+.vlab{display:block;width:100%;height:auto;border-radius:22px;background:var(--sky);box-shadow:var(--press);touch-action:pan-y}
+.presets{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.dirs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
+.dirs div{padding:8px 4px;border-radius:16px;background:var(--card);box-shadow:var(--clay-sm);text-align:center;font-size:14px}
+.dirs b{display:block;font-family:var(--display);font-size:1.3rem;color:var(--ink);direction:ltr}
+.mini{display:block;width:100%;max-width:340px;height:auto;margin:8px auto 0;border-radius:16px;background:var(--sky)}
+.help{display:inline-block;font-size:12px;font-weight:700;padding:1px 9px;border-radius:9px;background:var(--p-sky);color:var(--text);margin-inline-end:6px}
+.sm{font-size:1.05rem}
+.mini text,.vlab text{direction:ltr}
+.ctl label{display:flex;justify-content:space-between;gap:8px}
+</style>
+</head>
+<body style="--sc:#f07c2a">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الفيزياء</span><span class="chip">الدرس 1-1 · ص 14 إلى 24</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الأولى: الحركة · الفصل الأول: المتجهات</p>
+  <h1 id="t">الكميات العددية والكميات المتجهة</h1>
+  <p>قلت لصاحبك: "امشِ 100 متر وتلقى الدكان". مشى 100 متر... وما لقاه! <mark>ناقصه معلومة وحدة: في أي اتجاه؟</mark> بعض الكميات يكفيها رقم ووحدة، وبعضها لازم لها اتجاه كمان. هذا الدرس عن الفرق بينهما، وكيف نجمع ونضرب كميات لها اتجاه.</p>
+  <svg class="art" viewBox="0 0 520 80" aria-hidden="true">
+    <circle cx="70" cy="44" r="7" fill="var(--sc)"/>
+    <g stroke-width="5" stroke-linecap="round" fill="none">
+      <path d="M78 44 L230 44" stroke="var(--vx)"/><path d="M220 36 L232 44 L220 52" stroke="var(--vx)"/>
+      <path d="M78 40 L190 14" stroke="var(--vy)" opacity=".8"><animate attributeName="opacity" values=".2;.9;.2" dur="3s" repeatCount="indefinite"/></path>
+      <path d="M78 48 L190 74" stroke="var(--g)" opacity=".5"><animate attributeName="opacity" values=".9;.2;.9" dur="3s" repeatCount="indefinite"/></path>
+    </g>
+    <text x="390" y="52" font-size="20" fill="var(--muted)" font-family="var(--display)" text-anchor="middle" direction="rtl">100 متر... لكن إلى أين؟</text>
+  </svg>
+</section>
+
+<section class="panel" id="lab-sec" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">مختبر المتجهات: اجمع سهمين</h2><span class="legend"><b class="x">A</b> و <b class="y">B</b> يبدآن من النقطة O، و <b class="pp">R</b> هي المحصّلة</span></div>
+  <svg class="vlab" id="vlab" viewBox="0 0 600 330" role="img" aria-label="متجهان ومحصلتهما"></svg>
+  <div class="tiles" style="margin-top:10px">
+    <div class="tile"><span>مقدار المحصّلة R</span><b id="tR">0</b><small>N</small></div>
+    <div class="tile"><span>زاوية R مع A</span><b id="tAl">0</b><small>°</small></div>
+    <div class="tile"><span>لو جمعتهما كأرقام</span><b id="tSum">0</b><small>N</small></div>
+  </div>
+  <div class="controls">
+    <div class="ctl"><label for="sA"><span>مقدار <b class="x">A</b></span><b dir="ltr"><span id="lA">0</span> N</b></label><input type="range" id="sA" min="1" max="40" value="20"></div>
+    <div class="ctl"><label for="sB"><span>مقدار <b class="y">B</b></span><b dir="ltr"><span id="lB">0</span> N</b></label><input type="range" id="sB" min="1" max="40" value="20"></div>
+    <div class="ctl"><label for="sT"><span>الزاوية بينهما θ</span><b dir="ltr"><span id="lT">0</span>°</b></label><input type="range" id="sT" min="0" max="180" value="120"></div>
+  </div>
+  <div class="presets">
+    <button class="tg" type="button" data-p="20,20,0">نفس الاتجاه</button>
+    <button class="tg" type="button" data-p="20,20,180">متعاكسان</button>
+    <button class="tg" type="button" data-p="30,40,90">متعامدان 30 و 40</button>
+    <button class="tg" type="button" data-p="20,20,120">مثال الكتاب: 20 و 20 بزاوية 120°</button>
+    <button class="tg" type="button" id="mode" aria-pressed="false">اعرض طريقة الرأس بالذيل</button>
+  </div>
+  <p class="msg" id="vMsg" aria-live="polite">حرّك الزاوية وراقب: نفس السهمين، ومحصّلة مختلفة تماماً.</p>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">رموز الدرس</h2></div>
+  <p class="muted" style="margin-top:-4px">هذه الرموز اللي بتشوفها في القوانين والأمثلة.</p>
+  <div class="syms">
+    <div class="sym"><span class="bub"><span><i class="vec">v</i></span></span><div><h3>متجه <span class="en">Vector</span></h3><p>سهم فوق الحرف يعني: هذه كمية لها مقدار واتجاه. ويُكتب أيضاً بحرف عريض <b>v</b> أو من نقطة إلى نقطة <i class="vec">AB</i>.</p><span class="hook">السهم فوق الحرف = "انتبه، لها اتجاه".</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub sm"><span>|AB|</span></span><div><h3>مقدار المتجه <span class="en">Magnitude</span></h3><p>طول السهم فقط: عدد ووحدة، بدون اتجاه. مثل <span dir="ltr">|F| = <span dir="ltr">(5)N</span></span> أو نكتب F بدون سهم.</p><span class="hook">الخطّان = "أعطني الرقم بس".</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span>θ</span></span><div><h3>زاوية الاتجاه <span class="en">Direction angle</span></h3><p>الزاوية بين المتجه والاتجاه الموجب لمحور السينات (الشرق). ونكتب المتجه هكذا: <span dir="ltr"><i class="vec">v</i> = (v, θ)</span>.</p><span class="hook">نبدأ العدّ من الشرق، ونلفّ عكس عقارب الساعة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub"><span>R</span></span><div><h3>المحصّلة <span class="en">Resultant</span></h3><p>المتجه الواحد اللي يقوم مقام متجهين أو أكثر، ويعطي نفس التأثير.</p><span class="hook">R = "النتيجة النهائية" للسهام كلها.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub"><span>α</span></span><div><h3>زاوية المحصّلة <span class="en">alpha</span></h3><p>الزاوية بين المحصّلة R والمتجه الأول. وفي الضرب القياسي والاتجاهي نستخدم α للزاوية المحصورة بين المتجهين.</p><span class="hook">α تجي بعد θ: زاوية ثانية في نفس الرسمة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub"><span>D</span></span><div><h3>الإزاحة <span class="en">Displacement</span></h3><p>أقصر مسافة بين نقطة البداية ونقطة النهاية، واتجاهها من البداية إلى النهاية.</p><span class="hook">D = خط مستقيم من "وين بديت" إلى "وين وصلت".</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub sm"><span>A·B</span></span><div><h3>الضرب القياسي (النقطي) <span class="en">Scalar (dot) product</span></h3><p>ناتجه رقم بدون اتجاه: <span dir="ltr">A·B = A × B cos α</span>.</p><span class="hook">نقطة صغيرة، وناتج صغير بلا سهم.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub sm"><span>A×B</span></span><div><h3>الضرب الاتجاهي (التقاطعي) <span class="en">Vector (cross) product</span></h3><p>ناتجه متجه عمودي على المستويين: مقداره <span dir="ltr">A B sin α</span>.</p><span class="hook">علامة × مثل تقاطع طريقين، وناتجها سهم جديد.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">عددية أو متجهة؟</h2></div>
+  <div class="vs">
+    <div class="box sky"><h3>كمية عددية (قياسية)</h3><p>يكفيها <b>عدد</b> يحدد مقدارها و<b>وحدة</b> تميّزه. مثل كتلة ولد <span dir="ltr">(50)kg</span>: 50 هو المقدار و kg هي الوحدة. ومنها المسافة والزمن.</p></div>
+    <span class="mid">أو</span>
+    <div class="box peach"><h3>كمية متجهة</h3><p>تحتاج <b>عدداً ووحدة واتجاهاً</b>. مثل الإزاحة والسرعة المتجهة والقوة والعجلة. بدون الاتجاه ما نقدر نعرف وين صار الجسم.</p></div>
+  </div>
+  <p class="tip" style="margin-top:14px"><b>الجمع يختلف:</b> العددية تُجمع بالجبر العادي إذا كانت الوحدات نفسها: ولد <span dir="ltr">(40)kg</span> ودرّاجته <span dir="ltr">(60)kg</span> = <span dir="ltr">(100)kg</span>. أما المتجهة فتحتاج <b>جبر المتجهات</b>: خطوتان شرقاً وخطوتان شمالاً ما توصلك 4 خطوات بعيداً عن مكانك.</p>
+  <p>والسرعة المتجهة غير السرعة العددية: العددية مقدار فقط، والمتجهة مقدار واتجاه. سيارة 80 km/h شمالاً وأخرى 80 km/h جنوباً: نفس السرعة العددية، لكن سرعتاهما المتجهتان <b>مختلفتان</b>.</p>
+
+  <div class="act" data-act="sort" data-key="sort" data-bins='["عددية","متجهة"]'
+       data-items='[["الكتلة (50)kg",0],["الزمن 3 دقائق",0],["المسافة (8)km",0],["إزاحة (20)km شمالاً",1],["سرعة (60)km/h نحو الشرق",1],["قوة (5)N تدفع الصندوق غرباً",1]]'
+       data-ok="ممتاز! كل كمية ذُكر معها اتجاه صارت متجهة، والباقي عددية.">
+    <h3>صنّف <span class="k">نشاط</span></h3>
+    <p>اضغط كل كمية ثم اختر صندوقها.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">كيف نكتب المتجه ونرسمه؟</h2></div>
+  <div class="two">
+    <div>
+      <p><b>بالرسم:</b> سهم (شعاع). <b>طوله</b> يمثّل المقدار حسب مقياس رسم نختاره، و<b>رأسه</b> يشير إلى الاتجاه.</p>
+      <p><b>رياضياً:</b> <span class="f sm"><i class="vec">v</i> = (v, θ)</span> حيث v المقدار و θ الزاوية مع الاتجاه الموجب لمحور السينات.</p>
+    </div>
+    <svg class="mini" viewBox="0 0 300 170" role="img" aria-label="إزاحة 20 كيلومتر بزاوية 45 درجة مرسومة بطول 2 سنتيمتر">
+      <line x1="30" y1="140" x2="285" y2="140" stroke="var(--muted)" stroke-width="2"/><text x="270" y="160" font-size="13" fill="var(--muted)">+x</text>
+      <line x1="60" y1="140" x2="160" y2="40" stroke="var(--path)" stroke-width="5" stroke-linecap="round"/>
+      <path d="M146 44 L162 38 L156 54Z" fill="var(--path)"/>
+      <path d="M100 140 A40 40 0 0 0 88 112" fill="none" stroke="var(--muted)" stroke-width="2"/>
+      <text x="104" y="128" font-size="14" fill="var(--text)">45°</text>
+      <text x="48" y="158" font-size="14" fill="var(--text)">A</text><text x="166" y="36" font-size="14" fill="var(--text)">B</text>
+      <text x="170" y="96" font-size="13" fill="var(--muted)">2 cm = <span dir="ltr">(20)km</span></text>
+    </svg>
+  </div>
+  <p class="cap">مثال من الكتاب: إزاحة <span dir="ltr">(20)km</span> بزاوية 45° شمال الشرق، بمقياس 1 cm لكل <span dir="ltr">(10)km</span>، فالسهم طوله 2 cm.</p>
+  <p style="margin-top:14px">الزاوية θ للاتجاهات الأربعة:</p>
+  <div class="dirs"><div><b>0°</b>شرق</div><div><b>90°</b>شمال</div><div><b>180°</b>غرب</div><div><b>270°</b>جنوب</div></div>
+  <div class="qbox" style="margin-top:14px"><b>مثال الكتاب:</b> قوة <span dir="ltr">(5)N</span> تدفع صندوقاً نحو الغرب. مقدارها <span dir="ltr">|F| = <span dir="ltr">(5)N</span></span>، والغرب هو الاتجاه السالب لمحور السينات، أي 180°. إذن <span class="f sm"><i class="vec">F</i> = (<span dir="ltr">(5)N</span>, 180°)</span>، ونرسمها سهماً طوله 5 cm نحو الغرب بمقياس 1 cm لكل <span dir="ltr">(1)N</span>.</div>
+
+  <div class="act" data-act="gap" data-key="gap" data-ok="صح! الجنوب هو الاتجاه السالب لمحور الصادات: 270° من الشرق عكس عقارب الساعة.">
+    <h3>اكتبها رياضياً <span class="k">نشاط</span></h3>
+    <p>قوة مقدارها <span dir="ltr">(8)N</span> تسحب عربة نحو <b>الجنوب</b>: <span class="f sm"><i class="vec">F</i> = </span> <span class="gap">؟</span></p>
+    <div class="opts">
+      <button class="pc" data-no="90° هي الشمال، والعربة تتجه جنوباً.">(<span dir="ltr">(8)N</span>, 90°)</button>
+      <button class="pc" data-ok>(<span dir="ltr">(8)N</span>, 270°)</button>
+      <button class="pc" data-no="180° هي الغرب. الجنوب بعده بربع لفّة.">(<span dir="ltr">(8)N</span>, 180°)</button>
+      <button class="pc" data-no="المقدار دائماً موجب، والاتجاه نكتبه بالزاوية.">((−8)N, 0°)</button>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">خصائص المتجهات</h2></div>
+  <div class="grid2">
+    <div class="box lav"><h3>التساوي</h3><p>متجهان متساويان إذا كان لهما <b>نفس المقدار ونفس الاتجاه</b>، حتى لو كانا في مكانين مختلفين: <span dir="ltr"><i class="vec">v</i>₁ = <i class="vec">v</i>₂</span>.</p></div>
+    <div class="box mint"><h3>النقل</h3><p><b>متجهات حرّة:</b> ننقلها من مكان لآخر بدون ما تتغيّر قيمتها واتجاهها، مثل الإزاحة والسرعة المتجهة. <b>متجهات مقيّدة:</b> مربوطة بنقطة تأثير فما تنتقل، مثل القوة.</p></div>
+  </div>
+  <h3 style="margin:18px 0 8px">ضرب المتجه بكمية قياسية (عدد)</h3>
+  <div class="two">
+    <ul class="pts">
+      <li style="--b:var(--vx)"><span dir="ltr"><i class="vec">D</i>′ = 2<i class="vec">D</i></span>: ضعف المقدار، ونفس الاتجاه.</li>
+      <li style="--b:var(--vy)"><span dir="ltr"><i class="vec">D</i>″ = −2<i class="vec">D</i></span>: ضعف المقدار، والاتجاه <b>معاكس</b>.</li>
+      <li style="--b:var(--sc)">عدد موجب يغيّر المقدار فقط. عدد سالب يغيّر المقدار <b>ويعكس</b> الاتجاه.</li>
+    </ul>
+    <svg class="mini" viewBox="0 0 300 170" role="img" aria-label="المتجه D وضعفه ومعكوس ضعفه">
+      <line x1="10" y1="85" x2="290" y2="85" stroke="var(--gridline)" stroke-width="2"/><line x1="150" y1="5" x2="150" y2="165" stroke="var(--gridline)" stroke-width="2"/>
+      <g stroke-linecap="round" stroke-width="5">
+        <line x1="150" y1="85" x2="232" y2="18" stroke="var(--vx)" opacity=".45"/>
+        <line x1="150" y1="85" x2="191" y2="51" stroke="var(--sc)"/>
+        <line x1="150" y1="85" x2="68" y2="152" stroke="var(--vy)"/>
+      </g>
+      <text x="196" y="66" font-size="14" fill="var(--text)">D</text><text x="238" y="22" font-size="14" fill="var(--text)">2D</text><text x="74" y="140" font-size="14" fill="var(--text)" dx="-50">−2D</text>
+    </svg>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s5">
+  <div class="sec-head"><span class="num">5</span><h2 id="s5">جمع المتجهات (التركيب)</h2></div>
+  <p>جمع المتجهات اسمه <b>عملية تركيب</b>: نستبدل متجهين أو أكثر بمتجه واحد هو المحصّلة R. فكّر بطائرة سرعتها <span dir="ltr">(100)km/h</span> بالنسبة للهواء، والرياح تهب بسرعة <span dir="ltr">(20)km/h</span>:</p>
+  <div class="grid2">
+    <div class="box mint"><h3>(أ) نفس الاتجاه</h3><p>الرياح من جهة الذيل: <span class="f sm">v = 100 + 20 = <span dir="ltr">(120)km/h</span></span><br>هذه <b>أكبر</b> محصّلة ممكنة.</p></div>
+    <div class="box pink"><h3>متعاكسان</h3><p>الطائرة تلف وتطير ضد الرياح: <span class="f sm">v = 100 − 20 = <span dir="ltr">(80)km/h</span></span><br>هذه <b>أصغر</b> محصّلة ممكنة.</p></div>
+  </div>
+  <h3 style="margin:18px 0 8px">(ب) متجهان متعامدان</h3>
+  <p>طائرة <span dir="ltr">(80)km/h</span> شمالاً، ورياح <span dir="ltr">(60)km/h</span> من الغرب إلى الشرق. المحصّلة هي قطر المستطيل، ونحسبها بفيثاغورث:</p>
+  <div class="laws">
+    <div class="law"><h3>المقدار</h3><span class="f">v<sub>r</sub>² = v<sub>p</sub>² + v<sub>a</sub>²</span><p>80² + 60² = 6400 + 3600 = 10000، إذن <span dir="ltr">v<sub>r</sub> = <span dir="ltr">(100)km/h</span></span></p></div>
+    <div class="law"><h3>الاتجاه</h3><span class="f">tan θ = v<sub>p</sub> ÷ v<sub>a</sub></span><p>= 80 ÷ 60 = 4 ÷ 3، إذن θ = 53.13° مع اتجاه الرياح (الشرق).</p></div>
+  </div>
+  <p class="note">v<sub>p</sub> سرعة الطائرة، v<sub>a</sub> سرعة الرياح (الهواء)، v<sub>r</sub> المحصّلة. وبالرسم: بمقياس 1 cm لكل <span dir="ltr">(20)km/h</span> يطلع القطر 5 cm = <span dir="ltr">(100)km/h</span>.</p>
+
+  <h3 style="margin:22px 0 8px">(ج) متجهان بأي زاوية θ بينهما</h3>
+  <p><b>بالرسم (متوازي الأضلاع):</b> (1) ارسم المتجهين من نفس النقطة O بمقياس مناسب وبينهما θ. (2) أكمل متوازي الأضلاع وارسم قطره الخارج من O، وقِس طوله. (3) قِس زاوية المحصّلة α بالمنقلة. هذا بالضبط اللي يسوّيه المختبر فوق.</p>
+  <p><b>بالحساب:</b></p>
+  <div class="laws">
+    <div class="law"><h3>مقدار المحصّلة</h3><span class="f">R = √(A² + B² + 2AB cos θ)</span><p>θ الزاوية المحصورة بين المتجهين.</p></div>
+    <div class="law"><h3>اتجاه المحصّلة</h3><span class="f">sin α = B sin θ ÷ R</span><p>من <span dir="ltr">sin α ÷ B = sin(π − θ) ÷ R</span> لأن <span dir="ltr">sin(π − θ) = sin θ</span>. و α زاوية R مع A.</p></div>
+  </div>
+  <p class="tip" style="margin-top:12px"><span class="help">مساعدة للفهم</span>جرّب القانون على الحالات اللي تعرفها: θ = 0 تعطي <span dir="ltr">cos 0 = 1</span> فيصير R = A + B. و θ = 90° تعطي <span dir="ltr">cos 90 = 0</span> فيرجع فيثاغورث. و θ = 180° تعطي R = A − B. قانون واحد يجمع الحالات كلها.</p>
+
+  <div class="act" data-act="type" data-key="type" data-answer="21.79" data-tol="0.15"
+       data-ok="صح! R² = 100 + 225 + 2 × 10 × 15 × 0.5 = 475، و R = (21.79)N. واتجاهها: sin α = 15 × sin 60 ÷ 21.79، أي α = 36.58°."
+       data-hint="cos 60° = 0.5. احسب 10² + 15² + 2 × 10 × 15 × 0.5 ثم خذ الجذر."
+       data-no="ليست هذه. عوّض في R = √(A² + B² + 2AB cos θ) مع cos 60° = 0.5.">
+    <h3>احسبها <span class="k">نشاط</span></h3>
+    <p>قوتان <span dir="ltr">(10)N</span> و <span dir="ltr">(15)N</span> تؤثران على جسم نقطي وبينهما زاوية 60°. كم <b>N</b> مقدار المحصّلة؟ (لأقرب جزء من مئة)</p>
+  </div>
+
+  <h3 style="margin:22px 0 8px">أكثر من متجهين: الرأس بالذيل</h3>
+  <p>ارسم المتجه الأول، ومن <b>رأسه</b> ابدأ الثاني بنفس مقداره واتجاهه، ومن رأس الثاني ابدأ الثالث، وهكذا. المحصّلة هي السهم من <b>ذيل الأول</b> إلى <b>رأس الأخير</b>، واتجاهها هو زاويتها مع المتجه الأول. (في المختبر فوق اضغط "اعرض طريقة الرأس بالذيل" لترى أنها تعطي نفس R.)</p>
+  <p class="note">مثال الكتاب: مستكشف يمشي من O على المسار A ثم B ثم C إلى البحيرة M. نصل O بـ M ونقيس: 2 cm × 1500 = 3000 m، والاتجاه 90°.</p>
+</section>
+
+<section class="sec" aria-labelledby="s6">
+  <div class="sec-head"><span class="num">6</span><h2 id="s6">مثال محلول: قارب الصيد</h2></div>
+  <div class="qbox">قارب يخرج من المرفأ ويقطع <span dir="ltr">(10)km</span> باتجاه 30° شرق الشمال، ثم <span dir="ltr">(4)km</span> إلى الجنوب. أوجد مقدار الإزاحة المحصّلة واتجاهها.</div>
+  <div class="row"><button class="lite" id="hideSol" type="button" aria-pressed="false">أخفِ الحل وجرّب أولاً</button></div>
+  <ol class="steps" id="steps">
+    <li><span><b>المعلوم:</b> D₁ = <span dir="ltr">(10)km</span> بزاوية 30° شرق الشمال، أي 60° مع الشرق. D₂ = <span dir="ltr">(4)km</span> جنوباً. والزاوية بينهما عند رسمهما من نقطة واحدة <span class="f">θ = 150°</span>.</span></li>
+    <li><span><b>المقياس:</b> 1 cm لكل <span dir="ltr">(2)km</span>، فيصير D₁ = 5 cm و D₂ = 2 cm.</span></li>
+    <li><span><b>المقدار:</b> <span class="f">R² = 5² + 2² + 2 × 5 × 2 cos 150 = 11.67</span> فـ R = <span dir="ltr">(3.4)cm</span>، أي <span class="ans">R = <span dir="ltr">(6.8)km</span></span></span></li>
+    <li><span><b>الاتجاه:</b> <span class="f">sin α = 2 × sin 150 ÷ 3.4 ≈ 0.29</span> فـ α ≈ 17° (الكتاب يكتب 16.85°). زاوية المحصّلة مع الأفقي: <span class="f">60 − 16.85 ≈ 43°</span></span></li>
+    <li><span><b>قيّم:</b> الرسم بالمسطرة والمنقلة أعطى <span dir="ltr">(3.4)cm</span> و 43° أيضاً، فالطريقتان متفقتان. <span class="ans">≈ <span dir="ltr">(6.8)km</span> بزاوية ≈ 43° مع الشرق</span></span></li>
+  </ol>
+</section>
+
+<section class="sec" aria-labelledby="s7">
+  <div class="sec-head"><span class="num">7</span><h2 id="s7">ضرب متجه في متجه</h2></div>
+  <div class="laws">
+    <div class="law"><h3>الضرب القياسي (النقطي)</h3><span class="f">A · B = A × B cos α</span><p>الناتج <b>كمية قياسية</b> (رقم بلا اتجاه)، ولهذا سُمّي قياسياً. مثاله الشغل: <span dir="ltr">W = F · x = F x cos α</span>.</p></div>
+    <div class="law"><h3>الضرب الاتجاهي (التقاطعي)</h3><span class="f">R = A × B = A (B sin α)</span><p>الناتج <b>متجه</b>: مقداره يساوي مساحة متوازي الأضلاع اللي يكوّنه المتجهان، واتجاهه عمودي على مستواهما.</p></div>
+  </div>
+  <div class="grid2" style="margin-top:14px">
+    <div class="box butter"><h3>مثال: الشغل</h3><p>قوة <span dir="ltr">(50)N</span> بزاوية 60° مع الإزاحة، والجسم تحرّك <span dir="ltr">(10)m</span>:<br><span class="f sm">W = 50 × 10 × 0.5 = <span dir="ltr">(250)J</span></span><br>والنتيجة رقم بلا اتجاه، كما نتوقع.</p></div>
+    <div class="box sky"><h3>مثال: الاتجاهي</h3><p>F₁ = <span dir="ltr">(5)N</span> و F₂ = <span dir="ltr">(4)N</span> وبينهما 120°:<br><span class="f sm">F = 5 × 4 sin 120 = <span dir="ltr">(17.32)N</span></span><br>واتجاهها عمودي على مستوى F₁ و F₂ (نحو الداخل) بقاعدة اليد اليمنى.</p></div>
+  </div>
+  <p class="tip" style="margin-top:14px"><b>قاعدة اليد اليمنى:</b> لفّ أصابع يدك اليمنى من المتجه الأول إلى الثاني عبر الزاوية الأصغر بينهما، فيشير إبهامك إلى اتجاه حاصل الضرب الاتجاهي. مثل فتح غطاء علبة: اللف يحدد هل الغطاء يطلع لفوق أو ينزل لتحت.</p>
+  <p class="note">لاحظ من القانونين: متجهان <b>متعامدان</b> (cos 90 = 0) ضربهما القياسي صفر. ومتجهان <b>متوازيان</b> (sin 0 = 0) ضربهما الاتجاهي صفر.</p>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">8</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sd">
+  <div class="sec-head"><span class="num">9</span><h2 id="sd">في حياتنا</h2></div>
+  <div class="life">
+    <div class="card"><h3>برج المراقبة</h3><p>المراقبون الجويون يرشدون الطيارين في الهبوط والإقلاع بالمتجهات: سرعة الطائرة واتجاهها، وسرعة الرياح والمسارات، مع الرادار.</p></div>
+    <div class="card"><h3>السباحة في نهر</h3><p>تسبح عرض النهر والتيار يسحبك: توصل الضفة الثانية بعيداً عن النقطة المقابلة، لأن حركتك هي محصّلة سرعتك وسرعة التيار.</p></div>
+    <div class="card"><h3>نافورة الماء</h3><p>الماء يطلع <span dir="ltr">(85)m</span> ويرجع لنفس النقطة: قطع مسافة 170 m، لكن إزاحته في الدورة صفر.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">10</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>سيارة تسير شمالاً بسرعة <span dir="ltr">(80)km/h</span> وأخرى جنوباً بسرعة <span dir="ltr">(80)km/h</span>. سرعتاهما المتجهتان:</p>
+      <div class="opts"><button>متساويتان لأن المقدار واحد</button><button data-ok>غير متساويتين لأن الاتجاه مختلف</button><button>لا يمكن المقارنة بينهما</button></div>
+      <p class="why" hidden>الصحيح: غير متساويتين. المتجهان يتساويان فقط إذا تساوى المقدار والاتجاه معاً.</p></div>
+    <div class="q"><p>قوتان <span dir="ltr">(3)N</span> و <span dir="ltr">(4)N</span> تؤثران على جسم. أكبر وأصغر مقدار ممكن لمحصّلتهما:</p>
+      <div class="opts"><button>(5)N و <span dir="ltr">(1)N</span></button><button data-ok>(7)N و <span dir="ltr">(1)N</span></button><button>(7)N و <span dir="ltr">(5)N</span></button></div>
+      <p class="why" hidden>الصحيح: الأكبر عندما تكونان بنفس الاتجاه 3 + 4 = 7، والأصغر عندما تتعاكسان 4 − 3 = 1. و 5 هي المحصّلة لما تتعامدان.</p></div>
+    <div class="q"><p>قوتان <b>متوازيتان</b> (بنفس الاتجاه). حاصل ضربهما الاتجاهي:</p>
+      <div class="opts"><button>F₁ × F₂</button><button>F₁ + F₂</button><button data-ok>صفر</button></div>
+      <p class="why" hidden>الصحيح: صفر، لأن مقداره F₁ F₂ sin α والزاوية بينهما 0° و sin 0 = 0.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li><b>العددية</b>: عدد ووحدة (كتلة، مسافة، زمن). <b>المتجهة</b>: عدد ووحدة واتجاه (إزاحة، سرعة متجهة، قوة)، وتُكتب <span dir="ltr">(v, θ)</span>.</li>
+      <li>المحصّلة: <span dir="ltr">R = √(A² + B² + 2AB cos θ)</span> و <span dir="ltr">sin α = B sin θ ÷ R</span>، أو بالرسم: متوازي الأضلاع والرأس بالذيل.</li>
+      <li><span dir="ltr">A·B = AB cos α</span> ناتجه قياسي، و <span dir="ltr">A×B = AB sin α</span> ناتجه متجه عمودي (اليد اليمنى).</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الفيزياء، الصف الحادي عشر، الوحدة الأولى، ص 14 إلى 24</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"phy-u1-1-1"});
+(function(){
+"use strict";
+var svg=document.getElementById("vlab"),sA=document.getElementById("sA"),sB=document.getElementById("sB"),sT=document.getElementById("sT"),mode=document.getElementById("mode");
+function $(i){return document.getElementById(i);}
+var OX=170,OY=250,K=4.2,tail=false;
+function arrow(x1,y1,x2,y2,c,w){
+  var dx=x2-x1,dy=y2-y1,L=Math.hypot(dx,dy);if(L<1)return "";
+  var ux=dx/L,uy=dy/L,h=Math.min(16,L*.45),bx=x2-ux*h,by=y2-uy*h;
+  return '<line x1="'+x1+'" y1="'+y1+'" x2="'+bx+'" y2="'+by+'" stroke="'+c+'" stroke-width="'+w+'" stroke-linecap="round"/>'+
+    '<path d="M'+x2+' '+y2+' L'+(bx-uy*h*.5)+' '+(by+ux*h*.5)+' L'+(bx+uy*h*.5)+' '+(by-ux*h*.5)+'Z" fill="'+c+'"/>';
+}
+function lbl(x,y,t,c){return '<text x="'+x+'" y="'+y+'" font-size="18" font-weight="700" fill="'+c+'" font-family="var(--display)" text-anchor="middle">'+t+'</text>';}
+function fmt(n,d){return (Math.round(n*Math.pow(10,d))/Math.pow(10,d)).toString();}
+function draw(){
+  var A=+sA.value,B=+sB.value,T=+sT.value,t=T*Math.PI/180;
+  var px=[0,A,B*Math.cos(t),A+B*Math.cos(t)],py=[0,0,B*Math.sin(t),B*Math.sin(t)];
+  var x0=Math.min.apply(0,px),x1=Math.max.apply(0,px),y1=Math.max.apply(0,py);
+  K=Math.min(9,500/Math.max(1,x1-x0),230/Math.max(1,y1));OX=300-K*(x0+x1)/2;OY=292-Math.max(0,(230-K*y1)/2);
+  var ax=OX+A*K,ay=OY,bx=OX+B*K*Math.cos(t),by=OY-B*K*Math.sin(t),rx=ax+bx-OX,ry=ay+by-OY;
+  var R=Math.sqrt(A*A+B*B+2*A*B*Math.cos(t)),al=R<1e-9?0:Math.atan2(B*Math.sin(t),A+B*Math.cos(t))*180/Math.PI;
+  var s='';
+  for(var gx=10;gx<600;gx+=42)s+='<line x1="'+gx+'" y1="0" x2="'+gx+'" y2="330" stroke="var(--gridline)" stroke-width="1"/>';
+  s+='<line x1="0" y1="'+OY+'" x2="600" y2="'+OY+'" stroke="var(--muted)" stroke-width="1.5" opacity=".6"/>';
+  if(tail){
+    s+=arrow(OX,OY,ax,ay,"var(--vx)",6)+arrow(ax,ay,rx,ry,"var(--vy)",6);
+    s+=lbl((OX+ax)/2,OY+26,"A","var(--vx)")+lbl((ax+rx)/2+16,(ay+ry)/2,"B","var(--vy)");
+  }else{
+    s+='<path d="M'+ax+' '+ay+' L'+rx+' '+ry+' L'+bx+' '+by+'" fill="none" stroke="var(--muted)" stroke-width="2" stroke-dasharray="6 6"/>';
+    s+=arrow(OX,OY,ax,ay,"var(--vx)",6)+arrow(OX,OY,bx,by,"var(--vy)",6);
+    s+=lbl((OX+ax)/2,OY+26,"A","var(--vx)")+lbl((OX+bx)/2-14,(OY+by)/2,"B","var(--vy)");
+    if(T>4){var r1=34,e=Math.PI*T/180;s+='<path d="M'+(OX+r1)+' '+OY+' A'+r1+' '+r1+' 0 0 0 '+(OX+r1*Math.cos(e))+' '+(OY-r1*Math.sin(e))+'" fill="none" stroke="var(--muted)" stroke-width="2"/>';}
+  }
+  s+=arrow(OX,OY,rx,ry,"var(--path)",7);
+  if(R>2)s+=lbl((OX+rx)/2+(ry<OY-10?16:0),(OY+ry)/2-12,"R","var(--path)");
+  s+='<circle cx="'+OX+'" cy="'+OY+'" r="5" fill="var(--text)"/>'+'<text x="'+(OX-14)+'" y="'+(OY+20)+'" font-size="15" fill="var(--text)">O</text>';
+  svg.innerHTML=s;
+  $("lA").textContent=A;$("lB").textContent=B;$("lT").textContent=T;
+  $("tR").textContent=fmt(R,2);$("tAl").textContent=fmt(al,1);$("tSum").textContent=A+B;
+  var m=$("vMsg"),ok=false;
+  if(T===0){m.textContent="نفس الاتجاه: R = A + B. هذه أكبر محصّلة ممكنة.";ok=true;}
+  else if(T===180){m.textContent="متعاكسان: R = |A − B|. هذه أصغر محصّلة ممكنة"+(A===B?"، وهنا صفر لأن القوتين متساويتان.":".");ok=true;}
+  else if(T===90){m.textContent="متعامدان: R² = A² + B²، فيثاغورث. "+A+"² + "+B+"² = "+(A*A+B*B)+".";ok=true;}
+  else if(T===120&&A===B){m.textContent="زاوية 120° ومتجهان متساويان: المحصّلة تساوي كل واحد منهما، واتجاهها في المنتصف 60°. هذا مثال الكتاب.";ok=true;}
+  else m.textContent="R = "+fmt(R,2)+" N، وهي أقل من "+(A+B)+" لأن السهمين ما يشيران لنفس الاتجاه.";
+  m.className="msg"+(ok?" ok":"");
+}
+[sA,sB,sT].forEach(function(el){el.addEventListener("input",draw);});
+[].forEach.call(document.querySelectorAll(".presets [data-p]"),function(b){b.addEventListener("click",function(){var p=b.dataset.p.split(",");sA.value=p[0];sB.value=p[1];sT.value=p[2];draw();});});
+mode.addEventListener("click",function(){tail=!tail;mode.setAttribute("aria-pressed",tail);mode.textContent=tail?"اعرض متوازي الأضلاع":"اعرض طريقة الرأس بالذيل";draw();});
+draw();
+})();
+</script>
+</body>
+</html>

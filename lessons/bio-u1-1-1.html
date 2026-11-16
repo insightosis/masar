@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="biology">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>تركيب النباتات · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+body{--leaf:#8fd16a;--leaf2:#5fb02a;--chl:#2f8a2a;--cellw:#f3fbe9;--wax:#f2c94c;--xy:#2287f0;--ph:#ee7a3f;--pith:#fff6dc;--soilc:#d9b48f}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--leaf:#4f8a37;--leaf2:#3f7a24;--chl:#9be07a;--cellw:#24331d;--wax:#b8952f;--pith:#3a3426;--soilc:#6b4f3a;--xy:#5aaeff;--ph:#ff9a66}}
+:root[data-theme="dark"] body{--leaf:#4f8a37;--leaf2:#3f7a24;--chl:#9be07a;--cellw:#24331d;--wax:#b8952f;--pith:#3a3426;--soilc:#6b4f3a;--xy:#5aaeff;--ph:#ff9a66}
+.xs text,.stoma text{direction:ltr}
+body{--pore:#3b2f45}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--pore:#0b0e09}}
+:root[data-theme="dark"] body{--pore:#0b0e09}
+.stoma{display:block;width:100%;height:auto;border-radius:22px;background:var(--sky);box-shadow:var(--press)}
+.grp{margin-top:12px}
+.grp>span{display:block;font-size:13.5px;color:var(--muted);margin-bottom:4px}
+.grp .seg{display:flex;flex-wrap:wrap;gap:8px}
+.xs{display:block;width:100%;height:auto;border-radius:20px;background:var(--sky)}
+.quad{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:12px}
+.quad figure{margin:0;padding:10px;border-radius:22px;background:var(--card);box-shadow:var(--clay-sm);text-align:center}
+.quad figcaption{font-size:13.5px;margin-top:6px}
+.quad figcaption b{display:block;font-size:14.5px}
+.key{display:flex;flex-wrap:wrap;gap:12px;font-size:13.5px;margin-top:10px;color:var(--muted)}
+.key i{display:inline-block;width:14px;height:14px;border-radius:50%;vertical-align:-2px;margin-inline-end:5px}
+.cmp{display:grid;gap:10px;margin-top:12px}
+.cmp .r{display:grid;grid-template-columns:1fr 1.3fr 1.3fr;gap:8px;align-items:stretch}
+.cmp .r>div{padding:8px 10px;border-radius:16px;background:var(--card);box-shadow:var(--clay-sm);font-size:14px}
+.cmp .h>div{background:var(--soft);font-weight:800;text-align:center}
+.cmp .r>div:first-child{font-weight:700}
+.fields{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.fields span{font-size:13.5px;padding:4px 12px;border-radius:14px;background:var(--card);box-shadow:var(--clay-sm)}
+</style>
+</head>
+<body style="--sc:#5fb02a">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الأحياء</span><span class="chip">الدرس 1-1 · ص 14 إلى 27</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الأولى: علم النباتات · الفصل الأول</p>
+  <h1 id="t">تركيب النباتات</h1>
+  <p>النبتة ما تقدر تمشي لتدوّر أكل أو ماء أو شريك. فكيف تعيش؟ <mark>الورقة مصنع غذاء، والساق طريق سريع، والجذر مضخّة ومرساة، والزهرة مكان التكاثر.</mark> في هذا الدرس نفتح كل جزء ونشوف وش داخله.</p>
+  <svg class="art" viewBox="0 0 520 90" aria-hidden="true">
+    <rect x="0" y="62" width="520" height="28" fill="var(--soilc)" opacity=".7"/>
+    <path d="M260 62 L260 18" stroke="var(--leaf2)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M260 40 Q228 22 214 36 Q236 48 260 40Z" fill="var(--leaf)"/><path d="M260 30 Q292 12 306 26 Q284 38 260 30Z" fill="var(--leaf)"/>
+    <circle cx="260" cy="14" r="8" fill="#ff8fb1"/>
+    <path d="M260 62 L260 84 M260 70 L242 82 M260 72 L280 86" stroke="var(--leaf2)" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <g fill="var(--xy)"><circle cx="252" cy="80" r="2.5"><animate attributeName="cy" values="84;20;20" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0" dur="3s" repeatCount="indefinite"/></circle></g>
+  </svg>
+</section>
+
+<section class="panel" id="lab-sec" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">مختبر الثغر: افتح أو أغلق</h2><span class="legend">ثغر بين خليتين حارستين، مكبّر جداً من سطح الورقة السفلي</span></div>
+  <svg class="stoma" id="stoma" viewBox="0 0 600 260" role="img" aria-label="ثغر وخليتان حارستان"></svg>
+  <div class="grp"><span>الضوء</span><div class="seg" data-g="light"><button class="tg" type="button" data-v="0">ليل</button><button class="tg" type="button" data-v="1" aria-pressed="true">نهار</button><button class="tg" type="button" data-v="2">شمس شديدة</button></div></div>
+  <div class="grp"><span>الحرارة</span><div class="seg" data-g="heat"><button class="tg" type="button" data-v="0" aria-pressed="true">معتدلة</button><button class="tg" type="button" data-v="1">حارّة جداً</button></div></div>
+  <div class="grp"><span>الرياح</span><div class="seg" data-g="wind"><button class="tg" type="button" data-v="0" aria-pressed="true">هادئة</button><button class="tg" type="button" data-v="1">قوية</button></div></div>
+  <div class="grp"><span>الجو</span><div class="seg" data-g="dry"><button class="tg" type="button" data-v="0" aria-pressed="true">رطب</button><button class="tg" type="button" data-v="1">جاف</button></div></div>
+  <div class="grp"><span>الماء في النبتة</span><div class="seg" data-g="water"><button class="tg" type="button" data-v="0" aria-pressed="true">متوفر</button><button class="tg" type="button" data-v="1">نادر</button></div></div>
+  <p class="msg" id="sMsg" aria-live="polite"></p>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">مصطلحات الدرس</h2></div>
+  <p class="muted" style="margin-top:-4px">هذه الكلمات اللي يدور حولها الدرس كله.</p>
+  <div class="syms">
+    <div class="sym"><span class="bub"><span>🍃</span></span><div><h3>النصل وعنق الورقة <span class="en">Blade · Petiole</span></h3><p>النصل الجزء العريض المفلطح من الورقة وفيه خلايا البناء الضوئي. والعنق يصل النصل بالساق، يدعمه وينقل السوائل.</p><span class="hook">النصل = الشاشة، والعنق = السلك اللي يوصلها.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span>◐</span></span><div><h3>الثغر والخليتان الحارستان <span class="en">Stoma · Guard Cells</span></h3><p>ثقب صغير في الورقة يخرج منه بخار الماء ويتبادل CO₂ و O₂، وتتحكم بفتحه خليتان حارستان.</p><span class="hook">حارستان على باب: تفتحان وتسكّران.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub"><span>▥</span></span><div><h3>النسيج الوسطي <span class="en">Mesophyll</span></h3><p>معظم الورقة، وفيه يحدث البناء الضوئي: <b>عمادي</b> خلاياه مستطيلة متراصّة، و<b>إسفنجي</b> خلاياه متباعدة بينها فراغات هوائية.</p><span class="hook">عمادي = أعمدة واقفة، إسفنجي = إسفنجة فيها هواء.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span>✦</span></span><div><h3>الكيوتيكل <span class="en">Cuticle</span></h3><p>طبقة شمع تغطي سطح الورقة العلوي، تمنع مع البشرة تسرّب الماء للخارج.</p><span class="hook">مثل طبقة الشمع على السيارة: الماء يتزحلق وما يدخل ولا يطلع.</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub sm"><span>⇅</span></span><div><h3>الخشب واللحاء <span class="en">Xylem · Phloem</span></h3><p>الخشب ينقل الماء والأملاح المعدنية لأعلى من الجذر. اللحاء ينقل السكريات من الأوراق إلى كل أجزاء النبتة.</p><span class="hook">خشب = خط الماء الصاعد، لحاء = خط التوصيل للأكل.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub"><span>⊙</span></span><div><h3>الحزمة الوعائية <span class="en">Vascular Bundle</span></h3><p>خشب ولحاء مجتمعان في الساق: اللحاء للخارج والخشب لجهة المركز، وبينهما الكمبيوم الإنشائي.</p><span class="hook">"لحاء" يبدأ مثل "لحاف": يغطي من برّا.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub"><span>⑂</span></span><div><h3>الجذر الوتدي والليفي <span class="en">Taproot · Fibrous Root</span></h3><p>الوتدي جذر مركزي كبير تتفرّع منه جذور جانبية (ثنائية الفلقة). الليفي كتلة خيوط رفيعة قصيرة قريبة من السطح (الحشائش).</p><span class="hook">الوتد يُدق عميقاً في الأرض، والليف شبكة على السطح.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span>✿</span></span><div><h3>التلقيح والإخصاب <span class="en">Pollination · Fertilization</span></h3><p>التلقيح: انتقال حبوب اللقاح من الأجزاء المذكّرة إلى المؤنّثة. الإخصاب: اتحاد الخلية المذكّرة بالبيضة، ويأتي بعده.</p><span class="hook">التلقيح = توصيل الرسالة، الإخصاب = فتحها.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">نباتات كثيرة، أجزاء متشابهة</h2></div>
+  <p>من أشجار الخشب الأحمر الشاهقة إلى السرخس الطافي اللي ما يتعدّى بضع سنتيمترات. بعضها يزهر وبعضها لا، والقطيفة تعيش موسماً واحداً بينما الصنوبر يعيش آلاف السنين. ومع هذا التنوّع: لمعظمها أجزاء خضراء، وكثير منها خشبي، ومعظمها يزهر، وكلها تقريباً <b>ثابتة في مكان واحد في التربة</b>، عكس الحيوانات.</p>
+  <p>والاختلاف بينها يرجع لتنوّع خمسة تراكيب أساسية تساعدها تعيش وتتكاثر في بيئات مختلفة:</p>
+  <div class="fields"><span>🍃 الأوراق</span><span>🌿 السوق</span><span>🌱 الجذور</span><span>🌸 الأزهار</span><span>🫘 البذور</span></div>
+  <p class="tip" style="margin-top:14px"><b>مثال على تكيّف عجيب:</b> زهرة الأوركيد لها لون ملكة النحل وشكلها ورائحتها، فتجذب ذكور النحل اللي تلقّحها.</p>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">الأوراق: مصنع الغذاء</h2></div>
+  <p>الأوراق أوضح تراكيب النبتة، وفيها يحدث <b>البناء الضوئي</b>: تستخدم النبتة ضوء الشمس والماء وثاني أكسيد الكربون لتكوّن السكريات. (الأجزاء الخضراء الأخرى تقوم به أيضاً، لكن الأوراق هي الموقع الأساسي.) والسكر والزيوت والبروتينات اللي تصنعها هي غذاء كل الكائنات على الأرض.</p>
+  <h3 style="margin:18px 0 8px">أنواع الأوراق وأشكالها</h3>
+  <div class="grid2">
+    <div class="box mint"><h3>بسيطة أو مركّبة</h3><p><b>البسيطة</b> نصل واحد. <b>المركّبة</b> نصلان أو أكثر صغيرة اسمها <b>وريقات</b>، كلها على عنق واحد.</p></div>
+    <div class="box sky"><h3>المركّبة: ريشية أو راحية</h3><p><b>ريشية</b> مثل ريش الطائر، عروقها تتفرّع من <b>العرق الأوسط</b>: نخيل جوز الهند، الدردار، الجوز، الورد. <b>راحية</b> مثل راحة اليد وأصابعها، وريقاتها تشعّ من نقطة مركزية: الفراولة، الترمس، الكستناء.</p></div>
+    <div class="box butter"><h3>إبرية</h3><p>أوراق الصنوبر والنباتات المخروطية: الشكل الإبري يساعدها تتخلّص من الثلوج، وتبقى أوراقها طوال العام.</p></div>
+    <div class="box lav"><h3>العروق تكشف النوع</h3><p>العروق أنابيب تنقل الماء والأملاح والسكريات في النصل. في <b>ثنائية الفلقة</b> متفرّعة كالشبكة، وفي <b>أحادية الفلقة</b> متوازية.</p></div>
+  </div>
+  <h3 style="margin:18px 0 8px">أوراق متكيّفة</h3>
+  <ul class="pts">
+    <li style="--b:var(--sc)"><b>الصنوبر:</b> أوراق ضيقة عليها بشرة شمعية، وثغور غارقة تحت السطح، فتقلّ خسارة الماء.</li>
+    <li style="--b:var(--sc)"><b>نبتة الجرّة:</b> أوراق متحوّرة تجذب الحشرات وتهضمها، فهي مصدر للنيتروجين.</li>
+    <li style="--b:var(--sc)"><b>الصبّار:</b> أوراقه أشواك لا تقوم بالبناء الضوئي، تحميه من آكلات الأعشاب. ونوع آخر أوراقه سميكة تحفظ الماء في الجو الحار الجاف.</li>
+  </ul>
+
+  <h3 style="margin:22px 0 8px">داخل الورقة</h3>
+  <p>الورقة نظام متخصّص للبناء الضوئي: غلاف خارجي من <b>البشرة</b>، وداخلها <b>أنسجة أساسية</b> و<b>أنسجة وعائية</b>.</p>
+  <svg class="xs" id="leafx" viewBox="0 0 600 300" role="img" aria-label="مقطع في ورقة نباتية: كيوتيكل، بشرة عليا، نسيج عمادي، نسيج إسفنجي، بشرة سفلى وثغر"></svg>
+  <ul class="pts" style="margin-top:12px">
+    <li style="--b:var(--wax)"><b>الكيوتيكل والبشرة العليا:</b> غلاف شفاف يمنع تسرّب الماء.</li>
+    <li style="--b:var(--chl)"><b>النسيج الوسطي العمادي:</b> خلايا مستطيلة متراصّة غنية بالبلاستيدات الخضراء، تمتص الضوء الواقع على الورقة.</li>
+    <li style="--b:var(--leaf)"><b>النسيج الوسطي الإسفنجي:</b> خلايا غير منتظمة ومتباعدة، بينها <b>فراغات هوائية</b> متصلة بالهواء الخارجي عبر الثغور.</li>
+    <li style="--b:var(--xy)"><b>البشرة السفلى والثغور:</b> منها يدخل CO₂ ويخرج O₂ وبخار الماء.</li>
+    <li style="--b:var(--ph)"><b>الحزم الوعائية (العروق):</b> خشب ولحاء تبدأ في الساق وتدخل الورقة عبر عنقها، فالورقة جزء من نظام النقل، ويحيط بها خلايا برنشيمية وسكلرنشيمية.</li>
+  </ul>
+
+  <div class="act" data-act="order" data-key="order" data-rtl
+       data-answer='["الكيوتيكل","البشرة العليا","النسيج العمادي","النسيج الإسفنجي","البشرة السفلى"]' data-extra='["القشرة"]'
+       data-ok="ممتاز! من فوق لتحت: شمع، بشرة، أعمدة الضوء، إسفنجة الهواء، ثم البشرة اللي فيها الثغور. و&quot;القشرة&quot; من الساق والجذر، مو من الورقة."
+       data-no="القطع الحمراء في غير مكانها. تذكّر: الشمع فوق كل شيء، والثغور في البشرة السفلى.">
+    <h3>رتّب طبقات الورقة <span class="k">نشاط</span></h3>
+    <p>اضغط الطبقات من <b>الأعلى إلى الأسفل</b>. فيه قطعة زائدة ما تنتمي للورقة.</p>
+  </div>
+
+  <h3 style="margin:22px 0 8px">كيف يفتح الثغر ويغلق؟</h3>
+  <p>الخلية الحارسة خلية بشرة متخصّصة فيها بلاستيدات خضراء. سرّها في جدارها: <b>الجدار الداخلي</b> (جهة الفتحة) <b>سميك</b>، و<b>الخارجي رقيق</b>.</p>
+  <ol class="tline">
+    <li><span class="yr">1</span><div class="ev"><b>الماء يدخل الخليتين</b><span>يزداد ضغط الماء داخلهما فيزداد <b>ضغط الامتلاء</b> وتنتفخان.</span></div></li>
+    <li><span class="yr">2</span><div class="ev"><b>الجدار الرقيق يتقوّس</b><span>الجدار الخارجي الرقيق يندفع للخارج ويأخذ شكلاً مقوّساً، فيشدّ الجدار السميك الداخلي معه.</span></div></li>
+    <li><span class="yr">3</span><div class="ev"><b>الثغر ينفتح</b><span>الجداران السميكان يبتعدان عن بعض، فتتسع الفتحة.</span></div></li>
+    <li><span class="yr">4</span><div class="ev"><b>الماء نادر؟</b><span>يخرج الماء من الخليتين، ينخفض ضغط الامتلاء، تنكمشان وتقتربان، فيضيق الثغر أو يُغلق قليلاً (لا يُغلق كلياً).</span></div></li>
+  </ol>
+  <p class="tip" style="margin-top:12px"><b>العوامل البيئية:</b> الثغور <b>تنفتح بالضوء وتُغلق بغيابه</b> (الليل)، و<b>تُغلق</b> عند ارتفاع الحرارة أو شدّة الضوء أو قوة الرياح أو في الجو الجاف، لأن النبتة وقتها تفقد ماءً كثيراً. هدفها: تفتح بما يكفي للبناء الضوئي، وما تفتح زيادة فتجف. هذا هو <b>الاتزان الداخلي</b>. جرّب كل هذا في المختبر فوق.</p>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">السوق: الطريق السريع</h2></div>
+  <div class="grid2">
+    <div class="box peach"><h3>وظيفتان رئيسيتان</h3><p>(1) <b>حمل</b> الأوراق والأزهار. (2) <b>نقل</b> الماء والمواد الغذائية: الخشب يرفع الماء والأملاح من الجذر إلى عروق الأوراق والأزهار، واللحاء يوزّع السكريات من الأوراق.</p></div>
+    <div class="box butter"><h3>ووظيفة إضافية: تخزين</h3><p>بعض السوق تخزّن الغذاء الزائد: البطاطا ساق تحت الأرض فيها نشا كثير.</p></div>
+  </div>
+  <h3 style="margin:18px 0 8px">أنواع السوق: أربع فئات</h3>
+  <div class="fields"><span>نباتات عشبية: ساق غير خشبية بغطاء رقيق</span><span>شجيرات</span><span>نباتات متسلّقة (معترشة): سوق أسطوانية تدعمها الأشجار</span><span>أشجار: جذع وفروع وغصينات</span></div>
+  <h3 style="margin:18px 0 8px">العقد والبراعم</h3>
+  <p>تتصل الأوراق بالساق عند <b>العُقد</b>، وقطعة الساق بين عقدتين اسمها <b>عُقلة</b>. النمو يبدأ في <b>البراعم</b> اللي تصير أوراقاً أو فروعاً أو أزهاراً. في النعناع تظهر متقابلة، وفي دوّار الشمس بنمط تبادلي، وهذا يعطي الأوراق أكبر قدر من الضوء.</p>
+  <h3 style="margin:18px 0 8px">سوق محوّرة تخزّن الطعام</h3>
+  <div class="fields"><span>درنة البطاطا</span><span>رايزوم الزنجبيل</span><span>كورمة الدلبوث</span><span>بصلة الأمارلس</span></div>
+  <p class="note">قد تبقى كامنة في الأوقات الباردة أو الجافة حتى تعود الظروف الملائمة للنمو.</p>
+  <h3 style="margin:18px 0 8px">داخل الساق</h3>
+  <p>ثلاثة أنواع أنسجة: <b>البشرة</b> (جدر سميكة وغلاف شمعي للحماية)، <b>الأساسية</b>، و<b>الوعائية</b>. في الزهرية: أوعية خشبية وقصيبات، وفي المخروطية: قصيبات فقط. والخشب واللحاء في الساق مرتّبان في <b>حزم وعائية</b>: اللحاء للخارج، الخشب للمركز، والكمبيوم الإنشائي بينهما.</p>
+</section>
+
+<section class="sec" aria-labelledby="s5">
+  <div class="sec-head"><span class="num">5</span><h2 id="s5">الجذور: مضخّة ومرساة</h2></div>
+  <p>الجذر ينمو تحت سطح التربة وله وظيفتان أساسيتان: <b>امتصاص</b> الماء والعناصر المعدنية، و<b>تثبيت</b> النبتة بقوة. وبعضها يخزّن الغذاء الفائض.</p>
+  <div class="grid2">
+    <div class="box pink"><h3>الجذر الوتدي</h3><p>في ثنائية الفلقة: جذر مركزي كبير تتفرّع منه جذور جانبية، وقد ينمو عميقاً ليصل للمياه الجوفية. جرّب تشلع نبتة فول أو ملوخية! والجزر والبنجر يخزّنان فيه الغذاء.</p></div>
+    <div class="box sky"><h3>الجذر الليفي</h3><p>كتلة خيوط رفيعة قصيرة في السنتيمترات العليا من التربة، تلتف حول حبيباتها فتمنع <b>تآكل</b> الطبقة السطحية. الحشائش نموذج له.</p></div>
+  </div>
+  <h3 style="margin:18px 0 8px">من الخارج إلى الداخل</h3>
+  <ul class="pts">
+    <li style="--b:var(--sc)"><b>قلنسوة الجذر:</b> تغطّي القمة وتحميها، والنسيج الإنشائي القمّي خلفها يصنع خلايا جديدة فيطول الجذر.</li>
+    <li style="--b:var(--sc)"><b>البشرة:</b> تحمي وتمتص. في <b>منطقة التمايز</b> تتحوّل بعض خلاياها إلى <b>شعيرات جذرية ماصّة</b> تزيد مساحة سطح الامتصاص كثيراً.</li>
+    <li style="--b:var(--sc)"><b>القشرة:</b> طبقة إسفنجية من النسيج الأساسي.</li>
+    <li style="--b:var(--sc)"><b>البشرة الداخلية (الأندوديرمس):</b> حلقة تحيط بالأسطوانة الوعائية المركزية، وفيها الخشب واللحاء بشكل تبادلي.</li>
+  </ul>
+
+  <div class="act" data-act="match" data-key="match"
+       data-pairs='[["عنق الورقة","يصل النصل بالساق"],["النسيج العمادي","يمتص الضوء للبناء الضوئي"],["الخشب","ينقل الماء والأملاح لأعلى"],["اللحاء","ينقل السكريات من الأوراق"],["الشعيرات الجذرية","تزيد مساحة الامتصاص"],["قلنسوة الجذر","تحمي قمة الجذر"]]'
+       data-ok="كل الأزواج صحيحة! صرت تعرف شغل كل جزء.">
+    <h3>وصّل التركيب بوظيفته <span class="k">نشاط</span></h3>
+    <p>اختر تركيباً، ثم وظيفته.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s6">
+  <div class="sec-head"><span class="num">6</span><h2 id="s6">أحادية الفلقة أو ثنائية الفلقة؟</h2></div>
+  <p>من أهداف الدرس: المقارنة بين النوعين في الورقة والساق والجذر. شوف المقاطع العرضية:</p>
+  <div class="quad" id="quad"></div>
+  <div class="key"><span><i style="background:var(--xy)"></i>خشب</span><span><i style="background:var(--ph)"></i>لحاء</span><span><i style="background:var(--pith)"></i>نخاع / نسيج أساسي</span></div>
+  <div class="cmp" aria-label="مقارنة">
+    <div class="r h"><div></div><div>أحادية الفلقة</div><div>ثنائية الفلقة</div></div>
+    <div class="r"><div>عروق الورقة</div><div>متوازية</div><div>متفرّعة</div></div>
+    <div class="r"><div>حزم الساق</div><div>مبعثرة بين خلايا الأنسجة الأساسية</div><div>حلقة منظّمة حول النخاع، وحولها القشرة</div></div>
+    <div class="r"><div>وعائي الجذر</div><div>حلقة تحيط بنخاع مركزي</div><div>قلب مصمت في المركز أذرعه خشب، واللحاء بين الأذرع</div></div>
+    <div class="r"><div>نوع الجذر</div><div>ليفي غالباً (الحشائش)</div><div>وتدي</div></div>
+  </div>
+  <p class="tip" style="margin-top:12px"><b>انتبه للعكس:</b> في الساق، الحلقة حول النخاع = <b>ثنائية</b>. لكن في الجذر، الحلقة حول النخاع = <b>أحادية</b>.</p>
+
+  <div class="act" data-act="sort" data-key="sort" data-bins='["أحادية الفلقة","ثنائية الفلقة"]'
+       data-items='[["عروق ورقة متوازية",0],["حزم مبعثرة في الساق",0],["جذر وعاؤه حلقة حول النخاع",0],["عروق ورقة متفرّعة",1],["حزم الساق حلقة حول النخاع",1],["جذر وتدي",1]]'
+       data-ok="ممتاز! وانتبه: الحلقة حول النخاع تعني ثنائية في الساق، وأحادية في الجذر.">
+    <h3>صنّف <span class="k">نشاط</span></h3>
+    <p>كل صفة لأي مجموعة؟</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s7">
+  <div class="sec-head"><span class="num">7</span><h2 id="s7">الأزهار والبذور والثمار</h2></div>
+  <p>الزهرة عضو <b>التكاثر الجنسي</b> في النبات الزهري: تنتج الأمشاج الذكرية (في حبوب اللقاح) والأمشاج المؤنّثة (البيض)، وفيها يحدث الإخصاب. وبما أن النبتة ثابتة في مكانها، تكيّفت أزهارها لتتكاثر وهي واقفة.</p>
+  <ol class="tline">
+    <li><span class="yr">1</span><div class="ev"><b>التلقيح</b><span>انتقال حبوب اللقاح من الأجزاء المذكّرة إلى الأجزاء المؤنّثة، بالرياح أو الماء أو الحشرات أو كائنات أخرى. لذلك تنتج النبتة كميات كبيرة من حبوب اللقاح.</span></div></li>
+    <li><span class="yr">2</span><div class="ev"><b>الإخصاب</b><span>بعد التلقيح: اتحاد الخلايا المذكّرة مع الخلية البيضية، والنتيجة <b>الزيجوت (اللاقحة)</b>.</span></div></li>
+    <li><span class="yr">3</span><div class="ev"><b>البذرة</b><span>الزيجوت ينمو إلى جنين تنمو حوله أنسجة غذائية: البذرة = جنين + غذاء مدّخر. وبالإنبات تتكوّن نبتة جديدة.</span></div></li>
+    <li><span class="yr">4</span><div class="ev"><b>الثمرة</b><span>تحيط بالبذور وتحميها وتساعد على انتشارها لمواطن جديدة، فتزيد فرص بقاء النوع. مثل الخوخ والطماطم والجوز والعنب والبرتقال.</span></div></li>
+  </ol>
+</section>
+
+<section class="sec" aria-labelledby="s8">
+  <div class="sec-head"><span class="num">8</span><h2 id="s8">سؤال محلول: نبتة بلا ساق</h2></div>
+  <div class="qbox">سؤال الكتاب للتفكير الناقد: افترض أن نباتاً غابت عنه السوق. ما الصعوبات التي يواجهها لمنافسة النباتات الأخرى؟</div>
+  <div class="row"><button class="lite" id="hideSol" type="button" aria-pressed="false">أخفِ الحل وجرّب أولاً</button></div>
+  <ol class="steps" id="steps">
+    <li><span><b>تذكّر وظائف الساق:</b> حمل الأوراق والأزهار، والنقل بالخشب واللحاء، وأحياناً التخزين.</span></li>
+    <li><span><b>بدون حمل:</b> الأوراق تبقى قريبة من الأرض، فتظلّلها النباتات الأطول وتأخذ ضوءاً أقل، فيقلّ البناء الضوئي.</span></li>
+    <li><span><b>بدون نقل:</b> الماء والأملاح ما توصل بسهولة من الجذر للأوراق، والسكريات ما تنتقل من الأوراق للجذر.</span></li>
+    <li><span><b>بدون رفع الأزهار:</b> يصعب وصول الحشرات والرياح إليها، فيقلّ التلقيح وانتشار البذور. <span class="ans">إذن تخسر المنافسة على الضوء والنقل والتكاثر.</span></span></li>
+  </ol>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">9</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sd">
+  <div class="sec-head"><span class="num">10</span><h2 id="sd">في حياتنا</h2></div>
+  <div class="life">
+    <div class="card"><h3>الجزر والبطاطا</h3><p>تاكل جذراً وتدياً (الجزر) وساقاً تحت الأرض (البطاطا)، وكلاهما مخزن غذاء صنعته الأوراق.</p></div>
+    <div class="card"><h3>نبتة البيت تذبل ظهراً</h3><p>في الحر الشديد تغلق الثغور لتحفظ الماء، ومع نقص الماء تفقد الخلايا امتلاءها فتتهدّل الأوراق.</p></div>
+    <div class="card"><h3>العشب الضار</h3><p>ليس نوعاً خاصاً من النبات: هو أي نبات ينمو حيث لا يُرغب في وجوده.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">11</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>في معظم النباتات يحدث البناء الضوئي داخل الورقة في:</p>
+      <div class="opts"><button>البشرة العليا</button><button data-ok>النسيج الوسطي</button><button>عنق الورقة</button></div>
+      <p class="why" hidden>الصحيح: النسيج الوسطي (العمادي والإسفنجي)، وخلايا العمادي غنية بالبلاستيدات الخضراء.</p></div>
+    <div class="q"><p>في يوم مشمس حار وجاف وفيه رياح قوية، تكون ثغور الورقة غالباً:</p>
+      <div class="opts"><button>مفتوحة على الآخر لأن الضوء قوي</button><button data-ok>مغلقة لتقليل فقد الماء</button><button>مفتوحة ليلاً ومغلقة نهاراً</button></div>
+      <p class="why" hidden>الصحيح: مغلقة. الحرارة وشدة الضوء والرياح والجفاف كلها تزيد فقد الماء، فتغلق النبتة ثغورها لتحمي نفسها من الجفاف.</p></div>
+    <div class="q"><p>اتحاد الخلايا المذكّرة مع الخلية البيضية لتكوين الزيجوت يُسمّى:</p>
+      <div class="opts"><button>التلقيح</button><button>الإنبات</button><button data-ok>الإخصاب</button></div>
+      <p class="why" hidden>الصحيح: الإخصاب. التلقيح هو انتقال حبوب اللقاح، ويحدث قبل الإخصاب.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li><b>الورقة</b>: نصل وعنق وعروق. من الأعلى: كيوتيكل، بشرة عليا، عمادي، إسفنجي، بشرة سفلى فيها ثغور تفتح وتغلق بالخليتين الحارستين.</li>
+      <li><b>الساق</b> تحمل وتنقل (خشب لأعلى، لحاء للسكريات). <b>الجذر</b> يمتص ويثبّت، وشعيراته تزيد مساحة الامتصاص.</li>
+      <li><b>أحادية</b>: عروق متوازية، حزم مبعثرة، جذر ليفي. <b>ثنائية</b>: عروق متفرّعة، حزم حلقية حول النخاع، جذر وتدي. والزهرة للتلقيح ثم الإخصاب ثم البذرة.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الأحياء، الصف الحادي عشر، الوحدة الأولى، ص 14 إلى 27</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"bio-u1-1-1"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+/* ---------- stoma lab ---------- */
+var S={light:1,heat:0,wind:0,dry:0,water:0},svg=$("stoma"),cur=1;
+function openness(){
+  if(S.light===0)return 0;
+  if(S.light===2||S.heat||S.wind||S.dry)return 0.08;
+  if(S.water)return 0.35;
+  return 1;
+}
+function draw(o){
+  var s='<rect width="600" height="260" fill="var(--cellw)" opacity=".7"/>';
+  for(var i=0;i<6;i++)s+='<path d="M'+(i*110-20)+' 0 Q'+(i*110+30)+' 130 '+(i*110-10)+' 260" fill="none" stroke="var(--leaf2)" stroke-width="2" opacity=".35"/>';
+  var cx=300,cy=130,ro=104+14*o,ryo=104,rp=3+30*o,ryp=72+6*o,top=cy-ryo,bot=cy+ryo;
+  /* each guard cell = half of the outer oval minus half of the pore; the thick inner wall lines the pore */
+  [-1,1].forEach(function(side){
+    var sw=side<0?0:1,sp=side<0?1:0;
+    s+='<path d="M'+cx+' '+top+' A'+ro+' '+ryo+' 0 0 '+sw+' '+cx+' '+bot+' L'+cx+' '+(cy+ryp)+' A'+rp+' '+ryp+' 0 0 '+sp+' '+cx+' '+(cy-ryp)+'Z" fill="var(--leaf)" stroke="var(--leaf2)" stroke-width="3"/>';
+    s+='<path d="M'+cx+' '+(cy+ryp)+' A'+rp+' '+ryp+' 0 0 '+sp+' '+cx+' '+(cy-ryp)+'" fill="none" stroke="var(--chl)" stroke-width="9" stroke-linecap="round"/>';
+    var mx=cx+side*(rp+(ro-rp)*.55);
+    for(var k=0;k<5;k++){var y=cy-60+k*30;s+='<ellipse cx="'+(mx+side*((k%2)*10-5))+'" cy="'+y+'" rx="9" ry="6" fill="var(--chl)" opacity=".85"/>';}
+  });
+  s+='<ellipse cx="'+cx+'" cy="'+cy+'" rx="'+Math.max(1.5,rp-4)+'" ry="'+(ryp-4)+'" fill="var(--pore)"/>';
+  var inn=o>.5;
+  [[120,40],[480,40],[120,220],[480,220]].forEach(function(p){
+    var sd=p[0]<300?-1:1,x1=p[0]+sd*(inn?50:0),x2=p[0]+sd*(inn?0:50),dir=x2>x1?1:-1;
+    s+='<line x1="'+x1+'" y1="'+p[1]+'" x2="'+x2+'" y2="'+p[1]+'" stroke="var(--xy)" stroke-width="3"/><path d="M'+x2+' '+p[1]+' l'+(-dir*10)+' -6 l0 12Z" fill="var(--xy)"/>';
+    s+='<text x="'+((x1+x2)/2)+'" y="'+(p[1]-9)+'" font-size="15" fill="var(--xy)" text-anchor="middle">H₂O</text>';
+  });
+  s+='<text x="300" y="253" font-size="17" fill="var(--text)" text-anchor="middle" font-weight="700" direction="rtl">'+(o>.6?"الثغر مفتوح":o>.2?"الثغر ضيّق":"الثغر شبه مغلق")+'</text>';
+  svg.innerHTML=s;
+}
+function update(){
+  var o=openness(),m=$("sMsg");
+  var from=cur,t0=null;cur=o;
+  function step(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/500);draw(from+(o-from)*k);if(k<1)requestAnimationFrame(step);}
+  if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)draw(o);else requestAnimationFrame(step);
+  if(S.light===0)m.textContent="ليل: لا ضوء، فلا بناء ضوئي. الثغور تُغلق بغياب الضوء.";
+  else if(S.light===2||S.heat||S.wind||S.dry)m.textContent="خطر جفاف! النبتة تفقد ماءً كثيراً، فتغلق ثغورها لتحافظ على الماء.";
+  else if(S.water)m.textContent="الماء نادر: خرج من الخليتين الحارستين، فانكمشتا واقتربتا. الثغر ضاق لكنه لم يُغلق كلياً.";
+  else m.textContent="نهار، والماء متوفر: الخليتان ممتلئتان ومنتفختان، فالثغر مفتوح ويدخل CO₂ للبناء الضوئي.";
+  m.className="msg"+(o>.6?" ok":"");
+}
+[].forEach.call(document.querySelectorAll(".seg"),function(g){
+  [].forEach.call(g.querySelectorAll(".tg"),function(b){b.addEventListener("click",function(){
+    [].forEach.call(g.querySelectorAll(".tg"),function(x){x.setAttribute("aria-pressed","false");});
+    b.setAttribute("aria-pressed","true");S[g.dataset.g]=+b.dataset.v;update();
+  });});
+});
+draw(1);update();
+
+/* ---------- leaf cross-section ---------- */
+(function(){
+  var s='',L=360;
+  s+='<rect x="20" y="22" width="'+L+'" height="8" rx="4" fill="var(--wax)"/>';
+  for(var i=0;i<9;i++)s+='<rect x="'+(20+i*40)+'" y="32" width="38" height="24" rx="8" fill="var(--cellw)" stroke="var(--leaf2)" stroke-width="2"/>';
+  for(i=0;i<15;i++){var x=22+i*24;s+='<rect x="'+x+'" y="60" width="21" height="72" rx="9" fill="var(--leaf)" stroke="var(--leaf2)" stroke-width="2"/>';for(var j=0;j<4;j++)s+='<circle cx="'+(x+10.5)+'" cy="'+(72+j*16)+'" r="4" fill="var(--chl)"/>';}
+  var sp=[[40,160],[95,150],[150,172],[215,155],[275,168],[335,152],[65,205],[130,215],[195,200],[255,212],[320,205],[365,190]];
+  sp.forEach(function(p){s+='<circle cx="'+p[0]+'" cy="'+p[1]+'" r="20" fill="var(--leaf)" stroke="var(--leaf2)" stroke-width="2" opacity=".85"/><circle cx="'+(p[0]-6)+'" cy="'+(p[1]-4)+'" r="3.5" fill="var(--chl)"/><circle cx="'+(p[0]+6)+'" cy="'+(p[1]+5)+'" r="3.5" fill="var(--chl)"/>';});
+  s+='<circle cx="190" cy="160" r="15" fill="var(--xy)" opacity=".85"/><circle cx="190" cy="186" r="11" fill="var(--ph)" opacity=".9"/>';
+  for(i=0;i<9;i++){if(i===4)continue;s+='<rect x="'+(20+i*40)+'" y="238" width="38" height="22" rx="8" fill="var(--cellw)" stroke="var(--leaf2)" stroke-width="2"/>';}
+  s+='<ellipse cx="172" cy="249" rx="10" ry="11" fill="var(--leaf)" stroke="var(--leaf2)" stroke-width="2"/><ellipse cx="208" cy="249" rx="10" ry="11" fill="var(--leaf)" stroke="var(--leaf2)" stroke-width="2"/>';
+  s+='<path d="M190 290 L190 236" stroke="var(--xy)" stroke-width="2.5" stroke-dasharray="5 5"/><text x="198" y="288" font-size="12" fill="var(--xy)">CO₂</text>';
+  var lab=[[22,"الكيوتيكل"],[46,"البشرة العليا"],[96,"النسيج العمادي"],[160,"حزمة وعائية"],[205,"النسيج الإسفنجي"],[252,"البشرة السفلى"]];
+  lab.forEach(function(l,k){s+='<line x1="'+(k===3?208:L+22)+'" y1="'+l[0]+'" x2="402" y2="'+l[0]+'" stroke="var(--muted)" stroke-width="1.5"/><text x="500" y="'+(l[0]+6)+'" font-size="18" font-weight="600" fill="var(--text)" text-anchor="middle">'+l[1]+'</text>';});
+  $("leafx").innerHTML=s;
+})();
+
+/* ---------- monocot / dicot cross-sections ---------- */
+(function(){
+  function wrap(inner,label,sub){return '<figure><svg viewBox="0 0 140 140" width="100%" role="img" aria-label="'+label+'"><circle cx="70" cy="70" r="64" fill="var(--pith)" stroke="var(--leaf2)" stroke-width="4"/>'+inner+'</svg><figcaption><b>'+label+'</b>'+sub+'</figcaption></figure>';}
+  function bundle(x,y,r){return '<circle cx="'+x+'" cy="'+(y-r*.35)+'" r="'+r*.6+'" fill="var(--ph)"/><circle cx="'+x+'" cy="'+(y+r*.3)+'" r="'+r*.65+'" fill="var(--xy)"/>';}
+  var a='',seed=[[40,38],[86,30],[105,62],[60,64],[30,82],[80,96],[104,100],[52,110],[70,44],[96,80],[44,58],[66,86]];
+  seed.forEach(function(p){a+=bundle(p[0],p[1],8);});
+  var b='';for(var i=0;i<10;i++){var t=i*Math.PI/5;var x=70+44*Math.cos(t),y=70+44*Math.sin(t);var ox=70+50*Math.cos(t),oy=70+50*Math.sin(t);b+='<circle cx="'+ox+'" cy="'+oy+'" r="5.5" fill="var(--ph)"/><circle cx="'+(70+40*Math.cos(t))+'" cy="'+(70+40*Math.sin(t))+'" r="6" fill="var(--xy)"/>';}
+  var c='<circle cx="70" cy="70" r="40" fill="none" stroke="var(--leaf2)" stroke-width="2" stroke-dasharray="4 4"/>';
+  for(i=0;i<12;i++){var u=i*Math.PI/6;c+='<circle cx="'+(70+34*Math.cos(u))+'" cy="'+(70+34*Math.sin(u))+'" r="5" fill="'+(i%2?"var(--ph)":"var(--xy)")+'"/>';}
+  var d='<circle cx="70" cy="70" r="36" fill="none" stroke="var(--leaf2)" stroke-width="2" stroke-dasharray="4 4"/>';
+  d+='<path d="M70 42 L78 62 L98 70 L78 78 L70 98 L62 78 L42 70 L62 62Z" fill="var(--xy)"/>';
+  [[87,53],[87,87],[53,87],[53,53]].forEach(function(p){d+='<circle cx="'+p[0]+'" cy="'+p[1]+'" r="7" fill="var(--ph)"/>';});
+  $("quad").innerHTML=wrap(a,"ساق أحادية الفلقة","حزم مبعثرة")+wrap(b,"ساق ثنائية الفلقة","حلقة حول النخاع")+wrap(c,"جذر أحادي الفلقة","حلقة حول نخاع")+wrap(d,"جذر ثنائي الفلقة","قلب مصمت أذرعه خشب");
+})();
+})();
+</script>
+</body>
+</html>
