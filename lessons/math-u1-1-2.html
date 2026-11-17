@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="math">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الأسس النسبية · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+span[dir=ltr],bdi[dir=ltr]{unicode-bidi:isolate;white-space:nowrap}
+body{--root:#2fb6f0;--pow:#ff7aa8}
+.f sup{font-size:.62em}
+.bases{display:flex;flex-wrap:wrap;gap:8px;direction:ltr;justify-content:flex-end}
+.bases .tg{min-width:52px;font-family:var(--display);font-weight:800}
+.out{margin-top:12px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.out .eq{text-align:center}
+.out .eq .f{font-size:1.45rem;white-space:normal}
+.path{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;direction:ltr;margin-top:12px}
+.path .st{padding:8px 14px;border-radius:18px;background:var(--card);box-shadow:var(--clay-sm);font-family:"Noto Serif",Georgia,serif;font-style:italic;font-size:1.2rem}
+.path .st.r{background:color-mix(in srgb,var(--root) 26%,var(--card))}
+.path .st.p{background:color-mix(in srgb,var(--pow) 26%,var(--card))}
+.path .ar{color:var(--muted);font-weight:800}
+.path small{display:block;font-family:var(--body);font-style:normal;font-size:12px;color:var(--muted)}
+.ltab{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.ltab div{padding:8px 12px;border-radius:14px;background:var(--card);box-shadow:var(--clay-sm);text-align:center;overflow-x:auto}
+.ltab .h{background:var(--soft);font-weight:700;color:var(--ink);font-size:14px}
+.ltab .f{font-size:1.15rem}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.rule{padding:14px 16px;border-radius:22px;background:var(--card);box-shadow:var(--clay-sm);overflow-x:auto}
+.rule h3{margin:0 0 6px;font-size:1.05rem}
+.rule .f{font-size:1.3rem}
+.rule p{margin:6px 0 0;font-size:13.5px;color:var(--muted)}
+.rule:nth-child(1){background:var(--p-sky)}.rule:nth-child(2){background:var(--p-pink)}.rule:nth-child(3){background:var(--p-lav)}
+.mini{display:flex;gap:6px;justify-content:center;direction:ltr;margin:6px 0 10px}
+.mini span{flex:1;max-width:120px;padding:8px 0;border-radius:14px;text-align:center;font-family:var(--display);font-weight:800;background:color-mix(in srgb,var(--root) 26%,var(--card));box-shadow:var(--clay-sm)}
+</style>
+</head>
+<body style="--sc:#8a63f2">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الرياضيات</span><span class="chip">الدرس 1-2 · ص 22 إلى 29</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الأولى: الأعداد الحقيقية</p>
+  <h1 id="t">الأسس النسبية</h1>
+  <p>تعرف أن <span class="f" style="font-size:1.1rem"><span class="rad"><span>x</span></span> · <span class="rad"><span>x</span></span> = x</span>. طيب لو كتبناها بالأسس: <span class="f" style="font-size:1.1rem">x<sup>□</sup> · x<sup>□</sup> = x<sup>1</sup></span>، يعني □ + □ = 1. <mark>إذن □ = ½، والجذر التربيعي مجرّد أس نصف!</mark></p>
+  <div class="mini" aria-hidden="true"><span>½</span><span>½</span></div>
+  <div class="mini" aria-hidden="true"><span>⅓</span><span>⅓</span><span>⅓</span></div>
+  <p class="muted" style="font-size:14px;margin:0">نصفان يكمّلان 1 (جذر تربيعي)، وثلاثة أثلاث تكمّل 1 (جذر تكعيبي).</p>
+</section>
+
+<section class="panel" id="lab-sec" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">محوّل الأسس</h2><span class="legend"><span><i style="background:var(--root)"></i>الجذر أولاً</span><span><i style="background:var(--pow)"></i>ثم القوّة</span></span></div>
+  <p class="cap">اختر الأساس، ثم البسط m والمقام n للأس. شوف الصورتين، وشوف ليش الأسهل نبدأ بالجذر.</p>
+  <div class="bases" role="group" aria-label="الأساس" id="bases"></div>
+  <div class="controls" style="margin-top:10px">
+    <div class="ctl"><label for="mIn">البسط m <b id="mL">4</b></label><input type="range" id="mIn" min="-3" max="5" value="4" aria-describedby="mL"></div>
+    <div class="ctl"><label for="nIn">المقام n (دليل الجذر) <b id="nL">3</b></label><input type="range" id="nIn" min="2" max="5" value="3" aria-describedby="nL"></div>
+  </div>
+  <div class="out">
+    <div class="eq xx"><small>الصورة الأسية</small><span class="f" id="oExp"></span></div>
+    <div class="eq yy"><small>الصورة الجذرية</small><span class="f" id="oRad"></span></div>
+  </div>
+  <div class="path" id="oPath" aria-live="polite"></div>
+  <p class="msg" id="oMsg" aria-live="polite"></p>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">رموز الدرس قبل أي قانون</h2></div>
+  <div class="syms">
+    <div class="sym"><span class="bub"><span class="f" style="font-size:1.1rem"><span class="rad"><i>n</i><span>x</span></span></span></span><div><h3>الجذر النوني <span class="en">nth Root</span></h3><p>العدد اللي لو رفعته للقوّة n يعطيك x.</p><span class="hook">نوني = الجذر رقم n: تربيعي، تكعيبي، رابع، خامس...</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span>n</span></span><div><h3>دليل الجذر <span class="en">Index</span></h3><p>الرقم الصغير فوق الجذر، عدد صحيح موجب n ≥ 2. في الصورة الأسية يصير <b>مقام</b> الأس.</p><span class="hook">الدليل "ينزل" للمقام.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub sm"><span class="f" style="font-size:1rem">x<sup>m/n</sup></span></span><div><h3>الأس النسبي <span class="en">Rational Exponent</span></h3><p>أس على شكل كسر m/n: المقام n جذر، والبسط m قوّة.</p><span class="hook">الجذر تحت (في المقام) مثل جذور الشجرة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub sm"><span class="f" style="font-size:.95rem"><span class="rad"><i>n</i><span>x<sup>m</sup></span></span></span></span><div><h3>الصورة الجذرية <span class="en">Radical Form</span></h3><p>كتابة العدد بعلامة الجذر.</p><span class="hook">فيها علامة √.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub sm"><span class="f" style="font-size:1rem">25<sup>½</sup></span></span><div><h3>الصورة الأسية <span class="en">Exponential Form</span></h3><p>كتابة العدد نفسه بأس كسري بدل علامة الجذر.</p><span class="hook">بلا √، الكسر يقوم بالشغل.</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub sm"><span class="f" style="font-size:1rem">b<sup>−n</sup></span></span><div><h3>الأس السالب <span class="en">Negative Exponent</span></h3><p><span class="f" style="font-size:1rem">b<sup>−n</sup> = 1 ÷ b<sup>n</sup></span> بشرط b ≠ 0.</p><span class="hook">السالب يقلب العدد تحت الكسر.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">الجذر النوني والتحويل بين الصورتين</h2></div>
+  <div class="qbox"><b>التعريف:</b> إذا كان a عدداً حقيقياً و <span class="f" style="font-size:1.1rem">n ∈ ℤ<sup>+</sup> , n ≥ 2</span>، وكان <span class="f" style="font-size:1.1rem"><span class="rad"><i>n</i><span>a</span></span></span> عدداً حقيقياً يساوي b، فإن <span class="f" style="font-size:1.1rem">b = <span class="rad"><i>n</i><span>a</span></span> ⟺ a = b<sup>n</sup></span></div>
+  <p style="margin-top:14px">مثال: <span class="f" style="font-size:1.15rem"><span class="rad"><i>4</i><span>81</span></span> = 3</span> لأن <span class="f" style="font-size:1.15rem">3<sup>4</sup> = 81</span>. في الصورة الجذرية الدليل يحدّد الجذر، وفي الصورة الأسية <b>الدليل يصير مقام الأس</b>:</p>
+  <div class="ltab" role="table" aria-label="الصورة الجذرية والأسية">
+    <div class="h" role="columnheader">الصورة الجذرية</div><div class="h" role="columnheader">الصورة الأسية</div>
+    <div><span class="f"><span class="rad"><span>25</span></span> = <span class="rad"><i>2</i><span>25</span></span></span></div><div><span class="f">25<sup>1/2</sup></span></div>
+    <div><span class="f"><span class="rad"><i>3</i><span>27</span></span></span></div><div><span class="f">27<sup>1/3</sup></span></div>
+    <div><span class="f"><span class="rad"><i>4</i><span>64</span></span></span></div><div><span class="f">64<sup>1/4</sup></span></div>
+  </div>
+  <h3 style="margin:20px 0 10px">ثلاث خواص تحفظها</h3>
+  <p class="muted" style="margin-top:-4px">إذا كان الجذر النوني لـ x عدداً حقيقياً، m عدد صحيح، <span class="f" style="font-size:1rem">n ∈ ℤ<sup>+</sup>, n ≥ 2</span>:</p>
+  <div class="rules">
+    <div class="rule"><h3>الخاصية 1: مقام الأس جذر</h3><span class="f">x<sup>1/n</sup> = <span class="rad"><i>n</i><span>x</span></span></span></div>
+    <div class="rule"><h3>الخاصية 2: البسط قوّة</h3><span class="f">x<sup>m/n</sup> = <span class="rad"><i>n</i><span>x<sup>m</sup></span></span> = (<span class="rad"><i>n</i><span>x</span></span>)<sup>m</sup></span><p>حيث m/n في أبسط صورة. الخاصية <span dir="ltr">(x<sup>m</sup>)<sup>n</sup> = x<sup>m·n</sup></span> هي اللي تسمح بهذا.</p></div>
+    <div class="rule"><h3>الخاصية 3: جذر القوّة نفسها</h3><span class="f"><span class="rad"><i>n</i><span>x<sup>n</sup></span></span> = |x|</span> إذا n <b>زوجي</b><br><span class="f"><span class="rad"><i>n</i><span>x<sup>n</sup></span></span> = x</span> إذا n <b>فردي</b><p>نفس فكرة <span dir="ltr">√x² = |x|</span> من الدرس السابق.</p></div>
+  </div>
+
+  <div class="act" data-act="order" data-key="order"
+       data-answer='["xᵐ⁄ⁿ","=","ⁿ√xᵐ","=","(ⁿ√x)ᵐ"]' data-extra='["ᵐ√xⁿ"]'
+       data-ok="ممتاز! الدليل ⁦n⁩ في المقام، والقوّة ⁦m⁩ في البسط، وتقدر تأخذ الجذر قبل القوّة أو بعدها."
+       data-no="القطع الحمراء في غير مكانها. تذكّر: مقام الأس هو دليل الجذر، والبسط هو القوّة.">
+    <h3>رتّب القانون <span class="k">نشاط</span></h3>
+    <p>اضغط القطع بالترتيب لتكوّن الخاصية 2. قطعة واحدة دخيلة.</p>
+  </div>
+
+  <div class="qbox" style="margin-top:14px">
+    <p style="margin:0 0 6px"><b>من أمثلة الكتاب:</b></p>
+    <p style="margin:0 0 6px"><span class="f"><span class="rad"><i>3</i><span>125</span></span> = <span class="rad"><i>3</i><span>5<sup>3</sup></span></span> = 5</span><br><span class="f">5<sup>1/2</sup> × 5<sup>1/2</sup> = <span class="rad"><span>5</span></span> × <span class="rad"><span>5</span></span> = 5</span><br><span class="f">10<sup>1/3</sup>(100<sup>1/3</sup>) = <span class="rad"><i>3</i><span>10<sup>3</sup></span></span> = 10</span></p>
+    <p style="margin:0 0 6px"><span class="f">25<sup>3/2</sup> = (25<sup>3</sup>)<sup>1/2</sup> = <span class="rad"><span>25<sup>3</sup></span></span></span><br><span class="f">x<sup>2/5</sup> = <span class="rad"><i>5</i><span>x<sup>2</sup></span></span> = (<span class="rad"><i>5</i><span>x</span></span>)<sup>2</sup></span></p>
+    <p style="margin:0"><span class="f">y<sup>−2.5</sup> = y<sup>−5/2</sup> = 1 ÷ <span class="rad"><span>y<sup>5</sup></span></span> , ∀y &gt; 0</span><br><span class="f"><span class="rad"><span>b<sup>3</sup></span></span> = b<sup>3/2</sup> , b ≥ 0</span></p>
+  </div>
+  <p class="note"><b>في الآلة الحاسبة:</b> الأس الكسري يُكتب بين قوسين. <span class="f" style="font-size:1.05rem">432<sup>3/5</sup></span> تُدخل هكذا: <span dir="ltr">432 ^ (3 ÷ 5)</span>. ومن أوائل من استخدم الأسس النسبية العالمان <b>واليس</b> و<b>ديكارت</b>.</p>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">قوانين الأسس النسبية</h2></div>
+  <p>نفس قوانين الأسس اللي تعرفها، لكن الأسس الحين كسور. ليكن m, n عددين نسبيين، و a, b عددين حقيقيين بحيث <span dir="ltr">a<sup>n</sup>, b<sup>n</sup>, b<sup>m</sup></span> أعداد حقيقية:</p>
+  <div class="ltab" role="table" aria-label="قوانين الأسس النسبية">
+    <div class="h" role="columnheader">القانون</div><div class="h" role="columnheader">مثال الكتاب</div>
+    <div><span class="f">b<sup>m</sup> · b<sup>n</sup> = b<sup>m+n</sup></span></div><div><span class="f">8<sup>1/3</sup> × 8<sup>2/3</sup> = 8<sup>1</sup> = 8</span></div>
+    <div><span class="f">(b<sup>m</sup>)<sup>n</sup> = b<sup>m·n</sup></span></div><div><span class="f">(5<sup>1/2</sup>)<sup>4</sup> = 5<sup>2</sup> = 25</span></div>
+    <div><span class="f">(a·b)<sup>n</sup> = a<sup>n</sup> · b<sup>n</sup></span></div><div><span class="f">(4 × 5)<sup>1/2</sup> = 2 × 5<sup>1/2</sup></span></div>
+    <div><span class="f">b<sup>−n</sup> = 1 ÷ b<sup>n</sup> , b ≠ 0</span></div><div><span class="f">9<sup>−1/2</sup> = 1 ÷ 9<sup>1/2</sup> = 1/3</span></div>
+    <div><span class="f">b<sup>m</sup> ÷ b<sup>n</sup> = b<sup>m−n</sup> , b ≠ 0</span></div><div><span class="f">9<sup>3/2</sup> ÷ 9<sup>1/2</sup> = 9<sup>1</sup> = 9</span></div>
+    <div><span class="f">(a ÷ b)<sup>n</sup> = a<sup>n</sup> ÷ b<sup>n</sup> , b ≠ 0</span></div><div><span class="f">(−125 ÷ 27)<sup>1/3</sup> = −5/3</span></div>
+  </div>
+  <div class="qbox" style="margin-top:14px">
+    <p style="margin:0 0 6px"><b>مثال الكتاب (5):</b></p>
+    <p style="margin:0 0 6px"><span class="f">(−32)<sup>3/5</sup> = (−2<sup>5</sup>)<sup>3/5</sup> = (−2)<sup>15/5</sup> = (−2)<sup>3</sup> = −8</span></p>
+    <p style="margin:0"><span class="f">(x<sup>1/2</sup> · x<sup>5/6</sup>) ÷ x<sup>2/3</sup> = x<sup>8/6</sup> ÷ x<sup>2/3</sup> = x<sup>8/6 − 4/6</sup> = x<sup>2/3</sup> , x &gt; 0</span></p>
+  </div>
+  <div class="act" data-act="gap" data-key="gap" data-ok="صح! ⁦32 = 2⁵⁩، و⁦(−2)⁵ = −32⁩. الجذر الخامس (فردي) لسالب موجود وسالب: ⁦(−2)³ = −8⁩.">
+    <h3>أكمل <span class="k">نشاط</span></h3>
+    <p><span class="f">(−32)<sup>3/5</sup> = <span class="gap">؟</span></span></p>
+    <div class="opts"><button class="pc" data-no="الإشارة ضاعت! الجذر الخامس لـ −32 هو −2، و⁦(−2)³⁩ سالب.">8</button><button class="pc" data-ok>−8</button><button class="pc" data-no="الدليل 5 فردي، والجذر الفردي للعدد السالب موجود. المشكلة فقط مع الجذر الزوجي.">ليس عدداً حقيقياً</button></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">قوانين الجذور النونية</h2></div>
+  <p>لضرب أو قسمة <span class="f" style="font-size:1.1rem"><span class="rad"><i>n</i><span>x</span></span> , <span class="rad"><i>n</i><span>y</span></span></span> إما نحوّلهما للصورة الأسية ونطبّق قوانين الأسس، أو نطبّق قوانين الجذور مباشرة. إذا كان <span class="f" style="font-size:1.1rem"><span class="rad"><i>n</i><span>x</span></span> , <span class="rad"><i>n</i><span>y</span></span></span> عددين حقيقيين:</p>
+  <div class="rules">
+    <div class="rule"><h3>الضرب</h3><span class="f"><span class="rad"><i>n</i><span>x</span></span> · <span class="rad"><i>n</i><span>y</span></span> = <span class="rad"><i>n</i><span>x · y</span></span></span><p>نفس الدليل فقط.</p></div>
+    <div class="rule"><h3>القسمة</h3><span class="f"><span class="rad"><i>n</i><span>x</span></span> ÷ <span class="rad"><i>n</i><span>y</span></span> = <span class="rad"><i>n</i><span>x ÷ y</span></span></span><p>بشرط y ≠ 0</p></div>
+    <div class="rule"><h3>جذر داخل جذر</h3><span class="f"><span class="rad"><i>n</i><span><span class="rad"><i>m</i><span>x</span></span></span></span> = <span class="rad"><i>m·n</i><span>x</span></span></span><p>الأدلّة تنضرب، بشرط أن يكون الناتج عدداً حقيقياً.</p></div>
+  </div>
+  <div class="qbox" style="margin-top:14px">
+    <p style="margin:0 0 6px"><b>مثال الكتاب (6)، كل واحد بطريقتين:</b></p>
+    <p style="margin:0 0 6px"><span class="f"><span class="rad"><i>4</i><span>5</span></span> × <span class="rad"><i>4</i><span>7</span></span> = <span class="rad"><i>4</i><span>35</span></span></span> أو <span class="f">5<sup>1/4</sup> × 7<sup>1/4</sup> = (35)<sup>1/4</sup></span></p>
+    <p style="margin:0 0 6px"><span class="f"><span class="rad"><i>3</i><span>16</span></span> ÷ <span class="rad"><i>3</i><span>2</span></span> = <span class="rad"><i>3</i><span>8</span></span> = 2</span><br><span class="f"><span class="rad"><span><span class="rad"><i>4</i><span>256</span></span></span></span> = <span class="rad"><i>8</i><span>2<sup>8</sup></span></span> = 2</span></p>
+    <p style="margin:0"><span class="f">[(<span class="rad"><span>x<sup>3</sup>y<sup>3</sup></span></span>)<sup>1/3</sup>]<sup>−1</sup> = (xy)<sup>−1/2</sup> = 1 ÷ <span class="rad"><span>xy</span></span> = <span class="rad"><span>xy</span></span> ÷ xy</span> &nbsp; <span class="muted" style="font-size:13.5px">(x, y ∈ ℚ<sup>+</sup>، والخطوة الأخيرة بضرب البسط والمقام في المرافق)</span></p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s5">
+  <div class="sec-head"><span class="num">5</span><h2 id="s5">مثال من الحياة: كرسي رائد الفضاء</h2></div>
+  <div class="qbox">رائد الفضاء ما يحس بانعدام التوازن لأنه يجلس في جهاز يدور ويعطيه جاذبية وهمية تحاكي جاذبية الأرض. يدور الجهاز حسب: <span class="f"><span class="up">n</span> = g<sup>0.5</sup> ÷ (2 · π · r<sup>0.5</sup>)</span> حيث n السرعة الدورانية (دورة في الثانية)، r نصف قطر الجهاز (m)، و g الجاذبية الوهمية. احسب n لجهاز نصف قطره 1.7 m يحاكي <span dir="ltr">9.8 m/s²</span>.</div>
+  <div class="row"><button class="lite" id="hideSol" type="button" aria-pressed="false">أخفِ الحل وجرّب أولاً</button></div>
+  <ol class="steps" id="steps">
+    <li><span>الأس 0.5 يعني ½، يعني جذر تربيعي: <span class="f">n = <span class="rad"><span>g</span></span> ÷ (2π<span class="rad"><span>r</span></span>)</span></span></li>
+    <li><span>عوّض: <span class="f">n ≈ 9.8<sup>0.5</sup> ÷ (2(3.14)(1.7)<sup>0.5</sup>)</span></span></li>
+    <li><span>بالآلة الحاسبة: <span class="f">≈ 3.130 ÷ 8.188</span></span></li>
+    <li><span><span class="ans">n ≈ 0.382 دورة في الثانية</span></span></li>
+  </ol>
+  <div class="act" data-act="type" data-key="type" data-answer="0.27" data-tol="0.006"
+       data-ok="صح! ⁦4.9⁰·⁵ ≈ 2.214⁩، والمقام نفسه 8.188، فالناتج ≈ 0.270 دورة في الثانية."
+       data-hint="نصف جاذبية الأرض: ⁦g = 4.9⁩. المقام ما تغيّر (≈ 8.188). احسب ⁦√4.9 ÷ 8.188⁩."
+       data-no="ليست هذه. غيّر ⁦g⁩ فقط إلى 4.9 واترك ⁦r = 1.7⁩.">
+    <h3>دورك <span class="k">نشاط</span></h3>
+    <p>نفس الجهاز، لكن نبي جاذبية تساوي <b>نصف</b> جاذبية الأرض. كم n؟ (قرّب لرقمين عشريين)</p>
+  </div>
+  <p class="note"><b>تطبيق ثانٍ في الكتاب (مثال 7):</b> قوة الجاذبية <span class="f" style="font-size:1.05rem">g = 6.67 × 10<sup>−11</sup> · k<sub>1</sub>k<sub>2</sub> ÷ d<sup>2</sup></span>. لإيجاد المسافة نعزل d: <span class="f" style="font-size:1.05rem">d = (6.67 × 10<sup>−11</sup> · k<sub>1</sub>k<sub>2</sub> ÷ g)<sup>1/2</sup></span>. مع كتلة الأرض <span dir="ltr">5.98 × 10<sup>24</sup> kg</span> وكتلة القمر 1.23% منها وقوة <span dir="ltr">183 × 10<sup>19</sup> N</span> يطلع <span dir="ltr">d ≈ 126 616 735.4 m</span>.</p>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">6</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">7</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p><span class="f" style="font-size:1.15rem">81<sup>1/4</sup></span> يساوي:</p>
+      <div class="opts"><button>20.25</button><button data-ok>3</button><button>9</button></div>
+      <p class="why" hidden>الصحيح: 3، لأن 81<sup>1/4</sup> = ⁴√81 و 3⁴ = 81. الأس ¼ يعني جذراً رابعاً، مو قسمة على 4.</p></div>
+    <div class="q"><p><span class="f" style="font-size:1.15rem"><span class="rad"><i>6</i><span>x<sup>6</sup></span></span></span> لكل عدد حقيقي x يساوي:</p>
+      <div class="opts"><button>x</button><button data-ok>|x|</button><button>x<sup>6</sup></button></div>
+      <p class="why" hidden>الصحيح: |x|، لأن الدليل 6 زوجي. لو x = −2: ⁶√64 = 2 = |−2|.</p></div>
+    <div class="q"><p><span class="f" style="font-size:1.15rem">8<sup>1/3</sup> × 8<sup>2/3</sup></span> يساوي:</p>
+      <div class="opts"><button data-ok>8</button><button>8<sup>2/9</sup></button><button>4</button></div>
+      <p class="why" hidden>الصحيح: 8. عند الضرب نجمع الأسس: ⅓ + ⅔ = 1.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li><span class="f" style="font-size:1.05rem">x<sup>m/n</sup> = <span class="rad"><i>n</i><span>x<sup>m</sup></span></span> = (<span class="rad"><i>n</i><span>x</span></span>)<sup>m</sup></span>: المقام جذر والبسط قوّة، والأسهل غالباً الجذر أولاً.</li>
+      <li><span class="f" style="font-size:1.05rem"><span class="rad"><i>n</i><span>x<sup>n</sup></span></span></span> = |x| إذا n زوجي، و x إذا n فردي. والجذر الفردي للسالب سالب.</li>
+      <li>قوانين الأسس نفسها تشتغل مع الأسس الكسرية، والجذور ذات الدليل نفسه تنضرب وتنقسم تحت جذر واحد، و <span class="f" style="font-size:1.05rem"><span class="rad"><i>n</i><span><span class="rad"><i>m</i><span>x</span></span></span></span> = <span class="rad"><i>mn</i><span>x</span></span></span>.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الرياضيات، الصف الحادي عشر، الوحدة الأولى، ص 22 إلى 29</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"math-u1-1-2"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+var BASES=[8,16,27,32,64,81,125,256,-8,-32], base=64, mIn=$("mIn"), nIn=$("nIn");
+var bx=$("bases");
+BASES.forEach(function(b){var t=document.createElement("button");t.type="button";t.className="tg";t.textContent=b<0?"−"+(-b):String(b);t.dataset.b=b;t.setAttribute("aria-pressed",String(b===base));
+  t.addEventListener("click",function(){base=b;[].forEach.call(bx.children,function(x){x.setAttribute("aria-pressed",String(+x.dataset.b===base));});run();});bx.appendChild(t);});
+function gcd(a,b){a=Math.abs(a);b=Math.abs(b);while(b){var t=b;b=a%b;a=t;}return a;}
+function S(x){return x<0?"−"+(-x):String(x);}
+function P(b){return b<0?"("+S(b)+")":S(b);}
+function rad(n,x){return '<span class="rad">'+(n===2?'':'<i>'+n+'</i>')+'<span>'+x+'</span></span>';}
+function nice(v){if(Math.abs(v-Math.round(v))<1e-9)return S(Math.round(v));var s=Math.abs(v)<1?v.toFixed(4):v.toFixed(3);return (v<0?"−":"")+"≈ "+s.replace("-","");}
+function root(b,n){var r=Math.sign(b)*Math.pow(Math.abs(b),1/n),k=Math.round(r);return Math.abs(k**n-b)<1e-9?k:r;}
+function run(){
+  var m=+mIn.value,n=+nIn.value; if(m===0){m=1;mIn.value=1;}
+  $("mL").textContent=S(m);$("nL").textContent=n;
+  var g=gcd(m,n),ms=m/g,ns=n/g,msg=$("oMsg"),path=$("oPath");
+  $("oExp").innerHTML=P(base)+'<sup>'+S(m)+'/'+n+'</sup>'+(g>1?' = '+P(base)+'<sup>'+(ns===1?S(ms):S(ms)+'/'+ns)+'</sup>':'');
+  if(ns===1){ /* whole exponent after simplifying */
+    $("oRad").innerHTML=P(base)+'<sup>'+S(ms)+'</sup>';
+    var v=Math.pow(base,ms);path.innerHTML='';msg.textContent="الكسر بعد التبسيط عدد صحيح، فما في جذر أصلاً. الناتج: "+nice(v)+".";msg.className="msg ok";Lesson.radicals($("lab-sec"));return;}
+  var am=Math.abs(ms);
+  $("oRad").innerHTML=(ms<0?'1 ÷ ':'')+rad(ns,P(base)+(am===1?'':'<sup>'+am+'</sup>'))+(am===1?'':' = '+(ms<0?'1 ÷ ':'')+'('+rad(ns,S(base))+')<sup>'+am+'</sup>');
+  if(base<0&&ns%2===0){path.innerHTML='';msg.textContent="الدليل "+ns+" زوجي والأساس سالب: لا يوجد عدد حقيقي يُرفع لقوّة زوجية ويعطي سالباً. النتيجة ليست عدداً حقيقياً.";msg.className="msg";Lesson.radicals($("lab-sec"));return;}
+  var r=root(base,ns),pv=Math.pow(r,am),v=ms<0?1/pv:pv;
+  var h='<span class="st r"><small>الجذر أولاً</small>'+rad(ns,S(base))+' = '+nice(r)+'</span><span class="ar">→</span>'+
+        '<span class="st p"><small>ثم القوّة</small>('+nice(r)+')<sup>'+am+'</sup> = '+nice(pv)+'</span>';
+  if(ms<0)h+='<span class="ar">→</span><span class="st"><small>الأس سالب: اقلب</small>1 ÷ '+nice(pv)+' = '+nice(v)+'</span>';
+  path.innerHTML=h;
+  var big=Math.pow(Math.abs(base),am);
+  msg.textContent=(Number.isInteger(r)?"الجذر أولاً أعطاك عدداً صغيراً ("+S(r)+")، ولو بدأت بالقوّة كان لازم تجيب جذر "+big.toLocaleString("en")+". ":"هذا الأساس ليس قوّة كاملة من الدرجة "+ns+"، فنستخدم الآلة الحاسبة. ")+"الناتج: "+nice(v)+".";
+  msg.className="msg ok";
+  Lesson.radicals($("lab-sec"));
+}
+mIn.addEventListener("input",run);nIn.addEventListener("input",run);
+run();
+})();
+</script>
+</body>
+</html>

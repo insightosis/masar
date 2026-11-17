@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="math">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>حل المعادلات · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+span[dir=ltr],bdi[dir=ltr]{unicode-bidi:isolate;white-space:nowrap}
+body{--cv:#2fb6f0;--ln:#ff7aa8;--gh:#b9a6ff}
+.f sup{font-size:.62em}
+bdi[dir=ltr]{white-space:nowrap}
+.act[data-act="sort"] .it{direction:ltr;unicode-bidi:isolate;font-family:"Noto Serif",Georgia,serif}
+.graph{display:block;width:100%;height:auto;border-radius:22px;background:var(--sky);box-shadow:var(--press)}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.rule{padding:14px 16px;border-radius:22px;background:var(--card);box-shadow:var(--clay-sm);overflow-x:auto}
+.rule h3{margin:0 0 6px;font-size:1.05rem}
+.rule .f{font-size:1.25rem}
+.rule p{margin:6px 0 0;font-size:13.5px;color:var(--muted)}
+.rule:nth-child(1){background:var(--p-sky)}.rule:nth-child(2){background:var(--p-pink)}.rule:nth-child(3){background:var(--p-lav)}
+.ex{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:12px}
+.ex .eq .f{font-size:1.15rem;white-space:normal}
+.ex .eq b{color:var(--ink)}
+.four{counter-reset:k;list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.four li{counter-increment:k;display:flex;gap:12px;align-items:flex-start;padding:10px 14px;border-radius:20px;background:var(--card);box-shadow:var(--clay-sm)}
+.four li::before{content:counter(k);flex:none;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--sc);color:#fff;font-family:var(--display);font-weight:800}
+.four small{display:block;color:var(--muted);font-size:13.5px;margin-top:2px}
+</style>
+</head>
+<body style="--sc:#8a63f2">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الرياضيات</span><span class="chip">الدرس 1-3 · ص 30 إلى 38</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الأولى: الأعداد الحقيقية</p>
+  <h1 id="t">حل المعادلات</h1>
+  <p>احسب <span class="f" style="font-size:1.1rem">(2 + <span class="rad"><span>3</span></span>)<sup>2</sup> = 4 + 4<span class="rad"><span>3</span></span> + 3 = 7 + 4<span class="rad"><span>3</span></span></span>. إذن <span class="f" style="font-size:1.1rem"><span class="rad"><span>7 + 4<span class="rad"><span>3</span></span></span></span> = 2 + <span class="rad"><span>3</span></span></span>. <mark>التربيع والجذر يلغي واحدهما الثاني، وهذا سلاحنا لحل المعادلات. لكن له فخ: أحياناً يطلّع حلولاً مزيّفة.</mark></p>
+</section>
+
+<section class="panel" id="lab-sec" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">صيّاد الحلول الدخيلة</h2><span class="legend"><span><i style="background:var(--cv)"></i><bdi dir="ltr">√(x − 3)</bdi></span><span><i style="background:var(--ln)"></i><bdi dir="ltr">x − 5</bdi></span><span><i style="background:var(--gh)"></i><bdi dir="ltr">5 − x</bdi> (يدخل بعد التربيع)</span></span></div>
+  <p class="cap">المعادلة <span class="f" style="font-size:1.05rem"><span class="rad"><span>x − 3</span></span> = x − 5</span>. الحل الحقيقي حيث يتقاطع الأزرق مع الوردي. لما نربّع الطرفين، الخط البنفسجي المنقّط "يتسلّل" للمعادلة لأن مربّعه نفس مربّع الوردي.</p>
+  <svg class="graph" id="gr" viewBox="0 0 600 300" role="img" aria-label="منحنى الجذر والخط ونقطتا التقاطع"></svg>
+  <div class="controls"><div class="ctl"><label for="xs">حرّك x <b id="xL">3</b></label><input type="range" id="xs" min="3" max="10" step="0.5" value="3" aria-describedby="xL"></div></div>
+  <div class="btns"><button class="tg" type="button" data-x="4">جرّب x = 4</button><button class="tg" type="button" data-x="7">جرّب x = 7</button></div>
+  <div class="tiles" style="margin-top:10px">
+    <div class="tile"><span>الطرف الأيسر<br><bdi dir="ltr">√(x − 3)</bdi></span><b id="tA" dir="ltr">0</b></div>
+    <div class="tile"><span>الطرف الأيمن<br><bdi dir="ltr">x − 5</bdi></span><b id="tB" dir="ltr">−2</b></div>
+    <div class="tile"><span>بعد التربيع<br>هل الطرفان متساويان؟</span><b id="tC" dir="ltr">0 ≠ 4</b></div>
+  </div>
+  <p class="msg" id="gMsg" aria-live="polite"></p>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">رموز الدرس ومصطلحاته</h2></div>
+  <div class="syms">
+    <div class="sym"><span class="bub sm"><span class="f" style="font-size:1rem"><span class="rad"><span>x</span></span></span></span><div><h3>المعادلة الجذرية <span class="en">Radical Equation</span></h3><p>أس المتغيّر فيها عدد نسبي (ليس صحيحاً)، أو المجذور فيها يحتوي متغيّراً.</p><span class="hook">المتغيّر "محبوس" تحت الجذر.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub sm"><span class="f" style="font-size:1rem">2<sup>x</sup></span></span><div><h3>المعادلة الأسية <span class="en">Exponential Equation</span></h3><p>المتغيّر في الأس، مثل <span dir="ltr">2<sup>x</sup> = 32</span>.</p><span class="hook">المتغيّر "طاير" فوق في الأس.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub sm"><span>≥ 0</span></span><div><h3>شرط الحل</h3><p>القيم المسموح بها لـ x قبل الحل، وهو يحدّد مجموعة التعويض.</p><span class="hook">بوّاب: ما يدخل إلا من يحقق الشرط.</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub"><span>👻</span></span><div><h3>الحل الدخيل</h3><p>قيمة تطلع بعد رفع الطرفين لقوّة، لكنها لا تحقق الشرط ولا المعادلة الأصلية.</p><span class="hook">دخيل = ضيف ما أحد عزمه.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub sm"><span>{ }</span></span><div><h3>مجموعة الحل و φ</h3><p>كل القيم اللي تجعل المعادلة عبارة صحيحة، وهي جزء من مجموعة التعويض. إذا ما في حل نكتب <b>φ</b> (المجموعة الخالية).</p><span class="hook">φ = سلّة فاضية.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub sm"><span class="f" style="font-size:1rem">x<sup>2</sup></span></span><div><h3>كثيرة حدود من الدرجة الثانية <span class="en">Quadratic Polynomial</span></h3><p>أعلى أس للمتغيّر فيها 2، مثل <span dir="ltr">x² − 11x + 28</span>، وتظهر كثيراً بعد التربيع.</p><span class="hook">نحلّها بالتحليل: ab = 0 يعني a = 0 أو b = 0.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">أولاً: المعادلات الجذرية</h2></div>
+  <div class="ex">
+    <div class="eq xx"><small>معادلة جذرية ✓</small><span class="f"><span class="rad"><span>x</span></span> + 3 = 10</span></div>
+    <div class="eq xx"><small>معادلة جذرية ✓ (أس كسري)</small><span class="f">(x − 2)<sup>1/2</sup> = 1</span></div>
+    <div class="eq yy"><small>ليست جذرية ✗ (المتغيّر خارج الجذر)</small><span class="f"><span class="rad"><span>3</span></span> + x = 1</span></div>
+  </div>
+  <div class="act" data-act="sort" data-key="sort" data-bins='["معادلة جذرية","ليست معادلة جذرية"]'
+       data-items='[["3 + √x = 10",0],["(x − 2)^½ = 1",0],["∛(2x) = 4",0],["√3 + x = 1",1],["x² = 9",1],["2ˣ = 32",1]]'
+       data-ok="ممتاز! الجذرية: المتغيّر تحت الجذر أو أسه كسر. و ⁦2ˣ = 32⁩ معادلة أسية، مو جذرية.">
+    <h3>صنّف <span class="k">نشاط</span></h3>
+    <p>أي هذه معادلات جذرية؟</p>
+  </div>
+
+  <h3 style="margin:20px 0 10px">أربع خطوات لأي معادلة جذرية</h3>
+  <ol class="four">
+    <li><div><b>افصل الجذر</b> في طرف لوحده.</div></li>
+    <li><div><b>حدّد شرط الحل</b><small>دليل <b>زوجي</b>: ما تحت الجذر ≥ 0، وكل من الطرفين ≥ 0 أيضاً. دليل <b>فردي</b>: ما تحت الجذر ينتمي إلى ℝ (لا شرط).</small></div></li>
+    <li><div><b>ارفع الطرفين</b> لأس مناسب يحذف الجذر.</div></li>
+    <li><div><b>تأكّد</b> أن الحل يحقق الشرط.</div></li>
+  </ol>
+  <div class="ex">
+    <div class="eq"><small>مثال الكتاب (1a)</small><span class="f">2 + <span class="rad"><span>3x − 2</span></span> = 6 ⇒ <span class="rad"><span>3x − 2</span></span> = 4</span><br><span class="muted" style="font-size:13.5px">الشرط: 3x − 2 ≥ 0 أي <span dir="ltr">x ∈ [2/3, ∞)</span>. نربّع: 3x − 2 = 16 ⇒ x = 6 ✓</span><br><b>مجموعة الحل = {6}</b></div>
+    <div class="eq"><small>مثال الكتاب (1b)</small><span class="f">6 + <span class="rad"><span>x − 1</span></span> = 3 ⇒ <span class="rad"><span>x − 1</span></span> = −3</span><br><span class="muted" style="font-size:13.5px">جذر تربيعي = عدد سالب؟ مستحيل، لأن الجذر التربيعي دائماً موجب أو صفر.</span><br><b>مجموعة الحل = φ</b></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">معادلة فيها أس كسري</h2></div>
+  <p>المعادلة <span class="f" style="font-size:1.1rem">x<sup>m/n</sup> = b</span> نحلّها برفع الطرفين إلى الأس <span class="f" style="font-size:1.1rem">n/m</span> (المعكوس الضربي للأس). وتذكّر: مقام الأس النسبي هو دليل الجذر.</p>
+  <div class="rules">
+    <div class="rule"><h3>إذا m زوجي</h3><span class="f">(x<sup>m/n</sup>)<sup>n/m</sup> = |x|</span><p>فيطلع حلّان: |x| = b يعني x = b أو x = −b.</p></div>
+    <div class="rule"><h3>إذا m فردي</h3><span class="f">(x<sup>m/n</sup>)<sup>n/m</sup> = x</span><p>حل واحد مباشرة.</p></div>
+  </div>
+  <div class="act" data-act="gap" data-key="gap" data-ok="صح! المعكوس الضربي لـ 2/3 هو 3/2، و ⁦(2/3)(3/2) = 1⁩ فيبقى ⁦x − 2⁩ وحده (بقيمة مطلقة لأن 2 زوجي).">
+    <h3>أكمل <span class="k">نشاط</span></h3>
+    <p>في <span class="f">(x − 2)<sup>2/3</sup> = 25</span> نرفع الطرفين إلى الأس <span class="gap">؟</span></p>
+    <div class="opts"><button class="pc" data-no="⁦(2/3)(2/3) = 4/9⁩، ما صار 1. نحتاج المعكوس الضربي.">2/3</button><button class="pc" data-ok>3/2</button><button class="pc" data-no="⁦(2/3)(3) = 2⁩، ما زال ⁦x − 2⁩ مربّعاً. نحتاج أساً يجعل حاصل الضرب 1.">3</button></div>
+  </div>
+  <div class="qbox" style="margin-top:14px"><b>مثال الكتاب (2):</b> <span class="f">2(x − 2)<sup>2/3</sup> = 50 ⇒ (x − 2)<sup>2/3</sup> = 25 ⇒ |x − 2| = 25<sup>3/2</sup> = <span class="rad"><span>25<sup>3</sup></span></span> = <span class="rad"><span>5<sup>6</sup></span></span> = 125</span><br>إذن <span class="f">x − 2 = 125</span> أو <span class="f">x − 2 = −125</span>، و <b>مجموعة الحل = {−123 , 127}</b></div>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">الحلول الدخيلة</h2></div>
+  <p>رفع الطرفين لقوّة قد يعطي حلولاً <b>دخيلة</b> لا تحقق الشرط. لهذا الشرط مو زيادة: هو اللي يكشفها. هذا بالضبط ما رأيته في المختبر فوق.</p>
+  <div class="qbox">مثال الكتاب (3): أوجد مجموعة الحل <span class="f">5 + <span class="rad"><span>x − 3</span></span> = x</span></div>
+  <div class="row"><button class="lite" id="hideSol" type="button" aria-pressed="false">أخفِ الحل وجرّب أولاً</button></div>
+  <ol class="steps" id="steps">
+    <li><span>افصل الجذر: <span class="f"><span class="rad"><span>x − 3</span></span> = x − 5</span></span></li>
+    <li><span>الشرط: <span class="f">x − 3 ≥ 0 , x − 5 ≥ 0</span> أي <span class="f">x ≥ 5</span>، يعني <span class="f">x ∈ [5, ∞)</span></span></li>
+    <li><span>ربّع وفك: <span class="f">x − 3 = x<sup>2</sup> − 10x + 25 ⇒ x<sup>2</sup> − 11x + 28 = 0</span></span></li>
+    <li><span>حلّل: <span class="f">(x − 4)(x − 7) = 0 ⇒ x = 4</span> أو <span class="f">x = 7</span></span></li>
+    <li><span><span class="f">4 ∉ [5, ∞)</span> فهو <b>حل دخيل</b>، و <span class="f">7 ∈ [5, ∞)</span>. <span class="ans">مجموعة الحل = {7}</span></span></li>
+  </ol>
+
+  <h3 style="margin:20px 0 10px">جذران في معادلة واحدة</h3>
+  <p>نفصلهما بحيث يكون في كل طرف جذر، ثم نربّع.</p>
+  <div class="ex">
+    <div class="eq"><small>مثال الكتاب (4a)</small><span class="f"><span class="rad"><span>8x</span></span> = 2<span class="rad"><span>4x − 16</span></span></span><br><span class="muted" style="font-size:13.5px">الشرط: 4x − 16 ≥ 0 و 8x ≥ 0 أي <span dir="ltr">x ∈ [4, ∞)</span>. نربّع: 8x = 4(4x − 16) ⇒ 2x = 4x − 16 ⇒ x = 8 ✓</span><br><b>مجموعة الحل = {8}</b></div>
+    <div class="eq"><small>مثال الكتاب (4b)</small><span class="f"><span class="rad"><span>x</span></span> + <span class="rad"><span>2x − 4</span></span> = 0 ⇒ <span class="rad"><span>x</span></span> = −<span class="rad"><span>2x − 4</span></span></span><br><span class="muted" style="font-size:13.5px">موجب = سالب؟ فقط لو الاثنان صفر: <span class="rad f" style="font-size:1rem"><span>x</span></span> = 0 ⇒ x = 0، و <span dir="ltr">√(2x − 4) = 0 ⇒ x = 2</span>. ما في x واحد يصفّرهما معاً.</span><br><b>مجموعة الحل = φ</b></div>
+  </div>
+
+  <h3 style="margin:20px 0 10px">من الحياة: النابض (الزنبرك)</h3>
+  <div class="qbox">دورة نابض مهتز وكتلة الجسم المعلّق: <span class="f">f = 2π<span class="rad"><span>m ÷ c</span></span></span>، f الدورة بالثواني (s)، m الكتلة (kg)، c = 20 ثابت. لنابض دورته f = 4 s:<br><span class="f"><span class="rad"><span>m ÷ 20</span></span> = 4 ÷ 2π ⇒ m ÷ 20 = 16 ÷ 4π<sup>2</sup> ⇒ m ≈ 8.1 kg</span></div>
+  <div class="act" data-act="type" data-key="type" data-answer="1.01" data-tol="0.02"
+       data-ok="صح! ⁦√(l ÷ 10) = 2 ÷ 2π = 1/π⁩، نربّع: ⁦l ÷ 10 = 1/π² ⇒ l = 10/π² ≈ 1.01 m⁩."
+       data-hint="افصل الجذر: ⁦√(l ÷ 10) = 2 ÷ 2π⁩. ربّع الطرفين، ثم اضرب في 10."
+       data-no="ليست هذه. افصل الجذر أولاً (اقسم على 2π)، بعدين ربّع.">
+    <h3>دورك <span class="k">نشاط</span></h3>
+    <p>طول نابض ودورته: <span class="f">f = 2π<span class="rad"><span>l ÷ 10</span></span></span> (l بالمتر). أوجد طول نابض ساعة دورته 2 s. (قرّب لرقمين عشريين)</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s5">
+  <div class="sec-head"><span class="num">5</span><h2 id="s5">ثانياً: المعادلات الأسية</h2></div>
+  <p>المعادلات <span class="f" style="font-size:1.1rem">2<sup>x</sup> = 32 , (−3)<sup>x</sup> = −243 , (½)<sup>y</sup> = 5</span> معادلات أسية. الفكرة: نكتب الطرفين <b>بنفس الأساس</b>، ثم نساوي الأسس.</p>
+  <div class="qbox"><b>الخاصية:</b> ليكن a عدداً حقيقياً حيث <span class="f" style="font-size:1.1rem">a ∉ {−1, 0, 1}</span>، و m, n عددان صحيحان. إذا كان <span class="f" style="font-size:1.1rem">a<sup>m</sup> = a<sup>n</sup></span> فإن <span class="f" style="font-size:1.1rem">m = n</span>.</div>
+  <p style="margin-top:12px">ليش استثنينا −1 و 0 و 1؟ لأن قوى هذه الأعداد تتشابه مع أسس مختلفة:</p>
+  <div class="ex">
+    <div class="eq yy"><span class="f">1<sup>17</sup> = 1<sup>18</sup></span> لكن 17 ≠ 18</div>
+    <div class="eq yy"><span class="f">(−1)<sup>13</sup> = (−1)<sup>3</sup></span> لكن 13 ≠ 3</div>
+    <div class="eq yy"><span class="f">0<sup>4</sup> = 0<sup>3</sup></span> لكن 4 ≠ 3</div>
+  </div>
+  <div class="qbox" style="margin-top:14px">
+    <p style="margin:0 0 6px"><b>مثال الكتاب (6):</b></p>
+    <p style="margin:0 0 6px"><span class="f">2<sup>x</sup> = 64 = 2<sup>6</sup> ⇒ x = 6</span><br><span class="f">(½)<sup>x</sup> = 0.5 = (½)<sup>1</sup> ⇒ x = 1</span></p>
+    <p style="margin:0"><span class="f">(3/4)<sup>x</sup> = 64/27 = (4/3)<sup>3</sup> = (3/4)<sup>−3</sup> ⇒ x = −3</span> <span class="muted" style="font-size:13.5px">(قلب الكسر يقلب إشارة الأس)</span></p>
+  </div>
+  <h3 style="margin:20px 0 10px">الأس ممكن يكون كثيرة حدود</h3>
+  <div class="ex">
+    <div class="eq"><small>مثال الكتاب (7a)</small><span class="f">3<sup>x²−1</sup> = 27 = 3<sup>3</sup> ⇒ x<sup>2</sup> − 1 = 3 ⇒ x<sup>2</sup> = 4</span><br><b>مجموعة الحل = {−2 , 2}</b></div>
+    <div class="eq"><small>مثال الكتاب (7b)</small><span class="f">7<sup>x²−3x</sup> = 1/49 = 7<sup>−2</sup> ⇒ x<sup>2</sup> − 3x + 2 = 0 ⇒ (x − 1)(x − 2) = 0</span><br><b>مجموعة الحل = {1 , 2}</b></div>
+    <div class="eq"><small>مثال الكتاب (7c)</small><span class="f">6<sup>2x−8</sup> = 1 = 6<sup>0</sup> ⇒ 2x − 8 = 0</span><br><span class="muted" style="font-size:13.5px">تذكّر <span dir="ltr">a⁰ = 1, a ≠ 0</span></span><br><b>مجموعة الحل = {4}</b></div>
+  </div>
+  <div class="act" data-act="type" data-key="type2" data-answer="-4" data-tol="0"
+       data-ok="صح! ⁦81/16 = (3/2)⁴ = (2/3)⁻⁴⁩، إذن ⁦x = −4⁩."
+       data-hint="⁦81 = 3⁴⁩ و ⁦16 = 2⁴⁩، فالطرف الأيمن ⁦(3/2)⁴⁩. والكسر مقلوب عن 2/3، فالأس يصير سالباً."
+       data-no="ليست هذه. انتبه: الكسر 81/16 هو مقلوب 2/3 مرفوعاً لقوّة.">
+    <h3>احسبها <span class="k">نشاط</span></h3>
+    <p>حل المعادلة <span class="f">(2/3)<sup>x</sup> = 81/16</span>. اكتب قيمة x.</p>
+  </div>
+  <p class="note"><b>الربط بالحياة:</b> المعادلات الأسية تحسب ما يبقى في جسم المريض من جرعة دواء أو مادة مشعّة. مثلاً الكمية المتبقية بعد t ساعة من حقنة هيبارين (مضاد للتجلّط): <span class="f" style="font-size:1.05rem">y = 0.63<sup>t</sup></span>.</p>
+</section>
+
+<section class="sec" aria-labelledby="s6">
+  <div class="sec-head"><span class="num">6</span><h2 id="s6">المرشد لحل المسائل: مكعب داخل كرة</h2></div>
+  <p>مكعب طول ضلعه x محاط بكرة. كم مرة حجم الكرة أكبر من حجم المكعب؟ المفتاح: <b>قطر الكرة = قطر المكعب</b>، ونجيبه بفيثاغورث مرتين.</p>
+  <div class="row"><button class="lite" id="hideSol2" type="button" aria-pressed="false">أخفِ الحل</button></div>
+  <ol class="steps" id="steps2">
+    <li><span>حجم المكعب: <span class="f">x<sup>3</sup></span></span></li>
+    <li><span>قطر الوجه: <span class="f">(AC)<sup>2</sup> = x<sup>2</sup> + x<sup>2</sup> = 2x<sup>2</sup> ⇒ AC = x<span class="rad"><span>2</span></span></span></span></li>
+    <li><span>قطر المكعب: <span class="f">(AB)<sup>2</sup> = 2x<sup>2</sup> + x<sup>2</sup> = 3x<sup>2</sup> ⇒ AB = x<span class="rad"><span>3</span></span></span>، فنصف القطر <span class="f">R = x<span class="rad"><span>3</span></span> ÷ 2</span></span></li>
+    <li><span>حجم الكرة: <span class="f">(4/3)(3.14)(x<span class="rad"><span>3</span></span> ÷ 2)<sup>3</sup> ≈ 1.57<span class="rad"><span>3</span></span> x<sup>3</sup></span></span></li>
+    <li><span><span class="ans">حجم الكرة : حجم المكعب ≈ 2.72 : 1</span></span></li>
+  </ol>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">7</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">8</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>مجموعة حل المعادلة <span class="f" style="font-size:1.1rem"><span class="rad"><span>x + 1</span></span> + 5 = 3</span>:</p>
+      <div class="opts"><button>{3}</button><button data-ok>φ</button><button>{−5}</button></div>
+      <p class="why" hidden>الصحيح: φ. بعد فصل الجذر: √(x + 1) = −2، والجذر التربيعي لا يساوي عدداً سالباً.</p></div>
+    <div class="q"><p>عند حل <span class="f" style="font-size:1.1rem">5 + <span class="rad"><span>x − 3</span></span> = x</span> طلعت القيمة x = 4. هي:</p>
+      <div class="opts"><button>حل صحيح</button><button data-ok>حل دخيل لأنها لا تحقق الشرط x ≥ 5</button><button>شرط الحل</button></div>
+      <p class="why" hidden>الصحيح: حل دخيل. عند x = 4 الطرف الأيسر √1 = 1 والأيمن 4 − 5 = −1.</p></div>
+    <div class="q"><p>حل المعادلة <span class="f" style="font-size:1.1rem">6<sup>2x−8</sup> = 1</span>:</p>
+      <div class="opts"><button>x = 4.5</button><button data-ok>x = 4</button><button>لا يوجد حل</button></div>
+      <p class="why" hidden>الصحيح: x = 4، لأن 1 = 6⁰ فنضع 2x − 8 = 0. الخيار 4.5 يأتي من الخطأ 2x − 8 = 1.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li>المعادلة الجذرية: افصل الجذر، حدّد الشرط (دليل زوجي: ما تحته ≥ 0 والطرفان ≥ 0)، ارفع لأس يحذف الجذر، ثم تأكّد من الشرط.</li>
+      <li>الرفع لقوّة قد يطلّع حلولاً دخيلة، والشرط يكشفها. و <span class="f" style="font-size:1.05rem">x<sup>m/n</sup> = b</span> نرفعها للأس n/m، ومع m زوجي يطلع |x|.</li>
+      <li>المعادلة الأسية: نفس الأساس في الطرفين ثم نساوي الأسس (a ∉ {−1, 0, 1})، والأس قد يكون كثيرة حدود.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الرياضيات، الصف الحادي عشر، الوحدة الأولى، ص 30 إلى 38</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"math-u1-1-3"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+/* second hide-solution toggle (lesson.js wires only #hideSol) */
+var h2=$("hideSol2"),s2=$("steps2");
+h2.addEventListener("click",function(){var on=!s2.classList.contains("hide");s2.classList.toggle("hide",on);h2.setAttribute("aria-pressed",String(on));h2.textContent=on?"أظهر الحل":"أخفِ الحل";});
+/* graph: x in [0,10], y in [-3,5] */
+var svg=$("gr"),xs=$("xs");
+function X(x){return 40+x*52;} function Y(y){return 180-y*32;}
+function f2(v){var s=(Math.round(v*100)/100).toString();return s.replace("-","−");}
+function draw(x){
+  var h='';
+  for(var i=0;i<=10;i++){h+='<line x1="'+X(i)+'" y1="'+Y(5)+'" x2="'+X(i)+'" y2="'+Y(-2.5)+'" stroke="var(--gridline)"/>';h+='<text x="'+X(i)+'" y="'+(Y(-2.5)+24)+'" font-size="17" text-anchor="middle" fill="var(--muted)">'+i+'</text>';}
+  for(var j=-2;j<=5;j++){h+='<line x1="'+X(0)+'" y1="'+Y(j)+'" x2="'+X(10)+'" y2="'+Y(j)+'" stroke="var(--gridline)"/>';}
+  h+='<line x1="'+X(0)+'" y1="'+Y(0)+'" x2="'+X(10)+'" y2="'+Y(0)+'" stroke="var(--muted)" stroke-width="1.5"/>';
+  /* ghost 5 - x, line x - 5, curve sqrt(x-3) */
+  h+='<line x1="'+X(2.5)+'" y1="'+Y(2.5)+'" x2="'+X(7.5)+'" y2="'+Y(-2.5)+'" stroke="var(--gh)" stroke-width="3" stroke-dasharray="7 6"/>';
+  h+='<line x1="'+X(2.5)+'" y1="'+Y(-2.5)+'" x2="'+X(10)+'" y2="'+Y(5)+'" stroke="var(--ln)" stroke-width="4" stroke-linecap="round"/>';
+  var d="M"+X(3)+" "+Y(0);for(var t=3;t<=10.001;t+=0.05)d+=" L"+X(t).toFixed(1)+" "+Y(Math.sqrt(t-3)).toFixed(1);
+  h+='<path d="'+d+'" fill="none" stroke="var(--cv)" stroke-width="4" stroke-linecap="round"/>';
+  /* intersections */
+  h+='<circle cx="'+X(7)+'" cy="'+Y(2)+'" r="7" fill="var(--ok)"/><text x="'+(X(7)+10)+'" y="'+(Y(2)-10)+'" font-size="18" font-weight="700" fill="var(--text)">x = 7</text>';
+  h+='<circle cx="'+X(4)+'" cy="'+Y(1)+'" r="7" fill="none" stroke="var(--gh)" stroke-width="3"/><text x="'+(X(4)-10)+'" y="'+(Y(1)-12)+'" font-size="18" font-weight="700" text-anchor="end" fill="var(--text)">x = 4 ؟</text>';
+  /* marker */
+  var a=Math.sqrt(x-3),b=x-5;
+  h+='<line x1="'+X(x)+'" y1="'+Y(5)+'" x2="'+X(x)+'" y2="'+Y(-2.5)+'" stroke="var(--ink)" stroke-width="2" stroke-dasharray="3 4"/>';
+  h+='<circle cx="'+X(x)+'" cy="'+Y(a)+'" r="5" fill="var(--cv)"/><circle cx="'+X(x)+'" cy="'+Y(Math.max(-2.5,b))+'" r="5" fill="var(--ln)"/>';
+  svg.innerHTML=h;
+  $("xL").textContent=f2(x);$("tA").textContent=f2(a);$("tB").textContent=f2(b);$("tC").textContent=f2(x-3)+(Math.abs((x-3)-b*b)<1e-9?" = ":" ≠ ")+f2(b*b);
+  var m=$("gMsg"),sq=Math.abs((x-3)-b*b)<1e-9,eq=Math.abs(a-b)<1e-9;
+  if(eq){m.textContent="x = 7: الطرفان متساويان (2 = 2) و 7 ≥ 5. هذا الحل الحقيقي.";m.className="msg ok";}
+  else if(sq){m.textContent="x = 4: بعد التربيع الطرفان متساويان (1 = 1)، لكن في المعادلة الأصلية 1 ≠ −1، والشرط x ≥ 5 ما تحقّق. هذا حل دخيل!";m.className="msg";}
+  else {m.textContent=(b<0?"الطرف الأيمن سالب هنا، والجذر ما يكون سالباً أبداً. لهذا الشرط x ≥ 5. ":"")+"حرّك x أو جرّب الزرّين.";m.className="msg";}
+}
+xs.addEventListener("input",function(){draw(+xs.value);});
+[].forEach.call(document.querySelectorAll("[data-x]"),function(b){b.addEventListener("click",function(){xs.value=b.dataset.x;draw(+b.dataset.x);});});
+draw(3);
+})();
+</script>
+</body>
+</html>
