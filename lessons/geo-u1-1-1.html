@@ -248,7 +248,7 @@ function draw(y){
   s+='<path d="'+peak+'" fill="var(--rock2)"/>';
   s+='<clipPath id="cp"><path d="'+peak+'"/></clipPath><g clip-path="url(#cp)"><rect x="0" y="'+(200-(200-top)*0.62)+'" width="600" height="300" fill="var(--rock3)"/><rect x="0" y="'+(200-(200-top)*0.3)+'" width="600" height="300" fill="var(--rock4)"/></g>';
   s+='<rect x="0" y="200" width="600" height="40" fill="var(--ground)"/><line x1="0" y1="200" x2="600" y2="200" stroke="var(--ground-line)" stroke-width="2"/>';
-  s+='<text x="12" y="224" font-size="13" fill="var(--muted)">مستوى سطح البحر</text>';
+  s+='<text x="12" y="224" font-size="13" fill="var(--muted)" direction="rtl" text-anchor="end">مستوى سطح البحر</text>';
   svg.innerHTML=s;
   var a=fmtY(y),b=fmtD(d);$("tY").textContent=a[0];$("tYu").textContent=a[1];$("tD").textContent=b[0];$("tDu").textContent=b[1];
   $("tH").textContent=Math.max(0,Math.round(h)).toLocaleString("ar");$("yrL").textContent=a[0]+" "+a[1];

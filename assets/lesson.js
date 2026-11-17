@@ -10,7 +10,7 @@
                           <div class="opts"><button class="pc" data-ok>..</button><button class="pc" data-no="why not">..</button></div>
    Type a number     <div class="act" data-act="type" data-key="type" data-answer="5" data-tol="0.1" data-ok=".." data-hint="..">
    Match pairs       <div class="act" data-act="match" data-key="match" data-pairs='[["term","meaning"],...]' data-ok="..">
-   Sort into 2 bins  <div class="act" data-act="sort" data-key="sort" data-bins='["A","B"]' data-items='[["item",0],["item",1]]' data-ok="..">
+   Sort into 2 bins  <div class="act" data-act="sort" data-key="sort" data-bins='["A","B"]' data-items='[["item",0,"why if misplaced"],["item",1]]' data-ok="..">
    Worked example    button#hideSol toggles ol#steps
    Golden points     <div id="gold"></div>  (from LAB.lessons[id].gold)
    Links + finish    <div id="links"></div> ... <p id="finMsg"></p><button id="finBtn"></button>
@@ -115,7 +115,7 @@
     var chips = document.createElement("div"); chips.className = "chips";
     var bx = document.createElement("div"); bx.className = "bins";
     bins.forEach(function (name, k) { var d = document.createElement("div"); d.className = "bin"; d.dataset.k = k; d.innerHTML = "<h4>" + esc(name) + '</h4><div class="in"></div>'; bx.appendChild(d); });
-    shuffle(items.slice()).forEach(function (it) { var b = document.createElement("button"); b.type = "button"; b.className = "it"; b.textContent = it[0]; b.dataset.k = it[1]; chips.appendChild(b); });
+    shuffle(items.slice()).forEach(function (it) { var b = document.createElement("button"); b.type = "button"; b.className = "it"; b.textContent = it[0]; b.dataset.k = it[1]; if (it[2]) b.dataset.why = it[2]; chips.appendChild(b); });
     var tip = document.createElement("span"); tip.className = "tap"; tip.textContent = "اضغط على بطاقة، ثم على الصندوق المناسب";
     act.appendChild(chips); act.appendChild(tip); act.appendChild(bx); fbEl(act);
     chips.addEventListener("click", function (e) { var b = e.target.closest(".it"); if (!b) return; if (sel) sel.classList.remove("sel"); sel = b; b.classList.add("sel"); });
@@ -124,7 +124,7 @@
       if (sel.dataset.k === bin.dataset.k) {
         sel.classList.remove("sel", "bad"); sel.classList.add("good"); sel.disabled = true; $(".in", bin).appendChild(sel); placed++; say(act, "");
         if (placed === items.length) { tip.hidden = true; say(act, act.dataset.ok || "كل البطاقات في مكانها!", "ok"); win(act); record(key, miss === 0); }
-      } else { miss++; var s = sel; s.classList.add("bad"); say(act, "ليس هذا مكانها. فكّر مرة ثانية.", "no"); setTimeout(function () { s.classList.remove("bad"); }, 650); }
+      } else { miss++; var s = sel; s.classList.add("bad"); say(act, s.dataset.why || "ليس هذا مكانها. فكّر مرة ثانية.", "no"); setTimeout(function () { s.classList.remove("bad"); }, 650); }
       sel.classList.remove("sel"); sel = null;
     });
   };

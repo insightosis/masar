@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="geology">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>نشأة الكون · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+span[dir=ltr],bdi[dir=ltr]{unicode-bidi:isolate}
+body{--space:#e9e4ff;--ball:#ffc9d6;--ball2:#ffb1c4;--dot:#6b5bd6;--me:#e2653f}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--space:#25213f;--ball:#7a3f55;--ball2:#8d4a63;--dot:#c9c0ff;--me:#ff9a74}}
+:root[data-theme="dark"] body{--space:#25213f;--ball:#7a3f55;--ball2:#8d4a63;--dot:#c9c0ff;--me:#ff9a74}
+.stage{display:block;width:100%;height:auto;border-radius:22px;background:var(--space);box-shadow:var(--press)}
+.dtab{width:100%;border-collapse:separate;border-spacing:0 6px;font-size:14.5px;margin-top:10px}
+.dtab th{font-weight:600;color:var(--muted);text-align:start;padding:0 8px}
+.dtab td{background:var(--card);padding:6px 10px;box-shadow:var(--clay-sm)}
+.dtab td:first-child{border-radius:0 14px 14px 0}.dtab td:last-child{border-radius:14px 0 0 14px}
+.dtab td b{font-family:var(--display);color:var(--ink);direction:ltr;unicode-bidi:isolate}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.flow span{padding:6px 12px;border-radius:16px;background:var(--card);box-shadow:var(--clay-sm);font-size:14px}
+.flow i{font-style:normal;color:var(--muted);font-weight:700}
+.wave{display:block;width:100%;height:auto;border-radius:18px;background:var(--space);margin-top:10px}
+.help{display:inline-block;font-size:12px;font-weight:700;padding:1px 9px;border-radius:9px;background:var(--p-sky);color:var(--text);margin-inline-end:6px}
+.ayah{font-size:1.05rem;line-height:2}
+.neb{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.neb .card{text-align:center}
+.neb .card svg{display:block;width:100%;height:auto}
+.neb .card .en{display:block;font-size:12.5px;color:var(--muted);direction:ltr}
+.xtra{margin-top:12px;padding:10px 16px;border-radius:20px;background:var(--card);box-shadow:var(--clay-sm)}
+.xtra summary{cursor:pointer;font-weight:700;color:var(--ink)}
+.big{font-family:var(--display);font-size:1.5rem;color:var(--ink);direction:ltr;unicode-bidi:isolate}
+</style>
+</head>
+<body style="--sc:#e2653f">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الجيولوجيا</span><span class="chip">الدرس 2-1 · ص 21 إلى 24</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الأولى: الكون والأرض · الفصل الثاني: نشأة الكون</p>
+  <h1 id="t">نشأة الكون</h1>
+  <p>كل المجرات اللي نرصدها تهرب منّا في كل الاتجاهات. <mark>هل هذا يعني إننا في مركز الكون؟</mark> جرّب البالون تحت، وبتعرف الجواب.</p>
+</section>
+
+<section class="panel" id="lab-sec" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">بالون الكون</h2><span class="legend">كل نقطة = مجرّة. المطاط = الفضاء نفسه</span></div>
+  <svg class="stage" id="bal" viewBox="0 0 400 300" role="img" aria-label="بالون عليه نقاط تتباعد كلما انتفخ"></svg>
+  <div class="controls"><div class="ctl"><label for="inf">انفخ البالون <b id="infL">× 1</b></label><input type="range" id="inf" min="100" max="225" value="100" aria-describedby="infL"></div></div>
+  <p class="muted" style="margin:6px 0 0;font-size:14px">اضغط أي نقطة لتجعلها مجرّتك (البرتقالية)، والجدول يقيس المسافات منها.</p>
+  <table class="dtab" aria-live="polite">
+    <thead><tr><th>إلى المجرّة</th><th>المسافة الآن</th><th>زادت بـ</th></tr></thead>
+    <tbody id="dist"></tbody>
+  </table>
+  <p class="msg" id="bMsg" aria-live="polite">البالون بحجم قبضة اليد. انفخه وراقب المسافات.</p>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">مصطلحات الدرس</h2></div>
+  <p class="muted" style="margin-top:-4px">ثمان كلمات، والدرس كله مبني عليها.</p>
+  <div class="syms">
+    <div class="sym"><span class="bub"><span>🌌</span></span><div><h3>الكون <span class="en">Universe</span></h3><p>مجمل الوجود: الكواكب والنجوم والمجرّات وما بينها من مادّة وطاقة.</p><span class="hook">كل شيء، بلا استثناء.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span>🥚</span></span><div><h3>البيضة الكونية (الذرّة الأم) <span class="en">Cosmic Egg</span></h3><p>البؤرة الصغيرة اللي تجمّعت فيها مادّة الكون وطاقته، كثافتها لانهائية وحرارتها عظيمة.</p><span class="hook">بيضة فيها الكون كله، وفقست بانفجار.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub"><span>💥</span></span><div><h3>الانفجار العظيم <span class="en">Big Bang</span></h3><p>انفجار البيضة الكونية قبل نحو 13.7 مليار سنة، فتناثرت محتوياتها في كل اتجاه.</p><span class="hook">Big Bang = "البوم الكبير".</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub sm"><span>H</span></span><div><h3>قانون هابل <span class="en">Hubble's Law</span></h3><p>المجرّات تتباعد وتتراجع بعيداً في جميع الاتجاهات، فالكون يتّسع.</p><span class="hook">هابل = "هاربة": المجرّات هاربة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub"><span>〰</span></span><div><h3>ظاهرة دوبلر <span class="en">Doppler Effect</span></h3><p>تغيّر ظاهري في تردّد الموجة أو طولها الموجي لمّا يتحرّك المصدر بالنسبة للمراقب.</p><span class="hook">صوت سيارة الإسعاف يتغيّر وهي تمرّ.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub"><span>🔴</span></span><div><h3>الانزياح نحو الأحمر <span class="en">Red Shift</span></h3><p>زيادة الطول الموجي للضوء القادم إلينا، لأن مصدره يبتعد عنّا.</p><span class="hook">أحمر = راحل.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub"><span>⏸</span></span><div><h3>الكون الساكن <span class="en">Static Universe</span></h3><p>رأي أينشتاين: الكون لا يتمدّد ولا ينكمش، ونجومه وسدمه ثابتة في أماكنها.</p><span class="hook">ساكن = واقف. وهابل أثبت العكس.</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub"><span>☁</span></span><div><h3>السدم <span class="en">Nebulae</span></h3><p>تجمّعات من الغازات والأتربة في الفضاء.</p><span class="hook">سديم = غيمة فضائية.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">كم هو كبير هذا الكون؟</h2></div>
+  <div class="grid2">
+    <div class="box lav"><h3>عمره</h3><p><span class="big">≈ 13.7</span> مليار سنة (بتقدير الفيزيائيين).</p></div>
+    <div class="box sky"><h3>قطر الجزء المرئي منه</h3><p><span class="big">≈ 93</span> مليار سنة ضوئية على الأقل. والجزء غير المرئي ما زال مبهماً.</p></div>
+  </div>
+  <p style="margin-top:14px">الأرض بجانب الشمس مثل <b>حصاة صغيرة بجانب كرة سلّة</b>. والمجموعة الشمسية كلها جزء صغير جداً من مجرّتنا (درب التبّانة)، ومجرّتنا متواضعة الحجم بين ملايين المجرّات. والحقيقة اللي اتفق عليها العلماء: <b>الكون يستمر في الاتّساع</b>.</p>
+  <div class="grid2" style="margin-top:12px">
+    <div class="box butter"><h3>السنة الضوئية <span class="muted" style="font-size:13px">light-year</span></h3><p>مسافة، مو زمن! هي المسافة اللي يقطعها الضوء في سنة واحدة، للمسافات البعيدة جداً مثل بُعد النجوم.</p></div>
+    <div class="box mint"><h3>الوحدة الفلكية <span class="muted" style="font-size:13px">AU</span></h3><p>متوسّط المسافة بين الأرض والشمس، ونقيس بها بُعد الكواكب عن الشمس.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">قصة الانفجار العظيم</h2></div>
+  <p>الإنسان من زمان يسأل: من وين جا كل هذا؟ ظهرت أساطير وأفكار غير واقعية ونظريات ما ثبتت، إلى أن جاء العالم البلجيكي <b>جورج لو ميتر</b> سنة <b>1927</b>. من ملاحظاته الدقيقة استنتج أن الكون في بدايته كان <b>كتلة غازية عظيمة الكثافة واللمعان والحرارة</b>، وسمّاها <b>البيضة الكونية</b>.</p>
+  <ol class="tline">
+    <li><span class="yr">1</span><div class="ev"><b>البيضة الكونية</b><span>مادّة الكون وطاقته مجتمعتان في بؤرة صغيرة (الذرّة الأم): كثافة لانهائية وحرارة عظيمة.</span></div></li>
+    <li><span class="yr">2</span><div class="ev"><b>الانفجار العظيم</b><span>قبل نحو 13.7 مليار سنة، الضغط الهائل من شدّة حرارتها فجّرها، فتناثرت محتوياتها في كل اتجاه.</span></div></li>
+    <li><span class="yr">3</span><div class="ev"><b>التمدّد</b><span>الغازات تمدّدت وابتعدت عن المركز بسبب الفارق الضغطي بين قوّة الجذب وتمدّد الغازات.</span></div></li>
+    <li><span class="yr">4</span><div class="ev"><b>البناء</b><span>مع مرور الوقت تكوّنت الكواكب والنجوم والمجرّات.</span></div></li>
+  </ol>
+  <p class="tip" style="margin-top:12px">ليش "عظيم"؟ لأنها أكثر نظرية فسّرت نشأة الكون <b>ولاقت قبولاً</b> بين العلماء.</p>
+
+  <h3 style="margin:18px 0 8px">من الانفجار إلى اليوم <span class="muted" style="font-size:14px;font-weight:500">(شكل 5 في الكتاب)</span></h3>
+  <div class="flow" aria-label="مراحل تكون الكون">
+    <span>الانفجار العظيم</span><i>←</i><span>تضخّم</span><i>←</i><span>فوتونات وميزونات وباريونات</span><i>←</i><span>أيونات</span><i>←</i><span>ذرّات</span><i>←</i><span>نجوم ومجرّات وثقوب سوداء</span><i>←</i><span>اليوم</span>
+  </div>
+  <details class="xtra"><summary>فقرة إثرائية: ما هذه الجسيمات؟</summary>
+    <ul class="pts">
+      <li style="--b:var(--sc)"><b>الفوتون Photon</b>: جسيم أوّلي متناهي الصغر يحمل الإشعاع الكهرومغناطيسي بكل أطواله (أشعة جاما، السينية، فوق البنفسجية، الضوء المنظور، تحت الحمراء، الميكروويف، الراديو). كتلة استقراره معدومة، فيتحرّك في الفراغ بسرعة الضوء.</li>
+      <li style="--b:var(--sc)"><b>الميزون Meson</b>: جسيم أوّلي شحنته موجبة أو سالبة أو متعادلة، كتلته نحو 200 مثل كتلة الإلكترون، غير مستقر يتفكّك في أقل من جزء من الثانية.</li>
+      <li style="--b:var(--sc)"><b>الباريون Baryon</b>: جسيم مركّب من ثلاث كواركات. الباريونات والميزونات جزء من عائلة أكبر هي الهادرونات.</li>
+    </ul>
+  </details>
+
+  <div class="act" data-act="order" data-key="order" data-rtl
+       data-answer='["البيضة الكونية","الانفجار العظيم","تمدّد الغازات بعيداً عن المركز","تكوّن النجوم والمجرّات"]'
+       data-extra='["كون ساكن لا يتغيّر"]'
+       data-ok="ممتاز! بيضة كونية، انفجار، تمدّد، ثم بناء النجوم والمجرّات."
+       data-no="القطع الحمراء في غير مكانها. فكّر: ماذا كان قبل الانفجار؟ وهل الكون الساكن جزء من هذه القصة؟">
+    <h3>رتّب قصة الكون <span class="k">نشاط</span></h3>
+    <p>اضغط القطع بالترتيب من البداية إلى اليوم. واحدة منها دخيلة.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">الدليل: المجرّات تهرب</h2></div>
+  <p>أينشتاين كان يعتقد أن الكون <b>ساكن</b>: لا يتمدّد ولا ينكمش. لكن في سنة <b>1929</b> رصد <b>إدوين هابل</b> المجرّات ولاحظ أن ضوءها <b>منزاح نحو اللون الأحمر</b> بدرجات متفاوتة. معنى هذا: كل المجرّات <b>تتباعد عنّا</b> بسرعات عظيمة وفي جميع الاتجاهات. هذا هو <b>قانون هابل</b>، وأول دليل رصدي للانفجار العظيم.</p>
+  <div class="panel" style="margin:14px 0">
+    <div class="lab-head"><h3 style="margin:0">ضوء المجرّة يتمطّط</h3><span class="legend">ظاهرة دوبلر (دوبلر 1842)</span></div>
+    <svg class="wave" id="wave" viewBox="0 0 600 120" role="img" aria-label="موجة ضوء بين مجرة وراصد"></svg>
+    <div class="btns" style="margin-top:10px">
+      <button class="tg" type="button" data-m="0" aria-pressed="false">المجرّة واقفة</button>
+      <button class="tg" type="button" data-m="1" aria-pressed="true">المجرّة تبتعد</button>
+    </div>
+    <p class="msg" id="wMsg" aria-live="polite"></p>
+  </div>
+  <p>وما هابل إلا البداية: هو اللي اكتشف أن <b>مجرّة أندروميدا</b> تقع خارج مجرّتنا (درب التبّانة أو الطريق اللبني)، ووجد مجرّات بعيدة كثيرة. واستنتج أن الكون <b>لا يملك اتجاهاً مفضّلاً ولا مكاناً مفضّلاً</b>. لهذا في البالون فوق، أي نقطة تختارها تشوف الباقي يبتعد عنها.</p>
+  <div class="grid2" style="margin-top:12px">
+    <div class="box sky"><h3>1989: القمر الصناعي COBE</h3><p>أطلقته وكالة ناسا (Cobe Explorer)، وبعد ثلاث سنوات أرسل معلومات دقيقة تؤكّد نظرية الانفجار العظيم، وسُمّي وقتها اكتشاف القرن العشرين.</p></div>
+    <div class="box peach"><h3>تغيّرت نظرة الإنسان</h3><p>قديماً اعتُقد أن حجم الكون ثابت. بفضل اكتشاف هابل عرفنا أن الكون يأخذ في الاتّساع.</p></div>
+  </div>
+  <div class="qbox ayah" style="margin-top:14px">﴿وَالسَّمَاءَ بَنَيْنَاهَا بِأَيْدٍ وَإِنَّا لَمُوسِعُونَ﴾ [الذاريات: 47]<br>﴿أَوَلَمْ يَرَ الَّذِينَ كَفَرُوا أَنَّ السَّمَاوَاتِ وَالْأَرْضَ كَانَتَا رَتْقًا فَفَتَقْنَاهُمَا وَجَعَلْنَا مِنَ الْمَاءِ كُلَّ شَيْءٍ حَيٍّ أَفَلَا يُؤْمِنُونَ﴾ [الأنبياء: 30]</div>
+
+  <div class="act" data-act="match" data-key="match"
+       data-pairs='[["جورج لو ميتر 1927","البيضة الكونية"],["إدوين هابل 1929","المجرّات تتباعد في كل الاتجاهات"],["أينشتاين","الكون الساكن"],["دوبلر 1842","تغيّر الطول الموجي لمصدر متحرّك"],["ناسا 1989","القمر COBE يؤكّد الانفجار العظيم"]]'
+       data-ok="كل الأزواج صحيحة! هذه الأسماء والتواريخ تتكرّر في الاختبار.">
+    <h3>من قال ماذا؟ <span class="k">نشاط</span></h3>
+    <p>اختر الاسم من اليمين، ثم ما يناسبه من اليسار.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s5">
+  <div class="sec-head"><span class="num">5</span><h2 id="s5">لبنات الكون والسدم</h2></div>
+  <p>بالتلسكوبات البصرية والراديوية عرف العلماء أن الكون مبني من <b>ثلاث لبنات أساسية</b>:</p>
+  <div class="grid2">
+    <div class="box lav"><h3>اللبنة 1: السحب الغازية</h3><p>السدم الغازية.</p></div>
+    <div class="box butter"><h3>اللبنة 2: الغبار الكوني</h3><p>السدم الغبارية.</p></div>
+    <div class="box peach"><h3>اللبنة 3: النجوم</h3><p>اللبنة الأهم، والأساسية لبناء الكون.</p></div>
+  </div>
+  <h3 style="margin:20px 0 8px">السدم Nebulae: نوعان حسب أصلها</h3>
+  <p>السديم تجمّع من الغازات والأتربة. ونعرف عمره من "وصفته":</p>
+  <div class="vs">
+    <div class="box sky"><h3>سدم قديمة</h3><p>نشأت مع بداية نشأة الكون، فيها <b>نسبة عالية من الهيدروجين والهيليوم</b> و<b>لا تحتوي عناصر ثقيلة</b>.</p></div>
+    <span class="mid">و</span>
+    <div class="box pink"><h3>بقايا النجوم (الغالبية)</h3><p>من انفجارات النجوم وما تخلّفه من غازات وأتربة، فيها <b>نسبة عالية من العناصر الثقيلة</b> لأنها تكوّنت من المخلّفات النجمية.</p></div>
+  </div>
+  <p class="tip" style="margin-top:12px"><span class="help">مساعدة للفهم</span>مثل الخبز: عجينة أول يوم فيها طحين وماي بس، وخبزة من بقايا مطبخ مليان فيها من كل شي. السديم اللي جا من "مطبخ" النجوم مليان عناصر ثقيلة.</p>
+
+  <h3 style="margin:20px 0 8px">أشهر أشكال السدم</h3>
+  <div class="neb">
+    <div class="card"><svg viewBox="0 0 120 70" aria-hidden="true"><rect width="120" height="70" fill="var(--p-pink)"/><path d="M0 70 L0 44 Q30 36 52 42 L56 22 Q62 12 70 18 Q76 26 70 34 L74 44 Q100 38 120 46 L120 70Z" fill="var(--text)" opacity=".75"/></svg><h3>رأس الحصان (رأس الفرس)</h3><span class="en">Horsehead Nebula</span></div>
+    <div class="card"><svg viewBox="0 0 120 70" aria-hidden="true"><rect width="120" height="70" fill="var(--p-lav)"/><ellipse cx="60" cy="36" rx="40" ry="22" fill="var(--p-sky)"/><circle cx="48" cy="30" r="3" fill="var(--card)"/><circle cx="70" cy="40" r="2.5" fill="var(--card)"/><circle cx="62" cy="26" r="2" fill="var(--card)"/></svg><h3>الجبّار</h3><span class="en">Orion Nebula</span></div>
+    <div class="card"><svg viewBox="0 0 120 70" aria-hidden="true"><rect width="120" height="70" fill="var(--p-butter)"/><path d="M60 10 L70 26 L90 22 L78 38 L92 52 L70 48 L60 62 L50 48 L28 52 L42 38 L30 22 L50 26Z" fill="var(--p-peach)" stroke="var(--sc)" stroke-width="2"/></svg><h3>السرطان</h3><span class="en">Crab Nebula</span></div>
+    <div class="card"><svg viewBox="0 0 120 70" aria-hidden="true"><rect width="120" height="70" fill="var(--p-mint)"/><circle cx="60" cy="35" r="26" fill="var(--p-pink)"/><circle cx="60" cy="35" r="11" fill="var(--p-mint)"/></svg><h3>الوردة</h3><span class="en">Rosette Nebula</span></div>
+  </div>
+  <p class="muted" style="font-size:13.5px;margin-top:8px">رسومات مبسّطة للشكل فقط، الصور الحقيقية في شكل 7 بالكتاب.</p>
+
+  <div class="act" data-act="sort" data-key="sort" data-bins='["سدم قديمة من بداية الكون","سدم من بقايا انفجارات النجوم"]'
+       data-items='[["نسبة عالية من الهيدروجين والهيليوم",0],["لا تحتوي على عناصر ثقيلة",0],["نشأت مع بداية نشأة الكون",0],["نسبة عالية من العناصر الثقيلة",1],["من مخلّفات النجوم",1],["هي الغالبية من السدم",1]]'
+       data-ok="ممتاز! القديمة: هيدروجين وهيليوم بلا عناصر ثقيلة. بقايا النجوم: عناصر ثقيلة كثيرة.">
+    <h3>صنّف <span class="k">نشاط</span></h3>
+    <p>كل صفة تخص أي نوع من السدم؟</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">6</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sd">
+  <div class="sec-head"><span class="num">7</span><h2 id="sd">في حياتك</h2></div>
+  <div class="life">
+    <div class="card"><h3>سيارة الإسعاف</h3><p>صفارتها تصير أغلظ وهي تبتعد عنك. نفس فكرة دوبلر اللي استخدمها هابل، بس مع الصوت بدل الضوء.</p></div>
+    <div class="card"><h3>نجوم الليل</h3><p>الضوء اللي تشوفه من نجم بعيد طلع منه قبل سنين طويلة، لأن المسافة بالسنوات الضوئية.</p></div>
+    <div class="card"><h3>عجينة الزبيب</h3><p>عجينة فيها زبيب تنتفخ في الفرن: كل زبيبة تبتعد عن الباقي، والبعيدة تبتعد أكثر. مثل البالون تماماً.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">8</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>العالم الذي وصف الكون في بدايته بكتلة غازية عظيمة الكثافة وسمّاها البيضة الكونية:</p>
+      <div class="opts"><button>إدوين هابل</button><button data-ok>جورج لو ميتر</button><button>أينشتاين</button></div>
+      <p class="why" hidden>الصحيح: لو ميتر سنة 1927. هابل أثبت تباعد المجرّات، وأينشتاين قال بالكون الساكن.</p></div>
+    <div class="q"><p>انزياح أطياف المجرّات نحو اللون الأحمر يدل على أن المجرّات:</p>
+      <div class="opts"><button>ثابتة في أماكنها</button><button>تقترب منّا</button><button data-ok>تبتعد عنّا، فالكون يتّسع</button></div>
+      <p class="why" hidden>الصحيح: الانزياح نحو الأحمر = زيادة الطول الموجي = المصدر يبتعد. وهذا دليل اتّساع الكون.</p></div>
+    <div class="q"><p>السدم الناتجة عن بقايا انفجارات النجوم تتميّز بأنها:</p>
+      <div class="opts"><button data-ok>نسبة العناصر الثقيلة فيها عالية</button><button>لا تحتوي إلا الهيدروجين والهيليوم</button><button>أقدم السدم في الكون</button></div>
+      <p class="why" hidden>الصحيح: العناصر الثقيلة فيها عالية لأنها تكوّنت من المخلّفات النجمية. الهيدروجين والهيليوم بلا عناصر ثقيلة صفة السدم القديمة.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li><b>الانفجار العظيم</b>: قبل نحو 13.7 مليار سنة انفجرت البيضة الكونية (لو ميتر 1927) فتناثرت محتوياتها وتكوّنت النجوم والمجرّات.</li>
+      <li><b>الدليل</b>: هابل 1929 وجد أطياف المجرّات منزاحة نحو الأحمر، فهي تتباعد والكون يتّسع، وأكّد ذلك القمر COBE (ناسا 1989).</li>
+      <li><b>لبنات الكون</b>: سدم غازية، سدم غبارية، ونجوم. والسدم قديمة (هيدروجين وهيليوم) أو بقايا نجوم (عناصر ثقيلة).</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الجيولوجيا، الصف الحادي عشر، الوحدة الأولى، ص 21 إلى 24</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"geo-u1-2-1"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+/* balloon: dots placed in unit-disc coordinates; inflating scales every distance by the same factor */
+var P=[[-.55,-.25],[-.18,-.5],[.3,-.42],[.62,.05],[.2,.18],[-.25,.25],[-.62,.3],[.05,.58],[.48,.5],[-.05,-.12]];
+var NAMES=["أ","ب","ج","د","هـ","و","ز","ح","ط","ي"], me=0, R0=62, CM0=8/(2*R0); /* fist-size balloon ~ 8 cm across */
+var svg=$("bal"), inf=$("inf");
+function k(){return +inf.value/100;}
+function draw(){
+  var s=k(), R=R0*s, cx=200, cy=142;
+  var h='<ellipse cx="'+cx+'" cy="'+(cy+R+10)+'" rx="'+(R*0.12+4)+'" ry="5" fill="var(--ball2)"/>';
+  h+='<circle cx="'+cx+'" cy="'+cy+'" r="'+R+'" fill="var(--ball)" stroke="var(--ball2)" stroke-width="3"/>';
+  h+='<path d="M'+(cx-6)+' '+(cy+R)+' L'+(cx+6)+' '+(cy+R)+' L'+cx+' '+(cy+R+9)+'Z" fill="var(--ball2)"/>';
+  P.forEach(function(p,i){var x=cx+p[0]*R,y=cy+p[1]*R,r=(i===me?8:6)*Math.sqrt(s);
+    h+='<g data-i="'+i+'" style="cursor:pointer"><circle cx="'+x+'" cy="'+y+'" r="'+(r+9)+'" fill="transparent"/><circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="'+(i===me?"var(--me)":"var(--dot)")+'"/>'+
+       '<text x="'+x+'" y="'+(y-r-5)+'" font-size="17" font-weight="700" text-anchor="middle" fill="var(--text)">'+NAMES[i]+'</text></g>';});
+  svg.innerHTML=h;
+  /* table: the three dots nearest to "me" at the start, nearest first */
+  var d=P.map(function(p,i){return [i,Math.hypot(p[0]-P[me][0],p[1]-P[me][1])];}).filter(function(x){return x[0]!==me;}).sort(function(a,b){return a[1]-b[1];});
+  var pick=[d[0],d[Math.floor(d.length/2)],d[d.length-1]];
+  $("dist").innerHTML=pick.map(function(x){var d0=x[1]*R0*CM0, dn=d0*s;
+    return '<tr><td>'+NAMES[x[0]]+'</td><td><b>'+dn.toFixed(1)+' cm</b></td><td><b>+'+(dn-d0).toFixed(1)+' cm</b></td></tr>';}).join("");
+  $("infL").textContent="× "+s.toFixed(1);
+  var m=$("bMsg");
+  if(s<1.05){m.textContent="البالون بحجم قبضة اليد. انفخه وراقب المسافات.";m.className="msg";}
+  else {m.textContent="كل المسافات زادت، والمجرّة الأبعد زادت مسافتها أكثر: كأنها تهرب أسرع. جرّب تختار نقطة ثانية: نفس النتيجة، فما في مركز للكون.";m.className="msg ok";}
+}
+svg.addEventListener("click",function(e){var g=e.target.closest("g[data-i]");if(g){me=+g.getAttribute("data-i");draw();}});
+inf.addEventListener("input",draw);
+draw();
+/* Doppler: a receding galaxy stretches the wave (longer wavelength, toward red) */
+var W=$("wave"), mode=1;
+function wave(){
+  var lam=mode?78:46, col=mode?"#e0485f":"#e6b422", d="M70 60";
+  for(var x=70;x<=520;x+=3){d+=" L"+x+" "+(60+22*Math.sin((x-70)/lam*2*Math.PI)).toFixed(1);}
+  var gx=mode?28:40;
+  W.innerHTML='<g aria-hidden="true"><ellipse cx="'+gx+'" cy="60" rx="24" ry="10" fill="var(--p-lav)"/><circle cx="'+gx+'" cy="60" r="7" fill="var(--dot)"/>'+
+    (mode?'<path d="M'+(gx+30)+' 26 l-22 0 m0 0 l7 -5 m-7 5 l7 5" stroke="var(--muted)" stroke-width="2" fill="none"/>':'')+
+    '<path d="'+d+'" stroke="'+col+'" stroke-width="4" fill="none" stroke-linecap="round"/>'+
+    '<circle cx="560" cy="60" r="16" fill="var(--p-sky)"/><circle cx="556" cy="56" r="4" fill="var(--text)"/></g>'+
+    '<text x="560" y="100" font-size="12" text-anchor="middle" fill="var(--muted)">الراصد</text><text x="40" y="100" font-size="12" text-anchor="middle" fill="var(--muted)">مجرّة</text>';
+  $("wMsg").textContent=mode?"المجرّة تبتعد: الموجة تتمطّط، طولها الموجي يزيد، فيميل الضوء نحو الأحمر. هذا الانزياح نحو الأحمر.":"المجرّة واقفة: الموجة بطولها الطبيعي.";
+  [].forEach.call(document.querySelectorAll("[data-m]"),function(b){b.setAttribute("aria-pressed",String(+b.dataset.m===mode));});
+}
+[].forEach.call(document.querySelectorAll("[data-m]"),function(b){b.addEventListener("click",function(){mode=+b.dataset.m;wave();});});
+wave();
+})();
+</script>
+</body>
+</html>

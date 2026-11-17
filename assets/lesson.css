@@ -180,6 +180,7 @@ svg{max-width:100%;height:auto;display:block}
 .srt .it.bad{background:var(--p-pink);color:var(--bad)}
 .srt .tap{display:block;margin-top:6px;font-size:13px;color:var(--muted);text-align:center}
 .srt .bin{cursor:pointer}
+.srt .bin .it[disabled]{pointer-events:none}
 .rtl-slots .slots{direction:rtl}.rtl-slots .pool{direction:rtl}.rtl-slots .pc{font-family:var(--body);font-style:normal;font-size:15px}
 /* radicals: <span class="rad"><i>3</i><span>x</span></span>  (lesson.js inserts the √; omit <i> for square roots) */
 .rad{display:inline-flex;align-items:flex-start;white-space:nowrap;direction:ltr;unicode-bidi:isolate}
