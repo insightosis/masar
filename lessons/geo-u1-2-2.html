@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="geology">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>المجرات ودورة حياة النجم · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+span[dir=ltr],bdi[dir=ltr]{unicode-bidi:isolate}
+body{--space:#e9e4ff;--neb:#c9b8ff;--neb2:#ffc9d6;--dot:#6b5bd6;--wire:#8a8f99;--hole:#1d1830;--arrowIn:#6b5bd6;--arrowOut:#e2653f}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--space:#211d38;--neb:#5a4c99;--neb2:#7a3f55;--dot:#c9c0ff;--wire:#b7bcc6;--hole:#05040a;--arrowIn:#c9c0ff;--arrowOut:#ff9a74}}
+:root[data-theme="dark"] body{--space:#211d38;--neb:#5a4c99;--neb2:#7a3f55;--dot:#c9c0ff;--wire:#b7bcc6;--hole:#05040a;--arrowIn:#c9c0ff;--arrowOut:#ff9a74}
+.stage{display:block;width:100%;height:auto;border-radius:22px;background:var(--space);box-shadow:var(--press)}
+.steps5{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.steps5 span{font-size:13px;padding:4px 10px;border-radius:12px;background:var(--card);box-shadow:var(--clay-sm);color:var(--muted)}
+.steps5 span.on{background:var(--sc);color:#fff;font-weight:700}
+.help{display:inline-block;font-size:12px;font-weight:700;padding:1px 9px;border-radius:9px;background:var(--p-sky);color:var(--text);margin-inline-end:6px}
+.xtra{margin-top:12px;padding:10px 16px;border-radius:20px;background:var(--card);box-shadow:var(--clay-sm)}
+.xtra summary{cursor:pointer;font-weight:700;color:var(--ink)}
+.big{font-family:var(--display);font-size:1.5rem;color:var(--ink);direction:ltr;unicode-bidi:isolate}
+.fork{display:block;width:100%;height:auto;border-radius:20px;background:var(--space);margin-top:10px}
+.gtypes{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:12px}
+.gtypes .card{text-align:center}
+.gtypes .card svg{display:block;width:100%;height:auto;max-height:80px}
+.gtypes .card .en{display:block;font-size:12.5px;color:var(--muted);direction:ltr}
+.gtypes .card b.code{font-family:var(--display);color:var(--ink);direction:ltr;unicode-bidi:isolate}
+.wirebox{display:block;width:100%;height:auto;border-radius:18px;background:var(--space);margin-top:10px}
+.two-path{display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px}
+@media (min-width:640px){.two-path{grid-template-columns:1fr 1fr}}
+.path{padding:12px 14px;border-radius:20px;background:var(--card);box-shadow:var(--clay-sm)}
+.path h3{margin:0 0 8px}
+.path ol{margin:0;padding-inline-start:20px}
+.path li{margin:4px 0}
+.act[data-act=gap] .opts{direction:rtl}
+.act[data-act=gap] .pc{font-family:var(--body);font-style:normal;font-size:1rem}
+</style>
+</head>
+<body style="--sc:#e2653f">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الجيولوجيا</span><span class="chip">الدرس 2-2 · ص 25 إلى 29</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الأولى: الكون والأرض · الفصل الثاني: نشأة الكون</p>
+  <h1 id="t">المجرات ودورة حياة النجم</h1>
+  <p>النجوم تولد وتكبر وتشيخ وتموت، مثلنا تماماً. <mark>هل ستتحوّل شمسنا يوماً إلى ثقب أسود؟</mark> جرّب المختبر تحت واعرف الجواب بنفسك.</p>
+</section>
+
+<section class="panel" id="lab-sec" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">مختبر حياة نجم</h2><span class="legend">اختر الكتلة، ثم حرّك الزمن</span></div>
+  <div class="btns">
+    <button class="tg" type="button" data-mass="0" aria-pressed="true">نجم متوسط (مثل الشمس)</button>
+    <button class="tg" type="button" data-mass="1" aria-pressed="false">نجم كتلته كبيرة</button>
+  </div>
+  <svg class="stage" id="star" viewBox="0 0 400 250" role="img" aria-label="رسم يوضح مرحلة النجم الحالية" style="margin-top:10px"></svg>
+  <div class="controls"><div class="ctl"><label for="age">الزمن (ملايين السنين) <b id="ageL">سديم</b></label><input type="range" id="age" min="0" max="4" step="1" value="0" aria-describedby="ageL"></div></div>
+  <div class="steps5" id="steps" aria-hidden="true"><span>سديم</span><span>نجم أوّلي</span><span>البلوغ</span><span>الشيخوخة</span><span>الموت</span></div>
+  <p class="msg" id="sMsg" aria-live="polite"></p>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">مصطلحات الدرس</h2></div>
+  <p class="muted" style="margin-top:-4px">هذه الكلمات هي الدرس كله.</p>
+  <div class="syms">
+    <div class="sym"><span class="bub"><span>🌀</span></span><div><h3>المجرّة <span class="en">Galaxy</span></h3><p>نظام كوني وحدته النجوم أو الحشود النجمية والسدم، ترتبط معاً بقوى جذب متبادلة.</p><span class="hook">مدينة كاملة، والنجوم بيوتها.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span>☀</span></span><div><h3>النجم <span class="en">Star</span></h3><p>جرم سماوي يشع ضوءاً وحرارة ذاتياً، مثل الشمس.</p><span class="hook">نوره من عنده، مو مستعار.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub sm"><span>H→He</span></span><div><h3>الاندماج النووي <span class="en">Nuclear Fusion</span></h3><p>اندماج ذرات الهيدروجين لتكوين ذرات أثقل هي الهيليوم، ومنه طاقة النجم.</p><span class="hook">وقود النجم: هيدروجين يصير هيليوم.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub"><span>🔴</span></span><div><h3>النجم الأوّلي <span class="en">Protostar</span></h3><p>كتلة غازية بدأ فيها الاندماج النووي فتوهّجت، وتكون غالباً مائلة للاحمرار.</p><span class="hook">"المولود" الأحمر.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub"><span>⭕</span></span><div><h3>العملاق الأحمر <span class="en">Red Giant</span></h3><p>النجم في شيخوخته: تمدّد وكبر حجمه وقلّت حرارته نسبياً فصار أحمر.</p><span class="hook">شيخ منفوخ.</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub"><span>✨</span></span><div><h3>النوفا <span class="en">Nova</span></h3><p>انفجار النجم المتوسط في آخر عمره، فتتناثر أجزاؤه على شكل سديم.</p><span class="hook">نوفا = انفجار عادي.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span>💥</span></span><div><h3>السوبر نوفا <span class="en">Supernova</span></h3><p>انفجار مروّع للنجم الكثيف (الكتلة الكبيرة).</p><span class="hook">سوبر = أقوى بكثير.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span>⚪</span></span><div><h3>القزم الأبيض <span class="en">White Dwarf</span></h3><p>القلب المشع الباقي بعد النوفا: نجم صغير أبيض.</p><span class="hook">صغير الحجم، أبيض اللون.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub"><span>⚫</span></span><div><h3>الثقب الأسود <span class="en">Black Hole</span></h3><p>كتلة جاذبيتها جبّارة تجذب حتى فوتونات الضوء، فتبدو مساحة غير مضيئة.</p><span class="hook">المكنسة الفضائية.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">المجرّات</h2></div>
+  <p>المجرّة مثل <b>مدينة</b> في الكون: سكّانها <b>نجوم وحشود نجمية وسدم</b>، يمسكها ببعض <b>الجذب المتبادل</b>. والمجرّة مو واقفة:</p>
+  <div class="grid2">
+    <div class="box lav"><h3>تدور</h3><p>تدور ككتلة واحدة حول <b>محور وهمي في مركزها</b>، مع اختلاف حركة أجزائها الداخلية.</p></div>
+    <div class="box sky"><h3>وتبتعد</h3><p>وفي نفس الوقت تتحرّك في الكون <b>مبتعدة عن بعضها</b> (تذكّر بالون الدرس الماضي).</p></div>
+  </div>
+  <p style="margin-top:12px">يبلغ اتّساع المجرّات <b>مئات السنين الضوئية</b>، وتختلف عن بعضها في <b>الحجم والكتلة وعدد النجوم</b>.</p>
+
+  <h3 style="margin:20px 0 8px">تقسيم هابل حسب الشكل</h3>
+  <p>العالم <b>هابل</b> صنّف المجرّات حسب أشكالها. تخيّلها مثل <b>شوكة رنّانة</b>: الذراع الأولى بيضاوية، ثم تتفرّع إلى حلزونية عادية وحلزونية بقضيب.</p>
+  <svg class="fork" viewBox="0 0 440 210" role="img" aria-label="رسم تقسيم هابل: بيضاوية من E0 إلى E7 ثم S0 ثم فرعان Sa Sb Sc و SBa SBb SBc">
+    <g fill="none" stroke="var(--muted)" stroke-width="2.5" stroke-linecap="round">
+      <path d="M20 105 H200"/><path d="M200 105 C230 105 240 50 280 48 H420"/><path d="M200 105 C230 105 240 160 280 162 H420"/>
+    </g>
+    <g fill="var(--dot)">
+      <circle cx="30" cy="80" r="13"/><ellipse cx="78" cy="80" rx="15" ry="10"/><ellipse cx="126" cy="80" rx="17" ry="8"/><ellipse cx="174" cy="80" rx="19" ry="5.5"/>
+      <ellipse cx="205" cy="80" rx="15" ry="6" opacity=".8"/><circle cx="205" cy="80" r="5"/>
+    </g>
+    <g fill="none" stroke="var(--sc)" stroke-width="3" stroke-linecap="round">
+      <circle cx="300" cy="22" r="6" fill="var(--sc)"/><path d="M300 22 m-6 0 c-2 -10 10 -14 14 -8 M300 22 m6 0 c2 10 -10 14 -14 8"/>
+      <circle cx="350" cy="22" r="4" fill="var(--sc)"/><path d="M350 22 m-4 0 c-4 -14 16 -18 20 -8 M350 22 m4 0 c4 14 -16 18 -20 8"/>
+      <circle cx="400" cy="22" r="3" fill="var(--sc)"/><path d="M400 22 m-3 0 c-8 -16 22 -20 24 -4 M400 22 m3 0 c8 16 -22 20 -24 4"/>
+    </g>
+    <g fill="none" stroke="#d9a400" stroke-width="3" stroke-linecap="round">
+      <path d="M292 188 h16 M292 188 c-4 -10 -2 -14 6 -14 M308 188 c4 10 2 14 -6 14"/>
+      <path d="M340 188 h20 M340 188 c-6 -12 -2 -16 8 -16 M360 188 c6 12 2 16 -8 16"/>
+      <path d="M390 188 h20 M390 188 c-10 -14 0 -20 12 -18 M410 188 c10 14 0 20 -12 18"/>
+    </g>
+    <g font-size="15" font-weight="700" fill="var(--text)" text-anchor="middle" direction="ltr">
+      <text x="30" y="125">E0</text><text x="78" y="125">E3</text><text x="126" y="125">E5</text><text x="174" y="125">E7</text><text x="210" y="125">S0</text>
+      <text x="300" y="70">Sa</text><text x="350" y="70">Sb</text><text x="400" y="70">Sc</text>
+      <text x="300" y="150">SBa</text><text x="350" y="150">SBb</text><text x="400" y="150">SBc</text>
+    </g>
+  </svg>
+  <p class="muted" style="font-size:13.5px;margin-top:6px">رسم مبسّط من عندنا، والأصل شكل 9 في الكتاب. الرقم بعد E يكبر كلما صارت المجرّة أكثر تفلطحاً.</p>
+  <div class="gtypes">
+    <div class="card"><svg viewBox="0 0 120 60" aria-hidden="true"><ellipse cx="60" cy="30" rx="34" ry="18" fill="var(--dot)"/></svg><h3>الإهليلجية (بيضاوية)</h3><span class="en">Elliptical · <b class="code">E</b></span></div>
+    <div class="card"><svg viewBox="0 0 120 60" aria-hidden="true"><circle cx="60" cy="30" r="7" fill="var(--sc)"/><path d="M54 30 c-4 -18 26 -24 30 -8 M66 30 c4 18 -26 24 -30 8" fill="none" stroke="var(--sc)" stroke-width="4" stroke-linecap="round"/></svg><h3>الحلزونية (لولبية)</h3><span class="en">Spiral · <b class="code">S</b></span></div>
+    <div class="card"><svg viewBox="0 0 120 60" aria-hidden="true"><path d="M46 30 h28 M46 30 c-6 -14 -2 -18 10 -18 M74 30 c6 14 2 18 -10 18" fill="none" stroke="#d9a400" stroke-width="4" stroke-linecap="round"/></svg><h3>الحلزونية القضيبية</h3><span class="en">Barred · <b class="code">SB</b></span></div>
+    <div class="card"><svg viewBox="0 0 120 60" aria-hidden="true"><ellipse cx="60" cy="30" rx="36" ry="9" fill="var(--dot)" opacity=".75"/><circle cx="60" cy="30" r="7" fill="var(--dot)"/></svg><h3>العدسية</h3><span class="en">Lenticular · <b class="code">S0</b></span></div>
+  </div>
+
+  <div class="act" data-act="match" data-key="match"
+       data-pairs='[["E","مجرّة إهليلجية (بيضاوية)"],["S","مجرّة حلزونية (لولبية)"],["SB","مجرّة حلزونية قضيبية"],["S0","مجرّة عدسية"]]'
+       data-ok="ممتاز! E بيضاوية، S حلزونية، SB حلزونية بقضيب، S0 عدسية.">
+    <h3>فكّ رموز هابل <span class="k">نشاط</span></h3>
+    <p>اختر الرمز، ثم نوع المجرّة اللي يدل عليه.</p>
+  </div>
+
+  <h3 style="margin:22px 0 8px">مجرّتنا: درب التبّانة (الطريق الحليبي)</h3>
+  <div class="grid2">
+    <div class="box butter"><h3>عدد نجومها</h3><p>أكثر من <span class="big">200</span> مليار نجم، والشمس واحد منها.</p></div>
+    <div class="box mint"><h3>قطرها</h3><p>حوالي <span class="big">100</span> ألف سنة ضوئية.</p></div>
+  </div>
+  <p style="margin-top:12px">المجموعة الشمسية (ومعها الأرض) تقع في أحد أذرع المجرّة اسمه <b>ذراع الجبّار</b> <span dir="ltr">(Orion Arm)</span>. وأقرب المجرّات لنا: <b>مجرّة المرأة المسلسلة</b> و<b>مجرّة سحابتا ماجلان</b>.</p>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">النجم: من وين طاقته؟</h2></div>
+  <div class="vs">
+    <div class="box lav"><h3>المجرّة</h3><p>نظام كبير يجمع نجوماً وسدماً بالجذب. هي "المدينة".</p></div>
+    <span class="mid">≠</span>
+    <div class="box butter"><h3>النجم</h3><p>جرم سماوي واحد يشع ضوءاً وحرارة <b>ذاتياً</b>، وهو مكوّن أساسي للمجرّة. هو "البيت".</p></div>
+  </div>
+  <p style="margin-top:12px">طاقة النجم الحرارية والإشعاعية تأتي من <b>الاندماج النووي</b>: ذرات وأيونات الهيدروجين تندمج فتكوّن ذرات أثقل هي <b>الهيليوم</b>. وكلما زاد الاندماج، صار النجم أسخن وتغيّر لونه.</p>
+
+  <div class="panel" style="margin:14px 0">
+    <div class="lab-head"><h3 style="margin:0">سخّن السلك</h3><span class="legend">نشاط الكتاب، نسخة على الشاشة</span></div>
+    <svg class="wirebox" id="wire" viewBox="0 0 400 120" role="img" aria-label="سلك يتغير لون طرفه مع التسخين"></svg>
+    <div class="controls"><div class="ctl"><label for="heat">قوّة التسخين <b id="heatL">بارد</b></label><input type="range" id="heat" min="0" max="100" value="0" aria-describedby="heatL"></div></div>
+    <p class="msg" id="hMsg" aria-live="polite"></p>
+  </div>
+  <p class="tip">الاستنتاج: السلك البارد اللي ما يشع يمثّل <b>كوكباً</b> مو نجماً. ولو زاد اندماج الهيدروجين ترتفع حرارة النجم ويتحوّل من <b>الأحمر إلى الأصفر</b> أو من <b>الأصفر إلى الأبيض</b>. ولو تحوّل كل الهيدروجين إلى هيليوم؟ تندمج ذرات الهيليوم لتعطي ذرات أثقل وتنطلق طاقة أكبر.</p>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">دورة حياة النجم: أربع مراحل</h2></div>
+  <p>النجم يمرّ بأربع مراحل، وقد يحتاج <b>ملايين السنين</b> ليكملها. النجوم <b>تتشابه في أول ثلاث مراحل</b>، أما مرحلة <b>الموت فتعتمد على حجم النجم</b> (كتلته).</p>
+  <ol class="tline">
+    <li><span class="yr">1</span><div class="ev"><b>النجم الأوّلي</b><span>سديم بارد جداً من الغازات والغبار، أغلبه هيدروجين (أخفّ العناصر)، ينكمش بجذبه الذاتي. يدور حول مركزه، ودقائقه تتسارع نحو المركز وتتصادم فتسخن. عند <strong>15 مليون درجة مئوية</strong> يبدأ اندماج أنوية الهيدروجين فيتكوّن الهيليوم في المركز وتتوهّج الكتلة: نجم أوّلي <strong>مائل للاحمرار</strong>.</span></div></li>
+    <li><span class="yr">2</span><div class="ev"><b>البلوغ</b><span>تزداد كتلته حسب كمية المادّة في السديم، ثم تستقر. النجم البالغ عادة <strong>أصفر</strong> مثل شمسنا. وإذا كانت كتلته كبيرة يصير <strong>نجماً كثيفاً</strong>.</span></div></li>
+    <li><span class="yr">3</span><div class="ev"><b>الشيخوخة (العملاق الأحمر)</b><span>مع استمرار التفاعلات تتغلّب <strong>قوة الإشعاع</strong> على <strong>قوة الجذب نحو المركز</strong>، فيتمدّد وتقل حرارته نسبياً ويصير أحمر: <strong>عملاق أحمر</strong>. والنجم الكثيف يصير <strong>عملاقاً أحمر ضخماً</strong> <span dir="ltr">(Red supergiant)</span>.</span></div></li>
+    <li><span class="yr">4</span><div class="ev"><b>الموت</b><span>يستمر التمدّد حتى يبلغ مداه فينفجر. المسار يعتمد على الكتلة (تحت).</span></div></li>
+  </ol>
+  <p class="tip" style="margin-top:12px"><span class="help">مساعدة للفهم</span>تخيّل بالوناً: الجذب يضغطه من برّا للداخل، والإشعاع ينفخه من جوّا. في البلوغ القوّتان متوازنتان. في الشيخوخة النفخ يغلب، فينتفخ ويبرد.</p>
+
+  <div class="act" data-act="gap" data-key="gap" data-ok="صح! عند 15 مليون درجة مئوية يبدأ اندماج أنوية الهيدروجين ويولد النجم الأوّلي.">
+    <h3>أكمل الناقص <span class="k">نشاط</span></h3>
+    <p>يبدأ الاندماج النووي في السديم المنكمش عندما تصل حرارته إلى <span class="gap"></span>، فيتكوّن <b>الهيليوم</b> في المركز.</p>
+    <div class="opts">
+      <button class="pc" data-no="أقل بكثير. هذه حرارة ما تكفي لاندماج أنوية الهيدروجين.">15 ألف درجة مئوية</button>
+      <button class="pc" data-ok>15 مليون درجة مئوية</button>
+      <button class="pc" data-no="الرقم الصحيح 15، بس الوحدة مليون. 1.5 مليون أقل من المطلوب.">1.5 مليون درجة مئوية</button>
+    </div>
+  </div>
+
+  <h3 style="margin:22px 0 8px">الموت: مساران حسب الكتلة</h3>
+  <div class="two-path">
+    <div class="path"><h3>نجم متوسط (أصفر مثل شمسنا)</h3><ol><li>عملاق أحمر</li><li>ينفجر: <b>نوفا</b>، وأجزاؤه المتناثرة تبرد على شكل سديم</li><li>يبقى القلب المشع: <b>قزم أبيض</b></li></ol></div>
+    <div class="path"><h3>نجم كثيف (كتلته كبيرة)</h3><ol><li>عملاق أحمر ضخم</li><li>انفجار مروّع: <b>سوبر نوفا</b></li><li>الكتلة الباقية أكبر من الأقزام البيض، والمواد الثقيلة (من اندماج الهيليوم) تتمركز في الوسط: <b>ثقب أسود</b></li></ol></div>
+  </div>
+  <p style="margin-top:12px">الثقب الأسود جاذبيته عالية جداً لدرجة أنه <b>يجذب فوتونات الضوء</b>، لذلك ما يطلع منه ضوء ويبدو <b>مساحة غير مضيئة</b> تجذب كل ما يقترب منها، فسمّاه البعض <b>المكانس الفضائية</b>.</p>
+  <details class="xtra"><summary>فقرة إثرائية: النجم النيوتروني ومخطّط هرتزبرج - راسل</summary>
+    <ul class="pts">
+      <li style="--b:var(--sc)">بعد نفاد الهيدروجين تتغلّب قوى الجذب وينكمش النجم، فتبتلع النوى الإلكترونات وتتحوّل البروتونات إلى نيوترونات: <b>النجم النيوتروني</b>. يحدث هذا إذا كانت كتلته بين <b dir="ltr">1.44</b> و<b>3</b> كتل شمسية، وإذا زادت عن ذلك يصير ثقباً أسود.</li>
+      <li style="--b:var(--sc)"><b>مخطّط هرتزبرج - راسل</b> يرتّب النجوم حسب حرارتها ولمعانها. أغلبها على شريط اسمه <b>التتابع الرئيسي</b> (الشمس في وسطه)، وفوقه العمالقة، وتحته الأقزام البيضاء.</li>
+    </ul>
+  </details>
+
+  <div class="act" data-act="sort" data-key="sort" data-bins='["مسار النجم المتوسط","مسار النجم الكثيف"]'
+       data-items='[["نجم أصفر مثل شمسنا",0],["عملاق أحمر",0],["نوفا",0],["قزم أبيض",0],["نجم كثيف",1],["عملاق أحمر ضخم",1],["سوبر نوفا",1],["ثقب أسود",1]]'
+       data-ok="ممتاز! المتوسط: أصفر ثم عملاق أحمر ثم نوفا ثم قزم أبيض. الكثيف: عملاق أحمر ضخم ثم سوبر نوفا ثم ثقب أسود.">
+    <h3>صنّف <span class="k">نشاط</span></h3>
+    <p>كل محطّة تخص أي مسار؟</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">5</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sd">
+  <div class="sec-head"><span class="num">6</span><h2 id="sd">في حياتك</h2></div>
+  <div class="life">
+    <div class="card"><h3>شعلة الطبخ</h3><p>لهب الغاز الأزرق أسخن من لهب الشمعة الأصفر. نفس القاعدة في النجوم: اللون يفضح الحرارة.</p></div>
+    <div class="card"><h3>التير والمرزم</h3><p>الشعرى اليمانية أسطع نجم في سماء الليل، يسمّيه أهل البحر "التير" وأهل البادية "المرزم"، ويبعد 8.6 سنة ضوئية.</p></div>
+    <div class="card"><h3>مكنسة البيت</h3><p>الثقب الأسود "مكنسة فضائية": يسحب كل شيء يقترب منه، حتى الضوء.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">7</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>المجموعة الشمسية تقع في مجرّة درب التبّانة في ذراع اسمه:</p>
+      <div class="opts"><button>ذراع ماجلان</button><button data-ok>ذراع الجبّار (Orion Arm)</button><button>ذراع المرأة المسلسلة</button></div>
+      <p class="why" hidden>الصحيح: ذراع الجبّار. المرأة المسلسلة وسحابتا ماجلان أسماء أقرب المجرّات لنا، مو أذرع في مجرّتنا.</p></div>
+    <div class="q"><p>يتحوّل النجم إلى عملاق أحمر عندما:</p>
+      <div class="opts"><button data-ok>تتغلّب قوة الإشعاع على قوة الجذب نحو المركز</button><button>تتغلّب قوة الجذب على قوة الإشعاع</button><button>يبدأ اندماج الهيدروجين لأول مرة</button></div>
+      <p class="why" hidden>الصحيح: الإشعاع يغلب الجذب فيتمدّد النجم وتقل حرارته نسبياً ويصير أحمر. بداية الاندماج هي ولادة النجم الأوّلي.</p></div>
+    <div class="q"><p>الفرق بين النوفا والسوبر نوفا:</p>
+      <div class="opts"><button>النوفا للنجم الكثيف، والسوبر نوفا للنجم المتوسط</button><button>كلاهما ينتهي بثقب أسود</button><button data-ok>النوفا انفجار النجم المتوسط ويبقى قزم أبيض، والسوبر نوفا انفجار مروّع للنجم الكثيف ويبقى ثقب أسود</button></div>
+      <p class="why" hidden>الصحيح: الكتلة تحدّد المسار. متوسط: نوفا ثم قزم أبيض. كثيف: سوبر نوفا ثم ثقب أسود.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li><b>المجرّة</b>: نظام من نجوم وحشود نجمية وسدم مرتبطة بالجذب، تدور حول محور وهمي في مركزها. هابل صنّفها حسب الشكل: إهليلجية E، حلزونية S وSB، عدسية S0.</li>
+      <li><b>النجم</b>: جرم يشع ضوءاً وحرارة ذاتياً، وطاقته من اندماج الهيدروجين إلى هيليوم.</li>
+      <li><b>دورة حياته</b>: نجم أوّلي، بلوغ، شيخوخة (عملاق أحمر)، موت. المتوسط: نوفا ثم قزم أبيض. الكثيف: سوبر نوفا ثم ثقب أسود.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الجيولوجيا، الصف الحادي عشر، الوحدة الأولى، ص 25 إلى 29</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"geo-u1-2-2"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+/* star life: stage 0..4, mass 0 (medium) or 1 (massive) */
+var mass=0, svg=$("star"), age=$("age");
+var NAMES=["سديم","نجم أوّلي","البلوغ","الشيخوخة","الموت"];
+var MSG=[
+ ["سديم بارد جداً من غاز وغبار، أغلبه هيدروجين. الجذب الذاتي يبدأ يضمّه للداخل.","نفس البداية: سديم بارد من غاز وغبار، أغلبه هيدروجين."],
+ ["الكتلة تدور وتنكمش وتسخن. عند 15 مليون °C يبدأ الاندماج النووي: نجم أوّلي مائل للاحمرار.","نفس المرحلة: عند 15 مليون °C يبدأ الاندماج فيولد نجم أوّلي مائل للاحمرار."],
+ ["الكتلة تستقر: نجم بالغ أصفر مثل شمسنا. الجذب والإشعاع متوازنان.","الكتلة كبيرة، فالنجم البالغ نجم كثيف (أبيض مزرق وأسخن)."],
+ ["الإشعاع غلب الجذب: النجم تمدّد وبرد نسبياً وصار عملاقاً أحمر.","الإشعاع غلب الجذب: عملاق أحمر ضخم (Red supergiant)."],
+ ["انفجار نوفا: الأجزاء المتناثرة تبرد على شكل سديم، ويبقى القلب المشع قزماً أبيض. وهذا مصير شمسنا، مو ثقب أسود.","انفجار مروّع (سوبر نوفا)، والكتلة الباقية الكبيرة تصير ثقباً أسود يجذب حتى الضوء."]
+];
+function arrows(cx,cy,r,inL,outL){
+  var h="",i,a,x1,y1,x2,y2;
+  for(i=0;i<8;i++){a=i*Math.PI/4+Math.PI/8;
+    if(inL){x1=cx+Math.cos(a)*(r+12+inL);y1=cy+Math.sin(a)*(r+12+inL);x2=cx+Math.cos(a)*(r+8);y2=cy+Math.sin(a)*(r+8);
+      h+='<line x1="'+x1.toFixed(1)+'" y1="'+y1.toFixed(1)+'" x2="'+x2.toFixed(1)+'" y2="'+y2.toFixed(1)+'" stroke="var(--arrowIn)" stroke-width="3" marker-end="url(#ahIn)"/>';}
+    a+=Math.PI/8;
+    if(outL){x1=cx+Math.cos(a)*(r+4);y1=cy+Math.sin(a)*(r+4);x2=cx+Math.cos(a)*(r+6+outL);y2=cy+Math.sin(a)*(r+6+outL);
+      h+='<line x1="'+x1.toFixed(1)+'" y1="'+y1.toFixed(1)+'" x2="'+x2.toFixed(1)+'" y2="'+y2.toFixed(1)+'" stroke="var(--arrowOut)" stroke-width="3" marker-end="url(#ahOut)"/>';}
+  }
+  return h;
+}
+function draw(){
+  var s=+age.value, cx=200, cy=118, h='<defs><marker id="ahIn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="var(--arrowIn)"/></marker><marker id="ahOut" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="var(--arrowOut)"/></marker></defs>';
+  if(s===0){
+    h+='<ellipse cx="185" cy="112" rx="88" ry="52" fill="var(--neb)" opacity=".85"/><ellipse cx="230" cy="130" rx="70" ry="40" fill="var(--neb2)" opacity=".7"/><ellipse cx="170" cy="135" rx="50" ry="26" fill="var(--neb)" opacity=".6"/>';
+    for(var i=0;i<26;i++){var x=120+((i*53)%170), y=78+((i*37)%80); h+='<circle cx="'+x+'" cy="'+y+'" r="2.2" fill="var(--dot)"/>';}
+    h+=arrows(cx,cy,70,14,0);
+  } else if(s===1){
+    h+='<ellipse cx="200" cy="118" rx="70" ry="22" fill="var(--neb)" opacity=".55"/><circle cx="200" cy="118" r="26" fill="#e8705b"/><circle cx="200" cy="118" r="14" fill="#ffb07a"/>';
+    h+=arrows(cx,cy,26,10,8);
+  } else if(s===2){
+    var r2=mass?30:34, c2=mass?"#9fc4ff":"#ffd23f", c2b=mass?"#e8f1ff":"#fff1a8";
+    h+='<circle cx="200" cy="118" r="'+r2+'" fill="'+c2+'"/><circle cx="200" cy="118" r="'+(r2*0.55)+'" fill="'+c2b+'"/>';
+    h+=arrows(cx,cy,r2,10,10);
+  } else if(s===3){
+    var r3=mass?82:64;
+    h+='<circle cx="200" cy="118" r="'+r3+'" fill="#e8505b" opacity=".9"/><circle cx="200" cy="118" r="'+(r3*0.6)+'" fill="#f27a6a"/>';
+    h+=arrows(cx,cy,r3,4,mass?10:12);
+  } else {
+    if(!mass){
+      h+='<circle cx="200" cy="118" r="70" fill="none" stroke="#3fb6a8" stroke-width="14" opacity=".55"/><circle cx="200" cy="118" r="52" fill="none" stroke="var(--neb)" stroke-width="10" opacity=".7"/>';
+      h+='<circle cx="200" cy="118" r="9" fill="#ffffff" stroke="var(--dot)" stroke-width="2"/>';
+      h+='<text x="200" y="222" font-size="15" font-weight="700" text-anchor="middle" fill="var(--text)">نوفا ثم قزم أبيض</text>';
+    } else {
+      var rays="";for(var k=0;k<16;k++){var a=k*Math.PI/8, L=k%2?92:70;rays+='<line x1="'+(200+Math.cos(a)*30).toFixed(1)+'" y1="'+(118+Math.sin(a)*30).toFixed(1)+'" x2="'+(200+Math.cos(a)*L).toFixed(1)+'" y2="'+(118+Math.sin(a)*L).toFixed(1)+'" stroke="#ffb02e" stroke-width="5" stroke-linecap="round" opacity=".55"/>';}
+      h+=rays+'<circle cx="200" cy="118" r="34" fill="none" stroke="#ff8a3d" stroke-width="6" opacity=".9"/><circle cx="200" cy="118" r="26" fill="var(--hole)"/>';
+      h+='<text x="200" y="232" font-size="15" font-weight="700" text-anchor="middle" fill="var(--text)">سوبر نوفا ثم ثقب أسود</text>';
+    }
+  }
+  if(s>0&&s<4){h+='<g font-size="13" font-weight="700" direction="ltr"><text x="14" y="238" text-anchor="start" fill="var(--arrowIn)">● الجذب نحو المركز</text><text x="386" y="238" text-anchor="end" fill="var(--arrowOut)">الإشعاع للخارج ●</text></g>';}
+  svg.innerHTML=h;
+  $("ageL").textContent=NAMES[s];
+  [].forEach.call($("steps").children,function(e,i){e.classList.toggle("on",i===s);});
+  var m=$("sMsg"); m.textContent=MSG[s][mass]; m.className=s===4?"msg ok":"msg";
+  [].forEach.call(document.querySelectorAll("[data-mass]"),function(b){b.setAttribute("aria-pressed",String(+b.dataset.mass===mass));});
+}
+[].forEach.call(document.querySelectorAll("[data-mass]"),function(b){b.addEventListener("click",function(){mass=+b.dataset.mass;draw();});});
+age.addEventListener("input",draw);
+draw();
+/* heated wire: tip colour follows temperature (dull, red, yellow, white) */
+var heat=$("heat"), W=$("wire");
+function mix(a,b,t){return a.map(function(v,i){return Math.round(v+(b[i]-v)*t);});}
+function tipColor(v){
+  var K=[[0,[120,124,132]],[30,[150,40,30]],[55,[230,70,40]],[78,[255,205,60]],[100,[255,252,240]]];
+  for(var i=1;i<K.length;i++){if(v<=K[i][0]){var t=(v-K[i-1][0])/(K[i][0]-K[i-1][0]);return mix(K[i-1][1],K[i][1],t);}}
+  return K[K.length-1][1];
+}
+function wire(){
+  var v=+heat.value, c=tipColor(v), col="rgb("+c.join(",")+")", glow=v>25?(v-25)/75:0;
+  var h='<rect x="40" y="52" width="250" height="10" rx="5" fill="var(--wire)"/>';
+  h+='<rect x="12" y="44" width="40" height="26" rx="8" fill="var(--dot)" opacity=".8"/>';
+  if(glow>0)h+='<circle cx="300" cy="57" r="'+(16+18*glow).toFixed(1)+'" fill="'+col+'" opacity="'+(0.25+0.35*glow).toFixed(2)+'"/>';
+  h+='<rect x="250" y="51" width="62" height="12" rx="6" fill="'+col+'"/>';
+  h+='<path d="M300 112 q-14 -18 0 -36 q14 18 0 36Z" fill="#4f8cff" opacity="'+(v>0?0.85:0.25)+'"/>';
+  h+='<text x="372" y="62" font-size="13" text-anchor="middle" fill="var(--muted)">طرف</text><text x="372" y="78" font-size="13" text-anchor="middle" fill="var(--muted)">السلك</text>';
+  W.innerHTML=h;
+  var lab,msg;
+  if(v<20){lab="بارد";msg="السلك بارد وما يشع: مثل الكوكب، يُرى بضوء غيره.";}
+  else if(v<50){lab="أحمر";msg="بدأ يسخن فتوهّج بالأحمر: مثل النجم الأوّلي.";}
+  else if(v<80){lab="أصفر";msg="حرارة أعلى فصار أصفر: مثل النجم البالغ (شمسنا).";}
+  else {lab="أبيض";msg="قارب الانصهار فصار أبيض: الأسخن. كلما زاد الاندماج في النجم صار أسخن ومال للأبيض.";}
+  $("heatL").textContent=lab; var m=$("hMsg"); m.textContent=msg; m.className=v>=80?"msg ok":"msg";
+}
+heat.addEventListener("input",wire);
+wire();
+})();
+</script>
+</body>
+</html>
