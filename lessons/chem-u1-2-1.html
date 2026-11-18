@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="chemistry">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الأفلاك المهجنة · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+body{--orbA:#2fb6f0;--orbB:#ff7aa8;--mix:#8a63f2;--nuc:#2b2346}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--nuc:#f4efff}}
+:root[data-theme="dark"] body{--nuc:#f4efff}
+.ov{display:block;width:100%;height:auto;border-radius:22px;background:var(--sky);box-shadow:var(--press)}
+.ov+.ov{margin-top:10px}
+.pick{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.cfg{direction:ltr;unicode-bidi:isolate;font-family:"Noto Serif",Georgia,serif;font-size:1.15rem}
+.cfg sup,.cfg sub{font-size:.62em}
+.ltr{direction:ltr;unicode-bidi:isolate}
+.badge{display:inline-grid;place-items:center;min-width:52px;height:46px;padding:0 6px;border-radius:23px;font-family:"Noto Serif",Georgia,serif;font-weight:700;font-size:1.2rem;background:var(--card);box-shadow:var(--clay-sm);color:var(--ink);direction:ltr}
+.badge sup{font-size:.6em}
+.mol{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.mol .box h3{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.mol svg,.pic{display:block;width:100%;height:auto;background:var(--sky);border-radius:16px;margin-top:8px}
+.ftbl{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:10px;margin-top:10px}
+.ftbl div{padding:10px;border-radius:18px;background:var(--card);box-shadow:var(--clay-sm);text-align:center}
+.ftbl b{display:block;font-family:var(--display);font-size:1.35rem;color:var(--ink);direction:ltr}
+.ftbl span{font-size:13.5px;color:var(--muted)}
+.ftbl em{display:block;font-style:normal;font-size:13px;color:var(--text);direction:ltr}
+</style>
+</head>
+<body style="--sc:#17b388">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الكيمياء</span><span class="chip">الدرس 2-1 · ص 20 إلى 24</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الأولى: الإلكترونات في الذرّة · الفصل الثاني</p>
+  <h1 id="t">الأفلاك المهجّنة</h1>
+  <p>ذرّة الكربون فيها إلكترونان منفردان فقط، يعني المفروض تكوّن رابطتين. لكن في الميثان CH₄ تكوّن <b>أربع</b> روابط متماثلة! <mark>من وين جات الرابطتان الزيادة؟</mark> الجواب كلمة واحدة: التهجين.</p>
+</section>
+
+<section class="panel" id="lab-sec" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">خلّاط الأفلاك</h2><span class="legend"><span><i style="background:var(--orbA)"></i>s</span><span><i style="background:var(--orbB)"></i>p</span><span><i style="background:var(--mix)"></i>مهجّن</span></span></div>
+  <div class="pick" role="group" aria-label="اختر نوع التهجين">
+    <button class="tg" type="button" data-h="3" aria-pressed="true">s + ثلاثة p</button>
+    <button class="tg" type="button" data-h="2" aria-pressed="false">s + اثنان p</button>
+    <button class="tg" type="button" data-h="1" aria-pressed="false">s + واحد p</button>
+  </div>
+  <div class="controls"><div class="ctl"><label for="stp">الخطوة <b id="stL">الوضع الأدنى</b></label><input type="range" id="stp" min="0" max="2" step="1" value="0" aria-describedby="stL"></div></div>
+  <svg class="ov" id="boxes" viewBox="0 0 400 120" role="img" aria-label="مربعات الأفلاك لذرة الكربون"></svg>
+  <svg class="ov" id="geo" viewBox="0 0 400 230" role="img" aria-label="شكل الأفلاك واتجاهاتها"></svg>
+  <p class="msg" id="hMsg" aria-live="polite"></p>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">رموز الدرس</h2></div>
+  <div class="syms">
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub sm"><span>s+p</span></span><div><h3>التهجين <span class="en">Hybridisation</span></h3><p>اندماج فلكين مختلفين أو أكثر (عادة s و p) لتكوين أفلاك جديدة.</p><span class="hook">مثل خلط عصيرين: الناتج طعم وسط بينهما.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub sm"><span>sp<sup>n</sup></span></span><div><h3>الفلك المهجّن <span class="en">Hybrid Orbital</span></h3><p>الفلك الجديد الناتج، خواصّه وسطية بين الأفلاك اللي اندمجت.</p><span class="hook">عدد الأفلاك اللي دخلت = عدد الأفلاك المهجّنة اللي طلعت.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub sm"><span>sp<sup>3</sup></span></span><div><h3>تهجين sp³ <span class="en">sp³ Hybridisation</span></h3><p>فلك 2s مع ثلاثة أفلاك 2p: أربعة أفلاك نحو رؤوس رباعي السطوح، الزاوية 109.5°.</p><span class="hook">الأس 3 = ثلاثة p. والمجموع 1 + 3 = 4 أفلاك.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub sm"><span>sp<sup>2</sup></span></span><div><h3>تهجين sp² <span class="en">sp² Hybridisation</span></h3><p>فلك 2s مع فلكين 2p: ثلاثة أفلاك في مستوى، الزاوية 120°، ويبقى 2p<sub>z</sub> غير مهجّن.</p><span class="hook">1 + 2 = 3 أفلاك، وثلاثة تتوزّع على الدائرة: 360 ÷ 3 = 120.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub sm"><span>sp</span></span><div><h3>تهجين sp <span class="en">sp Hybridisation</span></h3><p>فلك 2s مع فلك 2p واحد: فلكان على خط مستقيم، الزاوية 180°، ويبقى فلكان p غير مهجّنين.</p><span class="hook">فلكان متعاكسان مثل ذراعين ممدودتين.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub sm"><span>2p<sub>z</sub></span></span><div><h3>فلك p غير مهجّن <span class="en">Unhybridised p orbital</span></h3><p>فلك p ما دخل الخلط، يبقى بشكله ويتداخل جانبياً ليكوّن رابطة π.</p><span class="hook">كل p باقٍ = رابطة π محتملة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub"><span>⬡</span></span><div><h3>البنزين <span class="en">Benzene C₆H₆</span></h3><p>أصل المركّبات الأروماتية: حلقة سداسية مستوية، كل كربون فيها sp².</p><span class="hook">حلقة من 6 كربون، فوقها وتحتها سحابة π.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">لماذا نحتاج التهجين؟</h2></div>
+  <p>حسب <b>نظرية رابطة التكافؤ</b>، ذرّة اللافلز تكوّن رابطة تساهمية عندما يكون في أحد أفلاكها <b>إلكترون منفرد</b>. ولو ما فيها إلكترون منفرد تفقد قدرتها على تكوين الروابط (مثل الغازات النبيلة).</p>
+  <div class="vs">
+    <div class="box sky"><h3>النظرية تتوقّع</h3><p class="cfg"><sub>6</sub>C : 1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>2</sup></p><p>إلكترونان منفردان فقط، إذن <b>رابطتان</b>.</p></div>
+    <span class="mid">≠</span>
+    <div class="box pink"><h3>التجربة تقول</h3><p class="cfg">CH₄</p><p>الكربون يكوّن <b>أربع روابط</b> متماثلة تقريباً، وتكافؤه في معظم الأحيان 4.</p></div>
+  </div>
+  <p style="margin-top:12px">نظرية رابطة التكافؤ فسّرت جزيئات بسيطة كثيرة، لكنها عجزت عن عدد الروابط وأشكال الجزيئات في مركّبات كثيرة، خاصة <b>مركّبات الكربون</b> (الكيمياء العضوية). فجات نظرية <b>الأفلاك المهجّنة</b>.</p>
+  <ol class="tline">
+    <li><span class="yr">1</span><div class="ev"><b>الوضع الأدنى طاقة</b><span>2s فيه زوج، و2p<sub>z</sub> فارغ. إلكترونان منفردان فقط.</span></div></li>
+    <li><span class="yr">2</span><div class="ev"><b>نقل إلكترون</b><span>كمية كافية من الطاقة تنقل إلكتروناً من 2s إلى 2p<sub>z</sub>، فيصير <span class="cfg">2s<sup>1</sup>2p<sup>3</sup></span>: أربعة منفردة. لكنها <b>مختلفة في الطاقة والشكل</b>، فالروابط بتطلع مختلفة، والتجربة تقول إنها متماثلة.</span></div></li>
+    <li><span class="yr">3</span><div class="ev"><b>التهجين</b><span>الأفلاك تندمج وتطلع أفلاك جديدة <b>متماثلة</b>، خواصّها وسط بين s و p.</span></div></li>
+  </ol>
+  <p class="tip" style="margin-top:12px"><b>القاعدة:</b> نوع التهجين يعتمد على <b>نوع الأفلاك اللي اندمجت</b> وعددها، وعدد الأفلاك المهجّنة = عدد الأفلاك اللي دخلت الخلط.</p>
+  <p class="note">تذكير بأشكال تمثيل الجزيء (شكل 7 في الكتاب): التركيب الفراغي (الوتدي)، ونموذج الكرة والعصا، ونموذج التعبئة المجسّمة (ثلاثي الأبعاد).</p>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">sp³: بنية الميثان CH₄</h2></div>
+  <p>الكربون يحتاج <b>أربعة أفلاك</b> تتداخل مع أفلاك 1s لأربع ذرّات هيدروجين. فيدمج <b>2s واحد مع ثلاثة 2p</b> ليكوّن <b>أربعة أفلاك sp³</b> تشير نحو <b>رؤوس رباعي السطوح</b>، والزاوية بينها <b class="ltr">109.5°</b>.</p>
+  <p>كل فلك sp³ يتداخل <b>رأساً لرأس</b> مع فلك 1s لهيدروجين، فتنتج <b>أربع روابط σ</b> متماثلة.</p>
+  <div class="act" data-act="order" data-key="order" data-rtl
+       data-answer='["الوضع الأدنى: 2s² 2p²","نقل إلكترون من 2s إلى 2p","دمج 2s مع ثلاثة 2p","أربعة أفلاك sp³ بزاوية 109.5°","تداخل كل sp³ مع 1s: أربع روابط σ"]'
+       data-extra='["تداخل جانبي يكوّن رابطة π"]'
+       data-ok="ممتاز! هذه قصة الميثان كاملة: نقل، دمج، أربعة sp³، أربع روابط σ."
+       data-no="القطع الحمراء في غير مكانها. ابدأ من الوضع الأدنى، وتذكّر: الميثان كله روابط أحادية، فهل فيه π؟">
+    <h3>رتّب قصة الميثان <span class="k">نشاط</span></h3>
+    <p>اضغط القطع بالترتيب من البداية. واحدة منها دخيلة.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">sp² و sp: الروابط الثنائية والثلاثية</h2></div>
+  <div class="mol">
+    <div class="box mint"><h3><span class="badge"><span>sp<sup>2</sup></span></span>الإيثين C₂H₄</h3>
+      <p>رابطة ثنائية <span class="ltr">C=C</span> وأربع روابط <span class="ltr">C–H</span>. كل كربون يرتبط بثلاث ذرّات (2 هيدروجين + 1 كربون)، فيحتاج <b>ثلاثة أفلاك sp²</b>، ويبقى <b>2p<sub>z</sub> غير مهجّن</b>.</p>
+      <svg viewBox="0 0 240 130" aria-hidden="true">
+        <ellipse cx="120" cy="40" rx="46" ry="16" fill="var(--orbB)" fill-opacity=".45"/><ellipse cx="120" cy="90" rx="46" ry="16" fill="var(--orbB)" fill-opacity=".45"/>
+        <ellipse cx="120" cy="65" rx="34" ry="9" fill="var(--mix)" fill-opacity=".7"/>
+        <g fill="var(--mix)" fill-opacity=".55"><ellipse cx="68" cy="43.5" rx="23" ry="8" transform="rotate(53.3 68 43.5)"/><ellipse cx="68" cy="86.5" rx="23" ry="8" transform="rotate(-53.3 68 86.5)"/><ellipse cx="172" cy="43.5" rx="23" ry="8" transform="rotate(-53.3 172 43.5)"/><ellipse cx="172" cy="86.5" rx="23" ry="8" transform="rotate(53.3 172 86.5)"/></g>
+        <g fill="var(--orbA)" fill-opacity=".6"><circle cx="52" cy="22" r="10"/><circle cx="52" cy="108" r="10"/><circle cx="188" cy="22" r="10"/><circle cx="188" cy="108" r="10"/></g>
+        <circle cx="84" cy="65" r="4" fill="var(--nuc)"/><circle cx="156" cy="65" r="4" fill="var(--nuc)"/>
+        <g font-size="14" font-weight="700" fill="var(--text)" text-anchor="middle" font-family="Noto Serif, Georgia, serif"><text x="120" y="18">π</text><text x="120" y="126">π</text><text x="120" y="70" font-size="12">σ</text><text x="52" y="27" font-size="11">H</text><text x="52" y="113" font-size="11">H</text><text x="188" y="27" font-size="11">H</text><text x="188" y="113" font-size="11">H</text><text x="84" y="84" font-size="12">C</text><text x="156" y="84" font-size="12">C</text></g>
+      </svg>
+      <ul class="pts">
+        <li style="--b:var(--sc)">اثنان sp² من كل كربون + 1s للهيدروجين ← روابط σ للـ <span class="ltr">C–H</span>.</li>
+        <li style="--b:var(--sc)">الثالث sp² مع sp² الكربون الآخر ← σ بين الكربونين.</li>
+        <li style="--b:var(--sc)">2p<sub>z</sub> مع 2p<sub>z</sub> <b>جنباً إلى جنب</b> ← π، سحابتها فوق محور <span class="ltr">C–C</span> وتحته.</li>
+        <li style="--b:var(--sc)">زاوية <span class="ltr">H–C–H</span> تقريباً <b class="ltr">120°</b>.</li>
+      </ul>
+    </div>
+    <div class="box butter"><h3><span class="badge">sp</span>الإيثاين (الأسيتيلين) C₂H₂</h3>
+      <p>رابطة ثلاثية <span class="ltr">H–C≡C–H</span>. كل كربون يرتبط بذرّتين فقط (كربون + هيدروجين)، فيحتاج <b>فلكين sp</b> (2s مع 2p واحد)، ويبقى <b>فلكان p غير مهجّنين</b> (2p<sub>y</sub> و 2p<sub>z</sub>).</p>
+      <svg viewBox="0 0 240 130" aria-hidden="true">
+        <ellipse cx="120" cy="38" rx="50" ry="14" fill="var(--orbB)" fill-opacity=".42"/><ellipse cx="120" cy="92" rx="50" ry="14" fill="var(--orbB)" fill-opacity=".42"/>
+        <ellipse cx="120" cy="65" rx="54" ry="22" fill="none" stroke="var(--orbB)" stroke-width="3" stroke-dasharray="5 5"/>
+        <ellipse cx="120" cy="65" rx="26" ry="8" fill="var(--mix)" fill-opacity=".7"/>
+        <g fill="var(--mix)" fill-opacity=".55"><ellipse cx="72" cy="65" rx="18" ry="8"/><ellipse cx="168" cy="65" rx="18" ry="8"/></g>
+        <g fill="var(--orbA)" fill-opacity=".6"><circle cx="44" cy="65" r="11"/><circle cx="196" cy="65" r="11"/></g>
+        <circle cx="94" cy="65" r="4" fill="var(--nuc)"/><circle cx="146" cy="65" r="4" fill="var(--nuc)"/>
+        <g font-size="14" font-weight="700" fill="var(--text)" text-anchor="middle" font-family="Noto Serif, Georgia, serif"><text x="120" y="18">π</text><text x="120" y="124">π</text><text x="120" y="70" font-size="12">σ</text><text x="44" y="70" font-size="11">H</text><text x="196" y="70" font-size="11">H</text></g>
+      </svg>
+      <ul class="pts">
+        <li style="--b:var(--sc)">sp من كل كربون معاً ← σ بين الكربونين. وsp الآخر مع 1s ← σ للـ <span class="ltr">C–H</span>.</li>
+        <li style="--b:var(--sc)">زوج p غير المهجّن من كل كربون <b>جنباً إلى جنب</b> ← رابطتا π.</li>
+        <li style="--b:var(--sc)">الجزيء <b>خطّي</b>، والزاوية <span class="ltr">H–C–C</span> تقريباً <b class="ltr">180°</b>.</li>
+        <li style="--b:var(--sc)">المجموع: <b>3σ و 2π</b>.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="margin:20px 0 8px">جدول المقارنة</h3>
+  <div class="ftbl">
+    <div><b>sp<sup>3</sup></b><em>CH₄</em><span>109.5° · رباعي السطوح · 4σ</span></div>
+    <div><b>sp<sup>2</sup></b><em>C₂H₄</em><span>120° · يبقى p واحد · 5σ و 1π</span></div>
+    <div><b>sp</b><em>C₂H₂</em><span>180° · خطّي · يبقى p اثنان · 3σ و 2π</span></div>
+  </div>
+  <p class="tip" style="margin-top:12px"><b>قاعدة العدّ:</b> كم ذرّة يرتبط بها الكربون؟ 4 ← sp³، 3 ← sp²، 2 ← sp. وكل فلك p باقٍ يعطي رابطة π.</p>
+
+  <div class="act" data-act="type" data-key="type" data-answer="5" data-tol="0"
+       data-ok="صح! 4 روابط C–H (كل وحدة σ) + رابطة σ بين الكربونين = 5σ، ومعها π واحدة."
+       data-hint="عُدّ روابط C–H أولاً (كل وحدة σ). ثم الرابطة الثنائية C=C: فيها σ واحدة و π واحدة.">
+    <h3>اكتب الرقم <span class="k">نشاط</span></h3>
+    <p>كم رابطة σ في جزيء الإيثين C₂H₄؟</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s5">
+  <div class="sec-head"><span class="num">5</span><h2 id="s5">البنزين C₆H₆</h2></div>
+  <div class="grid2">
+    <div class="box lav">
+      <svg class="pic" viewBox="0 0 200 150" aria-hidden="true">
+        <ellipse cx="100" cy="52" rx="62" ry="14" fill="var(--orbB)" fill-opacity=".35"/>
+        <ellipse cx="100" cy="98" rx="62" ry="14" fill="var(--orbB)" fill-opacity=".35"/>
+        <polygon points="60,75 80,61 120,61 140,75 120,89 80,89" fill="none" stroke="var(--mix)" stroke-width="4" stroke-linejoin="round"/>
+        <g stroke="var(--muted)" stroke-width="2"><line x1="60" y1="75" x2="36" y2="75"/><line x1="140" y1="75" x2="164" y2="75"/><line x1="80" y1="61" x2="70" y2="48"/><line x1="120" y1="61" x2="130" y2="48"/><line x1="80" y1="89" x2="70" y2="102"/><line x1="120" y1="89" x2="130" y2="102"/></g>
+        <g font-size="11" font-weight="700" fill="var(--text)" text-anchor="middle" font-family="Noto Serif, Georgia, serif"><text x="28" y="79">H</text><text x="172" y="79">H</text><text x="66" y="44">H</text><text x="134" y="44">H</text><text x="66" y="114">H</text><text x="134" y="114">H</text><text x="100" y="30" font-size="14">π</text><text x="100" y="134" font-size="14">π</text></g>
+      </svg>
+      <p class="muted" style="font-size:13px;margin-top:6px">حلقة سداسية مستوية، وسحابة π فوقها وتحتها.</p>
+    </div>
+    <div class="box sky"><h3>خواصّه</h3>
+      <ul class="pts">
+        <li style="--b:var(--sc)">أصل <b>المركّبات الأروماتية</b>، صيغته الجزيئية <b class="ltr">C₆H₆</b>.</li>
+        <li style="--b:var(--sc)">كل كربون يعمل <b>تهجين sp²</b>، والزوايا متساوية <b class="ltr">120°</b>.</li>
+        <li style="--b:var(--sc)">ذرّات الكربون الست <b>متكافئة</b> في طول الرابطة والزوايا، والهيدروجين موزّع بالتساوي.</li>
+        <li style="--b:var(--sc)">روابط σ قوية تبقي الحلقة متماسكة.</li>
+        <li style="--b:var(--sc)">تداخل 2p<sub>z</sub> جنباً إلى جنب يؤدي إلى <b>عدم تمركز تام</b> لنظام π، فيصير الجزيء <b>مستقراً</b>.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="tip" style="margin-top:12px"><b>تشبيه:</b> إلكترونات π في البنزين مثل ماي في مجرى دائري: ما هي محبوسة بين ذرّتين، تتوزّع على الحلقة كلها، وهذا يخلّي الجزيء هادئاً ومستقراً.</p>
+
+  <div class="act" data-act="match" data-key="match"
+       data-pairs='[["الميثان CH₄","sp³ · زاوية 109.5°"],["الإيثين C₂H₄","sp² · رابطة ثنائية"],["الإيثاين C₂H₂","sp · خطّي 180°"],["البنزين C₆H₆","sp² · حلقة سداسية مستوية"]]'
+       data-ok="كل الأزواج صحيحة! الميثان sp³، الإيثين والبنزين sp²، الإيثاين sp.">
+    <h3>وصّل الجزيء بتهجينه <span class="k">نشاط</span></h3>
+    <p>اختر الجزيء من اليمين، ثم وصفه من اليسار.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s6">
+  <div class="sec-head"><span class="num">6</span><h2 id="s6">سؤال محلول: حلّل الإيثاين</h2></div>
+  <div class="qbox">في جزيء الإيثاين C₂H₂: ما نوع تهجين الكربون؟ وما الزاوية؟ وكم رابطة σ و π؟</div>
+  <div class="row"><button class="lite" id="hideSol" type="button" aria-pressed="false">أخفِ الحل وجرّب أولاً</button></div>
+  <ol class="steps" id="steps">
+    <li><span><b>ارسم الجزيء:</b> <span class="ltr">H–C≡C–H</span>. كل كربون يرتبط بذرّتين فقط.</span></li>
+    <li><span><b>ذرّتان = فلكان مهجّنان:</b> 2s مع 2p واحد ← <b>sp</b>، ويبقى 2p<sub>y</sub> و 2p<sub>z</sub> غير مهجّنين.</span></li>
+    <li><span><b>الشكل:</b> فلكان sp متعاكسان ← جزيء خطّي، الزاوية <b class="ltr">180°</b>.</span></li>
+    <li><span><b>العدّ:</b> σ بين الكربونين + σ لكل <span class="ltr">C–H</span> (اثنتان) = 3σ. وفلكا p من كل كربون جانبياً = 2π. <span class="ans">sp، 180°، 3σ و 2π.</span></span></li>
+  </ol>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">7</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sd">
+  <div class="sec-head"><span class="num">8</span><h2 id="sd">في حياتك</h2></div>
+  <div class="life">
+    <div class="card"><h3>غاز الطبخ</h3><p>الميثان المكوّن الرئيسي للغاز الطبيعي: كربون sp³ وأربعة هيدروجين على رؤوس رباعي السطوح.</p></div>
+    <div class="card"><h3>نضج الفواكه</h3><p>الإيثين (الإيثيلين) غاز تطلقه الفواكه فيسرّع نضجها، ورابطته الثنائية فيها σ و π.</p></div>
+    <div class="card"><h3>لحام الحديد</h3><p>الأسيتيلين (الإيثاين) يحترق بلهب حار جداً في ورش اللحام، وجزيئه خطّي بثلاثية.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">9</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>عند اندماج فلك s مع فلكين p ينتج:</p>
+      <div class="opts"><button>فلكان sp</button><button data-ok>ثلاثة أفلاك sp²</button><button>أربعة أفلاك sp³</button></div>
+      <p class="why" hidden>الصحيح: 1 + 2 = 3 أفلاك من نوع sp². فلك s مع فلك p واحد يعطي فلكين sp.</p></div>
+    <div class="q"><p>الرابطة π في جزيء الإيثين تنتج من:</p>
+      <div class="opts"><button>تداخل فلكي sp² رأساً لرأس</button><button>تداخل sp² مع 1s للهيدروجين</button><button data-ok>تداخل فلكي 2p<sub>z</sub> غير المهجّنين جنباً إلى جنب</button></div>
+      <p class="why" hidden>الصحيح: π من أفلاك p غير المهجّنة جانبياً. تداخل الأفلاك المهجّنة رأساً لرأس يعطي σ دائماً.</p></div>
+    <div class="q"><p>الزاوية بين الروابط في الميثان CH₄ تساوي:</p>
+      <div class="opts"><button data-ok>109.5°</button><button>120°</button><button>180°</button></div>
+      <p class="why" hidden>الصحيح: 109.5° لأن أفلاك sp³ تشير نحو رؤوس رباعي السطوح. 120° للـ sp² و 180° للـ sp.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li><b>التهجين</b>: اندماج أفلاك مختلفة (عادة s و p) لتكوين أفلاك مهجّنة متماثلة خواصّها وسطية، وعددها = عدد الأفلاك المندمجة.</li>
+      <li><b>sp³</b> 109.5° (CH₄)، <b>sp²</b> 120° (C₂H₄ والبنزين)، <b>sp</b> 180° (C₂H₂).</li>
+      <li>الأفلاك المهجّنة تعطي σ، وأفلاك p غير المهجّنة جانبياً تعطي π: الإيثين σ + π بين الكربونين، والإيثاين σ + 2π.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الكيمياء، الصف الحادي عشر، الوحدة الأولى، ص 20 إلى 24</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"chem-u1-2-1"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+var H=3, stp=$("stp"), BX=$("boxes"), GE=$("geo");
+var STEPS=["الوضع الأدنى","نقل إلكترون","التهجين"];
+var NAME={3:"sp³",2:"sp²",1:"sp"};
+function P(a){return '2p<tspan font-size="10" dy="4">'+a+'</tspan><tspan dy="-4">\u200b</tspan>';}
+/* one orbital box: e = number of electrons (0,1,2), col = fill token */
+function box(x,e,col,lab){
+  var s='<rect x="'+x+'" y="34" width="36" height="36" rx="8" fill="'+col+'" fill-opacity=".35" stroke="var(--text)" stroke-width="2"/>';
+  if(e>=1)s+='<path d="M'+(x+(e===2?12:18))+' 62 V42 m-5 6 l5 -6 l5 6" stroke="var(--text)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>';
+  if(e===2)s+='<path d="M'+(x+24)+' 42 V62 m-5 -6 l5 6 l5 -6" stroke="var(--text)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>';
+  s+='<text x="'+(x+18)+'" y="90" font-size="13" text-anchor="middle" fill="var(--text)" direction="ltr" font-family="Noto Serif, Georgia, serif">'+lab+'</text>';
+  return s;
+}
+function boxes(){
+  var s=+stp.value, h='<text x="16" y="58" font-size="16" font-weight="700" fill="var(--text)" font-family="Noto Serif, Georgia, serif" direction="ltr">C</text>';
+  var A="var(--orbA)",B="var(--orbB)",M="var(--mix)";
+  if(s<2){
+    h+=box(60,s===0?2:1,A,"2s");
+    h+=box(150,1,B,P("x"))+box(194,1,B,P("y"))+box(238,s===0?0:1,B,P("z"));
+    h+='<text x="330" y="58" font-size="14" font-weight="700" fill="var(--text)" text-anchor="middle">'+(s===0?"2 منفردة":"4 منفردة")+'</text>';
+  } else {
+    var x=40,i,n=H+1;
+    for(i=0;i<n;i++){h+=box(x,1,M,NAME[H]);x+=42;}
+    x+=26;
+    var rest=3-H, pl=[P("z"),P("y")];
+    for(i=0;i<rest;i++){h+=box(x,1,B,pl[rest-1-i]);x+=42;}
+    h+='<text x="'+(40+n*42/2-3)+'" y="112" font-size="12" text-anchor="middle" fill="var(--muted)">مهجّنة ('+n+')</text>';
+    if(rest)h+='<text x="'+(40+n*42+26+rest*42/2-3)+'" y="112" font-size="12" text-anchor="middle" fill="var(--muted)">غير مهجّنة ('+rest+')</text>';
+  }
+  BX.innerHTML=h;
+}
+function lobe(cx,cy,ang,L,W,col,op){
+  var r=ang*Math.PI/180, x=cx+Math.cos(r)*L/2, y=cy+Math.sin(r)*L/2;
+  return '<ellipse cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" rx="'+(L/2)+'" ry="'+W+'" transform="rotate('+ang+' '+x.toFixed(1)+' '+y.toFixed(1)+')" fill="'+col+'" fill-opacity="'+(op||.55)+'"/>';
+}
+function dumb(cx,cy,ang,L,W,col,op){return lobe(cx,cy,ang,L,W,col,op)+lobe(cx,cy,ang+180,L,W,col,op);}
+function arc(cx,cy,a1,a2,r,txt,tx,ty){
+  var p1=[cx+r*Math.cos(a1*Math.PI/180),cy+r*Math.sin(a1*Math.PI/180)],p2=[cx+r*Math.cos(a2*Math.PI/180),cy+r*Math.sin(a2*Math.PI/180)];
+  var large=Math.abs(a2-a1)>180?1:0;
+  return '<path d="M'+p1[0].toFixed(1)+' '+p1[1].toFixed(1)+' A'+r+' '+r+' 0 '+large+' 1 '+p2[0].toFixed(1)+' '+p2[1].toFixed(1)+'" fill="none" stroke="var(--text)" stroke-width="2" stroke-dasharray="4 4"/>'+
+    '<text x="'+tx+'" y="'+ty+'" font-size="15" font-weight="700" fill="var(--text)" text-anchor="middle" direction="ltr">'+txt+'</text>';
+}
+function geo(){
+  var s=+stp.value, h="", cx=200, cy=112;
+  if(s<2){
+    h+='<circle cx="80" cy="'+cy+'" r="36" fill="var(--orbA)" fill-opacity=".5"/><circle cx="80" cy="'+cy+'" r="4" fill="var(--nuc)"/>';
+    h+='<text x="80" y="'+(cy+62)+'" font-size="14" text-anchor="middle" fill="var(--text)" direction="ltr">2s</text>';
+    h+=dumb(270,cy,0,58,16,"var(--orbB)",.45)+dumb(270,cy,90,58,16,"var(--orbB)",.45)+dumb(270,cy,135,46,13,"var(--orbB)",.3)+'<circle cx="270" cy="'+cy+'" r="4" fill="var(--nuc)"/>';
+    h+='<text x="270" y="'+(cy+86)+'" font-size="14" text-anchor="middle" fill="var(--text)" direction="ltr">'+P("x")+' '+P("y")+' '+P("z")+'</text>';
+    h+='<text x="200" y="26" font-size="14" font-weight="700" text-anchor="middle" fill="var(--text)">أفلاك مختلفة في الشكل والطاقة</text>';
+  } else if(H===3){
+    h+=lobe(cx,cy,-90,78,18,"var(--mix)")+lobe(cx,cy,20,74,17,"var(--mix)")+lobe(cx,cy,160,74,17,"var(--mix)")+lobe(cx,cy,95,56,15,"var(--mix)",.32);
+    h+='<circle cx="'+cx+'" cy="'+cy+'" r="5" fill="var(--nuc)"/>';
+    h+=arc(cx,cy,-90,20,46,"109.5°",268,74);
+    h+='<text x="200" y="222" font-size="14" font-weight="700" text-anchor="middle" fill="var(--text)">أربعة sp³ نحو رؤوس رباعي السطوح</text>';
+  } else if(H===2){
+    h+='<ellipse cx="'+cx+'" cy="'+cy+'" rx="150" ry="44" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="3 5"/>';
+    h+=dumb(cx,cy,90,64,16,"var(--orbB)",.4);
+    /* the three sp2 lobes lie in the dashed plane seen at a slant: 0, 120 and 240 degrees in the plane */
+    h+=lobe(cx,cy,0,100,14,"var(--mix)")+lobe(cx,cy,153,66,12,"var(--mix)")+lobe(cx,cy,207,66,12,"var(--mix)");
+    h+='<circle cx="'+cx+'" cy="'+cy+'" r="5" fill="var(--nuc)"/>';
+    h+='<text x="262" y="'+(cy+40)+'" font-size="15" font-weight="700" fill="var(--text)" text-anchor="middle" direction="ltr">120°</text>';
+    h+='<text x="'+(cx+30)+'" y="'+(cy-58)+'" font-size="13" fill="var(--text)" direction="ltr">'+P("z")+'</text>';
+    h+='<text x="200" y="222" font-size="14" font-weight="700" text-anchor="middle" fill="var(--text)">ثلاثة sp² في مستوى واحد + فلك p باقٍ</text>';
+  } else {
+    h+=dumb(cx,cy,90,60,15,"var(--orbB)",.4)+dumb(cx,cy,135,48,12,"var(--orbB)",.28);
+    h+=lobe(cx,cy,0,96,17,"var(--mix)")+lobe(cx,cy,180,96,17,"var(--mix)");
+    h+='<circle cx="'+cx+'" cy="'+cy+'" r="5" fill="var(--nuc)"/>';
+    h+='<text x="322" y="'+(cy-26)+'" font-size="15" font-weight="700" fill="var(--text)" text-anchor="middle" direction="ltr">180°</text>';
+    h+='<text x="200" y="222" font-size="14" font-weight="700" text-anchor="middle" fill="var(--text)">فلكان sp على خط + فلكا p باقيان</text>';
+  }
+  GE.innerHTML=h;
+}
+var MSG={
+ 0:"الوضع الأدنى: 2s فيه زوج، و2p فيه إلكترونان منفردان فقط. نظرية رابطة التكافؤ تتوقّع رابطتين بس!",
+ 1:"طاقة كافية تنقل إلكتروناً من 2s إلى 2pz: صار 2s¹2p³، أربعة منفردة. لكنها مختلفة في الطاقة والشكل. حرّك للخطوة الأخيرة.",
+ 3:"دمجنا 2s مع ثلاثة 2p: أربعة أفلاك sp³ متماثلة نحو رؤوس رباعي السطوح، الزاوية 109.5°. مثال: الميثان CH₄ (4σ).",
+ 2:"دمجنا 2s مع فلكين 2p: ثلاثة أفلاك sp² في مستوى، الزاوية 120°، ويبقى 2pz للرابطة π. مثال: الإيثين C₂H₄.",
+ 1.5:"دمجنا 2s مع فلك 2p واحد: فلكان sp على خط مستقيم، الزاوية 180°، ويبقى فلكان p لرابطتي π. مثال: الإيثاين C₂H₂."
+};
+function draw(){
+  var s=+stp.value; boxes(); geo();
+  $("stL").textContent=s<2?STEPS[s]:STEPS[2]+": "+NAME[H];
+  var m=$("hMsg"); m.textContent=s<2?MSG[s]:MSG[H===1?1.5:H]; m.className=s===2?"msg ok":"msg";
+  [].forEach.call(document.querySelectorAll("[data-h]"),function(b){b.setAttribute("aria-pressed",String(+b.dataset.h===H));});
+}
+[].forEach.call(document.querySelectorAll("[data-h]"),function(b){b.addEventListener("click",function(){H=+b.dataset.h;if(+stp.value<2)stp.value=2;draw();});});
+stp.addEventListener("input",draw);
+draw();
+})();
+</script>
+</body>
+</html>

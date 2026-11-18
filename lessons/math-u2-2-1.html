@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="math">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مجال الدالة · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+body{--okc:#1f9e6e;--noc:#e0485f;--line:#8b86b3;--plane:#f1edff;--grid:#ddd5fb}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--okc:#5fd3a2;--noc:#ff7d8f;--line:#a7a2cf;--plane:#24203d;--grid:#363057}}
+:root[data-theme="dark"] body{--okc:#5fd3a2;--noc:#ff7d8f;--line:#a7a2cf;--plane:#24203d;--grid:#363057}
+.stage{display:block;width:100%;height:auto;border-radius:20px;background:var(--plane);box-shadow:var(--press);margin-top:10px}
+.fbtns{display:flex;flex-wrap:wrap;gap:8px}
+.fbtns .tg{font-family:"Noto Serif",Georgia,serif;font-style:italic;direction:ltr}
+.out{margin-top:10px;text-align:center;font-size:1.1rem;min-height:2.4em}
+.out .f{font-size:1.3rem}
+.dom{display:inline-block;margin-top:4px;padding:4px 12px;border-radius:14px;background:var(--card);box-shadow:var(--clay-sm)}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.rule{padding:14px 16px;border-radius:22px;background:var(--card);box-shadow:var(--clay-sm);overflow-x:auto}
+.rule h3{margin:0 0 6px;font-size:1.02rem}
+.rule .f{font-size:1.2rem}
+.rule p{margin:6px 0 0;font-size:13.5px;color:var(--muted)}
+.rule:nth-child(4n+1){background:var(--p-sky)}.rule:nth-child(4n+2){background:var(--p-pink)}.rule:nth-child(4n+3){background:var(--p-lav)}.rule:nth-child(4n+4){background:var(--p-mint)}
+.arrow{display:block;width:100%;max-width:420px;height:auto;margin:10px auto 0;border-radius:20px;background:var(--plane)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-top:10px}
+.facts div{padding:8px 10px;border-radius:14px;background:var(--card);box-shadow:var(--clay-sm);text-align:center;font-size:14px}
+.facts b{display:block;font-family:"Noto Serif",Georgia,serif;direction:ltr;unicode-bidi:isolate;font-size:1.05rem;color:var(--ink)}
+.bk{display:grid;grid-template-columns:1fr;gap:8px;margin-top:10px}
+.bk div{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;padding:8px 12px;border-radius:16px;background:var(--card);box-shadow:var(--clay-sm)}
+.bk .f{font-size:1.1rem}
+.br{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
+.br .box{text-align:center}
+.act .gap{direction:ltr;unicode-bidi:isolate}
+.br .box b{display:block;font-family:"Noto Serif",Georgia,serif;font-size:1.3rem;direction:ltr;color:var(--ink)}
+</style>
+</head>
+<body style="--sc:#8a63f2">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الرياضيات</span><span class="chip">الدرس 2-1 · ص 44 إلى 49</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الثانية: الدوال الحقيقية</p>
+  <h1 id="t">مجال الدالة</h1>
+  <p>الدالة مثل آلة: تدخل فيها <b>x</b> وتطلع لك قيمة <b>y</b> واحدة. بس بعض الآلات <mark>ترفض بعض الأرقام: آلة الجذر التربيعي ترفض السالب، وآلة الكسر ترفض اللي يصفّر المقام</mark>. المجال هو قائمة الأرقام اللي تقبلها الآلة.</p>
+</section>
+
+<section class="panel" id="lab-sec" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">آلة الدالة</h2><span class="legend"><span><i style="background:var(--okc)"></i>مقبول (داخل المجال)</span><span><i style="background:var(--noc)"></i>مرفوض</span></span></div>
+  <div class="fbtns" role="group" aria-label="اختر الدالة">
+    <button class="tg" type="button" data-f="0" aria-pressed="true">x² − 3</button>
+    <button class="tg" type="button" data-f="1" aria-pressed="false">√(x − 2)</button>
+    <button class="tg" type="button" data-f="2" aria-pressed="false">(x + 1) ÷ (x − 3)</button>
+    <button class="tg" type="button" data-f="3" aria-pressed="false">∛(x − 5)</button>
+    <button class="tg" type="button" data-f="4" aria-pressed="false">2 ÷ √(−x)</button>
+    <button class="tg" type="button" data-f="5" aria-pressed="false">1 ÷ (x² − 4)</button>
+  </div>
+  <svg class="stage" id="nl" viewBox="0 0 400 96" role="img" aria-label="خط الأعداد ومجال الدالة"></svg>
+  <div class="controls"><div class="ctl"><label for="xs">حرّك x <b id="xL">x = 0</b></label><input type="range" id="xs" min="-6" max="6" step="0.5" value="0" aria-describedby="xL"></div></div>
+  <div class="out" id="out" aria-live="polite"></div>
+  <p class="cap">جرّب تحط x على الأرقام الحرجة: 2 مع الجذر، 3 مع الكسر، 0 مع الجذر اللي في المقام. وشوف الفرق بين النقطة المملوءة (مقبولة) والفارغة (مرفوضة).</p>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">رموز الدرس ومصطلحاته</h2></div>
+  <div class="syms">
+    <div class="sym"><span class="bub sm"><span>(a, b)</span></span><div><h3>الزوج المرتب <span class="en">Ordered pair</span></h3><p>a المسقط الأول (السيني)، و b المسقط الثاني (الصادي).</p><span class="hook">الأول يدخل، الثاني يطلع.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub"><span>r</span></span><div><h3>العلاقة <span class="en">Relation</span></h3><p>أي مجموعة من الأزواج المرتبة في المستوى الإحداثي.</p><span class="hook">r من relation: مجرد ربط، بدون شروط.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span>D</span></span><div><h3>المجال <span class="en">Domain</span></h3><p>مجموعة المساقط الأولى: كل قيم x اللي تعطي y حقيقية.</p><span class="hook">D من Door: الباب اللي تدخل منه x.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span>Y</span></span><div><h3>المجال المقابل <span class="en">Co-Domain</span></h3><p>المجموعة اللي تنتمي لها المخرجات المسموحة.</p><span class="hook">"مقابل" الباب: الصالة اللي ممكن توصلها.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub sm"><span>المدى</span></span><div><h3>المدى <span class="en">Range</span></h3><p>مجموعة المساقط الثانية الفعلية، وهي جزء من المجال المقابل.</p><span class="hook">المدى = اللي وصل فعلاً.</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub sm"><span>f(x)</span></span><div><h3>الدالة <span class="en">Function</span></h3><p>علاقة كل عنصر في مجالها مرتبط بعنصر واحد فقط من المجال المقابل.</p><span class="hook">كل مدخل له مخرج واحد، لا أكثر ولا أقل.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub"><span>|</span></span><div><h3>اختبار المستقيم الرأسي <span class="en">Vertical Line Test</span></h3><p>كل مستقيم رأسي يقطع البيان في نقطة واحدة على الأكثر ⇐ دالة.</p><span class="hook">مسطرة واقفة تمشي على الرسم.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub sm"><span>d(x)=0</span></span><div><h3>أصفار المقام <span class="en">Zeros of Denominator</span></h3><p>قيم x اللي تجعل المقام صفراً، فتُستبعد من المجال.</p><span class="hook">القسمة على صفر ممنوعة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub sm"><span>ℝ ∩ ∪</span></span><div><h3>ℝ والتقاطع والاتحاد</h3><p>ℝ الأعداد الحقيقية. ∩ المشترك بين مجموعتين. ∪ ضمّ فترتين. <span class="f" style="font-size:1rem">ℝ/{4}</span> أي ℝ عدا 4.</p><span class="hook">∩ مثل جسر يمسك المشترك فقط.</span></div></div>
+  </div>
+  <div class="br">
+    <div class="box sky"><b>[a, ∞)</b>القوس المربع: a داخلة (≥)</div>
+    <div class="box pink"><b>(a, ∞)</b>القوس الهلالي: a خارجة (&gt;). و ∞ دائماً بقوس هلالي</div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">العلاقة والدالة</h2></div>
+  <p>من كتابك: اربط كل صديق <b>بسنة ولادته</b>: كل اسم يرتبط بسنة واحدة بالضبط. أما لو ربطته <b>بالرياضات اللي يحبها</b>: ممكن اسم يرتبط بأكثر من رياضة، أو ما يرتبط بأي رياضة. الأول <b>دالة</b>، والثاني <b>علاقة فقط</b>.</p>
+  <div class="qbox"><b>الدالة:</b> عندما يكون <b>كل</b> عنصر في المجال مرتبطاً بعنصر <b>واحد فقط</b> من المجال المقابل. وإذا كان المجال والمجال المقابل مجموعتين جزئيتين من الأعداد الحقيقية، تسمى <b>دالة حقيقية</b>.</div>
+
+  <div class="panel" style="margin:14px 0">
+    <div class="lab-head"><h3 style="margin:0">مخطط سهمي من X إلى Y</h3><span class="legend">اضغط لتغيّر الأسهم</span></div>
+    <div class="btns" role="group" aria-label="حالات المخطط">
+      <button class="tg" type="button" data-s="0" aria-pressed="true">الأصل</button>
+      <button class="tg" type="button" data-s="1" aria-pressed="false">3 بسهمين</button>
+      <button class="tg" type="button" data-s="2" aria-pressed="false">4 بلا سهم</button>
+    </div>
+    <svg class="arrow" id="arr" viewBox="0 0 320 200" role="img" aria-label="مخطط سهمي"></svg>
+    <div class="facts" id="facts"></div>
+    <p class="msg" id="aMsg" aria-live="polite"></p>
+  </div>
+  <p class="tip">الفرق المهم: <b>المجال المقابل</b> هو المجموعة Y كاملة، و<b>المدى</b> هو اللي وصلته الأسهم فعلاً. هنا العنصر 6 في المجال المقابل لكن ما وصله سهم، فهو مو من المدى.</p>
+
+  <div class="act" data-act="sort" data-key="sort" data-bins='["دالة","ليست دالة"]'
+       data-items='[["⁦{(1, 2), (2, 4), (3, 6)}⁩",0],["⁦{(1, 5), (2, 5), (3, 5)}⁩",0],["⁦{(2, 1), (2, 3), (4, 5)}⁩",1],["⁦{(0, 0), (1, 1), (1, −1)}⁩",1],["عنصر من المجال لم يقترن بأي عنصر",1],["كل مستقيم رأسي يقطع البيان في نقطة واحدة على الأكثر",0]]'
+       data-ok="ممتاز! تكرار المخرج (مثل 5، 5، 5) مسموح. الممنوع: مدخل واحد بمخرجين، أو مدخل بلا مخرج.">
+    <h3>دالة أم لا؟ <span class="k">نشاط</span></h3>
+    <p>انتبه للمسقط الأول: هل يتكرّر بمخرج مختلف؟</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">اختبار المستقيم الرأسي</h2></div>
+  <p>لما تكون العلاقة <b>مرسومة</b> في المستوى الإحداثي، نمرّر مستقيمات رأسية (عمودية) عليها:</p>
+  <div class="qbox">إذا تقاطع <b>كل</b> مستقيم رأسي مع بيان علاقة ما <b>بنقطة واحدة على الأكثر</b>، فإن هذه العلاقة تكون <b>دالة</b>.</div>
+  <div class="panel" style="margin:14px 0">
+    <div class="lab-head"><h3 style="margin:0">مرّر المسطرة</h3><span class="legend"><span><i style="background:var(--noc)"></i>المستقيم الرأسي</span></span></div>
+    <div class="btns" role="group" aria-label="اختر البيان">
+      <button class="tg" type="button" data-g="0" aria-pressed="true">قطع مكافئ ∪</button>
+      <button class="tg" type="button" data-g="1" aria-pressed="false">مستقيم مائل</button>
+      <button class="tg" type="button" data-g="2" aria-pressed="false">قطع مكافئ على جنبه</button>
+      <button class="tg" type="button" data-g="3" aria-pressed="false">دائرة</button>
+      <button class="tg" type="button" data-g="4" aria-pressed="false">منحنى متعرّج</button>
+    </div>
+    <svg class="stage" id="vlt" viewBox="0 0 400 240" role="img" aria-label="بيان علاقة ومستقيم رأسي متحرك"></svg>
+    <div class="controls"><div class="ctl"><label for="cx">مكان المستقيم <b id="cxL">x = 0</b></label><input type="range" id="cx" min="-6" max="6" step="0.1" value="0" aria-describedby="cxL"></div></div>
+    <p class="msg" id="vMsg" aria-live="polite"></p>
+  </div>
+  <p class="tip">يكفي مستقيم رأسي <b>واحد</b> يقطع البيان في نقطتين أو أكثر حتى نقول: البيان <b>لا يمثل دالة</b>.</p>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">مجال الدالة</h2></div>
+  <p>إذا كانت <span class="f" style="font-size:1.1rem">y = f(x)</span> دالة، فمجالها <b>D</b> هو مجموعة كل الأعداد الحقيقية اللي يأخذها المتغير x وينتج عنها قيم حقيقية للمتغير y. ونقول: الدالة <b>معرّفة على المجال D</b>.</p>
+  <p>عندنا "خطران" فقط يسرقون أرقاماً من المجال:</p>
+  <div class="grid2">
+    <div class="box pink"><h3>جذر زوجي (تربيعي)</h3><p>ما في جذر تربيعي حقيقي لعدد سالب، فالمجذور لازم <b>≥ 0</b> (موجب أو صفر).</p></div>
+    <div class="box lav"><h3>مقام</h3><p>القسمة على صفر ممنوعة، فنحذف <b>أصفار المقام</b>.</p></div>
+  </div>
+  <p style="margin-top:10px">أما كثيرات الحدود، والجذر التكعيبي (أي جذر فردي)، والقيمة المطلقة: ما تسرق شي.</p>
+
+  <h3 style="margin:18px 0 8px">القواعد الثماني</h3>
+  <div class="rules">
+    <div class="rule"><h3>1) كثيرة الحدود</h3><span class="f">D = ℝ</span><p>مثل <span dir="ltr">x² + 3x + 1</span></p></div>
+    <div class="rule"><h3>2) الحدودية النسبية</h3><span class="f">D = ℝ / {أصفار المقام}</span><p>البسط والمقام كثيرتا حدود.</p></div>
+    <div class="rule"><h3>3) القيمة المطلقة</h3><span class="f">f(x) = |x| : D = ℝ</span></div>
+    <div class="rule"><h3>4) جذر دليله n زوجي</h3><span class="f">f(x) = <span class="rad"><i>n</i><span>g(x)</span></span></span><p>المجال: قيم x اللي تحقق <span dir="ltr">g(x) ≥ 0</span></p></div>
+    <div class="rule"><h3>5) جذر دليله n فردي</h3><span class="f">f(x) = <span class="rad"><i>n</i><span>g(x)</span></span></span><p>المجال = مجال g</p></div>
+    <div class="rule"><h3>6) جمع أو طرح</h3><span class="f">f = g ± h : D<sub>f</sub> = D<sub>g</sub> ∩ D<sub>h</sub></span></div>
+    <div class="rule"><h3>7) ضرب</h3><span class="f">f = g · h : D<sub>f</sub> = D<sub>g</sub> ∩ D<sub>h</sub></span></div>
+    <div class="rule"><h3>8) قسمة</h3><span class="f">f = <span class="frac"><span>g</span><span>h</span></span> : (D<sub>g</sub> ∩ D<sub>h</sub>) / {h(x) = 0}</span><p>المشترك، عدا أصفار المقام <span dir="ltr">(h(x) ≠ 0)</span></p></div>
+  </div>
+
+  <div class="act" data-act="gap" data-key="gap" data-ok="صح! ⁦6 − 3x ≥ 0⁩ يعني ⁦3x ≤ 6⁩ أي ⁦x ≤ 2⁩، و 2 داخلة لأن ⁦√0 = 0⁩، فالمجال ⁦(−∞, 2]⁩.">
+    <h3>أكمل الناقص <span class="k">نشاط</span></h3>
+    <p>مجال <span class="f" style="font-size:1.15rem">f(x) = <span class="rad"><span>6 − 3x</span></span></span> هو <span class="gap">؟</span></p>
+    <div class="opts">
+      <button class="pc" data-no="جرّب ⁦x = 3⁩: ⁦6 − 9 = −3⁩ سالب، فـ 3 مرفوضة. الأرقام المقبولة هي الصغيرة.">[2, ∞)</button>
+      <button class="pc" data-ok>(−∞, 2]</button>
+      <button class="pc" data-no="قريب! لكن ⁦x = 2⁩ تعطي ⁦√0 = 0⁩ وهي قيمة حقيقية، فـ 2 داخلة بقوس مربع.">(−∞, 2)</button>
+    </div>
+  </div>
+
+  <h3 style="margin:20px 0 8px">من أمثلة الكتاب: الناتج النهائي</h3>
+  <div class="bk">
+    <div><span class="f">2x + 1 ، x² + 3x + 1</span><span>ℝ (كثيرتا حدود)</span></div>
+    <div><span class="f"><span class="rad"><span>3x − 4</span></span></span><span class="f" style="font-size:1.05rem">3x − 4 ≥ 0 ⇒ [<span class="frac"><span>4</span><span>3</span></span>, ∞)</span></div>
+    <div><span class="f"><span class="frac"><span>x + 2</span><span>x − 4</span></span></span><span class="f" style="font-size:1.05rem">ℝ/{4} = (−∞, 4) ∪ (4, ∞)</span></div>
+    <div><span class="f"><span class="rad"><i>3</i><span>2x + 1</span></span></span><span>ℝ (جذر تكعيبي)</span></div>
+    <div><span class="f"><span class="frac"><span><span class="rad"><span>3x − 4</span></span></span><span>x − 2</span></span></span><span class="f" style="font-size:1.05rem">[<span class="frac"><span>4</span><span>3</span></span>, 2) ∪ (2, ∞)</span></div>
+    <div><span class="f">2x³ − 4x − <span class="rad"><span>2x − 6</span></span></span><span class="f" style="font-size:1.05rem">ℝ ∩ [3, ∞) = [3, ∞)</span></div>
+    <div><span class="f">(2x² + x)<span class="rad"><span>8 − 2x</span></span></span><span class="f" style="font-size:1.05rem">ℝ ∩ (−∞, 4] = (−∞, 4]</span></div>
+    <div><span class="f"><span class="frac"><span><span class="rad"><i>3</i><span>1 + x</span></span></span><span>x² − 1</span></span></span><span class="f" style="font-size:1.05rem">ℝ − {−1, 1}</span></div>
+    <div><span class="f"><span class="frac"><span>4</span><span><span class="rad"><span>−x</span></span></span></span></span><span class="f" style="font-size:1.05rem">(ℝ ∩ (−∞, 0]) − {0} = (−∞, 0)</span></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s5">
+  <div class="sec-head"><span class="num">5</span><h2 id="s5">مثال محلول: جذر فوق مقام</h2></div>
+  <div class="qbox">أوجد مجال <span class="f">f(x) = <span class="frac"><span><span class="rad"><span>x + 2</span></span></span><span>x − 3</span></span></span></div>
+  <div class="row"><button class="lite" id="hideSol" type="button" aria-pressed="false">أخفِ الحل وجرّب أولاً</button></div>
+  <ol class="steps" id="steps">
+    <li><span>سمِّ الأجزاء: البسط <span class="f">g(x) = <span class="rad"><span>x + 2</span></span></span> والمقام <span class="f">h(x) = x − 3</span></span></li>
+    <li><span>مجال البسط (جذر زوجي): <span class="f">x + 2 ≥ 0 ⇒ x ≥ −2</span> أي <span class="f">[−2, ∞)</span></span></li>
+    <li><span>مجال المقام: <span class="f">ℝ</span> (كثيرة حدود)، وأصفاره: <span class="f">x − 3 = 0 ⇒ x = 3</span></span></li>
+    <li><span>القاعدة 8: <span class="f">([−2, ∞) ∩ ℝ) / {3}</span></span></li>
+    <li><span><span class="ans">المجال <span class="f" style="font-size:1.05rem">[−2, 3) ∪ (3, ∞)</span></span></span></li>
+  </ol>
+
+  <div class="act" data-act="type" data-key="type" data-answer="3" data-tol="0"
+       data-ok="صح! ⁦x² − 9 = 0⁩ إذن ⁦x = 3⁩ أو ⁦x = −3⁩، فالمجال ⁦ℝ − {−3, 3}⁩."
+       data-hint="صفّر المقام: ⁦x² − 9 = 0⁩، يعني ⁦x² = 9⁩. كم قيمة لـ x؟"
+       data-no="ليست هذه. ابحث عن العدد اللي مربّعه 9.">
+    <h3>اكتب الجواب <span class="k">نشاط</span></h3>
+    <p>مجال <span class="f" style="font-size:1.15rem">u(x) = <span class="frac"><span>5</span><span>x² − 9</span></span></span> هو <span class="f" style="font-size:1.1rem">ℝ − {−a, a}</span>. اكتب قيمة a الموجبة.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">6</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sd">
+  <div class="sec-head"><span class="num">7</span><h2 id="sd">في حياتك</h2></div>
+  <div class="life">
+    <div class="card"><h3>آلة البيع</h3><p>كل زر يعطيك منتجاً واحداً: دالة. زرّان يعطيان نفس العصير؟ عادي، ما زالت دالة. لكن زر يطلّع مرة عصير ومرة شوكولاتة: مو دالة.</p></div>
+    <div class="card"><h3>الآلة الحاسبة</h3><p>اكتب <span dir="ltr">√(−4)</span> أو <span dir="ltr">5 ÷ 0</span> وبتشوف Error: الرقم خارج المجال.</p></div>
+    <div class="card"><h3>البطاقة المدنية</h3><p>كل شخص له تاريخ ميلاد واحد: الربط من الشخص إلى تاريخ ميلاده دالة.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">8</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>بيان دائرة في المستوى الإحداثي:</p>
+      <div class="opts"><button>يمثل دالة لأنه منحنى مغلق</button><button data-ok>لا يمثل دالة لأن مستقيماً رأسياً يقطعه في نقطتين</button><button>يمثل دالة لأن كل مستقيم أفقي يقطعه في نقطتين</button></div>
+      <p class="why" hidden>الصحيح: مستقيم رأسي يمر داخل الدائرة يقطعها في نقطتين، فهي ليست دالة. الاختبار بالمستقيم الرأسي وليس الأفقي.</p></div>
+    <div class="q"><p>مجال <span class="f" style="font-size:1.1rem">g(x) = <span class="rad"><i>3</i><span>x − 7</span></span></span> هو:</p>
+      <div class="opts"><button>[7, ∞)</button><button>ℝ/{7}</button><button data-ok>ℝ</button></div>
+      <p class="why" hidden>الصحيح: ℝ. الجذر التكعيبي (دليل فردي) معرّف لكل عدد حقيقي، حتى السالب، فلا شروط.</p></div>
+    <div class="q"><p>مجال <span class="f" style="font-size:1.1rem">h(x) = <span class="frac"><span>x</span><span>x + 2</span></span></span> هو:</p>
+      <div class="opts"><button data-ok>ℝ/{−2}</button><button>ℝ/{2}</button><button>ℝ/{0}</button></div>
+      <p class="why" hidden>الصحيح: x + 2 = 0 ⇒ x = −2. نستبعد صفر المقام، والبسط ما يهمّ حتى لو صار صفراً.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li><b>الدالة</b>: كل عنصر في المجال مرتبط بعنصر <b>واحد فقط</b> من المجال المقابل. وبالرسم: كل مستقيم رأسي يقطع البيان في نقطة واحدة على الأكثر.</li>
+      <li><b>المجال</b>: كل قيم x اللي تعطي y حقيقية. كثيرة الحدود والجذر الفردي والقيمة المطلقة: ℝ. الجذر الزوجي: المجذور ≥ 0. الكسر: نحذف أصفار المقام.</li>
+      <li><b>الدوال المركّبة</b>: جمع أو طرح أو ضرب: تقاطع المجالين. قسمة: التقاطع عدا أصفار المقام.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الرياضيات، الصف الحادي عشر، الوحدة الثانية، ص 44 إلى 49</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"math-u2-2-1"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+function M(t){return String(t).replace(/\{\{(.+?)\}\}/g,'<bdi dir="ltr">$1</bdi>');}
+function n2(v){return (Math.round(v*100)/100).toString().replace("-","−");}
+function sel(group,attr,val){[].forEach.call(document.querySelectorAll("["+attr+"]"),function(b){b.setAttribute("aria-pressed",String(+b.getAttribute(attr)===val));});}
+
+/* ---- lab 1: function machine on a number line ---- */
+var I=Infinity;
+var FS=[
+ {nm:"f",tx:"x² − 3",ev:function(x){return x*x-3;},seg:[[-I,I,0,0]],dom:"ℝ",why:"كثيرة حدود: كل x مقبولة."},
+ {nm:"g",tx:"√(x − 2)",ev:function(x){return x-2>=0?Math.sqrt(x-2):null;},seg:[[2,I,1,0]],dom:"[2, ∞)",bad:"ما تحت الجذر سالب: {{x − 2 &lt; 0}}",why:"{{x − 2 ≥ 0 ⇒ x ≥ 2}}"},
+ {nm:"h",tx:"(x + 1) ÷ (x − 3)",ev:function(x){return x!==3?(x+1)/(x-3):null;},seg:[[-I,3,0,0],[3,I,0,0]],holes:[3],dom:"ℝ/{3} = (−∞, 3) ∪ (3, ∞)",bad:"المقام صفر: {{x − 3 = 0}}",why:"صفر المقام: {{x = 3}}"},
+ {nm:"u",tx:"∛(x − 5)",ev:function(x){return Math.cbrt(x-5);},seg:[[-I,I,0,0]],dom:"ℝ",why:"جذر تكعيبي: كل x مقبولة حتى لو المجذور سالب."},
+ {nm:"k",tx:"2 ÷ √(−x)",ev:function(x){return -x>0?2/Math.sqrt(-x):null;},seg:[[-I,0,0,0]],holes:[0],dom:"(−∞, 0)",bad:"",why:"{{−x ≥ 0 ⇒ x ≤ 0}}، و 0 صفر المقام فتُحذف"},
+ {nm:"m",tx:"1 ÷ (x² − 4)",ev:function(x){return Math.abs(x*x-4)>1e-9?1/(x*x-4):null;},seg:[[-I,-2,0,0],[-2,2,0,0],[2,I,0,0]],holes:[-2,2],dom:"ℝ − {−2, 2}",bad:"المقام صفر: {{x² − 4 = 0}}",why:"{{x² − 4 = 0 ⇒ x = ±2}}"}
+];
+var fi=0, nl=$("nl"), xs=$("xs");
+function px(x){return 200+x*30;}
+function drawNL(){
+  var F=FS[fi], x=+xs.value, h="", L=-6.6, R=6.6;
+  h+='<line x1="'+px(L)+'" y1="40" x2="'+px(R)+'" y2="40" stroke="var(--line)" stroke-width="2"/>';
+  for(var t=-6;t<=6;t++){h+='<line x1="'+px(t)+'" y1="34" x2="'+px(t)+'" y2="46" stroke="var(--line)" stroke-width="1.5"/>';
+    if(t%2===0||Math.abs(t)<=3)h+='<text x="'+px(t)+'" y="66" font-size="13" text-anchor="middle" fill="var(--muted)" direction="ltr">'+String(t).replace("-","−")+'</text>';}
+  F.seg.forEach(function(s){var a=Math.max(s[0],L),b=Math.min(s[1],R);
+    h+='<line x1="'+px(a)+'" y1="40" x2="'+px(b)+'" y2="40" stroke="var(--okc)" stroke-width="7" stroke-linecap="butt" opacity=".85"/>';
+    if(s[0]===-I)h+='<path d="M'+(px(L)-4)+' 40 l10 -7 v14z" fill="var(--okc)"/>';
+    if(s[1]===I)h+='<path d="M'+(px(R)+4)+' 40 l-10 -7 v14z" fill="var(--okc)"/>';
+    if(s[2])h+='<circle cx="'+px(s[0])+'" cy="40" r="7" fill="var(--okc)"/>';});
+  if(fi===1)h+='<line x1="'+px(L)+'" y1="40" x2="'+px(2)+'" y2="40" stroke="var(--noc)" stroke-width="3" stroke-dasharray="4 4" opacity=".7"/>';
+  if(fi===4)h+='<line x1="'+px(0)+'" y1="40" x2="'+px(R)+'" y2="40" stroke="var(--noc)" stroke-width="3" stroke-dasharray="4 4" opacity=".7"/>';
+  (F.holes||[]).forEach(function(c){h+='<circle cx="'+px(c)+'" cy="40" r="7" fill="var(--plane)" stroke="var(--noc)" stroke-width="3"/>';});
+  var v=F.ev(x), ok=v!==null&&isFinite(v);
+  h+='<path d="M'+px(x)+' 30 l-8 -14 h16z" fill="'+(ok?"var(--okc)":"var(--noc)")+'"/>';
+  h+='<text x="'+px(x)+'" y="88" font-size="13" font-weight="700" text-anchor="middle" fill="var(--text)" direction="ltr">x</text>';
+  nl.innerHTML=h;
+  $("xL").textContent="x = "+n2(x);
+  var o;
+  if(ok)o='<span class="f">'+F.nm+'('+n2(x)+') = '+n2(v)+'</span> <span style="color:var(--okc);font-weight:700">مقبولة ✓</span>';
+  else {var why=F.bad||(x===0?"المقام صفر: {{√0 = 0}}":"ما تحت الجذر سالب: {{−x &lt; 0}}");o='<span style="color:var(--noc);font-weight:700">مرفوضة ✗</span> '+M(why);}
+  o+='<br><span class="dom">المجال: <span class="f" style="font-size:1.05rem">'+F.dom+'</span></span> <span class="muted" style="font-size:13.5px">'+M(F.why)+'</span>';
+  $("out").innerHTML=o;
+}
+[].forEach.call(document.querySelectorAll("[data-f]"),function(b){b.addEventListener("click",function(){fi=+b.dataset.f;sel(0,"data-f",fi);drawNL();});});
+xs.addEventListener("input",drawNL);
+drawNL();
+
+/* ---- arrow diagram: domain, co-domain, range ---- */
+var XS=[1,2,3,4], YS=[3,5,6,7];
+var ST=[
+ {p:[[1,3],[2,5],[3,5],[4,7]],ok:true,msg:"كل عنصر في X له سهم واحد بالضبط: دالة. (2 و 3 يروحون لنفس العدد 5، وهذا مسموح.)"},
+ {p:[[1,3],[2,5],[3,5],[3,6],[4,7]],ok:false,msg:"العنصر 3 من المجال اقترن بعنصرين (5 و 6): ليست دالة."},
+ {p:[[1,3],[2,5],[3,5]],ok:false,msg:"العنصر 4 من المجال لم يقترن بأي عنصر: ليست دالة."}
+];
+var si=0;
+function drawArr(){
+  var S=ST[si], h="", yx=function(i){return 40+i*40;};
+  h+='<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="var(--sc)"/></marker></defs>';
+  h+='<ellipse cx="70" cy="100" rx="40" ry="92" fill="var(--card)" stroke="var(--okc)" stroke-width="2"/><ellipse cx="250" cy="100" rx="40" ry="92" fill="var(--card)" stroke="var(--okc)" stroke-width="2"/>';
+  h+='<text x="70" y="20" font-size="16" font-weight="700" text-anchor="middle" fill="var(--ink)">X</text><text x="250" y="20" font-size="16" font-weight="700" text-anchor="middle" fill="var(--ink)">Y</text>';
+  XS.forEach(function(v,i){h+='<text x="70" y="'+(yx(i)+6)+'" font-size="17" font-weight="700" text-anchor="middle" fill="var(--text)">'+v+'</text>';});
+  YS.forEach(function(v,i){h+='<text x="250" y="'+(yx(i)+6)+'" font-size="17" font-weight="700" text-anchor="middle" fill="var(--text)">'+v+'</text>';});
+  S.p.forEach(function(q){var a=XS.indexOf(q[0]),b=YS.indexOf(q[1]);
+    h+='<line x1="84" y1="'+yx(a)+'" x2="232" y2="'+yx(b)+'" stroke="var(--sc)" stroke-width="2.5" marker-end="url(#ah)"/>';});
+  if(si===2)h+='<circle cx="70" cy="'+yx(3)+'" r="14" fill="none" stroke="var(--noc)" stroke-width="2.5"/>';
+  if(si===1)h+='<circle cx="70" cy="'+yx(2)+'" r="14" fill="none" stroke="var(--noc)" stroke-width="2.5"/>';
+  $("arr").innerHTML=h;
+  var rng=[];S.p.forEach(function(q){if(rng.indexOf(q[1])<0)rng.push(q[1]);});rng.sort(function(a,b){return a-b;});
+  var pairs=S.p.map(function(q){return "("+q[0]+", "+q[1]+")";}).join(", ");
+  $("facts").innerHTML='<div>المجال<b>{1, 2, 3, 4}</b></div><div>المجال المقابل<b>{3, 5, 6, 7}</b></div><div>المدى<b>{'+rng.join(", ")+'}</b></div><div style="grid-column:1/-1">الأزواج المرتبة<b style="font-size:.95rem;white-space:normal">r = {'+pairs+'}</b></div>';
+  var m=$("aMsg"); m.textContent=S.msg; m.className=S.ok?"msg ok":"msg";
+}
+[].forEach.call(document.querySelectorAll("[data-s]"),function(b){b.addEventListener("click",function(){si=+b.dataset.s;sel(0,"data-s",si);drawArr();});});
+drawArr();
+
+/* ---- vertical line test ---- */
+var U=28, CX=200, CY=120;
+function gx(x){return CX+x*U;} function gy(y){return CY-y*U;}
+function curve(fn,a,b,n){var p=[];for(var i=0;i<=n;i++){p.push(fn(a+(b-a)*i/n));}return p;}
+var GS=[
+ function(){return [curve(function(x){return [x,0.4*x*x-3.3];},-4.4,4.4,160)];},
+ function(){return [curve(function(x){return [x,0.55*x+0.4];},-6.5,6.5,4)];},
+ function(){return [curve(function(y){return [0.5*y*y-3,y];},-3.9,3.9,160)];},
+ function(){return [curve(function(t){return [3*Math.cos(t),3*Math.sin(t)];},0,2*Math.PI,240)];},
+ function(){return [curve(function(y){return [0.9*(y*y*y-3*y),y];},-2.35,2.35,240)];}
+];
+var gi=0, cxs=$("cx"), vs=$("vlt");
+function hits(P,c){var out=[];
+  P.forEach(function(pts){for(var i=0;i<pts.length-1;i++){var a=pts[i],b=pts[i+1];
+    if((a[0]-c)*(b[0]-c)<=0&&a[0]!==b[0]){var t=(c-a[0])/(b[0]-a[0]),y=a[1]+t*(b[1]-a[1]);
+      if(!out.some(function(z){return Math.abs(z-y)<0.08;}))out.push(y);}}});
+  return out;}
+function drawV(){
+  var P=GS[gi](), c=+cxs.value, h="";
+  for(var i=-7;i<=7;i++)h+='<line x1="'+gx(i)+'" y1="0" x2="'+gx(i)+'" y2="240" stroke="var(--grid)" stroke-width="1"/>';
+  for(var j=-4;j<=4;j++)h+='<line x1="0" y1="'+gy(j)+'" x2="400" y2="'+gy(j)+'" stroke="var(--grid)" stroke-width="1"/>';
+  h+='<line x1="0" y1="'+CY+'" x2="400" y2="'+CY+'" stroke="var(--line)" stroke-width="2"/><line x1="'+CX+'" y1="0" x2="'+CX+'" y2="240" stroke="var(--line)" stroke-width="2"/>';
+  h+='<text x="390" y="'+(CY-6)+'" font-size="14" font-style="italic" text-anchor="end" fill="var(--muted)">x</text><text x="'+(CX+8)+'" y="16" font-size="14" font-style="italic" fill="var(--muted)">y</text>';
+  P.forEach(function(pts){h+='<polyline fill="none" stroke="var(--okc)" stroke-width="3.5" stroke-linejoin="round" points="'+pts.map(function(p){return gx(p[0]).toFixed(1)+","+gy(p[1]).toFixed(1);}).join(" ")+'"/>';});
+  h+='<line x1="'+gx(c)+'" y1="0" x2="'+gx(c)+'" y2="240" stroke="var(--noc)" stroke-width="2.5" stroke-dasharray="7 5"/>';
+  var H=hits(P,c);
+  H.forEach(function(y){h+='<circle cx="'+gx(c)+'" cy="'+gy(y)+'" r="6.5" fill="var(--sc)" stroke="var(--card)" stroke-width="2"/>';});
+  vs.innerHTML=h;
+  $("cxL").textContent="x = "+n2(c);
+  var m=$("vMsg"), n=H.length;
+  if(n>=2){m.textContent="المستقيم يقطع البيان في "+n+" نقاط. يكفي مستقيم واحد مثل هذا: البيان لا يمثل دالة.";m.className="msg";}
+  else {m.textContent=(n===1?"نقطة واحدة هنا.":"ما في تقاطع هنا (لا بأس: الشرط نقطة واحدة على الأكثر).")+" حرّك المستقيم في كل مكان: إذا ما لقيت مستقيماً يقطع في نقطتين، فالبيان دالة.";m.className=n===1?"msg ok":"msg";}
+}
+[].forEach.call(document.querySelectorAll("[data-g]"),function(b){b.addEventListener("click",function(){gi=+b.dataset.g;sel(0,"data-g",gi);drawV();});});
+cxs.addEventListener("input",drawV);
+drawV();
+})();
+</script>
+</body>
+</html>
