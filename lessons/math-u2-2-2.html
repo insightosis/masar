@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="math">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الدوال التربيعية ونمذجتها · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+span[dir=ltr],bdi[dir=ltr],b[dir=ltr]{unicode-bidi:isolate}
+body{--okc:#1f9e6e;--noc:#e0485f;--line:#8b86b3;--plane:#f1edff;--grid:#ddd5fb;--water:#6fb6ff;--glass:#b9b3dc;--curve:#8a63f2;--straight:#e0485f}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--okc:#5fd3a2;--noc:#ff7d8f;--line:#a7a2cf;--plane:#24203d;--grid:#363057;--water:#3d86d6;--glass:#6e68a0;--curve:#b49bff;--straight:#ff7d8f}}
+:root[data-theme="dark"] body{--okc:#5fd3a2;--noc:#ff7d8f;--line:#a7a2cf;--plane:#24203d;--grid:#363057;--water:#3d86d6;--glass:#6e68a0;--curve:#b49bff;--straight:#ff7d8f}
+.stage{display:block;width:100%;height:auto;border-radius:20px;background:var(--plane);box-shadow:var(--press);margin-top:10px}
+.help{display:inline-block;font-size:12px;font-weight:700;padding:1px 9px;border-radius:9px;background:var(--p-sky);color:var(--text);margin-inline-end:6px}
+.xtra{margin-top:12px;padding:10px 16px;border-radius:20px;background:var(--card);box-shadow:var(--clay-sm)}
+.xtra summary{cursor:pointer;font-weight:700;color:var(--ink)}
+.fbox{overflow-x:auto;text-align:center;padding:6px 0}
+.gform{padding:16px 14px;border-radius:24px;background:var(--p-butter);box-shadow:var(--clay-sm);text-align:center}
+.gform .f{font-size:1.5rem}
+.gform .t2{color:#d23b52}.gform .t1{color:#16865c}.gform .t0{color:#2f6fd6}
+:root[data-theme="dark"] .gform .t2{color:#ff8a9b}:root[data-theme="dark"] .gform .t1{color:#6fe0b0}:root[data-theme="dark"] .gform .t0{color:#8ab8ff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .gform .t2{color:#ff8a9b}:root:not([data-theme="light"]) .gform .t1{color:#6fe0b0}:root:not([data-theme="light"]) .gform .t0{color:#8ab8ff}}
+.tags3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.tags3 div{padding:8px 6px;border-radius:16px;background:var(--card);box-shadow:var(--clay-sm);font-size:13.5px;text-align:center}
+.tags3 b{display:block;font-family:"Noto Serif",Georgia,serif;font-style:italic;direction:ltr;font-size:1.15rem}
+.diffs{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;justify-content:center;direction:ltr}
+.diffs span{font-size:13px;padding:3px 9px;border-radius:12px;background:var(--card);box-shadow:var(--clay-sm);font-family:"Noto Serif",Georgia,serif}
+.out{margin-top:8px;text-align:center;font-size:1.05rem}
+.out .f{font-size:1.25rem}
+.tbl{overflow-x:auto;margin-top:10px}
+.tbl table{border-collapse:separate;border-spacing:4px;margin:0 auto;direction:ltr}
+.tbl td,.tbl th{padding:5px 9px;border-radius:10px;background:var(--card);box-shadow:var(--clay-sm);text-align:center;font-family:"Noto Serif",Georgia,serif;font-size:14.5px}
+.tbl th{background:var(--soft);font-family:var(--body);font-size:13px}
+.calc{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:8px}
+.calc kbd{font-family:var(--body);font-size:13px;padding:3px 9px;border-radius:10px;background:var(--card);box-shadow:var(--clay-sm)}
+.act .gap{direction:ltr;unicode-bidi:isolate}
+.act[data-act=gap] .pc{font-family:"Noto Serif",Georgia,serif}
+</style>
+</head>
+<body style="--sc:#8a63f2">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الرياضيات</span><span class="chip">الدرس 2-2 · ص 50 إلى 55</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الثانية: الدوال الحقيقية</p>
+  <h1 id="t">الدوال التربيعية ونمذجتها</h1>
+  <p>اثقب قنينة ماء من تحت ودعها تفرغ. الماء ينزل بسرعة في البداية، ثم يبطئ. <mark>هل يمكن نرسم هذا بخط مستقيم؟</mark> جرّب في المختبر وشوف أيّ شكل يناسب البيانات.</p>
+</section>
+
+<section class="panel" id="lab-sec" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">مختبر القنينة المثقوبة</h2><span class="legend">حرّك الزمن، ثم جرّب النموذجين</span></div>
+  <div class="btns" role="group" aria-label="النموذج">
+    <button class="tg" type="button" data-m="0" aria-pressed="true">بدون نموذج</button>
+    <button class="tg" type="button" data-m="1" aria-pressed="false">خط مستقيم</button>
+    <button class="tg" type="button" data-m="2" aria-pressed="false">منحنى تربيعي</button>
+  </div>
+  <svg class="stage" id="bottle" viewBox="0 0 400 240" role="img" aria-label="قنينة يتناقص فيها الماء ورسم بياني لمستوى الماء مع الزمن"></svg>
+  <div class="controls"><div class="ctl"><label for="tt">الزمن <b id="tL">t = 0 s</b></label><input type="range" dir="ltr" id="tt" min="0" max="32" step="4" value="0" aria-describedby="tL"></div></div>
+  <p class="cap" style="margin-bottom:0">كم نزل الماء في كل 4 ثوانٍ؟</p>
+  <div class="diffs" id="diffs"></div>
+  <p class="msg" id="bMsg" aria-live="polite"></p>
+  <p class="cap">البيانات من نشاط الكتاب الإثرائي ص 54 (مستوى الماء بالميليلتر). الإجابة عن سؤال «عمل تعاوني»: المنحنى <b>a</b> هو الأنسب، لأن النزول سريع ثم يبطئ.</p>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">رموز الدرس ومصطلحاته</h2></div>
+  <div class="syms">
+    <div class="sym"><span class="bub"><span>x²</span></span><div><h3>الدالة التربيعية <span class="en">Quadratic Function</span></h3><p>أكبر أس للمتغير فيها 2، و <span dir="ltr">a ≠ 0</span>.</p><span class="hook">تربيعية = فيها تربيع x².</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub sm"><span>ax²</span></span><div><h3>حد من الدرجة الثانية <span class="en">Quadratic Term</span></h3><p>الحد اللي فيه x². لو اختفى صارت الدالة خطية.</p><span class="hook">هو "قلب" الدالة التربيعية.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub sm"><span>bx</span></span><div><h3>حد من الدرجة الأولى <span class="en">Linear Term</span></h3><p>الحد اللي فيه x بأس 1.</p><span class="hook">x لوحدها، بدون تربيع.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span>c</span></span><div><h3>حد مطلق (ثابت) <span class="en">Constant Term</span></h3><p>عدد بدون x. وهو قيمة الدالة عند <span dir="ltr">x = 0</span>.</p><span class="hook">c = constant: ثابت ما يتحرك.</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub sm"><span>ax+b</span></span><div><h3>الدالة الخطية <span class="en">Linear Function</span></h3><p><span dir="ltr">f(x) = ax + b</span>، و <span dir="ltr">a ≠ 0</span>. بيانها خط مستقيم.</p><span class="hook">خطية = خط.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span>∪</span></span><div><h3>القطع المكافئ <span class="en">Parabola</span></h3><p>شكل منحنى الدالة التربيعية: متماثل حول مستقيم رأسي يمر برأسه.</p><span class="hook">مسار كرة مقذوفة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub"><span>⫶</span></span><div><h3>محور التماثل <span class="en">Axis of Symmetry</span></h3><p>المستقيم الرأسي المار برأس المنحنى، ومعادلته الإحداثي السيني للرأس.</p><span class="hook">المرآة اللي في نصّ القطع.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span>ℝ</span></span><div><h3>مجال الدالة <span class="en">Domain of the Function</span></h3><p>الخطية والتربيعية كثيرتا حدود، فمجالهما ℝ.</p><span class="hook">تقبل أي x، مثل الدرس الماضي.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">من الخطية إلى التربيعية</h2></div>
+  <div class="grid2">
+    <div class="box lav"><h3>الدالة الخطية</h3><p><span class="f" style="font-size:1.1rem">f : ℝ → ℝ</span><br><span class="f" style="font-size:1.1rem">f(x) = ax + b</span> أو <span class="f" style="font-size:1.1rem">y = ax + b</span><br>حيث <span dir="ltr">a ∈ ℝ, a ≠ 0, b ∈ ℝ</span>. بيانها <b>خط مستقيم</b>.</p></div>
+    <div class="box sky"><h3>وإذا a = 0؟</h3><p>تصير <span class="f" style="font-size:1.1rem">y = b</span>: <b>دالة ثابتة</b>، وبيانها <b>مستقيم أفقي</b>.</p></div>
+  </div>
+  <p style="margin-top:14px">بعض البيانات <b>مو خطية</b> (مثل القنينة)، وممكن نمثّلها بـ<b>دالة تربيعية</b>. الصورة العامة:</p>
+  <div class="gform">
+    <div class="fbox"><span class="f">f(x) = <span class="t2">ax²</span> + <span class="t1">bx</span> + <span class="t0">c</span></span></div>
+    <div class="fbox"><span class="f" style="font-size:1.1rem">a, b, c ∈ ℝ ,  a ≠ 0</span></div>
+  </div>
+  <div class="tags3">
+    <div><b class="t2">ax²</b>حد من الدرجة الثانية</div>
+    <div><b>bx</b>حد من الدرجة الأولى</div>
+    <div><b>c</b>حد مطلق (ثابت)</div>
+  </div>
+  <p class="tip" style="margin-top:12px"><b>قاعدة سريعة:</b> أكبر أس للمتغير <b>2</b> ⇐ تربيعية. أكبر أس <b>1</b> ⇐ خطية. لكن انتبه: لازم <b>تفك الأقواس وتجمع الحدود المتشابهة أولاً</b>، لأن x² ممكن تختفي!</p>
+
+  <h3 style="margin:20px 0 8px">مثال (1) من الكتاب</h3>
+  <div class="qbox">حدّد ما إذا كانت الدالة <span class="f" style="font-size:1.15rem">f(x) = (3x − 4)(x + 2)</span> خطية أم تربيعية.</div>
+  <ol class="steps">
+    <li><span>التوزيع بالضرب: <span class="f">f(x) = 3x² + 6x − 4x − 8</span></span></li>
+    <li><span>جمع الحدود المتشابهة: <span class="f">f(x) = 3x² + 2x − 8</span></span></li>
+    <li><span><span class="ans">فيها الحد <span class="f" style="font-size:1.05rem">3x²</span> (من الدرجة الثانية)، إذن الدالة <b>تربيعية</b>.</span></span></li>
+  </ol>
+
+  <div class="act" data-act="sort" data-key="sort" data-bins='["خطية","تربيعية"]'
+       data-items='[["⁦2x(x − 3)⁩",1],["⁦(x − 2)(2x + 1)⁩",1],["⁦(2x + 3)² − 4x² − 7x⁩",0],["⁦3(x² − 4x) − 3x² + 4⁩",0],["⁦5 − 2x⁩",0],["⁦x² + 1⁩",1]]'
+       data-ok="ممتاز! ⁦(2x + 3)² − 4x² − 7x = 5x + 9⁩ و ⁦3(x² − 4x) − 3x² + 4 = −12x + 4⁩: الـ x² اختفت فصارت خطية. والباقي فيه x² بعد الفك.">
+    <h3>خطية أم تربيعية؟ <span class="k">نشاط</span></h3>
+    <p>من «حاول أن تحل» في الكتاب وزيادة. فكّ الأقواس في راسك أولاً، وشوف: هل تبقى x²؟</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">القطع المكافئ ومحور التماثل</h2></div>
+  <p>بيان الدالة التربيعية <b>منحنى متماثل</b> حول المستقيم الرأسي اللي يمر <b>برأس المنحنى</b>، واسم هذا الشكل <b>قطع مكافئ</b> <span dir="ltr">(parabola)</span>. والإحداثي السيني للرأس هو:</p>
+  <div class="gform" style="background:var(--p-peach)"><div class="fbox"><span class="f">x = <span class="frac"><span>−b</span><span>2a</span></span></span></div><p style="margin:4px 0 0">وهي معادلة المستقيم الرأسي اللي اسمه <b>محور التماثل</b>.</p></div>
+
+  <div class="panel" style="margin:14px 0">
+    <div class="lab-head"><h3 style="margin:0">العب بالمعاملات</h3><span class="legend"><span><i style="background:var(--curve)"></i>البيان</span><span><i style="background:var(--noc)"></i>محور التماثل</span></span></div>
+    <svg class="stage" id="par" viewBox="0 0 400 260" role="img" aria-label="بيان الدالة ومحور تماثلها"></svg>
+    <div class="controls">
+      <div class="ctl"><label for="ka">a <b id="aL">1</b></label><input type="range" id="ka" min="-3" max="3" step="0.5" value="1" aria-describedby="aL"></div>
+      <div class="ctl"><label for="kb">b <b id="bL">−2</b></label><input type="range" id="kb" min="-6" max="6" step="1" value="-2" aria-describedby="bL"></div>
+      <div class="ctl"><label for="kc">c <b id="cL">−3</b></label><input type="range" id="kc" min="-5" max="5" step="1" value="-3" aria-describedby="cL"></div>
+    </div>
+    <div class="out" id="pOut" aria-live="polite"></div>
+    <p class="msg" id="pMsg" aria-live="polite"></p>
+  </div>
+  <p class="tip">جرّب <b>a = 0</b>: يختفي المنحنى ويصير خطاً مستقيماً، لأن الحد x² انمسح. لهذا شرط الدالة التربيعية <b dir="ltr">a ≠ 0</b>.</p>
+
+  <div class="act" data-act="gap" data-key="gap" data-ok="صح! محور التماثل ⁦x = −b ÷ 2a⁩، والإشارة السالبة مع b.">
+    <h3>أكمل الناقص <span class="k">نشاط</span></h3>
+    <p>معادلة محور التماثل للدالة <span class="f" style="font-size:1.1rem">f(x) = ax² + bx + c</span> هي <span class="f" style="font-size:1.1rem">x = <span class="gap">؟</span></span></p>
+    <div class="opts">
+      <button class="pc" data-no="ناقصة الإشارة السالبة. جرّب ⁦x² − 2x⁩: الرأس عند ⁦x = 1⁩ وليس ⁦−1⁩.">b ÷ 2a</button>
+      <button class="pc" data-ok>−b ÷ 2a</button>
+      <button class="pc" data-no="مقلوبة! a في المقام مضروبة في 2، و b في البسط.">−2a ÷ b</button>
+    </div>
+  </div>
+
+  <h3 style="margin:20px 0 8px">نشاط الكتاب: أي النقاط على المنحنى؟</h3>
+  <p>عشان تعرف إذا النقطة <span dir="ltr">(x, y)</span> على منحنى <span class="f" style="font-size:1.1rem">f(x) = 3x² − 5x − 2</span>: عوّض x واحسب، إذا طلع الناتج = y فهي عليه.</p>
+  <div class="tbl"><table>
+    <tr><th>النقطة</th><td>A(1, −4)</td><td>B(2, 0)</td><td>C(0, 2)</td><td>D(−3, 40)</td></tr>
+    <tr><th>f(x)</th><td>3 − 5 − 2 = −4</td><td>12 − 10 − 2 = 0</td><td>0 − 0 − 2 = −2</td><td>27 + 15 − 2 = 40</td></tr>
+    <tr><th>عليه؟</th><td>✓</td><td>✓</td><td>✗</td><td>✓</td></tr>
+  </table></div>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">نمذجة البيانات <span class="help" style="vertical-align:middle">إثرائي في الكتاب</span></h2></div>
+  <p>تعلّمت تكتب نموذجاً <b>خطياً</b> لبيانات لها نزعة مستقيمة. بس بعض البيانات ما تنفع خطياً، فتكون الدالة <b>التربيعية</b> أفضل نموذج لها. الفكرة: الصورة العامة فيها 3 مجاهيل <span dir="ltr">(a, b, c)</span>، فنحتاج <b>3 أزواج</b> من الجدول نعوّضها فنحصل على <b>3 معادلات</b>.</p>
+  <p class="tip"><b>إرشاد الكتاب:</b> نحل 3 معادلات بـ3 مجاهيل بطريقة <b>الحذف</b> (نطرح المعادلات لنلغي مجهولاً) أو <b>التعويض</b> (نعزل مجهولاً ونعوّض عنه)، فنحصل على نظام معادلتين بمجهولين يسهل حلّه.</p>
+
+  <h3 style="margin:18px 0 8px">مثال (2): كم قطعة مستقيمة؟</h3>
+  <div class="qbox">الجدول يبيّن عدد القطع المستقيمة الواصلة بين x نقطة (بشرط ما تكون 3 نقاط منها على مستقيم واحد). إذا كانت العلاقة تربيعية، اكتبها، ثم أوجد عدد القطع بين 10 نقاط وبين 20 نقطة.
+    <div class="tbl"><table><tr><th>x</th><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr><tr><th>y</th><td>1</td><td>3</td><td>6</td><td>10</td><td>15</td><td>21</td></tr></table></div>
+  </div>
+  <div class="row"><button class="lite" id="hideSol" type="button" aria-pressed="false">أخفِ الحل وجرّب أولاً</button></div>
+  <ol class="steps" id="steps">
+    <li><span>نعوّض <span dir="ltr">(2, 1), (3, 3), (4, 6)</span> في <span class="f">ax² + bx + c</span>:<br><span class="f">1 = 4a + 2b + c</span> ①<br><span class="f">3 = 9a + 3b + c</span> ②<br><span class="f">6 = 16a + 4b + c</span> ③</span></li>
+    <li><span>نطرح ① من ② ثم ② من ③ (تختفي c):<br><span class="f">2 = 5a + b</span> ④<br><span class="f">3 = 7a + b</span> ⑤</span></li>
+    <li><span>نطرح ④ من ⑤: <span class="f">2a = 1 ⇒ a = ½</span>، ونعوّض في ④: <span class="f">b = −½</span></span></li>
+    <li><span>نعوّض في ①: <span class="f">1 = 2 − 1 + c ⇒ c = 0</span></span></li>
+    <li><span><span class="ans">الدالة: <span class="f" style="font-size:1.05rem">f(x) = ½x² − ½x</span></span></span></li>
+    <li><span><span class="f">f(10) = 50 − 5 = 45</span> قطعة، و <span class="f">f(20) = 200 − 10 = 190</span> قطعة.</span></li>
+  </ol>
+
+  <div class="act" data-act="type" data-key="type" data-answer="35" data-tol="0"
+       data-ok="صح! الدالة ⁦f(x) = ½x² − ³⁄₂x⁩، و ⁦f(10) = 50 − 15 = 35⁩ قطراً. (وللـ15 ضلعاً: ⁦112.5 − 22.5 = 90⁩.)"
+       data-hint="اعمل مثل المثال بالأزواج ⁦(4, 2), (5, 5), (6, 9)⁩: تطلع ⁦a = ½⁩ و ⁦b = −³⁄₂⁩ و ⁦c = 0⁩. بعدها احسب ⁦f(10)⁩."
+       data-no="ليست هذه. تأكّد من b: من ⁦3 = 9a + b⁩ و ⁦4 = 11a + b⁩.">
+    <h3>اكتب الجواب <span class="k">نشاط</span></h3>
+    <p>من «حاول أن تحل 2»: عدد أقطار المضلع حسب عدد أضلاعه.</p>
+    <div class="tbl"><table><tr><th>الأضلاع x</th><td>4</td><td>5</td><td>6</td><td>7</td></tr><tr><th>الأقطار y</th><td>2</td><td>5</td><td>9</td><td>14</td></tr></table></div>
+    <p>إذا كانت العلاقة تربيعية: كم قطراً للمضلع اللي عدد أضلاعه <b>10</b>؟</p>
+  </div>
+
+  <details class="xtra"><summary>الربط بالتكنولوجيا: حل 3 معادلات بالآلة الحاسبة</summary>
+    <ol class="pts" style="list-style:none;padding:0">
+      <li style="--b:var(--sc)">اكتب كل معادلة على الشكل <span dir="ltr">ax + by + cz = d</span> (هنا x و y و z هي a و b و c).</li>
+      <li style="--b:var(--sc)"><div class="calc"><kbd>Mode</kbd> ثم <kbd>5: EQN</kbd> ثم <kbd dir="ltr">2: aₙx + bₙy + cₙz = dₙ</kbd></div></li>
+      <li style="--b:var(--sc)">املأ كل سطر بالمعاملات بالترتيب (معامل x، y، z، ثم d) واضغط <kbd>=</kbd> بعد كل رقم.</li>
+      <li style="--b:var(--sc)">اضغط <kbd>=</kbd>: تظهر x، ثم y، ثم z.</li>
+    </ol>
+  </details>
+  <details class="xtra"><summary>نشاطان إثرائيان: القنينة والسبّاح</summary>
+    <ul class="pts">
+      <li style="--b:var(--sc)"><b>القنينة (ص 54):</b> بالأزواج <span dir="ltr">(4, 112.3), (12, 97.5), (20, 83.5)</span> نحصل على <span class="f" style="font-size:1.05rem">f(t) = 0.00625t² − 1.95t + 120</span> (أي <span dir="ltr">a = 1/160, b = −39/20, c = 120</span>). نتحقّق: <span dir="ltr">f(8) = 104.8 ✓</span>. وبعد 36 s: <span class="f" style="font-size:1.05rem">f(36) = 8.1 − 70.2 + 120 = 57.9</span> أي حوالي 58.</li>
+      <li style="--b:var(--sc)"><b>السبّاح (ص 55):</b> يقفز من منصة ارتفاعها 3 m. بالأزواج <span dir="ltr">(0.6, 4.44), (1, 4.92), (1.2, 5.016)</span> نحصل على <span class="f" style="font-size:1.05rem">f(x) = −1.2x² + 3.12x + 3</span>. ونتحقّق بالزوج <span dir="ltr">(1.3, 5.028)</span>: <span dir="ltr">−1.2 × 1.69 + 3.12 × 1.3 + 3 = 5.028 ✓</span>.</li>
+      <li style="--b:var(--sc)"><b>تدريب إثرائي:</b> الجدول <span dir="ltr">x: −1, 0, 1 → y: 10, 3, −2</span> يعطي <span dir="ltr">c = 3</span>، <span dir="ltr">a + b = −5</span>، <span dir="ltr">a − b = 7</span>، إذن <span class="f" style="font-size:1.05rem">f(x) = x² − 6x + 3</span>. تحقّق: <span dir="ltr">f(4) = 16 − 24 + 3 = −5 ✓</span>.</li>
+    </ul>
+  </details>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">5</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sd">
+  <div class="sec-head"><span class="num">6</span><h2 id="sd">في حياتك</h2></div>
+  <div class="life">
+    <div class="card"><h3>كرة السلة</h3><p>مسار الكرة من يدك للسلة قطع مكافئ، وأعلى نقطة فيه هي الرأس.</p></div>
+    <div class="card"><h3>نافورة الماء</h3><p>كل خيط ماء يطلع من النافورة يرسم قطعاً مكافئاً مفتوحاً للأسفل.</p></div>
+    <div class="card"><h3>المصافحة</h3><p>كم مصافحة بين 30 طالباً لو صافح كل واحد الكل؟ نفس دالة القطع المستقيمة: <span dir="ltr">½(30)² − ½(30) = 435</span>.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">7</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>أي نقطة <b>لا</b> تقع على منحنى <span class="f" style="font-size:1.1rem">f(x) = x² − 4x + 1</span>؟</p>
+      <div class="opts"><button dir="ltr">(0, 1)</button><button dir="ltr">(2, −3)</button><button dir="ltr" data-ok>(1, 2)</button></div>
+      <p class="why" hidden>الصحيح: (1, 2). عوّض: ⁦f(1) = 1 − 4 + 1 = −2⁩ وليس 2. أما ⁦f(0) = 1⁩ و ⁦f(2) = 4 − 8 + 1 = −3⁩ فصحيحتان.</p></div>
+    <div class="q"><p>محور التماثل لبيان <span class="f" style="font-size:1.1rem">f(x) = 2x² − 8x + 5</span> هو:</p>
+      <div class="opts"><button data-ok>x = 2</button><button>x = −2</button><button>x = 4</button></div>
+      <p class="why" hidden>الصحيح: ⁦x = −b ÷ 2a = −(−8) ÷ (2 × 2) = 8 ÷ 4 = 2⁩. انتبه لإشارة b السالبة.</p></div>
+    <div class="q"><p>في <span class="f" style="font-size:1.1rem">f(x) = −1.2x² + 3.12x + 3</span>، الحد المطلق (الثابت) هو:</p>
+      <div class="opts"><button>−1.2</button><button>3.12</button><button data-ok>3</button></div>
+      <p class="why" hidden>الصحيح: 3، العدد اللي بدون x. و −1.2 معامل الحد من الدرجة الثانية، و 3.12 معامل الحد من الدرجة الأولى.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li><b>الصورة العامة</b>: <span dir="ltr">f(x) = ax² + bx + c</span>، و <span dir="ltr">a, b, c ∈ ℝ, a ≠ 0</span>. أكبر أس 2 ⇐ تربيعية، 1 ⇐ خطية (بعد فك الأقواس).</li>
+      <li><b>البيان</b>: قطع مكافئ متماثل حول محور التماثل <span dir="ltr">x = −b ÷ 2a</span> المار بالرأس.</li>
+      <li><b>النمذجة</b>: 3 أزواج من الجدول ⇐ 3 معادلات ⇐ نحلها بالحذف أو التعويض (أو الحاسبة) فنجد a و b و c.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الرياضيات، الصف الحادي عشر، الوحدة الثانية، ص 50 إلى 55</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"math-u2-2-2"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+function n2(v){return (Math.round(v*100)/100).toString().replace("-","−");}
+/* ---- lab 1: draining bottle, data from book p54 ---- */
+var DATA=[[0,120],[4,112.3],[8,104.8],[12,97.5],[16,90.4],[20,83.5],[24,76.8],[28,70.3],[32,64]];
+function Q(t){return 0.00625*t*t-1.95*t+120;}
+var mode=0, tt=$("tt"), B=$("bottle");
+var GX0=150,GX1=390,GY0=200,GY1=24; /* graph box: t 0..36, y 50..125 */
+function gx(t){return GX0+(GX1-GX0)*t/36;} function gy(y){return GY0-(GY0-GY1)*(y-50)/75;}
+function bottle(){
+  var t=+tt.value, i, h='', lvl=DATA[t/4][1];
+  /* bottle */
+  var top=40, bot=200, fillTop=bot-(bot-top)*(lvl/130);
+  h+='<rect x="34" y="'+fillTop.toFixed(1)+'" width="72" height="'+(bot-fillTop).toFixed(1)+'" rx="8" fill="var(--water)" opacity=".85"/>';
+  h+='<path d="M56 18 h28 v14 c0 8 22 10 22 26 v134 a8 8 0 0 1 -8 8 h-56 a8 8 0 0 1 -8 -8 v-134 c0 -16 22 -18 22 -26z" fill="none" stroke="var(--glass)" stroke-width="3"/>';
+  if(t<32)h+='<path d="M106 194 q14 2 20 26" fill="none" stroke="var(--water)" stroke-width="3" stroke-linecap="round"/>';
+  h+='<text x="70" y="226" font-size="13" text-anchor="middle" fill="var(--text)" direction="ltr">'+lvl+' ml</text>';
+  /* axes */
+  h+='<g stroke="var(--grid)" stroke-width="1">';for(i=0;i<=36;i+=8)h+='<line x1="'+gx(i)+'" y1="'+GY1+'" x2="'+gx(i)+'" y2="'+GY0+'"/>';for(i=50;i<=125;i+=25)h+='<line x1="'+GX0+'" y1="'+gy(i)+'" x2="'+GX1+'" y2="'+gy(i)+'"/>';h+='</g>';
+  h+='<g stroke="var(--line)" stroke-width="2"><line x1="'+GX0+'" y1="'+GY0+'" x2="'+GX1+'" y2="'+GY0+'"/><line x1="'+GX0+'" y1="'+GY0+'" x2="'+GX0+'" y2="'+GY1+'"/></g>';
+  h+='<g font-size="11" fill="var(--muted)" direction="ltr">';for(i=0;i<=32;i+=8)h+='<text x="'+gx(i)+'" y="'+(GY0+14)+'" text-anchor="middle">'+i+'</text>';for(i=50;i<=125;i+=25)h+='<text x="'+(GX0-4)+'" y="'+(gy(i)+4)+'" text-anchor="end">'+i+'</text>';
+  h+='<text x="'+GX1+'" y="'+(GY0+28)+'" text-anchor="end">t (s)</text><text x="'+(GX0+4)+'" y="'+(GY1-8)+'">y (ml)</text></g>';
+  if(mode===1){h+='<line x1="'+gx(0)+'" y1="'+gy(120)+'" x2="'+gx(36)+'" y2="'+gy(120-56*36/32)+'" stroke="var(--straight)" stroke-width="2.5" stroke-dasharray="6 5"/>';}
+  if(mode===2){var d='';for(i=0;i<=36;i+=1)d+=(i?'L':'M')+gx(i).toFixed(1)+' '+gy(Q(i)).toFixed(1);h+='<path d="'+d+'" fill="none" stroke="var(--curve)" stroke-width="3"/>';}
+  for(i=0;i<=t/4;i++)h+='<circle cx="'+gx(DATA[i][0]).toFixed(1)+'" cy="'+gy(DATA[i][1]).toFixed(1)+'" r="4.5" fill="var(--sc)" stroke="var(--card)" stroke-width="1.5"/>';
+  B.innerHTML=h;
+  $("tL").textContent="t = "+t+" s";
+  var ds=[];for(i=1;i<=t/4;i++)ds.push('<span>−'+n2(DATA[i-1][1]-DATA[i][1])+'</span>');
+  $("diffs").innerHTML=ds.join("")||'<span>حرّك الزمن</span>';
+  var m=$("bMsg"), msg;
+  if(mode===0)msg=t<12?"حرّك الزمن لتجمع نقاطاً أكثر، ثم اختر نموذجاً.":"لاحظ الفروق فوق: الماء ينزل كل مرة أقل من اللي قبلها. فهل تبدو البيانات خطية؟";
+  else if(mode===1)msg="الخط المستقيم يفترض أن الماء ينزل نفس الكمية كل 4 ثوانٍ، لكن الفروق تتناقص (7.7 ثم 7.5 ثم 7.3 ...)، فالنقاط في الوسط تبتعد عن الخط.";
+  else msg="المنحنى التربيعي \u2066f(t) = 0.00625t² − 1.95t + 120\u2069 يمر بكل النقاط تقريباً: نموذج أفضل من الخط.";
+  m.textContent=msg; m.className=mode===2?"msg ok":"msg";
+  [].forEach.call(document.querySelectorAll("[data-m]"),function(b){b.setAttribute("aria-pressed",String(+b.dataset.m===mode));});
+}
+[].forEach.call(document.querySelectorAll("[data-m]"),function(b){b.addEventListener("click",function(){mode=+b.dataset.m;if(mode&&+tt.value<16)tt.value=32;bottle();});});
+tt.addEventListener("input",bottle); bottle();
+
+/* ---- lab 2: parabola with axis of symmetry ---- */
+var P=$("par"), ka=$("ka"), kb=$("kb"), kc=$("kc");
+var X0=-6,X1=6,Y0=-8,Y1=10;
+function px(x){return 20+360*(x-X0)/(X1-X0);} function py(y){return 245-230*(y-Y0)/(Y1-Y0);}
+function fmt(a,b,c){var s="f(x) = ";var parts=[];
+  if(a)parts.push((a===1?"":a===-1?"−":n2(a))+"x²");
+  if(b)parts.push((parts.length?(b<0?" − ":" + "):(b<0?"−":""))+(Math.abs(b)===1?"":n2(Math.abs(b)))+"x");
+  if(c||!parts.length)parts.push((parts.length?(c<0?" − ":" + "):(c<0?"−":""))+n2(Math.abs(c)));
+  return s+parts.join("");}
+function par(){
+  var a=+ka.value,b=+kb.value,c=+kc.value,i,h='';
+  h+='<g stroke="var(--grid)" stroke-width="1">';for(i=X0;i<=X1;i++)h+='<line x1="'+px(i)+'" y1="'+py(Y1)+'" x2="'+px(i)+'" y2="'+py(Y0)+'"/>';for(i=Y0;i<=Y1;i+=2)h+='<line x1="'+px(X0)+'" y1="'+py(i)+'" x2="'+px(X1)+'" y2="'+py(i)+'"/>';h+='</g>';
+  h+='<g stroke="var(--line)" stroke-width="2"><line x1="'+px(X0)+'" y1="'+py(0)+'" x2="'+px(X1)+'" y2="'+py(0)+'"/><line x1="'+px(0)+'" y1="'+py(Y1)+'" x2="'+px(0)+'" y2="'+py(Y0)+'"/></g>';
+  h+='<g font-size="11" fill="var(--muted)" direction="ltr" text-anchor="middle">';for(i=-4;i<=4;i+=2)if(i)h+='<text x="'+px(i)+'" y="'+(py(0)+13)+'">'+String(i).replace("-","−")+'</text>';h+='<text x="'+(px(X1)-6)+'" y="'+(py(0)-6)+'">x</text><text x="'+(px(0)+10)+'" y="'+(py(Y1)+12)+'">y</text></g>';
+  var d='',first=true;
+  for(i=0;i<=240;i++){var x=X0+(X1-X0)*i/240,y=a*x*x+b*x+c;if(y<Y0-4||y>Y1+4){first=true;continue;}d+=(first?'M':'L')+px(x).toFixed(1)+' '+py(y).toFixed(1);first=false;}
+  var xv=a?-b/(2*a):null, yv=a?a*xv*xv+b*xv+c:null;
+  if(a&&xv>=X0&&xv<=X1)h+='<line x1="'+px(xv)+'" y1="'+py(Y1)+'" x2="'+px(xv)+'" y2="'+py(Y0)+'" stroke="var(--noc)" stroke-width="2.5" stroke-dasharray="7 5"/>';
+  h+='<path d="'+d+'" fill="none" stroke="var(--curve)" stroke-width="3.5" stroke-linecap="round"/>';
+  if(a&&xv>=X0&&xv<=X1&&yv>=Y0&&yv<=Y1)h+='<circle cx="'+px(xv)+'" cy="'+py(yv)+'" r="6" fill="var(--noc)" stroke="var(--card)" stroke-width="2"/>';
+  P.setAttribute("viewBox","0 0 400 260"); P.innerHTML='<defs><clipPath id="clp"><rect x="0" y="0" width="400" height="260" rx="20"/></clipPath></defs><g clip-path="url(#clp)">'+h+'</g>';
+  $("aL").textContent=n2(a);$("bL").textContent=n2(b);$("cL").textContent=n2(c);
+  var o=$("pOut"), m=$("pMsg");
+  if(!a){o.innerHTML='<span class="f">'+fmt(a,b,c)+'</span>';m.textContent=b?"\u2066a = 0\u2069: الحد x² اختفى، فالدالة خطية وبيانها خط مستقيم. ما صارت تربيعية.":"\u2066a = 0\u2069 و \u2066b = 0\u2069: دالة ثابتة \u2066y = c\u2069، وبيانها مستقيم أفقي.";m.className="msg";}
+  else{o.innerHTML='<span class="f">'+fmt(a,b,c)+'</span><br><span class="f" style="font-size:1.05rem">x = −('+n2(b)+') ÷ (2 × '+n2(a)+') = '+n2(xv)+'</span>';
+    m.textContent=(a>0?"a موجب: القطع مفتوح لأعلى ∪. ":"a سالب: القطع مفتوح لأسفل ∩. ")+"المنحنى متماثل حول محور التماثل \u2066x = "+n2(xv)+"\u2069، والنقطة الحمراء رأسه.";m.className="msg ok";}
+}
+[ka,kb,kc].forEach(function(e){e.addEventListener("input",par);}); par();
+})();
+</script>
+</body>
+</html>

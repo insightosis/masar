@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="biology">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>التغذية في النباتات · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+span[dir=ltr],bdi[dir=ltr],b[dir=ltr]{unicode-bidi:isolate}
+body{--leaf:#8fd16a;--leaf2:#5fb02a;--chl:#2f8a2a;--sun:#ffc93c;--o2:#4fa8ff;--co2:#8a8f99;--bar1:#5fb02a;--bar2:#ee7a3f;--strom:#e9f7d9;--mem:#7cc350;--gran:#3f9a2a;--pore:#3b2f45}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--leaf:#4f8a37;--leaf2:#3f7a24;--chl:#9be07a;--sun:#e0a92a;--o2:#6db8ff;--co2:#b7bcc6;--bar1:#7cc350;--bar2:#ff9a66;--strom:#24331d;--mem:#5f9a3d;--gran:#9be07a;--pore:#0b0e09}}
+:root[data-theme="dark"] body{--leaf:#4f8a37;--leaf2:#3f7a24;--chl:#9be07a;--sun:#e0a92a;--o2:#6db8ff;--co2:#b7bcc6;--bar1:#7cc350;--bar2:#ff9a66;--strom:#24331d;--mem:#5f9a3d;--gran:#9be07a;--pore:#0b0e09}
+.stage{display:block;width:100%;height:auto;border-radius:22px;background:var(--sky);box-shadow:var(--press)}
+.help{display:inline-block;font-size:12px;font-weight:700;padding:1px 9px;border-radius:9px;background:var(--p-sky);color:var(--text);margin-inline-end:6px}
+.xtra{margin-top:12px;padding:10px 16px;border-radius:20px;background:var(--card);box-shadow:var(--clay-sm)}
+.xtra summary{cursor:pointer;font-weight:700;color:var(--ink)}
+.eqn{padding:14px 10px;border-radius:24px;background:var(--p-mint);box-shadow:var(--clay-sm);text-align:center;overflow-x:auto}
+.eqn .row1{direction:ltr;display:inline-flex;align-items:center;gap:8px;font-family:"Noto Serif",Georgia,serif;font-size:1.15rem;white-space:nowrap}
+.eqn .arr{display:inline-flex;flex-direction:column;align-items:center;font-family:var(--body);font-size:11.5px;line-height:1.2}
+.eqn .arr i{font-style:normal;font-size:1.3rem;line-height:1}
+.cmp{display:grid;gap:8px;margin-top:12px}
+.cmp .r{display:grid;grid-template-columns:.8fr 1.2fr 1.2fr;gap:6px;align-items:stretch}
+.cmp .r>div{padding:8px 9px;border-radius:16px;background:var(--card);box-shadow:var(--clay-sm);font-size:13.5px}
+.cmp .h>div{background:var(--soft);font-weight:800;text-align:center}
+.cmp .r>div:first-child{font-weight:700}
+.spec{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.spec button{display:inline-flex;align-items:center;gap:6px}
+.spec i{display:inline-block;width:16px;height:16px;border-radius:50%;box-shadow:0 0 0 2px var(--card)}
+.fate{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:12px}
+.fate .card h3{margin:0 0 4px;font-size:1rem}
+.fate .card p{margin:0;font-size:14px}
+.cc{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;direction:ltr;justify-content:center}
+.cc span{font-family:"Noto Serif",Georgia,serif;font-size:13.5px;padding:3px 10px;border-radius:12px;background:var(--card);box-shadow:var(--clay-sm)}
+.tline .yr{font-family:var(--body)}
+</style>
+</head>
+<body style="--sc:#5fb02a">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الأحياء</span><span class="chip">الدرس 1-2 · ص 28 إلى 40</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الأولى: علم النباتات</p>
+  <h1 id="t">التغذية في النباتات</h1>
+  <p>عالم زرع شجرة وزنها <span dir="ltr">2 kg</span>، وبعد خمس سنين صار وزنها أكثر بـ <span dir="ltr">75 kg</span>، والتربة ما نقصت إلا <span dir="ltr">55 g</span> بس! <mark>من وين جاء كل هذا الوزن؟</mark> النبتة تصنع أكلها بنفسها من الضوء والماء والهواء. خلنا نشوف كيف.</p>
+</section>
+
+<section class="panel" id="lab-sec" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">مختبر الورقة</h2><span class="legend">غيّر الضوء والماء و CO₂</span></div>
+  <div class="btns" role="group" aria-label="نوع النبتة">
+    <button class="tg" type="button" data-p="0" aria-pressed="true">قصب السكر (يحب الشمس)</button>
+    <button class="tg" type="button" data-p="1" aria-pressed="false">اللبلاب (نبات ظل)</button>
+  </div>
+  <svg class="stage" id="leafLab" viewBox="0 0 400 230" role="img" aria-label="ورقة نبات في الضوء مع ثغر وفقاعات أكسجين، وعمودان للسكر المصنوع والمستهلك" style="margin-top:10px"></svg>
+  <div class="controls">
+    <div class="ctl"><label for="lt">الضوء <b id="ltL">50</b></label><input type="range" id="lt" min="0" max="100" value="50" aria-describedby="ltL"></div>
+    <div class="ctl"><label for="wt">الماء <b id="wtL">70</b></label><input type="range" id="wt" min="0" max="100" value="70" aria-describedby="wtL"></div>
+    <div class="ctl"><label for="cd">CO₂ في الهواء <b id="cdL">60</b></label><input type="range" id="cd" min="0" max="100" value="60" aria-describedby="cdL"></div>
+  </div>
+  <p class="msg" id="lMsg" aria-live="polite"></p>
+  <p class="cap">نموذج مبسّط من عندنا للفهم، الأرقام مو من الكتاب. جرّب: خفّف الضوء حتى يتساوى العمودان، هذي <b>نقطة التعويض</b>. وقارن بين النبتتين.</p>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">مصطلحات الدرس</h2></div>
+  <div class="syms">
+    <div class="sym"><span class="bub"><span>☀</span></span><div><h3>البناء الضوئي <span class="en">Photosynthesis</span></h3><p>عملية تستخدم فيها الكائنات ذاتية التغذية طاقة الضوء لصنع السكريات من CO₂ والماء.</p><span class="hook">مطبخ النبتة: الشمس هي النار.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub"><span>🟢</span></span><div><h3>البلاستيدات الخضراء <span class="en">Chloroplasts</span></h3><p>عضيّات في خلايا الورقة متخصصة في البناء الضوئي.</p><span class="hook">المصنع الأخضر داخل الخلية.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span>◌</span></span><div><h3>الستروما (الحشوة) <span class="en">Stroma</span></h3><p>مادة جيلاتينية عديمة اللون داخل البلاستيدة، فيها حبيبات نشا وقطرات دهنية. مكان دورة كالفن.</p><span class="hook">الحشوة = الجيلي اللي حول الأقراص.</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub"><span>≣</span></span><div><h3>الجرانا والثيلاكويد <span class="en">Grana · Thylakoid</span></h3><p>الثيلاكويد قرص مجوّف فيه الكلوروفيل، والجرانا أقراص ثيلاكويد متراصّة (15 قرصاً أو أكثر).</p><span class="hook">الثيلاكويد قرص، والجرانا عمود أقراص.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub"><span>🍃</span></span><div><h3>الكلوروفيل <span class="en">Chlorophyll a · b</span></h3><p>الصبغة الأساسية للبناء الضوئي. يمتص البنفسجي والأزرق والأحمر، ويعكس الأخضر.</p><span class="hook">يرجّع الأخضر، فنشوف النبتة خضراء.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub sm"><span>ATP</span></span><div><h3>الأدينوزين ثلاثي الفوسفات <span class="en">ATP</span></h3><p>عملة الطاقة في الخلية الحية.</p><span class="hook">بطارية مشحونة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub sm"><span>NADPH</span></span><div><h3>NADPH <span class="en">NADP⁺ → NADPH</span></h3><p>يحمل الإلكترونات عالية الطاقة والهيدروجين من التفاعلات الضوئية إلى دورة كالفن.</p><span class="hook">شاحنة توصيل الهيدروجين.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub sm"><span>PS</span></span><div><h3>النظامان الضوئيان 1 و 2 <span class="en">Photosystem I · II</span></h3><p>وحدات جامعة للضوء في غشاء الثيلاكويد. العمل يبدأ في النظام 2.</p><span class="hook">رقم 2 يشتغل قبل رقم 1.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span>e⁻</span></span><div><h3>سلسلة نقل الإلكترونات <span class="en">Electron Transport Chain</span></h3><p>جزيئات في غشاء الثيلاكويد تنقل الإلكترونات من النظام 2 إلى 1 وتضخ H⁺ للداخل.</p><span class="hook">سلسلة أيادٍ تمرّر الكرة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub"><span>↻</span></span><div><h3>دورة كالفن <span class="en">Calvin Cycle</span></h3><p>التفاعلات غير المعتمدة على الضوء: تثبّت CO₂ في سكر داخل الستروما.</p><span class="hook">كالفن يطبخ السكر من CO₂.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub"><span>⚖</span></span><div><h3>نقطة التعويض <span class="en">Compensation Point</span></h3><p>كمية الطاقة الضوئية الممتصة اللازمة لبقاء النبتة حية: سكر يُصنع = سكر يُستهلك.</p><span class="hook">الميزان متعادل: لا ربح ولا خسارة.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">الطاقة من ضوء الشمس</h2></div>
+  <p>ما في حياة على الأرض بدون طاقة الشمس. الكائنات تحتاج طاقة لتنمو وتعيش، وتأخذها من <b>الطاقة الكيميائية المخزّنة في الغذاء</b>، ومصدرها <b>البناء الضوئي</b> اللي تقوم به <b>الكائنات ذاتية التغذية</b>. ومن حوالي 3 مليارات سنة تطوّرت عند بعض الكائنات القدرة على استخدام هذا المصدر اللامتناهي.</p>
+  <div class="qbox"><b>البناء الضوئي:</b> العملية التي تستخدم فيها الكائنات ذاتية التغذية (اللي فيها كلوروفيل) طاقة ضوء الشمس لصنع <b>الكربوهيدرات (السكريات)</b> من مواد غير عضوية بسيطة مثل <b>ثاني أكسيد الكربون والماء</b>.</div>
+  <div class="grid2" style="margin-top:12px">
+    <div class="box mint"><h3>مين يقوم به؟</h3><p>النباتات الخضراء، والطحالب وحيدة الخلية، وبعض الطلائعيات مثل <b>البكتيريا الزرقاء</b> <span dir="ltr">(Cyanobacteria)</span>. كلها ذاتية التغذية.</p></div>
+    <div class="box sky"><h3>ليش هو الأساس؟</h3><p>ينتج <b>الغذاء</b> ويحرّر <b>الأكسجين</b> اللازم لكل الكائنات. والأكسجين في الهواء ناتج البناء الضوئي اللي تراكم عبر العصور.</p></div>
+  </div>
+  <details class="xtra"><summary>فقرة إثرائية: بكتيريا تتغذى بالبناء الكيميائي</summary>
+    <p style="margin:8px 0 0">بعض البكتيريا تأخذ طاقتها من <b>أكسدة مركبات غير عضوية</b> مثل كبريتيد الهيدروجين <span dir="ltr">(H₂S)</span> بدل الضوء، وتثبّت بها CO₂ في سكريات، وتنتج <b>الكبريت (S)</b> بدل الأكسجين. اكتُشفت سنة 1977 في قاع المحيطات قرب فوّهات البراكين، وتعيش عليها ديدان كبيرة غريبة الشكل وحيوانات أخرى.</p>
+  </details>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">البلاستيدة الخضراء من الداخل</h2></div>
+  <svg class="stage" viewBox="0 0 400 220" role="img" aria-label="رسم بلاستيدة خضراء: غشاء مزدوج، ستروما، جرانا من أقراص ثيلاكويد، وصفائح وسطية تصل بينها">
+    <ellipse cx="125" cy="110" rx="112" ry="78" fill="var(--mem)"/>
+    <ellipse cx="125" cy="110" rx="104" ry="70" fill="var(--strom)"/>
+    <ellipse cx="125" cy="110" rx="101" ry="67" fill="none" stroke="var(--mem)" stroke-width="2"/>
+    <g stroke="var(--gran)" stroke-width="3"><line x1="72" y1="92" x2="118" y2="86"/><line x1="118" y1="128" x2="170" y2="122"/><line x1="72" y1="132" x2="118" y2="128"/><line x1="170" y1="96" x2="196" y2="112"/></g>
+    <g fill="var(--leaf2)" stroke="var(--card)" stroke-width="1.2">
+      <rect x="56" y="78" width="32" height="8" rx="4"/><rect x="56" y="88" width="32" height="8" rx="4"/><rect x="56" y="98" width="32" height="8" rx="4"/><rect x="56" y="108" width="32" height="8" rx="4"/><rect x="56" y="118" width="32" height="8" rx="4"/><rect x="56" y="128" width="32" height="8" rx="4"/>
+      <rect x="104" y="70" width="32" height="8" rx="4"/><rect x="104" y="80" width="32" height="8" rx="4"/><rect x="104" y="90" width="32" height="8" rx="4"/>
+      <rect x="104" y="118" width="32" height="8" rx="4"/><rect x="104" y="128" width="32" height="8" rx="4"/><rect x="104" y="138" width="32" height="8" rx="4"/><rect x="104" y="148" width="32" height="8" rx="4"/>
+      <rect x="156" y="82" width="32" height="8" rx="4"/><rect x="156" y="92" width="32" height="8" rx="4"/><rect x="156" y="102" width="32" height="8" rx="4"/><rect x="156" y="112" width="32" height="8" rx="4"/><rect x="156" y="122" width="32" height="8" rx="4"/>
+    </g>
+    <g stroke="var(--text)" stroke-width="1.2" fill="none">
+      <line x1="232" y1="88" x2="282" y2="30"/>
+      <line x1="200" y1="150" x2="282" y2="70"/>
+      <line x1="188" y1="98" x2="282" y2="110"/>
+      <line x1="186" y1="84" x2="282" y2="150"/>
+      <line x1="183" y1="110" x2="282" y2="190"/>
+    </g>
+    <g font-size="13" font-weight="700" fill="var(--text)" direction="rtl" text-anchor="start">
+      <text x="394" y="34">غشاء مزدوج</text>
+      <text x="394" y="74">الستروما (الحشوة)</text>
+      <text x="394" y="114">الجرانا</text>
+      <text x="394" y="154">قرص ثيلاكويد</text>
+      <text x="394" y="194">الصفائح الوسطية</text>
+    </g>
+  </svg>
+  <p class="muted" style="font-size:13.5px;margin-top:6px">رسم مبسّط من عندنا (الأصل شكل 21).</p>
+  <ul class="pts">
+    <li style="--b:var(--sc)"><b>غشاء مزدوج</b> يحيط بمادة جيلاتينية عديمة اللون هي <b>الستروما (الحشوة)</b>، فيها حبيبات نشا وقطرات دهنية.</li>
+    <li style="--b:var(--sc)">في الستروما <b>الجرانا</b>: تراكيب قرصية متراصّة فوق بعض (كل مجموعة اسمها <span dir="ltr">granum</span>).</li>
+    <li style="--b:var(--sc)">القرص الواحد <b>ثيلاكويد</b>: مجوّف، وفي تجويفه <b>الكلوروفيل وكل الأصباغ</b>. تصل إلى <b>15 قرصاً أو أكثر</b> في الجرانا الواحدة.</li>
+    <li style="--b:var(--sc)">حافات الثيلاكويد تمتد خارج الجرانا وتكوّن <b>الصفائح الوسطية</b> اللي توصلها بثيلاكويد جرانا مجاورة، فتزيد <b>مساحة الأقراص المعرّضة للضوء</b>.</li>
+  </ul>
+
+  <h3 style="margin:20px 0 6px">ليش الورقة خضراء؟</h3>
+  <p>البلاستيدة فيها عدة أصباغ، أهمها <b>الكلوروفيل</b>: الصبغة الأساسية للبناء الضوئي في جميع النباتات. نوعان: <b>كلوروفيل أ</b> <span dir="ltr">(a)</span> و<b>كلوروفيل ب</b> <span dir="ltr">(b)</span>. اضغط لون واعرف شو يصير له:</p>
+  <div class="spec" role="group" aria-label="ألوان الضوء">
+    <button class="tg" type="button" data-c="0" aria-pressed="false"><i style="background:#8b4fd8"></i>بنفسجي</button>
+    <button class="tg" type="button" data-c="1" aria-pressed="false"><i style="background:#3a7bea"></i>أزرق</button>
+    <button class="tg" type="button" data-c="2" aria-pressed="true"><i style="background:#3fbf4a"></i>أخضر</button>
+    <button class="tg" type="button" data-c="3" aria-pressed="false"><i style="background:#f5d52f"></i>أصفر</button>
+    <button class="tg" type="button" data-c="4" aria-pressed="false"><i style="background:#f59a2f"></i>برتقالي</button>
+    <button class="tg" type="button" data-c="5" aria-pressed="false"><i style="background:#e8423a"></i>أحمر</button>
+  </div>
+  <p class="msg" id="cMsg" aria-live="polite"></p>
+  <p class="tip">من شكل 22: الكلوروفيل أ و ب يمتصان <b>البنفسجي والأزرق والأحمر</b>، وهذي الطاقة تشغّل البناء الضوئي. ولا يمتصان <b>الأخضر</b> بل يعكسانه، لذلك تبدو معظم النباتات خضراء. (وفي الشكل صبغة مساعدة صفراء برتقالية اسمها <b>بيتاكاروتين</b> تمتص الأزرق.)</p>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">آلية البناء الضوئي</h2></div>
+  <p>النبتة تصنع جزيئات <b>الكربوهيدرات</b> من <b>الماء وثاني أكسيد الكربون</b> بطاقة الشمس، و<b>الأكسجين ناتج ثانوي</b>. الملخّص في معادلة:</p>
+  <div class="eqn"><span class="row1">6CO₂ + 6H₂O <span class="arr"><span>طاقة ضوئية</span><i>⟶</i><span>كلوروفيل</span></span> C₆H₁₂O₆ + 6O₂</span></div>
+  <p style="margin-top:10px"><span dir="ltr">C₆H₁₂O₆</span> هو <b>سكر الجلوكوز سداسي الكربون</b>. والطاقة المخزّنة في روابطه التساهمية تُستخدم لاحقاً لإنتاج <b>ATP</b>، عملة الطاقة للخلية.</p>
+
+  <div class="act" data-act="gap" data-key="gap" data-ok="صح! المتفاعلات ⁦6CO₂ + 6H₂O⁩، والنواتج جلوكوز و ⁦6O₂⁩.">
+    <h3>أكمل الناقص <span class="k">نشاط</span></h3>
+    <p style="direction:ltr;text-align:center;font-family:'Noto Serif',Georgia,serif;font-size:1.1rem"><span class="gap">?</span> ⟶ C₆H₁₂O₆ + 6O₂</p>
+    <div class="opts">
+      <button class="pc" data-no="معكوسة: الأكسجين ناتج، و CO₂ هو اللي يدخل.">6O₂ + 6H₂O</button>
+      <button class="pc" data-ok>6CO₂ + 6H₂O</button>
+      <button class="pc" data-no="الجلوكوز فيه 6 ذرات كربون، فنحتاج 6 جزيئات CO₂ مو واحد.">CO₂ + H₂O</button>
+    </div>
+  </div>
+
+  <h3 style="margin:22px 0 8px">على مرحلتين، في مكانين</h3>
+  <p>البناء الضوئي ما يصير دفعة وحدة. المرحلة الأولى <b>التفاعلات المعتمدة على الضوء (الضوئية)</b>، والثانية <b>التفاعلات غير المعتمدة على الضوء (اللاضوئية) أو دورة كالفن</b>.</p>
+  <div class="cmp">
+    <div class="r h"><div></div><div>التفاعلات الضوئية</div><div>دورة كالفن</div></div>
+    <div class="r"><div>المكان</div><div>أغشية الثيلاكويد في الجرانا</div><div>الستروما خارج الجرانا</div></div>
+    <div class="r"><div>الضوء؟</div><div>تعتمد عليه</div><div>لا تعتمد على وجوده</div></div>
+    <div class="r"><div>يدخلها</div><div>ضوء، ماء، <span dir="ltr">NADP⁺</span>، <span dir="ltr">ADP + P</span></div><div>CO₂، ATP، NADPH</div></div>
+    <div class="r"><div>يخرج منها</div><div>O₂، ATP، NADPH</div><div>سكر (جلوكوز)</div></div>
+  </div>
+
+  <div class="act" data-act="sort" data-key="sort" data-bins='["التفاعلات الضوئية","دورة كالفن"]'
+       data-items='[["شطر جزيئات الماء",0],["انطلاق غاز الأكسجين",0],["تكوين ATP و NADPH",0],["سلسلة نقل الإلكترونات",0],["تثبيت CO₂ في مادة كربوهيدراتية",1],["استخدام ATP و NADPH",1],["إنتاج السكر سداسي الكربون",1],["تحدث في الستروما",1]]'
+       data-ok="ممتاز! الضوئية في الثيلاكويد: تشطر الماء وتطلق O₂ وتصنع ATP و NADPH. كالفن في الستروما: تستهلكهما لتثبيت CO₂ في سكر.">
+    <h3>وين تصير؟ <span class="k">نشاط</span></h3>
+    <p>صنّف كل حدث حسب مرحلته.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s5">
+  <div class="sec-head"><span class="num">5</span><h2 id="s5">التفاعلات الضوئية خطوة خطوة</h2></div>
+  <p>تحدث في مناطق متنوعة من <b>غشاء الثيلاكويد</b> اسمها <b>النظام الضوئي (2)</b> و<b>النظام الضوئي (1)</b>، وهي وحدات جامعة للضوء (شكل 24).</p>
+  <ol class="tline">
+    <li><span class="yr">أ · نظام 2</span><div class="ev"><b>امتصاص الضوء وشطر الماء</b><span>الكلوروفيل والأصباغ تمتص الضوء، وطاقته تنتقل للإلكترونات. إنزيمات النظام <strong>تشطر الماء</strong> إلى <strong>إلكترونات عالية الطاقة</strong> و<strong>أيونات هيدروجين H⁺</strong> و<strong>غاز O₂</strong>. ومعظم O₂ يخرج من الورقة إلى الهواء اللي نتنفسه.</span></div></li>
+    <li><span class="yr">ب · السلسلة</span><div class="ev"><b>سلسلة نقل الإلكترونات</b><span>الإلكترونات تنتقل من النظام (2) إلى النظام (1)، وجزيئات السلسلة تستخدم طاقتها لـ<strong>نقل H⁺ نقلاً نشطاً من الستروما إلى داخل الثيلاكويد</strong>.</span></div></li>
+    <li><span class="yr">ج · نظام 1</span><div class="ev"><b>تكوين NADPH</b><span>الأصباغ تعطي طاقة ضوء جديدة للإلكترونات، فيلتقطها <span dir="ltr">NADP⁺</span> ويتكوّن <strong>NADPH</strong> اللي يُستخدم لصنع الجلوكوز.</span></div></li>
+    <li><span class="yr">د · H⁺</span><div class="ev"><b>تراكم أيونات الهيدروجين</b><span>السطح الداخلي لغشاء الثيلاكويد يمتلئ بـ H⁺ الموجبة، فيصير <strong>الداخل موجباً والخارج سالباً</strong>.</span></div></li>
+    <li><span class="yr">هـ · ATP</span><div class="ev"><b>تكوين ATP</b><span>أيونات H⁺ تتدفق للخارج عبر بروتين الغشاء <strong>إنزيم تصنيع ATP</strong>، وطاقة تدفقها تربط <span dir="ltr">ADP</span> مع مجموعة فوسفات: <strong>ATP</strong>.</span></div></li>
+  </ol>
+  <p class="tip" style="margin-top:12px"><span class="help">مساعدة للفهم</span>سؤال الكتاب: ما دور تدرّج تركيز H⁺؟ تخيّل سدّ ماء: السلسلة "تضخّ" H⁺ خلف السد (داخل الثيلاكويد)، ولما ترجع من البوابة الوحيدة (إنزيم تصنيع ATP) تدوّر التوربين فيُصنع ATP.</p>
+
+  <div class="act" data-act="order" data-key="order" data-rtl
+       data-answer='["النظام 2 يمتص الضوء ويشطر الماء","الإلكترونات تمر في سلسلة النقل وتُضخ H⁺ للداخل","النظام 1: ⁦NADP⁺⁩ يلتقط الإلكترونات فيتكوّن NADPH","H⁺ تتدفق عبر إنزيم تصنيع ATP فيتكوّن ATP"]'
+       data-extra='["تثبيت CO₂ في سكر"]'
+       data-ok="ممتاز! نظام 2، ثم السلسلة، ثم نظام 1، ثم ATP من تدفق H⁺. وتثبيت CO₂ من دورة كالفن، مو من هنا."
+       data-no="القطع الحمراء في غير مكانها. البداية دائماً في النظام 2 (رقم 2 قبل 1)، وتثبيت CO₂ ما يصير في التفاعلات الضوئية.">
+    <h3>رتّب الخطوات <span class="k">نشاط</span></h3>
+    <p>رتّب أحداث التفاعلات الضوئية. فيه قطعة ما تنتمي لها.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s6">
+  <div class="sec-head"><span class="num">6</span><h2 id="s6">دورة كالفن (التفاعلات اللاضوئية)</h2></div>
+  <p>المرحلة الثانية، في <b>ستروما</b> البلاستيدة <b>خارج الجرانا</b>. تعتمد على نواتج المرحلة الأولى (<b>ATP و NADPH</b>) وعلى توفر <b>CO₂</b>، و<b>لا تعتمد على وجود الضوء</b> كي تحدث، لذلك سُمّيت كذا. واسمها نسبة للعالم <b>ميلفن كالفن</b> اللي اكتشفها. NADPH مصدر الهيدروجين لتثبيت CO₂، و ATP مصدر الطاقة.</p>
+  <ol class="tline">
+    <li><span class="yr">أ</span><div class="ev"><b>دخول CO₂</b><span><strong>6 جزيئات CO₂</strong> تتحد مع <strong>6 جزيئات خماسية الكربون</strong> فينتج <strong>12 جزيئاً ثلاثي الكربون</strong>.</span></div></li>
+    <li><span class="yr">ب</span><div class="ev"><b>دخول الطاقة (تثبيت الكربون)</b><span><strong>12 ATP</strong> و<strong>12 NADPH</strong> تحوّل الجزيئات الثلاثية الـ12 إلى جزيئات عالية الطاقة (ويخرج 12 ADP و 12 <span dir="ltr">NADP⁺</span>).</span></div></li>
+    <li><span class="yr">ج</span><div class="ev"><b>إنتاج السكر</b><span><strong>جزيئان</strong> ثلاثيا الكربون يخرجان من الدورة ويكوّنان <strong>جزيء جلوكوز</strong> سداسي الكربون.</span></div></li>
+    <li><span class="yr">د</span><div class="ev"><b>تجدّد الجزيئات خماسية الكربون</b><span><strong>الـ10 الباقية</strong> تتحول (بـ <strong>6 ATP</strong>) إلى <strong>6 جزيئات خماسية الكربون</strong> تُستخدم في الدورة التالية.</span></div></li>
+  </ol>
+  <div class="tip" style="margin-top:12px"><span class="help">مساعدة للفهم</span>عدّ ذرات الكربون، كلها تمشي صح:
+    <div class="cc"><span>6×1 + 6×5 = 36 = 12×3</span><span>2×3 = 6 → C₆H₁₂O₆</span><span>10×3 = 30 = 6×5</span></div>
+    يعني: <b>6 CO₂ ← جزيء جلوكوز واحد</b>.</div>
+</section>
+
+<section class="sec" aria-labelledby="s7">
+  <div class="sec-head"><span class="num">7</span><h2 id="s7">مصير السكريات</h2></div>
+  <p>الكائنات ذاتية التغذية وغير ذاتية التغذية كلها <b>تحوّل طاقة الجلوكوز إلى ATP</b> لتقوم بوظائفها (النمو والتكاثر). والنبتة اللي صنعت السكر هي <b>أول من يستهلكه</b>.</p>
+  <div class="fate">
+    <div class="card"><h3>🚚 سكروز للنقل</h3><p>النباتات الكبيرة فيها أجهزة نقل تنقل السكر على شكل <b>سكروز</b> من الأوراق لباقي الخلايا.</p></div>
+    <div class="card"><h3>🧱 سيليلوز للبناء</h3><p>جلوكوز مربوط في سلاسل طويلة. <b>أكثر مركب عضوي وفرة</b> في النباتات الحية، يعطيها القوة والصلابة. قليل من الكائنات تستفيد منه للطاقة، مثل <b>بكتيريا القناة الهضمية للأبقار</b>.</p></div>
+    <div class="card"><h3>🥔 نشا للتخزين</h3><p>معظم النباتات تخزّن الجلوكوز الزائد <b>نشويات</b>: سلاسل جلوكوز مرتبطة بطريقة مختلفة عن السيليلوز. في الذرة والبطاطا والقمح.</p></div>
+    <div class="card"><h3>🍝 عند الحيوان</h3><p>غير ذاتية التغذية تأكل النبات، تهضم النشا إلى جلوكوز، والزائد يُخزَّن <b>جليكوجين</b>.</p></div>
+  </div>
+  <p class="muted" style="font-size:13.5px;margin-top:8px">فقرة إثرائية: الكربوهيدرات معقّدة التركيب في الحبوب (الأرز والخبز والمعكرونة) مصدر طاقة مهم للإنسان.</p>
+</section>
+
+<section class="sec" aria-labelledby="s8">
+  <div class="sec-head"><span class="num">8</span><h2 id="s8">العوامل المؤثرة في البناء الضوئي</h2></div>
+  <p>البناء الضوئي يحتاج: <b>طاقة الشمس، الماء، CO₂، والكلوروفيل</b>.</p>
+
+  <h3 style="margin:16px 0 6px">1 · الضوء ونقطة التعويض</h3>
+  <p>مرحلة امتصاص الضوء تصير بس لما تتعرض النبتة لضوء الشمس أو <b>ضوء صناعي</b>، والكلوروفيل يشتغل مثل "قرون استشعار ضوئية". والنبتة <b>تتنفس</b> أيضاً: <b>التنفس الخلوي</b> تكسير الجلوكوز إلى CO₂ وماء مع إطلاق طاقة، ونواتجه عند النبات مثل الحيوان: <b>CO₂ والماء</b>. النبتة تقوم بالعمليتين <b>في الوقت نفسه</b>، فالسكر الصافي يعتمد على معدل التنفس وكمية الضوء.</p>
+  <div class="grid2" style="margin-top:10px">
+    <div class="box mint"><h3>تصنع أكثر مما تستهلك</h3><p>اكتسبت طاقة: تخزّنها أو تنمو بها.</p></div>
+    <div class="box butter"><h3>متساويان = نقطة التعويض</h3><p>لا طاقة مكتسبة ولا مفقودة.</p></div>
+    <div class="box pink"><h3>تستهلك أكثر مما تصنع</h3><p>فقدت طاقة. ولو بقي الضوء أقل من نقطة التعويض فترة طويلة، تستنزف مخزونها ولا تقدر تعيش.</p></div>
+    <div class="box sky"><h3>نباتات مختلفة</h3><p><b>قصب السكر</b> والحشائش المدارية تحتاج ضوءاً كثيراً. <b>اللبلاب والعنب</b> تكفيهما كمية معتدلة وتنمو في الظل (نباتات الظل).</p></div>
+  </div>
+  <p style="margin-top:10px">في الغابة، نباتات الظل والأشجار الصغيرة تحت الأشجار الكبيرة <b>تنمو ببطء</b> لأن الضوء نادر. ولما تطيح شجرة مسنّة أو تُقطع، يوصل الضوء لأرض الغابة فتنمو <b>بسرعة أكبر</b>.</p>
+
+  <h3 style="margin:18px 0 6px">2 · الماء وتجربة فان هلمونت (1630)</h3>
+  <div class="grid2">
+    <div class="box sky"><h3>التجربة</h3><p>العالم البلجيكي <b>فان هلمونت</b> زرع شجرة صفصاف <b dir="ltr">2 kg</b> في <b dir="ltr">90 kg</b> تربة، وسقاها بماء المطر <b>5 سنوات</b>. الشجرة زادت <b dir="ltr">75 kg</b> والتربة نقصت <b dir="ltr">55 g</b> فقط.</p></div>
+    <div class="box peach"><h3>استنتاجه وخطؤه</h3><p>استنتج أن النمو غالباً من <b>الماء</b>. لكنه <b>أهمل CO₂ في الهواء</b> اللي يأثر على وزن النبتة. والتجربة توضح أن العلم يتقدّم أحياناً بخطوة صحيحة وخطوة ناقصة.</p></div>
+  </div>
+  <p style="margin-top:10px">اليوم نعرف أن حوالي <b>90%</b> من الماء اللي تمتصه النبتة <b>يُفقد بالتبخّر</b> ولا يُستخدم في البناء الضوئي. والماء يأثر بطريقتين:</p>
+  <ul class="pts">
+    <li style="--b:var(--sc)"><b>مادة خام</b> للتفاعلات الضوئية (يُشطر فيعطي H⁺ والإلكترونات و O₂).</li>
+    <li style="--b:var(--sc)">يحفظ <b>الخليتين الحارستين مملوءتين</b> فتبقى الثغور مفتوحة. ولو انغلقت الثغور ما يدخل CO₂، فتخلو النبتة بسرعة من مادة أساسية ثانية.</li>
+  </ul>
+
+  <h3 style="margin:18px 0 6px">3 · ثاني أكسيد الكربون وتجربة سنبيير (1782)</h3>
+  <p>CO₂ يُستخدم لصنع السكريات البسيطة في <b>دورة كالفن</b>. العالم الفرنسي <b>جان سنبيير</b> وضع أوراقاً في محلول <b>بيكربونات</b> (ماء فيه CO₂) تحت الشمس: أنتجت "الهواء النقي" (هو O₂). وفي <b>ماء خالٍ من CO₂</b>: ما أنتجت أكسجين. فاستنتج أن الأوراق تستخدم CO₂، والعملية تحتاج أيضاً الماء والضوء لتنتج O₂.</p>
+
+  <details class="xtra"><summary>فقرة إثرائية: تزايد CO₂ والاحتباس الحراري</summary>
+    <ul class="pts">
+      <li style="--b:var(--sc)">تركيز CO₂ في الهواء كان حوالي <b>270</b> جزءاً في المليون سنة 1870، ووصل حسب الكتاب إلى حوالي <b>360</b>، بسبب حرق الأخشاب والوقود الأحفوري.</li>
+      <li style="--b:var(--sc)">CO₂ يحبس الحرارة مثل جدران الصوبة الزجاجية: <b>الاحتباس الحراري</b>. هو تأثير طبيعي (بدونه يكون متوسط حرارة سطح الأرض حوالي <span dir="ltr">−18 °C</span>)، لكن زيادته قد تسبب <b>التدفئة العالمية</b>.</li>
+      <li style="--b:var(--sc)">بعض المحاصيل نمت وأنتجت أوراقاً وثماراً أكثر مع CO₂ أعلى، لكن آثاره البعيدة على الأنظمة البيئية ما زالت غير مؤكدة.</li>
+    </ul>
+  </details>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">9</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sd">
+  <div class="sec-head"><span class="num">10</span><h2 id="sd">في حياتك</h2></div>
+  <div class="life">
+    <div class="card"><h3>نبتة البيت في الزاوية</h3><p>لو حطيتها في زاوية مظلمة جداً، تنزل تحت نقطة التعويض وتذبل مع الوقت. نباتات الظل تتحمّل أكثر.</p></div>
+    <div class="card"><h3>البطاطا والخبز</h3><p>كل لقمة نشا هي سكر صنعته نبتة بضوء الشمس وخزّنته. أنت تأكل ضوء شمس مخزّن!</p></div>
+    <div class="card"><h3>حوض السمك</h3><p>فقاعات صغيرة تطلع من نباتات الحوض تحت الإضاءة: هذا الأكسجين من شطر الماء.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">11</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>غاز الأكسجين الناتج في البناء الضوئي مصدره:</p>
+      <div class="opts"><button>تفكّك CO₂ في دورة كالفن</button><button data-ok>شطر جزيئات الماء في النظام الضوئي (2)</button><button>تكسير الجلوكوز في التنفس الخلوي</button></div>
+      <p class="why" hidden>الصحيح: شطر الماء في النظام الضوئي (2) يعطي H⁺ وإلكترونات و O₂. دورة كالفن تثبّت CO₂ في سكر، والتنفس يستهلك O₂ ولا ينتجه.</p></div>
+    <div class="q"><p>نبتة بقيت فترة طويلة في ضوء أقل من نقطة التعويض الخاصة بها:</p>
+      <div class="opts"><button>تكتسب طاقة وتنمو أسرع</button><button>لا تكسب ولا تخسر طاقة</button><button data-ok>تستهلك سكراً أكثر مما تصنع فتفقد طاقة</button></div>
+      <p class="why" hidden>الصحيح: تحت نقطة التعويض، التنفس الخلوي يستهلك سكراً أكثر من اللي يصنعه البناء الضوئي، فتفقد طاقة وتستنزف مخزونها.</p></div>
+    <div class="q"><p>ليش انغلاق الثغور (عند نقص الماء) يوقف البناء الضوئي بسرعة؟</p>
+      <div class="opts"><button data-ok>لأن CO₂ لا يقدر يدخل الورقة</button><button>لأن الضوء لا يصل للبلاستيدات</button><button>لأن الكلوروفيل يتحلّل</button></div>
+      <p class="why" hidden>الصحيح: الثغور باب دخول CO₂. الماء يحفظ الخليتين الحارستين مملوءتين فتبقى مفتوحة، وبدونه تنغلق فيتوقف دخول CO₂.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li><b>البناء الضوئي</b> في البلاستيدات الخضراء: <span dir="ltr">6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂</span> بطاقة الضوء والكلوروفيل (يمتص البنفسجي والأزرق والأحمر ويعكس الأخضر).</li>
+      <li><b>مرحلتان</b>: الضوئية في أغشية الثيلاكويد (شطر الماء، O₂، ATP و NADPH)، ودورة كالفن في الستروما (ATP و NADPH يثبّتان 6 CO₂ في جلوكوز واحد).</li>
+      <li><b>العوامل</b>: الضوء (نقطة التعويض: المصنوع = المستهلك)، الماء (هلمونت: مادة خام وثغور مفتوحة)، و CO₂ (سنبيير).</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الأحياء، الصف الحادي عشر، الوحدة الأولى، ص 28 إلى 40</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"bio-u1-1-2"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+/* ---- lab: leaf. simplified model for understanding, not book numbers ---- */
+var plant=0, lt=$("lt"), wt=$("wt"), cd=$("cd"), S=$("leafLab");
+var PL=[{sat:90,resp:3,name:"قصب السكر"},{sat:40,resp:1.5,name:"اللبلاب"}];
+function model(){
+  var p=PL[plant], L=+lt.value, W=+wt.value, C=+cd.value;
+  var open=W>=30, lf=Math.min(1,L/p.sat), wf=W<5?0:Math.min(1,W/30), cf=open?Math.min(1,C/60):0.04;
+  var ps=10*lf*wf*cf; return {ps:ps,r:p.resp,open:open,L:L,W:W,C:C};
+}
+function draw(){
+  var m=model(), h='', i, k;
+  /* sun */
+  var so=(0.15+0.85*m.L/100).toFixed(2);
+  h+='<g opacity="'+so+'"><circle cx="40" cy="38" r="20" fill="var(--sun)"/>';
+  for(i=0;i<8;i++){var a=i*Math.PI/4;h+='<line x1="'+(40+Math.cos(a)*26).toFixed(1)+'" y1="'+(38+Math.sin(a)*26).toFixed(1)+'" x2="'+(40+Math.cos(a)*34).toFixed(1)+'" y2="'+(38+Math.sin(a)*34).toFixed(1)+'" stroke="var(--sun)" stroke-width="4" stroke-linecap="round"/>';}
+  h+='</g>';
+  /* light rays to leaf */
+  if(m.L>5)for(i=0;i<3;i++)h+='<path d="M'+(64+i*14)+' '+(58+i*4)+' l14 12 l-6 2 l14 12" fill="none" stroke="var(--sun)" stroke-width="2.5" opacity="'+so+'"/>';
+  /* leaf */
+  h+='<path d="M60 140 C90 70 220 60 250 120 C220 175 100 190 60 140Z" fill="var(--leaf)" stroke="var(--leaf2)" stroke-width="3"/>';
+  h+='<path d="M60 140 C120 125 190 118 250 120" fill="none" stroke="var(--leaf2)" stroke-width="2.5"/>';
+  h+='<line x1="40" y1="152" x2="62" y2="140" stroke="var(--leaf2)" stroke-width="5" stroke-linecap="round"/>';
+  /* stoma on underside */
+  var sx=150, sy=166, gap=m.open?5:0.8;
+  h+='<ellipse cx="'+(sx-gap-6)+'" cy="'+sy+'" rx="7" ry="11" fill="var(--chl)"/><ellipse cx="'+(sx+gap+6)+'" cy="'+sy+'" rx="7" ry="11" fill="var(--chl)"/>';
+  h+='<ellipse cx="'+sx+'" cy="'+sy+'" rx="'+gap+'" ry="9" fill="var(--pore)"/>';
+  /* CO2 arrows into stoma */
+  if(m.open&&m.C>3){var n=Math.max(1,Math.round(m.C/34));for(k=0;k<n;k++){var x0=sx-30+k*30;h+='<line x1="'+x0+'" y1="214" x2="'+(sx+(k-1)*4)+'" y2="182" stroke="var(--co2)" stroke-width="2.5" marker-end="url(#ar)"/>';}}
+  h+='<text x="'+(sx-48)+'" y="222" font-size="12" font-weight="700" fill="var(--co2)" direction="ltr">CO₂</text>';
+  /* water drop */
+  var wh=(m.W/100*22).toFixed(1);
+  h+='<path d="M24 170 q-12 18 0 26 q12 -8 0 -26z" fill="none" stroke="var(--o2)" stroke-width="2"/><rect x="12" y="'+(196-wh)+'" width="24" height="'+wh+'" fill="var(--o2)" opacity=".7" clip-path="url(#drop)"/>';
+  /* O2 bubbles */
+  var nb=Math.round(m.ps);
+  for(k=0;k<nb;k++){var bx=200+((k*37)%60), by=100-((k*23)%70);h+='<circle cx="'+bx+'" cy="'+by+'" r="'+(4+(k%3))+'" fill="none" stroke="var(--o2)" stroke-width="2"/>';}
+  if(nb)h+='<text x="232" y="22" font-size="12" font-weight="700" fill="var(--o2)" direction="ltr">O₂</text>';
+  /* bars */
+  var base=188, sc=12, hp=m.ps*sc, hr=m.r*sc;
+  h+='<line x1="290" y1="'+base+'" x2="392" y2="'+base+'" stroke="var(--muted)" stroke-width="2"/>';
+  h+='<rect x="300" y="'+(base-hp).toFixed(1)+'" width="34" height="'+hp.toFixed(1)+'" rx="6" fill="var(--bar1)"/>';
+  h+='<rect x="350" y="'+(base-hr).toFixed(1)+'" width="34" height="'+hr.toFixed(1)+'" rx="6" fill="var(--bar2)"/>';
+  h+='<line x1="292" y1="'+(base-hr).toFixed(1)+'" x2="392" y2="'+(base-hr).toFixed(1)+'" stroke="var(--bar2)" stroke-width="1.5" stroke-dasharray="4 4"/>';
+  h+='<g font-size="12" font-weight="700" fill="var(--text)" text-anchor="middle"><text x="317" y="204">يُصنع</text><text x="367" y="204">يُستهلك</text></g>';
+  h+='<g font-size="11" fill="var(--muted)" text-anchor="middle"><text x="317" y="219">بناء ضوئي</text><text x="367" y="219">تنفّس</text></g>';
+  S.innerHTML='<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="var(--co2)"/></marker><clipPath id="drop"><path d="M24 170 q-12 18 0 26 q12 -8 0 -26z"/></clipPath></defs>'+h;
+  $("ltL").textContent=m.L;$("wtL").textContent=m.W;$("cdL").textContent=m.C;
+  var net=m.ps-m.r, msg, ok=false, nm="النبتة ("+PL[plant].name+")";
+  if(!m.open)msg="الماء قليل: الخليتان الحارستان فقدتا امتلاءهما فانغلق الثغر، و CO₂ ما يقدر يدخل. البناء الضوئي شبه متوقف.";
+  else if(m.L<3)msg="ظلام: ما في امتصاص ضوء، فما في بناء ضوئي ولا O₂. لكن النبتة ما زالت تتنفّس وتستهلك سكراً.";
+  else if(Math.abs(net)<0.35){msg=nm+" عند نقطة التعويض تقريباً: السكر المصنوع = السكر المستهلك. لا طاقة مكتسبة ولا مفقودة.";ok=true;}
+  else if(net>0){msg=nm+" تصنع سكراً أكثر مما تستهلك: اكتسبت طاقة تخزّنها أو تنمو بها.";ok=true;}
+  else msg=nm+" تحت نقطة التعويض: تستهلك أكثر مما تصنع، فتفقد طاقة. زِد الضوء.";
+  var e=$("lMsg"); e.textContent=msg; e.className=ok?"msg ok":"msg";
+  [].forEach.call(document.querySelectorAll("[data-p]"),function(b){b.setAttribute("aria-pressed",String(+b.dataset.p===plant));});
+}
+[lt,wt,cd].forEach(function(e){e.addEventListener("input",draw);});
+[].forEach.call(document.querySelectorAll("[data-p]"),function(b){b.addEventListener("click",function(){plant=+b.dataset.p;draw();});});
+draw();
+/* ---- spectrum ---- */
+var CM=["البنفسجي: يمتصه الكلوروفيل أ و ب بقوة، وطاقته تشغّل البناء الضوئي.",
+ "الأزرق: يمتصه الكلوروفيل بقوة (وتمتصه أيضاً الصبغة المساعدة بيتاكاروتين).",
+ "الأخضر: الكلوروفيل ما يمتصه تقريباً، بل يعكسه إلى عينك. لهذا الورقة خضراء!",
+ "الأصفر: امتصاص ضعيف جداً، أغلبه يمر أو ينعكس.",
+ "البرتقالي: امتصاص قليل، ويبدأ عنده امتصاص كلوروفيل ب قرب الأحمر.",
+ "الأحمر: يمتصه الكلوروفيل بقوة (خصوصاً كلوروفيل أ)، وطاقته تشغّل البناء الضوئي."];
+function spec(c){var e=$("cMsg");e.textContent=CM[c];e.className=(c===0||c===1||c===5)?"msg ok":"msg";
+  [].forEach.call(document.querySelectorAll("[data-c]"),function(b){b.setAttribute("aria-pressed",String(+b.dataset.c===c));});}
+[].forEach.call(document.querySelectorAll("[data-c]"),function(b){b.addEventListener("click",function(){spec(+b.dataset.c);});});
+spec(2);
+})();
+</script>
+</body>
+</html>
