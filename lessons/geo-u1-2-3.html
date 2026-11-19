@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="geology">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>نشأة المجموعة الشمسية · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+span[dir=ltr],bdi[dir=ltr]{unicode-bidi:isolate}
+body{--space:#e9e4ff;--neb:#c9b8ff;--neb2:#ffc9d6;--dot:#6b5bd6;--arrowIn:#6b5bd6;--arrowOut:#e2653f;--crust:#d8b77a;--mantle:#f08a4b;--iron:#7d8594;--cold:#a39a8c;--hot:#d9543f;--orbit:#b9b0e6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--space:#211d38;--neb:#5a4c99;--neb2:#7a3f55;--dot:#c9c0ff;--arrowIn:#c9c0ff;--arrowOut:#ff9a74;--crust:#e8cf98;--mantle:#ff9a5c;--iron:#aab2c0;--cold:#6d665c;--hot:#9c3a2a;--orbit:#4d4580}}
+:root[data-theme="dark"] body{--space:#211d38;--neb:#5a4c99;--neb2:#7a3f55;--dot:#c9c0ff;--arrowIn:#c9c0ff;--arrowOut:#ff9a74;--crust:#e8cf98;--mantle:#ff9a5c;--iron:#aab2c0;--cold:#6d665c;--hot:#9c3a2a;--orbit:#4d4580}
+.stage{display:block;width:100%;height:auto;border-radius:22px;background:var(--space);box-shadow:var(--press)}
+.steps5{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.steps5 span{font-size:13px;padding:4px 10px;border-radius:12px;background:var(--card);box-shadow:var(--clay-sm);color:var(--muted)}
+.steps5 span.on{background:var(--sc);color:#fff;font-weight:700}
+.help{display:inline-block;font-size:12px;font-weight:700;padding:1px 9px;border-radius:9px;background:var(--p-sky);color:var(--text);margin-inline-end:6px}
+.xtra{margin-top:12px;padding:10px 16px;border-radius:20px;background:var(--card);box-shadow:var(--clay-sm)}
+.xtra summary{cursor:pointer;font-weight:700;color:var(--ink)}
+.big{font-family:var(--display);font-size:1.4rem;color:var(--ink);direction:ltr;unicode-bidi:isolate}
+.depth{display:block;width:100%;height:auto;border-radius:20px;background:var(--space);margin-top:10px}
+.heat4{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:12px}
+.heat4 .card{display:flex;gap:10px;align-items:flex-start}
+.heat4 .ico{flex:0 0 40px;height:40px;border-radius:14px;display:grid;place-items:center;background:var(--p-peach);box-shadow:var(--clay-sm);font-size:20px}
+.heat4 h3{margin:0 0 4px;font-size:1rem}
+.heat4 p{margin:0;font-size:14.5px}
+.act[data-act=gap] .opts{direction:rtl}
+.act[data-act=gap] .pc{font-family:var(--body);font-style:normal;font-size:1rem}
+</style>
+</head>
+<body style="--sc:#e2653f">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الجيولوجيا</span><span class="chip">الدرس 2-3 · ص 30 إلى 33</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الأولى: الكون والأرض · الفصل الثاني: نشأة الكون</p>
+  <h1 id="t">نشأة المجموعة الشمسية</h1>
+  <p>الشمس وكواكبها كانت يوماً <b>سحابة باردة من غاز وغبار</b>. والأرض نفسها بدأت كتلة مخلوطة، واليوم قلبها حديد وقشرتها خفيفة. <mark>من رتّبها كذا؟</mark> حرّك الزمن في المختبر وشوف القصة.</p>
+</section>
+
+<section class="panel" id="lab-sec" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">مختبر: من سحابة إلى مجموعة شمسية</h2><span class="legend">حرّك الزمن خطوة خطوة</span></div>
+  <svg class="stage" id="cloud" viewBox="0 0 400 250" role="img" aria-label="رسم يوضح مرحلة تكوّن المجموعة الشمسية الحالية"></svg>
+  <div class="controls"><div class="ctl"><label for="step">المرحلة <b id="stepL">سحابة</b></label><input type="range" id="step" min="0" max="4" step="1" value="0" aria-describedby="stepL"></div></div>
+  <div class="steps5" id="steps" aria-hidden="true"><span>سحابة</span><span>قرص مفلطح</span><span>دوامات</span><span>الشمس الأوّلية</span><span>تنقية الأجواء</span></div>
+  <p class="msg" id="cMsg" aria-live="polite"></p>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">مصطلحات الدرس</h2></div>
+  <p class="muted" style="margin-top:-4px">هذه الكلمات هي الدرس كله.</p>
+  <div class="syms">
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub"><span>☁</span></span><div><h3>نظرية سحابة الغبار <span class="en">Dust Cloud Theory</span></h3><p>تصوّر الفلكي جيرارد كويبر: المجموعة الشمسية تكوّنت من سحابة غاز وغبار كوني في ذراع درب التبّانة.</p><span class="hook">من غبار جاءت، مثل كرة ثلج تكبر.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span>☀</span></span><div><h3>الشمس الأوّلية <span class="en">Protosun</span></h3><p>الشكل الأوّل للشمس: الجزء الأكبر من مادة السحابة انجذب إلى مركزها.</p><span class="hook">أكبر حصة من الكعكة راحت للوسط.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub"><span>⇅</span></span><div><h3>التمايز <span class="en">Differentiation</span></h3><p>تحوّل الأرض من كتلة مواد مختلطة (متجانسة) إلى أغلفة متحدة المركز تختلف فيزيائياً وكيميائياً.</p><span class="hook">الخفيف يطلع فوق، والثقيل ينزل تحت.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span>🟫</span></span><div><h3>القشرة الأرضية <span class="en">Crust</span></h3><p>الغلاف الخارجي: مواد أقل كثافة غنية بالسيليكا والألومنيوم والصوديوم والبوتاسيوم.</p><span class="hook">قشرة البيضة: رقيقة وخفيفة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub"><span>🟠</span></span><div><h3>الوشاح <span class="en">Mantle</span></h3><p>الطبقة بين القشرة واللب: أكبر سمكاً ومتوسطة الكثافة.</p><span class="hook">الوشاح يلفّ اللب مثل الشال.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span>⚙</span></span><div><h3>اللب <span class="en">Core</span></h3><p>مركز الأرض: المواد الأكثر كثافة مثل الحديد المنصهر. خارجي منصهر وداخلي صلب.</p><span class="hook">قلب الأرض حديد.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub"><span>🌋</span></span><div><h3>الغلاف الغازي الأوّلي <span class="en">Primary Atmosphere</span></h3><p>غازات صعدت من تصدّعات القشرة والبراكين: بخار الماء وثاني أكسيد الكربون والميثان.</p><span class="hook">أوّل هواء للأرض طلع من البراكين.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub"><span>🦠</span></span><div><h3>البكتيريا الخضراء المزرقة <span class="en">Cyanobacteria</span></h3><p>كائنات قامت بالبناء الضوئي قبل حوالي 3.5 مليار سنة وأطلقت الأكسجين.</p><span class="hook">أول مصنع أكسجين على الأرض.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">كيف تكوّنت المجموعة الشمسية؟</h2></div>
+  <p><b>ما في نظرية ثابتة ومؤكّدة</b>. العلماء يقرأون الدلائل في الكون ويفسّرون الحكاية <b>بشكل تقريبي</b>. ومن أشهر التصوّرات تصوّر الفلكي <b>جيرارد كويبر</b> <span dir="ltr">(Gerard Kuiper)</span>: المجموعة الشمسية تكوّنت من سحابات <b>الغاز والغبار الكوني</b> المتناثرة في ذراع المجرّة الأم (درب التبّانة). واسمها <b>نظرية سحابة الغبار</b>.</p>
+  <ol class="tline">
+    <li><span class="yr">1</span><div class="ev"><b>سحابة تدور بعشوائية</b><span>سحابة <strong>باردة، غير منتظمة الشكل، هائلة الحجم</strong> من غبار كوني وغازات، أغلبها <strong>هيدروجين وهيليوم</strong>، تتحرك حركة عشوائية.</span></div></li>
+    <li><span class="yr">2</span><div class="ev"><b>قرص مفلطح</b><span><strong>الضغط الناتج عن أشعة النجوم</strong> المنتشرة حول السحابة يحرّك مكوّناتها ببطء ويجعلها <strong>تدور في اتجاه واحد</strong> حول نفسها، فتصير <strong>قرصاً مفلطحاً</strong>.</span></div></li>
+    <li><span class="yr">3</span><div class="ev"><b>دوامات صغيرة</b><span>بسبب <strong>تجاذب الجزيئات واختلاف سرعتها</strong> داخل القرص تتكوّن دوامات صغيرة، وكل دوامة تنكمش وتصير <strong>نواة كوكب مستقل</strong> فيما بعد.</span></div></li>
+    <li><span class="yr">4</span><div class="ev"><b>الشمس الأوّلية</b><span><strong>الجزء الأكبر</strong> من مادة السحابة ينجذب إلى مركزها فيتكوّن شكل <strong>الشمس الأوّلي</strong>.</span></div></li>
+    <li><span class="yr">5</span><div class="ev"><b>الحرارة ترتفع</b><span>أنوية الكواكب تنظّم حركتها وتنكمش، و<strong>المواد الثقيلة تتجه لمركزها</strong>. وفي نواة الشمس، تجاذب الجزيئات واصطدامها يولّد ضغطاً وحرارة ترتفع بالتدريج.</span></div></li>
+    <li><span class="yr">6</span><div class="ev"><b>الشمس تشتعل</b><span>تبدأ <strong>التفاعلات النووية</strong> في نواة الشمس، وإشعاعها <strong>ينقّي الأجواء</strong> حول أنوية الكواكب من <strong>الغازات الخفيفة</strong>، خاصة القريبة من الشمس. وهكذا تكوّنت المجموعة الشمسية.</span></div></li>
+  </ol>
+  <p class="tip" style="margin-top:12px"><span class="help">مساعدة للفهم</span>تخيّل عجينة بيتزا: الخبّاز يلفّها في الهواء فتتحول من كرة إلى قرص مسطّح. السحابة نفس الشي: لما تدور في اتجاه واحد تتفلطح.</p>
+  <p class="note" style="margin-top:10px"><b>نشاط الكتاب:</b> الحزام اللي يتميّز بتراكم الكويكبات في صورة المجموعة الشمسية اسمه <b>حزام الكويكبات</b>، ويقع بين مداري <b>المريخ والمشتري</b>.</p>
+
+  <div class="act" data-act="order" data-key="order" data-rtl
+       data-answer='["سحابة باردة تدور بعشوائية","أشعة النجوم تجعلها قرصاً مفلطحاً","دوامات تنكمش إلى أنوية كواكب","أغلب المادة للمركز: الشمس الأوّلية","تفاعلات نووية وإشعاع ينقّي الغازات الخفيفة"]'
+       data-extra='["انفجار عظيم من نقطة واحدة"]'
+       data-ok="ممتاز! سحابة، قرص، دوامات، شمس أوّلية، ثم الإشعاع ينظّف. والانفجار العظيم قصة نشأة الكون (الدرس 2-1)، مو المجموعة الشمسية."
+       data-no="القطع الحمراء في غير مكانها. ابدأ بالسحابة الباردة، والتفاعلات النووية آخر شي. وهل الانفجار العظيم من نظرية كويبر؟">
+    <h3>رتّب قصة كويبر <span class="k">نشاط</span></h3>
+    <p>اضغط القطع بالترتيب من الأول للأخير. فيه قطعة زائدة ما تنتمي للقصة.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">تطوّر الأرض المبكر: ليش سخنت؟</h2></div>
+  <p>الأرض في <b>بداية تكوّنها كانت باردة وصلبة</b>، ما حولها غلاف غازي ولا محيطات. بعدين بدأت الحرارة <b>تزيد في داخلها</b> لأربعة أسباب:</p>
+  <div class="heat4">
+    <div class="card"><span class="ico" aria-hidden="true">☄</span><div><h3>الارتطام</h3><p>تساقط الأجسام الصغيرة من سحابة الغبار على سطحها وارتطامها بشدة.</p></div></div>
+    <div class="card"><span class="ico" aria-hidden="true">☢</span><div><h3>العناصر المشعة</h3><p>تحلّل عناصر مثل <b>اليورانيوم والثوريوم</b> وتحوّلها إلى <b>رصاص</b>، فتطلق جسيمات وطاقة حرارية كبيرة.</p></div></div>
+    <div class="card"><span class="ico" aria-hidden="true">↻</span><div><h3>الاحتكاك</h3><p>احتكاك مواد الأرض ببعضها أثناء دوران الأرض حول محورها.</p></div></div>
+    <div class="card"><span class="ico" aria-hidden="true">⚗</span><div><h3>التفاعلات الكيميائية</h3><p>تكوّن الأكاسيد والتفاعلات الكيميائية المختلفة داخل الأرض.</p></div></div>
+  </div>
+  <p class="tip" style="margin-top:12px">هذه الحرارة هي اللي بدأت <b>التمايز</b>: تحوّل الأرض من كتلة <b>مواد مختلطة (متجانسة)</b> إلى جسم مقسوم من الداخل إلى <b>أغلفة متحدة المركز</b> تختلف عن بعضها <b>فيزيائياً وكيميائياً</b>. بهذه العملية صارت الأرض كوكباً فيه قارات ومحيطات وغلاف جوي.</p>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">تمايز مكوّنات الأرض</h2></div>
+  <div class="panel" style="margin:4px 0 14px">
+    <div class="lab-head"><h3 style="margin:0">مختبر التمايز</h3><span class="legend">سخّن الأرض وراقب المواد</span></div>
+    <svg class="stage" id="diff" viewBox="0 0 400 250" role="img" aria-label="رسم الأرض ومواد خفيفة ومتوسطة وثقيلة تترتب في طبقات"></svg>
+    <div class="controls"><div class="ctl"><label for="melt">الحرارة والزمن <b id="meltL">باردة وصلبة</b></label><input type="range" id="melt" min="0" max="100" value="0" aria-describedby="meltL"></div></div>
+    <p class="msg" id="dMsg" aria-live="polite"></p>
+  </div>
+  <p>لما انصهرت الأرض صار التمايز:</p>
+  <div class="grid2">
+    <div class="box butter"><h3>صعدت للسطح ← القشرة</h3><p>المواد المنصهرة <b>الأقل كثافة</b>، غنية بـ<b>السيليكا والألومنيوم والصوديوم والبوتاسيوم</b>. وصخور السطح لين اليوم غنية بها.</p></div>
+    <div class="box sky"><h3>غاصت للمركز ← اللب</h3><p>المواد المنصهرة <b>الأكثر كثافة</b> مثل <b>الحديد المنصهر</b>.</p></div>
+  </div>
+  <p style="margin-top:12px">وبينهما طبقة <b>أكبر سمكاً متوسطة الكثافة</b> هي <b>الوشاح</b>. يعني: <b>كثافة مواد الأرض تزداد كلما اتجهنا نحو المركز</b>.</p>
+
+  <h3 style="margin:20px 0 6px">رحلة من السطح إلى المركز</h3>
+  <svg class="depth" viewBox="0 0 420 150" role="img" aria-label="شريط الأعماق: القشرة رقيقة، الوشاح حتى 2900 كم، اللب الخارجي المنصهر حتى 5100 كم، اللب الداخلي الصلب حتى 6378 كم">
+    <g direction="ltr">
+      <rect x="20" y="58" width="5" height="34" fill="var(--crust)"/>
+      <rect x="25" y="58" width="168" height="34" fill="var(--mantle)"/>
+      <rect x="193" y="58" width="127" height="34" fill="var(--iron)" opacity=".75"/>
+      <rect x="320" y="58" width="80" height="34" fill="var(--iron)"/>
+      <g stroke="var(--text)" stroke-width="1.5"><line x1="20" y1="52" x2="20" y2="98"/><line x1="193" y1="52" x2="193" y2="98"/><line x1="320" y1="52" x2="320" y2="98"/><line x1="400" y1="52" x2="400" y2="98"/></g>
+      <g font-size="13" font-weight="700" fill="var(--text)" text-anchor="middle">
+        <text x="20" y="116">0</text><text x="193" y="116">2,900</text><text x="320" y="116">5,100</text><text x="416" y="116" text-anchor="end">6,378 km</text>
+      </g>
+      <g font-size="14" font-weight="700" fill="var(--text)" text-anchor="middle">
+        <text x="109" y="44">الوشاح</text><text x="256" y="44">اللب الخارجي</text><text x="360" y="44">اللب الداخلي</text><text x="24" y="20" text-anchor="start">↓ القشرة</text>
+      </g>
+      <g font-size="12.5" fill="var(--muted)" text-anchor="middle">
+        <text x="109" y="138">صلب أغلبه</text><text x="256" y="138">منصهر (سائل)</text><text x="360" y="138">صلب</text>
+      </g>
+    </g>
+  </svg>
+  <p class="muted" style="font-size:13.5px;margin-top:6px">رسم بمقياس الأعماق من عندنا، والأصل شكل 17 في الكتاب. القشرة رقيقة جداً (في الشكل سمكها 0 إلى 10 كم) لدرجة إنها خط على الرسم. ونصف قطر الأرض 6,378 كم.</p>
+
+  <div class="act" data-act="match" data-key="match"
+       data-pairs='[["القشرة","أقل كثافة، غنية بالسيليكا والألومنيوم"],["الوشاح","أكبر سمكاً، متوسط الكثافة"],["اللب الخارجي","حديد منصهر (سائل)"],["اللب الداخلي","صلب، في مركز الأرض"]]'
+       data-ok="ممتاز! من الخارج للداخل الكثافة تزيد: قشرة خفيفة، وشاح متوسط، ثم لب حديد منصهر من الخارج وصلب في الداخل.">
+    <h3>وصّل الطبقة بوصفها <span class="k">نشاط</span></h3>
+    <p>اختر الطبقة، ثم الوصف المناسب لها.</p>
+  </div>
+
+  <details class="xtra"><summary>فقرة إثرائية: الليثوسفير والأسثينوسفير</summary>
+    <ul class="pts">
+      <li style="--b:var(--sc)">القشرة نوعان: <b>قارّية</b> و<b>محيطية</b>. تحتها طبقة صلبة كثيفة (حوالي 100 كم) من صخور <b>البريدوتيت</b> <span dir="ltr">(Peridotite)</span>، يعتبرها العلماء أعلى جزء من الوشاح. القشرة مع هذا الجزء الصلب اسمهما <b>الليثوسفير</b> (الغلاف الصخري).</li>
+      <li style="--b:var(--sc)">تحت الليثوسفير طبقة (حوالي 200 كم) منصهرة من الوشاح فيها <b>تيارات حمل</b> مسؤولة عن الحركات التكتونية والبراكين: <b>الأسثينوسفير</b> (الوشاح الحركي). وباقي الوشاح صلب وتزيد كثافته كلما تعمّقنا.</li>
+    </ul>
+  </details>
+</section>
+
+<section class="sec" aria-labelledby="s5">
+  <div class="sec-head"><span class="num">5</span><h2 id="s5">تطوّر الغلاف الغازي</h2></div>
+  <ol class="tline">
+    <li><span class="yr">🌋</span><div class="ev"><b>غازات من الداخل</b><span>الغازات والمواد الطيّارة تصاعدت من <strong>تصدّعات القشرة وثوران البراكين</strong>: أساساً <strong>بخار الماء وثاني أكسيد الكربون والميثان</strong>. هذا هو الغلاف الغازي الأوّلي.</span></div></li>
+    <li><span class="yr">☁</span><div class="ev"><b>سحب وأمطار</b><span>بخار الماء <strong>تكثّف</strong> فتكوّنت السحب، ونزلت أمطار غزيرة جارفة ملأت المناطق المنخفضة: <strong>المحيطات الأوّلية</strong>.</span></div></li>
+    <li><span class="yr">🌊</span><div class="ev"><b>من عذب إلى مالح</b><span>المحيطات الأولى كانت <strong>عذبة</strong>، وملوحتها زادت <strong>بالتدريج</strong> لأن الماء الجاري أذاب الأملاح والمعادن من القشرة بعد تفكّكها بـ<strong>التجوية</strong> وصبّها في المحيطات.</span></div></li>
+    <li><span class="yr">🦠</span><div class="ev"><b>جاء الأكسجين</b><span>منذ حوالي <strong>3.5 مليار سنة</strong> بدأت <strong>البكتيريا الخضراء المزرقة</strong> بالبناء الضوئي فأطلقت الأكسجين في الماء، ومع زيادة عددها بدأ الأكسجين <strong>يتراكم في الغلاف الجوي</strong>.</span></div></li>
+  </ol>
+
+  <div class="act" data-act="gap" data-key="gap" data-ok="صح! الأكسجين جاء من البناء الضوئي عند البكتيريا الخضراء المزرقة، قبل حوالي 3.5 مليار سنة.">
+    <h3>أكمل الناقص <span class="k">نشاط</span></h3>
+    <p>الغلاف الغازي الأوّلي ما كان فيه أكسجين يُذكر. الأكسجين بدأ يتراكم في الجو بفضل <span class="gap"></span>.</p>
+    <div class="opts">
+      <button class="pc" data-no="البراكين أطلقت بخار الماء وثاني أكسيد الكربون والميثان، مو الأكسجين.">ثوران البراكين</button>
+      <button class="pc" data-no="تكثّف بخار الماء كوّن السحب والأمطار والمحيطات، وما أضاف أكسجين للجو.">تكثّف بخار الماء</button>
+      <button class="pc" data-ok>البناء الضوئي عند البكتيريا الخضراء المزرقة</button>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">6</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sd">
+  <div class="sec-head"><span class="num">7</span><h2 id="sd">في حياتك</h2></div>
+  <div class="life">
+    <div class="card"><h3>زيت وماء في قنينة</h3><p>رجّها وخلّها شوي: الزيت الأخف يطلع فوق والماء الأثقل ينزل. هذا التمايز بالصغير.</p></div>
+    <div class="card"><h3>افرك يديك</h3><p>تحسّ بالدفء؟ الاحتكاك يولّد حرارة، وهو واحد من أسباب سخونة باطن الأرض.</p></div>
+    <div class="card"><h3>ماء البحر مالح</h3><p>كل مطرة تنزل على الصخور تذيب شوية أملاح وتوديها للبحر. ملايين السنين من هذا خلّت البحر مالحاً.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">8</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>ما دور أشعة النجوم المنتشرة في الكون في تكوين المجموعة الشمسية؟</p>
+      <div class="opts"><button>أشعلت التفاعلات النووية في نواة الشمس</button><button data-ok>ضغطها حرّك مكوّنات السحابة ببطء ودوّرها في اتجاه واحد فصارت قرصاً مفلطحاً</button><button>جذبت المواد الثقيلة إلى مراكز الكواكب</button></div>
+      <p class="why" hidden>الصحيح: ضغط أشعة النجوم دوّر السحابة في اتجاه واحد فتفلطحت. التفاعلات النووية بدأت من حرارة نواة الشمس نفسها، وجذب المواد الثقيلة شغل قوى التجاذب.</p></div>
+    <div class="q"><p>لماذا القشرة الأرضية غنية بالسيليكا والألومنيوم والصوديوم والبوتاسيوم؟</p>
+      <div class="opts"><button>لأنها سقطت من الشمس الأوّلية</button><button>لأنها أكثر المواد كثافة</button><button data-ok>لأنها مواد منصهرة أقل كثافة صعدت للسطح أثناء التمايز</button></div>
+      <p class="why" hidden>الصحيح: أثناء التمايز صعدت المواد الأقل كثافة للسطح فكوّنت القشرة، وغاص الأكثر كثافة مثل الحديد إلى اللب.</p></div>
+    <div class="q"><p>أيّ مما يلي <b>ليس</b> من أسباب ارتفاع الحرارة داخل الأرض بعد تكوّنها؟</p>
+      <div class="opts"><button>تحلّل اليورانيوم والثوريوم إلى رصاص</button><button data-ok>تكثّف بخار الماء وتكوّن السحب</button><button>احتكاك مواد الأرض أثناء دورانها حول محورها</button></div>
+      <p class="why" hidden>الصحيح: تكثّف بخار الماء جزء من تطوّر الغلاف الغازي، مو سبب للحرارة. الأسباب الأربعة: الارتطام، العناصر المشعة، الاحتكاك، الأكاسيد والتفاعلات الكيميائية.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li><b>نظرية سحابة الغبار</b> (كويبر): سحابة باردة تدور، أشعة النجوم تجعلها قرصاً مفلطحاً، دوامات تصير أنوية كواكب، أغلب المادة للمركز فتتكوّن الشمس الأوّلية، ثم تفاعلات نووية وإشعاع ينقّي الغازات الخفيفة.</li>
+      <li><b>التمايز</b>: الأرض الباردة سخنت (ارتطام، عناصر مشعة، احتكاك، تفاعلات كيميائية) وانصهرت، فصعد الخفيف قشرةً وغاص الحديد لباً وبينهما الوشاح.</li>
+      <li><b>الغلاف الغازي</b>: من البراكين (بخار ماء، CO₂، ميثان)، ثم أمطار ومحيطات عذبة زادت ملوحتها، ثم الأكسجين من البكتيريا الخضراء المزرقة قبل 3.5 مليار سنة.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الجيولوجيا، الصف الحادي عشر، الوحدة الأولى، ص 30 إلى 33</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"geo-u1-2-3"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+function rnd(seed){var s=seed;return function(){s=(s*9301+49297)%233280;return s/233280;};}
+var DEF='<defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="var(--arrowOut)"/></marker><marker id="ahI" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="var(--arrowIn)"/></marker></defs>';
+/* lab 1: cloud to solar system, step 0..4 */
+var NAMES=["سحابة","قرص مفلطح","دوامات","الشمس الأوّلية","تنقية الأجواء"];
+var MSG=["سحابة باردة غير منتظمة وهائلة الحجم من غبار وغازات (أغلبها هيدروجين وهيليوم)، أجزاؤها تتحرك بعشوائية.",
+ "ضغط أشعة النجوم حول السحابة حرّك مكوّناتها ببطء ودوّرها في اتجاه واحد، فتفلطحت وصارت قرصاً.",
+ "تجاذب الجزيئات واختلاف سرعتها كوّن دوامات صغيرة، كل دوامة تنكمش وتصير نواة كوكب.",
+ "أغلب المادة انجذب للمركز: الشمس الأوّلية. وفي نواتها التجاذب والاصطدام يرفعان الحرارة بالتدريج، والمواد الثقيلة تتجه لمراكز الكواكب.",
+ "بدأت التفاعلات النووية في نواة الشمس، وإشعاعها نقّى الغازات الخفيفة حول الكواكب، خاصة القريبة منها. تكوّنت المجموعة الشمسية!"];
+var svg=$("cloud"), st=$("step");
+function spiral(x,y,r){return '<path d="M'+x+' '+y+' m-'+r+' 0 a'+r+' '+(r*0.5)+' 0 1 1 '+(r*1.6)+' 0 a'+(r*0.6)+' '+(r*0.3)+' 0 1 1 -'+(r*0.9)+' 0" fill="none" stroke="var(--dot)" stroke-width="2.4" stroke-linecap="round"/>';}
+function star(x,y){return '<g fill="#ffd23f"><circle cx="'+x+'" cy="'+y+'" r="7"/></g><g stroke="#ffd23f" stroke-width="2" stroke-linecap="round"><line x1="'+(x-12)+'" y1="'+y+'" x2="'+(x+12)+'" y2="'+y+'"/><line x1="'+x+'" y1="'+(y-12)+'" x2="'+x+'" y2="'+(y+12)+'"/></g>';}
+function draw(){
+  var s=+st.value, h=DEF, r=rnd(7), i;
+  if(s===0){
+    h+='<path d="M90 110 C70 60 160 40 200 70 C240 30 330 60 310 110 C350 150 290 200 220 180 C170 215 80 190 100 150 C70 140 80 120 90 110Z" fill="var(--neb)" opacity=".85"/>';
+    h+='<ellipse cx="240" cy="130" rx="60" ry="34" fill="var(--neb2)" opacity=".6"/>';
+    for(i=0;i<34;i++){var x=110+r()*190,y=70+r()*110,a=r()*6.28;h+='<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="2.4" fill="var(--dot)"/>';
+      if(i%4===0)h+='<line x1="'+x.toFixed(1)+'" y1="'+y.toFixed(1)+'" x2="'+(x+Math.cos(a)*14).toFixed(1)+'" y2="'+(y+Math.sin(a)*14).toFixed(1)+'" stroke="var(--arrowIn)" stroke-width="2" marker-end="url(#ahI)"/>';}
+  } else if(s===1){
+    h+='<ellipse cx="200" cy="125" rx="140" ry="42" fill="var(--neb)" opacity=".85"/><ellipse cx="200" cy="125" rx="90" ry="26" fill="var(--neb2)" opacity=".55"/>';
+    for(i=0;i<30;i++){var a1=r()*6.28,rr=0.2+r()*0.75;h+='<circle cx="'+(200+Math.cos(a1)*130*rr).toFixed(1)+'" cy="'+(125+Math.sin(a1)*38*rr).toFixed(1)+'" r="2.2" fill="var(--dot)"/>';}
+    h+='<path d="M120 178 Q200 205 280 178" fill="none" stroke="var(--arrowIn)" stroke-width="3" marker-end="url(#ahI)"/>';
+    h+=star(26,26)+star(374,26)+star(26,224)+star(374,224);
+    h+='<g stroke="#e0a800" stroke-width="2.5" stroke-dasharray="5 5"><line x1="40" y1="38" x2="80" y2="78" marker-end="url(#ah)"/><line x1="360" y1="38" x2="320" y2="78" marker-end="url(#ah)"/><line x1="40" y1="212" x2="80" y2="172" marker-end="url(#ah)"/><line x1="360" y1="212" x2="320" y2="172" marker-end="url(#ah)"/></g>';
+  } else if(s===2){
+    h+='<ellipse cx="200" cy="125" rx="140" ry="42" fill="var(--neb)" opacity=".7"/>';
+    var P=[[95,120,12],[140,140,10],[255,108,12],[300,135,14],[180,105,9],[340,118,9]];
+    P.forEach(function(p){h+=spiral(p[0],p[1],p[2]);});
+    h+='<circle cx="200" cy="125" r="16" fill="#ffb36b" opacity=".8"/>';
+  } else if(s===3){
+    [40,62,86,110,134].forEach(function(o){h+='<ellipse cx="200" cy="125" rx="'+(o+30)+'" ry="'+((o+30)*0.3)+'" fill="none" stroke="var(--orbit)" stroke-width="1.5"/>';});
+    h+='<ellipse cx="200" cy="125" rx="160" ry="48" fill="var(--neb)" opacity=".35"/>';
+    h+='<circle cx="200" cy="125" r="30" fill="#ff9a3d"/><circle cx="200" cy="125" r="17" fill="#ffd27a"/>';
+    var PL=[[70,0.2],[92,2.6],[116,1.1],[140,3.8],[164,5.2]];
+    PL.forEach(function(p){var x=200+Math.cos(p[1])*p[0],y=125+Math.sin(p[1])*p[0]*0.3;h+='<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="9" fill="var(--neb2)"/><circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="4" fill="var(--dot)"/>';});
+  } else {
+    [40,62,86,110,134].forEach(function(o){h+='<ellipse cx="200" cy="125" rx="'+(o+30)+'" ry="'+((o+30)*0.3)+'" fill="none" stroke="var(--orbit)" stroke-width="1.5"/>';});
+    for(i=0;i<12;i++){var a2=i*Math.PI/6;h+='<line x1="'+(200+Math.cos(a2)*36).toFixed(1)+'" y1="'+(125+Math.sin(a2)*36).toFixed(1)+'" x2="'+(200+Math.cos(a2)*50).toFixed(1)+'" y2="'+(125+Math.sin(a2)*50).toFixed(1)+'" stroke="#ffb02e" stroke-width="4" stroke-linecap="round"/>';}
+    h+='<circle cx="200" cy="125" r="30" fill="#ffd23f"/><circle cx="200" cy="125" r="17" fill="#fff1a8"/>';
+    var PL2=[[70,0.2,0],[92,2.6,0],[116,1.1,1],[140,3.8,1],[164,5.2,1]];
+    PL2.forEach(function(p){var x=200+Math.cos(p[1])*p[0],y=125+Math.sin(p[1])*p[0]*0.3;
+      if(p[2])h+='<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="11" fill="var(--neb2)" opacity=".85"/>';
+      else h+='<line x1="'+(x+(x>200?6:-6)).toFixed(1)+'" y1="'+y.toFixed(1)+'" x2="'+(x+(x>200?24:-24)).toFixed(1)+'" y2="'+y.toFixed(1)+'" stroke="var(--arrowOut)" stroke-width="2.5" marker-end="url(#ah)"/>';
+      h+='<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="'+(p[2]?6:4.5)+'" fill="var(--dot)"/>';});
+    h+='<g font-size="12.5" font-weight="700" fill="var(--text)" text-anchor="middle"><text x="200" y="232">قريبة من الشمس: فقدت غازاتها الخفيفة</text></g>';
+  }
+  svg.innerHTML=h;
+  $("stepL").textContent=NAMES[s];
+  [].forEach.call($("steps").children,function(e,i){e.classList.toggle("on",i===s);});
+  var m=$("cMsg"); m.textContent=MSG[s]; m.className=s===4?"msg ok":"msg";
+}
+st.addEventListener("input",draw); draw();
+
+/* lab 2: differentiation. kinds: 0 light (crust), 1 medium (mantle), 2 heavy (iron core) */
+var D=$("diff"), melt=$("melt"), R=96, CX=118, CY=125, dots=[], rr=rnd(3);
+var BAND=[[88,93],[44,82],[0,36]], COUNT=[46,60,34];
+for(var k=0;k<3;k++)for(var n=0;n<COUNT[k];n++){
+  var a0=rr()*6.283, r0=Math.sqrt(rr())*88, a1=rr()*6.283, b=BAND[k], r1=k===2?Math.sqrt(rr())*b[1]:b[0]+rr()*(b[1]-b[0]);
+  dots.push({k:k,x0:CX+Math.cos(a0)*r0,y0:CY+Math.sin(a0)*r0,x1:CX+Math.cos(a1)*r1,y1:CY+Math.sin(a1)*r1});
+}
+var COL=["var(--crust)","var(--mantle)","var(--iron)"], RAD=[3.2,3.4,4];
+function ease(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;}
+function diff(){
+  var v=+melt.value, heat=Math.min(v/30,1), t=ease(Math.max(0,(v-30)/70)), h='';
+  h+='<circle cx="'+CX+'" cy="'+CY+'" r="'+(R+4)+'" fill="var(--cold)"/>';
+  h+='<circle cx="'+CX+'" cy="'+CY+'" r="'+(R+4)+'" fill="var(--hot)" opacity="'+(heat*(1-0.6*t)).toFixed(2)+'"/>';
+  if(t>0){h+='<g opacity="'+(0.55*t).toFixed(2)+'"><circle cx="'+CX+'" cy="'+CY+'" r="'+(R+4)+'" fill="var(--crust)"/><circle cx="'+CX+'" cy="'+CY+'" r="85" fill="var(--mantle)"/><circle cx="'+CX+'" cy="'+CY+'" r="40" fill="var(--iron)"/></g>';}
+  dots.forEach(function(d){var x=d.x0+(d.x1-d.x0)*t,y=d.y0+(d.y1-d.y0)*t;h+='<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="'+RAD[d.k]+'" fill="'+COL[d.k]+'" stroke="var(--text)" stroke-opacity=".25" stroke-width=".8"/>';});
+  /* legend on the right, its own space */
+  var L=[["خفيفة: سيليكا، ألومنيوم",0],["متوسطة الكثافة",1],["ثقيلة: حديد",2]];
+  L.forEach(function(l,i){var y=60+i*30;h+='<circle cx="388" cy="'+(y-4)+'" r="6" fill="'+COL[l[1]]+'" stroke="var(--text)" stroke-opacity=".3"/><text x="376" y="'+y+'" font-size="12.5" fill="var(--text)" direction="rtl" text-anchor="start">'+l[0]+'</text>';});
+  if(v>=95){
+    h+='<g font-size="13" font-weight="700" fill="var(--text)" direction="rtl" text-anchor="start">';
+    h+='<line x1="'+(CX+R)+'" y1="'+(CY+30)+'" x2="335" y2="168" stroke="var(--text)" stroke-width="1.2"/><text x="388" y="172">القشرة</text>';
+    h+='<line x1="'+(CX+60)+'" y1="'+(CY+20)+'" x2="335" y2="196" stroke="var(--text)" stroke-width="1.2"/><text x="388" y="200">الوشاح</text>';
+    h+='<line x1="'+(CX+18)+'" y1="'+(CY+12)+'" x2="335" y2="224" stroke="var(--text)" stroke-width="1.2"/><text x="388" y="228">اللب</text></g>';}
+  D.innerHTML=h;
+  var lab,msg;
+  if(v<10){lab="باردة وصلبة";msg="في البداية: كتلة باردة صلبة، موادها مخلوطة ببعض (متجانسة). لا غلاف غازي ولا محيطات.";}
+  else if(v<30){lab="تسخن";msg="الحرارة تزيد: ارتطام الأجسام، العناصر المشعة، الاحتكاك، والتفاعلات الكيميائية. الأرض تبدأ تنصهر.";}
+  else if(v<95){lab="تنصهر وتترتب";msg="المواد المنصهرة تتحرك: الخفيف يصعد للسطح، والحديد الثقيل يغوص للمركز.";}
+  else {lab="أغلفة";msg="تم التمايز: قشرة خفيفة فوق، وشاح متوسط الكثافة، ولب حديد في المركز. الكثافة تزيد كلما اتجهنا للمركز.";}
+  $("meltL").textContent=lab; var m=$("dMsg"); m.textContent=msg; m.className=v>=95?"msg ok":"msg";
+}
+melt.addEventListener("input",diff); diff();
+})();
+</script>
+</body>
+</html>
