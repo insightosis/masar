@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="chemistry">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الماء كمذيب قوي · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+span[dir=ltr],bdi[dir=ltr]{unicode-bidi:isolate}
+body{--ox:#ef5b5b;--hy:#5b8def;--bondc:#9a93b8;--arr:#2b2346;--net:#e2653f;--hb:#17b388;--na:#b58cf2;--cl:#7fcf6a;--plate:#eefaf5}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--ox:#ff7b7b;--hy:#7fa8ff;--bondc:#7d7699;--arr:#f4efff;--net:#ff9a74;--hb:#4fd8ac;--na:#c9a8ff;--cl:#9be38a;--plate:#1f2b2a}}
+:root[data-theme="dark"] body{--ox:#ff7b7b;--hy:#7fa8ff;--bondc:#7d7699;--arr:#f4efff;--net:#ff9a74;--hb:#4fd8ac;--na:#c9a8ff;--cl:#9be38a;--plate:#1f2b2a}
+.stage{display:block;width:100%;height:auto;border-radius:22px;background:var(--plate);box-shadow:var(--press)}
+.fx{direction:ltr;unicode-bidi:isolate;font-family:"Noto Serif",Georgia,serif}
+.fx sub,.fx sup{font-size:.68em}
+.help{display:inline-block;font-size:12px;font-weight:700;padding:1px 9px;border-radius:9px;background:var(--p-sky);color:var(--text);margin-inline-end:6px}
+.xtra{margin-top:12px;padding:10px 16px;border-radius:20px;background:var(--card);box-shadow:var(--clay-sm)}
+.xtra summary{cursor:pointer;font-weight:700;color:var(--ink)}
+.five{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:12px}
+.five div{padding:10px 12px;border-radius:18px;background:var(--card);box-shadow:var(--clay-sm);font-size:14.5px}
+.five b{display:block;color:var(--ink)}
+.pick{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.act[data-act=gap] .opts{direction:rtl}
+.act[data-act=gap] .pc{font-family:"Noto Serif",Georgia,serif}
+.bigfx{font-size:1.25rem}
+.act .gap{direction:ltr;unicode-bidi:isolate}
+</style>
+</head>
+<body style="--sc:#17b388">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الكيمياء</span><span class="chip">الدرس 1-1 · ص 30 إلى 32</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الثانية: المحاليل · الفصل الأول: المحاليل المائية المتجانسة وغير المتجانسة</p>
+  <h1 id="t">الماء كمذيب قوي</h1>
+  <p>سنة 1968 شاف روّاد المركبة أبولو 8 الأرض من بعيد وسمّوها <b>"اللؤلؤة الزرقاء الكبيرة"</b>، لأن الماء يغطّي حوالي <b>ثلاثة أرباع</b> سطحها. جزيء صغير من ثلاث ذرّات فقط. <mark>شو السرّ اللي يخلّيه يذيب كل هذه المواد ويصير أساس الحياة؟</mark> السرّ في شكله.</p>
+</section>
+
+<section class="panel" id="lab-sec" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">مختبر: افتح زاوية الجزيء</h2><span class="legend"><span><i style="background:var(--ox)"></i>O</span><span><i style="background:var(--hy)"></i>H</span><span><i style="background:var(--net)"></i>القطبية الكلية</span></span></div>
+  <svg class="stage" id="mol" viewBox="0 0 400 230" role="img" aria-label="جزيء ماء: ذرة أكسجين وذرتا هيدروجين، مع أسهم قطبية الروابط والقطبية الكلية"></svg>
+  <div class="controls"><div class="ctl"><label for="ang">الزاوية بين الرابطتين <b id="angL" dir="ltr">104.5°</b></label><input type="range" id="ang" dir="ltr" min="90" max="180" step="0.5" value="104.5" aria-describedby="angL"></div></div>
+  <div class="pick"><button class="tg" type="button" id="real" aria-pressed="true">الزاوية الحقيقية 104.5°</button><button class="tg" type="button" id="flat" aria-pressed="false">لو كان خطّياً 180°</button></div>
+  <p class="msg" id="mMsg" aria-live="polite"></p>
+  <p class="cap"><span class="help">مساعدة للفهم</span>الماء الحقيقي زاويته <span dir="ltr">104.5°</span> دائماً. حرّك الزاوية لترى ليش الشكل الزاوي هو اللي يخلّي الجزيء قطبياً.</p>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">رموز الدرس ومصطلحاته</h2></div>
+  <div class="syms">
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub"><span>δ−</span></span><div><h3>شحنة سالبة جزئية <span class="en">Partial Negative Charge</span></h3><p>على ذرّة <b>الأكسجين</b>، لأنها أكثر سالبية كهربائية فتسحب زوج إلكترونات الرابطة نحوها.</p><span class="hook">δ (دلتا) = "شوي" من الشحنة، مو شحنة كاملة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span>δ+</span></span><div><h3>شحنة موجبة جزئية <span class="en">Partial Positive Charge</span></h3><p>على ذرّتي <b>الهيدروجين</b>، الأقل سالبية كهربائية.</p><span class="hook">الإلكترونات راحت عنه شوي، فصار موجباً شوي.</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub sm"><span>O−H</span></span><div><h3>رابطة تساهمية قطبية <span class="en">Polar Covalent Bond</span></h3><p>زوج إلكترونات مشترك لكنه أقرب لذرّة من الثانية، فيصير للرابطة طرف سالب وطرف موجب.</p><span class="hook">حبل مشترك، لكن واحد يشدّه أقوى.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub sm"><span>104.5°</span></span><div><h3>الزاوية في جزيء الماء <span class="en">Bond Angle</span></h3><p>الزاوية بين رابطتي <span dir="ltr">O−H</span>. الجزيء <b>زاوي</b> وليس خطّياً.</p><span class="hook">شكل حرف V، مو خط مستقيم.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub sm"><span>H···O</span></span><div><h3>الرابطة الهيدروجينية <span class="en">Hydrogen Bond</span></h3><p>تجاذب بين <b>هيدروجين موجب جزئياً</b> في جزيء و<b>أكسجين سالب جزئياً</b> في جزيء آخر. ضعيفة لكنها تجمع الجزيئات.</p><span class="hook">مغناطيس صغير بين جزيء وجاره.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub"><span>ε</span></span><div><h3>ثابت العزل <span class="en">Dielectric Constant</span></h3><p>قيمته عالية في الماء، وهو من أسباب قدرة الماء على إذابة المركّبات الأيونية.</p><span class="hook">الماء "يعزل" الأيونات عن بعضها.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub sm"><span>·5H₂O</span></span><div><h3>ماء التبلّر <span class="en">Water of Crystallisation</span></h3><p>ماء متّحد داخل بلّورات الملح لأن ارتباط الأيونات بجزيئات الماء قوي جداً، مثل <span class="fx">CuSO<sub>4</sub>·5H<sub>2</sub>O</span>.</p><span class="hook">الملح طلع من الماء وأخذ معه شوية ماء.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">جزيء الماء: صغير لكنه قطبي</h2></div>
+  <p>الماء أساس كل صور الحياة: ما في حياة نباتية ولا حيوانية بدون ماء. موجود سائلاً في المحيطات والأنهار، ومخزّناً تحت الأرض، وثلجاً في القطبين، وبخاراً في الجو من التبخّر والبراكين.</p>
+  <ol class="tline">
+    <li><span class="yr">1</span><div class="ev"><b>ثلاث ذرّات</b><span>الجزيء <span class="fx">H<sub>2</sub>O</span>: أكسجين واحد وهيدروجينان، بينها <strong>روابط تساهمية</strong>.</span></div></li>
+    <li><span class="yr">2</span><div class="ev"><b>الأكسجين يشدّ أقوى</b><span>الأكسجين <strong>أكثر سالبية كهربائية</strong> من الهيدروجين، فيجذب زوج إلكترونات الرابطة <span dir="ltr">O−H</span> نحوه. لذلك كل رابطة <strong>قطبية بدرجة كبيرة</strong>.</span></div></li>
+    <li><span class="yr">3</span><div class="ev"><b>شحنات جزئية</b><span>الأكسجين يكتسب <strong>شحنة سالبة جزئية δ−</strong>، وكل هيدروجين <strong>شحنة موجبة جزئية δ+</strong>.</span></div></li>
+    <li><span class="yr">4</span><div class="ev"><b>الشكل الزاوي</b><span>الزاوية بين الرابطتين <strong dir="ltr">104.5°</strong>. قطبيتا الرابطتين متساويتان، لكن بسبب الشكل الزاوي <strong>لا تلغي إحداهما الأخرى</strong>.</span></div></li>
+    <li><span class="yr">5</span><div class="ev"><b>جزيء قطبي</b><span>إذن <strong>جزيء الماء ككل له خاصية قطبية</strong>: طرف الأكسجين سالب وطرف الهيدروجينين موجب.</span></div></li>
+  </ol>
+  <p class="tip" style="margin-top:12px"><span class="help">مساعدة للفهم</span>اثنين يسحبون صندوقاً بنفس القوة: لو سحبوا في اتجاهين متعاكسين تماماً (خط مستقيم) ما يتحرك. لو سحبوا بزاوية (شكل V) يتحرك الصندوق. نفس الشي مع قطبية الرابطتين.</p>
+
+  <div class="act" data-act="gap" data-key="gap" data-ok="صح! 104.5°. الشكل الزاوي يمنع القطبيتين من إلغاء بعضهما، فالجزيء قطبي.">
+    <h3>أكمل الناقص <span class="k">نشاط</span></h3>
+    <p>الزاوية بين رابطتي <span dir="ltr">O−H</span> في جزيء الماء تساوي <span class="gap">؟</span></p>
+    <div class="opts">
+      <button class="pc" data-no="180° يعني جزيء خطي، وقتها تلغي القطبيتان بعضهما ويصير الجزيء غير قطبي. الماء مو كذا.">180°</button>
+      <button class="pc" data-no="109.5° زاوية رباعي السطوح المنتظم (مثل الميثان CH₄). الماء أصغر شوي.">109.5°</button>
+      <button class="pc" data-ok>104.5°</button>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">الرابطة الهيدروجينية</h2></div>
+  <p>الهيدروجين <b>الموجب جزئياً</b> في جزيء يجذب الأكسجين <b>السالب جزئياً</b> في جزيء آخر. هذا التجاذب اسمه <b>الرابطة الهيدروجينية</b>. هي <b>ضعيفة</b> مقارنة بالرابطة التساهمية داخل الجزيء، لكنها كثيرة فتؤدّي إلى <b>تجمّع جزيئات الماء</b>.</p>
+  <svg class="stage" id="hbond" viewBox="0 0 400 220" role="img" aria-label="جزيء ماء في الوسط مرتبط بأربعة جزيئات حوله بروابط هيدروجينية متقطعة"></svg>
+  <p class="cap">الخط المتّصل: رابطة تساهمية داخل الجزيء. الخط المتقطّع: <b>رابطة هيدروجينية</b> بين جزيئين.</p>
+  <p class="note" style="margin-top:8px"><b>سؤال الكتاب (شكل 18):</b> ما الذي يجب توفّره؟ الهيدروجين يكون <b>مرتبطاً بذرّة عالية السالبية الكهربائية</b> (مثل الأكسجين) فيصير موجباً جزئياً، والذرّة الأخرى في الجزيء المجاور تكون <b>عالية السالبية الكهربائية وسالبة جزئياً</b> فتجذبه.</p>
+
+  <h3 style="margin:18px 0 6px">خواص مهمة سببها الروابط الهيدروجينية</h3>
+  <p>تجمّع الجزيئات القطبية والروابط الهيدروجينية بينها يعطي الماء خواص مختلفة عن المركّبات المشابهة له:</p>
+  <div class="five">
+    <div><b>ارتفاع درجة الغليان</b>يحتاج طاقة أكبر ليفكّ الجزيئات المتماسكة.</div>
+    <div><b>ارتفاع حرارة التبخير</b>كل جزيء يطير لازم يقطع روابطه مع جيرانه.</div>
+    <div><b>التوتّر السطحي</b>سطح الماء مشدود مثل غشاء.</div>
+    <div><b>السعة الحرارية النوعية</b>عالية: الماء يسخن ببطء ويبرد ببطء.</div>
+    <div><b>انخفاض الضغط البخاري</b>جزيئات أقل تهرب إلى البخار.</div>
+  </div>
+
+  <div class="act" data-act="order" data-key="order" data-rtl
+       data-answer='["الأكسجين أكثر سالبية كهربائية","يجذب زوج إلكترونات الرابطة O−H","O تكتسب δ− و H تكتسب δ+","الشكل زاوي 104.5° فلا تلغي القطبيتان بعضهما","الجزيء قطبي","روابط هيدروجينية بين الجزيئات"]'
+       data-extra='["الجزيء خطّي 180°"]'
+       data-ok="ممتاز! هذه سلسلة الدرس كلها: سالبية أعلى، ثم شحنات جزئية، ثم الشكل الزاوي، ثم جزيء قطبي، ثم روابط هيدروجينية. والخطّي 180° فخ."
+       data-no="القطع الحمراء في غير مكانها. ابدأ بالسبب الأول (الأكسجين يشدّ أقوى) وانتهِ بما يحدث بين الجزيئات. وهل الماء خطّي؟">
+    <h3>رتّب القصة <span class="k">نشاط</span></h3>
+    <p>من السبب إلى النتيجة. فيه قطعة زائدة.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">ليش الماء مذيب قوي؟</h2></div>
+  <p>قدرة الماء على الإذابة تعود إلى سببين:</p>
+  <div class="grid2">
+    <div class="box butter"><h3>1. ثابت العزل عالٍ</h3><p>القيمة العالية لثابت العزل الخاص بالماء.</p></div>
+    <div class="box sky"><h3>2. جزيئات قطبية تتجمّع</h3><p>دقائق الماء القطبية <b>تفصل الأيونات المختلفة الشحنة</b> للمذاب عن بعضها، وتجذبها بعيداً الواحدة عن الأخرى.</p></div>
+  </div>
+  <div class="pick" role="group" aria-label="أضف الملح"><button class="tg" type="button" id="salt0" aria-pressed="true">بلّورة ملح</button><button class="tg" type="button" id="salt1" aria-pressed="false">في الماء</button></div>
+  <svg class="stage" id="diss" viewBox="0 0 400 200" role="img" aria-label="أيونات موجبة وسالبة تنفصل وتحيط بها جزيئات الماء" style="margin-top:10px"></svg>
+  <p class="msg" id="dMsg" aria-live="polite"></p>
+
+  <h3 style="margin:18px 0 6px">ماء التبلّر</h3>
+  <p>أحياناً يكون ارتباط الأيونات بجزيئات الماء <b>قوياً جداً</b>، فعندما يتبلّر الملح من المحلول المائي تنفصل البلّورات <b>متّحدة بالماء</b>. هذا الماء اسمه <b>ماء التبلّر</b>. مثالان من الكتاب:</p>
+  <div class="grid2">
+    <div class="box sky"><h3>كبريتات النحاس (II) الزرقاء</h3><p class="fx bigfx">CuSO<sub>4</sub>·5H<sub>2</sub>O</p></div>
+    <div class="box butter"><h3>الجبس</h3><p class="fx bigfx">CaSO<sub>4</sub>·2H<sub>2</sub>O</p></div>
+  </div>
+
+  <div class="act" data-act="match" data-key="match"
+       data-pairs='[["ذرّة الأكسجين في الماء","شحنة سالبة جزئية δ−"],["ذرّة الهيدروجين في الماء","شحنة موجبة جزئية δ+"],["الرابطة الهيدروجينية","تجاذب H في جزيء مع O في جزيء آخر"],["ماء التبلّر","ماء متّحد داخل بلّورات مثل CuSO₄·5H₂O"]]'
+       data-ok="ممتاز! O سالب جزئياً، H موجب جزئياً، والتجاذب بينهما من جزيء لجزيء هو الرابطة الهيدروجينية. وماء التبلّر ماء محبوس في البلّورة.">
+    <h3>وصّل كل شيء بمعناه <span class="k">نشاط</span></h3>
+    <p>اختر من العمود الأول، ثم ما يناسبه.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">5</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sd">
+  <div class="sec-head"><span class="num">6</span><h2 id="sd">في حياتك</h2></div>
+  <div class="life">
+    <div class="card"><h3>جسمك ماء</h3><p>حوالي <b>66%</b> من كتلة جسمك ماء. وأنت مرتاح تفقد بين <span dir="ltr">52 mL/h</span> و <span dir="ltr">100 mL/h</span> بالعرق والتنفّس والبول، لذلك ينصح الأطبّاء بثمانية أكواب يومياً على الأقل.</p></div>
+    <div class="card"><h3>بعد مباراة كرة</h3><p>في الرياضة العنيفة الطويلة قد يصل الفقد بالعرق إلى <span dir="ltr">2000 mL/h</span>. لذلك يتّفق الأطباء اليوم: اشرب أثناء اللعب.</p></div>
+    <div class="card"><h3>حشرة تمشي على الماء</h3><p>التوتّر السطحي من الروابط الهيدروجينية يخلّي سطح البركة مثل غشاء رقيق تقدر حشرة خفيفة تمشي عليه.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">7</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>قطبية الرابطتين <span dir="ltr">O−H</span> متساويتان. لماذا جزيء الماء ككل قطبي؟</p>
+      <div class="opts"><button>لأن الهيدروجين أكثر سالبية كهربائية من الأكسجين</button><button data-ok>لأن شكله زاوي (104.5°) فلا تلغي القطبيتان بعضهما</button><button>لأن بين ذرّاته روابط أيونية</button></div>
+      <p class="why" hidden>الصحيح: الشكل الزاوي. لو كان خطّياً لألغت القطبيتان بعضهما. والأكسجين هو الأكثر سالبية، والروابط تساهمية.</p></div>
+    <div class="q"><p>أيّ خاصية مما يلي <b>ليست</b> من الخواص التي تعود إلى الروابط الهيدروجينية في الماء؟</p>
+      <div class="opts"><button>ارتفاع درجة الغليان</button><button>التوتّر السطحي</button><button data-ok>ارتفاع الضغط البخاري</button></div>
+      <p class="why" hidden>الصحيح: الروابط الهيدروجينية تُسبّب <b>انخفاض</b> الضغط البخاري، لأن الجزيئات متماسكة فيهرب منها أقل إلى البخار.</p></div>
+    <div class="q"><p>ما سبب تكوّن ماء التبلّر؟</p>
+      <div class="opts"><button>تبخّر الماء بسرعة من المحلول</button><button data-ok>ارتباط الأيونات بجزيئات الماء قوي جداً، فتنفصل البلّورات متّحدة بالماء</button><button>تكوّن روابط تساهمية جديدة بين ذرّات الأكسجين</button></div>
+      <p class="why" hidden>الصحيح: الأيونات ترتبط بجزيئات الماء بقوة كبيرة، فلما يتبلّر الملح تخرج البلّورات ومعها الماء، مثل CuSO₄·5H₂O.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li><b>جزيء قطبي</b>: الأكسجين أكثر سالبية ⇐ <span dir="ltr">O (δ−)</span> و <span dir="ltr">H (δ+)</span>، والشكل زاوي <span dir="ltr">104.5°</span> فلا تلغي القطبيتان بعضهما.</li>
+      <li><b>الرابطة الهيدروجينية</b>: H الموجب جزئياً في جزيء يجذب O السالب جزئياً في جزيء آخر. ضعيفة لكنها سبب ارتفاع الغليان وحرارة التبخير والتوتّر السطحي والسعة الحرارية النوعية وانخفاض الضغط البخاري.</li>
+      <li><b>مذيب قوي</b>: ثابت عزل عالٍ + جزيئات قطبية تفصل الأيونات. وارتباط قوي جداً ⇐ ماء تبلّر (<span dir="ltr">CuSO₄·5H₂O</span>، <span dir="ltr">CaSO₄·2H₂O</span>).</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الكيمياء، الصف الحادي عشر، الوحدة الثانية، ص 30 إلى 32</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"chem-u2-1-1"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+var MK='<defs><marker id="a1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="var(--arr)"/></marker><marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="var(--net)"/></marker></defs>';
+function atom(x,y,r,c,t){return '<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="'+r+'" fill="'+c+'"/><text x="'+x.toFixed(1)+'" y="'+(y+5).toFixed(1)+'" font-size="'+(r>20?16:13)+'" font-weight="700" fill="#fff" text-anchor="middle">'+t+'</text>';}
+/* lab: bond angle */
+var svg=$("mol"),ang=$("ang");
+function draw(){
+  var a=+ang.value,h=MK,ox=200,oy=92,L=88,half=a/2*Math.PI/180;
+  var hx1=ox-Math.sin(half)*L,hy1=oy+Math.cos(half)*L,hx2=ox+Math.sin(half)*L,hy2=hy1;
+  h+='<line x1="'+ox+'" y1="'+oy+'" x2="'+hx1.toFixed(1)+'" y2="'+hy1.toFixed(1)+'" stroke="var(--bondc)" stroke-width="9" stroke-linecap="round"/>';
+  h+='<line x1="'+ox+'" y1="'+oy+'" x2="'+hx2.toFixed(1)+'" y2="'+hy2.toFixed(1)+'" stroke="var(--bondc)" stroke-width="9" stroke-linecap="round"/>';
+  /* bond dipole arrows: from H toward O, offset outward */
+  [[hx1,-1],[hx2,1]].forEach(function(p){var hx=p[0],s=p[1],dx=ox-hx,dy=oy-hy1,len=Math.sqrt(dx*dx+dy*dy),nx=-dy/len*s*-1,ny=dx/len*s*-1;
+    var off=22,x1=hx+dx*0.2+nx*off,y1=hy1+dy*0.2+ny*off,x2=hx+dx*0.75+nx*off,y2=hy1+dy*0.75+ny*off;
+    h+='<line x1="'+x1.toFixed(1)+'" y1="'+y1.toFixed(1)+'" x2="'+x2.toFixed(1)+'" y2="'+y2.toFixed(1)+'" stroke="var(--arr)" stroke-width="2.5" marker-end="url(#a1)"/>';});
+  var net=Math.cos(half); /* relative size of total polarity */
+  if(net>0.02){var nl=70*net;h+='<line x1="'+ox+'" y1="'+(oy+40+nl).toFixed(1)+'" x2="'+ox+'" y2="'+(oy+40).toFixed(1)+'" stroke="var(--net)" stroke-width="5" marker-end="url(#a2)"/>';}
+  h+=atom(ox,oy,28,"var(--ox)","O")+atom(hx1,hy1,18,"var(--hy)","H")+atom(hx2,hy2,18,"var(--hy)","H");
+  h+='<g font-size="14" font-weight="700" fill="var(--text)" text-anchor="middle" direction="ltr"><text x="'+ox+'" y="'+(oy-36)+'">δ−</text><text x="'+hx1.toFixed(1)+'" y="'+(hy1+38).toFixed(1)+'">δ+</text><text x="'+hx2.toFixed(1)+'" y="'+(hy2+38).toFixed(1)+'">δ+</text></g>';
+  h+='<text x="16" y="24" font-size="13" font-weight="700" fill="var(--text)" direction="ltr">'+a.toFixed(1)+'°</text>';
+  svg.innerHTML=h;
+  $("angL").textContent=a.toFixed(1)+"°";
+  $("real").setAttribute("aria-pressed",a===104.5?"true":"false");$("flat").setAttribute("aria-pressed",a===180?"true":"false");
+  var m=$("mMsg");
+  if(a>=179.5){m.textContent="خطّي 180°: السهمان متعاكسان تماماً فيلغي أحدهما الآخر. لا قطبية كلية، والجزيء غير قطبي. الماء ليس كذا.";m.className="msg";}
+  else if(Math.abs(a-104.5)<0.01){m.textContent="هذا الماء الحقيقي: 104.5°. القطبيتان لا تلغيان بعضهما، والسهم البرتقالي (القطبية الكلية) كبير: الجزيء قطبي.";m.className="msg ok";}
+  else{m.textContent="كلما فتحت الزاوية نحو 180° يصغر السهم البرتقالي، لأن قطبيتي الرابطتين تقتربان من إلغاء بعضهما.";m.className="msg";}
+}
+ang.addEventListener("input",draw);
+$("real").addEventListener("click",function(){ang.value=104.5;draw();});
+$("flat").addEventListener("click",function(){ang.value=180;draw();});
+draw();
+
+/* static figure: hydrogen bonds */
+function water(x,y,rot,lab){ /* rot in degrees: direction of the H's */
+  var r=rot*Math.PI/180,h="",d=33,s=52.25*Math.PI/180;
+  var p1=[x+Math.cos(r-s)*d,y+Math.sin(r-s)*d],p2=[x+Math.cos(r+s)*d,y+Math.sin(r+s)*d];
+  h+='<line x1="'+x+'" y1="'+y+'" x2="'+p1[0].toFixed(1)+'" y2="'+p1[1].toFixed(1)+'" stroke="var(--bondc)" stroke-width="5"/><line x1="'+x+'" y1="'+y+'" x2="'+p2[0].toFixed(1)+'" y2="'+p2[1].toFixed(1)+'" stroke="var(--bondc)" stroke-width="5"/>';
+  h+=atom(x,y,16,"var(--ox)","O")+atom(p1[0],p1[1],10,"var(--hy)","")+atom(p2[0],p2[1],10,"var(--hy)","");
+  return {h:h,H:[p1,p2]};
+}
+var c=water(200,110,90),hb="",others=[[110,60,-10],[290,60,190],[120,190,-40],[285,185,220]];
+var g=c.h,ws=[];
+others.forEach(function(o){var w=water(o[0],o[1],o[2]);ws.push(w);g+=w.h;});
+function dash(a,b){return '<line x1="'+a[0].toFixed(1)+'" y1="'+a[1].toFixed(1)+'" x2="'+b[0].toFixed(1)+'" y2="'+b[1].toFixed(1)+'" stroke="var(--hb)" stroke-width="3" stroke-dasharray="5 5"/>';}
+/* centre H's to lower neighbours' O, upper neighbours' H's to centre O */
+hb+=dash(c.H[0],[285,185]); hb+=dash(c.H[1],[120,190]);
+hb+=dash(ws[0].H[0],[200,110]); hb+=dash(ws[1].H[1],[200,110]);
+$("hbond").innerHTML=hb+g;
+
+/* dissolving: ions separated by water */
+var D=$("diss");
+function ionC(x,y,pos){return '<circle cx="'+x+'" cy="'+y+'" r="'+(pos?12:16)+'" fill="'+(pos?"var(--na)":"var(--cl)")+'"/><text x="'+x+'" y="'+(y+5)+'" font-size="14" font-weight="700" fill="#2b2346" text-anchor="middle">'+(pos?"+":"−")+'</text>';}
+function wMini(x,y,towardX,towardY,oToward){ /* small water: O toward cation, H toward anion */
+  var a=Math.atan2(towardY-y,towardX-x),h="";
+  if(oToward){var ox=x+Math.cos(a)*6,oy=y+Math.sin(a)*6;
+    [[a+Math.PI-0.9],[a+Math.PI+0.9]].forEach(function(t){h+='<circle cx="'+(ox+Math.cos(t[0])*11).toFixed(1)+'" cy="'+(oy+Math.sin(t[0])*11).toFixed(1)+'" r="5" fill="var(--hy)"/>';});
+    h+='<circle cx="'+ox.toFixed(1)+'" cy="'+oy.toFixed(1)+'" r="8" fill="var(--ox)"/>';}
+  else{var hx=x+Math.cos(a)*8,hy=y+Math.sin(a)*8,ox2=x-Math.cos(a)*4,oy2=y-Math.sin(a)*4;
+    h+='<circle cx="'+ox2.toFixed(1)+'" cy="'+oy2.toFixed(1)+'" r="8" fill="var(--ox)"/><circle cx="'+hx.toFixed(1)+'" cy="'+hy.toFixed(1)+'" r="5" fill="var(--hy)"/>';}
+  return h;}
+function diss(on){
+  var h="";
+  if(!on){var k=0;for(var j=0;j<4;j++)for(var i=0;i<6;i++){h+=ionC(110+i*36,45+j*36,(i+j)%2===0);k++;}
+    $("dMsg").textContent="بلّورة ملح: أيونات موجبة وسالبة متلاصقة ومتجاذبة.";$("dMsg").className="msg";}
+  else{var C=[[90,60,1],[200,55,0],[310,65,1],[140,145,0],[255,145,1],[355,150,0]];
+    C.forEach(function(p){h+=ionC(p[0],p[1],p[2]===1);var R=p[2]===1?30:34;for(var t=0;t<5;t++){var a=t*2*Math.PI/5+0.3,x=p[0]+Math.cos(a)*R,y=p[1]+Math.sin(a)*R;h+=wMini(x,y,p[0],p[1],p[2]===1);}});
+    $("dMsg").textContent="في الماء: جزيئات الماء القطبية تفصل الأيونات وتحيط بكل واحد: طرف الأكسجين (δ−) نحو الأيون الموجب، وطرف الهيدروجين (δ+) نحو الأيون السالب.";$("dMsg").className="msg ok";}
+  D.innerHTML=h;
+  $("salt0").setAttribute("aria-pressed",on?"false":"true");$("salt1").setAttribute("aria-pressed",on?"true":"false");
+}
+$("salt0").addEventListener("click",function(){diss(false);});$("salt1").addEventListener("click",function(){diss(true);});
+diss(false);
+})();
+</script>
+</body>
+</html>

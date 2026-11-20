@@ -211,6 +211,7 @@ for d in days(EXAM_START-dt.timedelta(days=1),EXAM_END):
 
 # ---------- two sittings a day: 06:00 (before school, short) and 18:00 (the main one).
 lesson_min={c["id"]:c["minutes"] for c in catalog}
+cat_ix={c["id"]:k for k,c in enumerate(catalog)}
 def mins(it): return lesson_min[it["lesson"]] if it["type"]=="new" else it.get("minutes",0)
 for day in plan:
     d=dt.date.fromisoformat(day["date"]); items=day.pop("items")
@@ -220,7 +221,10 @@ for day in plan:
     # move the shortest lessons to the morning until the evening fits its limit (keep at least one in the evening)
     am_cap=AM_CAP.get(d.weekday(),AM_CAP_SCHOOL)
     while len(pm)>1 and sum(mins(i) for i in pm)>cap:
-        it=min(pm,key=mins)
+        # never move a lesson ahead of an earlier lesson of the same subject that stays in the evening
+        cand=[i for i in pm if not any(cat_ix[j["lesson"]]<cat_ix[i["lesson"]] and j["lesson"].split("-")[0]==i["lesson"].split("-")[0] for j in pm)]
+        if not cand: break
+        it=min(cand,key=mins)
         if sum(mins(i) for i in am)+mins(it)>am_cap: break
         pm.remove(it); am.append(it)
     order={id(i):k for k,i in enumerate(news)}

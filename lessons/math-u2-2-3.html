@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="math">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الدوال التربيعية والقطوع المكافئة · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+span[dir=ltr],bdi[dir=ltr],b[dir=ltr]{unicode-bidi:isolate}
+body{--okc:#1f9e6e;--noc:#e0485f;--line:#8b86b3;--plane:#f1edff;--grid:#ddd5fb;--curve:#8a63f2;--ghost:#b9b3dc;--mir:#2f8fd6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--okc:#5fd3a2;--noc:#ff7d8f;--line:#a7a2cf;--plane:#24203d;--grid:#363057;--curve:#b49bff;--ghost:#6e68a0;--mir:#7cc0ff}}
+:root[data-theme="dark"] body{--okc:#5fd3a2;--noc:#ff7d8f;--line:#a7a2cf;--plane:#24203d;--grid:#363057;--curve:#b49bff;--ghost:#6e68a0;--mir:#7cc0ff}
+.stage{display:block;width:100%;height:auto;border-radius:20px;background:var(--plane);box-shadow:var(--press);margin-top:10px}
+.help{display:inline-block;font-size:12px;font-weight:700;padding:1px 9px;border-radius:9px;background:var(--p-sky);color:var(--text);margin-inline-end:6px}
+.fbox{overflow-x:auto;text-align:center;padding:6px 0}
+.gform{padding:16px 14px;border-radius:24px;background:var(--p-butter);box-shadow:var(--clay-sm);text-align:center}
+.gform .f{font-size:1.5rem}
+.gform .ca{color:#d23b52}.gform .ch{color:#16865c}.gform .ck{color:#2f6fd6}
+:root[data-theme="dark"] .gform .ca{color:#ff8a9b}:root[data-theme="dark"] .gform .ch{color:#6fe0b0}:root[data-theme="dark"] .gform .ck{color:#8ab8ff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .gform .ca{color:#ff8a9b}:root:not([data-theme="light"]) .gform .ch{color:#6fe0b0}:root:not([data-theme="light"]) .gform .ck{color:#8ab8ff}}
+.out{margin-top:8px;text-align:center;font-size:1.05rem}
+.out .f{font-size:1.2rem}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}
+.facts div{padding:8px 10px;border-radius:16px;background:var(--card);box-shadow:var(--clay-sm);font-size:14px;text-align:center}
+.facts b{display:block;font-size:12px;color:var(--muted);font-weight:700}
+.props{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:8px}
+.props li{padding:9px 14px;border-radius:18px;background:var(--card);box-shadow:var(--clay-sm);font-size:15px}
+.props .f{font-size:1.05rem}
+.legend i.dash{background:none;border-top:2px dashed var(--ghost);height:0;border-radius:0}
+.act .gap{direction:ltr;unicode-bidi:isolate}
+.sec span[dir=ltr],.panel span[dir=ltr]{white-space:nowrap}
+.quiz .opts button{direction:ltr;unicode-bidi:isolate}
+.act[data-act=gap] .pc{font-family:"Noto Serif",Georgia,serif}
+</style>
+</head>
+<body style="--sc:#8a63f2">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الرياضيات</span><span class="chip">الدرس 2-3 · ص 56 إلى 63</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الثانية: الدوال الحقيقية</p>
+  <h1 id="t">الدوال التربيعية والقطوع المكافئة</h1>
+  <p>ارمِ كرة لفوق: تطلع، توقف لحظة، ثم ترجع. مسارها قطع مكافئ. <mark>كيف تعرف أعلى نقطة توصلها الكرة من المعادلة، بدون ما ترسم؟</mark> اليوم نتعلم نقرأ الرأس والمحور والفتحة من المعادلة مباشرة.</p>
+</section>
+
+<section class="panel" id="lab-sec" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">مختبر: حرّك القطع المكافئ</h2><span class="legend"><span><i style="background:var(--curve)"></i>القطع</span><span><i class="dash"></i>⁦y = x²⁩</span><span><i style="background:var(--noc)"></i>المحور والرأس</span></span></div>
+  <div class="gform" style="margin-top:10px;padding:10px"><div class="fbox"><span class="f" id="eqL">y = (x − 0)² + 0</span></div></div>
+  <svg class="stage" id="lab" viewBox="0 0 400 280" role="img" aria-label="قطع مكافئ مع رأسه ومحور تماثله ونقطتين متناظرتين"></svg>
+  <div class="controls">
+    <div class="ctl"><label for="ka">a <b id="aL">1</b></label><input type="range" dir="ltr" id="ka" min="-3" max="3" step="0.5" value="1" aria-describedby="aL"></div>
+    <div class="ctl"><label for="kh">h <b id="hL">0</b></label><input type="range" dir="ltr" id="kh" min="-4" max="4" step="1" value="0" aria-describedby="hL"></div>
+    <div class="ctl"><label for="kk">k <b id="kL">0</b></label><input type="range" dir="ltr" id="kk" min="-5" max="5" step="1" value="0" aria-describedby="kL"></div>
+  </div>
+  <div class="facts" id="facts"></div>
+  <p class="msg" id="lMsg" aria-live="polite"></p>
+  <p class="cap">النقطتان الزرقاوان متناظرتان: كل وحدة على يمين المحور يقابلها نفس البعد على يساره.</p>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">رموز الدرس ومصطلحاته</h2></div>
+  <div class="syms">
+    <div class="sym"><span class="bub"><span>∪</span></span><div><h3>قطع مكافئ <span class="en">Parabola</span></h3><p>شكل بيان الدالة التربيعية.</p><span class="hook">شكل مسار كرة مرمية.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub"><span>V</span></span><div><h3>رأس القطع المكافئ <span class="en">Vertex of the Parabola</span></h3><p>أعلى نقطة أو أدنى نقطة في القطع.</p><span class="hook">V = Vertex = قمّة أو قاع.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub sm"><span>x = h</span></span><div><h3>محور التماثل (التناظر) <span class="en">Axis of Symmetry</span></h3><p>مستقيم رأسي يمر بالرأس ويقسم القطع إلى جزءين متطابقين.</p><span class="hook">مرآة في نصّ القطع.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub sm"><span>max</span></span><div><h3>قيمة عظمى <span class="en">Maximum Value</span></h3><p>أكبر قيمة للدالة، تكون عند الرأس إذا الفتحة لأسفل ∩.</p><span class="hook">∩ قبعة: الرأس فوق.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub sm"><span>min</span></span><div><h3>قيمة صغرى <span class="en">Minimum Value</span></h3><p>أصغر قيمة للدالة، تكون عند الرأس إذا الفتحة لأعلى ∪.</p><span class="hook">∪ كوب: الرأس تحت.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span>a</span></span><div><h3>معامل حد الدرجة الثانية <span class="en">Leading Coefficient</span></h3><p>إشارته تحدد الفتحة، وكبره يحدد <b>اتساع القطع المكافئ</b>.</p><span class="hook">a كبيرة = قطع ضيّق.</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub sm"><span>(h, k)</span></span><div><h3>إحداثيا الرأس <span class="en">Vertex Coordinates</span></h3><p>h الإحداثي السيني للرأس، و k الإحداثي الصادي له.</p><span class="hook">h أفقي، k ارتفاع.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">الرأس والقيمة العظمى والصغرى</h2></div>
+  <div class="grid2">
+    <div class="box mint"><h3>فتحة لأعلى ∪</h3><p>الرأس <b>أدنى</b> نقطة. للدالة عنده <b>قيمة صغرى</b>. مثل <span dir="ltr">y = x²</span>: قيمتها الصغرى 0 عند <span dir="ltr">x = 0</span>.</p></div>
+    <div class="box pink"><h3>فتحة لأسفل ∩</h3><p>الرأس <b>أعلى</b> نقطة. للدالة عنده <b>قيمة عظمى</b>. مثل <span dir="ltr">y = −x²</span>: قيمتها العظمى 0 عند <span dir="ltr">x = 0</span>.</p></div>
+  </div>
+  <p style="margin-top:14px"><b>محور التماثل</b> مستقيم رأسي معادلته <span class="f" style="font-size:1.1rem">x = x₁</span> حيث <span dir="ltr">x₁</span> الإحداثي السيني للرأس. كل نقطة على القطع لها نقطة <b>مناظرة</b> هي صورتها بالانعكاس في المحور، والنقطتان على <b>البعد نفسه</b> من المحور.</p>
+  <p class="tip"><b>قاعدة سريعة:</b> المحور <span dir="ltr">x = 2</span> والنقطة <span dir="ltr">(−1, 5)</span>: بعدها عن المحور 3 لليسار، فالمناظرة على بعد 3 لليمين: <span dir="ltr">(5, 5)</span>. الصادي ما يتغير.</p>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">قطع رأسه نقطة الأصل: ⁦y = ax²⁩</h2></div>
+  <div class="gform" style="background:var(--p-peach)"><div class="fbox"><span class="f">y = <span class="ca">a</span>x²</span></div><p style="margin:4px 0 0">الرأس <span dir="ltr">(0, 0)</span> ومحور التماثل <span dir="ltr">x = 0</span>.</p></div>
+  <p style="margin-top:12px">لإيجاد a: عوّض بنقطة على المنحنى <b>غير الرأس</b>. ثم انظر لإشارة a: موجبة ⇐ لأعلى، سالبة ⇐ لأسفل.</p>
+  <div class="qbox">قطع مكافئ رأسه نقطة الأصل ويمر بالنقطة <span dir="ltr">(2, −12)</span>. اكتب معادلته وحدّد اتجاه فتحته.</div>
+  <ol class="steps">
+    <li><span><span class="f">−12 = a(2)² ⇒ 4a = −12 ⇒ a = −3</span></span></li>
+    <li><span><span class="ans">المعادلة <span class="f" style="font-size:1.05rem">y = −3x²</span>، و <span dir="ltr">−3 &lt; 0</span> فالقطع مفتوح لأسفل.</span></span></li>
+  </ol>
+  <h3 style="margin:20px 0 8px">اتساع القطع المكافئ</h3>
+  <p>كل القطوع المكافئة لها نفس الشكل العام، لكن <b>اتساعها</b> يتغير مع معامل حد الدرجة الثانية:</p>
+  <div class="grid2">
+    <div class="box butter"><h3>⁦|a| &gt; 1⁩</h3><p>أضيق من رسم <span dir="ltr">y = x²</span>. مثل <span dir="ltr">y = 2x²</span> و <span dir="ltr">y = −3x²</span>.</p></div>
+    <div class="box sky"><h3>⁦|a| &lt; 1⁩</h3><p>أوسع من رسم <span dir="ltr">y = x²</span>. مثل <span dir="ltr">y = ½x²</span> و <span dir="ltr">y = −0.2x²</span>.</p></div>
+  </div>
+  <p class="tip" style="margin-top:12px">جرّب في المختبر فوق: خلّ <span dir="ltr">h = 0, k = 0</span> وحرّك a بين 0.5 و 3، وقارن بالمنحنى المتقطع <span dir="ltr">y = x²</span>.</p>
+  <h3 style="margin:20px 0 8px">مثال من الحياة: سلك زينة</h3>
+  <div class="qbox">سلك زينة مربوط بين عمودين المسافة بينهما 8 m، ويتدلّى 0.4 m في الوسط. اعتبر أدنى نقطة في السلك هي نقطة الأصل، واكتب معادلة القطع.</div>
+  <ol class="steps">
+    <li><span>كل عمود على بعد 4 m من الوسط، والسلك عنده أعلى بـ 0.4 m: النقطة <span dir="ltr">(4, 0.4)</span>.</span></li>
+    <li><span><span class="f">a(4)² = 0.4 ⇒ 16a = 0.4 ⇒ a = 0.025</span></span></li>
+    <li><span><span class="ans">المعادلة <span class="f" style="font-size:1.05rem">y = 0.025x²</span></span></span></li>
+  </ol>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">معادلة القطع بدلالة إحداثيات رأسه</h2></div>
+  <p>ليس بالضرورة أن يكون الرأس نقطة الأصل. المعادلة:</p>
+  <div class="gform">
+    <div class="fbox"><span class="f">y = <span class="ca">a</span>(x − <span class="ch">h</span>)² + <span class="ck">k</span></span></div>
+    <div class="fbox"><span class="f" style="font-size:1.1rem">a ≠ 0 ,  h, k ∈ ℝ</span></div>
+  </div>
+  <p style="margin-top:10px">هي <b>إزاحة</b> لبيان <span dir="ltr">y = ax²</span>: h وحدات أفقياً (يميناً إذا h موجبة، يساراً إذا سالبة)، و k وحدات رأسياً (لأعلى إذا k موجبة، لأسفل إذا سالبة).</p>
+  <ul class="props">
+    <li>الرأس هو النقطة <span class="f">(h, k)</span>، ومحور التماثل <span class="f">x = h</span>.</li>
+    <li><span dir="ltr">a &gt; 0</span> ⇐ الفتحة لأعلى والرأس قيمة صغرى. <span dir="ltr">a &lt; 0</span> ⇐ الفتحة لأسفل والرأس قيمة عظمى. وهذه القيمة هي k.</li>
+    <li><span dir="ltr">|a| &lt; 1</span> ⇐ أوسع من <span dir="ltr">y = x²</span>. <span dir="ltr">|a| &gt; 1</span> ⇐ أضيق من <span dir="ltr">y = x²</span>.</li>
+  </ul>
+  <p class="tip" style="margin-top:12px"><b>فخ:</b> داخل القوس إشارة ناقص. فـ <span dir="ltr">(x + 3)²</span> تعني <span dir="ltr">(x − (−3))²</span>، إذن <span dir="ltr">h = −3</span> وليس 3. أما k فتؤخذ بإشارتها كما هي.</p>
+
+  <div class="act" data-act="gap" data-key="gap" data-ok="صح! ⁦(x + 3)² = (x − (−3))²⁩ فـ ⁦h = −3⁩، و ⁦k = −5⁩ بإشارتها.">
+    <h3>أكمل الناقص <span class="k">نشاط</span></h3>
+    <p>رأس القطع <span class="f" style="font-size:1.1rem">y = 2(x + 3)² − 5</span> هو النقطة <span class="f" style="font-size:1.1rem"><span class="gap">؟</span></span></p>
+    <div class="opts">
+      <button dir="ltr" class="pc" data-no="انتبه لإشارة h: داخل القوس ⁦x + 3⁩ يعني ⁦h = −3⁩ وليس 3.">(3, −5)</button>
+      <button dir="ltr" class="pc" data-ok>(−3, −5)</button>
+      <button dir="ltr" class="pc" data-no="k تؤخذ بإشارتها كما هي: ⁦−5⁩ وليس 5.">(−3, 5)</button>
+      <button dir="ltr" class="pc" data-no="الرقم 2 هو a، يحدد الفتحة والاتساع وليس الرأس.">(2, −5)</button>
+    </div>
+  </div>
+
+  <h3 style="margin:20px 0 8px">مثال محلول: من الرأس ونقطة إلى المعادلة</h3>
+  <div class="qbox">اكتب معادلة القطع المكافئ الذي رأسه <span dir="ltr">V(−2, 5)</span> ويمر بالنقطة <span dir="ltr">P(0, 1)</span>.</div>
+  <div class="row"><button class="lite" id="hideSol" type="button" aria-pressed="false">أخفِ الحل وجرّب أولاً</button></div>
+  <ol class="steps" id="steps">
+    <li><span>الرأس <span dir="ltr">(h, k) = (−2, 5)</span>: <span class="f">y = a(x + 2)² + 5</span></span></li>
+    <li><span>نعوّض بالنقطة <span dir="ltr">(0, 1)</span>: <span class="f">1 = a(0 + 2)² + 5</span></span></li>
+    <li><span>نختصر: <span class="f">1 = 4a + 5 ⇒ 4a = −4 ⇒ a = −1</span></span></li>
+    <li><span><span class="ans">المعادلة <span class="f" style="font-size:1.05rem">y = −(x + 2)² + 5</span>، مفتوح لأسفل وقيمته العظمى 5.</span></span></li>
+  </ol>
+
+  <h3 style="margin:22px 0 8px">رسم المنحنى بخواص القطع</h3>
+  <div class="qbox">ارسم منحنى الدالة <span class="f" style="font-size:1.15rem">y = (x − 1)² − 4</span></div>
+  <div class="grid2" style="margin-top:10px">
+    <ol class="steps" style="margin:0">
+      <li><span><span dir="ltr">h = 1, k = −4</span>: الرأس <span dir="ltr">(1, −4)</span>.</span></li>
+      <li><span><span dir="ltr">a = 1 &gt; 0</span>: الفتحة لأعلى، والرأس قيمة صغرى −4.</span></li>
+      <li><span>محور التماثل <span dir="ltr">x = 1</span>. نرسمه.</span></li>
+      <li><span>نقطة أخرى: عند <span dir="ltr">x = 0</span> يكون <span dir="ltr">y = 1 − 4 = −3</span>، فالنقطة <span dir="ltr">(0, −3)</span>.</span></li>
+      <li><span>مناظرتها حول المحور: <span dir="ltr">(2, −3)</span>. نرسم منحنى يمر بالنقاط الثلاث.</span></li>
+    </ol>
+    <svg class="stage" id="sketch" viewBox="0 0 300 260" role="img" aria-label="منحنى y = (x − 1)² − 4 مع الرأس ومحور التماثل ونقطتين متناظرتين" style="margin-top:0"></svg>
+  </div>
+
+  <div class="act" data-act="sort" data-key="sort" data-bins='["قيمة عظمى","قيمة صغرى"]'
+       data-items='[["⁦y = −(x + 4)² + 1⁩",0,"⁦a = −1⁩ سالبة: الفتحة لأسفل، فالرأس قيمة عظمى."],["⁦y = 0.2(x − 1)² − 7⁩",1,"⁦a = 0.2⁩ موجبة: الفتحة لأعلى، فالرأس قيمة صغرى. الـ ⁦−7⁩ هي k وليست a."],["⁦y = 5 − 2x²⁩",0,"معامل x² هو ⁦−2⁩ سالب: لأسفل، قيمة عظمى."],["⁦y = (x + 3)²⁩",1,"⁦a = 1⁩ موجبة: لأعلى، قيمة صغرى 0."],["⁦y = −¼x²⁩",0,"⁦a = −¼⁩ سالبة حتى لو صغيرة: لأسفل، قيمة عظمى."],["⁦y = 3(x − 2)² − 6⁩",1,"⁦a = 3⁩ موجبة: لأعلى، قيمة صغرى ⁦−6⁩."]]'
+       data-ok="ممتاز! إشارة a وحدها تقرر: موجبة ⇐ ∪ قيمة صغرى، سالبة ⇐ ∩ قيمة عظمى.">
+    <h3>عظمى أم صغرى؟ <span class="k">نشاط</span></h3>
+    <p>للرأس في كل دالة: هل هو قيمة عظمى أم صغرى؟ انظر لإشارة a فقط.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s5">
+  <div class="sec-head"><span class="num">5</span><h2 id="s5">تطبيقات: أعلى نقطة وأكبر ربح</h2></div>
+  <h3 style="margin:4px 0 8px">كرة فوق الشبكة</h3>
+  <div class="qbox">كرة طائرة تمر فوق الشبكة على ارتفاع 2.5 m (أعلى نقطة في مسارها)، ثم تسقط على الأرض على بعد 5 m من قاعدة الشبكة. اعتبر الشبكة محور التماثل، ونقطة الأصل حيث تلتقي الشبكة بالأرض.</div>
+  <ol class="steps">
+    <li><span>الرأس <span dir="ltr">(0, 2.5)</span>، إذن <span dir="ltr">h = 0, k = 2.5</span>: <span class="f">y = ax² + 2.5</span></span></li>
+    <li><span>الكرة تمر بالنقطة <span dir="ltr">(5, 0)</span>: <span class="f">a(5)² + 2.5 = 0 ⇒ a = −0.1</span></span></li>
+    <li><span><span class="ans">مسار الكرة: <span class="f" style="font-size:1.05rem">y = −0.1x² + 2.5</span></span></span></li>
+  </ol>
+
+  <h3 style="margin:20px 0 8px">بسطة ليمون: أكبر ربح</h3>
+  <div class="qbox">ربح بسطة ليمون اليومي بالدينار <span class="f" style="font-size:1.15rem">y = −50(x − 0.6)² + 18</span> حيث x سعر الكوب بالدينار.</div>
+  <ul class="props">
+    <li><b>المجال الواقعي:</b> x سعر، فلازم <span dir="ltr">x &gt; 0</span>.</li>
+    <li><b>أكبر ربح:</b> <span dir="ltr">a = −50 &lt; 0</span>، فالقطع مفتوح لأسفل والرأس <span dir="ltr">(0.6, 18)</span> قيمة عظمى: أفضل سعر 0.6 دينار، وأكبر ربح 18 دينار.</li>
+    <li><b>لا ربح ولا خسارة:</b> نحل <span dir="ltr">y = 0</span>:<br><span class="f">(x − 0.6)² = 0.36</span><br><span class="f">x − 0.6 = ±0.6</span><br><span class="f">x = 1.2</span> أو <span class="f">x = 0</span><br>و <span dir="ltr">x = 0</span> مرفوض لأن <span dir="ltr">x &gt; 0</span>. إذن 1.2 دينار.</li>
+  </ul>
+
+  <div class="act" data-act="type" data-key="type" data-answer="10" data-tol="0.01"
+       data-ok="صح! ⁦y = −50(1 − 0.6)² + 18 = −50 × 0.16 + 18 = −8 + 18 = 10⁩ دنانير. أقل من 18 لأن 1 دينار أبعد من أفضل سعر."
+       data-hint="عوّض ⁦x = 1⁩: احسب القوس أولاً ⁦(1 − 0.6) = 0.4⁩، ثم ربّعه، ثم اضرب في ⁦−50⁩، ثم أضف 18."
+       data-no="ليست هذه. ترتيب العمليات: القوس، ثم التربيع، ثم الضرب في ⁦−50⁩، ثم الجمع مع 18.">
+    <h3>اكتب الجواب <span class="k">نشاط</span></h3>
+    <p>في دالة بسطة الليمون: كم الربح (بالدينار) إذا باع الكوب بـ <b>1 دينار</b>؟</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">6</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sd">
+  <div class="sec-head"><span class="num">7</span><h2 id="sd">في حياتك</h2></div>
+  <div class="life">
+    <div class="card"><h3>نافورة الماء</h3><p>خيط الماء يطلع ثم ينزل في قطع مفتوح لأسفل، وأعلى نقطة فيه هي الرأس.</p></div>
+    <div class="card"><h3>صحن الستلايت</h3><p>مقطعه قطع مكافئ مفتوح لأعلى، يجمع الإشارة في نقطة واحدة.</p></div>
+    <div class="card"><h3>سعر المنتج</h3><p>غلّ السعر وتقل المبيعات، رخّصه ويقل ربح القطعة: الربح الأكبر عند رأس القطع.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">8</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>قطع مكافئ رأسه نقطة الأصل ويمر بالنقطة <span dir="ltr">(3, 18)</span>. قيمة a هي:</p>
+      <div class="opts"><button>6</button><button data-ok>2</button><button>½</button></div>
+      <p class="why" hidden>الصحيح: 2. ⁦18 = a(3)² = 9a⁩ إذن ⁦a = 2⁩. (الجواب 6 يجي من القسمة على 3 بدل 9: لا تنسَ التربيع.)</p></div>
+    <div class="q"><p>أي قطع <b>أضيق</b> من رسم <span dir="ltr">y = x²</span>؟</p>
+      <div class="opts"><button>y = 0.3x²</button><button data-ok>y = −4x²</button><button>y = x² + 5</button></div>
+      <p class="why" hidden>الصحيح: ⁦y = −4x²⁩ لأن ⁦|−4| = 4 &gt; 1⁩. الإشارة تقلب الفتحة فقط. ⁦0.3⁩ أوسع، و ⁦x² + 5⁩ نفس الاتساع لكن مرفوع 5.</p></div>
+    <div class="q"><p>قطع مكافئ محور تماثله <span dir="ltr">x = 1</span> ويمر بالنقطة <span dir="ltr">(−2, 7)</span>. النقطة المناظرة لها:</p>
+      <div class="opts"><button dir="ltr" data-ok>(4, 7)</button><button dir="ltr">(2, 7)</button><button dir="ltr">(−2, −7)</button></div>
+      <p class="why" hidden>الصحيح: ⁦(4, 7)⁩. النقطة على بعد 3 يسار المحور، فمناظرتها على بعد 3 يمينه: ⁦1 + 3 = 4⁩، والصادي نفسه 7.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li><b>الرأس</b> أعلى أو أدنى نقطة: فتحة لأسفل ⇐ قيمة عظمى، فتحة لأعلى ⇐ قيمة صغرى.</li>
+      <li><span dir="ltr">y = a(x − h)² + k</span>: الرأس <span dir="ltr">(h, k)</span>، المحور <span dir="ltr">x = h</span>، و <span dir="ltr">y = ax²</span> رأسه <span dir="ltr">(0, 0)</span>.</li>
+      <li>إشارة a تحدد الفتحة، و <span dir="ltr">|a|</span> يحدد الاتساع: أكبر من 1 أضيق، أصغر من 1 أوسع.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الرياضيات، الصف الحادي عشر، الوحدة الثانية، ص 56 إلى 63</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"math-u2-2-3"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+function n2(v){return (Math.round(v*100)/100).toString().replace("-","−");}
+/* generic parabola plot: y = a(x-h)^2 + k on a grid */
+function plot(svg,W,H,X0,X1,Y0,Y1,a,h,k,opt){
+  opt=opt||{};
+  function px(x){return 14+(W-28)*(x-X0)/(X1-X0);} function py(y){return H-14-(H-28)*(y-Y0)/(Y1-Y0);}
+  var i,s='';
+  s+='<g stroke="var(--grid)" stroke-width="1">';for(i=X0;i<=X1;i++)s+='<line x1="'+px(i)+'" y1="'+py(Y1)+'" x2="'+px(i)+'" y2="'+py(Y0)+'"/>';for(i=Y0;i<=Y1;i++)s+='<line x1="'+px(X0)+'" y1="'+py(i)+'" x2="'+px(X1)+'" y2="'+py(i)+'"/>';s+='</g>';
+  s+='<g stroke="var(--line)" stroke-width="2"><line x1="'+px(X0)+'" y1="'+py(0)+'" x2="'+px(X1)+'" y2="'+py(0)+'"/><line x1="'+px(0)+'" y1="'+py(Y1)+'" x2="'+px(0)+'" y2="'+py(Y0)+'"/></g>';
+  s+='<g font-size="11" fill="var(--muted)" direction="ltr" text-anchor="middle">';
+  for(i=X0+1;i<X1;i++)if(i&&i%2===0)s+='<text x="'+px(i)+'" y="'+(py(0)+13)+'">'+String(i).replace("-","−")+'</text>';
+  for(i=Y0+1;i<Y1;i++)if(i&&i%2===0&&(opt.skipY||[]).indexOf(i)<0)s+='<text x="'+(px(0)-9)+'" y="'+(py(i)+4)+'">'+String(i).replace("-","−")+'</text>';
+  s+='<text x="'+(px(X1)-6)+'" y="'+(py(0)-6)+'">x</text><text x="'+(px(0)+10)+'" y="'+(py(Y1)+12)+'">y</text></g>';
+  function path(A,Hh,K,stroke,w,dash){var d='',first=true;for(var j=0;j<=240;j++){var x=X0+(X1-X0)*j/240,y=A*(x-Hh)*(x-Hh)+K;if(y<Y0-3||y>Y1+3){first=true;continue;}d+=(first?'M':'L')+px(x).toFixed(1)+' '+py(y).toFixed(1);first=false;}
+    return '<path d="'+d+'" fill="none" stroke="'+stroke+'" stroke-width="'+w+'"'+(dash?' stroke-dasharray="'+dash+'"':'')+' stroke-linecap="round"/>';}
+  if(opt.ghost)s+=path(1,0,0,"var(--ghost)",2.5,"6 5");
+  if(a){
+    if(h>=X0&&h<=X1)s+='<line x1="'+px(h)+'" y1="'+py(Y1)+'" x2="'+px(h)+'" y2="'+py(Y0)+'" stroke="var(--noc)" stroke-width="2.5" stroke-dasharray="7 5"/>';
+    s+=path(a,h,k,"var(--curve)",3.5);
+    if(opt.mirror){var d=opt.mirror,yy=a*d*d+k;
+      if(yy>=Y0&&yy<=Y1&&h-d>=X0&&h+d<=X1){
+        s+='<line x1="'+px(h-d)+'" y1="'+py(yy)+'" x2="'+px(h+d)+'" y2="'+py(yy)+'" stroke="var(--mir)" stroke-width="2" stroke-dasharray="3 4"/>';
+        s+='<circle cx="'+px(h-d)+'" cy="'+py(yy)+'" r="5.5" fill="var(--mir)" stroke="var(--card)" stroke-width="2"/><circle cx="'+px(h+d)+'" cy="'+py(yy)+'" r="5.5" fill="var(--mir)" stroke="var(--card)" stroke-width="2"/>';
+        if(opt.labels)s+=opt.labels(px,py,yy);
+      }}
+    if(k>=Y0&&k<=Y1&&h>=X0&&h<=X1)s+='<circle cx="'+px(h)+'" cy="'+py(k)+'" r="6.5" fill="var(--noc)" stroke="var(--card)" stroke-width="2"/>';
+  } else {
+    s+='<line x1="'+px(X0)+'" y1="'+py(k)+'" x2="'+px(X1)+'" y2="'+py(k)+'" stroke="var(--curve)" stroke-width="3.5"/>';
+  }
+  svg.innerHTML='<defs><clipPath id="'+svg.id+'c"><rect x="0" y="0" width="'+W+'" height="'+H+'" rx="20"/></clipPath></defs><g clip-path="url(#'+svg.id+'c)">'+s+'</g>';
+}
+/* ---- lab ---- */
+var L=$("lab"),ka=$("ka"),kh=$("kh"),kk=$("kk");
+function sgn(v,first){return v<0?(first?"−":" − "):(first?"":" + ");}
+function eq(a,h,k){
+  var A=a===1?"":a===-1?"−":n2(a);
+  var inner=h===0?"x":"x"+sgn(-h)+n2(Math.abs(h));
+  var s="y = "+A+(h===0?"x²":"("+inner+")²");
+  if(k)s+=sgn(k)+n2(Math.abs(k));
+  return s;}
+function lab(){
+  var a=+ka.value,h=+kh.value,k=+kk.value;
+  plot(L,400,280,-6,6,-7,7,a,h,k,{ghost:true,mirror:1});
+  $("aL").textContent=n2(a);$("hL").textContent=n2(h);$("kL").textContent=n2(k);
+  var m=$("lMsg"),F=$("facts");
+  if(!a){$("eqL").textContent="y = "+n2(k);F.innerHTML="";m.textContent="⁦a = 0⁩: اختفى الحد x² وصار البيان مستقيماً أفقياً. لهذا الشرط ⁦a ≠ 0⁩.";m.className="msg no";return;}
+  $("eqL").textContent=eq(a,h,k);
+  var wide=Math.abs(a)>1?"أضيق من ⁦y = x²⁩":Math.abs(a)<1?"أوسع من ⁦y = x²⁩":"نفس اتساع ⁦y = x²⁩";
+  F.innerHTML='<div><b>الرأس</b><span dir="ltr">('+n2(h)+', '+n2(k)+')</span></div><div><b>محور التماثل</b><span dir="ltr">x = '+n2(h)+'</span></div>'+
+    '<div><b>الفتحة</b>'+(a>0?"لأعلى ∪":"لأسفل ∩")+'</div><div><b>'+(a>0?"قيمة صغرى":"قيمة عظمى")+'</b><span dir="ltr">y = '+n2(k)+'</span></div>';
+  m.textContent=(h?"الإزاحة: "+Math.abs(h)+(h>0?" يميناً":" يساراً"):"بدون إزاحة أفقية")+"، "+(k?Math.abs(k)+(k>0?" لأعلى":" لأسفل"):"بدون إزاحة رأسية")+". والقطع "+wide+".";
+  m.className="msg ok";
+}
+[ka,kh,kk].forEach(function(e){e.addEventListener("input",lab);}); lab();
+/* ---- sketch of y = (x-1)^2 - 4 ---- */
+function sketch(){plot($("sketch"),300,260,-3,5,-5,4,1,1,-4,{mirror:1,skipY:[-4],labels:function(px,py,yy){
+  return '<g font-size="12" fill="var(--text)" direction="ltr" font-weight="700"><text x="'+(px(0)-8)+'" y="'+(py(yy)+16)+'" text-anchor="end">(0, −3)</text><text x="'+(px(2)+8)+'" y="'+(py(yy)+16)+'">(2, −3)</text><text x="'+(px(1)+10)+'" y="'+(py(-4)+18)+'">(1, −4)</text></g>';}});}
+sketch();
+window.addEventListener("masar-theme",function(){lab();sketch();});
+})();
+</script>
+</body>
+</html>

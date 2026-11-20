@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="geology">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>المعادن · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+span[dir=ltr],bdi[dir=ltr]{unicode-bidi:isolate}
+body{--plate:#fff4ea;--na:#9aa3b5;--cl:#4fc48f;--clS:#2e9a6a;--bond:#c9bfa8;--okc:#1f9e6e;--noc:#e0485f;--mut:#b9b0d6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--plate:#2a2238;--na:#c4cad6;--cl:#3fae7e;--clS:#7be0b2;--bond:#6d6584;--okc:#5fd3a2;--noc:#ff7d8f;--mut:#5d5580}}
+:root[data-theme="dark"] body{--plate:#2a2238;--na:#c4cad6;--cl:#3fae7e;--clS:#7be0b2;--bond:#6d6584;--okc:#5fd3a2;--noc:#ff7d8f;--mut:#5d5580}
+.pick{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.chk5{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:8px}
+.chk5 li{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:16px;background:var(--card);box-shadow:var(--clay-sm);font-size:15px}
+.chk5 .lamp{flex:0 0 30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:700;color:#fff;background:var(--mut)}
+.chk5 li.pass .lamp{background:var(--okc)}
+.chk5 li.fail .lamp{background:var(--noc)}
+.chk5 li.fail{outline:2px dashed var(--noc);outline-offset:-2px}
+.chk5 small{display:block;color:var(--muted);font-size:13px}
+.verdict{margin-top:12px;padding:12px 16px;border-radius:20px;font-weight:700;background:var(--p-mint);color:var(--text);box-shadow:var(--clay-sm)}
+.verdict.no{background:var(--p-pink)}
+.verdict.semi{background:var(--p-butter)}
+.flow{display:flex;flex-direction:column;align-items:center;gap:4px;margin-top:10px}
+.flow .node{min-width:150px;text-align:center;padding:8px 16px;border-radius:18px;background:var(--card);box-shadow:var(--clay-sm);font-weight:700}
+.flow .ar{color:var(--muted);font-size:18px;line-height:1}
+.flow .three{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.flow .three .node{min-width:0;background:var(--p-peach)}
+.stage{display:block;width:100%;height:auto;border-radius:22px;background:var(--plate);box-shadow:var(--press)}
+.steps4{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.steps4 span{font-size:13px;padding:4px 10px;border-radius:12px;background:var(--card);box-shadow:var(--clay-sm);color:var(--muted)}
+.steps4 span.on{background:var(--sc);color:#fff;font-weight:700}
+.props{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:12px}
+.props .card h3{margin:0 0 4px;font-size:1.05rem;display:flex;gap:8px;align-items:center}
+.props .card h3 i{font-style:normal;display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--sc);color:#fff;font-size:14px}
+.props .card p{margin:0;font-size:14.5px}
+.props .en{font-size:12.5px;color:var(--muted);font-weight:400}
+.fx{direction:ltr;unicode-bidi:isolate;font-family:"Noto Serif",Georgia,serif}
+.fx sub,.fx sup{font-size:.68em}
+.help{display:inline-block;font-size:12px;font-weight:700;padding:1px 9px;border-radius:9px;background:var(--p-sky);color:var(--text);margin-inline-end:6px}
+.xtra{margin-top:12px;padding:10px 16px;border-radius:20px;background:var(--card);box-shadow:var(--clay-sm)}
+.xtra summary{cursor:pointer;font-weight:700;color:var(--ink)}
+.act[data-act=gap] .opts{direction:rtl}
+.act[data-act=gap] .pc{font-family:var(--body);font-style:normal;font-size:1rem}
+</style>
+</head>
+<body style="--sc:#e2653f">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الجيولوجيا</span><span class="chip">الدرس 1-1 · ص 38 إلى 40</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الثانية: مواد الأرض (1) · الفصل الأول: المعادن</p>
+  <h1 id="t">المعادن</h1>
+  <p>قطعة فحم وقطعة كوارتز: الاثنتان صلبتان وتكوّنتا تحت سطح الأرض. لكن <b>واحدة فقط</b> منهما معدن. <mark>أيّهما؟ وليش؟</mark> عشان تحكم، لازم تعرف <b>خمسة شروط</b>. جرّبها في الفاحص تحت.</p>
+</section>
+
+<section class="panel" id="lab-sec" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">فاحص المعادن</h2><span class="legend">اختر مادة وشوف الشروط الخمسة</span></div>
+  <div class="pick" id="mats" role="group" aria-label="اختر مادة"></div>
+  <ul class="chk5" id="lamps" aria-live="polite"></ul>
+  <p class="verdict" id="verdict" aria-live="polite"></p>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">مصطلحات الدرس</h2></div>
+  <div class="syms">
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub"><span>💎</span></span><div><h3>المعدن <span class="en">Mineral</span></h3><p>مادة <b>صلبة غير عضوية</b> تكوّنت <b>بصورة طبيعية</b>، لها <b>نظام بلّوري مميّز</b> و<b>تركيب كيميائي محدّد</b>.</p><span class="hook">خمسة شروط، لو نقص واحد ما يصير معدن.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub"><span>▦</span></span><div><h3>النظام البلّوري <span class="en">Crystal Structure</span></h3><p>الذرّات مرتّبة في شكل هندسي <b>منتظم ومتكرّر في الأبعاد الثلاثة</b>.</p><span class="hook">مثل علب في رفّ مرتّب: نفس النمط يتكرّر.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span>⬚</span></span><div><h3>الوحدة البنائية <span class="en">Unit Cell</span></h3><p>أصغر جزء في البلّورة، وله صفات البلّورة الكاملة نفسها.</p><span class="hook">حبّة الليغو الأولى: كرّرها تطلع البلّورة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span>🔷</span></span><div><h3>المواد المتبلّرة <span class="en">Crystalline Materials</span></h3><p>مواد ذرّاتها مرتّبة في نظام بلّوري منتظم، مثل الكوارتز والهاليت.</p><span class="hook">متبلّرة = مرتّبة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub"><span>◐</span></span><div><h3>أشباه المعادن <span class="en">Mineraloids</span></h3><p>مواد طبيعية <b>ينقصها</b> التركيب الكيميائي المحدّد أو الشكل البلّوري أو الاثنين، مثل <b>الأوبال</b>.</p><span class="hook">"شبه" لأنها قريبة، بس ناقصها شرط.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub"><span>🪨</span></span><div><h3>الصخور <span class="en">Rocks</span></h3><p>الوحدة البنائية للقشرة الأرضية، تتكوّن من بلّورات أو حبيبات معادن. أنواعها: نارية، رسوبية، متحوّلة.</p><span class="hook">الصخرة "كيس" والمعادن حبّاته.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">من العناصر إلى القشرة الأرضية</h2></div>
+  <p>تخيّل بيتاً من الطوب: الطوب مصنوع من طين، والطين من حبيبات. القشرة الأرضية نفس الفكرة: <b>العناصر</b> تكوّن <b>المعادن</b>، والمعادن تكوّن <b>الصخور</b>، والصخور بأنواعها الثلاثة تبني <b>القشرة الأرضية</b>.</p>
+  <div class="flow" aria-label="مخطط سهمي: العناصر ثم المعادن ثم الصخور ثم نارية ورسوبية ومتحولة">
+    <span class="node">العناصر</span><span class="ar">↓</span>
+    <span class="node">المعادن</span><span class="ar">↓</span>
+    <span class="node">الصخور</span><span class="ar">↓</span>
+    <span class="three"><span class="node">نارية</span><span class="node">رسوبية</span><span class="node">متحوّلة</span></span><span class="ar">↓</span>
+    <span class="node">القشرة الأرضية</span>
+  </div>
+  <p class="muted" style="font-size:13.5px;margin-top:8px">في الكتاب (شكل 20) المخطّط مع صورة مرتفعات جال الزور في الكويت.</p>
+  <div class="grid2" style="margin-top:10px">
+    <div class="box butter"><h3>معدن = مركّب</h3><p>أغلب المعادن مركّبات كيميائية، مثل <b>الماجنيتيت</b> (أكسيد الحديد الأسود) <span class="fx">Fe<sub>3</sub>O<sub>4</sub></span>.</p></div>
+    <div class="box sky"><h3>معدن = عنصر منفرد</h3><p>وأحياناً عنصر واحد، مثل <b>الكبريت</b> <span class="fx">S</span>، والذهب والفضة.</p></div>
+  </div>
+  <p style="margin-top:10px">ولكل معدن تركيبه وخواصّه الفيزيائية الخاصّة به. وحبيباته أو بلّوراته قد تكون <b>مجهرية</b> أو <b>مرئية بالعين المجرّدة</b>.</p>
+
+  <div class="act" data-act="order" data-key="order" data-rtl
+       data-answer='["العناصر","المعادن","الصخور","القشرة الأرضية"]'
+       data-extra='["أشباه المعادن"]'
+       data-ok="ممتاز! عناصر تكوّن معادن، معادن تكوّن صخوراً (نارية ورسوبية ومتحوّلة)، والصخور تبني القشرة. وأشباه المعادن مو حلقة في هذا المخطّط."
+       data-no="القطع الحمراء في غير مكانها. ابدأ بالأصغر (العناصر) وانتهِ بالأكبر (القشرة). وهل أشباه المعادن من المخطّط؟">
+    <h3>رتّب المخطّط السهمي <span class="k">نشاط</span></h3>
+    <p>من الأصغر إلى الأكبر. فيه قطعة زائدة.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">الشروط الخمسة للمعدن</h2></div>
+  <div class="props">
+    <div class="card"><h3><i>1</i>طبيعي <span class="en">Naturally</span></h3><p>يتكوّن بعمليات جيولوجية طبيعية. لذلك <b>الماس والياقوت الصناعيان</b> ليسا معادن.</p></div>
+    <div class="card"><h3><i>2</i>صلب <span class="en">Solid</span></h3><p>صلب عند درجات حرارة سطح الأرض. <b>الثلج المتساقط</b> معدن، و<b>الماء السائل</b> ليس معدناً.</p></div>
+    <div class="card"><h3><i>3</i>ذو نظام بلّوري <span class="en">Crystal Structure</span></h3><p>ذرّاته مرتّبة في شكل هندسي منتظم ومتكرّر في الأبعاد الثلاثة، يكوّن الوحدة البنائية.</p></div>
+    <div class="card"><h3><i>4</i>تركيب كيميائي محدّد <span class="en">Well-defined Chemical Composition</span></h3><p><b>الكوارتز</b> دائماً ذرّة سيليكون لكل ذرّتين أكسجين: <span class="fx">SiO<sub>2</sub></span>.</p></div>
+    <div class="card"><h3><i>5</i>غير عضوي <span class="en">Inorganic</span></h3><p><b>ملح الطعام (الهاليت)</b> معدن. أما <b>السكّر</b> فصلب ومتبلّر، لكنه مركّب عضوي من قصب السكّر أو الشمندر، فليس معدناً.</p></div>
+  </div>
+  <p class="tip" style="margin-top:12px"><b>الثلج المتساقط والبَرَد:</b> الاثنان ماء متجمّد وطبيعي وصلب. لكن الثلج المتساقط له <b>نظام بلّوري مميّز</b> (البلّورة السداسية الجميلة)، أما البَرَد فكُتل جليد تتجمّد طبقات فوق طبقات <b>بدون شكل بلّوري منتظم</b>، فلا يُعتبر معدناً.</p>
+  <p class="note" style="margin-top:10px"><b>انتبه للشرط 4:</b> أيونات العناصر اللي لها <b>نفس الحجم ونفس الشحنة</b> ممكن يحلّ أحدها محلّ الآخر <b>إحلالاً جزئياً</b>. لذلك قد يختلف التركيب الكيميائي لمعدن ما بين عيّنة وأخرى، ويبقى نفس المعدن.</p>
+
+  <div class="act" data-act="sort" data-key="sort" data-bins='["معدن","ليس معدناً"]'
+       data-items='[["الميكا",0,"الميكا طبيعية وصلبة ومتبلّرة وغير عضوية وتركيبها محدّد: معدن."],["الذهب",0,"الذهب عنصر منفرد طبيعي صلب متبلّر: معدن، مثل الكبريت."],["الجبس",0,"الجبس معدن: طبيعي صلب متبلّر غير عضوي وتركيبه محدّد."],["النفط",1,"النفط سائل وعضوي، فسقط في شرطين."],["الزجاج",1,"الزجاج من صنع الإنسان، وما له نظام بلّوري."],["البلاستيك",1,"البلاستيك مصنوع وعضوي."],["الفحم الحجري",1,"الفحم الحجري من بقايا نباتات، يعني عضوي."],["الكهرمان (الصمغ العربي)",1,"الكهرمان صمغ أشجار، يعني عضوي."],["الزئبق",1,"الزئبق سائل عند حرارة سطح الأرض."],["الألومنيوم",1,"الألومنيوم الفلز لا يتكوّن بصورة طبيعية، الإنسان يستخلصه من خاماته."]]'
+       data-ok="ممتاز! المعادن هنا: الميكا والذهب والجبس. الباقي سقط في شرط أو أكثر: النفط والزئبق سائلان، الفحم والكهرمان والبلاستيك عضوية، الزجاج والألومنيوم من صنع الإنسان.">
+    <h3>مهارة التمييز <span class="k">نشاط</span></h3>
+    <p>من نشاط الكتاب: صنّف كل مادة.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">النظام البلّوري: من أيونات إلى بلّورة</h2></div>
+  <p>خذ الهاليت (ملح الطعام) مثالاً. أيونات الصوديوم <span class="fx">Na<sup>+</sup></span> والكلور <span class="fx">Cl<sup>−</sup></span> تترتّب في <b>وحدة بنائية مكعّبة</b>، والوحدات تتكرّر فتطلع البلّورات <b>مكعّبة منتظمة</b>.</p>
+  <div class="panel" style="margin:10px 0 0">
+    <svg class="stage" id="halite" viewBox="0 0 400 230" role="img" aria-label="رسم يوضح ترتيب أيونات الصوديوم والكلور في معدن الهاليت"></svg>
+    <div class="controls"><div class="ctl"><label for="hs">المرحلة <b id="hsL">أيونات</b></label><input type="range" id="hs" min="0" max="3" step="1" value="0" aria-describedby="hsL"></div></div>
+    <div class="steps4" id="hsteps" aria-hidden="true"><span>(أ) أيونات</span><span>(ب) وحدة بنائية</span><span>(ج) وحدات متكرّرة</span><span>(د) بلّورة</span></div>
+    <p class="msg" id="hMsg" aria-live="polite"></p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s5">
+  <div class="sec-head"><span class="num">5</span><h2 id="s5">أشباه المعادن</h2></div>
+  <p>بعض المركّبات موجودة في الطبيعة، لكن <b>لا ينطبق عليها تعريف المعدن</b>: ينقصها التركيب الكيميائي المحدّد، أو الشكل البلّوري، أو الاثنان. مثالها <b>الأوبال</b> <span dir="ltr">(Opal)</span>: تركيبه الكيميائي ثابت، لكنه <b>غير متبلّر</b>.</p>
+  <div class="act" data-act="gap" data-key="gap" data-ok="صح! الأوبال تركيبه ثابت لكنه غير متبلّر، فهو شبه معدن.">
+    <h3>أكمل الناقص <span class="k">نشاط</span></h3>
+    <p>الأوبال طبيعي وصلب وتركيبه الكيميائي ثابت، ومع ذلك يُعتبر شبه معدن لأنه <span class="gap"></span>.</p>
+    <div class="opts">
+      <button class="pc" data-no="الأوبال مو عضوي. المشكلة في ترتيب ذرّاته.">مركّب عضوي</button>
+      <button class="pc" data-ok>غير متبلّر</button>
+      <button class="pc" data-no="الأوبال طبيعي، مو صناعي. راجع الشرط الناقص.">مصنوع في المختبر</button>
+    </div>
+  </div>
+  <details class="xtra"><summary>إثراء علمي: الإحلال الجزئي</summary>
+    <p style="margin:8px 0 0">يحدث عندما يتحوّل معدن إلى معدن آخر بفعل تفاعل كيميائي، <b>ويحافظ على شكله البلّوري الأصلي</b>. أمثلة: <b>الجالينا</b> تتحوّل إلى <b>أنجليزيت</b>، و<b>الكالسيت</b> إلى <b>جبس</b>، و<b>الفلوريت</b> إلى <b>كوارتز</b>.</p>
+  </details>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">6</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sd">
+  <div class="sec-head"><span class="num">7</span><h2 id="sd">في حياتك</h2></div>
+  <div class="life">
+    <div class="card"><h3>قلم الرصاص</h3><p>ما فيه رصاص! الخط الأسود من معدن <b>الجرافيت</b>.</p></div>
+    <div class="card"><h3>ملح المطبخ</h3><p>كبّر حبّة ملح بعدسة: تشوفها مكعّبة. هذا شكل الوحدة البنائية للهاليت.</p></div>
+    <div class="card"><h3>ساعة الكوارتز</h3><p>بلّورة كوارتز صغيرة <span class="fx">SiO<sub>2</sub></span> داخل الساعة تهتزّ بانتظام وتضبط الوقت.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">8</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>لماذا لا يُعتبر الماس الصناعي معدناً، مع أنه يشبه الماس الطبيعي تماماً؟</p>
+      <div class="opts"><button>لأنه غير صلب</button><button data-ok>لأنه لم يتكوّن بعمليات جيولوجية طبيعية</button><button>لأنه ليس له تركيب كيميائي محدّد</button></div>
+      <p class="why" hidden>الصحيح: شرط "طبيعي" ناقص. الماس الصناعي صلب ومتبلّر وتركيبه محدّد، لكنه مصنوع.</p></div>
+    <div class="q"><p>السكّر صلب ومتبلّر. لماذا ليس معدناً؟</p>
+      <div class="opts"><button data-ok>لأنه مركّب عضوي يُستخرج من قصب السكّر أو الشمندر</button><button>لأنه سائل عند حرارة سطح الأرض</button><button>لأنه شبه معدن مثل الأوبال</button></div>
+      <p class="why" hidden>الصحيح: السكّر مركّب عضوي، والمعدن لازم يكون غير عضوي. الهاليت (ملح الطعام) يشبهه بالشكل لكنه غير عضوي، فهو معدن.</p></div>
+    <div class="q"><p>ماذا تعني "الوحدة البنائية" في البلّورة؟</p>
+      <div class="opts"><button>أكبر بلّورة في المعدن</button><button>نوع من أنواع الصخور</button><button data-ok>أصغر جزء في البلّورة وله صفات البلّورة الكاملة نفسها</button></div>
+      <p class="why" hidden>الصحيح: الوحدة البنائية أصغر جزء يتكرّر في الأبعاد الثلاثة ليبني البلّورة، وله نفس صفاتها. في الهاليت هي مكعّب من أيونات Na⁺ و Cl⁻.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li><b>المخطّط</b>: العناصر ← المعادن ← الصخور (نارية، رسوبية، متحوّلة) ← القشرة الأرضية.</li>
+      <li><b>المعدن</b>: صلب، غير عضوي، طبيعي، له نظام بلّوري مميّز، وتركيب كيميائي محدّد. نقص شرط واحد يكفي ليخرجه.</li>
+      <li><b>أشباه المعادن</b>: طبيعية لكن ينقصها التركيب المحدّد أو الشكل البلّوري أو الاثنان، مثل الأوبال (تركيب ثابت، غير متبلّر).</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الجيولوجيا، الصف الحادي عشر، الوحدة الثانية، ص 38 إلى 40</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"geo-u2-1-1"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+/* lab 1: mineral checker. order of checks: natural, solid, crystal, composition, inorganic */
+var P=["طبيعي","صلب","نظام بلّوري","تركيب كيميائي محدّد","غير عضوي"];
+var M=[
+ {n:"الكوارتز",c:[1,1,1,1,1],w:["","","","SiO₂ دائماً",""],v:"معدن: نجح في الشروط الخمسة."},
+ {n:"الفحم الحجري",c:[1,1,0,0,0],w:["","","غير متبلّر","يختلف من قطعة لقطعة","من بقايا نباتات"],v:"ليس معدناً: عضوي وغير متبلّر. وهذا جواب سؤال البداية: الكوارتز هو المعدن."},
+ {n:"الهاليت (ملح الطعام)",c:[1,1,1,1,1],w:["","","مكعّبات منتظمة","NaCl",""],v:"معدن: نجح في الشروط الخمسة."},
+ {n:"الثلج المتساقط",c:[1,1,1,1,1],w:["","صلب عند حرارة سطح الأرض الباردة","بلّورة سداسية","H₂O",""],v:"معدن: ماء متجمّد طبيعي له نظام بلّوري مميّز."},
+ {n:"البَرَد",c:[1,1,0,1,1],w:["","","طبقات جليد بلا شكل بلّوري منتظم","H₂O",""],v:"ليس معدناً: ما له نظام بلّوري مميّز، مع إنه ماء متجمّد مثل الثلج."},
+ {n:"الماء السائل",c:[1,0,0,1,1],w:["","سائل","ذرّاته غير مرتّبة","H₂O",""],v:"ليس معدناً: مو صلب."},
+ {n:"الماس الصناعي",c:[0,1,1,1,1],w:["مصنوع في مصنع","","","كربون C",""],v:"ليس معدناً: ما تكوّن بصورة طبيعية."},
+ {n:"السكّر",c:[1,1,1,1,0],w:["","","متبلّر","","من قصب السكّر أو الشمندر"],v:"ليس معدناً: مركّب عضوي، مع إنه صلب ومتبلّر."},
+ {n:"الأوبال",c:[1,1,0,1,1],w:["","","غير متبلّر","تركيب ثابت",""],v:"شبه معدن: طبيعي وتركيبه ثابت، لكنه غير متبلّر."}
+];
+var box=$("mats"),cur=0;
+M.forEach(function(m,i){var b=document.createElement("button");b.type="button";b.className="tg";b.textContent=m.n;b.setAttribute("aria-pressed",i===0?"true":"false");
+  b.addEventListener("click",function(){cur=i;[].forEach.call(box.children,function(x,j){x.setAttribute("aria-pressed",j===i?"true":"false");});show();});box.appendChild(b);});
+function show(){
+  var m=M[cur],h="";
+  P.forEach(function(p,k){var ok=m.c[k];h+='<li class="'+(ok?"pass":"fail")+'"><span class="lamp" role="img" aria-label="'+(ok?"متحقق":"غير متحقق")+'">'+(ok?"✓":"✗")+'</span><span>'+p+(m.w[k]?'<small>'+m.w[k]+'</small>':'')+'</span></li>';});
+  $("lamps").innerHTML=h;
+  var v=$("verdict"),fails=m.c.filter(function(x){return !x;}).length;
+  v.textContent=m.v; v.className="verdict"+(fails===0?"":(m.n==="الأوبال"?" semi":" no"));
+}
+show();
+
+/* lab 2: halite from ions to crystal */
+var S=$("halite"),hs=$("hs");
+var NAMES=["أيونات","وحدة بنائية","وحدات متكرّرة","بلّورة"];
+var MSG=["(أ) أيونات صوديوم Na⁺ صغيرة وأيونات كلور Cl⁻ كبيرة. شحناتها مختلفة فتتجاذب.",
+ "(ب) تترتّب في مكعّب: Na⁺ و Cl⁻ بالتناوب. هذه الوحدة البنائية، أصغر جزء له صفات البلّورة كلها.",
+ "(ج) الوحدة البنائية تتكرّر في الأبعاد الثلاثة بنفس النمط، يمين ويسار وفوق وتحت ولقدّام.",
+ "(د) النتيجة بلّورات هاليت مكعّبة منتظمة الشكل، تشوفها في حبّة الملح."];
+function ion(x,y,cl,r){return cl?'<circle cx="'+x+'" cy="'+y+'" r="'+(r||13)+'" fill="var(--cl)" stroke="var(--clS)" stroke-width="1.5"/>':'<circle cx="'+x+'" cy="'+y+'" r="'+(r?r*0.55:7)+'" fill="var(--na)" stroke="var(--text)" stroke-opacity=".3"/>';}
+function iso(i,j,k,s,ox,oy){return [ox+i*s-j*s*0.5, oy-k*s+j*s*0.42];}
+function cube(n,s,ox,oy,r){
+  var h="",pts=[],i,j,k;
+  for(k=0;k<n;k++)for(j=n-1;j>=0;j--)for(i=0;i<n;i++)pts.push([i,j,k]);
+  /* bonds */
+  pts.forEach(function(p){var a=iso(p[0],p[1],p[2],s,ox,oy);
+    [[1,0,0],[0,1,0],[0,0,1]].forEach(function(d){var q=[p[0]+d[0],p[1]+d[1],p[2]+d[2]];if(q[0]<n&&q[1]<n&&q[2]<n){var b=iso(q[0],q[1],q[2],s,ox,oy);h+='<line x1="'+a[0].toFixed(1)+'" y1="'+a[1].toFixed(1)+'" x2="'+b[0].toFixed(1)+'" y2="'+b[1].toFixed(1)+'" stroke="var(--bond)" stroke-width="2"/>';}});});
+  pts.forEach(function(p){var a=iso(p[0],p[1],p[2],s,ox,oy);h+=ion(a[0].toFixed(1),a[1].toFixed(1),(p[0]+p[1]+p[2])%2===0,r);});
+  return h;
+}
+function txt(x,y,t){return '<text x="'+x+'" y="'+y+'" font-size="13" font-weight="700" fill="var(--text)" text-anchor="middle">'+t+'</text>';}
+function drawH(){
+  var s=+hs.value,h="";
+  if(s===0){
+    var P0=[[70,70,1],[130,120,0],[190,60,1],[250,150,0],[320,80,1],[90,170,0],[200,180,1],[300,180,0],[160,110,0],[350,140,1]];
+    P0.forEach(function(p){h+=ion(p[0],p[1],p[2]);});
+    h+='<g font-size="12.5" fill="var(--text)" direction="ltr"><circle cx="30" cy="212" r="8" fill="var(--cl)"/><text x="44" y="216">Cl⁻</text><circle cx="100" cy="212" r="5" fill="var(--na)"/><text x="112" y="216">Na⁺</text></g>';
+  } else if(s===1){
+    h+=cube(2,70,165,165,16);
+    h+=txt(200,220,"وحدة بنائية مكعّبة");
+  } else if(s===2){
+    h+=cube(4,34,140,170,10);
+  } else {
+    var c=[[0,0],[1,0],[0,1]];
+    [[120,150,70],[250,120,54],[320,175,34],[70,190,30]].forEach(function(q){var x=q[0],y=q[1],a=q[2];
+      h+='<path d="M'+x+' '+y+' h'+a+' v-'+a+' h-'+a+'Z" fill="var(--cl)" opacity=".55" stroke="var(--clS)" stroke-width="1.5"/>';
+      h+='<path d="M'+x+' '+(y-a)+' l'+(a*0.45)+' -'+(a*0.38)+' h'+a+' l-'+(a*0.45)+' '+(a*0.38)+'Z" fill="var(--cl)" opacity=".35" stroke="var(--clS)" stroke-width="1.5"/>';
+      h+='<path d="M'+(x+a)+' '+y+' l'+(a*0.45)+' -'+(a*0.38)+' v-'+a+' l-'+(a*0.45)+' '+(a*0.38)+'Z" fill="var(--cl)" opacity=".75" stroke="var(--clS)" stroke-width="1.5"/>';});
+    h+=txt(200,222,"بلّورات مكعّبة منتظمة");
+  }
+  S.innerHTML=h;
+  $("hsL").textContent=NAMES[s];
+  [].forEach.call($("hsteps").children,function(e,i){e.classList.toggle("on",i===s);});
+  var m=$("hMsg");m.textContent=MSG[s];m.className=s===3?"msg ok":"msg";
+}
+hs.addEventListener("input",drawH);drawH();
+})();
+</script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-14",
+ "generated": "2026-11-20",
  "source": "جداول محتويات كتب الطالب، الصف الحادي عشر علمي، الفصل الأول 2026-2027، وزارة التربية الكويت",
  "examWindow": {
   "start": "2026-12-20",
@@ -1277,21 +1277,21 @@
      },
      {
       "type": "new",
-      "lesson": "geo-u2-1-1"
+      "lesson": "math-u2-2-3"
      },
      {
       "type": "new",
-      "lesson": "math-u2-2-4"
+      "lesson": "geo-u2-1-1"
      }
     ],
     "pm": [
      {
       "type": "new",
-      "lesson": "math-u2-2-3"
+      "lesson": "phy-u1-1-3"
      },
      {
       "type": "new",
-      "lesson": "phy-u1-1-3"
+      "lesson": "math-u2-2-4"
      }
     ]
    }
