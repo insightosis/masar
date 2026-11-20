@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="math">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>صورتا معادلة الدالة التربيعية · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+span[dir=ltr],bdi[dir=ltr],b[dir=ltr]{unicode-bidi:isolate}
+body{--plane:#f1edff;--grid:#ddd5fb;--axis:#8b86b3;--curve:#8a63f2;--vx:#e0485f;--sym:#17b388;--wood:#d9a066;--photo:#cfe6ff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--plane:#24203d;--grid:#363057;--axis:#a7a2cf;--curve:#b49bff;--vx:#ff7d8f;--sym:#4fd8ac;--wood:#c28a52;--photo:#2f4d6e}}
+:root[data-theme="dark"] body{--plane:#24203d;--grid:#363057;--axis:#a7a2cf;--curve:#b49bff;--vx:#ff7d8f;--sym:#4fd8ac;--wood:#c28a52;--photo:#2f4d6e}
+.stage{display:block;width:100%;height:auto;border-radius:20px;background:var(--plane);box-shadow:var(--press);margin-top:10px}
+.help{display:inline-block;font-size:12px;font-weight:700;padding:1px 9px;border-radius:9px;background:var(--p-sky);color:var(--text);margin-inline-end:6px}
+.xtra{margin-top:12px;padding:10px 16px;border-radius:20px;background:var(--card);box-shadow:var(--clay-sm)}
+.xtra summary{cursor:pointer;font-weight:700;color:var(--ink)}
+.fbox{overflow-x:auto;text-align:center;padding:6px 0}
+.forms{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.forms .box{text-align:center}
+.forms .f{font-size:1.25rem}
+.out{margin-top:10px;display:grid;gap:6px;text-align:center}
+.out .f{font-size:1.1rem}
+.out small{display:block;color:var(--muted);font-size:13px}
+.tbl{overflow-x:auto;margin-top:10px}
+.tbl table{border-collapse:separate;border-spacing:4px;margin:0 auto;direction:ltr}
+.tbl td,.tbl th{padding:5px 9px;border-radius:10px;background:var(--card);box-shadow:var(--clay-sm);text-align:center;font-family:"Noto Serif",Georgia,serif;font-size:14px;white-space:nowrap}
+.tbl th{background:var(--soft);font-family:var(--body);font-size:13px}
+.tbl td.hl{background:var(--p-mint)}
+.act .gap{direction:ltr;unicode-bidi:isolate}
+.act[data-act=gap] .pc{font-family:"Noto Serif",Georgia,serif}
+.act[data-act=order] .pc{font-family:var(--body)}
+.pairs{display:grid;gap:10px;margin-top:10px}
+.pr{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-radius:18px;background:var(--card);box-shadow:var(--clay-sm)}
+.pr .n{flex:0 0 28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--sc);color:#fff;font-weight:700}
+.pr p{margin:0}.pr p.f{display:block;font-size:1.05rem;direction:ltr;text-align:right}
+.pr p.m{font-size:13.5px;color:var(--muted);margin-top:4px}
+.badge{display:inline-block;font-size:12px;font-weight:700;padding:2px 10px;border-radius:10px;background:var(--p-butter);color:var(--text)}
+</style>
+</head>
+<body style="--sc:#8a63f2">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الرياضيات</span><span class="chip">الدرس 2-4 · ص 64 إلى 68</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الثانية: الدوال الحقيقية · <span class="badge">درس إثرائي في الكتاب</span></p>
+  <h1 id="t">صورتا معادلة الدالة التربيعية: الرأس والعامة</h1>
+  <p>عندك قطعة خشب طولها <span dir="ltr">2.8 m</span> وتبي تسوّي برواز صور مستطيل لصديقك. <mark>أيّ طول وعرض يعطيانك أكبر مساحة للصور؟</mark> الجواب مخبّى في <b>رأس</b> قطع مكافئ. اليوم نتعلّم نلقاه من أي معادلة.</p>
+</section>
+
+<section class="panel" id="lab-sec" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">مختبر: نفس المنحنى بصورتين</h2><span class="legend"><span><i style="background:var(--curve)"></i>المنحنى</span><span><i style="background:var(--vx)"></i>الرأس</span><span><i style="background:var(--sym)"></i>محور التماثل</span></span></div>
+  <div class="controls">
+    <div class="ctl"><label for="sa">a = <b id="aL" dir="ltr">2</b></label><input type="range" dir="ltr" id="sa" min="0" max="7" step="1" value="6" aria-describedby="aL"></div>
+    <div class="ctl"><label for="sb">b = <b id="bL" dir="ltr">10</b></label><input type="range" dir="ltr" id="sb" min="-12" max="12" step="1" value="10" aria-describedby="bL"></div>
+    <div class="ctl"><label for="sc">c = <b id="cL" dir="ltr">7</b></label><input type="range" dir="ltr" id="sc" min="-10" max="10" step="1" value="7" aria-describedby="cL"></div>
+  </div>
+  <svg class="stage" id="plot" viewBox="0 0 400 260" role="img" aria-label="بيان الدالة التربيعية مع رأسها ومحور تماثلها"></svg>
+  <div class="out" id="out" aria-live="polite"></div>
+  <p class="cap">ابدأ بالمثال (1) في الكتاب: <span dir="ltr">y = 2x² + 10x + 7</span>. غيّر b وشوف: الرأس يتحرك، ومحور التماثل يمشي معه دائماً.</p>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">رموز الدرس ومصطلحاته</h2></div>
+  <div class="syms">
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span>ax²</span></span><div><h3>الصورة العامة <span class="en">General Form</span></h3><p><span dir="ltr">y = ax² + bx + c</span> و <span dir="ltr">a ≠ 0</span>.</p><span class="hook">"عامة" لأنها مفكوكة: كل حد لحاله.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub sm"><span>(x−h)²</span></span><div><h3>صورة المعادلة بدلالة إحداثيات الرأس <span class="en">Vertex Form</span></h3><p><span dir="ltr">y = a(x − h)² + k</span> و <span dir="ltr">a ≠ 0</span>.</p><span class="hook">الرأس مكتوب جاهز جوّا المعادلة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub sm"><span>(h, k)</span></span><div><h3>رأس القطع المكافئ <span class="en">Vertex of a Parabola</span></h3><p>أعلى نقطة (لو <span dir="ltr">a &lt; 0</span>) أو أدنى نقطة (لو <span dir="ltr">a &gt; 0</span>) في المنحنى.</p><span class="hook">قمّة التلّة أو قاع الوادي.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span>h</span></span><div><h3>الإحداثي السيني للرأس <span class="en">h</span></h3><p><span dir="ltr">h = −b ÷ 2a</span>، وهو نفسه معادلة <b>محور التماثل</b> <span dir="ltr">x = h</span>.</p><span class="hook">سالب b على ضعف a.</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub"><span>k</span></span><div><h3>الإحداثي الصادي للرأس <span class="en">k</span></h3><p>نعوّض h مكان x في المعادلة ونبسّط. وهو <b>القيمة العظمى أو الصغرى</b> للدالة.</p><span class="hook">k = قيمة y عند الرأس.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub sm"><span>P, A</span></span><div><h3>المحيط والمساحة <span class="en">Perimeter, Area</span></h3><p>للمستطيل: <span dir="ltr">P = 2(L + W)</span> و <span dir="ltr">A = L × W</span>. (L الطول، W العرض)</p><span class="hook">P يلفّ حول الشكل، A تملأ داخله.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">صورتان لنفس الدالة</h2></div>
+  <div class="forms">
+    <div class="box butter"><h3>الصورة العامة</h3><div class="fbox"><span class="f">y = ax² + bx + c</span></div><p>تعطيك بسرعة <b>c</b> (نقطة التقاطع مع محور y) و<b>اتجاه الفتحة</b> من إشارة a.</p></div>
+    <div class="box sky"><h3>بدلالة إحداثيات الرأس</h3><div class="fbox"><span class="f">y = a(x − h)² + k</span></div><p>تعطيك <b>الرأس (h, k)</b> و<b>محور التماثل x = h</b> مباشرة، بدون حساب.</p></div>
+  </div>
+  <p style="margin-top:12px">في «عمل تعاوني» يرسم الكتاب كل زوج على الحاسبة البيانية فيطلع <b>نفس المنحنى بالضبط</b>: يعني المعادلتان <b>متكافئتان</b>. لاحظ العلاقة بين a و b و h في كل زوج (الصورة العامة فوق، وصورة الرأس تحتها):</p>
+  <div class="pairs">
+    <div class="pr"><span class="n">1</span><div><p class="f">y = x² − 4x + 4</p><p class="f">y = (x − 2)²</p><p class="m"><bdi dir="ltr">a = 1 , b = −4</bdi> ⇐ <bdi dir="ltr">h = −b ÷ 2a = 4 ÷ 2 = 2</bdi></p></div></div>
+    <div class="pr"><span class="n">2</span><div><p class="f">y = x² + 6x + 8</p><p class="f">y = (x + 3)² − 1</p><p class="m"><bdi dir="ltr">a = 1 , b = 6</bdi> ⇐ <bdi dir="ltr">h = −b ÷ 2a = −6 ÷ 2 = −3</bdi></p></div></div>
+    <div class="pr"><span class="n">3</span><div><p class="f">y = −3x² − 12x − 8</p><p class="f">y = −3(x + 2)² + 4</p><p class="m"><bdi dir="ltr">a = −3 , b = −12</bdi> ⇐ <bdi dir="ltr">h = −b ÷ 2a = 12 ÷ (−6) = −2</bdi></p></div></div>
+    <div class="pr"><span class="n">4</span><div><p class="f">y = 2x² + 12x + 19</p><p class="f">y = 2(x + 3)² + 1</p><p class="m"><bdi dir="ltr">a = 2 , b = 12</bdi> ⇐ <bdi dir="ltr">h = −b ÷ 2a = −12 ÷ 4 = −3</bdi></p></div></div>
+  </div>
+  <div class="gform" style="margin-top:12px;padding:14px;border-radius:24px;background:var(--p-peach);box-shadow:var(--clay-sm);text-align:center">
+    <div class="fbox"><span class="f" style="font-size:1.4rem">h = <span class="frac"><span>−b</span><span>2a</span></span></span></div>
+    <p style="margin:4px 0 0">ومحور التماثل يمرّ بالرأس، فمعادلته <span dir="ltr">x = −b ÷ 2a</span>. مثلاً للدالة <span dir="ltr">y = 2x² + 10x + 7</span>: <span dir="ltr">x = −2.5</span>.</p>
+  </div>
+  <p class="tip" style="margin-top:12px"><b>انتبه للإشارة:</b> في <span dir="ltr">(x + 3)²</span> قيمة h هي <b dir="ltr">−3</b> وليست 3، لأن <span dir="ltr">x + 3 = x − (−3)</span>.</p>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">من العامة إلى صورة الرأس</h2></div>
+  <h3 style="margin:4px 0 8px">مثال (1)</h3>
+  <div class="qbox">اكتب الدالة <span class="f" style="font-size:1.1rem">y = 2x² + 10x + 7</span> بدلالة إحداثيات الرأس.</div>
+  <ol class="steps">
+    <li><span>الإحداثي السيني: <span class="f">h = −b ÷ 2a = −10 ÷ 2(2) = −2.5</span></span></li>
+    <li><span>الإحداثي الصادي: عوّض <span dir="ltr">x = −2.5</span> في المعادلة الأصلية:<br><span class="f">k = 2(−2.5)² + 10(−2.5) + 7</span><br><span class="f">k = 12.5 − 25 + 7 = −5.5</span></span></li>
+    <li><span><span class="ans">المعادلة: <span class="f" style="font-size:1.05rem">y = 2(x + 2.5)² − 5.5</span></span></span></li>
+  </ol>
+
+  <div class="act" data-act="order" data-key="order" data-rtl
+       data-answer='["أوجد h = −b ÷ 2a","عوّض h مكان x لتجد k","اكتب y = a(x − h)² + k"]'
+       data-extra='["أوجد h = b ÷ 2a"]'
+       data-ok="ممتاز! h أولاً (بالإشارة السالبة)، ثم k بالتعويض، ثم نكتب الصورة بنفس a."
+       data-no="القطع الحمراء في غير مكانها. لازم h قبل k، لأنك تعوّض h لتحصل على k. وانتبه: القانون فيه سالب b.">
+    <h3>رتّب الخطوات <span class="k">نشاط</span></h3>
+    <p>كيف تحوّل من الصورة العامة إلى صورة الرأس؟ فيه قطعة زائدة.</p>
+  </div>
+
+  <div class="act" data-act="type" data-key="type" data-answer="17" data-tol="0"
+       data-ok="صح! ⁦h = −12 ÷ 2(−3) = 2⁩ و ⁦k = −3(4) + 24 + 5 = 17⁩، إذن ⁦y = −3(x − 2)² + 17⁩. والمنحنى مفتوح للأسفل (⁦a &lt; 0⁩) فالرأس ⁦(2, 17)⁩ قيمة عظمى."
+       data-hint="أولاً ⁦h = −b ÷ 2a = −12 ÷ (2 × −3)⁩. بعدها عوّض h في ⁦−3x² + 12x + 5⁩."
+       data-no="ليست هذه. احسب h أولاً (تطلع 2)، ثم ⁦−3(2)² + 12(2) + 5⁩. انتبه: ⁦−3(2)² = −12⁩.">
+    <h3>اكتب الجواب <span class="k">نشاط</span></h3>
+    <p>حاول أن تحل (1): اكتب <span class="f" style="font-size:1.05rem">y = −3x² + 12x + 5</span> بدلالة إحداثيات الرأس. كم قيمة <b>k</b>؟</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">أكبر مساحة وأعلى ربح: الرأس يجاوب</h2></div>
+  <p>لو الدالة قطع مكافئ <b>مفتوح للأسفل</b> (<span dir="ltr">a &lt; 0</span>)، رأسه هو <b>القيمة العظمى</b>. ولو <b>مفتوح للأعلى</b> (<span dir="ltr">a &gt; 0</span>) رأسه <b>القيمة الصغرى</b>. لذلك نستخدم الرأس في مسائل أكبر مساحة وأصغر مساحة وأعلى ربح.</p>
+
+  <h3 style="margin:16px 0 6px">مثال (2): البرواز</h3>
+  <div class="panel" style="margin:6px 0 12px">
+    <div class="lab-head"><h3 style="margin:0">جرّب بنفسك</h3><span class="legend">المحيط ثابت <span dir="ltr">280 cm</span></span></div>
+    <svg class="stage" id="frame" viewBox="0 0 400 220" role="img" aria-label="برواز مستطيل يتغير عرضه وطوله مع رسم مساحته"></svg>
+    <div class="controls"><div class="ctl"><label for="fw">العرض <b id="fwL" dir="ltr">W = 30 cm</b></label><input type="range" dir="ltr" id="fw" min="10" max="130" step="5" value="30" aria-describedby="fwL"></div></div>
+    <p class="msg" id="fMsg" aria-live="polite"></p>
+  </div>
+  <ol class="steps">
+    <li><span>المحيط: <span class="f">P = 2.8 m = 280 cm</span>، و <span class="f">2(L + W) = 280 ⇒ L = 140 − W</span></span></li>
+    <li><span>المساحة: <span class="f">A = L × W = (140 − W)(W)</span><br><span class="f">A = −W² + 140W</span></span></li>
+    <li><span>قطع مكافئ و <span dir="ltr">a = −1 &lt; 0</span>، فله قيمة عظمى عند الرأس: <span class="f">W = −b ÷ 2a = −140 ÷ 2(−1) = 70 cm</span></span></li>
+    <li><span><span class="f">L = 140 − 70 = 70 cm</span></span></li>
+    <li><span><span class="ans">أكبر مساحة عندما الطول والعرض <span dir="ltr">70 cm</span>: <span class="f" style="font-size:1.05rem">A = 70 × 70 = 4 900 cm²</span></span></span></li>
+  </ol>
+  <p class="note" style="margin-top:10px"><b>حاول أن تحل (2):</b> أفضل تسمية للشكل: <b>مربّع</b>. ونعم، من بين كل المستطيلات اللي لها نفس المحيط، المربّع يعطي دائماً أكبر مساحة. ونفس الفكرة: عددان موجبان <span dir="ltr">c + d = 18</span> وحاصل ضربهما أكبر ما يمكن: <span dir="ltr">c = d = 9</span> و <span dir="ltr">c × d = 81</span>.</p>
+
+  <h3 style="margin:18px 0 6px">مثال (5): محل الأحذية الرياضية</h3>
+  <div class="qbox">ربح المحل <span class="f" style="font-size:1.05rem">f(x) = −15x² + 600x + 50</span>، حيث x سعر الحذاء بالدينار. ما السعر الذي يحقّق أعلى ربح؟ وما قيمة أعلى ربح؟</div>
+  <ol class="steps">
+    <li><span><span dir="ltr">a = −15 &lt; 0</span>: قطع مكافئ له قيمة عظمى عند <span class="f">x = −600 ÷ 2(−15) = 20</span></span></li>
+    <li><span><span class="ans">السعر: <b>20 ديناراً</b>.</span></span></li>
+    <li><span><span class="f">f(20) = −15(20)² + 600(20) + 50</span><br><span class="f">f(20) = −6 000 + 12 000 + 50 = 6 050</span></span></li>
+    <li><span><span class="ans">أعلى ربح: <b dir="ltr">6 050</b> ديناراً.</span></span></li>
+  </ol>
+</section>
+
+<section class="sec" aria-labelledby="s5">
+  <div class="sec-head"><span class="num">5</span><h2 id="s5">من صورة الرأس إلى العامة</h2></div>
+  <p>هنا العكس وأسهل: <b>فك القوس المربّع</b>، ثم <b>وزّع</b> a، ثم <b>بسّط</b>.</p>
+  <h3 style="margin:10px 0 8px">مثال (3)</h3>
+  <div class="qbox">اكتب <span class="f" style="font-size:1.1rem">y = 3(x − 1)² + 12</span> في الصورة العامة.</div>
+  <ol class="steps">
+    <li><span>أوجد <span dir="ltr">(x − 1)(x − 1)</span>: <span class="f">y = 3(x² − 2x + 1) + 12</span></span></li>
+    <li><span>خاصية التوزيع: <span class="f">y = 3x² − 6x + 3 + 12</span></span></li>
+    <li><span><span class="ans">بسّط: <span class="f" style="font-size:1.05rem">y = 3x² − 6x + 15</span></span></span></li>
+  </ol>
+
+  <div class="act" data-act="gap" data-key="gap" data-ok="صح! ⁦−2(x² + 6x + 9) − 7 = −2x² − 12x − 18 − 7 = −2x² − 12x − 25⁩.">
+    <h3>أكمل الناقص <span class="k">نشاط</span></h3>
+    <p>حاول أن تحل (3): الصورة العامة للدالة <span class="f" style="font-size:1.05rem">y = −2(x + 3)² − 7</span> هي <span class="f" style="font-size:1.05rem">y = <span class="gap">؟</span></span></p>
+    <div class="opts">
+      <button class="pc" data-no="نسيت تضرب 9 في −2. ⁦(x + 3)² = x² + 6x + 9⁩، وكل الحدود تنضرب في −2.">−2x² − 12x + 2</button>
+      <button class="pc" data-ok>−2x² − 12x − 25</button>
+      <button class="pc" data-no="انتبه لإشارة الحد الأوسط: ⁦(x + 3)²⁩ فيه ⁦+6x⁩، وضربه في −2 يعطي ⁦−12x⁩.">−2x² + 12x − 25</button>
+    </div>
+  </div>
+  <p class="tip" style="margin-top:12px"><b>حاول أن تحل (3b): ميزة كل صورة في الرسم.</b> صورة الرأس: ترسم الرأس ومحور التماثل فوراً. الصورة العامة: تعرف نقطة التقاطع مع محور y وهي <span dir="ltr">(0, c)</span>، واتجاه الفتحة من a.</p>
+
+  <h3 style="margin:18px 0 8px">مثال (4): أوجد المعاملات من الرأس</h3>
+  <div class="qbox">منحنى الدالة <span class="f" style="font-size:1.1rem">y = ax² + bx + 12</span> له رأس عند النقطة <span dir="ltr">(1, 8)</span>. فما قيم a و b؟</div>
+  <div class="row"><button class="lite" id="hideSol" type="button" aria-pressed="false">أخفِ الحل وجرّب أولاً</button></div>
+  <ol class="steps" id="steps">
+    <li><span><b>طريقة أولى:</b> النقطة <span dir="ltr">(1, 8)</span> على المنحنى: <span class="f">8 = a + b + 12 ⇒ a + b = −4</span> ①</span></li>
+    <li><span>الإحداثي السيني للرأس: <span class="f">1 = −b ÷ 2a ⇒ b = −2a</span> ②</span></li>
+    <li><span>نعوّض ② في ①: <span class="f">a − 2a = −4 ⇒ −a = −4 ⇒ a = 4</span>، ثم <span class="f">b = −2(4) = −8</span></span></li>
+    <li><span><b>طريقة ثانية:</b> <span class="f">y = a(x − 1)² + 8 = ax² − 2ax + a + 8</span>. نقارن مع <span class="f">ax² + bx + 12</span>: <span class="f">a + 8 = 12 ⇒ a = 4</span> و <span class="f">b = −2a = −8</span></span></li>
+    <li><span><span class="ans"><span dir="ltr">a = 4 , b = −8</span></span></span></li>
+  </ol>
+
+  <details class="xtra"><summary>حلول «حاول أن تحل» (4) و(5)، جرّب قبل ما تفتح</summary>
+    <ul class="pts">
+      <li style="--b:var(--sc)"><b>(4)</b> <span class="f" style="font-size:1.05rem">y = ax² + 4x + c</span> ورأسها <span dir="ltr">(−1, 5)</span>: <span dir="ltr">−1 = −4 ÷ 2a ⇒ a = 2</span>، ثم <span dir="ltr">5 = 2(1) − 4 + c ⇒ c = 7</span>. إذن <span dir="ltr">a = 2 , c = 7</span>.</li>
+      <li style="--b:var(--sc)"><b>(5)</b> الدراجات: <span class="f" style="font-size:1.05rem">f(x) = −x² + 2200x − 1 150 000</span>: <span dir="ltr">x = −2200 ÷ 2(−1) = 1 100</span> دينار، وأعلى ربح <span dir="ltr">f(1100) = −1 210 000 + 2 420 000 − 1 150 000 = 60 000</span> دينار.</li>
+    </ul>
+  </details>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">6</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sd">
+  <div class="sec-head"><span class="num">7</span><h2 id="sd">في حياتك</h2></div>
+  <div class="life">
+    <div class="card"><h3>سياج الحديقة</h3><p>عندك 40 متر سياج لمربّع زرع؟ سوّه مربّعاً <span dir="ltr">10 × 10</span>: أكبر مساحة لنفس الطول.</p></div>
+    <div class="card"><h3>سعر التذكرة</h3><p>لو رفعت السعر كثير يقلّ الناس، ولو نزّلته كثير يقلّ الربح. بين الاثنين سعر "رأس" يعطي أعلى ربح.</p></div>
+    <div class="card"><h3>رمية كرة السلة</h3><p>أعلى نقطة توصلها الكرة هي الرأس <span dir="ltr">(h, k)</span>: h متى، و k كم ارتفعت.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">8</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>رأس منحنى <span class="f" style="font-size:1.1rem">y = (x + 3)² − 1</span> هو:</p>
+      <div class="opts"><button dir="ltr">(3, −1)</button><button dir="ltr" data-ok>(−3, −1)</button><button dir="ltr">(−3, 1)</button></div>
+      <p class="why" hidden>الصحيح: ⁦(−3, −1)⁩. لأن ⁦x + 3 = x − (−3)⁩ فـ ⁦h = −3⁩، و ⁦k = −1⁩.</p></div>
+    <div class="q"><p>معادلة محور التماثل للقطع المكافئ <span class="f" style="font-size:1.1rem">y = 2x² + 10x + 7</span> هي:</p>
+      <div class="opts"><button data-ok>x = −2.5</button><button>x = 2.5</button><button>x = −5.5</button></div>
+      <p class="why" hidden>الصحيح: ⁦x = −b ÷ 2a = −10 ÷ 4 = −2.5⁩. أما −5.5 فهي k (الإحداثي الصادي للرأس)، مو محور التماثل.</p></div>
+    <div class="q"><p>ربح محل <span class="f" style="font-size:1.1rem">f(x) = −2x² + 80x</span>. عند أي سعر x يكون الربح أعلى ما يمكن؟</p>
+      <div class="opts"><button>x = 40</button><button>x = −20</button><button data-ok>x = 20</button></div>
+      <p class="why" hidden>الصحيح: ⁦x = −80 ÷ 2(−2) = 20⁩، و ⁦a &lt; 0⁩ فهي قيمة عظمى. (و ⁦x = 40⁩ عندها الربح صفر.)</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li><b>الصورتان</b>: العامة <span dir="ltr">y = ax² + bx + c</span>، والرأس <span dir="ltr">y = a(x − h)² + k</span>، ونفس a في الاثنتين.</li>
+      <li><b>العامة ← الرأس</b>: <span dir="ltr">h = −b ÷ 2a</span> (وهو محور التماثل <span dir="ltr">x = h</span>)، ثم k بالتعويض. <b>الرأس ← العامة</b>: فك المربّع، وزّع، بسّط.</li>
+      <li><b>التطبيقات</b>: <span dir="ltr">a &lt; 0</span> ⇐ الرأس قيمة عظمى (أكبر مساحة، أعلى ربح)، <span dir="ltr">a &gt; 0</span> ⇐ قيمة صغرى. المستطيل الأكبر مساحة لمحيط ثابت مربّع.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الرياضيات، الصف الحادي عشر، الوحدة الثانية، ص 64 إلى 68</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"math-u2-2-4"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+var AV=[-3,-2,-1,-0.5,0.5,1,2,3];
+function n2(v){var r=Math.round(v*100)/100;if(Object.is(r,-0))r=0;return String(r).replace("-","−");}
+function term(v,first){var s=n2(Math.abs(v));return (v<0?(first?"−":" − "):(first?"":" + "))+s;}
+function coef(a){return a===1?"":a===-1?"−":n2(a);}
+function general(a,b,c){var s="y = "+coef(a)+"x²";if(b)s+=(b<0?" − ":" + ")+(Math.abs(b)===1?"":n2(Math.abs(b)))+"x";if(c)s+=term(c,false);return s;}
+function vertex(a,h,k){var s="y = "+coef(a);s+=h===0?"x²":"(x"+(h<0?" + ":" − ")+n2(Math.abs(h))+")²";if(k)s+=term(k,false);return s;}
+var X0=-8,X1=8,Y0=-14,Y1=20,W=400,H=260;
+function px(x){return 20+(x-X0)/(X1-X0)*(W-40);}
+function py(y){return H-14-(y-Y0)/(Y1-Y0)*(H-28);}
+function plot(){
+  var a=AV[+$("sa").value],b=+$("sb").value,c=+$("sc").value,hh=-b/(2*a),kk=a*hh*hh+b*hh+c,s="";
+  s+='<defs><clipPath id="cp"><rect x="20" y="14" width="'+(W-40)+'" height="'+(H-28)+'"/></clipPath></defs>';
+  for(var gx=X0;gx<=X1;gx++)s+='<line x1="'+px(gx)+'" y1="14" x2="'+px(gx)+'" y2="'+(H-14)+'" stroke="var(--grid)" stroke-width="1"/>';
+  for(var gy=Y0;gy<=Y1;gy+=2)s+='<line x1="20" y1="'+py(gy).toFixed(1)+'" x2="'+(W-20)+'" y2="'+py(gy).toFixed(1)+'" stroke="var(--grid)" stroke-width="1"/>';
+  s+='<line x1="20" y1="'+py(0)+'" x2="'+(W-20)+'" y2="'+py(0)+'" stroke="var(--axis)" stroke-width="1.8"/><line x1="'+px(0)+'" y1="14" x2="'+px(0)+'" y2="'+(H-14)+'" stroke="var(--axis)" stroke-width="1.8"/>';
+  s+='<g font-size="11" fill="var(--axis)" direction="ltr" text-anchor="middle"><text x="'+px(5)+'" y="'+(py(0)+13)+'">5</text><text x="'+px(-5)+'" y="'+(py(0)+13)+'">−5</text><text x="'+(px(0)-12)+'" y="'+(py(10)+4)+'">10</text><text x="'+(px(0)-12)+'" y="'+(py(-10)+4)+'">−10</text></g>';
+  var d="";for(var i=0;i<=320;i++){var x=X0+(X1-X0)*i/320,y=a*x*x+b*x+c;y=Math.max(Math.min(y,Y1+30),Y0-30);d+=(i?"L":"M")+px(x).toFixed(1)+" "+py(y).toFixed(1);}
+  s+='<g clip-path="url(#cp)">';
+  if(hh>=X0&&hh<=X1)s+='<line x1="'+px(hh).toFixed(1)+'" y1="14" x2="'+px(hh).toFixed(1)+'" y2="'+(H-14)+'" stroke="var(--sym)" stroke-width="2.5" stroke-dasharray="7 6"/>';
+  s+='<path d="'+d+'" fill="none" stroke="var(--curve)" stroke-width="3.5"/>';
+  s+='<circle cx="'+px(hh).toFixed(1)+'" cy="'+py(kk).toFixed(1)+'" r="6.5" fill="var(--vx)" stroke="var(--card)" stroke-width="2"/></g>';
+  $("plot").innerHTML=s;
+  $("aL").textContent=n2(a);$("bL").textContent=n2(b);$("cL").textContent=n2(c);
+  var vis=hh>=X0&&hh<=X1&&kk>=Y0&&kk<=Y1;
+  $("out").innerHTML='<span class="f" dir="ltr">'+general(a,b,c)+'</span>'+
+   '<span class="f" dir="ltr">h = −('+n2(b)+') ÷ (2 × '+n2(a)+') = '+n2(hh)+' ,  k = '+n2(kk)+'</span>'+
+   '<span class="f" dir="ltr" style="color:var(--ink)">'+vertex(a,hh,kk)+'</span>'+
+   '<small>الرأس <bdi dir="ltr">('+n2(hh)+', '+n2(kk)+')</bdi> '+(a<0?"قيمة عظمى (مفتوح للأسفل)":"قيمة صغرى (مفتوح للأعلى)")+' · محور التماثل <bdi dir="ltr">x = '+n2(hh)+'</bdi>'+(vis?"":" · الرأس خارج حدود الرسم")+'</small>';
+}
+["sa","sb","sc"].forEach(function(id){$(id).addEventListener("input",plot);});plot();
+
+/* frame: perimeter 280 cm */
+function frame(){
+  var w=+$("fw").value,l=140-w,A=l*w,s="",sc=1.25,ox=20,oy=20;
+  /* rectangle drawn to scale in the left part (RTL page: drawing on the left, graph on the right) */
+  var rw=l*sc,rh=w*sc; if(rh>170){var f=170/rh;rw*=f;rh*=f;}
+  s+='<rect x="'+ox+'" y="'+(oy+ (170-rh)/2).toFixed(1)+'" width="'+rw.toFixed(1)+'" height="'+rh.toFixed(1)+'" fill="var(--photo)" stroke="var(--wood)" stroke-width="7" rx="3"/>';
+  s+='<g font-size="12.5" font-weight="700" fill="var(--text)" direction="ltr" text-anchor="middle"><text x="'+(ox+rw/2).toFixed(1)+'" y="210">L = '+l+'</text><text x="'+(ox+rw+8).toFixed(1)+'" y="'+(oy+85+4)+'" text-anchor="start">W = '+w+'</text></g>';
+  /* area graph on the right */
+  var gx0=245,gx1=390,gy0=190,gy1=30;
+  function gX(v){return gx0+v/140*(gx1-gx0);} function gY(v){return gy0-v/4900*(gy0-gy1);}
+  s+='<line x1="'+gx0+'" y1="'+gy0+'" x2="'+gx1+'" y2="'+gy0+'" stroke="var(--axis)" stroke-width="1.5"/><line x1="'+gx0+'" y1="'+gy0+'" x2="'+gx0+'" y2="'+(gy1-8)+'" stroke="var(--axis)" stroke-width="1.5"/>';
+  var d="";for(var i=0;i<=70;i++){var x=i*2,y=-x*x+140*x;d+=(i?"L":"M")+gX(x).toFixed(1)+" "+gY(y).toFixed(1);}
+  s+='<path d="'+d+'" fill="none" stroke="var(--curve)" stroke-width="3"/>';
+  s+='<line x1="'+gX(70)+'" y1="'+gy1+'" x2="'+gX(70)+'" y2="'+gy0+'" stroke="var(--sym)" stroke-width="2" stroke-dasharray="5 5"/>';
+  s+='<circle cx="'+gX(w).toFixed(1)+'" cy="'+gY(A).toFixed(1)+'" r="6" fill="var(--vx)"/>';
+  s+='<g font-size="11.5" fill="var(--muted)" direction="ltr" text-anchor="middle"><text x="'+gX(70)+'" y="'+(gy0+14)+'">70</text><text x="'+gx1+'" y="'+(gy0+14)+'">W</text><text x="'+(gx0+4)+'" y="'+(gy1-12)+'" text-anchor="start">A (cm²)</text></g>';
+  $("frame").innerHTML=s;
+  $("fwL").textContent="W = "+w+" cm";
+  var m=$("fMsg");var I="\u2066",O="\u2069";m.textContent="الطول "+I+"L = 140 − "+w+" = "+l+" cm"+O+"، والمساحة "+I+"A = "+l+" × "+w+" = "+A.toLocaleString("en").replace(/,/g," ")+" cm²"+O+"."+(w===70?" هذا الرأس: مربّع "+I+"70 × 70"+O+" وأكبر مساحة!":" حرّك نحو الرأس لتكبر المساحة.");
+  m.className=w===70?"msg ok":"msg";
+}
+$("fw").addEventListener("input",frame);frame();
+})();
+</script>
+</body>
+</html>
