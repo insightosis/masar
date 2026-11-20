@@ -71,7 +71,7 @@ var subj="all", q="";
 var TAG={exam:"سؤال مكرر",fast:"قاعدة سريعة",trap:"فخ"};
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
 var f=document.getElementById("filters");
-f.innerHTML='<button data-s="all" aria-pressed="true" style="--sc:#d1557a;--soft:var(--p-pink)">الكل</button>'+Object.keys(S).map(function(k){return '<button data-s="'+k+'" aria-pressed="false" style="--sc:'+S[k].color+'">'+esc(S[k].name)+'</button>';}).join("");
+f.innerHTML='<button data-s="all" aria-pressed="true" style="--sc:#d1557a;--soft:var(--p-pink)">الكل</button>'+Object.keys(S).filter(function(k){return !S[k].review;}).map(function(k){return '<button data-s="'+k+'" aria-pressed="false" style="--sc:'+S[k].color+'">'+esc(S[k].name)+'</button>';}).join("");
 f.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;subj=b.getAttribute("data-s");Array.prototype.forEach.call(f.children,function(x){x.setAttribute("aria-pressed",String(x===b));});render();});
 document.getElementById("q").addEventListener("input",function(){q=this.value.trim().toLowerCase();render();});
 ["terms","gold"].forEach(function(k){document.getElementById("tab-"+k).addEventListener("click",function(){

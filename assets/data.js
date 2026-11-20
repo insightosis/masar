@@ -9,7 +9,9 @@ window.LAB = {
     chemistry: { name: "الكيمياء",   color: "#17b388", icon: "chemistry" },
     biology:   { name: "الأحياء",    color: "#5fb02a", icon: "biology" },
     math:      { name: "الرياضيات",  color: "#8a63f2", icon: "math" },
-    geology:   { name: "الجيولوجيا", color: "#e2653f", icon: "geology" }
+    geology:   { name: "الجيولوجيا", color: "#e2653f", icon: "geology" },
+    /* Saturday and December review pages (weekly-*, review-*, mock-*): not a subject of the syllabus */
+    mixed:     { name: "مراجعة",     color: "#d1557a", icon: "review", review: true }
   },
   /* { subject, title, date: "YYYY-MM-DD" } */
   exams: [],

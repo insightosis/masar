@@ -11,7 +11,8 @@
     chemistry: '<path d="M9 3h6M10 3v6L4.5 19a1.5 1.5 0 0 0 1.3 2.2h12.4a1.5 1.5 0 0 0 1.3-2.2L14 9V3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M7 15h10" stroke="currentColor" stroke-width="1.8"/><circle cx="11" cy="18" r="1" fill="currentColor"/><circle cx="14" cy="17" r=".8" fill="currentColor"/>',
     biology: '<path d="M5 19C5 10 11 4 20 4c0 9-6 15-15 15z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M5 19L14 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>',
     math: '<path d="M18 5H7l6 7-6 7h11" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>',
-    geology: '<path d="M2 20l6-10 4 6 3-4 7 8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M5 16h14M3.5 18.5h17" stroke="currentColor" stroke-width="1.2" opacity=".6"/>'
+    geology: '<path d="M2 20l6-10 4 6 3-4 7 8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M5 16h14M3.5 18.5h17" stroke="currentColor" stroke-width="1.2" opacity=".6"/>',
+    review: '<path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6L12 16.3 6.6 19.3l1.3-6-4.6-4.1 6.1-.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>'
   };
 
 

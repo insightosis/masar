@@ -253,7 +253,7 @@ function render(rep){
 
   /* subjects */
   var checks={}; ev.forEach(function(e){if(e.type==="check"&&e.id){var s=title(e.id).subject;checks[s]=checks[s]||{n:0,ok:0};checks[s].n++;if(e.ok)checks[s].ok++;}});
-  $("subs").innerHTML=Object.keys(S).map(function(k){
+  $("subs").innerHTML=Object.keys(S).filter(function(k){return !S[k].review;}).map(function(k){
     var all=ids.filter(function(id){return title(id).subject===k;}), dueK=all.filter(function(id){return pd[id]<=today;});
     var dn=all.filter(function(id){return prog[id]&&prog[id].done;});
     var q=dn.map(function(id){return prog[id].quiz;}).filter(function(x){return x&&x.total;});

@@ -10,7 +10,7 @@ import argparse, html, json, os, re, shutil, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = "https://insightosis.github.io/masar/"
-SUBJ = {"physics": "الفيزياء", "chemistry": "الكيمياء", "biology": "الأحياء", "math": "الرياضيات", "geology": "الجيولوجيا"}
+SUBJ = {"physics": "الفيزياء", "chemistry": "الكيمياء", "biology": "الأحياء", "math": "الرياضيات", "geology": "الجيولوجيا", "mixed": "مراجعة"}
 SESS = {"am": "الصباح (06:00)", "pm": "المساء (18:00)"}
 
 def main():
@@ -45,7 +45,7 @@ def main():
     L = []
     L.append('<!DOCTYPE html>\n<html lang="ar" dir="rtl">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">')
     L.append('<title>آخر درس · مسار · الصف الحادي عشر</title>')
-    L.append('<style>body{font-family:system-ui,sans-serif;max-width:640px;margin:40px auto;padding:0 18px;line-height:1.8;background:#f7f3ff;color:#3d3561}a{color:#d1557a}section{margin:18px 0;padding:10px 16px;border-radius:14px;background:#fff}</style>\n</head>\n<body>')
+    L.append('<style>body{font-family:system-ui,sans-serif;max-width:640px;margin:40px auto;padding:0 18px;line-height:1.8;background:#f7f3ff;color:#3d3561}a{color:#d1557a;overflow-wrap:anywhere}section{margin:18px 0;padding:10px 16px;border-radius:14px;background:#fff}</style>\n</head>\n<body>')
     L.append('<!-- Plain page on purpose: the notification tasks (06:05 and 18:05) read it. Written by tools/publish.py every session. -->')
     L.append('<h1>آخر درس</h1>')
     for lid in a.ids:

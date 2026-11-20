@@ -145,7 +145,7 @@ if(t){
 }else{el.innerHTML='<p class="eyebrow">قريباً</p><h1>أول درس في الطريق</h1>';}
 
 /* stats */
-var Pg=Lab.progress(), done=L.filter(function(l){return Pg[l.id]&&Pg[l.id].done;}), qs=[];
+var Pg=Lab.progress(), done=L.filter(function(l){return Pg[l.id]&&Pg[l.id].done&&!(S[l.subject]||{}).review;}), qs=[];
 L.forEach(function(l){var q=Pg[l.id]&&Pg[l.id].quiz;if(q&&q.total)qs.push(q.score/q.total);});
 var avg=qs.length?Math.round(100*qs.reduce(function(a,b){return a+b;},0)/qs.length):null;
 var total=P?P.catalog.length:L.length;
@@ -156,7 +156,7 @@ $("stats").innerHTML=[["دروس المنهج",total,""],["أنجزت منها",
 SCHEDULE.render($("ptoday"),Lab.today());
 
 /* subjects */
-$("subjects").innerHTML=Object.keys(S).map(function(k){
+$("subjects").innerHTML=Object.keys(S).filter(function(k){return !S[k].review;}).map(function(k){
   var all=P?P.catalog.filter(function(c){return c.subject===k;}):[], dn=all.filter(function(c){return Lab.isDone(c.id);});
   var pct=all.length?Math.round(100*dn.length/all.length):0;
   return '<div class="subj" style="'+sv(k)+'"><div class="row"><h3>'+esc(S[k].name)+'</h3><span class="ic">'+Lab.icon(S[k].icon,24)+'</span></div>'
