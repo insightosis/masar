@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="chemistry">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>المحاليل المائية · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+span[dir=ltr],bdi[dir=ltr]{unicode-bidi:isolate}
+body{--ox:#ef5b5b;--hy:#5b8def;--wire:#5a5277;--glass:#fffdf2;--glow:#ffd43b;--liq:#cfeefb;--beak:#9a93b8;--elec:#4a4560;--na:#b58cf2;--cl:#7fcf6a;--mol:#c9c3dc;--molt:#ffd9b8;--plate:#eefaf5}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--ox:#ff7b7b;--hy:#7fa8ff;--wire:#b9b2d6;--glass:#3a3550;--glow:#ffe066;--liq:#21404f;--beak:#8a83a8;--elec:#d6d0ee;--na:#c9a8ff;--cl:#9be38a;--mol:#6d6788;--molt:#5a3a24;--plate:#1f2b2a}}
+:root[data-theme="dark"] body{--ox:#ff7b7b;--hy:#7fa8ff;--wire:#b9b2d6;--glass:#3a3550;--glow:#ffe066;--liq:#21404f;--beak:#8a83a8;--elec:#d6d0ee;--na:#c9a8ff;--cl:#9be38a;--mol:#6d6788;--molt:#5a3a24;--plate:#1f2b2a}
+.stage{display:block;width:100%;height:auto;border-radius:22px;background:var(--plate);box-shadow:var(--press)}
+.fx{direction:ltr;unicode-bidi:isolate;font-family:"Noto Serif",Georgia,serif;white-space:nowrap}
+.fx sub,.fx sup{font-size:.68em}
+.help{display:inline-block;font-size:12px;font-weight:700;padding:1px 9px;border-radius:9px;background:var(--p-sky);color:var(--text);margin-inline-end:6px}
+.pick{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.pick .tg{font-size:14px;padding:7px 12px}
+.kinds{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:12px}
+.kinds div{padding:10px 12px;border-radius:18px;background:var(--card);box-shadow:var(--clay-sm);font-size:14.5px}
+.kinds b{display:block;color:var(--ink)}
+.kinds small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.eqbox{margin:12px 0 0;padding:12px 14px;border-radius:20px;background:var(--card);box-shadow:var(--clay-sm);overflow-x:auto;text-align:center}
+.eqbox .fx{font-size:1.15rem;white-space:nowrap}
+.eqbox small{display:block;color:var(--muted);font-size:13px;margin-top:4px}
+.three .bins{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.three .bin h4{font-size:13px!important}
+.three .it{font-family:"Noto Serif",Georgia,serif;font-size:13.5px;padding:5px 8px}
+.three .bin{padding:8px 6px!important}
+.act[data-act=gap] .pc{font-family:var(--body);font-style:normal;font-size:15px}
+.lv{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:12px}
+.lv div{padding:10px 12px;border-radius:18px;box-shadow:var(--clay-sm);font-size:14.5px}
+.lv b:first-child{display:block}
+.lv .s{background:var(--p-butter)}.lv .w{background:var(--p-peach)}.lv .n{background:var(--p-lav)}
+.qbox{padding:12px 16px;border-radius:20px;background:var(--p-sky);box-shadow:var(--clay-sm)}
+</style>
+</head>
+<body style="--sc:#17b388">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الكيمياء</span><span class="chip">الدرس 1-2 · ص 33 إلى 38</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الثانية: المحاليل · الفصل الأول: المحاليل المائية المتجانسة وغير المتجانسة</p>
+  <h1 id="t">المحاليل المائية</h1>
+  <p>العصير والمشروب الغازي وحتى ماء الحنفية: كلها <b>محاليل مائية</b>. ملح الطعام يختفي في الماء، والزيت يطفو فوقه. وكأس ماء مالح يقدر يضوّي مصباحاً، وكأس ماء بسكر ما يقدر. <mark>شو الفرق اللي ما تشوفه العين؟</mark></p>
+</section>
+
+<section class="panel" id="lab-sec" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">مختبر: هل يضيء المصباح؟</h2><span class="legend"><span><i style="background:var(--na)"></i>أيون موجب</span><span><i style="background:var(--cl)"></i>أيون سالب</span><span><i style="background:var(--mol)"></i>جزيء غير متأيّن</span></span></div>
+  <svg class="stage" id="cell" viewBox="0 0 400 250" role="img" aria-label="جهاز اختبار التوصيل: بطارية ومصباح وإلكترودان من الجرافيت مغموران في محلول"></svg>
+  <div class="pick" role="group" aria-label="اختر المادة في الكأس" id="sols"></div>
+  <p class="msg" id="cMsg" aria-live="polite"></p>
+  <p class="cap">اختر مادة وراقب المصباح والدقائق في الكأس. التيار يحتاج <b>أيونات حرّة الحركة</b> تنقله بين الإلكترودين.</p>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">رموز الدرس ومصطلحاته</h2></div>
+  <div class="syms">
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub sm"><span>H₂O</span></span><div><h3>المذيب <span class="en">Solvent</span></h3><p>الوسط اللي يذيب، وفي المحلول المائي هو <b>الماء</b>.</p><span class="hook">الكأس الكبيرة اللي يسبح فيها كل شي.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub sm"><span>NaCl</span></span><div><h3>المذاب <span class="en">Solute</span></h3><p>الدقائق اللي تذوب في المذيب، مثل ملح الطعام في الماء.</p><span class="hook">الضيف اللي ينزل في الكأس ويختفي.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub"><span>aq</span></span><div><h3>محلول مائي <span class="en">Aqueous Solution</span></h3><p>ماء فيه مواد ذائبة. الرمز <span dir="ltr">(aq)</span> بعد الصيغة يعني "ذائب في الماء"، و <span dir="ltr">(l)</span> سائل، و <span dir="ltr">(g)</span> غاز.</p><span class="hook">aq من aqua = ماء.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span>nm</span></span><div><h3>نانومتر <span class="en">Nanometre</span></h3><p><span dir="ltr">1 nm = 10<sup>−9</sup> m</span>. متوسّط قطر دقائق المذاب في المحلول <b>أقل من 1 nm</b>.</p><span class="hook">أصغر من ثقوب ورقة الترشيح بكثير.</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub"><span>Na⁺</span></span><div><h3>الإذابة <span class="en">Solvation</span></h3><p>يذوب المذاب وتتم <b>إماهة</b> الكاتيونات والأنيونات: جزيئات المذيب تحيط بكل أيون.</p><span class="hook">كل أيون يلبس "معطفاً" من جزيئات الماء.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub"><span>+ −</span></span><div><h3>إلكتروليت <span class="en">Electrolyte</span></h3><p>مركّب يوصل التيار الكهربائي <b>في المحلول المائي أو في الحالة المنصهرة</b>.</p><span class="hook">فيه أيونات تمشي، فالكهرباء تمشي.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span>⊘</span></span><div><h3>غير إلكتروليتي <span class="en">Non-Electrolyte</span></h3><p>لا يوصل التيار لا في المحلول ولا منصهراً، لأنه لا يتكوّن من أيونات. مثل الجلوكوز.</p><span class="hook">جزيئات كاملة، ما في شحنات حرّة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub sm"><span>H₃O⁺</span></span><div><h3>التأيّن <span class="en">Ionisation</span></h3><p>مركّب تساهمي يتفاعل مع الماء فيُنتج أيونات، مثل تكوّن الهيدرونيوم <span class="fx">H<sub>3</sub>O<sup>+</sup></span> والأمونيوم <span class="fx">NH<sub>4</sub><sup>+</sup></span>.</p><span class="hook">ما كان فيه أيونات، الماء "صنعها".</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">المذيب والمذاب</h2></div>
+  <p>الماء ما يكون نقياً تماماً في الطبيعة، لأنه يذيب كثيراً من المواد اللي يلامسها: ماء الحنفية والينابيع والأنهار والبحار فيها <b>معادن وغازات ذائبة</b>. إلا الماء المقطّر اللي نشتريه أو نحضّره في المختبر.</p>
+  <div class="grid2">
+    <div class="box sky"><h3>محلول = مخلوط متجانس وثابت</h3><p>اترك محلول ملح فترة (بنفس درجة الحرارة): الملح <b>ما ينفصل وما يترسّب</b> في القاع.</p></div>
+    <div class="box butter"><h3>يعبر ورقة الترشيح</h3><p>دقائق المذاب أيونات أو جزيئات قطرها <b>أقل من 1 nm</b>، فورقة الترشيح ما تحجز لا المذيب ولا المذاب، والمحلول كله ينفذ منها بلونه.</p></div>
+  </div>
+  <p class="tip" style="margin-top:12px"><span class="help">مساعدة للفهم</span>ليش الكيميائيون يحبّون التفاعلات في المحاليل السائلة؟ لأن الجزيئات والأيونات في السائل <b>تتحرّك أكثر</b> منها في الصلب، فتلتقي وتتفاعل بسرعة. مثل أصحابك في الساحة يلتقون أسرع من لو كل واحد جالس في كرسيه.</p>
+
+  <h3 style="margin:18px 0 6px">المحلول مو دائماً سائل</h3>
+  <p>المذيب أو المذاب ممكن يكون غازاً أو سائلاً أو صلباً. أشهر الأنواع:</p>
+  <div class="kinds">
+    <div><b>غاز في غاز</b>الهواء، الغاز الطبيعي<small>المحلول: غاز</small></div>
+    <div><b>سائل في سائل</b>خلّ + ماء، مضاد التجمّد + ماء<small>المحلول: سائل</small></div>
+    <div><b>صلب في صلب</b>السبائك: ذهب، برونز<small>المحلول: صلب</small></div>
+    <div><b>صلب في سائل</b>مياه البحر<small>المحلول: سائل</small></div>
+    <div><b>غاز في سائل</b>المياه الغازية<small>المحلول: سائل</small></div>
+    <div><b>غاز في صلب</b>الهيدروجين في البلاتين<small>المحلول: صلب</small></div>
+  </div>
+  <p class="note">وللمحاليل الصلبة والغازية استخدامات: محاليل صلبة من أشباه الفلزّات مع كمية ضئيلة من مذاب مثل <b>الفوسفور</b> للصناعة الإلكترونية، ومحاليل غازية تُستخدم <b>للغطّاسين</b> ولتخزين المواد الغذائية.</p>
+
+  <div class="act" data-act="gap" data-key="gap" data-ok="صح! الخلّ محلول مائي مخفّف من حمض الأسيتيك: الماء هو المذيب، وحمض الأسيتيك هو المذاب.">
+    <h3>أكمل الناقص <span class="k">نشاط</span></h3>
+    <p>الخلّ محلول مائي مخفّف من حمض الأسيتيك. المذاب فيه هو <span class="gap">؟</span></p>
+    <div class="opts">
+      <button class="pc" data-no="الماء هنا هو المذيب: الوسط اللي يذيب ويكون بكمية أكبر. والمذاب هو اللي ذاب فيه.">الماء</button>
+      <button class="pc" data-ok>حمض الأسيتيك</button>
+      <button class="pc" data-no="الخلّ ما فيه ملح طعام. اقرأ السؤال: محلول مائي من حمض الأسيتيك.">كلوريد الصوديوم</button>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">كيف يذوب الملح؟ عملية الإذابة</h2></div>
+  <p>المواد اللي تذوب بسهولة في الماء: <b>المركّبات الأيونية</b> و<b>الجزيئات التساهمية القطبية</b>. أمّا الجزيئات التساهمية <b>غير القطبية</b> (الميثان، الزيت، الشحم، الدهن، البنزين) فما تذوب في الماء.</p>
+  <ol class="tline">
+    <li><span class="yr">1</span><div class="ev"><b>الماء يتحرّك دائماً</b><span>جزيئات الماء في حركة مستمرّة بسبب <strong>طاقتها الحركية</strong>.</span></div></li>
+    <li><span class="yr">2</span><div class="ev"><b>تصادم وجذب</b><span>تصطدم جزيئات الماء (المذيب) ببلّورة <span class="fx">NaCl</span> (المذاب) وتجذب أيوناتها <span class="fx">Na<sup>+</sup></span> و <span class="fx">Cl<sup>−</sup></span>.</span></div></li>
+    <li><span class="yr">3</span><div class="ev"><b>تبدأ الإذابة</b><span>بمجرّد انفصال كاتيونات الصوديوم وأنيونات الكلور <strong>بعيداً عن البلّورة</strong>.</span></div></li>
+    <li><span class="yr">4</span><div class="ev"><b>إماهة</b><span>كل أيون <strong>تحيط به جزيئات الماء</strong>. هذه هي <strong>الإذابة Solvation</strong>.</span></div></li>
+  </ol>
+
+  <svg class="stage" id="hyd" viewBox="0 0 400 190" role="img" aria-label="أيون صوديوم موجب تحيط به جزيئات ماء أكسجينها نحوه، وأيون كلوريد سالب تحيط به جزيئات ماء هيدروجينها نحوه" style="margin-top:14px"></svg>
+  <p class="cap"><b>سؤال الكتاب:</b> ليش جزيئات الماء تتّجه بطريقة مختلفة حول الأيونين؟ حول <b>الكاتيون الموجب</b> يتّجه طرف <b>الأكسجين δ−</b>، وحول <b>الأنيون السالب</b> يتّجه طرف <b>الهيدروجين δ+</b>. المختلفان يتجاذبان.</p>
+
+  <div class="act" data-act="order" data-key="order" data-rtl
+       data-answer='["جزيئات الماء تتحرّك بطاقتها الحركية","تصطدم بالبلّورة وتجذب Na⁺ و Cl⁻","تنفصل الأيونات بعيداً عن البلّورة","تحيط جزيئات الماء بكل أيون (إماهة)"]'
+       data-extra='["الأيونات تكوّن روابط تساهمية مع الماء"]'
+       data-ok="ممتاز! حركة، ثم تصادم وجذب، ثم انفصال، ثم إماهة. والروابط التساهمية فخ: الماء يحيط بالأيونات ويجذبها، ما يرتبط معها تساهمياً."
+       data-no="القطع الحمراء في غير مكانها. ابدأ بسبب حركة الماء، وانتهِ بالأيون وهو محاط بالماء. وهل يصير ارتباط تساهمي؟">
+    <h3>رتّب خطوات الإذابة <span class="k">نشاط</span></h3>
+    <p>من البداية للنهاية. فيه قطعة زائدة.</p>
+  </div>
+
+  <h3 style="margin:20px 0 6px">مركّبات أيونية ما تذوب</h3>
+  <p>في بعض المركّبات الأيونية يكون <b>التجاذب بين الأيونات في البلّورة أقوى</b> من جذب جزيئات الماء لها، فالإماهة تصير بدرجة قليلة جداً، أي <b>لا تذوب</b> تقريباً في الماء. مثل كبريتات الباريوم <span class="fx">BaSO<sub>4</sub></span> وكربونات الكالسيوم <span class="fx">CaCO<sub>3</sub></span>.</p>
+  <p class="tip"><span class="help">مساعدة للفهم</span>شدّ حبل: الماء يسحب الأيونات من جهة، والبلّورة تمسكها من الجهة الثانية. إذا البلّورة أقوى، الأيونات تبقى مكانها.</p>
+
+  <h3 style="margin:20px 0 6px">ذوبان المركّبات التساهمية: الأشياء المتشابهة تذوب بعضها مع بعض</h3>
+  <p>كيف يذوب الزيت في البنزين؟ الاثنان جزيئاتهما <b>غير قطبية</b>. يكوّنان محلولاً <b>ليس بسبب تجاذب</b> بينهما، بل بسبب <b>انعدام قوى التنافر</b> بينهما.</p>
+  <div class="grid2">
+    <div class="box mint"><h3>مذيب قطبي (الماء)</h3><p>يذيب <b>المركّبات الأيونية</b> و<b>المركّبات القطبية</b>.</p></div>
+    <div class="box peach"><h3>مذيب غير قطبي (البنزين)</h3><p>يذيب <b>المركّبات غير القطبية</b> مثل الزيت والشحم.</p></div>
+  </div>
+  <p class="note"><b>القاعدة:</b> "الأشياء المتشابهة تذوب بعضها مع بعض"، أي المواد المذابة تذوب في المذيبات اللي تجمعها <b>خواص متشابهة</b>. ولهذا <b>الماء والزيت لا يختلطان</b>: الماء قطبي والزيت غير قطبي، فبقع الزيت تطفو على سطح البحر.</p>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">المركّبات الإلكتروليتية وغير الإلكتروليتية</h2></div>
+  <div class="grid2">
+    <div class="box butter"><h3>إلكتروليتية</h3><p>توصل التيار <b>في المحلول المائي أو في الحالة المنصهرة</b>. <b>جميع المركّبات الأيونية</b> إلكتروليتية، مثل كلوريد الصوديوم وكبريتات النحاس (II) وهيدروكسيد الصوديوم، وكلها تذوب في الماء.</p></div>
+    <div class="box lav"><h3>غير إلكتروليتية</h3><p>لا توصل التيار <b>لا في المحلول ولا منصهرة</b>، لأنها لا تتكوّن من أيونات. أكثرها مركّبات تساهمية (جزيئية)، منها معظم مركّبات الكربون مثل <b>سكر القصب</b> و<b>الكحول الطبي</b>.</p></div>
+  </div>
+  <p class="note"><b>انتبه:</b> كبريتات الباريوم <span class="fx">BaSO<sub>4</sub></span> مركّب أيوني يوصل الكهرباء <b>منصهراً</b>، ولا يوصلها في المحلول المائي لأنه <b>لا يذوب</b> في الماء. جرّبه في المختبر فوق.</p>
+
+  <h3 style="margin:20px 0 6px">مركّبات تساهمية تصير موصلة في الماء</h3>
+  <p>غاز الأمونيا <span class="fx">NH<sub>3</sub></span> وغاز كلوريد الهيدروجين <span class="fx">HCl</span> تساهميان شديدا القطبية، و<b>لا يوصلان الكهرباء في حالتهما النقية</b>. لكن لما يذوبان <b>يتفاعلان مع الماء</b> ويُنتجان أيونات، فيصير المحلول موصلاً. نقول إنها <b>تأيّنت</b>. إذن إنتاج الأيونات في المحلول <b>مو مقتصر على المركّبات الأيونية</b>.</p>
+  <div class="eqbox"><span class="fx">NH<sub>3(g)</sub> + H<sub>2</sub>O<sub>(l)</sub> ⟶ NH<sub>4</sub><sup>+</sup><sub>(aq)</sub> + OH<sup>−</sup><sub>(aq)</sub></span><small>يتكوّن أيون الأمونيوم وأيون الهيدروكسيد</small></div>
+  <div class="eqbox"><span class="fx">HCl<sub>(g)</sub> + H<sub>2</sub>O<sub>(l)</sub> ⟶ H<sub>3</sub>O<sup>+</sup><sub>(aq)</sub> + Cl<sup>−</sup><sub>(aq)</sub></span><small>يتكوّن أيون الهيدرونيوم وأيون الكلوريد (المحلول: حمض الهيدروكلوريك)</small></div>
+
+  <h3 style="margin:22px 0 8px">مثال محلول: غاز لا يوصل، ومحلوله يوصل</h3>
+  <div class="qbox">غاز كلوريد الهيدروجين النقي لا يوصل التيار الكهربائي، لكن محلوله المائي يوصله بشدّة. فسّر.</div>
+  <div class="row"><button class="lite" id="hideSol" type="button" aria-pressed="false">أخفِ الحل وجرّب أولاً</button></div>
+  <ol class="steps" id="steps">
+    <li><span><span class="fx">HCl</span> مركّب <b>تساهمي جزيئي</b>: في حالته النقية جزيئات بلا أيونات، فما في شي ينقل التيار.</span></li>
+    <li><span>عند إذابته <b>يتفاعل مع الماء</b>: <span class="fx">HCl + H<sub>2</sub>O ⟶ H<sub>3</sub>O<sup>+</sup> + Cl<sup>−</sup></span></span></li>
+    <li><span>تتكوّن أيونات <span class="fx">H<sub>3</sub>O<sup>+</sup></span> و <span class="fx">Cl<sup>−</sup></span> <b>حرّة الحركة</b> في المحلول فتنقل التيار. أي أنه <b>تأيّن</b> وصار إلكتروليتياً.</span></li>
+    <li><span><span class="ans">ويوصل <b>بشدّة</b> لأن حمض الهيدروكلوريك من <b>الإلكتروليتات القوية</b> (جدول 2): يتأيّن تأيّناً كاملاً.</span></span></li>
+  </ol>
+</section>
+
+<section class="sec" aria-labelledby="s5">
+  <div class="sec-head"><span class="num">5</span><h2 id="s5">الإلكتروليتات ودرجة التأيّن</h2></div>
+  <p>الإلكتروليتات تختلف في قوّة توصيلها للتيار حسب <b>درجة تفكّكها (تأيّنها)</b>. نقيسها بجهاز فيه بطارية ومصباح وإلكترودان من الجرافيت (اللي جرّبته فوق):</p>
+  <div class="lv">
+    <div class="s"><b>إلكتروليت قوي</b>يتفكّك <b>تفكّكاً كاملاً</b> إلى أيونات منفصلة. المصباح يضيء <b>بشدّة</b>. مثل <span class="fx">NaCl</span>.</div>
+    <div class="w"><b>إلكتروليت ضعيف</b>يتأيّن <b>جزئياً</b>: جزء ضئيل أيونات، والباقي جزيئات غير متأيّنة. ضوء <b>خافت</b>. مثل <span class="fx">HgCl<sub>2</sub></span>.</div>
+    <div class="n"><b>غير إلكتروليتي</b>لا يتأيّن أبداً. المصباح <b>لا يضيء</b>. مثل الجلوكوز.</div>
+  </div>
+  <p class="note"><b>سؤال الكتاب:</b> هل يوصل الكحول الإيثيلي <span class="fx">C<sub>2</sub>H<sub>5</sub>OH</span> التيار؟ لا، لأنه مركّب جزيئي لا يتأيّن، مثل الجلوكوز.</p>
+
+  <div class="act three" data-act="sort" data-key="sort" data-bins='["إلكتروليت قوي","إلكتروليت ضعيف","غير إلكتروليتي"]'
+       data-items='[["KCl",0,"KCl ملح يذوب في الماء: كل الأملاح الذائبة في جدول 2 إلكتروليتات قوية."],["NaOH",0,"NaOH قاعدة غير عضوية قوية."],["HNO₃",0,"HNO₃ حمض غير عضوي قوي، مثل HCl."],["HgCl₂",1,"HgCl₂ من هاليدات الفلزّات الثقيلة: يتأيّن جزئياً فقط، فضوءه خافت."],["NH₃",1,"الأمونيا قاعدة غير عضوية ضعيفة: تتأيّن جزئياً."],["CH₃COOH",1,"حمض الأسيتيك حمض عضوي ضعيف."],["الجلوكوز",2,"الجلوكوز مركّب عضوي لا يتأيّن، المصباح ما يضيء."],["الجليسرين",2,"الجليسرين مركّب عضوي غير إلكتروليتي."]]'
+       data-ok="ممتاز! أملاح ذائبة وأحماض وقواعد غير عضوية قوية = قوي. هاليدات الفلزّات الثقيلة والأمونيا والأحماض العضوية = ضعيف. ومعظم المركّبات العضوية مثل الجلوكوز والجليسرين = غير إلكتروليتي.">
+    <h3>صنّف حسب جدول 2 <span class="k">نشاط</span></h3>
+    <p>كل مادة في أي صندوق؟</p>
+  </div>
+  <p class="note"><b>من جدول 2 أيضاً:</b><br>قوي: <span class="fx">MgSO<sub>4</sub></span>، <span class="fx">KClO<sub>3</sub></span>، <span class="fx">CaCl<sub>2</sub></span>، <span class="fx">KOH</span>، <span class="fx">HBr</span>، <span class="fx">HI</span>، <span class="fx">H<sub>2</sub>SO<sub>4</sub></span>، <span class="fx">HClO<sub>4</sub></span>.<br>ضعيف: <span class="fx">PbCl<sub>2</sub></span>، والأنيلين <span class="fx">C<sub>6</sub>H<sub>5</sub>NH<sub>2</sub></span> (قاعدة عضوية ضعيفة جداً).</p>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">6</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sd">
+  <div class="sec-head"><span class="num">7</span><h2 id="sd">في حياتك</h2></div>
+  <div class="life">
+    <div class="card"><h3>لا تلمس الكهرباء بيد مبلولة</h3><p>العرق وماء الحنفية فيها أيونات ذائبة، يعني هي محاليل إلكتروليتية توصل التيار. لهذا اليد المبلولة خطرة قرب المقبس.</p></div>
+    <div class="card"><h3>بقعة زيت على قميصك</h3><p>الماء وحده ما يشيلها، لأن الزيت غير قطبي. الصابون يساعد، ومحلّات التنظيف الجاف تستخدم مذيبات غير قطبية: المتشابه يذيب المتشابه.</p></div>
+    <div class="card"><h3>مشروبات الرياضيين</h3><p>اسمها أحياناً "مشروبات الإلكتروليتات": ماء فيه أملاح ذائبة تعوّض الأيونات اللي يخسرها الجسم بالعرق.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">8</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>لماذا لا يختلط الماء والزيت؟</p>
+      <div class="opts"><button>لأن الزيت أثقل من الماء</button><button data-ok>لأن الماء قطبي والزيت غير قطبي، والمتشابهات فقط تذوب بعضها مع بعض</button><button>لأن الزيت مركّب أيوني لا يذوب</button></div>
+      <p class="why" hidden>الصحيح: الماء مذيب قطبي يذيب الأيوني والقطبي، والزيت غير قطبي يذوب في مذيب غير قطبي مثل البنزين. والزيت أخفّ من الماء (يطفو)، وهو مو أيوني.</p></div>
+    <div class="q"><p>كبريتات الباريوم <span class="fx">BaSO<sub>4</sub></span> مركّب أيوني. متى يوصل التيار الكهربائي؟</p>
+      <div class="opts"><button>في المحلول المائي فقط</button><button data-ok>في الحالة المنصهرة فقط</button><button>لا يوصله أبداً لأنه غير إلكتروليتي</button></div>
+      <p class="why" hidden>الصحيح: هو إلكتروليت (أيوني)، لكنه لا يذوب في الماء لأن التجاذب داخل بلّورته أقوى من جذب الماء، فيوصل منصهراً فقط.</p></div>
+    <div class="q"><p>المصباح أضاء بضوء خافت في محلول كلوريد الزئبق (II). ماذا يعني ذلك؟</p>
+      <div class="opts"><button>تفكّك تفكّكاً كاملاً إلى أيونات</button><button>لا يحتوي على أي أيونات</button><button data-ok>تأيّن جزئياً: معظمه جزيئات HgCl₂ غير متأيّنة وقليل منه أيونات</button></div>
+      <p class="why" hidden>الصحيح: ضوء خافت = إلكتروليت ضعيف، يتأيّن جزئياً. التفكّك الكامل يعطي ضوءاً قوياً مثل NaCl، وعدم وجود أيونات يعني مصباحاً مطفأ مثل الجلوكوز.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li><b>المحلول</b> مخلوط متجانس وثابت من <b>مذيب</b> و<b>مذاب</b> (دقائق أقل من <span dir="ltr">1 nm</span>). الإذابة: الماء يجذب الأيونات من البلّورة ويحيط بكل أيون (إماهة).</li>
+      <li><b>الأشياء المتشابهة تذوب بعضها مع بعض</b>: القطبي يذيب الأيوني والقطبي، وغير القطبي يذيب غير القطبي. لذلك الماء والزيت لا يختلطان.</li>
+      <li><b>إلكتروليت</b> يوصل في المحلول أو منصهراً: <b>قوي</b> يتفكّك كاملاً (NaCl)، <b>ضعيف</b> جزئياً (HgCl₂)، و<b>غير إلكتروليتي</b> لا يتأيّن (الجلوكوز). و NH₃ و HCl تساهميان لكنهما يتأيّنان في الماء.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الكيمياء، الصف الحادي عشر، الوحدة الثانية، ص 33 إلى 38</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"chem-u2-1-2"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+function f(n){return n.toFixed(1);}
+/* ---------- lab: conductivity tester ---------- */
+var S=[
+ {k:"nacl",b:"كلوريد الصوديوم",lv:1,kind:"ions",msg:"ضوء قوي: NaCl إلكتروليت قوي، يتفكّك تفكّكاً كاملاً إلى أيونات Na⁺ و Cl⁻ منفصلة تتحرّك وتوصل التيار."},
+ {k:"hcl",b:"HCl في الماء",lv:1,kind:"ions",msg:"ضوء قوي: غاز HCl تساهمي، لكنه تأيّن في الماء إلى H₃O⁺ و Cl⁻. حمض الهيدروكلوريك إلكتروليت قوي."},
+ {k:"hg",b:"كلوريد الزئبق (II)",lv:.3,kind:"weak",msg:"ضوء خافت: HgCl₂ إلكتروليت ضعيف. معظمه جزيئات HgCl₂ غير متأيّنة، وجزء ضئيل فقط أيونات."},
+ {k:"nh3",b:"NH₃ في الماء",lv:.3,kind:"weak",msg:"ضوء خافت: الأمونيا تتأيّن في الماء إلى NH₄⁺ و OH⁻، لكن جزئياً فقط، فهي إلكتروليت ضعيف."},
+ {k:"glu",b:"الجلوكوز",lv:0,kind:"mol",msg:"المصباح مطفأ: الجلوكوز غير إلكتروليتي. جزيئاته تذوب كاملة بدون أي أيونات."},
+ {k:"ba",b:"BaSO₄ في الماء",lv:0,kind:"solid",msg:"المصباح مطفأ: BaSO₄ أيوني، لكنه لا يذوب في الماء (التجاذب في البلّورة أقوى)، فما في أيونات حرّة في الماء."},
+ {k:"bam",b:"BaSO₄ منصهر",lv:1,kind:"melt",msg:"ضوء قوي: BaSO₄ المنصهر أيوناته حرّة الحركة، فيوصل. الإلكتروليت يوصل في المحلول أو منصهراً."}
+];
+var box=$("sols"),cur=0;
+S.forEach(function(s,i){var b=document.createElement("button");b.type="button";b.className="tg";b.textContent=s.b;b.setAttribute("aria-pressed",i===0?"true":"false");b.addEventListener("click",function(){cur=i;draw();});box.appendChild(b);});
+/* fixed pseudo-random spots inside the liquid, avoiding the electrodes */
+var spots=[];(function(){var seed=7;function r(){seed=(seed*9301+49297)%233280;return seed/233280;}
+  var tries=0;while(spots.length<16&&tries<500){tries++;var x=118+r()*164,y=150+r()*80;
+   if(Math.abs(x-150)<20||Math.abs(x-250)<20)continue;
+   if(spots.some(function(p){return Math.hypot(p[0]-x,p[1]-y)<24;}))continue;spots.push([x,y]);}})();
+function ion(x,y,pos){return '<circle cx="'+f(x)+'" cy="'+f(y)+'" r="'+(pos?8:9.5)+'" fill="'+(pos?"var(--na)":"var(--cl)")+'"/><text x="'+f(x)+'" y="'+f(y+4.5)+'" font-size="12" font-weight="700" fill="#2b2346" text-anchor="middle">'+(pos?"+":"−")+'</text>';}
+function mol(x,y){return '<circle cx="'+f(x-5)+'" cy="'+f(y)+'" r="7" fill="var(--mol)"/><circle cx="'+f(x+5)+'" cy="'+f(y)+'" r="7" fill="var(--mol)"/>';}
+function draw(){
+  var s=S[cur],h="",lv=s.lv;
+  [].forEach.call(box.children,function(b,i){b.setAttribute("aria-pressed",i===cur?"true":"false");});
+  /* wires and battery */
+  h+='<path d="M150 92 V40 H174 M182 40 H208 M236 40 H250 V92" fill="none" stroke="var(--wire)" stroke-width="3" stroke-linecap="round"/>';
+  h+='<line x1="174" y1="28" x2="174" y2="52" stroke="var(--wire)" stroke-width="3"/><line x1="182" y1="33" x2="182" y2="47" stroke="var(--wire)" stroke-width="5"/>';
+  h+='<text x="178" y="72" font-size="12" font-weight="700" fill="var(--text)" text-anchor="middle" direction="ltr">6 V</text>';
+  /* bulb */
+  if(lv>0){h+='<circle cx="222" cy="30" r="'+(16+22*lv)+'" fill="var(--glow)" opacity="'+(0.25+0.35*lv)+'"/>';
+    for(var a=0;a<8;a++){var t=a*Math.PI/4,r1=20,r2=20+16*lv;h+='<line x1="'+f(222+Math.cos(t)*r1)+'" y1="'+f(30+Math.sin(t)*r1)+'" x2="'+f(222+Math.cos(t)*r2)+'" y2="'+f(30+Math.sin(t)*r2)+'" stroke="var(--glow)" stroke-width="3" stroke-linecap="round"/>';}}
+  h+='<circle cx="222" cy="30" r="13" fill="'+(lv>0?"var(--glow)":"var(--glass)")+'" stroke="var(--wire)" stroke-width="2.5"/><rect x="214" y="38" width="16" height="7" rx="2" fill="var(--wire)"/><line x1="208" y1="40" x2="214" y2="40" stroke="var(--wire)" stroke-width="3"/><line x1="230" y1="40" x2="236" y2="40" stroke="var(--wire)" stroke-width="3"/>';
+  /* beaker */
+  var liq=s.kind==="melt"?"var(--molt)":"var(--liq)";
+  h+='<path d="M104 118 V238 Q104 246 112 246 H288 Q296 246 296 238 V118" fill="none" stroke="var(--beak)" stroke-width="4" stroke-linecap="round"/>';
+  h+='<rect x="106" y="138" width="188" height="106" rx="6" fill="'+liq+'"/>';
+  /* particles */
+  if(s.kind==="ions"||s.kind==="melt"){spots.forEach(function(p,i){h+=ion(p[0],p[1],i%2===0);});}
+  else if(s.kind==="weak"){spots.slice(0,12).forEach(function(p,i){h+=i<2?ion(p[0],p[1],i===0):mol(p[0],p[1]);});}
+  else if(s.kind==="mol"){spots.slice(0,10).forEach(function(p){h+=mol(p[0],p[1]);});}
+  else if(s.kind==="solid"){for(var j=0;j<3;j++)for(var i=0;i<4;i++){h+=ion(170+i*17+(j%2)*8,229-j*15,(i+j)%2===0);}}
+  /* electrodes on top of everything */
+  h+='<rect x="144" y="88" width="12" height="130" rx="4" fill="var(--elec)"/><rect x="244" y="88" width="12" height="130" rx="4" fill="var(--elec)"/>';
+  $("cell").innerHTML=h;
+  var m=$("cMsg");m.textContent=s.msg;m.className="msg"+(lv>0?" ok":"");
+}
+draw();
+
+/* ---------- static figure: hydrated ions ---------- */
+function water(x,y,ang,oIn){ /* ang: direction from this water toward the ion */
+  var h="",a=ang;
+  if(oIn){ /* O points to ion, H's point away */
+    var ox=x,oy=y;[a+Math.PI-0.9,a+Math.PI+0.9].forEach(function(t){h+='<circle cx="'+f(ox+Math.cos(t)*13)+'" cy="'+f(oy+Math.sin(t)*13)+'" r="6" fill="var(--hy)"/>';});
+    h+='<circle cx="'+f(ox)+'" cy="'+f(oy)+'" r="10" fill="var(--ox)"/>';
+  }else{ /* one H points to ion */
+    var hx=x+Math.cos(a)*10,hy=y+Math.sin(a)*10,h2x=x+Math.cos(a+1.82)*12,h2y=y+Math.sin(a+1.82)*12;
+    h+='<circle cx="'+f(h2x)+'" cy="'+f(h2y)+'" r="6" fill="var(--hy)"/><circle cx="'+f(x)+'" cy="'+f(y)+'" r="10" fill="var(--ox)"/><circle cx="'+f(hx)+'" cy="'+f(hy)+'" r="6" fill="var(--hy)"/>';
+  }
+  return h;}
+function cluster(cx,cy,pos){var h="",R=pos?42:48;
+  for(var i=0;i<6;i++){var t=i*Math.PI/3+0.25,x=cx+Math.cos(t)*R,y=cy+Math.sin(t)*R;h+=water(x,y,Math.atan2(cy-y,cx-x),pos);}
+  h+='<circle cx="'+cx+'" cy="'+cy+'" r="'+(pos?15:19)+'" fill="'+(pos?"var(--na)":"var(--cl)")+'"/><text x="'+cx+'" y="'+(cy+5)+'" font-size="13" font-weight="700" fill="#2b2346" text-anchor="middle" direction="ltr">'+(pos?"Na⁺":"Cl⁻")+'</text>';
+  return h;}
+$("hyd").innerHTML=cluster(105,95,true)+cluster(295,95,false);
+})();
+</script>
+</body>
+</html>
