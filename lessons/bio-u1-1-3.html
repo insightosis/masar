@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="biology">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>النقل في النباتات · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+span[dir=ltr],bdi[dir=ltr],b[dir=ltr]{unicode-bidi:isolate}
+body{--leaf:#8fd16a;--leaf2:#5fb02a;--sun:#ffc93c;--moon:#9aa6c8;--h2o:#2f8fea;--sug:#e2557a;--soil:#c99a6b;--soil2:#9c7047;--wall:#8a6d3b;--cyto:#f3f0d8;--vac:#bfe3ff;--strip:#3b2f45;--ap:#e34a3a;--sy:#2f6fd0;--tm:#3c9a2a;--xy:#bfe0ff;--ph:#ffd6e0;--cell:#fff1c9}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--leaf:#4f8a37;--leaf2:#7cc350;--sun:#e0a92a;--moon:#c9d2ee;--h2o:#6db8ff;--sug:#ff8aa8;--soil:#6b4f35;--soil2:#a07a52;--wall:#c9a86a;--cyto:#2d2b20;--vac:#24435e;--strip:#e8e0f5;--ap:#ff7a6a;--sy:#7fb0ff;--tm:#8fdc6a;--xy:#1f3a55;--ph:#4a2633;--cell:#3a3420}}
+:root[data-theme="dark"] body{--leaf:#4f8a37;--leaf2:#7cc350;--sun:#e0a92a;--moon:#c9d2ee;--h2o:#6db8ff;--sug:#ff8aa8;--soil:#6b4f35;--soil2:#a07a52;--wall:#c9a86a;--cyto:#2d2b20;--vac:#24435e;--strip:#e8e0f5;--ap:#ff7a6a;--sy:#7fb0ff;--tm:#8fdc6a;--xy:#1f3a55;--ph:#4a2633;--cell:#3a3420}
+.stage{display:block;width:100%;height:auto;border-radius:22px;background:var(--sky);box-shadow:var(--press)}
+.help{display:inline-block;font-size:12px;font-weight:700;padding:1px 9px;border-radius:9px;background:var(--p-sky);color:var(--text);margin-inline-end:6px}
+.xtra{margin-top:12px;padding:10px 16px;border-radius:20px;background:var(--card);box-shadow:var(--clay-sm)}
+.xtra summary{cursor:pointer;font-weight:700;color:var(--ink)}
+.flow{stroke-dasharray:6 10;animation:flow 2s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-32}}
+@media (prefers-reduced-motion:reduce){.flow{animation:none}}
+.meter{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;margin-top:12px;font-weight:700;font-size:14px}
+.meter .bar{height:14px;border-radius:9px;background:var(--p-lav);box-shadow:var(--press);overflow:hidden}
+.meter .bar i{display:block;height:100%;width:0;border-radius:9px;background:var(--h2o);transition:width .3s}
+.grad{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:10px}
+.grad span{padding:5px 12px;border-radius:14px;font-weight:700;font-size:14px;box-shadow:var(--clay-sm);color:var(--text)}
+.grad b{color:var(--muted)}
+.keyrow{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-size:13.5px;font-weight:700}
+.keyrow span{display:inline-flex;align-items:center;gap:6px}
+.keyrow i{display:inline-block;width:22px;height:5px;border-radius:4px}
+.ana{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:12px}
+.ana .card{padding:10px 12px}
+.ana .card h3{margin:0 0 4px;font-size:1rem}
+.ana .card p{margin:0;font-size:14px}
+</style>
+</head>
+<body style="--sc:#5fb02a">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الأحياء</span><span class="chip">الدرس 1-3 · ص 41 إلى 50</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الأولى: علم النباتات</p>
+  <h1 id="t">النقل في النباتات</h1>
+  <p>شجرة طولها <span dir="ltr">90 m</span> ما عندها قلب ولا مضخة، ومع ذلك الماء يوصل من التربة إلى آخر ورقة فوق. <mark>من يسحب الماء كل هذه المسافة؟</mark> ونبات الميموزا الحسّاس لو لمسته تتدلّى أوراقه في ثوانٍ كأنه ذابل، ويمكن هذا يخلّي الحيوانات آكلة الأعشاب تتركه. السر كله في <b>الماء</b> وكيف يتحرّك.</p>
+</section>
+
+<section class="panel" id="lab-sec" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">مختبر رحلة الماء</h2><span class="legend">غيّر الضوء وماء التربة والجو</span></div>
+  <svg class="stage" id="plantLab" viewBox="0 0 400 260" role="img" aria-label="نبتة: جذور في التربة، ساق فيها خشب يصعد فيه الماء، ورقة فيها ثغر مكبّر، وبخار ماء يخرج من الثغر">
+    <defs><clipPath id="soilClip"><rect x="0" y="180" width="400" height="80"/></clipPath></defs>
+    <g id="sky"></g>
+    <rect x="0" y="180" width="400" height="80" fill="var(--soil)"/>
+    <line x1="0" y1="180" x2="400" y2="180" stroke="var(--soil2)" stroke-width="3"/>
+    <g id="drops" clip-path="url(#soilClip)"></g>
+    <g stroke="var(--leaf2)" stroke-width="4" stroke-linecap="round" fill="none">
+      <path d="M160 180 L160 222 M160 196 L140 214 M160 206 L182 230 M160 222 L150 246"/>
+    </g>
+    <rect x="152" y="60" width="16" height="122" rx="7" fill="var(--leaf)" stroke="var(--leaf2)" stroke-width="2"/>
+    <line id="xyl" class="flow" x1="160" y1="240" x2="160" y2="70" stroke="var(--h2o)" stroke-width="5" stroke-linecap="round"/>
+    <g id="leafR">
+      <path d="M166 92 C200 60 250 62 262 84 C240 108 196 112 166 92Z" fill="var(--leaf)" stroke="var(--leaf2)" stroke-width="2.5"/>
+      <path d="M166 92 C200 88 232 86 262 84" fill="none" stroke="var(--leaf2)" stroke-width="2"/>
+    </g>
+    <g id="leafL"><path d="M154 104 C120 80 82 86 72 106 C96 126 134 122 154 104Z" fill="var(--leaf)" stroke="var(--leaf2)" stroke-width="2.5"/></g>
+    <g id="vapor"></g>
+    <circle cx="330" cy="140" r="36" fill="var(--card)" stroke="var(--leaf2)" stroke-width="2"/>
+    <line x1="250" y1="96" x2="300" y2="122" stroke="var(--leaf2)" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <g id="stoma"></g>
+    <text x="330" y="98" font-size="12" font-weight="700" fill="var(--text)" text-anchor="middle">ثغر (مكبّر)</text>
+  </svg>
+  <div class="controls">
+    <div class="ctl"><label for="lt">الضوء <b id="ltL">70</b></label><input type="range" id="lt" min="0" max="100" value="70" aria-describedby="ltL"></div>
+    <div class="ctl"><label for="sw">ماء التربة <b id="swL">70</b></label><input type="range" id="sw" min="0" max="100" value="70" aria-describedby="swL"></div>
+    <div class="ctl"><label for="dr">حر وجفاف ورياح <b id="drL">40</b></label><input type="range" id="dr" min="0" max="100" value="40" aria-describedby="drL"></div>
+  </div>
+  <div class="btns"><button class="tg" type="button" id="fert" aria-pressed="false">أضف سماداً زائداً</button></div>
+  <div class="meter"><span>معدّل النتح</span><span class="bar"><i id="trBar"></i></span><span id="trV" dir="ltr">0</span></div>
+  <p class="msg" id="pMsg" aria-live="polite"></p>
+  <p class="cap">نموذج مبسّط من عندنا للفهم، الأرقام مو من الكتاب. جرّب: ليل، ثم تربة جافة مع جو حار، ثم السماد الزائد.</p>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">مصطلحات الدرس</h2></div>
+  <div class="syms">
+    <div class="sym"><span class="bub"><span>🎈</span></span><div><h3>ضغط الامتلاء <span class="en">Turgor Pressure</span></h3><p>الدعامة التي يعطيها الضغط الأسموزي لغشاء الخلية على جدارها.</p><span class="hook">بالون منفوخ داخل علبة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span>⇄</span></span><div><h3>الأسموزية والجهد المائي <span class="en">Osmosis · Water Potential</span></h3><p>انتقال الماء من محيط جهده المائي عالٍ إلى محيط جهده المائي منخفض عبر غشاء اختياري النفاذية.</p><span class="hook">الماء يمشي نحو المكان الأكثر ملوحة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub sm"><span>ATP</span></span><div><h3>النقل النشط <span class="en">Active Transport</span></h3><p>بروتينات ناقلة تضخ الشوارد عكس التركيز مستخدمة طاقة ATP.</p><span class="hook">مضخة تشتغل بالبطارية.</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub"><span>▮</span></span><div><h3>شريط كاسبر <span class="en">Casparian Strip</span></h3><p>شريط شمعي غير منفذ للماء في جدر خلايا البشرة الداخلية، يمنع الممر خارج الخلوي.</p><span class="hook">بوابة تفتيش: لازم تدخل من الخلية.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub"><span>⇧</span></span><div><h3>الضغط الجذري <span class="en">Root Pressure</span></h3><p>ضغط يدفع الماء من الجذر إلى الخشب وصعوداً نحو الساق. نقطة الانطلاق فقط.</p><span class="hook">دفعة من تحت.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span>⛓</span></span><div><h3>التماسك والتلاصق <span class="en">Cohesion · Adhesion</span></h3><p>التماسك: جزيئات الماء تتجاذب مع بعض. التلاصق: الماء يلتصق بجدار الأنبوب (الخشب).</p><span class="hook">سلسلة ماء ما تنقطع.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub"><span>⇡</span></span><div><h3>الشد النتحي <span class="en">Transpiration Pull</span></h3><p>تبخّر الماء من الثغور يشد عمود الماء صعوداً في الخشب من الجذور ومن التربة.</p><span class="hook">قاطرة تسحب مئات العربات.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub"><span>⇣</span></span><div><h3>المنبع والمصرف <span class="en">Source · Sink</span></h3><p>المنبع: جزء تُنتج فيه السكريات. المصرف: جزء تُستهلك فيه أو تُخزّن.</p><span class="hook">المصنع والمخزن.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span>⟿</span></span><div><h3>فرضية التدفق بالضغط <span class="en">Pressure-Flow Hypothesis</span></h3><p>تفسّر انتقال السكريات في اللحاء من المنبع إلى المصرف بفرق الضغط.</p><span class="hook">سكر يدخل، ماء يلحقه، ضغط يدفع.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">ليش يذبل الكرفس؟ ضغط الامتلاء</h2></div>
+  <p>لو تركت عود كرفس بعيداً عن الماء يذبل، ولو حطيته في كوب ماء ساعات يرجع صلب. ذبل لأنه فقد الماء اللي تبخّر في الهواء، فخلاياه فقدت <b>ضغط الامتلاء</b>.</p>
+  <div class="qbox"><b>ضغط الامتلاء</b> <span dir="ltr">(Turgor Pressure)</span>: هو الذي يعطي <b>دعامة للخلية</b>، وينتج عن <b>الضغط الأسموزي لغشاء الخلية على جدارها</b>. ويعتمد على الماء.</div>
+  <svg class="stage" viewBox="0 0 400 160" role="img" aria-label="خليتان نباتيتان: الأولى فجوتها ممتلئة تضغط على الجدار، والثانية فجوتها صغيرة والغشاء منكمش بعيداً عن الجدار" style="margin-top:12px">
+    <rect x="220" y="18" width="150" height="108" rx="14" fill="var(--cyto)" stroke="var(--wall)" stroke-width="6"/>
+    <rect x="232" y="30" width="126" height="84" rx="10" fill="var(--vac)" stroke="var(--h2o)" stroke-width="2"/>
+    <g fill="var(--leaf2)"><circle cx="228" cy="60" r="3"/><circle cx="362" cy="88" r="3"/></g>
+    <rect x="30" y="18" width="150" height="108" rx="14" fill="none" stroke="var(--wall)" stroke-width="6"/>
+    <rect x="56" y="42" width="98" height="60" rx="18" fill="var(--cyto)" stroke="var(--leaf2)" stroke-width="2"/>
+    <rect x="80" y="56" width="50" height="32" rx="12" fill="var(--vac)" stroke="var(--h2o)" stroke-width="2"/>
+    <g font-size="13" font-weight="700" fill="var(--text)" text-anchor="middle">
+      <text x="295" y="148">فجوة ممتلئة: الخلية صلبة</text>
+      <text x="105" y="148">فجوة فارغة: الخلية تنكمش</text>
+    </g>
+  </svg>
+  <p style="margin-top:10px">الفجوة العصارية المركزية <b>الممتلئة</b> بالماء تضغط على الجدار الخلوي مثل الهواء اللي يحفظ البالون منتفخاً. ولما تكون <b>غير ممتلئة</b> تنكمش الخلية مثل بالون خالٍ من الهواء، فيذبل النبات.</p>
+  <details class="xtra"><summary>فقرة إثرائية: النباتات الغارقة</summary>
+    <p style="margin:8px 0 0">الري الزائد مؤذٍ تماماً مثل قلة الري. لما تتشبّع التربة بالماء قد لا يصل <b>الأكسجين</b> إلى الجذور، وبدون أكسجين كافٍ للتنفّس الخلوي ما تقدر خلايا الجذر تنتج الطاقة اللازمة لأنشطتها.</p>
+  </details>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">النقل في الجذور</h2></div>
+  <p>الجذور <b>تثبّت النبات</b> في التربة و<b>تمتص الماء والمعادن الذائبة</b> فيه. والامتصاص يحتاج <b>طاقة</b>، والماء ما يدخل الجذر مباشرة، بل <b>بالأسموزية</b>.</p>
+  <div class="grid2" style="margin-top:12px">
+    <div class="box sky"><h3>جهد مائي عالٍ</h3><p>محيط تركيزه المائي عالٍ <span dir="ltr">(Hypotonic)</span>: شوارد ذائبة أقل، ماء "حر" أكثر.</p></div>
+    <div class="box peach"><h3>جهد مائي منخفض</h3><p>محيط تركيزه المائي منخفض <span dir="ltr">(Hypertonic)</span>: شوارد ذائبة أكثر.</p></div>
+  </div>
+  <p class="tip" style="margin-top:10px"><b>قاعدة الأسموزية:</b> الماء ينتقل من الجهد المائي <b>العالي</b> إلى الجهد المائي <b>المنخفض</b>. يعني الماء يروح للمكان اللي فيه شوارد أكثر.</p>
+
+  <h3 style="margin:18px 0 6px">التربة: مشكلة وحل</h3>
+  <p>التربة خليط من <b>الرمل والطين أو الطمي والأملاح المعدنية (شوارد) والهواء وأنسجة كائنات متحللة</b>. والنبتة تحتاج الأملاح لتنمو سليمة: لو ما امتصت عناصر كافية مثل <b>النيترات</b> (فيها نيتروجين) يتوقف نموها وتزول ألوان أوراقها.</p>
+  <ul class="pts">
+    <li style="--b:var(--sug)"><b>المشكلة:</b> في معظم الأحيان تركيز شوارد المعادن <b>في التربة أكبر</b> منه في خلايا الجذر، فلو تُركت للأسموزية لخرج الماء من الجذر إلى التربة. خطر كبير.</li>
+    <li style="--b:var(--sc)"><b>الحل: النقل النشط للمعادن.</b> أغشية <b>الشعيرات الجذرية الماصّة</b> وخلايا البشرة فيها <b>بروتينات ناقلة نشطة</b> تضخ شوارد المعادن من التربة إلى داخل الجذر بطاقة <b>ATP</b>. فيصير داخل الجذر عالي الشوارد (جهد مائي منخفض) والتربة جهدها أعلى، فيدخل الماء <b>بالأسموزية</b>.</li>
+    <li style="--b:var(--h2o)">هذا الضخ يحتاج <b>أكسجين</b> كافٍ و<b>سكريات</b> لخلايا الجذر، لأن الطاقة تأتي من <b>التنفّس الخلوي</b>.</li>
+    <li style="--b:var(--h2o)">كمية الماء الممتصة تعتمد على <b>ماء التربة</b>: تربة رطبة ← امتصاص عالٍ، وجفاف أو قلة أمطار ← امتصاص منخفض.</li>
+  </ul>
+  <div class="grid2" style="margin-top:12px">
+    <div class="box pink"><h3>حرق الجذور <span dir="ltr" style="font-size:13px">Root Burn</span></h3><p>سماد زائد يعني معادن كثيرة جداً في التربة، فيخرج الماء من الجذور إلى التربة، وقد يموت النبات. جرّبه في المختبر فوق.</p></div>
+    <div class="box mint"><h3>المنجروف الأحمر</h3><p>يعيش في مياه الشواطئ المالحة اللي تقتل معظم النباتات، وشبكة جذوره ترفع أفرعه المورقة فوق الماء والطمي.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">إلى داخل الأسطوانة الوعائية</h2></div>
+  <p>من البشرة، الماء والأملاح يعبرون <b>القشرة</b> حتى <b>البشرة الداخلية</b>: طبقة خلايا قرميدية الشكل تغلّف <b>الأسطوانة الوعائية</b> (فيها الخشب واللحاء). وفي الطريق عندهم <b>ثلاثة ممرات</b>:</p>
+  <svg class="stage" viewBox="0 0 400 200" role="img" aria-label="رسم خلايا الجذر من التربة إلى الخشب، مع ثلاثة ممرات للماء، وشريط كاسبر يوقف الممر خارج الخلوي عند البشرة الداخلية" style="margin-top:10px">
+    <defs>
+      <marker id="mA" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="var(--ap)"/></marker>
+      <marker id="mS" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="var(--sy)"/></marker>
+      <marker id="mT" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="var(--tm)"/></marker>
+    </defs>
+    <g font-size="12" font-weight="700" fill="var(--text)" text-anchor="middle">
+      <text x="376" y="22">التربة</text><text x="322" y="22">البشرة</text><text x="248" y="22">القشرة</text><text x="170" y="16">البشرة</text><text x="170" y="30">الداخلية</text><text x="105" y="22">الخشب</text>
+    </g>
+    <rect x="352" y="40" width="48" height="140" fill="var(--soil)" opacity=".55"/>
+    <g fill="var(--cyto)" stroke="var(--wall)" stroke-width="3">
+      <rect x="300" y="42" width="44" height="64" rx="7"/><rect x="300" y="114" width="44" height="64" rx="7"/>
+      <rect x="250" y="42" width="44" height="64" rx="7"/><rect x="250" y="114" width="44" height="64" rx="7"/>
+      <rect x="200" y="42" width="44" height="64" rx="7"/><rect x="200" y="114" width="44" height="64" rx="7"/>
+      <rect x="146" y="42" width="48" height="64" rx="7"/><rect x="146" y="114" width="48" height="64" rx="7"/>
+    </g>
+    <rect x="82" y="40" width="46" height="140" rx="10" fill="var(--xy)" stroke="var(--h2o)" stroke-width="2"/>
+    <rect x="152" y="105" width="36" height="10" rx="3" fill="var(--strip)"/>
+    <path d="M352 110 L198 110 L190 110" fill="none" stroke="var(--ap)" stroke-width="3" stroke-dasharray="7 4"/>
+    <path d="M196 110 Q186 110 182 98 L178 86 Q174 76 160 76 L130 76" fill="none" stroke="var(--ap)" stroke-width="3" marker-end="url(#mA)"/>
+    <path d="M352 64 L132 64" fill="none" stroke="var(--sy)" stroke-width="3" marker-end="url(#mS)"/>
+    <g fill="var(--sy)"><circle cx="297" cy="64" r="3.5"/><circle cx="247" cy="64" r="3.5"/><circle cx="197" cy="64" r="3.5"/></g>
+    <path d="M352 150 L132 150" fill="none" stroke="var(--tm)" stroke-width="3" marker-end="url(#mT)"/>
+    <g stroke="var(--tm)" stroke-width="2"><line x1="300" y1="143" x2="300" y2="157"/><line x1="294" y1="143" x2="294" y2="157"/><line x1="250" y1="143" x2="250" y2="157"/><line x1="244" y1="143" x2="244" y2="157"/><line x1="200" y1="143" x2="200" y2="157"/><line x1="194" y1="143" x2="194" y2="157"/></g>
+  </svg>
+  <div class="keyrow"><span><i style="background:var(--ap)"></i>ممر خارج خلوي</span><span><i style="background:var(--sy)"></i>ممر خلوي جماعي (النقاط: روابط بلازمية)</span><span><i style="background:var(--tm)"></i>ممر عبر غشائي</span><span><i style="background:var(--strip)"></i>شريط كاسبر</span></div>
+  <p class="muted" style="font-size:13.5px;margin-top:4px">رسم مبسّط من عندنا (الأصل شكلا 32 و 33).</p>
+  <div class="grid2" style="margin-top:10px">
+    <div class="box peach"><h3>1 · الممر خارج خلوي <span dir="ltr" style="font-size:13px">Apoplast</span></h3><p>الماء يمشي <b>عبر الجدر الخلوية</b> من القشرة إلى البشرة الداخلية. <b>ليس أسموزية</b> لأن الأسموزية تحتاج غشاءً اختياري النفاذية، بل <b>انتشار حر (سلبي) بدون طاقة ATP</b>.</p></div>
+    <div class="box sky"><h3>2 · الممر الخلوي الجماعي <span dir="ltr" style="font-size:13px">Symplast</span></h3><p>الماء والأملاح ينتقلون من خلية إلى الخلايا المجاورة <b>عبر الروابط البلازمية</b> <span dir="ltr">(Plasmodesmata)</span>.</p></div>
+    <div class="box mint"><h3>3 · الممر عبر الغشائي <span dir="ltr" style="font-size:13px">Transmembrane</span></h3><p>الماء والأملاح الذائبة ينتقلون من خلية لأخرى <b>عبر الجدر الخلوية والأغشية</b>.</p></div>
+    <div class="box lav"><h3>شريط كاسبر</h3><p>شريط <b>شمعي غير منفذ</b> يغلّف الجدر الجانبية الأربعة لخلايا البشرة الداخلية. <b>يمنع الممر خارج الخلوي</b> ويجبر الماء على الممرين الآخرين <b>باتجاه واحد</b> نحو الأسطوانة الوعائية.</p></div>
+  </div>
+  <p class="tip" style="margin-top:10px">من شكل 33: <b>معظم الماء</b> يدخل الجذر عبر الممر خارج الخلوي، ولما يوصل البشرة الداخلية يجبره شريط كاسبر على اتباع الممر الخلوي الجماعي.</p>
+
+  <div class="act" data-act="order" data-key="order" data-rtl
+       data-answer='["التربة","الشعيرات الجذرية والبشرة","القشرة","البشرة الداخلية","الأسطوانة الوعائية (الخشب)"]'
+       data-extra='["اللحاء"]'
+       data-ok="ممتاز! تربة، شعيرات جذرية وبشرة، قشرة، بشرة داخلية (شريط كاسبر)، ثم الخشب. واللحاء ينقل السكريات مو ماء التربة."
+       data-no="القطع الحمراء في غير مكانها. ابدأ من الخارج (التربة) وادخل طبقة طبقة، والبشرة الداخلية آخر حاجز قبل الأسطوانة الوعائية. واللحاء ما ينقل ماء التربة للأعلى.">
+    <h3>رتّب رحلة الماء <span class="k">نشاط</span></h3>
+    <p>رتّب طريق الماء من التربة حتى يصعد. فيه قطعة ما تنتمي له.</p>
+  </div>
+
+  <h3 style="margin:22px 0 6px">الضغط الجذري <span dir="ltr" style="font-size:14px">Root Pressure</span></h3>
+  <p>ليش النبتة تحتاج حركة <b>باتجاه واحد</b>؟ عشان تبني <b>ضغطاً كافياً</b> ينقل الماء بعيداً عن التربة: الشوارد تُضخ بالنقل النشط إلى البشرة ثم خلايا القشرة الداخلية، فيتحرك الماء بالأسموزية باتجاه واحد: <b>بشرة ← قشرة ← بشرة داخلية ← أسطوانة وعائية</b>. هذا يولّد ضغطاً كبيراً يدفع الماء إلى الخشب ثم صعوداً نحو الساق.</p>
+  <div class="grid2" style="margin-top:10px">
+    <div class="box butter"><h3>نقطة الانطلاق فقط</h3><p>الضغط الجذري <b>نقطة الانطلاق</b> لتحرّك الماء في الجهاز الوعائي، لكنه <b>ما يكفي</b> لرفع الماء عشرات الأمتار، مثل شجر الغابات الحمراء اللي طوله <span dir="ltr">90 m</span>.</p></div>
+    <div class="box sky"><h3>تجربة جذر الجزرة</h3><p>جذر جزرة مقطوع، فوقه أنبوب زجاجي يقوم بدور الساق والأوراق. لما يمتص الجذر الماء، الضغط الجذري يدفع الماء صعوداً في الأنبوب (شكل 34).</p></div>
+  </div>
+  <h3 style="margin:18px 0 6px">مساعدون تحت الأرض</h3>
+  <p><b>الكائنات المحلّلة</b> مثل الفطريات تحرّر المركبات العضوية والعناصر المعدنية من أجسام الكائنات الميتة فتصير متاحة للامتصاص. و<b>فطر الميكوريزا (الفطر الجذري)</b> يعيش في <b>علاقة تكافلية</b> مع الجذور: يفرز إنزيمات هاضمة تكسّر المواد العضوية وتحرّر المعادن للنبات، وبالمقابل <b>يعطيه النبات غذاءً كالسكريات</b>.</p>
+</section>
+
+<section class="sec" aria-labelledby="s5">
+  <div class="sec-head"><span class="num">5</span><h2 id="s5">الصعود في الخشب</h2></div>
+  <p>الخشب أنابيب متواصلة من الجذور مروراً بالساق حتى الأوراق. وغير الضغط الجذري، فيه قوتان تسحبان الماء صعوداً: <b>الخاصية الشعرية</b> و<b>النتح</b>.</p>
+
+  <h3 style="margin:16px 0 6px">1 · الخاصية الشعرية: عمود ماء ما ينقطع</h3>
+  <p>تُفسَّر بـ<b>نظرية الشد والتماسك</b> <span dir="ltr">(Cohesion-Tension)</span>، وتعتمد على صفتين للماء:</p>
+  <div class="grid2">
+    <div class="box sky"><h3>التماسك <span dir="ltr" style="font-size:13px">Cohesion</span></h3><p>جزيئات الماء تتجاذب مع بعض (عبر الروابط الهيدروجينية في شكل 36)، فيبقى العمود متصلاً.</p></div>
+    <div class="box mint"><h3>التلاصق <span dir="ltr" style="font-size:13px">Adhesion</span></h3><p>الماء يلتصق بجدار الأنبوب (الخشب). لذلك يعلو الماء في الأنبوب <b>الرفيع</b> أكثر من العريض (شكل 35).</p></div>
+  </div>
+  <p style="margin-top:12px"><b>تجربة الإسفنجة:</b> أنبوب زجاجي طويل مليء بالماء، فوقه إسفنجة مبللة، وطرفه السفلي في كأس ماء. كل ما <b>تبخّر</b> ماء من الإسفنجة، سحب مكانه ماءً من الأنبوب، والأنبوب يسحب من الكأس. و<b>معدّل صعود الماء يتناسب مع معدّل تبخّره من الإسفنجة</b>.</p>
+  <div class="ana">
+    <div class="card"><h3>🥛 ماء الكأس</h3><p>= ماء التربة</p></div>
+    <div class="card"><h3>🧪 الأنبوب الشعري</h3><p>= الخشب الناقل للماء</p></div>
+    <div class="card"><h3>🧽 الإسفنجة</h3><p>= السطح المبخّر: النتح في الأوراق</p></div>
+  </div>
+  <p class="tip" style="margin-top:12px"><b>هل تكفي الخاصية الشعرية؟ لا.</b> الماء يصعد ضد الجاذبية والاحتكاك بجدر الأوعية فقط إذا كان فيه <b>شد من أعلى</b> و<b>دفع من أسفل</b>. وفي تجربة الإسفنجة ما في دفع من أسفل، يعني الصعود يعتمد <b>أساساً على الشد من أعلى</b>. طيب، شو اللي يشد من فوق؟</p>
+
+  <h3 style="margin:20px 0 6px">2 · الشد النتحي <span dir="ltr" style="font-size:14px">Transpiration Pull</span></h3>
+  <p>قوة الجهد المائي الناتجة عن <b>التبخّر والنتح</b> <span dir="ltr">(Evapo-transpiration)</span> من ثغور الورقة <b>تشد الماء صعوداً</b>، وهذا ممكن لأن عمود الماء في الخشب متواصل. مثل <b>قاطرة</b> تسحب وراءها مئات العربات: خروج الماء من الثغور يشد الماء من الجذور، وحتى من التربة.</p>
+  <p>الجهد المائي <b>ينحدر</b> من الأعلى في التربة إلى الأقل في الهواء، والماء يمشي مع الانحدار:</p>
+  <div class="grad" aria-label="انحدار الجهد المائي">
+    <span style="background:var(--p-sky)">التربة (الأعلى)</span><b>←</b><span style="background:var(--p-mint)">الجذر</span><b>←</b><span style="background:var(--p-butter)">الساق</span><b>←</b><span style="background:var(--p-peach)">الورقة</span><b>←</b><span style="background:var(--p-pink)">الهواء (الأقل)</span>
+  </div>
+  <p style="margin-top:10px">في <b>الطقس الجاف</b> يزداد النتح، فينخفض الضغط الأسموزي في خلايا النبات فتنكمش وتذبل. ولما تذبل، <b>تُقفل الثغور</b>. ليش؟ الجواب في ضبط النتح.</p>
+</section>
+
+<section class="sec" aria-labelledby="s6">
+  <div class="sec-head"><span class="num">6</span><h2 id="s6">ضبط النتح: كيف يفتح الثغر؟</h2></div>
+  <p>النتح يصير عند <b>الثغور</b>. فتحها وغلقها سببه <b>انحدار الجهد المائي</b> بين <b>الخلايا الحارسة</b> والخلايا المحيطة، وهذا الانحدار يصنعه <b>نقل أملاح البوتاسيوم</b> <span dir="ltr">(K⁺)</span>.</p>
+  <ol class="tline">
+    <li><span class="yr">1 · ضوء</span><div class="ev"><b>الضوء يحفّز النقل النشط لـ K⁺</b><span>عبر قنوات خاصة في غشاء الخلايا الحارسة، وهذا يحتاج <strong>طاقة ATP</strong>.</span></div></li>
+    <li><span class="yr">2 · K⁺</span><div class="ev"><b>تتراكم K⁺ في فجوات الخلايا الحارسة</b><span>فينخفض <strong>جهدها المائي</strong> مقارنة بالخلايا المحيطة.</span></div></li>
+    <li><span class="yr">3 · H₂O</span><div class="ev"><b>يدخل الماء بالأسموزية</b><span>من خلايا البشرة المحيطة (جهد عالٍ) إلى الخلايا الحارسة (جهد منخفض).</span></div></li>
+    <li><span class="yr">4 · فتح</span><div class="ev"><b>تنتفخ الخلايا الحارسة فيفتح الثغر</b><span>وفي <strong>الليل وغياب الضوء يحدث العكس</strong> فتُقفل الثغور.</span></div></li>
+  </ol>
+
+  <div class="act" data-act="gap" data-key="gap" data-ok="صح! تراكم K⁺ يخفض الجهد المائي للخلايا الحارسة، فيدخلها الماء من الخلايا المحيطة وتنتفخ ويفتح الثغر.">
+    <h3>أكمل الناقص <span class="k">نشاط</span></h3>
+    <p>ضوء ← نقل نشط لـ K⁺ إلى الخلايا الحارسة ← جهدها المائي <span class="gap">؟</span> ← يدخلها الماء ← يفتح الثغر</p>
+    <div class="opts">
+      <button class="pc" data-no="لو ارتفع جهدها المائي لخرج الماء منها إلى الخلايا المحيطة، فتنكمش ويُقفل الثغر.">يرتفع</button>
+      <button class="pc" data-ok>ينخفض</button>
+      <button class="pc" data-no="لو ما تغيّر ما صار انحدار في الجهد المائي، فما يتحرك الماء ولا يفتح الثغر.">لا يتغيّر</button>
+    </div>
+  </div>
+
+  <div class="grid2" style="margin-top:14px">
+    <div class="box pink"><h3>ظروف صعبة</h3><p><b>حارة وجافة ورياح قوية</b>: يزيد النتح وتزيد خسارة الماء، فتُقفل النبتة ثغورها حتى لا تذبل وتموت.</p></div>
+    <div class="box mint"><h3>ظروف مريحة</h3><p><b>ماء كثير في التربة وأمطار وفيرة وهواء رطب</b>: تفتح النبتة ثغورها ويرتفع النتح بدون أن تفقد كميات كبيرة من الماء.</p></div>
+  </div>
+  <p class="muted" style="font-size:14px;margin-top:8px">يعني النتح يشد الماء لأعلى قمة في الشجرة، والنبتة تضبطه بفتح الثغور وغلقها لتحافظ على <b>اتزان الماء</b> داخلها حسب الظروف البيئية.</p>
+</section>
+
+<section class="sec" aria-labelledby="s7">
+  <div class="sec-head"><span class="num">7</span><h2 id="s7">انتقال العصارة الناضجة في اللحاء</h2></div>
+  <p>السكر الناتج من البناء الضوئي يتحوّل إلى سكر ثنائي هو <b>السكروز</b> قبل تحميله في اللحاء، وهو <b>الشكل السائد</b> للسكر المنقول. نقله سريع (حوالي <span dir="ltr">2.5 cm</span> في الدقيقة) لكنه <b>أبطأ</b> من العصارة النيئة الصاعدة في الخشب. والعصارة الناضجة تتحرّك <b>صعوداً أو هبوطاً</b>: من الورقة إلى أماكن <b>التخزين</b> (الجذر، الفواكه، البذور) أو إلى مناطق <b>النمو النشط</b> مثل الأنسجة الإنشائية القمّية في قمة الجذر والساق.</p>
+  <div class="grid2" style="margin-top:10px">
+    <div class="box mint"><h3>🍃 الأوراق</h3><p>خلايا المنبع ترسل السكريات إلى اللحاء، وتستقبل الماء والمعادن من الخشب، والماء يتبخّر من الثغور.</p></div>
+    <div class="box butter"><h3>🌱 الساق</h3><p>ينقل الماء والمواد الغذائية والسكريات في النسيج الوعائي إلى كل أجزاء النبتة.</p></div>
+    <div class="box peach"><h3>🥕 الجذور</h3><p>الخشب فيها يمتص الماء، وهي تستهلك السكريات الواصلة باللحاء وتخزّنها.</p></div>
+  </div>
+
+  <h3 style="margin:20px 0 6px">فرضية التدفق بالضغط</h3>
+  <p>السكريات تُنقل من <b>المنبع</b> <span dir="ltr">(Source)</span>، أي جزء تُنتج فيه السكريات بالبناء الضوئي أو بتكسير النشا، إلى <b>المصرف</b> <span dir="ltr">(Sink)</span>، أي جزء تُستهلك فيه أو تُخزّن.</p>
+  <svg class="stage" viewBox="0 0 400 270" role="img" aria-label="أنبوب خشب وأنبوب لحاء، خلية منبع فوق تضخ السكر إلى اللحاء، ماء يدخل اللحاء من الخشب، تدفق للأسفل، وخلية مصرف تحت تستقبل السكر ويعود الماء إلى الخشب" style="margin-top:10px">
+    <defs>
+      <marker id="aS" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="var(--sug)"/></marker>
+      <marker id="aW" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="var(--h2o)"/></marker>
+    </defs>
+    <rect x="50" y="20" width="44" height="220" rx="12" fill="var(--xy)" stroke="var(--h2o)" stroke-width="2"/>
+    <rect x="176" y="20" width="44" height="220" rx="12" fill="var(--ph)" stroke="var(--sug)" stroke-width="2"/>
+    <polygon points="290,30 350,30 372,66 350,102 290,102 268,66" fill="var(--cell)" stroke="var(--leaf2)" stroke-width="2"/>
+    <polygon points="290,160 350,160 372,196 350,232 290,232 268,196" fill="var(--cell)" stroke="var(--wall)" stroke-width="2"/>
+    <g font-size="12" font-weight="700" fill="var(--text)" text-anchor="middle">
+      <text x="320" y="62">خلية المنبع</text><text x="320" y="78">(ورقة)</text>
+      <text x="320" y="192">خلية المصرف</text><text x="320" y="208">(جذر)</text>
+      <text x="72" y="258">الخشب</text><text x="198" y="258">اللحاء</text>
+    </g>
+    <line x1="266" y1="50" x2="224" y2="50" stroke="var(--sug)" stroke-width="3" marker-end="url(#aS)"/>
+    <line x1="98" y1="82" x2="172" y2="82" stroke="var(--h2o)" stroke-width="3" marker-end="url(#aW)"/>
+    <line x1="198" y1="100" x2="198" y2="178" stroke="var(--sug)" stroke-width="4" marker-end="url(#aS)" class="flow"/>
+    <line x1="224" y1="206" x2="264" y2="206" stroke="var(--sug)" stroke-width="3" marker-end="url(#aS)"/>
+    <line x1="172" y1="222" x2="98" y2="222" stroke="var(--h2o)" stroke-width="3" marker-end="url(#aW)"/>
+    <g font-size="12" font-weight="800" text-anchor="middle" fill="#fff">
+      <circle cx="244" cy="38" r="10" fill="var(--sug)"/><text x="244" y="42">1</text>
+      <circle cx="135" cy="70" r="10" fill="var(--h2o)"/><text x="135" y="74">2</text>
+      <circle cx="160" cy="140" r="10" fill="var(--sug)"/><text x="160" y="144">3</text>
+      <circle cx="244" cy="194" r="10" fill="var(--sug)"/><text x="244" y="198">4</text>
+    </g>
+  </svg>
+  <div class="keyrow"><span><i style="background:var(--sug)"></i>سكر</span><span><i style="background:var(--h2o)"></i>ماء H₂O</span></div>
+  <ol class="tline" style="margin-top:10px">
+    <li><span class="yr">1</span><div class="ev"><b>ضخ السكر</b><span>السكريات تنتقل من خلايا المنبع إلى خلايا <strong>الأنابيب الغربالية</strong> بـ<strong>النقل النشط</strong>، فيصير تركيز السكر في اللحاء عالياً.</span></div></li>
+    <li><span class="yr">2</span><div class="ev"><b>الماء يلحق السكر</b><span>بسبب التركيز العالي للسكر، ينتشر الماء من الخشب إلى الأنابيب الغربالية <strong>بالأسموزية</strong> رافعاً ضغط الماء.</span></div></li>
+    <li><span class="yr">3</span><div class="ev"><b>التدفق</b><span>الضغط يسبب تدفق العصارة (المحلول السكري) خلال اللحاء، حسب منحدر (تدرّج) التركيز.</span></div></li>
+    <li><span class="yr">4</span><div class="ev"><b>التفريغ في المصرف</b><span>السكريات تنتقل من اللحاء إلى خلايا المصرف <strong>بالنقل النشط</strong>، والماء يرجع إلى الخشب بالأسموزية خافضاً ضغط الماء في اللحاء.</span></div></li>
+  </ol>
+  <ul class="pts" style="margin-top:12px">
+    <li style="--b:var(--sc)">ضخ السكريات إلى داخل الأنابيب الغربالية (وإلى خارجها أحياناً) <b>يحتاج طاقة</b>، لذلك لازم تكون <b>خلايا الأنابيب الغربالية حيّة</b>: الخلايا الحية فقط توفّر طاقة النقل النشط.</li>
+    <li style="--b:var(--sc)"><b>الأوراق منابع نموذجية</b> و<b>الجذور مصارف نموذجية</b>. لكن الجذر اللي خزّن سكريات <b>قد يعمل منبعاً</b> أيضاً.</li>
+  </ul>
+
+  <div class="act" data-act="sort" data-key="sort" data-bins='["الخشب","اللحاء"]'
+       data-items='[["ينقل الماء والأملاح من الجذور",0],["العصارة النيئة",0],["يشدّه الشد النتحي",0],["أسرع في النقل",0,"العصارة النيئة في الخشب أسرع من العصارة الناضجة في اللحاء."],["ينقل السكروز",1],["العصارة الناضجة",1],["صعوداً أو هبوطاً",1,"الخشب يصعد بالماء فقط، أما العصارة الناضجة في اللحاء فتتحرّك صعوداً أو هبوطاً."],["خلاياه لازم تكون حيّة",1,"الأنابيب الغربالية في اللحاء حيّة لتوفر طاقة النقل النشط للسكر."]]'
+       data-ok="ممتاز! الخشب: ماء وأملاح صاعدة (عصارة نيئة) بالشد النتحي وأسرع. اللحاء: سكروز (عصارة ناضجة) صعوداً أو هبوطاً، وخلاياه حيّة.">
+    <h3>خشب أم لحاء؟ <span class="k">نشاط</span></h3>
+    <p>صنّف كل صفة في نسيجها.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s8">
+  <div class="sec-head"><span class="num">8</span><h2 id="s8">مثال محلول: سكر يسافر في جذع</h2></div>
+  <div class="qbox">السكريات تتحرّك أبطأ من الماء، وأسرع معدّل للنقل في اللحاء حوالي <span dir="ltr">2 m</span> في الساعة. كم ساعة تحتاج السكريات لتنزل في جذع شجرة طوله <span dir="ltr">30 m</span>؟</div>
+  <div class="row"><button class="lite" id="hideSol" type="button" aria-pressed="false">أخفِ الحل وجرّب أولاً</button></div>
+  <ol class="steps" id="steps">
+    <li><span><b>المعلوم:</b> المسافة <span dir="ltr">30 m</span>، السرعة <span dir="ltr">2 m</span> كل ساعة.</span></li>
+    <li><span><b>الفكرة:</b> الزمن = المسافة ÷ السرعة. كل ساعة يقطع مترين، فكم "مترين" في 30 متراً؟</span></li>
+    <li><span><b>الحساب:</b> <span dir="ltr">30 ÷ 2 = 15</span>، إذن تحتاج حوالي <b>15 ساعة</b>، أكثر من نصف يوم!</span></li>
+  </ol>
+  <p class="muted" style="font-size:14px;margin-top:8px">ولو استخدمنا رقم الكتاب الآخر (<span dir="ltr">2.5 cm</span> في الدقيقة = <span dir="ltr">1.5 m</span> في الساعة) يصير الزمن أطول: 20 ساعة. المهم: <b>السكر أبطأ من الماء</b>.</p>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">9</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sd">
+  <div class="sec-head"><span class="num">10</span><h2 id="sd">في حياتك</h2></div>
+  <div class="life">
+    <div class="card"><h3>الكرفس الذابل</h3><p>حطّه في كوب ماء ساعات: خلاياه تمتص الماء ويرجع ضغط الامتلاء فيصير صلباً من جديد.</p></div>
+    <div class="card"><h3>البطاطا</h3><p>سؤال الكتاب: وين المصارف في نبتة البطاطا؟ الدرنات تحت الأرض اللي يُخزَّن فيها السكر نشا، والأجزاء النامية.</p></div>
+    <div class="card"><h3>سماد الحديقة</h3><p>زيادة السماد مو "أكل أكثر" للنبتة: ترفع تركيز التربة فيخرج الماء من الجذور، وهذا حرق الجذور.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">11</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>وظيفة شريط كاسبر في البشرة الداخلية:</p>
+      <div class="opts"><button>يضخ شوارد المعادن بالنقل النشط</button><button data-ok>يمنع الممر خارج الخلوي ويجبر الماء على الممرين الآخرين نحو الأسطوانة الوعائية</button><button>يفتح الثغور ويغلقها</button></div>
+      <p class="why" hidden>الصحيح: شريط كاسبر شمعي غير منفذ في جدر البشرة الداخلية، يوقف الماء الماشي عبر الجدر (خارج خلوي) فيدخل الخلايا ويكمل باتجاه واحد. الضخ تقوم به البروتينات الناقلة، والثغور تضبطها الخلايا الحارسة.</p></div>
+    <div class="q"><p>لماذا لا تكفي الخاصية الشعرية لصعود الماء إلى قمة شجرة طولها 90 m؟</p>
+      <div class="opts"><button>لأن الماء لا يلتصق بجدر الخشب</button><button>لأن الضغط الجذري يوقفها</button><button data-ok>لأن الصعود ضد الجاذبية والاحتكاك يحتاج قوة شد من أعلى، وهي الشد النتحي</button></div>
+      <p class="why" hidden>الصحيح: التماسك والتلاصق يحفظان عمود الماء متصلاً، لكن ما في دفع كافٍ من أسفل (الضغط الجذري نقطة انطلاق فقط)، فالصعود يعتمد أساساً على الشد النتحي من أعلى.</p></div>
+    <div class="q"><p>سؤال الكتاب: لماذا يكون نقل الماء في النبات أسرع في الظهيرة وأبطأ في الليل؟</p>
+      <div class="opts"><button data-ok>في الظهيرة الضوء يفتح الثغور والحرارة تزيد النتح فيزيد الشد النتحي، وفي الليل تُقفل الثغور</button><button>لأن الضغط الجذري يتوقف في الظهيرة</button><button>لأن اللحاء ينقل الماء في الليل فقط</button></div>
+      <p class="why" hidden>الصحيح: الضوء يحفّز دخول K⁺ إلى الخلايا الحارسة فتفتح الثغور، والحرارة والجفاف والرياح تزيد النتح، فيقوى الشد النتحي. في الليل يحدث العكس وتُقفل الثغور. (لكن لو الحر والجفاف شديدان مع ماء قليل تُقفل النبتة ثغورها.)</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li><b>في الجذر:</b> بروتينات ناقلة تضخ شوارد المعادن بطاقة ATP، فينخفض الجهد المائي ويدخل الماء بالأسموزية، ثم يعبر ثلاثة ممرات، وشريط كاسبر يجبره على اتجاه واحد فيتكوّن الضغط الجذري.</li>
+      <li><b>في الخشب:</b> يصعد الماء بالضغط الجذري والخاصية الشعرية (التماسك والتلاصق)، وأساساً بالشد النتحي من الثغور، والثغور تُفتح بدخول K⁺ للخلايا الحارسة في الضوء.</li>
+      <li><b>في اللحاء:</b> السكروز ينتقل من المنبع إلى المصرف صعوداً أو هبوطاً حسب فرضية التدفق بالضغط، بنقل نشط في خلايا حيّة، وأبطأ من الماء.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الأحياء، الصف الحادي عشر، الوحدة الأولى، ص 41 إلى 50</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"bio-u1-1-3"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+/* ---- lab: water journey. simplified model for understanding, not book numbers ---- */
+var lt=$("lt"), sw=$("sw"), dr=$("dr"), fb=$("fert"), fert=false;
+function model(){
+  var L=+lt.value, W=+sw.value, D=+dr.value, wilt=fert||W<20, night=L<25;
+  var open=!night&&!wilt&&!(D>=70&&W<55);
+  var rate=open?Math.round((0.3+0.7*D/100)*Math.min(1,L/60)*100):3;
+  return {L:L,W:W,D:D,wilt:wilt,night:night,open:open,rate:rate};
+}
+function draw(){
+  var m=model(), h="", i;
+  /* sky: sun or moon */
+  var so=(0.2+0.8*m.L/100).toFixed(2);
+  if(m.night) h+='<circle cx="44" cy="40" r="16" fill="var(--moon)"/><circle cx="52" cy="34" r="14" fill="var(--sky)"/>';
+  else { h+='<g opacity="'+so+'"><circle cx="44" cy="40" r="17" fill="var(--sun)"/>';
+    for(i=0;i<8;i++){var a=i*Math.PI/4;h+='<line x1="'+(44+Math.cos(a)*23).toFixed(1)+'" y1="'+(40+Math.sin(a)*23).toFixed(1)+'" x2="'+(44+Math.cos(a)*30).toFixed(1)+'" y2="'+(40+Math.sin(a)*30).toFixed(1)+'" stroke="var(--sun)" stroke-width="4" stroke-linecap="round"/>';}
+    h+='</g>'; }
+  /* wind lines */
+  var nw=Math.round(m.D/34); for(i=0;i<nw;i++) h+='<path d="M'+(290-i*6)+' '+(28+i*14)+' q14 -6 28 0 t28 0" fill="none" stroke="var(--muted)" stroke-width="2" stroke-linecap="round" opacity=".7"/>';
+  $("sky").innerHTML=h;
+  /* soil water drops */
+  h=""; var nd=fert?0:Math.round(m.W/12);
+  for(i=0;i<nd;i++){var x=20+((i*53)%360), y=196+((i*29)%54); if(x>130&&x<195) x+=80; h+='<circle cx="'+x+'" cy="'+y+'" r="4" fill="var(--h2o)"/>';}
+  if(fert) for(i=0;i<9;i++){var fx=24+((i*61)%350), fy=198+((i*23)%50); if(fx>130&&fx<195) fx+=80; h+='<rect x="'+fx+'" y="'+fy+'" width="7" height="7" fill="var(--card)" stroke="var(--soil2)"/>';}
+  $("drops").innerHTML=h;
+  /* xylem flow */
+  var x=$("xyl");
+  if(m.wilt||m.rate<5){x.style.animationPlayState="paused";x.style.opacity=m.wilt&&fert?".25":".55";}
+  else {x.style.animationPlayState="running";x.style.opacity="1";x.style.animationDuration=(3.2-2.6*m.rate/100).toFixed(2)+"s";}
+  if(fert) x.setAttribute("stroke-dasharray","6 10");
+  /* leaves droop when wilting */
+  $("leafR").setAttribute("transform",m.wilt?"rotate(28 166 92)":"");$("leafL").setAttribute("transform",m.wilt?"rotate(-28 154 104)":"");
+  /* vapour leaving the leaf */
+  h=""; var nv=m.open?Math.max(1,Math.round(m.rate/18)):0;
+  for(i=0;i<nv;i++){h+='<circle cx="'+(228+(i*17)%44)+'" cy="'+(52-(i*11)%34)+'" r="3.5" fill="none" stroke="var(--h2o)" stroke-width="2"/>';}
+  $("vapor").innerHTML=h;
+  /* stoma: two guard cells, swollen when open */
+  var g=m.open?8:1.5, rx=m.open?13:10;
+  h='<ellipse cx="'+(330-g-rx+4)+'" cy="140" rx="'+rx+'" ry="22" fill="var(--leaf)" stroke="var(--leaf2)" stroke-width="2"/>'+
+    '<ellipse cx="'+(330+g+rx-4)+'" cy="140" rx="'+rx+'" ry="22" fill="var(--leaf)" stroke="var(--leaf2)" stroke-width="2"/>'+
+    '<ellipse cx="330" cy="140" rx="'+g+'" ry="16" fill="var(--strip)"/>';
+  $("stoma").innerHTML=h;
+  $("ltL").textContent=m.L;$("swL").textContent=m.W;$("drL").textContent=m.D;
+  $("trBar").style.width=m.rate+"%";$("trV").textContent=m.rate;
+  var msg, ok=false;
+  if(fert) msg="سماد زائد: تركيز الشوارد في التربة صار أعلى بكثير من الجذر، فخرج الماء من الجذور إلى التربة بالأسموزية. هذا حرق الجذور: النبتة تذبل وقد تموت.";
+  else if(m.night) msg="ليل (غياب الضوء): يتوقف دخول K⁺ إلى الخلايا الحارسة، فيخرج منها الماء وتنكمش ويُقفل الثغر. النتح والشد النتحي في أقل حد.";
+  else if(m.W<20) msg="التربة جافة: امتصاص الماء بالأسموزية ضعيف، الخلايا تفقد ضغط الامتلاء فتذبل النبتة، وتُقفل ثغورها.";
+  else if(!m.open) msg="حر وجفاف ورياح مع ماء قليل في التربة: النتح كان سيزيد كثيراً، فأقفلت النبتة ثغورها حتى لا تذبل وتموت.";
+  else if(m.D>=60){msg="ثغور مفتوحة وهواء حار جاف: نتح سريع وشد نتحي قوي يسحب عمود الماء بسرعة في الخشب. النبتة تتحمّل لأن ماء التربة وفير.";ok=true;}
+  else {msg="ضوء وماء كافٍ: K⁺ دخلت الخلايا الحارسة فانتفخت وفتح الثغر. الماء يتبخّر منه فيشد عمود الماء صعوداً في الخشب من الجذور ومن التربة.";ok=true;}
+  var e=$("pMsg"); e.textContent=msg; e.className=ok?"msg ok":"msg";
+  fb.setAttribute("aria-pressed",String(fert)); fb.textContent=fert?"أزل السماد الزائد":"أضف سماداً زائداً";
+}
+[lt,sw,dr].forEach(function(e){e.addEventListener("input",draw);});
+fb.addEventListener("click",function(){fert=!fert;draw();});
+draw();
+})();
+</script>
+</body>
+</html>

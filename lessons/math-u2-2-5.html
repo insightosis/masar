@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="math">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>المعكوسات ودوال الجذر التربيعي · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+span[dir=ltr],bdi[dir=ltr],b[dir=ltr]{unicode-bidi:isolate}
+body{--plane:#f1edff;--grid:#ddd5fb;--axis:#8b86b3;--curve:#3d8be0;--inv:#e0485f;--sym:#17b388;--ghost:#b9b1e6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--plane:#24203d;--grid:#363057;--axis:#a7a2cf;--curve:#6fb4ff;--inv:#ff7d8f;--sym:#4fd8ac;--ghost:#5d5689}}
+:root[data-theme="dark"] body{--plane:#24203d;--grid:#363057;--axis:#a7a2cf;--curve:#6fb4ff;--inv:#ff7d8f;--sym:#4fd8ac;--ghost:#5d5689}
+.stage{display:block;width:100%;height:auto;border-radius:20px;background:var(--plane);box-shadow:var(--press);margin-top:10px}
+.sq{max-width:420px;margin-inline:auto}
+.small-plot{max-width:300px;margin-inline:auto}
+.xtra{margin-top:12px;padding:10px 16px;border-radius:20px;background:var(--card);box-shadow:var(--clay-sm)}
+.xtra summary{cursor:pointer;font-weight:700;color:var(--ink)}
+.fbox{overflow-x:auto;text-align:center;padding:6px 0}
+.out{margin-top:10px;display:grid;gap:6px;text-align:center}
+.out .f{font-size:1.1rem}
+.out small{display:block;color:var(--muted);font-size:13px}
+.tbl{overflow-x:auto;margin-top:10px}
+.tbl table{border-collapse:separate;border-spacing:4px;margin:0 auto;direction:ltr}
+.tbl td,.tbl th{padding:5px 11px;border-radius:10px;background:var(--card);box-shadow:var(--clay-sm);text-align:center;font-family:"Noto Serif",Georgia,serif;font-size:15px;white-space:nowrap}
+.tbl th{background:var(--soft);font-style:italic}
+.tbl td.hl{background:var(--p-pink)}
+.tbls{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;margin-top:6px}
+.tbls h4{margin:4px 0 0;text-align:center;font-size:14px}
+.act .gap{direction:ltr;unicode-bidi:isolate}
+.act[data-act=gap] .pc{font-family:"Noto Serif",Georgia,serif}
+.act[data-act=order] .pc{font-family:var(--body)}
+.chain{display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:center;direction:ltr;margin:8px 0}
+.chain b{display:inline-grid;place-items:center;min-width:38px;padding:4px 10px;border-radius:14px;background:var(--card);box-shadow:var(--clay-sm);font-family:"Noto Serif",Georgia,serif;font-size:1.05rem}
+.chain i{font-style:normal;font-size:13px;padding:3px 9px;border-radius:12px;background:var(--p-butter);color:var(--text);font-weight:700}
+.chain span{color:var(--muted)}
+.chain-h{margin:10px 0 0;font-weight:700;text-align:center}
+.legend i.ln{display:inline-block;width:16px;height:4px;border-radius:2px;vertical-align:middle;margin-inline-end:4px}
+.seg{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.seg button{font:inherit;font-size:14px;padding:6px 12px;border-radius:14px;border:0;background:var(--card);color:var(--text);box-shadow:var(--clay-sm);cursor:pointer;direction:ltr}
+.seg button[aria-pressed=true]{background:var(--p-lav);box-shadow:var(--press);font-weight:700}
+.chk-line{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:14.5px}
+.disc{display:grid;gap:8px;margin-top:10px}
+.disc .box p{font-size:14.5px}
+</style>
+</head>
+<body style="--sc:#8a63f2">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الرياضيات</span><span class="chip">الدرس 2-5 · ص 69 إلى 74</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الثانية: الدوال الحقيقية</p>
+  <h1 id="t">المعكوسات ودوال الجذر التربيعي</h1>
+  <p>قطعة الجليد المدلاة من سطح البيت في الشتاء: طولها L تقريباً <span class="f" style="font-size:1.1rem">L = 11d − 0.5</span>، حيث d قطر أكبر مقطع فيها. من القطر نعرف الطول بسهولة. <mark>بس لو عرفنا الطول، كيف نرجع للقطر؟</mark> نمشي الخطوات <b>بالعكس</b>. وهذا اسمه <b>معكوس الدالة</b>.</p>
+</section>
+
+<section class="panel" id="lab-sec" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">مختبر: المرآة <span dir="ltr">y = x</span></h2><span class="legend"><span><i style="background:var(--curve)"></i>الدالة</span><span><i style="background:var(--inv)"></i>معكوسها</span><span><i style="background:var(--sym)"></i><bdi dir="ltr">y = x</bdi></span></span></div>
+  <div class="seg" role="group" aria-label="اختر الدالة">
+    <button type="button" data-f="0" aria-pressed="true">y = (x − 4) ÷ 2</button>
+    <button type="button" data-f="1" aria-pressed="false">y = 5x − 4</button>
+    <button type="button" data-f="2" aria-pressed="false">y = x² + 3</button>
+  </div>
+  <label class="chk-line" id="halfL" hidden><input type="checkbox" id="half"> خذ النصف <bdi dir="ltr">x ≥ 0</bdi> فقط</label>
+  <svg class="stage sq" id="mirror" viewBox="0 0 360 360" role="img" aria-label="بيان دالة ومعكوسها وانعكاسهما حول المستقيم y يساوي x"></svg>
+  <div class="controls"><div class="ctl"><label for="pt">حرّك النقطة: <b id="ptL" dir="ltr">a = 0</b></label><input type="range" dir="ltr" id="pt" min="-4" max="8" step="0.5" value="0" aria-describedby="ptL"></div></div>
+  <p class="msg" id="mMsg" aria-live="polite"></p>
+  <p class="cap">النقطة الزرقاء <bdi dir="ltr">(a, b)</bdi> على الدالة، وتوأمها الأحمر <bdi dir="ltr">(b, a)</bdi> على المعكوس. الخط المنقّط بينهما يقطعه المستقيم الأخضر <bdi dir="ltr">y = x</bdi> في المنتصف: مثل جسم وصورته في المرآة.</p>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">رموز الدرس ومصطلحاته</h2></div>
+  <div class="syms">
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub"><span dir="ltr">r⁻¹</span></span><div><h3>معكوس العلاقة <span class="en">Inverse</span></h3><p>العلاقة اللي ترجع من b إلى a. ونكتب معكوس الدالة f بالرمز <span dir="ltr">f⁻¹</span>.</p><span class="hook">"−1" هنا اسم للمعكوس، مو أُس.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub sm"><span dir="ltr">(b, a)</span></span><div><h3>الزوج المعكوس <span class="en">Inverse of a Function</span></h3><p>إذا <span dir="ltr">(a, b)</span> على بيان الدالة، فإن <span dir="ltr">(b, a)</span> على بيان معكوسها.</p><span class="hook">بدّل الإحداثيين، وخلاص.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub sm"><span dir="ltr">y = x</span></span><div><h3>خط الانعكاس <span class="en">Line of Reflection</span></h3><p>بيان الدالة وبيان معكوسها متماثلان حول المستقيم <span dir="ltr">y = x</span>.</p><span class="hook">المرآة المائلة بين الاثنين.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span class="rad"><span>x</span></span></span><div><h3>دالة الجذر التربيعي <span class="en">Square Root Function</span></h3><p><span dir="ltr">y = √x</span>: مجالها <span dir="ltr">[0, ∞)</span> ومداها <span dir="ltr">[0, ∞)</span>، وتبدأ من <span dir="ltr">(0, 0)</span>.</p><span class="hook">ما فيه جذر لعدد سالب.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span>h</span></span><div><h3>الإزاحة الأفقية <span class="en">h</span></h3><p>في <span dir="ltr">y = √(x − h) + k</span>: h موجبة يمين، سالبة يسار.</p><span class="hook">داخل الجذر، الإشارة تخدعك: <span dir="ltr">x + 3</span> يعني يسار.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub"><span>k</span></span><div><h3>الإزاحة الرأسية <span class="en">k</span></h3><p>k موجبة لأعلى، سالبة لأسفل. والبيان يبدأ من النقطة <span dir="ltr">(h, k)</span>.</p><span class="hook">خارج الجذر، الإشارة صادقة.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">المعكوس يرجّع خطواتك</h2></div>
+  <p>نرجع لقطعة الجليد. لو القطر <span dir="ltr">d = 5 cm</span>: نضرب في 11 ثم نطرح 0.5، فيكون الطول <span class="f" style="font-size:1.1rem">L = 11(5) − 0.5 = 54.5 cm</span>.</p>
+  <div class="act" data-act="type" data-key="type" data-answer="2.5" data-tol="0.01"
+       data-ok="صح! مشينا بالعكس: ⁦27 + 0.5 = 27.5⁩ ثم ⁦27.5 ÷ 11 = 2.5 cm⁩. عكسنا الطرح بالجمع، والضرب بالقسمة، وبالترتيب المعاكس."
+       data-hint="آخر خطوة في الدالة كانت طرح 0.5، فأول خطوة عندك: اجمع 0.5. بعدها اقسم على 11."
+       data-no="ليست هذه. لا تعوّض 27 مكان d. هنا 27 هي L: اجمع 0.5 أولاً ثم اقسم على 11.">
+    <h3>اكتب الجواب <span class="k">نشاط</span></h3>
+    <p>قطعة جليد طولها <span dir="ltr">L = 27 cm</span>. كم قطر أكبر مقطع فيها d بالسنتيمتر؟</p>
+  </div>
+
+  <h3 style="margin:18px 0 4px">دالتان كل وحدة تفكّ شغل الثانية</h3>
+  <p>خذ <span class="f" style="font-size:1.1rem">f(x) = 2x − 8</span> و <span class="f" style="font-size:1.1rem">g(x) = (x + 8) ÷ 2</span>، ومجال كل منهما ℝ. أدخل 6 في f، ثم أدخل الناتج في g:</p>
+  <p class="chain-h">f: نوجد <span dir="ltr">f(6)</span></p>
+  <div class="chain"><b>6</b><span>→</span><i>× 2</i><span>→</span><b>12</b><span>→</span><i>− 8</i><span>→</span><b>4</b></div>
+  <p class="chain-h">g: نوجد <span dir="ltr">g(4)</span></p>
+  <div class="chain"><b>4</b><span>→</span><i>+ 8</i><span>→</span><b>12</b><span>→</span><i>÷ 2</i><span>→</span><b>6</b></div>
+  <p>رجعنا للـ 6! كل دالة تعكس عمليات الأخرى بالترتيب المعاكس، لذلك نسمّي g <b>معكوس الدالة f</b>، و f معكوس g. ولو رسمتهما ثم بدّلت إحداثيات أي نقطة على f، تطلع النقطة الجديدة على g.</p>
+
+  <div class="law" style="background:var(--p-lav);margin-top:12px">
+    <h3>معكوس العلاقة</h3>
+    <p style="color:var(--text)">إذا كانت r تصل عنصراً a من مجالها بعنصر b من مداها، فإن <b>معكوس العلاقة</b> <span dir="ltr">r⁻¹</span> يصل من b إلى a.<br><b>إذا كان <span dir="ltr">(a, b)</span> زوجاً مرتباً من علاقة، فإن <span dir="ltr">(b, a)</span> زوج مرتب من معكوسها.</b></p>
+  </div>
+  <svg class="stage small-plot" id="arrows" viewBox="0 0 320 170" role="img" aria-label="مخطط سهمي لعلاقة تربط كل عدد بمربعه ومعكوسها"></svg>
+  <p class="cap">مثالنا: r تربط كل عدد بمربّعه. في <span dir="ltr">r⁻¹</span> انعكست الأسهم، فصار <b>مدى r هو مجال <span dir="ltr">r⁻¹</span></b>، و<b>مجال r هو مدى <span dir="ltr">r⁻¹</span></b>.</p>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">المعكوس من جدول ومن رسم</h2></div>
+  <h3 style="margin:4px 0 6px">مثال توضيحي</h3>
+  <div class="qbox">علاقة S في الجدول. أوجد معكوسها، ومثّل الاثنين بيانياً، وصف علاقتهما بالمستقيم <span dir="ltr">y = x</span>. هل S دالة؟ وهل معكوسها دالة؟</div>
+  <div class="tbls">
+    <div><h4>S</h4><div class="tbl"><table><tr><th>x</th><td>1</td><td>2</td><td>3</td><td>4</td></tr><tr><th>y</th><td>−1</td><td>0</td><td>1</td><td>1</td></tr></table></div></div>
+    <div><h4>معكوس S: بدّل الصفّين</h4><div class="tbl"><table><tr><th>x</th><td>−1</td><td>0</td><td class="hl">1</td><td class="hl">1</td></tr><tr><th>y</th><td>1</td><td>2</td><td class="hl">3</td><td class="hl">4</td></tr></table></div></div>
+  </div>
+  <svg class="stage small-plot" id="sPlot" viewBox="0 0 300 300" role="img" aria-label="نقاط العلاقة S ونقاط معكوسها والمستقيم y يساوي x"></svg>
+  <ul class="pts" style="margin-top:10px">
+    <li style="--b:var(--sym)">المستقيم <span dir="ltr">y = x</span> هو <b>خط انعكاس</b> لبيان S وبيان معكوسها.</li>
+    <li style="--b:var(--curve)"><b>S دالة</b>: كل عنصر من المجال يقترن بعنصر واحد فقط.</li>
+    <li style="--b:var(--inv)"><b>معكوس S ليس دالة</b>: العنصر 1 يقترن بعنصرين، 3 و 4 (الخانتان الورديتان).</li>
+  </ul>
+  <div class="rule" style="margin-top:12px"><h3>رسم المعكوس بيانياً</h3><p>إذا كانت <span dir="ltr">(a, b)</span> على بيان دالة، فإن <span dir="ltr">(b, a)</span> على بيان معكوسها. اعكس ترتيب كل زوج مرتب، وارسم.</p></div>
+  <p class="tip" style="margin-top:10px"><b>قاعدة سريعة:</b> معكوس الدالة الخطية هو دالة خطية أيضاً.</p>
+
+  <h3 style="margin:18px 0 6px">مثال (1)</h3>
+  <div class="qbox">ارسم بيان الدالة <span class="f" style="font-size:1.1rem">y = (x − 4) ÷ 2</span> ومعكوسها، ثم اكتب معادلة المعكوس.</div>
+  <ol class="steps">
+    <li><span>نقطتان على الدالة الخطية: <span class="f">(0, −2)</span> و <span class="f">(4, 0)</span></span></li>
+    <li><span>نبدّل: <span class="f">(−2, 0)</span> و <span class="f">(0, 4)</span> على المعكوس، وهو خط مستقيم يمرّ بهما.</span></li>
+    <li><span>الميل: <span class="f">m = <span class="frac"><span>y₂ − y₁</span><span>x₂ − x₁</span></span></span><br><span class="f">m = <span class="frac"><span>4 − 0</span><span>0 − (−2)</span></span> = 2</span></span></li>
+    <li><span>نقطة وميل: <span class="f">y − y₁ = m(x − x₁)</span> ⇐ <span class="f">y − 4 = 2(x − 0)</span></span></li>
+    <li><span><span class="ans">معادلة المعكوس: <span class="f" style="font-size:1.05rem">y = 2x + 4</span></span></span></li>
+  </ol>
+  <details class="xtra"><summary>حاول أن تحل (1): <bdi dir="ltr">y = −3x + 5</bdi>، جرّب قبل ما تفتح</summary>
+    <p>نقطتان: <span dir="ltr">(0, 5)</span> و <span dir="ltr">(1, 2)</span> ⇐ على المعكوس <span dir="ltr">(5, 0)</span> و <span dir="ltr">(2, 1)</span>. الميل <span dir="ltr">(1 − 0) ÷ (2 − 5) = −1/3</span>، فالمعكوس <span class="f" style="font-size:1.05rem">y = −⅓x + 5/3</span>. تأكد في المختبر فوق: الخطان متماثلان حول <span dir="ltr">y = x</span>.</p>
+  </details>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">المعكوس جبرياً: بدّل ثم حل</h2></div>
+  <div class="rule"><h3>الطريقة الجبرية</h3><p>بدّل بين المتغيرين x و y، ثم حلّ المعادلة بالنسبة إلى y. وإذا كانت الدالة مكتوبة <span dir="ltr">f(x)</span> فعوّض عنها بـ y أولاً.</p></div>
+  <p style="margin-top:10px">نفس مثال (1) بهذه الطريقة، بدون رسم:</p>
+  <ol class="steps">
+    <li><span>الدالة: <span class="f">y = (x − 4) ÷ 2</span></span></li>
+    <li><span>نبدّل: <span class="f">x = (y − 4) ÷ 2</span></span></li>
+    <li><span>نضرب في 2: <span class="f">2x = y − 4</span> ⇐ <span class="ans"><span class="f">y = 2x + 4</span></span></span></li>
+  </ol>
+  <h3 style="margin:14px 0 6px">مثال (2)</h3>
+  <div class="qbox">أوجد معكوس الدالة <span class="f" style="font-size:1.1rem">y = 5x − 4</span>.</div>
+  <ol class="steps">
+    <li><span>بدّل x و y: <span class="f">x = 5y − 4</span></span></li>
+    <li><span>حلّ بالنسبة إلى y: <span class="f">5y = x + 4</span></span></li>
+    <li><span><span class="ans">المعكوس: <span class="f" style="font-size:1.05rem">y = <span class="frac"><span>1</span><span>5</span></span>x + <span class="frac"><span>4</span><span>5</span></span></span></span></span></li>
+  </ol>
+
+  <div class="act" data-act="order" data-key="order" data-rtl
+       data-answer='["عوّض y عن f(x)","بدّل x و y","حلّ بالنسبة إلى y"]'
+       data-extra='["حلّ بالنسبة إلى x"]'
+       data-ok="ممتاز! y مكان f(x)، ثم التبديل، ثم نعزل y الجديدة."
+       data-no="القطع الحمراء في غير مكانها. التبديل يجي قبل الحل، ونحل بالنسبة إلى y (لأن x صارت المدخل الجديد).">
+    <h3>رتّب الخطوات <span class="k">نشاط</span></h3>
+    <p>عندك <span dir="ltr">f(x) = 3x + 6</span>. رتّب خطوات إيجاد معكوسها. فيه قطعة زائدة.</p>
+  </div>
+
+  <details class="xtra"><summary>حاول أن تحل (2): جرّب قبل ما تفتح</summary>
+    <ul class="pts">
+      <li style="--b:var(--sc)"><b>a)</b> <span dir="ltr">y = (2x − 1) ÷ 3</span> ⇐ <span dir="ltr">x = (2y − 1) ÷ 3</span> ⇐ <span dir="ltr">3x = 2y − 1</span> ⇐ <span class="f" style="font-size:1.05rem">y = (3x + 1) ÷ 2</span></li>
+      <li style="--b:var(--sc)"><b>b)</b> <span dir="ltr">y = 2(x + 1) − 3 = 2x − 1</span> ⇐ <span dir="ltr">x = 2y − 1</span> ⇐ <span class="f" style="font-size:1.05rem">y = (x + 1) ÷ 2</span></li>
+    </ul>
+  </details>
+</section>
+
+<section class="sec" aria-labelledby="s5">
+  <div class="sec-head"><span class="num">5</span><h2 id="s5">معكوس الدالة التربيعية</h2></div>
+  <h3 style="margin:4px 0 6px">مثال (3)</h3>
+  <div class="qbox">أوجد معكوس الدالة <span class="f" style="font-size:1.1rem">f(x) = x² + 3</span> وناقش الحلول.</div>
+  <ol class="steps">
+    <li><span>عوّض y عن <span dir="ltr">f(x)</span>: <span class="f">y = x² + 3</span></span></li>
+    <li><span>بدّل x و y: <span class="f">x = y² + 3</span></span></li>
+    <li><span>حلّ بالنسبة إلى y: <span class="f">y² = x − 3</span></span></li>
+    <li><span>الجذر التربيعي للطرفين: <span class="ans"><span class="f" style="font-size:1.05rem">y = ± <span class="rad"><span>x − 3</span></span></span></span></span></li>
+  </ol>
+  <p>المعكوس قطع مكافئ <b>مفتوح لليمين</b>. لكل x أكبر من 3 فيه <b>قيمتان</b> لـ y، فهو <b>ليس دالة</b>. يعني: معكوس الدالة <b>ربما لا يكون دالة</b>. شفته في المختبر فوق لما اخترت <span dir="ltr">x² + 3</span>.</p>
+  <div class="disc">
+    <div class="box mint"><h3>لو أخذنا <bdi dir="ltr">x ≥ 0</bdi> فقط</h3><p>المعكوس <span class="f" style="font-size:1.05rem">y = <span class="rad"><span>x − 3</span></span></span>، وهو <b>دالة</b>.</p></div>
+    <div class="box sky"><h3>لو أخذنا <bdi dir="ltr">x ≤ 0</bdi> فقط</h3><p>المعكوس <span class="f" style="font-size:1.05rem">y = −<span class="rad"><span>x − 3</span></span></span>، وهو <b>دالة</b> أيضاً.</p></div>
+  </div>
+
+  <h3 style="margin:18px 0 6px">مثال محلول: حاول أن تحل (3)</h3>
+  <div class="qbox">أوجد معكوس الدالة <span class="f" style="font-size:1.1rem">f(x) = (x + 3)² − 4</span> وناقش الحلول.</div>
+  <div class="row"><button class="lite" id="hideSol" type="button" aria-pressed="false">أخفِ الحل وجرّب أولاً</button></div>
+  <ol class="steps" id="steps">
+    <li><span>عوّض وبدّل: <span class="f">x = (y + 3)² − 4</span></span></li>
+    <li><span>انقل 4: <span class="f">(y + 3)² = x + 4</span></span></li>
+    <li><span>جذر الطرفين: <span class="f">y + 3 = ± <span class="rad"><span>x + 4</span></span></span></span></li>
+    <li><span><span class="ans">المعكوس: <span class="f" style="font-size:1.05rem">y = −3 ± <span class="rad"><span>x + 4</span></span></span></span>، وهو ليس دالة.</span></li>
+    <li><span>النقاش: لـ <span dir="ltr">x ≥ −3</span> المعكوس <span class="f">y = −3 + <span class="rad"><span>x + 4</span></span></span> دالة، ولـ <span dir="ltr">x ≤ −3</span> المعكوس <span class="f">y = −3 − <span class="rad"><span>x + 4</span></span></span> دالة.</span></li>
+  </ol>
+</section>
+
+<section class="sec" aria-labelledby="s6">
+  <div class="sec-head"><span class="num">6</span><h2 id="s6">دوال الجذر التربيعي</h2></div>
+  <p>المعادلة <span class="f" style="font-size:1.1rem">y = <span class="rad"><span>x</span></span></span> دالة جذر تربيعي. معرّفة فقط للصفر والأعداد الموجبة، يعني <span dir="ltr">x ≥ 0</span>، فبيانها يبدأ من <span dir="ltr">(0, 0)</span> ويمشي لليمين.</p>
+  <div class="grid2" style="margin-top:8px">
+    <div class="box butter"><h3>المجال</h3><p><span class="f" style="font-size:1.15rem">[0, ∞)</span> لأن ما فيه جذر لعدد سالب.</p></div>
+    <div class="box lav"><h3>المدى</h3><p><span class="f" style="font-size:1.15rem">[0, ∞)</span> لأن <span dir="ltr">y ≥ 0</span> دائماً.</p></div>
+  </div>
+
+  <div class="law wide" style="background:var(--p-peach);margin-top:12px;text-align:center">
+    <h3>بيان <bdi dir="ltr">y = √(x − h) + k</bdi></h3>
+    <div class="fbox"><span class="f">y = <span class="rad"><span>x − h</span></span> + k</span></div>
+    <p style="color:var(--text)">نزيح بيان دالة المرجع <span dir="ltr">y = √x</span>: h وحدة <b>يميناً</b> (لو سالبة: <b>يساراً</b>)، و k وحدة <b>لأعلى</b> (لو سالبة: <b>لأسفل</b>).</p>
+  </div>
+
+  <div class="panel" style="margin:12px 0">
+    <div class="lab-head"><h3 style="margin:0">جرّب الإزاحة</h3><span class="legend"><span><i style="background:var(--ghost)"></i>دالة المرجع</span><span><i style="background:var(--curve)"></i>بعد الإزاحة</span><span><i style="background:var(--inv)"></i>نقطة البداية</span></span></div>
+    <div class="controls">
+      <div class="ctl"><label for="sh">h = <b id="hL" dir="ltr">−3</b></label><input type="range" dir="ltr" id="sh" min="-5" max="5" step="1" value="-3" aria-describedby="hL"></div>
+      <div class="ctl"><label for="sk">k = <b id="kL" dir="ltr">−4</b></label><input type="range" dir="ltr" id="sk" min="-5" max="5" step="1" value="-4" aria-describedby="kL"></div>
+    </div>
+    <svg class="stage" id="rootPlot" viewBox="0 0 400 260" role="img" aria-label="بيان دالة الجذر التربيعي بعد الإزاحة"></svg>
+    <div class="out" id="rOut" aria-live="polite"></div>
+    <p class="cap">ابدأ بمثال الكتاب: <span dir="ltr">y = √(x + 3) − 4 = √(x − (−3)) − 4</span>: ثلاث وحدات يساراً وأربع لأسفل.</p>
+  </div>
+
+  <h3 style="margin:16px 0 6px">مثال (4)</h3>
+  <div class="qbox">ارسم الدالة <span class="f" style="font-size:1.1rem">y = <span class="rad"><span>x − 4</span></span> − 2</span>، وعيّن المجال والمدى.</div>
+  <ol class="steps">
+    <li><span>أزح بيان دالة المرجع <span dir="ltr">y = √x</span>: <b>4 وحدات يميناً</b> و<b>وحدتين لأسفل</b>.</span></li>
+    <li><span>يبدأ البيان عند النقطة <span class="f">(4, −2)</span></span></li>
+    <li><span><span class="ans">المجال <span class="f">[4, ∞)</span> والمدى <span class="f">[−2, ∞)</span></span></span></li>
+  </ol>
+
+  <div class="act" data-act="gap" data-key="gap" data-ok="صح! 5 يميناً تعني ⁦h = 5⁩ فنكتب ⁦x − 5⁩ داخل الجذر، و 2 لأسفل تعني ⁦k = −2⁩ خارجه.">
+    <h3>أكمل الناقص <span class="k">نشاط</span></h3>
+    <p>حاول أن تحل (4b): أزحنا بيان <span dir="ltr">y = √x</span> خمس وحدات <b>يميناً</b> ووحدتين <b>لأسفل</b>. معادلة الناتج: <span class="f" style="font-size:1.05rem">y = <span class="gap">؟</span></span></p>
+    <div class="opts">
+      <button class="pc" dir="ltr" data-no="⁦x + 5⁩ داخل الجذر تعني ⁦h = −5⁩، يعني يساراً مو يميناً.">√(x + 5) − 2</button>
+      <button class="pc" dir="ltr" data-ok>√(x − 5) − 2</button>
+      <button class="pc" dir="ltr" data-no="بدّلت الدورين: الرقم داخل الجذر للحركة الأفقية، والرقم خارجه للرأسية.">√(x − 2) − 5</button>
+    </div>
+  </div>
+  <details class="xtra"><summary>حاول أن تحل (4a): <bdi dir="ltr">y = √(x − 2) + 1</bdi></summary>
+    <p>إزاحة وحدتين يميناً ووحدة لأعلى، فيبدأ البيان من <span dir="ltr">(2, 1)</span>. المجال <span dir="ltr">[2, ∞)</span> والمدى <span dir="ltr">[1, ∞)</span>. جرّبها في المختبر: <span dir="ltr">h = 2 , k = 1</span>.</p>
+  </details>
+
+  <h3 style="margin:18px 0 6px">مثال (5): شاشة الإعلانات</h3>
+  <p>مقاس الشاشة هو طول قطرها d بالبوصة (in)، والمعادلة <span class="f" style="font-size:1.1rem">d = <span class="rad"><span>2A</span></span></span> تعطي القطر من المساحة A.</p>
+  <div class="qbox">تاجر شاشته القديمة مساحتها <span dir="ltr">100 in²</span>، ويبي شاشة مساحتها <b>ضعف</b> القديمة. ما مقاس الشاشة اللي يشتريها؟</div>
+  <ol class="steps">
+    <li><span>المساحة الجديدة: <span class="f">A = 2 × 100 = 200 in²</span></span></li>
+    <li><span>عوّض: <span class="f">d = <span class="rad"><span>2(200)</span></span> = <span class="rad"><span>400</span></span> = 20</span></span></li>
+    <li><span><span class="ans">يشتري شاشة <b dir="ltr">20 in</b></span> (وبالحاسبة البيانية: أدخل <span dir="ltr">y = √(2x)</span> واقرأ y عند <span dir="ltr">x = 200</span>).</span></li>
+  </ol>
+  <p class="note" style="margin-top:10px"><b>حاول أن تحل (5):</b> شاشة قطرها <span dir="ltr">42 in</span>: <span dir="ltr">42 = √(2A)</span> ⇐ <span dir="ltr">2A = 42² = 1764</span> ⇐ <span dir="ltr">A = 882 in²</span>. لاحظ: رجعنا من d إلى A بخطوات معاكسة، فكرة المعكوس نفسها. ملاحظة: <span dir="ltr">1 in = 2.54 cm</span>.</p>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">7</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sd">
+  <div class="sec-head"><span class="num">8</span><h2 id="sd">في حياتك</h2></div>
+  <div class="life">
+    <div class="card"><h3>درجات الحرارة</h3><p>دالة تحوّل من سيليزي إلى فهرنهايت، ومعكوسها يرجّعك من فهرنهايت إلى سيليزي. نفس الخطوات بالعكس.</p></div>
+    <div class="card"><h3>قفل الأرقام</h3><p>تلفّ القفل يمين ثم يسار. تفتحه؟ نفس الحركات بالترتيب المعاكس. هذا هو المعكوس.</p></div>
+    <div class="card"><h3>شاشة التلفزيون</h3><p>مكتوب عليها 55 بوصة؟ هذا القطر، مو العرض. والقطر يكبر مع جذر المساحة، فضعف المساحة ما يعني ضعف المقاس.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">9</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>معكوس الدالة <span class="f" style="font-size:1.1rem">y = 3x + 6</span> هو:</p>
+      <div class="opts"><button dir="ltr">y = 3x − 6</button><button dir="ltr" data-ok>y = ⅓x − 2</button><button dir="ltr">y = −3x + 6</button></div>
+      <p class="why" hidden>الصحيح: ⁦y = ⅓x − 2⁩. نبدّل: ⁦x = 3y + 6⁩، ثم ⁦3y = x − 6⁩، ثم نقسم على 3.</p></div>
+    <div class="q"><p>النقطة <span dir="ltr">(2, 7)</span> على بيان دالة. أي نقطة على بيان معكوسها؟</p>
+      <div class="opts"><button dir="ltr">(−2, −7)</button><button dir="ltr">(2, −7)</button><button dir="ltr" data-ok>(7, 2)</button></div>
+      <p class="why" hidden>الصحيح: ⁦(7, 2)⁩. نبدّل الإحداثيين فقط: ⁦(a, b)⁩ تصير ⁦(b, a)⁩، بدون تغيير الإشارات.</p></div>
+    <div class="q"><p>مجال الدالة <span class="f" style="font-size:1.1rem">y = <span class="rad"><span>x + 1</span></span> − 3</span> هو:</p>
+      <div class="opts"><button dir="ltr" data-ok>[−1, ∞)</button><button dir="ltr">[1, ∞)</button><button dir="ltr">[−3, ∞)</button></div>
+      <p class="why" hidden>الصحيح: ⁦[−1, ∞)⁩. لأن ⁦x + 1 = x − (−1)⁩ فالبيان يبدأ من ⁦x = −1⁩. أما −3 فهي بداية المدى.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li><b>المعكوس يبدّل</b>: <span dir="ltr">(a, b)</span> على الدالة ⇐ <span dir="ltr">(b, a)</span> على معكوسها، والبيانان متماثلان حول <span dir="ltr">y = x</span>. معكوس الدالة ربما لا يكون دالة.</li>
+      <li><b>جبرياً</b>: عوّض y عن <span dir="ltr">f(x)</span>، بدّل x و y، حلّ بالنسبة إلى y. مثل <span dir="ltr">y = 5x − 4</span> ⇐ <span dir="ltr">y = ⅕x + ⅘</span>.</li>
+      <li><b>الجذر</b>: <span dir="ltr">y = √x</span> مجالها ومداها <span dir="ltr">[0, ∞)</span>، و <span dir="ltr">y = √(x − h) + k</span> تبدأ من <span dir="ltr">(h, k)</span>.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الرياضيات، الصف الحادي عشر، الوحدة الثانية، ص 69 إلى 74</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"math-u2-2-5"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+function n2(v){var r=Math.round(v*100)/100;if(Object.is(r,-0))r=0;return String(r).replace("-","−");}
+/* a square or wide plane: returns mapping functions and the grid markup */
+function plane(W,H,X0,X1,Y0,Y1,pad,step,lab){
+  var P={px:function(x){return pad+(x-X0)/(X1-X0)*(W-2*pad);},py:function(y){return H-pad-(y-Y0)/(Y1-Y0)*(H-2*pad);}},s="";
+  for(var gx=Math.ceil(X0);gx<=X1;gx++)s+='<line x1="'+P.px(gx).toFixed(1)+'" y1="'+pad+'" x2="'+P.px(gx).toFixed(1)+'" y2="'+(H-pad)+'" stroke="var(--grid)" stroke-width="1"/>';
+  for(var gy=Math.ceil(Y0);gy<=Y1;gy++)s+='<line x1="'+pad+'" y1="'+P.py(gy).toFixed(1)+'" x2="'+(W-pad)+'" y2="'+P.py(gy).toFixed(1)+'" stroke="var(--grid)" stroke-width="1"/>';
+  s+='<line x1="'+pad+'" y1="'+P.py(0)+'" x2="'+(W-pad)+'" y2="'+P.py(0)+'" stroke="var(--axis)" stroke-width="1.8"/><line x1="'+P.px(0)+'" y1="'+pad+'" x2="'+P.px(0)+'" y2="'+(H-pad)+'" stroke="var(--axis)" stroke-width="1.8"/>';
+  s+='<g font-size="11" fill="var(--axis)" direction="ltr" text-anchor="middle">';
+  (lab||[]).forEach(function(v){ if(v===0)return; s+='<text x="'+P.px(v)+'" y="'+(P.py(0)+13)+'">'+n2(v)+'</text><text x="'+(P.px(0)-10)+'" y="'+(P.py(v)+4)+'">'+n2(v)+'</text>'; });
+  s+='<text x="'+(W-pad-6)+'" y="'+(P.py(0)-6)+'" font-style="italic">x</text><text x="'+(P.px(0)+9)+'" y="'+(pad+10)+'" font-style="italic">y</text></g>';
+  P.svg=s;P.clip='<defs><clipPath id="CP'+W+H+'"><rect x="'+pad+'" y="'+pad+'" width="'+(W-2*pad)+'" height="'+(H-2*pad)+'"/></clipPath></defs>';P.cid='CP'+W+H;
+  return P;
+}
+function path(P,pts){return pts.map(function(p,i){return (i?"L":"M")+P.px(p[0]).toFixed(1)+" "+P.py(p[1]).toFixed(1);}).join("");}
+
+/* ---------- lab: the mirror y = x ---------- */
+var F=[
+  {f:function(x){return (x-4)/2;},inv:"y = 2x + 4",lin:true,a0:-4,a1:8},
+  {f:function(x){return 5*x-4;},inv:"y = ⅕x + ⅘",lin:true,a0:-0.5,a1:2},
+  {f:function(x){return x*x+3;},inv:"y = ±√(x − 3)",lin:false,a0:-2,a1:2}
+], cur=0;
+function mirror(){
+  var o=F[cur],half=$("half").checked,P=plane(360,360,-5,8,-5,8,14,1,[-4,4,8]),s=P.clip+P.svg;
+  var a0=o.a0,a1=o.a1; if(cur===2&&half)a0=0;
+  var sl=$("pt"); sl.min=a0; sl.max=a1; sl.step=cur===1?0.25:0.5; var a=Math.min(Math.max(+sl.value,a0),a1); sl.value=a;
+  var pts=[],ipts=[];for(var i=0;i<=200;i++){var x=-6+14*i/200,lo=cur===2?(half?0:-3.2):-6;if(x<lo)continue;var y=o.f(x);if(y>12)continue;pts.push([x,y]);ipts.push([y,x]);}
+  s+='<g clip-path="url(#'+P.cid+')">';
+  s+='<line x1="'+P.px(-5)+'" y1="'+P.py(-5)+'" x2="'+P.px(8)+'" y2="'+P.py(8)+'" stroke="var(--sym)" stroke-width="2.5" stroke-dasharray="7 6"/>';
+  s+='<path d="'+path(P,pts)+'" fill="none" stroke="var(--curve)" stroke-width="3.5"/>';
+  s+='<path d="'+path(P,ipts)+'" fill="none" stroke="var(--inv)" stroke-width="3.5"/>';
+  var b=o.f(a);
+  s+='<line x1="'+P.px(a).toFixed(1)+'" y1="'+P.py(b).toFixed(1)+'" x2="'+P.px(b).toFixed(1)+'" y2="'+P.py(a).toFixed(1)+'" stroke="var(--axis)" stroke-width="1.8" stroke-dasharray="3 4"/>';
+  s+='<circle cx="'+P.px(a).toFixed(1)+'" cy="'+P.py(b).toFixed(1)+'" r="7" fill="var(--curve)" stroke="var(--card)" stroke-width="2"/>';
+  s+='<circle cx="'+P.px(b).toFixed(1)+'" cy="'+P.py(a).toFixed(1)+'" r="7" fill="var(--inv)" stroke="var(--card)" stroke-width="2"/></g>';
+  $("mirror").innerHTML=s;
+  $("ptL").textContent="a = "+n2(a);
+  var I="⁦",O="⁩",vis=b<=8&&b>=-5,m=$("mMsg");
+  var t="على الدالة "+I+"("+n2(a)+", "+n2(b)+")"+O+" ⇐ على المعكوس "+I+"("+n2(b)+", "+n2(a)+")"+O+"."+(vis?"":" (النقطة خارج حدود الرسم، حرّك أقل)");
+  if(cur===2&&!half)t+=" المعكوس "+I+"y = ±√(x − 3)"+O+": لكل x أكبر من 3 قيمتان لـ y، فهو ليس دالة. جرّب خانة x ≥ 0.";
+  else if(cur===2)t+=" مع "+I+"x ≥ 0"+O+" فقط صار المعكوس "+I+"y = √(x − 3)"+O+"، وهو دالة.";
+  else t+=" معادلة المعكوس: "+I+o.inv+O+"، خطية مثل الدالة.";
+  m.textContent=t;
+  $("halfL").hidden=cur!==2;
+}
+[].forEach.call(document.querySelectorAll(".seg button"),function(b){b.addEventListener("click",function(){
+  cur=+b.dataset.f;[].forEach.call(document.querySelectorAll(".seg button"),function(x){x.setAttribute("aria-pressed",x===b?"true":"false");});
+  $("pt").value=cur===0?0:cur===1?1:1;mirror();});});
+$("pt").addEventListener("input",mirror);$("half").addEventListener("change",mirror);mirror();
+
+/* ---------- arrow diagram r and r^-1 ---------- */
+function arrows(){
+  var s="",L=[-2,-1,1,2],R=[1,4],pairs=[[-2,4],[-1,1],[1,1],[2,4]];
+  function ly(i){return 42+i*32;} function ry(j){return 74+j*48;}
+  function oval(x,y,h){return '<rect x="'+(x-22)+'" y="'+y+'" width="44" height="'+h+'" rx="22" fill="var(--card)" stroke="var(--axis)" stroke-width="1.5"/>';}
+  function txt(x,y,v){return '<text x="'+x+'" y="'+(y+5)+'" text-anchor="middle" font-size="14" fill="var(--text)" direction="ltr">'+n2(v)+'</text>';}
+  function arrow(x1,y1,x2,y2,col){var dx=x2-x1,dy=y2-y1,l=Math.sqrt(dx*dx+dy*dy),ux=dx/l,uy=dy/l,bx=x2-ux*9,by=y2-uy*9;
+    return '<line x1="'+x1+'" y1="'+y1+'" x2="'+bx.toFixed(1)+'" y2="'+by.toFixed(1)+'" stroke="'+col+'" stroke-width="2"/><path d="M'+x2+' '+y2+'L'+(bx-uy*4.5).toFixed(1)+' '+(by+ux*4.5).toFixed(1)+'L'+(bx+uy*4.5).toFixed(1)+' '+(by-ux*4.5).toFixed(1)+'z" fill="'+col+'"/>';}
+  /* r: {-2,-1,1,2} -> {1,4} on the left half */
+  var A=34,B=124,C=196,D=286;
+  s+=oval(A,24,136)+oval(B,48,88)+oval(C,48,88)+oval(D,24,136);
+  pairs.forEach(function(p){var i=L.indexOf(p[0]),j=R.indexOf(p[1]);
+    s+=arrow(A+16,ly(i),B-17,ry(j),"var(--curve)");
+    s+=arrow(C+16,ry(j),D-17,ly(i),"var(--inv)");});
+  L.forEach(function(v,i){s+=txt(A,ly(i),v)+txt(D,ly(i),v);});
+  R.forEach(function(v,j){s+=txt(B,ry(j),v)+txt(C,ry(j),v);});
+  s+='<g font-size="15" font-weight="700" font-style="italic" direction="ltr" text-anchor="middle"><text x="'+((A+B)/2)+'" y="16" fill="var(--curve)">r</text><text x="'+((C+D)/2)+'" y="16" fill="var(--inv)">r⁻¹</text></g>';
+  $("arrows").innerHTML=s;
+}
+arrows();
+
+/* ---------- S and its inverse ---------- */
+function sPlot(){
+  var P=plane(300,300,-2,5,-2,5,14,1,[-1,1,2,3,4]),s=P.svg;
+  s+='<line x1="'+P.px(-2)+'" y1="'+P.py(-2)+'" x2="'+P.px(5)+'" y2="'+P.py(5)+'" stroke="var(--sym)" stroke-width="2.5" stroke-dasharray="7 6"/>';
+  var S=[[1,-1],[2,0],[3,1],[4,1]];
+  S.forEach(function(p){s+='<line x1="'+P.px(p[0])+'" y1="'+P.py(p[1])+'" x2="'+P.px(p[1])+'" y2="'+P.py(p[0])+'" stroke="var(--axis)" stroke-width="1.3" stroke-dasharray="3 4"/>';});
+  S.forEach(function(p){s+='<circle cx="'+P.px(p[0])+'" cy="'+P.py(p[1])+'" r="6" fill="var(--curve)"/><circle cx="'+P.px(p[1])+'" cy="'+P.py(p[0])+'" r="6" fill="var(--inv)"/>';});
+  s+='<g font-size="12" font-weight="700" direction="ltr"><text x="'+(P.px(3.6))+'" y="'+(P.py(-1.2))+'" fill="var(--curve)" text-anchor="middle">S</text><text x="'+(P.px(-1.2))+'" y="'+(P.py(4.3))+'" fill="var(--inv)" text-anchor="middle">S⁻¹</text></g>';
+  $("sPlot").innerHTML=s;
+}
+sPlot();
+
+/* ---------- square root shifts ---------- */
+function root(){
+  var h=+$("sh").value,k=+$("sk").value,P=plane(400,260,-6,10,-6,6,14,1,[-5,5]),s=P.clip+P.svg;
+  var base=[],sh=[];for(var i=0;i<=200;i++){var u=16*i/200*i/200;base.push([u,Math.sqrt(u)]);sh.push([u+h,Math.sqrt(u)+k]);}
+  s+='<g clip-path="url(#'+P.cid+')"><path d="'+path(P,base)+'" fill="none" stroke="var(--ghost)" stroke-width="3"/>';
+  s+='<path d="'+path(P,sh)+'" fill="none" stroke="var(--curve)" stroke-width="3.5"/>';
+  s+='<circle cx="'+P.px(h).toFixed(1)+'" cy="'+P.py(k).toFixed(1)+'" r="6.5" fill="var(--inv)" stroke="var(--card)" stroke-width="2"/></g>';
+  $("rootPlot").innerHTML=s;
+  $("hL").textContent=n2(h);$("kL").textContent=n2(k);
+  var inside=h===0?"x":"x "+(h>0?"− "+h:"+ "+(-h)),eq="y = √("+inside+")"+(k===0?"":(k>0?" + "+k:" − "+(-k)));
+  var mv=[];if(h)mv.push(Math.abs(h)+" "+(h>0?"يميناً":"يساراً"));if(k)mv.push(Math.abs(k)+" "+(k>0?"لأعلى":"لأسفل"));
+  $("rOut").innerHTML='<span class="f" dir="ltr">'+eq+'</span><small>'+(mv.length?"إزاحة "+mv.join(" و "):"دالة المرجع نفسها")+' · تبدأ من <bdi dir="ltr">('+n2(h)+', '+n2(k)+')</bdi> · المجال <bdi dir="ltr">['+n2(h)+', ∞)</bdi> · المدى <bdi dir="ltr">['+n2(k)+', ∞)</bdi></small>';
+}
+$("sh").addEventListener("input",root);$("sk").addEventListener("input",root);root();
+window.addEventListener("masar-theme",function(){mirror();arrows();sPlot();root();});
+})();
+</script>
+</body>
+</html>
