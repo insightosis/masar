@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="geology">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الخواص الفيزيائية للمعادن · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+span[dir=ltr],bdi[dir=ltr]{unicode-bidi:isolate}
+body{--plate:#fff4ea;--rock:#b9a7c9;--rockS:#7d6a92;--scr:#e0485f;--okc:#1f9e6e;--mut:#d9d2ea;--paper:#ffffff;--ink2:#3d3561;--uvbg:#fff4ea;--glowR:#ff5a6e;--glowG:#3fe08a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--plate:#2a2238;--rock:#6d5c86;--rockS:#c9b6e6;--scr:#ff7d8f;--okc:#5fd3a2;--mut:#4a4266;--paper:#f3eefb;--ink2:#2a2238;--uvbg:#1b1530}}
+:root[data-theme="dark"] body{--plate:#2a2238;--rock:#6d5c86;--rockS:#c9b6e6;--scr:#ff7d8f;--okc:#5fd3a2;--mut:#4a4266;--paper:#f3eefb;--ink2:#2a2238;--uvbg:#1b1530}
+.fx{direction:ltr;unicode-bidi:isolate;font-family:"Noto Serif",Georgia,serif}
+.fx sub,.fx sup{font-size:.68em}
+.stage{display:block;width:100%;height:auto;border-radius:22px;background:var(--plate);box-shadow:var(--press)}
+.pick{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.pick .tg{font-size:14px}
+.labout{margin-top:10px;padding:10px 14px;border-radius:18px;background:var(--card);box-shadow:var(--clay-sm);font-size:15px;min-height:2.4em}
+.labout.ok{background:var(--p-mint)}.labout.no{background:var(--p-pink)}
+.guess{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:8px}
+.guess button{padding:8px 0;border-radius:14px;border:0;background:var(--card);box-shadow:var(--clay-sm);font:700 16px var(--body);color:var(--text);cursor:pointer}
+.guess button.good{background:var(--p-mint)}.guess button.bad{background:var(--p-pink)}
+.lbl{font-weight:700;font-size:14px;margin:12px 0 0}
+.tbl2{width:100%;border-collapse:separate;border-spacing:0 6px;font-size:14.5px;margin-top:8px}
+.tbl2 td,.tbl2 th{padding:7px 10px;background:var(--card);text-align:center}
+.tbl2 th{background:var(--p-sky);font-size:13.5px}
+.tbl2 td:first-child,.tbl2 th:first-child{border-radius:0 14px 14px 0}
+.tbl2 td:last-child,.tbl2 th:last-child{border-radius:14px 0 0 14px}
+.props{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:12px}
+.props .card h3{margin:0 0 4px;font-size:1.05rem}
+.props .card p{margin:0;font-size:14.5px}
+.props .en{font-size:12.5px;color:var(--muted);font-weight:400}
+.lchips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.lchips span{font-size:13.5px;padding:4px 10px;border-radius:12px;background:var(--card);box-shadow:var(--clay-sm)}
+.lchips b{color:var(--ink)}
+.clv{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:10px}
+.clv .card{text-align:center;padding:10px}
+.clv svg{width:100%;max-width:120px;height:auto;display:block;margin:0 auto 4px}
+.clv h3{font-size:.98rem;margin:2px 0}
+.clv p{margin:0;font-size:13.5px;color:var(--muted)}
+.help{display:inline-block;font-size:12px;font-weight:700;padding:1px 9px;border-radius:9px;background:var(--p-sky);color:var(--text);margin-inline-end:6px}
+.xtra{margin-top:12px;padding:10px 16px;border-radius:20px;background:var(--card);box-shadow:var(--clay-sm)}
+.xtra summary{cursor:pointer;font-weight:700;color:var(--ink)}
+.act[data-act=gap] .opts{direction:rtl}
+.act[data-act=gap] .pc{font-family:var(--body);font-style:normal;font-size:1rem}
+</style>
+</head>
+<body style="--sc:#e2653f">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الجيولوجيا</span><span class="chip">الدرس 1-2 · ص 41 إلى 48</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الثانية: مواد الأرض (1) · الفصل الأول: المعادن</p>
+  <h1 id="t">الخواص الفيزيائية للمعادن</h1>
+  <p>لقيت حجراً شفافاً يلمع مثل الزجاج. <mark>ماس أم كوارتز؟</mark> اللون ما يكفي، والشكل ما يكفي. الجيولوجي يحمل في جيبه <b>ظفره وعملة وسكين وقطعة زجاج</b>، وبحكّة بسيطة يعرف الجواب. جرّب بنفسك في المختبر تحت.</p>
+</section>
+
+<section class="panel" id="lab-sec" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">مختبر الصلادة: من يخدش من؟</h2><span class="legend">عيّنة مجهولة من مقياس موهس</span></div>
+  <p style="margin:6px 0 0;font-size:14.5px">اختر أداة واحكّ بها العيّنة. <b>الأصلب يخدش الألين.</b> كل حكّة تشطب جزءاً من المقياس، وأنت خمّن الرقم.</p>
+  <svg class="stage" id="mohsSvg" viewBox="0 0 400 150" role="img" aria-label="مقياس موهس من 1 إلى 10 مع المدى المحتمل لصلادة العينة" style="margin-top:10px"></svg>
+  <p class="lbl">الأدوات</p>
+  <div class="pick" id="tools" role="group" aria-label="أدوات الحك"></div>
+  <p class="labout" id="labOut" aria-live="polite">اختر أداة.</p>
+  <p class="lbl">صلادة العيّنة كم؟</p>
+  <div class="guess" id="guess" role="group" aria-label="خمّن رقم الصلادة"></div>
+  <div class="row" style="margin-top:10px"><button class="lite" id="newS" type="button">عيّنة جديدة</button></div>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">مصطلحات الدرس</h2></div>
+  <div class="syms">
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub"><span>▤</span></span><div><h3>المخدش <span class="en">Streak</span></h3><p>لون <b>مسحوق</b> المعدن على لوح خزف غير مصقول.</p><span class="hook">اللون يكذب، المسحوق يصدق.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span>✦</span></span><div><h3>اللمعان (البريق) <span class="en">Luster</span></h3><p>شدّة الضوء المنعكس عن سطح المعدن ونوعيته.</p><span class="hook">كيف "يلمع"، مو بأي لون.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span>◫</span></span><div><h3>الشفافية <span class="en">Transparency</span></h3><p>قدرة المعدن على إنفاذ الضوء: معتم، نصف شفاف، شفاف.</p><span class="hook">مثل الباب، والستارة، والنافذة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub"><span>☀</span></span><div><h3>التضوّء <span class="en">Luminescence</span></h3><p>يحوّل المعدن طاقة (حرارة، فوق بنفسجية، سينية) إلى <b>ضوء باهر</b> يختلف عن لونه.</p><span class="hook">المعدن "يرد" الطاقة ضوءاً.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub"><span>⚡</span></span><div><h3>التفلّر <span class="en">Fluorescence</span></h3><p>التضوّء <b>أثناء</b> التعرّض للمؤثر فقط.</p><span class="hook">أطفئ المصباح، ينطفئ.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub"><span>✧</span></span><div><h3>التفسفر <span class="en">Phosphorescence</span></h3><p>التضوّء <b>يستمر بعد زوال</b> المؤثر.</p><span class="hook">مثل لعبة تضيء في الظلام.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span>⚒</span></span><div><h3>المتانة <span class="en">Tenacity</span></h3><p>مقاومة المعدن <b>للكسر أو التشوّه</b>: هشّ، يُطرق، يُقطع، مرن.</p><span class="hook">"اطرقه بمطرقة، وش يصير؟"</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub"><span>◆</span></span><div><h3>الصلادة <span class="en">Hardness</span></h3><p>مقاومة المعدن <b>للتآكل أو الخدش</b>، وتُقاس بمقياس موهس <span dir="ltr">(Mohs Scale)</span> من 1 إلى 10.</p><span class="hook">"احكّه، يخدش أو ينخدش؟"</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span>▱</span></span><div><h3>الانفصام (التشقّق) <span class="en">Cleavage</span></h3><p>تشقّق المعدن إلى <b>مستويات محدّدة منتظمة</b> (مستويات الضعف).</p><span class="hook">مثل كتاب يفتح على صفحاته.</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub"><span>◠</span></span><div><h3>المَكْسِر <span class="en">Fracture</span></h3><p>شكل السطح الناتج عن الكسر <b>في غير</b> أسطح الانفصام.</p><span class="hook">الكسر العشوائي، مو على خط.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub"><span>⚖</span></span><div><h3>الوزن النوعي <span class="en">Specific Gravity</span></h3><p>وزن المعدن ÷ وزن حجم مساوٍ له من الماء عند <span dir="ltr">4 °C</span>. عدد <b>بلا وحدة</b>.</p><span class="hook">كم مرة أثقل من الماء؟</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub"><span>⧉</span></span><div><h3>الانكسار المزدوج <span class="en">Double Refraction</span></h3><p>الكالسيت الشفاف فوق كلام مطبوع يُظهر <b>الحروف مرّتين</b>.</p><span class="hook">نظّارة تشوف فيها دبل.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">ليش نحتاج الخواص الفيزيائية؟</h2></div>
+  <p><b>الألماس والجرافيت</b> (رصاص القلم) الاثنان من عنصر واحد: الكربون <span class="fx">C</span>. نفس التركيب الكيميائي، لكن واحد أقسى شيء في الطبيعة والثاني يترك أثراً على الورق! يعني <b>التركيب الكيميائي وحده ما يكفي</b> لتعرف المعدن: لازم تدرس معه <b>الخواص الفيزيائية والبلّورية</b>.</p>
+  <table class="tbl2" aria-label="معادن لها التركيب الكيميائي نفسه">
+    <tr><th>التركيب الكيميائي</th><th>معادن مختلفة بنفس التركيب</th></tr>
+    <tr><td><span class="fx">CaCO<sub>3</sub></span></td><td>الكالسيت، الأراجونيت</td></tr>
+    <tr><td><span class="fx">FeS<sub>2</sub></span></td><td>البيريت، الماركزيت</td></tr>
+    <tr><td><span class="fx">SiO<sub>2</sub></span></td><td>الكوارتز، الكريستوباليت، التريديميت</td></tr>
+    <tr><td><span class="fx">KAlSi<sub>3</sub>O<sub>8</sub></span></td><td>الأرثوكليز، الميكروكلين، السانيدين</td></tr>
+  </table>
+  <p style="margin-top:10px">والخبر الحلو: كل عيّنات المعدن الواحد تشترك في خواصّها. كل قطع <b>الفلوريت</b> لها نفس الصلادة ونفس الكثافة وتتكسّر بنفس النمط. والخواص الفيزيائية نعرفها <b>بالملاحظة أو باختبار بسيط</b>، وهي ثلاث مجموعات:</p>
+  <div class="grid2" style="margin-top:8px">
+    <div class="box sky"><h3>1. الخواص البصرية</h3><p>اللون، المخدش، اللمعان، الشفافية، التضوّء.</p></div>
+    <div class="box peach"><h3>2. الخواص التماسكية</h3><p>المتانة، الصلادة، الانفصام، المَكْسِر، الكثافة والوزن النوعي.</p></div>
+  </div>
+  <div class="box butter" style="margin-top:10px"><h3>3. خواص أخرى</h3><p>الطعم، الملمس، الرائحة، المغناطيسية، الانكسار المزدوج، الخواص الكهربائية.</p></div>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">الخواص البصرية</h2></div>
+
+  <h3>اللون Color: أوضح شيء، وأقل شيء موثوق</h3>
+  <p>اللون يميّز <b>قليلاً</b> من المعادن فقط، مثل <b>الكبريت</b> (أصفر) و<b>المالاكيت</b> (أخضر). أما الأغلب فشوائب بسيطة تغيّر لونه. خذ <b>الكوارتز</b>: نفس المعدن، لكن</p>
+  <div class="grid2">
+    <div class="box lav"><h3>الكوارتز البنفسجي <span class="en">Amethyst</span></h3><p>فيه شوائب <b>أكاسيد المنجنيز</b>.</p></div>
+    <div class="box pink"><h3>الكوارتز الوردي <span class="en">Rose Quartz</span></h3><p>فيه شوائب <b>أكاسيد الحديد والتيتانيوم</b>.</p></div>
+  </div>
+  <p class="note" style="margin-top:8px">لذلك تحديد المعدن باللون <b>غير دقيق</b> عادةً.</p>
+
+  <h3 style="margin-top:14px">المخدش Streak: لون المسحوق</h3>
+  <p>احكّ المعدن على قطعة <b>خزف صيني غير مصقول</b> (لوح المخدش <span dir="ltr">Streak Plate</span>)، وشوف لون الغبار اللي يتركه. لون المعدن الواحد <b>يتنوّع</b> من عيّنة لأخرى، لكن المخدش <b>لا يتنوّع</b>.</p>
+  <ul>
+    <li>المعادن ذات <b>البريق الفلزي</b> مخدشها <b>كثيف وداكن</b>، وذات <b>البريق اللافلزي</b> مخدشها <b>باهت</b>.</li>
+    <li>إذا كان المعدن <b>أصلب من لوح المخدش</b> وما ترك أثراً، <b>نطحنه طحناً كاملاً</b> ونشوف لون مسحوقه.</li>
+  </ul>
+
+  <h3 style="margin-top:14px">اللمعان (البريق) Luster</h3>
+  <p>مو لون الضوء، بل <b>شدّته ونوعيته</b> وهو ينعكس عن السطح.</p>
+  <div class="props">
+    <div class="card"><h3>فلزي <span class="en">Metallic</span></h3><p>مظهر الفلزات مهما كان اللون، مثل <b>الجالينا</b>.</p></div>
+    <div class="card"><h3>شبه فلزي <span class="en">Submetallic</span></h3><p>معادن فلزية مثل <b>الهيماتيت</b> تكوّن طبقة خارجية باهتة عند تعرّضها للهواء، فتفقد لمعان الأسطح حديثة الكسر.</p></div>
+    <div class="card"><h3>لافلزي <span class="en">Non Metallic</span></h3><p>لمعظم المعادن. أنواعه:</p>
+      <div class="lchips"><span><b>زجاجي</b> كوارتز، كالسيت</span><span><b>ألماسي</b> ألماس</span><span><b>أرضي (ترابي)</b> كاولينيت</span><span><b>لؤلؤي</b> تلك، ميكا</span><span><b>حريري</b> جبس ليفي</span><span><b>صمغي (راتنجي)</b> كبريت</span></div></div>
+  </div>
+
+  <h3 style="margin-top:14px">الشفافية Transparency والانكسار المزدوج</h3>
+  <p>حط المعدن فوق كلمة مكتوبة، وشوف كم ضوء يعدّي:</p>
+  <div class="panel" style="margin:8px 0 0">
+    <svg class="stage" id="winSvg" viewBox="0 0 400 170" role="img" aria-label="كلمة مكتوبة يغطيها معدن بدرجات شفافية مختلفة"></svg>
+    <div class="pick" id="winPick" role="group" aria-label="اختر نوع المعدن"></div>
+    <p class="msg" id="winMsg" aria-live="polite"></p>
+  </div>
+
+  <h3 style="margin-top:14px">التضوّء Luminescence</h3>
+  <p>بعض المعادن تأخذ طاقة (حرارة، أشعة فوق بنفسجية، أشعة سينية) وترجّعها <b>ضوءاً باهراً ساطعاً</b> بلون غير لونها الأصلي. شغّل المصباح وطفّه:</p>
+  <div class="panel" style="margin:8px 0 0">
+    <svg class="stage" id="uvSvg" viewBox="0 0 400 160" role="img" aria-label="معدنا الكالسيت والويليميت تحت مصباح الأشعة فوق البنفسجية"></svg>
+    <div class="pick" id="uvPick" role="group" aria-label="المصباح"></div>
+    <p class="msg" id="uvMsg" aria-live="polite"></p>
+  </div>
+  <p style="margin-top:8px"><b>التفلّر</b> <span dir="ltr">Fluorescence</span>: الضوء يظهر <b>أثناء</b> التعرّض للمؤثر. <b>التفسفر</b> <span dir="ltr">Phosphorescence</span>: الضوء <b>يستمر بعد زواله</b>، وانتبهوا له لمّا معادن تعرّضت للشمس ظلّت تضيء بعد نقلها لغرفة مظلمة. ومصابيح الأشعة فوق البنفسجية تساعد في اكتشاف المعادن المتفلّرة داخل <b>المناجم والكهوف</b>.</p>
+
+  <div class="act" data-act="sort" data-key="sort" data-bins='["بصرية","تماسكية"]'
+       data-items='[["اللون",0,"اللون نشوفه بعيوننا من الضوء: خاصية بصرية (لكنه غير دقيق)."],["المخدش",0,"المخدش لون المسحوق، يعني نشوفه بعيوننا: خاصية بصرية."],["اللمعان",0,"اللمعان عن الضوء المنعكس: بصرية."],["الشفافية",0,"الشفافية عن نفاذ الضوء: بصرية."],["التضوّء",0,"التضوّء ضوء يصدره المعدن: بصرية."],["الصلادة",1,"الصلادة مقاومة الخدش، تعتمد على الروابط: تماسكية."],["المتانة",1,"المتانة مقاومة الكسر أو التشوّه: تماسكية."],["الانفصام",1,"الانفصام تشقّق على مستويات الضعف: تماسكية."],["المكسر",1,"المكسر شكل سطح الكسر: تماسكية."],["الوزن النوعي",1,"في الكتاب الكثافة والوزن النوعي من الخواص التماسكية (2.5)."]]'
+       data-ok="ممتاز! البصرية: اللون والمخدش واللمعان والشفافية والتضوّء. التماسكية: المتانة والصلادة والانفصام والمكسر والكثافة والوزن النوعي.">
+    <h3>صنّف الخاصية <span class="k">نشاط</span></h3>
+    <p>بصرية (عن الضوء) أم تماسكية (عن الكسر والتشوّه)؟</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">الخواص التماسكية</h2></div>
+  <p>سهولة تكسّر المعدن أو تشوّهه تحت الإجهاد مرتبطة <b>بنوع الروابط الكيميائية</b> اللي تمسك ذرّاته أو أيوناته.</p>
+
+  <h3>المتانة Tenacity: وش يصير لو طرقته؟</h3>
+  <div class="props">
+    <div class="card"><h3>هشّ</h3><p>روابط <b>أيونية</b> مثل <b>الفلوريت</b> و<b>الهاليت</b>: يتكسّر لقطع صغيرة عند الطرق.</p></div>
+    <div class="card"><h3>يُطرق</h3><p>روابط <b>فلزية</b> مثل <b>النحاس الخام</b>: ليّن، يتحوّل لأشكال مختلفة.</p></div>
+    <div class="card"><h3>قابل للقطع</h3><p>مثل <b>الجبس</b> و<b>التلك</b>: يُقطع رقائق دقيقة.</p></div>
+    <div class="card"><h3>مرن</h3><p>مثل <b>الميكا</b>: ينثني ويرجع لشكله الأصلي بعد إزالة الضغط.</p></div>
+  </div>
+
+  <h3 style="margin-top:14px">الصلادة Hardness ومقياس موهس</h3>
+  <p>نحكّ المعدن المجهول بمعدن معروف الصلادة، أو العكس. <b>مقياس موهس</b> سلّم <b>نسبي</b> من <b>عشرة معادن</b>: 1 الأقل صلادة و10 الأكثر. ومعه أجسام شائعة تقدر تستخدمها:</p>
+  <table class="tbl2" aria-label="مقياس موهس للصلادة النسبية">
+    <tr><th>الرقم</th><th>المعدن</th><th>جسم شائع</th></tr>
+    <tr><td>10</td><td>ماس</td><td></td></tr>
+    <tr><td>9</td><td>كوراندوم</td><td></td></tr>
+    <tr><td>8</td><td>توباز</td><td></td></tr>
+    <tr><td>7</td><td>كوارتز</td><td>لوح المخدش (6.5)</td></tr>
+    <tr><td>6</td><td>أرثوكليز</td><td>قطعة زجاج (5.5)</td></tr>
+    <tr><td>5</td><td>أباتيت</td><td>نصل سكين (4.5)</td></tr>
+    <tr><td>4</td><td>فلوريت</td><td>عملة نحاسية (3.5)</td></tr>
+    <tr><td>3</td><td>كالسيت</td><td>ظفر الإصبع (2.5)</td></tr>
+    <tr><td>2</td><td>جبس</td><td></td></tr>
+    <tr><td>1</td><td>تلك</td><td></td></tr>
+  </table>
+  <p style="margin-top:8px">الجسم الشائع يقع <b>بين</b> رقمين: الظفر (2.5) يخدش الجبس لكن ما يخدش الكالسيت. وتعتمد الصلادة على <b>نوع الروابط الكيميائية</b> ووجود مجموعة <b>الهيدروكسيل</b> <span class="fx">(OH)</span> أو <b>الماء</b> <span class="fx">(H<sub>2</sub>O)</span> في تركيب المعدن.</p>
+  <p class="tip"><b>الصلادة غير المتانة:</b> <b>الألماس</b> أصلب المعادن، لكنه <b>متوسط المتانة</b> وقابل للكسر. و<b>اليشب الأخضر</b> <span dir="ltr">(Jade)</span> متوسط الصلادة لكنه <b>عالي المتانة</b> وما ينكسر بسهولة.</p>
+
+  <div class="act" data-act="gap" data-key="gap" data-ok="صح! السكين (4.5) خدشها، فهي أقل من 4.5. وهي خدشت العملة (3.5)، فهي أكبر من 3.5. الرقم الوحيد بينهما 4: الفلوريت.">
+    <h3>أكمل الناقص <span class="k">نشاط</span></h3>
+    <p>عيّنة من مقياس موهس: <b>نصل السكين يخدشها</b>، وهي <b>تخدش العملة النحاسية</b>. هذه العيّنة هي <span class="gap"></span>.</p>
+    <div class="opts">
+      <button class="pc" data-no="الكالسيت صلادته 3، أقل من العملة (3.5)، فما يقدر يخدشها.">الكالسيت (3)</button>
+      <button class="pc" data-ok>الفلوريت (4)</button>
+      <button class="pc" data-no="الأباتيت صلادته 5، أصلب من السكين (4.5)، فالسكين ما تخدشه.">الأباتيت (5)</button>
+    </div>
+  </div>
+
+  <h3 style="margin-top:14px">الانفصام (التشقّق) Cleavage</h3>
+  <p>بعض المعادن إذا ضغطتها تنشقّ على <b>أسطح مستوية منتظمة</b> اسمها <b>مستويات الانفصام</b> أو <b>مستويات الضعف</b> <span dir="ltr">(Planes of weakness)</span>، مثل الميكا اللي تنفصل صفائح رفيعة. والقاعدة: <b>الانفصام يتناسب عكسياً مع قوّة الرابطة</b>. رابطة قوية = انفصام أقل. لذلك <b>الكوارتز ما له مستويات انفصام</b>.</p>
+  <div class="clv" id="clv"></div>
+</section>
+
+<section class="sec" aria-labelledby="s5">
+  <div class="sec-head"><span class="num">5</span><h2 id="s5">المَكْسِر والكثافة والوزن النوعي</h2></div>
+  <h3>المَكْسِر Fracture</h3>
+  <p>لو انكسر المعدن <b>في غير</b> اتجاه الانفصام، يطلع سطح الكسر بأشكال:</p>
+  <div class="props">
+    <div class="card"><h3>محاري</h3><p>أسطح مقوّسة ناعمة مثل باطن الصدفة، مثل <b>الكوارتز</b>.</p></div>
+    <div class="card"><h3>غير مستوٍ</h3><p>سطح خشن، مثل <b>البيريت</b>.</p></div>
+    <div class="card"><h3>ليفي</h3><p>ألياف مثل الخيوط، مثل <b>الأسبستوس</b>.</p></div>
+  </div>
+
+  <h3 style="margin-top:14px">الكثافة Density والوزن النوعي Specific Gravity</h3>
+  <p><b>الكثافة</b> كتلة وحدة الحجم، وعادةً بوحدة <span dir="ltr">g/cm³</span>. وعلماء المعادن يستخدمون مقياساً مرتبطاً بها: <b>الوزن النوعي</b>.</p>
+  <div class="law" style="margin-top:6px"><p style="margin:0;text-align:center">الوزن النوعي = وزن المعدن ÷ وزن حجم مساوٍ له من الماء عند <span dir="ltr">4 °C</span></p></div>
+  <p>وهو <b>عدد بلا وحدات</b>. تخيّل كأس ماء وقطعة معدن بنفس الحجم بالضبط: الوزن النوعي يقول كم مرة المعدن أثقل.</p>
+  <ul>
+    <li>معظم المعادن الشائعة المكوّنة للصخور: بين <b>2 و 3</b>. <b>الكوارتز 2.65</b>.</li>
+    <li><b>البيريت والنحاس والماجنيتيت</b>: أكثر من <b>ضعف</b> الكوارتز.</li>
+    <li><b>الجالينا</b> (من مصادر الرصاص): حوالي <b>7.5</b>.</li>
+  </ul>
+  <div class="act" data-act="type" data-key="type" data-answer="2.65" data-tol="0.01"
+       data-ok="صح! 53 ÷ 20 = 2.65 بلا وحدات. وهذا الوزن النوعي للكوارتز."
+       data-hint="اقسم وزن العيّنة على وزن الماء اللي له نفس حجمها."
+       data-no="ليست هذه. الوزن النوعي = وزن المعدن ÷ وزن حجم مساوٍ من الماء.">
+    <h3>اكتب الجواب <span class="k">نشاط</span></h3>
+    <p>عيّنة وزنها <span dir="ltr">53 g</span>، ووزن حجم مساوٍ لها من الماء عند <span dir="ltr">4 °C</span> هو <span dir="ltr">20 g</span>. كم وزنها النوعي؟</p>
+  </div>
+  <details class="xtra"><summary>تكامل العلوم: الأوليفين والماجنيتيت</summary>
+    <p style="margin:8px 0 0">نسبة العناصر تؤثّر في الوزن النوعي. الأوليفين اللي فيه حديد وزنه النوعي <b>أقل</b> من الماجنيتيت (خام الحديد)، لأن السيليكون (من مكوّنات الأوليفين) وزنه الذرّي أقل من الحديد الموجود بنسبة كبيرة في الماجنيتيت. فكّر: هل الأوليفين اللي فيه حديد وزنه النوعي يساوي الأوليفين اللي فيه مغنيسيوم؟ <span class="help">مساعدة</span>المغنيسيوم أخفّ من الحديد، فالجواب لا: الأوليفين الحديدي أثقل.</p>
+  </details>
+</section>
+
+<section class="sec" aria-labelledby="s6">
+  <div class="sec-head"><span class="num">6</span><h2 id="s6">خواص أخرى للمعادن</h2></div>
+  <p>بعض المعادن لها "بصمة" خاصة تعرفها فيها بسرعة:</p>
+  <div class="props">
+    <div class="card"><h3>الطعم</h3><p><b>الهاليت</b>: تذوّقه، مالح.</p></div>
+    <div class="card"><h3>الملمس</h3><p><b>التلك</b> صابوني، و<b>الجرافيت</b> دهني.</p></div>
+    <div class="card"><h3>الرائحة عند الحك</h3><p>رائحة <b>الثوم</b> من <b>الأرسينوبيريت</b>، ورائحة <b>الكبريت</b> من <b>البيريت</b>.</p></div>
+    <div class="card"><h3>المغناطيسية</h3><p><b>الماجنيتيت</b>: محتواه الحديدي عالٍ فيتأثّر بالمغناطيس.</p></div>
+    <div class="card"><h3>الانكسار المزدوج</h3><p><b>الكالسيت</b> الشفاف فوق كلام مطبوع: الحروف تظهر مرّتين.</p></div>
+    <div class="card"><h3>خواص كهربائية</h3><p><b>الكوارتز</b>: شحنات عند <b>الضغط</b> (الساعات). <b>التورمالين</b>: شحنات عند <b>الحرارة</b> (قياس الحرارة المرتفعة جداً).</p></div>
+  </div>
+  <p class="note" style="margin-top:10px"><b>الجيولوجيا والصناعة:</b> بلّورة الكوارتز في مجال كهربائي تتذبذب بتردّد محدّد منتظم ودقيق. هذه <b>البيزوكهربائية</b>، وبها صنعوا ساعات دقيقة جداً.</p>
+</section>
+
+<section class="sec" aria-labelledby="s7">
+  <div class="sec-head"><span class="num">7</span><h2 id="s7">مثال محلول: ماس أم كوارتز؟</h2></div>
+  <div class="qbox">من مراجعة الدرس: لقيت معدناً <b>زجاجي المظهر</b> وتتمنّى يكون <b>ماساً</b>. ما الاختبار البسيط اللي يساعدك تحدّد نوعه؟ وليش ما نعتمد على اللون؟</div>
+  <div class="row"><button class="lite" id="hideSol" type="button" aria-pressed="false">أخفِ الحل وجرّب أولاً</button></div>
+  <ol class="steps" id="steps">
+    <li><span><b>اللون ما يفيد</b>: شوائب طفيفة تغيّر لون المعدن، والكوارتز النقي والماس الاثنان ممكن يكونون شفافين بلا لون.</span></li>
+    <li><span><b>اختبار الصلادة</b>: الماس رقم <b>10</b> على مقياس موهس، أصلب المعادن، والكوارتز <b>7</b>.</span></li>
+    <li><span>احكّ العيّنة بمعدن <b>الكوراندوم (9)</b> أو التوباز (8). لو <b>ما انخدشت</b> وهي خدشت الكوراندوم، فصلادتها أكبر من 9.</span></li>
+    <li><span><span class="ans">صلادة أكبر من 9 = ماس. ولو خدشها التوباز (8) فهي مو ماس، وغالباً كوارتز (7).</span></span></li>
+  </ol>
+  <p class="note">ولو خدشت العيّنة الزجاج (5.5) ولوح المخدش (6.5) فهذا ما يكفي وحده: الكوارتز (7) والماس (10) الاثنان يخدشونهما.</p>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">8</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sd">
+  <div class="sec-head"><span class="num">9</span><h2 id="sd">في حياتك</h2></div>
+  <div class="life">
+    <div class="card"><h3>بودرة التلك</h3><p>ليش ناعمة وصابونية؟ لأن <b>التلك</b> أليَن معدن (رقم 1) وملمسه صابوني.</p></div>
+    <div class="card"><h3>ساعة الكوارتز</h3><p>بلّورة كوارتز تهتزّ في مجال كهربائي بتردّد ثابت: البيزوكهربائية.</p></div>
+    <div class="card"><h3>بلاط البيت</h3><p>البلاط الخزفي غير المصقول من الخلف يصلح <b>لوح مخدش</b>: جرّب بقطعة حجر.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">10</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>لماذا يصعب تحديد معدن ما من خلال خاصية اللون؟</p>
+      <div class="opts"><button>لأن كل المعادن لها نفس اللون</button><button data-ok>لأن شوائب طفيفة تعطي المعدن الواحد ألواناً متعدّدة</button><button>لأن اللون يتغيّر عند طحن المعدن فقط</button></div>
+      <p class="why" hidden>الصحيح: الشوائب تغيّر اللون، مثل الكوارتز البنفسجي (أكاسيد المنجنيز) والوردي (أكاسيد الحديد والتيتانيوم). لذلك نستخدم المخدش لأنه ثابت.</p></div>
+    <div class="q"><p>معدن أضاء تحت مصباح الأشعة فوق البنفسجية، وظلّ يضيء بعد ما أطفأنا المصباح. هذه العملية اسمها:</p>
+      <div class="opts"><button>التفلّر</button><button>الانكسار المزدوج</button><button data-ok>التفسفر</button></div>
+      <p class="why" hidden>الصحيح: التفسفر، لأن الضوء استمرّ بعد زوال المؤثر. التفلّر يكون أثناء التعرّض فقط.</p></div>
+    <div class="q"><p>لماذا لا يحتوي الكوارتز على مستويات انفصام؟</p>
+      <div class="opts"><button data-ok>بسبب قوّة تماسك جزيئاته، والانفصام يتناسب عكسياً مع قوّة الرابطة</button><button>لأنه معدن ليّن صلادته 1</button><button>لأنه غير متبلّر</button></div>
+      <p class="why" hidden>الصحيح: كلما كانت الرابطة أقوى قلّ الانفصام. روابط الكوارتز قوية، فيتكسّر بمكسر محاري بدل الانفصام.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li><b>البصرية</b>: اللون (غير دقيق)، المخدش (لون المسحوق، ثابت)، اللمعان (فلزي، شبه فلزي، لافلزي بأنواعه)، الشفافية، التضوّء (تفلّر أثناء المؤثر، تفسفر بعده).</li>
+      <li><b>التماسكية</b>: المتانة، الصلادة (موهس 1 تلك إلى 10 ماس)، الانفصام (عكس قوّة الرابطة)، المكسر، الكثافة والوزن النوعي (بلا وحدات، الكوارتز 2.65).</li>
+      <li><b>خواص أخرى</b>: طعم الهاليت، ملمس التلك والجرافيت، رائحة الأرسينوبيريت والبيريت، مغناطيسية الماجنيتيت، انكسار الكالسيت المزدوج، كهرباء الكوارتز والتورمالين.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الجيولوجيا، الصف الحادي عشر، الوحدة الثانية، ص 41 إلى 48</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"geo-u2-1-2"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+function T(x,y,t,o){o=o||{};return '<text x="'+x+'" y="'+y+'" font-size="'+(o.s||12)+'" font-weight="'+(o.w||700)+'" fill="'+(o.f||"var(--text)")+'" text-anchor="'+(o.a||"middle")+'"'+(o.ltr?' direction="ltr"':'')+'>'+t+'</text>';}
+
+/* ---------- lab 1: Mohs scratch test ---------- */
+var MIN=["تلك","جبس","كالسيت","فلوريت","أباتيت","أرثوكليز","كوارتز","توباز","كوراندوم","ماس"];
+var TOOLS=[["ظفر الإصبع",2.5],["عملة نحاسية",3.5],["نصل سكين",4.5],["قطعة زجاج",5.5],["لوح المخدش",6.5],["كوارتز",7],["توباز",8],["كوراندوم",9]];
+var H=0,lo=0,hi=11,done=false,last=-1;
+function newSample(){var n;do{n=1+Math.floor(Math.random()*10);}while(n===H);H=n;lo=0;hi=11;done=false;
+  $("labOut").textContent="عيّنة جديدة على الطاولة. اختر أداة.";$("labOut").className="labout";
+  [].forEach.call($("guess").children,function(b){b.className="";});[].forEach.call($("tools").children,function(b){b.setAttribute("aria-pressed","false");});drawM();}
+function drawM(){
+  var x0=24,w=35.2,h="";
+  for(var i=1;i<=10;i++){var x=x0+(i-1)*w,out=(i<=lo||i>=hi);
+    h+='<rect x="'+(x+2)+'" y="34" width="'+(w-4)+'" height="40" rx="10" fill="'+(out?"var(--mut)":"var(--p-peach)")+'" stroke="'+(done&&i===H?"var(--okc)":"none")+'" stroke-width="3"/>';
+    h+=T(x+w/2,60,i,{s:15,f:out?"var(--muted)":"var(--text)"});
+    h+=T(x+w/2,92,MIN[i-1],{s:10,w:400,f:"var(--muted)"});
+  }
+  TOOLS.slice(0,5).forEach(function(t){var x=x0+(t[1]-1)*w+w/2;h+='<line x1="'+x+'" y1="28" x2="'+x+'" y2="80" stroke="var(--sc)" stroke-width="2" stroke-dasharray="3 3"/>';});
+  h+=T(200,20,"الأرقام الرمادية: مستبعدة بعد حكّاتك",{s:12,w:400,f:"var(--muted)"});
+  var a=Math.max(lo,0),b=Math.min(hi,11),txt;
+  if(done) txt="الجواب: "+H+" ("+MIN[H-1]+")";
+  else if(lo===0&&hi===11) txt="الصلادة بين 1 و 10";
+  else txt="الصلادة أكبر من "+(lo===0?"0":String(lo).replace(/\.0$/,""))+(hi===11?"":" وأقل من "+hi);
+  h+='<rect x="80" y="108" width="240" height="32" rx="16" fill="var(--card)"/>'+T(200,129,txt,{s:13.5});
+  $("mohsSvg").innerHTML=h;
+}
+TOOLS.forEach(function(t,k){var b=document.createElement("button");b.type="button";b.className="tg";b.textContent=t[0]+" ("+t[1]+")";b.setAttribute("aria-pressed","false");
+  b.addEventListener("click",function(){
+    [].forEach.call($("tools").children,function(x,j){x.setAttribute("aria-pressed",j===k?"true":"false");});
+    var v=t[1],o=$("labOut");
+    if(v>H){hi=Math.min(hi,Math.ceil(v));o.innerHTML="<b>"+t[0]+"</b> خدش العيّنة: العيّنة أليَن من "+v+".";o.className="labout no";}
+    else if(v<H){lo=Math.max(lo,Math.floor(v));o.innerHTML="العيّنة خدشت <b>"+t[0]+"</b> وما انخدشت: العيّنة أصلب من "+v+".";o.className="labout ok";}
+    else {lo=Math.max(lo,v-1);hi=Math.min(hi,v+1);o.innerHTML="لا خدش واضح في الاتجاهين: صلادة العيّنة تساوي "+v+" تقريباً.";o.className="labout";}
+    drawM();});
+  $("tools").appendChild(b);});
+for(var g=1;g<=10;g++)(function(n){var b=document.createElement("button");b.type="button";b.textContent=n;
+  b.addEventListener("click",function(){var o=$("labOut");
+    if(n===H){done=true;b.className="good";o.innerHTML="صح! صلادتها "+n+": <b>"+MIN[n-1]+"</b>. اضغط عيّنة جديدة وجرّب مرة ثانية.";o.className="labout ok";}
+    else{b.className="bad";o.innerHTML=(lo===0&&hi===11)?"احكّ أولاً! بدون اختبار هذا تخمين.":"ليس "+n+". راجع المدى في المقياس، واحكّ بأداة ثانية لو احتجت.";o.className="labout no";}
+    drawM();});$("guess").appendChild(b);})(g);
+$("newS").addEventListener("click",newSample);
+newSample();
+
+/* ---------- transparency window ---------- */
+var WIN=[["معتم",'التلك: <b>معتم</b> (غير شفاف) <span dir="ltr">Opaque</span>. ما يعدّي أي ضوء.'],
+ ["نصف شفاف",'الجبس والميكا: <b>نصف شفاف</b> <span dir="ltr">Translucent</span>. يعدّي ضوء، والصورة غير واضحة.'],
+ ["شفاف",'الكوارتز والكالسيت النقيان: <b>شفاف</b> <span dir="ltr">Transparent</span>. الصورة واضحة.'],
+ ["كالسيت (انكسار مزدوج)",'الكالسيت الشفاف: الحروف تظهر <b>مرّتين</b>. هذا <b>الانكسار المزدوج</b> <span dir="ltr">Double Refraction</span>.']];
+var wcur=0;
+function drawW(){
+  var word='<text x="200" y="100" font-size="44" font-weight="800" text-anchor="middle" fill="var(--ink2)">جيولوجيا</text>',h="";
+  h+='<defs><filter id="bl"><feGaussianBlur stdDeviation="3.2"/></filter></defs>';
+  h+='<rect x="40" y="35" width="320" height="100" rx="16" fill="var(--paper)"/>';
+  if(wcur===1) h+='<g filter="url(#bl)">'+word+'</g>';
+  else if(wcur===3) h+='<g opacity=".55" transform="translate(7,-9)">'+word+'</g>'+word;
+  else h+=word;
+  var fill=["var(--rock)","var(--p-lav)","var(--p-sky)","var(--p-sky)"][wcur],op=[1,.55,.18,.22][wcur];
+  h+='<path d="M70 28 L330 22 L350 140 L60 146 Z" fill="'+fill+'" fill-opacity="'+op+'" stroke="var(--rockS)" stroke-width="2"/>';
+  $("winSvg").innerHTML=h;$("winMsg").innerHTML=WIN[wcur][1];
+  [].forEach.call($("winPick").children,function(x,j){x.setAttribute("aria-pressed",j===wcur?"true":"false");});
+}
+WIN.forEach(function(w,k){var b=document.createElement("button");b.type="button";b.className="tg";b.textContent=w[0];b.addEventListener("click",function(){wcur=k;drawW();});$("winPick").appendChild(b);});
+drawW();
+
+/* ---------- UV lamp ---------- */
+var UV=[["مصباح عادي",'تحت الضوء العادي: الكالسيت بلونه الأبيض والويليميت بلونه الباهت.'],
+ ["شغّل الأشعة فوق البنفسجية",'<b>تفلّر</b>: الكالسيت يعطي <b>أحمر باهراً</b>، والويليميت <b>أخضر</b>. ألوان ساطعة غير لونهما الأصلي.'],
+ ["أطفئ المصباح",'المؤثر زال: <b>التفلّر</b> ينطفئ فوراً. لو استمرّ الضوء بعد الإطفاء لسمّيناه <b>تفسفراً</b> (الحجر الثالث).']];
+var ucur=0;
+function rock(x,y,c,glow){return (glow?'<ellipse cx="'+x+'" cy="'+(y)+'" rx="52" ry="40" fill="'+c+'" opacity=".35"/>':'')+'<path d="M'+(x-38)+' '+(y+22)+' L'+(x-30)+' '+(y-20)+' L'+(x-4)+' '+(y-32)+' L'+(x+30)+' '+(y-18)+' L'+(x+40)+' '+(y+16)+' L'+(x+8)+' '+(y+30)+' Z" fill="'+c+'" stroke="var(--rockS)" stroke-width="2"/>';}
+function drawU(){
+  var h='<rect x="0" y="0" width="400" height="160" rx="22" fill="'+(ucur===0?"var(--plate)":"var(--uvbg)")+'"/>';
+  if(ucur===1) h+='<rect x="0" y="0" width="400" height="160" rx="22" fill="#7b4dff" opacity=".22"/>';
+  var on=ucur===1;
+  h+=rock(80,70,on?"var(--glowR)":"#f1ede4",on)+rock(200,70,on?"var(--glowG)":"#c9c2a8",on)+rock(320,70,ucur===0?"#d8d0e8":"#b9f5d0",ucur!==0);
+  h+=T(80,128,"كالسيت")+T(200,128,"ويليميت")+T(320,128,"معدن متفسفر");
+  h+=T(320,148,ucur===2?"ما زال يضيء":"",{s:11,w:400,f:"var(--muted)"});
+  $("uvSvg").innerHTML=h;$("uvMsg").innerHTML=UV[ucur][1];
+  [].forEach.call($("uvPick").children,function(x,j){x.setAttribute("aria-pressed",j===ucur?"true":"false");});
+}
+UV.forEach(function(w,k){var b=document.createElement("button");b.type="button";b.className="tg";b.textContent=w[0];b.addEventListener("click",function(){ucur=k;drawU();});$("uvPick").appendChild(b);});
+drawU();
+
+/* ---------- cleavage cards (Table 3) ---------- */
+var C=[["اتّجاه واحد","مسكوفيت (ميكا بيضاء)",'<g fill="var(--p-butter)" stroke="var(--rockS)" stroke-width="2"><path d="M20 62 L80 62 L100 46 L40 46Z"/><path d="M20 52 L80 52 L100 36 L40 36Z"/><path d="M20 42 L80 42 L100 26 L40 26Z"/></g>'],
+ ["اتّجاهان بزاوية <bdi dir='ltr'>90°</bdi>","فلسبار",'<path d="M15 48 L105 48 L90 34 L30 34Z" fill="var(--p-butter)" stroke="var(--rockS)" stroke-width="2"/><path d="M60 6 L60 78" stroke="var(--scr)" stroke-width="5"/><text x="66" y="20" font-size="11" fill="var(--text)" direction="ltr" text-anchor="start">90°</text>'],
+ ["اتّجاهان بزاوية لا تساوي <bdi dir='ltr'>90°</bdi>","هورنبلند",'<path d="M15 48 L105 48 L90 34 L30 34Z" fill="var(--p-butter)" stroke="var(--rockS)" stroke-width="2"/><path d="M42 8 L78 76" stroke="var(--scr)" stroke-width="5"/><text x="72" y="16" font-size="11" fill="var(--text)" direction="ltr" text-anchor="start">≠90°</text>'],
+ ["ثلاثة اتّجاهات بزاوية <bdi dir='ltr'>90°</bdi>","هاليت",'<g stroke="var(--rockS)" stroke-width="2"><path d="M30 30 L80 30 L80 74 L30 74Z" fill="var(--p-sky)"/><path d="M30 30 L46 16 L96 16 L80 30Z" fill="var(--p-mint)"/><path d="M80 30 L96 16 L96 60 L80 74Z" fill="var(--p-lav)"/></g>'],
+ ["ثلاثة اتّجاهات بزاوية لا تساوي <bdi dir='ltr'>90°</bdi>","كالسيت",'<g stroke="var(--rockS)" stroke-width="2"><path d="M22 70 L72 70 L88 30 L38 30Z" fill="var(--p-sky)"/><path d="M38 30 L58 14 L108 14 L88 30Z" fill="var(--p-mint)"/><path d="M72 70 L88 30 L108 14 L92 54Z" fill="var(--p-lav)"/></g>']];
+$("clv").innerHTML=C.map(function(c){return '<div class="card"><svg viewBox="0 0 120 84" role="img" aria-label="'+c[0].replace(/<[^>]+>/g,'')+'">'+c[2]+'</svg><h3>'+c[0]+'</h3><p>'+c[1]+'</p></div>';}).join("");
+})();
+</script>
+</body>
+</html>

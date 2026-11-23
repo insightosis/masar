@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="math">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>حل المتباينات · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+span[dir=ltr],bdi[dir=ltr],b[dir=ltr]{unicode-bidi:isolate}
+body{--plane:#f1edff;--grid:#ddd5fb;--axis:#8b86b3;--curve:#3d8be0;--up:#17b388;--dn:#e0485f;--lineC:#f08a24}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--plane:#24203d;--grid:#363057;--axis:#a7a2cf;--curve:#6fb4ff;--up:#4fd8ac;--dn:#ff7d8f;--lineC:#ffb066}}
+:root[data-theme="dark"] body{--plane:#24203d;--grid:#363057;--axis:#a7a2cf;--curve:#6fb4ff;--up:#4fd8ac;--dn:#ff7d8f;--lineC:#ffb066}
+.stage{display:block;width:100%;height:auto;border-radius:20px;background:var(--plane);box-shadow:var(--press);margin-top:10px}
+.strip{display:block;width:100%;height:auto;margin-top:8px}
+.xtra{margin-top:12px;padding:10px 16px;border-radius:20px;background:var(--card);box-shadow:var(--clay-sm)}
+.xtra summary{cursor:pointer;font-weight:700;color:var(--ink)}
+.seg{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.seg button{font:inherit;font-size:14px;padding:6px 12px;border-radius:14px;border:0;background:var(--card);color:var(--text);box-shadow:var(--clay-sm);cursor:pointer;direction:ltr}
+.seg button[aria-pressed=true]{background:var(--p-lav);box-shadow:var(--press);font-weight:700}
+.out{margin-top:10px;display:grid;gap:6px}
+.out p{margin:0;padding:6px 12px;border-radius:14px;font-size:14.5px}
+.out .eq0{background:var(--p-butter)}.out .gt0{background:var(--p-mint)}.out .lt0{background:var(--p-pink)}
+/* sign tables */
+.sgn{overflow-x:auto;margin-top:10px}
+.sgn table{border-collapse:separate;border-spacing:3px;margin:0 auto;direction:ltr}
+.sgn td,.sgn th{padding:5px 7px;border-radius:9px;text-align:center;font-family:"Noto Serif",Georgia,serif;font-size:14px;white-space:nowrap;min-width:22px}
+.sgn th{background:var(--soft);font-style:italic;font-weight:600}
+.sgn td{background:var(--card);box-shadow:var(--clay-sm)}
+.sgn td.lbl{font-style:italic;background:var(--soft);box-shadow:none}
+.sgn td.pt{background:transparent;box-shadow:none;color:var(--muted);border-inline:2px dashed var(--grid);border-radius:0}
+.sgn td.p{color:var(--up);font-weight:800}.sgn td.m{color:var(--dn);font-weight:800}
+.sgn td.z{font-weight:800;color:var(--text)}
+.sgn td.u{font-family:var(--body);font-size:10px;writing-mode:vertical-rl;color:var(--dn);padding:3px 2px}
+.sgn tr.res td{background:var(--p-lav)}
+.sgn tr.res td.hl{background:var(--p-butter);outline:2px solid var(--lineC)}
+.sgn tr.res td.pt.hl{background:var(--p-butter)}
+.sgn th.e0{text-align:left}.sgn th.e1{text-align:right}
+.sgn .frac{font-size:12.5px}
+.nl{display:block;width:100%;max-width:300px;height:auto;margin:6px auto 0}
+.ivt{overflow-x:auto;margin-top:10px}
+.ivt table{border-collapse:separate;border-spacing:4px;width:100%;max-width:520px;margin:0 auto}
+.ivt th{background:var(--soft);padding:6px;border-radius:10px;font-size:13.5px}
+.ivt td{background:var(--card);box-shadow:var(--clay-sm);padding:4px 6px;border-radius:10px;text-align:center;font-family:"Noto Serif",Georgia,serif;font-size:14px;direction:ltr;white-space:nowrap}
+.ivt td svg{width:100px;height:auto;display:block;margin:0 auto}
+.act[data-act=match] .mt button{direction:ltr;text-align:center;font-family:"Noto Serif",Georgia,serif}
+.act .gap{direction:ltr;unicode-bidi:isolate}
+.act[data-act=gap] .pc{font-family:"Noto Serif",Georgia,serif}
+.act[data-act=order] .pc{font-family:var(--body)}
+.garden{display:grid;grid-template-columns:1fr;gap:8px;margin-top:8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.badges span{padding:5px 12px;border-radius:14px;font-size:14px;font-weight:700;box-shadow:var(--clay-sm);background:var(--card)}
+.badges span.yes{background:var(--p-mint)}.badges span.no{background:var(--p-pink)}
+.flow{display:grid;gap:8px;margin-top:10px;counter-reset:f}
+.flow div{counter-increment:f;display:grid;grid-template-columns:32px 1fr;gap:8px;align-items:center;padding:8px 12px;border-radius:18px;background:var(--card);box-shadow:var(--clay-sm);font-size:15px}
+.tip span[dir=ltr],.note span[dir=ltr],.xtra span[dir=ltr]{white-space:nowrap}
+.flow div::before{content:counter(f);width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--soft);color:var(--ink);font-family:var(--display);font-weight:800}
+</style>
+</head>
+<body style="--sc:#8a63f2">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الرياضيات</span><span class="chip">الدرس 2-6 · ص 75 إلى 87</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الثانية: الدوال الحقيقية</p>
+  <h1 id="t">حل المتباينات</h1>
+  <p>المعادلة تسألك: <b>متى</b> تلمس الكرة الأرض؟ والجواب نقطتان. أما المتباينة فتسأل: <mark>طوال أي وقت تكون الكرة فوق الأرض؟</mark> والجواب <b>فترة كاملة</b> من الأعداد. اليوم نتعلّم نصطاد هذه الفترات بجدول صغير اسمه <b>جدول الإشارات</b>.</p>
+</section>
+
+<section class="panel" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">مختبر: فوق الخط وتحته</h2><span class="legend"><span><i style="background:var(--up)"></i>f(x) أكبر</span><span><i style="background:var(--dn)"></i>f(x) أصغر</span><span><i style="background:var(--lineC)"></i>المستقيم y = c</span></span></div>
+  <div class="seg" role="group" aria-label="اختر الدالة" id="fsel">
+    <button type="button" data-f="0" aria-pressed="true">f(x) = −x² + 6x − 5</button>
+    <button type="button" data-f="1" aria-pressed="false">f(x) = (x − 3) ÷ (x − 2)</button>
+    <button type="button" data-f="2" aria-pressed="false">f(x) = x² + 2x − 3</button>
+    <button type="button" data-f="3" aria-pressed="false">f(x) = x² − 6x + 5</button>
+  </div>
+  <svg class="stage" id="labPlot" viewBox="0 0 400 280" role="img" aria-label="منحنى الدالة والمستقيم الأفقي y يساوي c، والأجزاء الأعلى منه بالأخضر والأدنى بالوردي"></svg>
+  <svg class="strip" id="labStrip" viewBox="0 0 400 46" role="img" aria-label="خط الأعداد وعليه فترات الحل"></svg>
+  <div class="controls"><div class="ctl"><label for="cS">ارفع المستقيم أو أنزله: <b id="cL" dir="ltr">c = 0</b></label><input type="range" dir="ltr" id="cS" min="-4" max="5" step="1" value="0" aria-describedby="cL"></div></div>
+  <div class="out" id="labOut" aria-live="polite"></div>
+  <p class="cap">ابدأ بـ <bdi dir="ltr">c = 0</bdi>: المستقيم هو محور السينات نفسه، فالأخضر هو <bdi dir="ltr">f(x) &gt; 0</bdi> والوردي <bdi dir="ltr">f(x) &lt; 0</bdi>. هذا هو العمل التعاوني في الكتاب. وفي الدالة النسبية، لاحظ الدائرة المفرغة عند <bdi dir="ltr">x = 2</bdi>: هناك الدالة غير معرّفة.</p>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">رموز الدرس ومصطلحاته</h2></div>
+  <div class="syms">
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub"><span dir="ltr">&lt; ≤</span></span><div><h3>متباينة <span class="en">Inequality</span></h3><p>علاقة فيها <span dir="ltr">&lt; , &gt; , ≤ , ≥</span> بدل علامة =. حلّها مجموعة أعداد، مو عدد واحد.</p><span class="hook">الخط تحت الرمز (≤) يعني: "أو يساوي".</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub"><span dir="ltr">ax²</span></span><div><h3>متباينة من الدرجة الثانية <span class="en">Quadratic Inequality</span></h3><p>متباينة في متغير واحد أعلى أُس فيها 2.</p><span class="hook">أخت المعادلة التربيعية، لكن جوابها فترة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub sm"><span dir="ltr">= 0</span></span><div><h3>المعادلة المناظرة</h3><p>نفس المتباينة لكن بعلامة =. أصفارها هي حدود فترات الحل.</p><span class="hook">الأصفار هي الأبواب بين الفترات.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span dir="ltr">( ) [ ]</span></span><div><h3>الفترة المفتوحة والمغلقة <span class="en">Interval</span></h3><p>القوس الدائري: الطرف <b>غير</b> داخل. القوس المربع: الطرف داخل. و ∞ دائماً مع قوس دائري.</p><span class="hook">المربّع يمسك الطرف، والدائري يفلته.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span dir="ltr">∪</span></span><div><h3>الاتحاد <span class="en">Union</span></h3><p>يجمع فترتين في مجموعة حل واحدة، مثل <span dir="ltr">(−∞, 1) ∪ (5, ∞)</span>.</p><span class="hook">∪ مثل كوب يجمع القطعتين.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub"><span dir="ltr">ℝ/</span></span><div><h3>كل الأعداد ما عدا فترة</h3><p>كل الأعداد الحقيقية <b>إلا</b> الفترة المكتوبة بعد الشرطة.</p><span class="hook">اقرأ الشرطة "/": "ما عدا".</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub"><span dir="ltr">∀ ∈</span></span><div><h3>لكل، ينتمي</h3><p><span dir="ltr">∀x ∈ (−4, 2)</span> تعني: لكل x تنتمي إلى الفترة <span dir="ltr">(−4, 2)</span>.</p><span class="hook">∀ حرف A مقلوب: All، يعني الكل.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub"><span dir="ltr">P ÷ Q</span></span><div><h3>حدوديات نسبية <span class="en">Rational Expressions</span></h3><p>كسر بسطه ومقامه حدوديتان، وهو <b>غير معرّف عند أصفار المقام</b>.</p><span class="hook">صفر المقام ممنوع دائماً: قوس دائري.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">نكتب الحل بطريقتين</h2></div>
+  <p>في المختبر، الدالة <span dir="ltr">−x² + 6x − 5</span> سالبة قبل 1 وبعد 5. نكتب هذا اتحاد فترتين <span class="f" style="font-size:1.1rem">(−∞, 1) ∪ (5, ∞)</span>، أو بصورة أقصر: <span class="f" style="font-size:1.1rem">ℝ/[1, 5]</span>، يعني كل الأعداد ما عدا من 1 إلى 5. لاحظ: 1 و 5 خارج الحل، فهما <b>داخل</b> الفترة المحذوفة بقوس مربع.</p>
+  <div class="ivt"><table>
+    <tr><th>رمز الفترة</th><th>صورة أخرى</th><th>على خط الأعداد</th></tr>
+    <tr><td>(−∞, a) ∪ (b, ∞)</td><td>ℝ/[a, b]</td><td><svg class="nlx" viewBox="0 0 300 50" data-nl='{"t":[["a","o"],["b","o"]],"s":[[-1,0],[1,9]]}'></svg></td></tr>
+    <tr><td>(−∞, a] ∪ (b, ∞)</td><td>ℝ/(a, b]</td><td><svg class="nlx" viewBox="0 0 300 50" data-nl='{"t":[["a","c"],["b","o"]],"s":[[-1,0],[1,9]]}'></svg></td></tr>
+    <tr><td>(−∞, a) ∪ [b, ∞)</td><td>ℝ/[a, b)</td><td><svg class="nlx" viewBox="0 0 300 50" data-nl='{"t":[["a","o"],["b","c"]],"s":[[-1,0],[1,9]]}'></svg></td></tr>
+    <tr><td>(−∞, a] ∪ [b, ∞)</td><td>ℝ/(a, b)</td><td><svg class="nlx" viewBox="0 0 300 50" data-nl='{"t":[["a","c"],["b","c"]],"s":[[-1,0],[1,9]]}'></svg></td></tr>
+  </table></div>
+  <p class="tip" style="margin-top:10px"><b>قاعدة سريعة:</b> القوس <b>ينقلب</b> عند التحويل. الطرف المفتوح في الاتحاد ( يصير مغلقاً [ في الفترة المحذوفة، والعكس.</p>
+
+  <div class="act" data-act="match" data-key="match"
+       data-pairs='[["⁦(−∞, 1) ∪ (5, ∞)⁩","⁦ℝ/[1, 5]⁩"],["⁦(−∞, −2] ∪ [3, ∞)⁩","⁦ℝ/(−2, 3)⁩"],["⁦(−∞, 0] ∪ (4, ∞)⁩","⁦ℝ/(0, 4]⁩"],["⁦(−∞, 2) ∪ [7, ∞)⁩","⁦ℝ/[2, 7)⁩"]]'
+       data-ok="ممتاز! كل قوس انقلب: الطرف اللي خارج الاتحاد صار داخل الفترة المحذوفة.">
+    <h3>وصّل كل اتحاد بصورته الأخرى <span class="k">نشاط</span></h3>
+    <p>اضغط اتحاداً من اليسار ثم صورته من اليمين. انتبه لنوع كل قوس.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">المتباينة التربيعية وجدول الإشارات</h2></div>
+  <p>الفكرة بسيطة: حاصل ضرب عاملين <b>موجب</b> إذا كانا بنفس الإشارة، و<b>سالب</b> إذا اختلفا. والإشارة ما تتغير إلا عند الأصفار. فنقسم خط الأعداد عند الأصفار، ونقرأ إشارة كل قطعة.</p>
+  <div class="flow">
+    <div><span>اجعل الطرف الأيسر صفراً (انقل كل الحدود لطرف واحد).</span></div>
+    <div><span>حلّ <b>المعادلة المناظرة</b> بالتحليل، وأوجد الأصفار.</span></div>
+    <div><span>كوّن <b>جدول الإشارات</b>: إشارة كل عامل في كل فترة، ثم إشارة حاصل الضرب.</span></div>
+    <div><span>اختر الفترات اللي إشارتها تطابق المتباينة. مع ≤ أو ≥ تدخل الأصفار.</span></div></div>
+
+  <h3 style="margin:18px 0 6px">مثال (1)</h3>
+  <div class="qbox">أوجد مجموعة حل المتباينة: <span class="f" style="font-size:1.1rem">x² − x − 6 &lt; 0</span></div>
+  <ol class="steps">
+    <li><span>المعادلة المناظرة: <span class="f">x² − x − 6 = 0</span> ⇐ نحلل: <span class="f">(x + 2)(x − 3) = 0</span></span></li>
+    <li><span>الأصفار: <span class="f">x = −2</span> أو <span class="f">x = 3</span>. و <span dir="ltr">x + 2 &gt; 0</span> لما <span dir="ltr">x &gt; −2</span>، و <span dir="ltr">x − 3 &gt; 0</span> لما <span dir="ltr">x &gt; 3</span>.</span></li>
+    <li><span>جدول الإشارات (نبحث عن السالب):<div class="sgn" data-sg="t1"></div></span></li>
+    <li><span><span class="ans">مجموعة الحل = <span class="f">(−2, 3)</span></span><svg class="nl" viewBox="0 0 300 50" data-nl='{"t":[["−2","o"],["3","o"]],"s":[[0,1]]}'></svg></span></li>
+  </ol>
+  <details class="xtra"><summary>حاول أن تحل (1): <bdi dir="ltr">x² + 4x + 3 ≤ 0</bdi></summary>
+    <p><span dir="ltr">(x + 1)(x + 3) ≤ 0</span>، الأصفار −3 و −1، والحاصل سالب بينهما. ومع ≤ يدخل الصفران: <span class="f" style="font-size:1.05rem">[−3, −1]</span>.</p>
+  </details>
+
+  <div class="act" data-act="order" data-key="order" data-rtl
+       data-answer='["اجعل الطرف الأيسر صفراً","حلّ المعادلة المناظرة","كوّن جدول الإشارات","اختر الفترات حسب الإشارة"]'
+       data-extra='["اقسم الطرفين على x"]'
+       data-ok="ممتاز! هذه الخطوات الأربع تحل كل متباينة في الدرس."
+       data-no="القطع الحمراء في غير مكانها. نحتاج الأصفار قبل الجدول، والجدول قبل الاختيار. والقسمة على x ممنوعة: ما نعرف إشارتها.">
+    <h3>رتّب الخطوات <span class="k">نشاط</span></h3>
+    <p>عندك <span dir="ltr">x² + 5x &gt; 6</span>. رتّب خطوات الحل. فيه قطعة زائدة.</p>
+  </div>
+
+  <h3 style="margin:18px 0 6px">مثال (2): معامل x² سالب</h3>
+  <div class="qbox">أوجد مجموعة حل المتباينة: <span class="f" style="font-size:1.1rem">−x² + 7x − 10 ≤ 0</span></div>
+  <div class="rule" style="margin-top:10px"><h3>تذكّر</h3><p>عند ضرب طرفي متباينة في عدد <b>سالب</b> نعكس علاقة الترتيب. ويمكنك الضرب في <span dir="ltr">(−1)</span> للسهولة.</p></div>
+  <ol class="steps">
+    <li><span>نضرب في −1 ونعكس: <span class="f">x² − 7x + 10 ≥ 0</span></span></li>
+    <li><span>المعادلة المناظرة: <span class="f">(x − 2)(x − 5) = 0</span> ⇐ <span class="f">x = 2</span> أو <span class="f">x = 5</span></span></li>
+    <li><span>نبحث عن الموجب أو الصفر:<div class="sgn" data-sg="t2"></div></span></li>
+    <li><span><span class="ans">مجموعة الحل = <span class="f">(−∞, 2] ∪ [5, ∞)</span></span> أو <span class="f">ℝ/(2, 5)</span><svg class="nl" viewBox="0 0 300 50" data-nl='{"t":[["2","c"],["5","c"]],"s":[[-1,0],[1,9]]}'></svg></span></li>
+  </ol>
+  <details class="xtra"><summary>حاول أن تحل (2): <bdi dir="ltr">−2x² + 5x − 3 &gt; 0</bdi></summary>
+    <p>نضرب في −1: <span dir="ltr">2x² − 5x + 3 &lt; 0</span> ⇐ <span dir="ltr">(2x − 3)(x − 1) &lt; 0</span>. الأصفار 1 و <span dir="ltr">3/2</span>، والحاصل سالب بينهما: <span class="f" style="font-size:1.05rem">(1, 3/2)</span>.</p>
+  </details>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">تطبيق حياتي: حديقة مستطيلة</h2></div>
+  <div class="qbox">مثال (3): حديقة مستطيلة محيطها <span dir="ltr">20 m</span> وطول أحد بعديها x. a) ما المجال الواقعي لـ x؟ b) عبّر عن دالة المساحة f بدلالة x. c) حلّ <span dir="ltr">f(x) &lt; 24</span>. d) حلّ <span dir="ltr">f(x) &gt; 9</span>.</div>
+  <div class="panel" style="margin:12px 0">
+    <div class="lab-head"><h3 style="margin:0">جرّب بنفسك: غيّر البعد x</h3></div>
+    <div class="garden">
+      <svg class="stage" id="gPlot" viewBox="0 0 400 200" role="img" aria-label="مستطيل بعداه x و 10 ناقص x ومساحته"></svg>
+      <div class="controls" style="margin-top:4px"><div class="ctl"><label for="gx">البعد: <b id="gxL" dir="ltr">x = 3</b></label><input type="range" dir="ltr" id="gx" min="0.5" max="9.5" step="0.5" value="3" aria-describedby="gxL"></div></div>
+      <div class="badges" id="gB" aria-live="polite"></div>
+    </div>
+  </div>
+  <ol class="steps">
+    <li><span><b>a)</b> <span class="f">P = 2(L + W) = 20</span> ⇐ <span class="f">L + W = 10</span>. البعد الآخر <span class="f">10 − x</span>، والبعدان موجبان، فالمجال الواقعي <span class="ans"><span class="f">x ∈ (0, 10)</span></span></span></li>
+    <li><span><b>b)</b> المساحة = الطول × العرض: <span class="ans"><span class="f">f(x) = x(10 − x) = −x² + 10x</span></span></span></li>
+    <li><span><b>c)</b> <span class="f">−x² + 10x − 24 &lt; 0</span> ⇐ <span class="f">(−x + 4)(x − 6) &lt; 0</span>، الأصفار 4 و 6. نكوّن الجدول مع مراعاة <span dir="ltr">x ∈ (0, 10)</span>:<div class="sgn" data-sg="t3"></div><span class="ans">مجموعة الحل = <span class="f">(0, 4) ∪ (6, 10)</span></span></span></li>
+    <li><span><b>d)</b> <span class="f">−x² + 10x − 9 &gt; 0</span> ⇐ <span class="f">(−x + 1)(x − 9) &gt; 0</span>، الأصفار 1 و 9:<div class="sgn" data-sg="t4"></div><span class="ans">مجموعة الحل = <span class="f">(1, 9)</span></span></span></li>
+  </ol>
+  <p class="note"><b>انتبه:</b> الجدول هنا يبدأ من 0 وينتهي عند 10، مو من −∞ إلى ∞، لأن البعد لا يكون سالباً ولا أكبر من 10.</p>
+  <details class="xtra"><summary>حاول أن تحل (3): محيط مستطيل <bdi dir="ltr">16 m</bdi>، و <bdi dir="ltr">f(x) &gt; 7</bdi></summary>
+    <p>المجال الواقعي <span dir="ltr">(0, 8)</span>، والمساحة <span dir="ltr">f(x) = x(8 − x) = −x² + 8x</span>. <span dir="ltr">−x² + 8x − 7 &gt; 0</span> ⇐ <span dir="ltr">(−x + 1)(x − 7) &gt; 0</span> ⇐ مجموعة الحل <span class="f" style="font-size:1.05rem">(1, 7)</span>.</p>
+  </details>
+</section>
+
+<section class="sec" aria-labelledby="s5">
+  <div class="sec-head"><span class="num">5</span><h2 id="s5">تطبيق على مجال الدالة الجذرية</h2></div>
+  <p>تذكّر من درس المجال: ما فيه جذر تربيعي لعدد سالب. فمجال <span dir="ltr">√(…)</span> هو كل x اللي تخلي ما تحت الجذر <span dir="ltr">≥ 0</span>. يعني: <b>متباينة!</b></p>
+  <h3 style="margin:14px 0 6px">مثال (4a)</h3>
+  <div class="qbox">أوجد مجال <span class="f" style="font-size:1.1rem">f(x) = <span class="rad"><span>x² − 4</span></span></span></div>
+  <ol class="steps">
+    <li><span>الشرط: <span class="f">x² − 4 ≥ 0</span> ⇐ <span class="f">(x − 2)(x + 2) = 0</span> ⇐ <span class="f">x = 2</span> أو <span class="f">x = −2</span></span></li>
+    <li><span><div class="sgn" data-sg="t5"></div></span></li>
+    <li><span><span class="ans">المجال: <span class="f">(−∞, −2] ∪ [2, +∞) = ℝ/(−2, 2)</span></span></span></li>
+  </ol>
+  <h3 style="margin:14px 0 6px">مثال (4b)</h3>
+  <div class="qbox">أوجد مجال <span class="f" style="font-size:1.1rem">g(x) = <span class="rad"><span>−x² + 4x − 3</span></span></span></div>
+  <ol class="steps">
+    <li><span>الشرط: <span class="f">−x² + 4x − 3 ≥ 0</span> ⇐ <span class="f">(−x + 1)(x − 3) = 0</span> ⇐ الأصفار 1 و 3</span></li>
+    <li><span><div class="sgn" data-sg="t6"></div></span></li>
+    <li><span><span class="ans">المجال: <span class="f">[1, 3]</span></span></span></li>
+  </ol>
+  <details class="xtra"><summary>حاول أن تحل (4): طريقة ثانية، و <bdi dir="ltr">h(x) = √(x² − x)</bdi></summary>
+    <p><b>a)</b> طريقة أخرى لـ <span dir="ltr">y = √(x² − 4)</span>: الشرط <span dir="ltr">x² ≥ 4</span>، يعني العدد مربّعه 4 أو أكثر، فـ <span dir="ltr">x ≤ −2</span> أو <span dir="ltr">x ≥ 2</span>. ويمكنك أيضاً قراءته من بيان <span dir="ltr">y = x² − 4</span>: الجزء اللي فوق محور السينات أو عليه.</p>
+    <p><b>b1)</b> <span dir="ltr">x² − x = x(x − 1) ≥ 0</span>، الأصفار 0 و 1، فالمجال <span class="f" style="font-size:1.05rem">(−∞, 0] ∪ [1, ∞) = ℝ/(0, 1)</span>.</p>
+  </details>
+
+  <div class="act" data-act="gap" data-key="gap" data-ok="صح! ⁦9 − x² = (3 − x)(3 + x)⁩ موجب بين الصفرين لأن معامل x² سالب، والجذر يقبل الصفر فالطرفان داخلان.">
+    <h3>أكمل الناقص <span class="k">نشاط</span></h3>
+    <p>حاول أن تحل (4b2): مجال <span class="f" style="font-size:1.05rem">q(x) = <span class="rad"><span>9 − x²</span></span></span> هو <span class="f" style="font-size:1.05rem"><span class="gap">؟</span></span></p>
+    <div class="opts">
+      <button class="pc" dir="ltr" data-no="هذا مجال ⁦√(x² − 9)⁩. هنا معامل x² سالب، فالمقدار موجب بين الصفرين، مو خارجهما. جرّب x = 0: ⁦9 − 0 = 9⁩ موجب.">ℝ/(−3, 3)</button>
+      <button class="pc" dir="ltr" data-ok>[−3, 3]</button>
+      <button class="pc" dir="ltr" data-no="قريب! لكن عند x = 3 يكون ⁦√0 = 0⁩ معرّفاً. الشرط ≥ 0 فالطرفان داخلان: قوس مربع.">(−3, 3)</button>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s6">
+  <div class="sec-head"><span class="num">6</span><h2 id="s6">متباينات فيها حدوديات نسبية</h2></div>
+  <p>هنا عندنا كسر. والكسر مثل الضرب: <b>موجب</b> إذا البسط والمقام بنفس الإشارة. الفرق الوحيد: <b>صفر المقام ممنوع</b>، الكسر غير معرّف هناك، فلا يدخل الحل أبداً حتى مع ≥.</p>
+  <div class="flow">
+    <div><span>انقل كل شيء لطرف واحد ليصير الطرف الآخر 0 (لا تضرب في المقام: ما نعرف إشارته).</span></div>
+    <div><span>وحّد المقامات وبسّط حتى يصير كسراً واحداً، وحلّل البسط.</span></div>
+    <div><span>أوجد <b>أصفار البسط</b> و<b>أصفار المقام</b> (قبل أي اختصار).</span></div>
+    <div><span>جدول الإشارات، وعند صفر المقام اكتب "غير معرّفة".</span></div></div>
+
+  <h3 style="margin:18px 0 6px">مثال (5)</h3>
+  <div class="qbox">أوجد مجموعة حل المتباينة: <span class="f" style="font-size:1.1rem"><span class="frac"><span>3x + 7</span><span>x + 2</span></span> ≥ 2</span></div>
+  <ol class="steps">
+    <li><span>انقل 2: <span class="f"><span class="frac"><span>3x + 7</span><span>x + 2</span></span> − 2 ≥ 0</span> ⇐ مقام مشترك: <span class="f"><span class="frac"><span>3x + 7 − 2x − 4</span><span>x + 2</span></span> ≥ 0</span> ⇐ <span class="f"><span class="frac"><span>x + 3</span><span>x + 2</span></span> ≥ 0</span></span></li>
+    <li><span>صفر البسط <span class="f">x = −3</span>، وصفر المقام <span class="f">x = −2</span></span></li>
+    <li><span><div class="sgn" data-sg="t7"></div></span></li>
+    <li><span><span class="ans">مجموعة الحل: <span class="f">(−∞, −3] ∪ (−2, ∞) = ℝ/(−3, −2]</span></span> لاحظ: −3 داخلة (البسط صفر مسموح)، و −2 خارجة (صفر المقام).</span></li>
+  </ol>
+  <details class="xtra"><summary>حاول أن تحل (5): <bdi dir="ltr">(3x − 5) ÷ (−2x + 3) ≥ 0</bdi></summary>
+    <p>صفر البسط <span dir="ltr">5/3</span>، وصفر المقام <span dir="ltr">3/2</span>. قبل <span dir="ltr">3/2</span>: البسط سالب والمقام موجب (سالب). بين <span dir="ltr">3/2</span> و <span dir="ltr">5/3</span>: الاثنان سالبان (موجب). بعد <span dir="ltr">5/3</span>: البسط موجب والمقام سالب (سالب). مجموعة الحل <span class="f" style="font-size:1.05rem">(3/2, 5/3]</span>.</p>
+  </details>
+
+  <h3 style="margin:18px 0 6px">مثال محلول (6): ثلاثة أصفار</h3>
+  <div class="qbox">أوجد مجموعة حل المتباينة: <span class="f" style="font-size:1.1rem"><span class="frac"><span>x² − 5x + 3</span><span>x + 4</span></span> &lt; 3</span></div>
+  <div class="row"><button class="lite" id="hideSol" type="button" aria-pressed="false">أخفِ الحل وجرّب أولاً</button></div>
+  <ol class="steps" id="steps">
+    <li><span>انقل 3 ووحّد المقام: <span class="f"><span class="frac"><span>x² − 5x + 3 − 3x − 12</span><span>x + 4</span></span> &lt; 0</span></span></li>
+    <li><span>بسّط وحلّل البسط: <span class="f"><span class="frac"><span>x² − 8x − 9</span><span>x + 4</span></span> = <span class="frac"><span>(x + 1)(x − 9)</span><span>x + 4</span></span> &lt; 0</span></span></li>
+    <li><span>أصفار البسط: <span class="f">x = −1</span> أو <span class="f">x = 9</span>. صفر المقام: <span class="f">x = −4</span></span></li>
+    <li><span>ثلاثة عوامل، فثلاثة صفوف، ثم الكسر كله:<div class="sgn" data-sg="t8"></div></span></li>
+    <li><span><span class="ans">مجموعة الحل = <span class="f">(−∞, −4) ∪ (−1, 9)</span></span></span></li>
+  </ol>
+  <details class="xtra"><summary>حاول أن تحل (6): <bdi dir="ltr">(x² + 5x) ÷ (x + 3) &gt; −2</bdi></summary>
+    <p>نجمع 2: <span dir="ltr">(x² + 5x + 2x + 6) ÷ (x + 3) &gt; 0</span> ⇐ <span dir="ltr">(x + 1)(x + 6) ÷ (x + 3) &gt; 0</span>. الأصفار −6 و −1، وصفر المقام −3. الإشارات من اليسار: <span dir="ltr">− , + , − , +</span>. مجموعة الحل <span class="f" style="font-size:1.05rem">(−6, −3) ∪ (−1, ∞)</span>.</p>
+  </details>
+
+  <h3 style="margin:18px 0 6px">مثال (7): احذر من الاختصار</h3>
+  <div class="qbox">أوجد مجموعة حل المتباينة: <span class="f" style="font-size:1.1rem"><span class="frac"><span>x² − 5x + 6</span><span>x − 3</span></span> &gt; 0</span></div>
+  <ol class="steps">
+    <li><span>حلّل البسط: <span class="f"><span class="frac"><span>(x − 2)(x − 3)</span><span>x − 3</span></span> &gt; 0</span></span></li>
+    <li><span><b>قبل التبسيط</b> نحدد صفر المقام: <span class="f">x = 3</span>، فـ <span class="f">x ≠ 3</span></span></li>
+    <li><span>نختصر: <span class="f">x − 2 &gt; 0</span> ⇐ <span class="f">x &gt; 2</span></span></li>
+    <li><span><span class="ans">مجموعة الحل = <span class="f">(2, ∞)/{3} = (2, 3) ∪ (3, ∞)</span></span><svg class="nl" viewBox="0 0 300 50" data-nl='{"t":[["2","o"],["3","o"]],"s":[[0,1],[1,9]]}'></svg></span></li>
+  </ol>
+  <p class="tip" style="margin-top:10px"><b>فخ:</b> لو اختصرت أولاً، تنسى أن 3 ممنوعة وتكتب <span dir="ltr">(2, ∞)</span>، وهذا خطأ. من المهم جداً تحديد أصفار المقام قبل الاختصار.</p>
+  <details class="xtra"><summary>حاول أن تحل (7): <bdi dir="ltr">(x² − 49) ÷ (x + 7) ≤ 0</bdi></summary>
+    <p><span dir="ltr">x ≠ −7</span> أولاً. ثم <span dir="ltr">(x − 7)(x + 7) ÷ (x + 7) = x − 7 ≤ 0</span> ⇐ <span dir="ltr">x ≤ 7</span>. مجموعة الحل <span class="f" style="font-size:1.05rem">(−∞, −7) ∪ (−7, 7]</span>.</p>
+  </details>
+</section>
+
+<section class="sec" aria-labelledby="s7">
+  <div class="sec-head"><span class="num">7</span><h2 id="s7">الحل بالرسم البياني</h2></div>
+  <div class="qbox">مثال (8): بيان <span class="f" style="font-size:1.1rem">f(x) = x² + 2x − 3</span> والمستقيم <span class="f" style="font-size:1.1rem">y = 5</span>. a) ادرس بيانياً <span dir="ltr">f(x) &lt; y</span>. b) ادرس بيانياً <span dir="ltr">f(x) &gt; y</span>. c) تحقّق حسابياً.</div>
+  <div class="row" style="margin-top:10px"><button class="go" type="button" id="toLab">افتحه في المختبر فوق</button></div>
+  <ol class="steps">
+    <li><span><b>a)</b> المستقيم يقطع المنحنى في <span class="f">(−4, 5)</span> و <span class="f">(2, 5)</span>. المنحنى <b>تحت</b> المستقيم بينهما: <span class="ans"><span class="f">f(x) &lt; 5 ∀x ∈ (−4, 2)</span></span></span></li>
+    <li><span><b>b)</b> المنحنى <b>فوق</b> المستقيم خارجهما: <span class="ans"><span class="f">f(x) &gt; 5 ∀x ∈ (−∞, −4) ∪ (2, ∞)</span></span></span></li>
+    <li><span><b>c)</b> حسابياً: <span class="f">x² + 2x − 3 &lt; 5</span> ⇐ <span class="f">x² + 2x − 8 &lt; 0</span> ⇐ <span class="f">(x − 2)(x + 4) &lt; 0</span><div class="sgn" data-sg="t9"></div>نفس النتيجة.</span></li>
+  </ol>
+  <details class="xtra"><summary>حاول أن تحل (8): <bdi dir="ltr">f(x) = x² − 6x + 5</bdi> و <bdi dir="ltr">y = −3</bdi></summary>
+    <p>اختر الدالة الرابعة في المختبر وضع <span dir="ltr">c = −3</span>. نقطتا التقاطع عند <span dir="ltr">x = 2</span> و <span dir="ltr">x = 4</span> (لأن <span dir="ltr">x² − 6x + 8 = (x − 2)(x − 4)</span>). إذن <span dir="ltr">f(x) = y</span> عند <span dir="ltr">x ∈ {2, 4}</span>، و <span dir="ltr">f(x) &lt; y</span> لكل <span dir="ltr">x ∈ (2, 4)</span>، و <span dir="ltr">f(x) ≥ y</span> لكل <span dir="ltr">x ∈ (−∞, 2] ∪ [4, ∞)</span>.</p>
+  </details>
+</section>
+
+<section class="sec" aria-labelledby="s8">
+  <div class="sec-head"><span class="num">8</span><h2 id="s8">المرشد لحل المسائل: رحلة ذهاب وعودة</h2></div>
+  <div class="qbox">المسافة بين مدينتين <span dir="ltr">300 km</span>. سرعة السيارة ذهاباً <span dir="ltr">x km/h</span>، وعودةً <span dir="ltr">(x − 20) km/h</span>، والرحلة كلها <span dir="ltr">5 h 30 min</span>. أوجد السرعتين.</div>
+  <ol class="steps">
+    <li><span>الزمن = المسافة ÷ السرعة، و <span dir="ltr">5 h 30 min = 5.5 h</span>: <span class="f"><span class="frac"><span>300</span><span>x</span></span> + <span class="frac"><span>300</span><span>x − 20</span></span> = 5.5</span></span></li>
+    <li><span>نضرب في المقام المشترك ونبسّط: <span class="f">5.5x² − 710x + 6000 = 0</span> ⇐ <span class="f">1.1x² − 142x + 1200 = 0</span></span></li>
+    <li><span>نحل (بالمربع الكامل أو القانون العام): <span class="f">x = 120</span> أو <span class="f">x ≈ 9.1</span>. الثانية مرفوضة: سرعة العودة <span dir="ltr">x − 20</span> تصير سالبة.</span></li>
+    <li><span><span class="ans">السرعة ذهاباً <b dir="ltr">120 km/h</b> وعودةً <b dir="ltr">100 km/h</b></span></span></li>
+  </ol>
+  <details class="xtra"><summary>مسائل إضافية من الكتاب (الأجوبة)</summary>
+    <p><b>1)</b> لو كانت الرحلة <span dir="ltr">7 h 30 min</span>: <span dir="ltr">300/x + 300/(x − 20) = 7.5</span> ⇐ <span dir="ltr">x² − 100x + 800 = 0</span> ⇐ <span dir="ltr">x ≈ 91.2 km/h</span> ذهاباً و <span dir="ltr">≈ 71.2 km/h</span> عودةً.</p>
+    <p><b>2)</b> ربح محل الحواسيب <span dir="ltr">f(x) = −x² + 250x − 2400</span> حيث x ثمن الحاسوب بالدينار: a) <span dir="ltr">f(100) = 12600</span> دينار. b) أكبر ربح عند الرأس <span dir="ltr">x = −b ÷ 2a = 125</span> ديناراً. c) أكبر ربح <span dir="ltr">f(125) = 13225</span> ديناراً.</p>
+  </details>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">9</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sd">
+  <div class="sec-head"><span class="num">10</span><h2 id="sd">في حياتك</h2></div>
+  <div class="life">
+    <div class="card"><h3>المكيّف</h3><p>تبي حرارة الغرفة بين 22 و 25 درجة: هذه فترة <span dir="ltr">[22, 25]</span>، والمكيّف يشتغل لما تطلع الحرارة منها.</p></div>
+    <div class="card"><h3>حدود السرعة</h3><p>اللوحة تقول 120؟ السرعة المسموحة <span dir="ltr">v ≤ 120</span>. متباينة على الطريق كل يوم.</p></div>
+    <div class="card"><h3>المصروف</h3><p>تبي تشتري أكبر عدد من الأغراض والمجموع يبقى أقل من ميزانيتك: سؤال "أقل من" هو متباينة.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">11</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>مجموعة حل المتباينة <span class="f" style="font-size:1.1rem">(x − 1)(x − 4) &lt; 0</span> هي:</p>
+      <div class="opts"><button dir="ltr">ℝ/[1, 4]</button><button dir="ltr" data-ok>(1, 4)</button><button dir="ltr">[1, 4]</button></div>
+      <p class="why" hidden>الصحيح: ⁦(1, 4)⁩. العاملان مختلفا الإشارة بين الصفرين فقط، والمتباينة تامة (&lt;) فالصفران خارج الحل.</p></div>
+    <div class="q"><p>الصورة <span class="f" style="font-size:1.1rem">ℝ/[−2, 5]</span> تساوي:</p>
+      <div class="opts"><button dir="ltr" data-ok>(−∞, −2) ∪ (5, ∞)</button><button dir="ltr">(−∞, −2] ∪ [5, ∞)</button><button dir="ltr">(−2, 5)</button></div>
+      <p class="why" hidden>الصحيح: ⁦(−∞, −2) ∪ (5, ∞)⁩. العددان −2 و 5 داخل الفترة المحذوفة، فهما خارج الحل: قوس دائري.</p></div>
+    <div class="q"><p>مجموعة حل المتباينة <span class="f" style="font-size:1.1rem"><span class="frac"><span>x + 1</span><span>x − 3</span></span> ≤ 0</span> هي:</p>
+      <div class="opts"><button dir="ltr">[−1, 3]</button><button dir="ltr">(−1, 3]</button><button dir="ltr" data-ok>[−1, 3)</button></div>
+      <p class="why" hidden>الصحيح: ⁦[−1, 3)⁩. الكسر سالب بين −1 و 3. صفر البسط −1 يدخل مع ≤، وصفر المقام 3 لا يدخل أبداً.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li><b>الخطوات</b>: اجعل الطرف صفراً، أوجد أصفار المعادلة المناظرة، كوّن جدول الإشارات، واختر الفترات. ≤ و ≥ تُدخل الأصفار.</li>
+      <li><b>الكسر</b>: أصفار المقام تُحدَّد قبل الاختصار ولا تدخل الحل أبداً، مثل <span dir="ltr">(3x + 7) ÷ (x + 2) ≥ 2</span> ⇐ <span dir="ltr">ℝ/(−3, −2]</span>.</li>
+      <li><b>الكتابة</b>: <span dir="ltr">(−∞, a) ∪ (b, ∞) = ℝ/[a, b]</span>. ومجال <span dir="ltr">√(…)</span> هو حل "ما تحت الجذر ≥ 0".</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الرياضيات، الصف الحادي عشر، الوحدة الثانية، ص 75 إلى 87</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"math-u2-2-6"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+function n2(v){var r=Math.round(v*100)/100;if(Object.is(r,-0))r=0;return String(r).replace("-","−");}
+var F2=function(a,b){return '<span class="frac"><span>'+a+'</span><span>'+b+'</span></span>';};
+
+/* ---------- sign tables: pts = critical x labels, rows = [label, cells...] with 2n+1 cells
+   cells: "+", "−", "0", "u" (undefined), "" ; res = index list of result cells to highlight ---------- */
+var T={
+  t1:{pts:["−2","3"],rows:[["x + 2","−","0","+","","+"],["x − 3","−","","−","0","+"]],res:["(x + 2)(x − 3)","+","0","−","0","+"],hl:[2]},
+  t2:{pts:["2","5"],rows:[["x − 2","−","0","+","","+"],["x − 5","−","","−","0","+"]],res:["(x − 2)(x − 5)","+","0","−","0","+"],hl:[0,1,3,4]},
+  t3:{pts:["4","6"],ends:["0","10"],rows:[["−x + 4","+","0","−","","−"],["x − 6","−","","−","0","+"]],res:["(−x + 4)(x − 6)","−","0","+","0","−"],hl:[0,4]},
+  t4:{pts:["1","9"],ends:["0","10"],rows:[["−x + 1","+","0","−","","−"],["x − 9","−","","−","0","+"]],res:["(−x + 1)(x − 9)","−","0","+","0","−"],hl:[2]},
+  t5:{pts:["−2","2"],rows:[["x − 2","−","","−","0","+"],["x + 2","−","0","+","","+"]],res:["(x − 2)(x + 2)","+","0","−","0","+"],hl:[0,1,3,4]},
+  t6:{pts:["1","3"],rows:[["−x + 1","+","0","−","","−"],["x − 3","−","","−","0","+"]],res:["(−x + 1)(x − 3)","−","0","+","0","−"],hl:[1,2,3]},
+  t7:{pts:["−3","−2"],rows:[["x + 3","−","0","+","","+"],["x + 2","−","","−","0","+"]],res:[F2("x + 3","x + 2"),"+","0","−","u","+"],hl:[0,1,4]},
+  t8:{pts:["−4","−1","9"],rows:[["x + 1","−","","−","0","+","","+"],["x − 9","−","","−","","−","0","+"],["x + 4","−","0","+","","+","","+"]],res:[F2("(x + 1)(x − 9)","x + 4"),"−","u","+","0","−","0","+"],hl:[0,4]},
+  t9:{pts:["−4","2"],rows:[["x + 4","−","0","+","","+"],["x − 2","−","","−","0","+"]],res:["(x − 2)(x + 4)","+","0","−","0","+"],hl:[2]}
+};
+function cell(v,isPt,hl){
+  var c=isPt?"pt":"",t=v;
+  if(v==="+")c+=" p";else if(v==="−")c+=" m";else if(v==="0")c+=" z";else if(v==="u"){c+=" u";t="غير معرّفة";}
+  if(hl)c+=" hl";
+  return '<td class="'+c.trim()+'">'+t+'</td>';
+}
+function signTables(){
+  [].forEach.call(document.querySelectorAll("[data-sg]"),function(el){
+    var d=T[el.dataset.sg],n=d.pts.length,e=d.ends||["−∞","+∞"],h='<table><tr><th>x</th>';
+    for(var i=0;i<2*n+1;i++){
+      if(i%2){h+='<th>'+d.pts[(i-1)/2]+'</th>';}
+      else{var lab=i===0?e[0]:(i===2*n?e[1]:"");h+='<th class="'+(i===0?"e0":(i===2*n?"e1":""))+'">'+lab+'</th>';}
+    }
+    h+='</tr>';
+    d.rows.forEach(function(r){h+='<tr><td class="lbl">'+r[0]+'</td>';for(var i=1;i<r.length;i++)h+=cell(r[i],i%2===0,false);h+='</tr>';});
+    h+='<tr class="res"><td class="lbl">'+d.res[0]+'</td>';for(var j=1;j<d.res.length;j++)h+=cell(d.res[j],j%2===0,d.hl.indexOf(j-1)>=0);h+='</tr></table>';
+    el.innerHTML=h;
+  });
+}
+signTables();
+
+/* ---------- number lines: t = [[label,"o"|"c"]], s = [[i,j]] segments by tick index, -1 = −∞, 9 = +∞ ---------- */
+function numberLines(){
+  [].forEach.call(document.querySelectorAll("[data-nl]"),function(sv){
+    var d=JSON.parse(sv.getAttribute("data-nl")),n=d.t.length,X=function(i){return i<0?10:(i>=9?290:(n>1?80+i*140/(n-1):150));};
+    var s='<line x1="10" y1="22" x2="290" y2="22" stroke="var(--axis)" stroke-width="2"/>';
+    d.s.forEach(function(g){var a=X(g[0]),b=X(g[1]);s+='<line x1="'+a+'" y1="22" x2="'+b+'" y2="22" stroke="var(--dn)" stroke-width="5" stroke-linecap="round"/>';
+      if(g[0]<0)s+='<path d="M6 22 L18 15 L18 29 Z" fill="var(--dn)"/>';if(g[1]>=9)s+='<path d="M294 22 L282 15 L282 29 Z" fill="var(--dn)"/>';});
+    d.t.forEach(function(t,i){var x=X(i);s+='<circle cx="'+x+'" cy="22" r="7" fill="'+(t[1]==="c"?"var(--dn)":"var(--plane)")+'" stroke="var(--dn)" stroke-width="2.5"/><text x="'+x+'" y="45" text-anchor="middle" font-size="15" font-style="italic" fill="var(--text)" direction="ltr">'+t[0]+'</text>';});
+    sv.innerHTML=s;sv.setAttribute("role","img");sv.setAttribute("aria-label","تمثيل الحل على خط الأعداد");
+  });
+}
+numberLines();
+
+/* ---------- lab: f(x) against the line y = c ---------- */
+var FN=[
+  {f:function(x){return -x*x+6*x-5;},q:[-1,6,-5],w:[-1.5,7,-6,5]},
+  {f:function(x){return (x-3)/(x-2);},hole:2,w:[-3,7,-4,5]},
+  {f:function(x){return x*x+2*x-3;},q:[1,2,-3],w:[-6,4,-5,7]},
+  {f:function(x){return x*x-6*x+5;},q:[1,-6,5],w:[-1.5,7.5,-5,7]}
+],cur=0;
+function roots(o,c){
+  if(o.q){var a=o.q[0],b=o.q[1],k=o.q[2]-c,D=b*b-4*a*k;if(D<-1e-9)return[];if(Math.abs(D)<1e-9)return[-b/(2*a)];var r=Math.sqrt(D);return[(-b-r)/(2*a),(-b+r)/(2*a)].sort(function(p,q){return p-q;});}
+  if(Math.abs(1-c)<1e-9)return[];return[(3-2*c)/(1-c)];
+}
+function sets(o,c){
+  var R=roots(o,c),cr=R.map(function(v){return{v:v,hole:false};});
+  if(o.hole!==undefined)cr.push({v:o.hole,hole:true});
+  cr.sort(function(a,b){return a.v-b.v;});
+  var cuts=[-Infinity].concat(cr.map(function(p){return p.v;})).concat([Infinity]),gt=[],lt=[];
+  for(var i=0;i<cuts.length-1;i++){
+    var a=cuts[i],b=cuts[i+1],m=a===-Infinity?b-1:(b===Infinity?a+1:(a+b)/2);if(a===-Infinity&&b===Infinity)m=0;
+    var v=o.f(m)-c;(v>0?gt:lt).push([a,b]);
+  }
+  return{R:R,gt:gt,lt:lt,cr:cr};
+}
+function iv(list){
+  if(!list.length)return"∅";
+  return list.map(function(p){return"("+(p[0]===-Infinity?"−∞":n2(p[0]))+", "+(p[1]===Infinity?"∞":n2(p[1]))+")";}).join(" ∪ ");
+}
+function lab(){
+  var o=FN[cur],c=+$("cS").value,W=400,H=280,pad=12,X0=o.w[0],X1=o.w[1],Y0=o.w[2],Y1=o.w[3];
+  var px=function(x){return pad+(x-X0)/(X1-X0)*(W-2*pad);},py=function(y){return H-pad-(y-Y0)/(Y1-Y0)*(H-2*pad);};
+  var s='<defs><clipPath id="lc"><rect x="'+pad+'" y="'+pad+'" width="'+(W-2*pad)+'" height="'+(H-2*pad)+'"/></clipPath></defs>';
+  for(var gx=Math.ceil(X0);gx<=X1;gx++)s+='<line x1="'+px(gx).toFixed(1)+'" y1="'+pad+'" x2="'+px(gx).toFixed(1)+'" y2="'+(H-pad)+'" stroke="var(--grid)"/>';
+  for(var gy=Math.ceil(Y0);gy<=Y1;gy++)s+='<line x1="'+pad+'" y1="'+py(gy).toFixed(1)+'" x2="'+(W-pad)+'" y2="'+py(gy).toFixed(1)+'" stroke="var(--grid)"/>';
+  s+='<line x1="'+pad+'" y1="'+py(0)+'" x2="'+(W-pad)+'" y2="'+py(0)+'" stroke="var(--axis)" stroke-width="1.8"/><line x1="'+px(0)+'" y1="'+pad+'" x2="'+px(0)+'" y2="'+(H-pad)+'" stroke="var(--axis)" stroke-width="1.8"/>';
+  s+='<g font-size="11" fill="var(--axis)" direction="ltr" text-anchor="middle">';
+  for(var lx=Math.ceil(X0);lx<=X1;lx++){if(lx)s+='<text x="'+px(lx)+'" y="'+(py(0)+13)+'">'+n2(lx)+'</text>';}
+  s+='</g><g clip-path="url(#lc)">';
+  /* curve split by sign of f - c */
+  var seg="",col=null,N=600;
+  function flush(){if(seg)s+='<path d="'+seg+'" fill="none" stroke="'+col+'" stroke-width="3.6" stroke-linejoin="round"/>';seg="";}
+  for(var i=0;i<=N;i++){
+    var x=X0+(X1-X0)*i/N;if(o.hole!==undefined&&Math.abs(x-o.hole)<0.02){flush();col=null;continue;}
+    var y=o.f(x);if(!isFinite(y)||y>Y1+3||y<Y0-3){flush();col=null;continue;}
+    var cc=y-c>=0?"var(--up)":"var(--dn)";
+    if(cc!==col){if(seg){seg+="L"+px(x).toFixed(1)+" "+py(y).toFixed(1);}flush();col=cc;seg="M"+px(x).toFixed(1)+" "+py(y).toFixed(1);}
+    else seg+="L"+px(x).toFixed(1)+" "+py(y).toFixed(1);
+  }
+  flush();
+  if(o.hole!==undefined)s+='<line x1="'+px(o.hole)+'" y1="'+pad+'" x2="'+px(o.hole)+'" y2="'+(H-pad)+'" stroke="var(--axis)" stroke-width="1.5" stroke-dasharray="4 5"/>';
+  s+='<line x1="'+pad+'" y1="'+py(c).toFixed(1)+'" x2="'+(W-pad)+'" y2="'+py(c).toFixed(1)+'" stroke="var(--lineC)" stroke-width="2.6" stroke-dasharray="8 6"/>';
+  var S=sets(o,c);
+  S.R.forEach(function(r){s+='<circle cx="'+px(r).toFixed(1)+'" cy="'+py(c).toFixed(1)+'" r="6" fill="var(--lineC)" stroke="var(--plane)" stroke-width="2"/>';});
+  s+='</g>';
+  $("labPlot").innerHTML=s;
+  /* strip */
+  var t='<line x1="'+pad+'" y1="16" x2="'+(W-pad)+'" y2="16" stroke="var(--axis)" stroke-width="2"/>';
+  function band(list,colr){list.forEach(function(p){var a=Math.max(p[0],X0),b=Math.min(p[1],X1);if(b>a)t+='<line x1="'+px(a).toFixed(1)+'" y1="16" x2="'+px(b).toFixed(1)+'" y2="16" stroke="'+colr+'" stroke-width="8" stroke-linecap="butt"/>';});}
+  band(S.gt,"var(--up)");band(S.lt,"var(--dn)");
+  S.cr.forEach(function(p){if(p.v<X0||p.v>X1)return;t+='<circle cx="'+px(p.v).toFixed(1)+'" cy="16" r="6" fill="'+(p.hole?"var(--plane)":"var(--lineC)")+'" stroke="'+(p.hole?"var(--axis)":"var(--plane)")+'" stroke-width="2"/><text x="'+px(p.v).toFixed(1)+'" y="40" text-anchor="middle" font-size="12.5" fill="var(--text)" direction="ltr">'+n2(p.v)+'</text>';});
+  $("labStrip").innerHTML=t;
+  $("cL").textContent="c = "+n2(c);
+  var I="⁦",O="⁩",eq=S.R.length?I+"x = "+S.R.map(n2).join(" , ")+O:"ولا نقطة";
+  var h='<p class="eq0">'+I+"f(x) = "+n2(c)+O+" عند: "+eq+'</p>';
+  h+='<p class="gt0">'+I+"f(x) &gt; "+n2(c)+O+" لكل "+I+"x ∈ "+iv(S.gt)+O+'</p>';
+  h+='<p class="lt0">'+I+"f(x) &lt; "+n2(c)+O+" لكل "+I+"x ∈ "+iv(S.lt)+O+'</p>';
+  if(o.hole!==undefined)h+='<p class="eq0">'+I+"x = 2"+O+" صفر المقام: الدالة غير معرّفة، فلا تدخل أي مجموعة.</p>";
+  $("labOut").innerHTML=h;
+}
+function pick(k){cur=k;[].forEach.call(document.querySelectorAll("#fsel button"),function(x){x.setAttribute("aria-pressed",+x.dataset.f===k?"true":"false");});lab();}
+[].forEach.call(document.querySelectorAll("#fsel button"),function(b){b.addEventListener("click",function(){pick(+b.dataset.f);});});
+$("cS").addEventListener("input",lab);
+$("toLab").addEventListener("click",function(){$("cS").value=5;pick(2);$("lab-title").scrollIntoView({behavior:"smooth",block:"start"});});
+lab();
+
+/* ---------- garden ---------- */
+function garden(){
+  var x=+$("gx").value,w=10-x,A=x*w,sc=16,W=400,H=200,rw=x*sc*1.8,rh=w*sc*0.9;
+  var x0=(W-rw)/2,y0=(H-rh)/2-6;
+  var fill=A<24?"var(--p-pink)":"var(--p-mint)";
+  var s='<rect x="'+x0.toFixed(1)+'" y="'+y0.toFixed(1)+'" width="'+rw.toFixed(1)+'" height="'+rh.toFixed(1)+'" rx="10" fill="'+fill+'" stroke="var(--up)" stroke-width="3"/>';
+  s+='<text x="'+(W/2)+'" y="'+(y0+rh+18).toFixed(1)+'" text-anchor="middle" font-size="14" fill="var(--text)" direction="ltr">x = '+n2(x)+' m</text>';
+  s+='<text x="'+(x0-8).toFixed(1)+'" y="'+(y0+rh/2+5).toFixed(1)+'" text-anchor="end" font-size="14" fill="var(--text)" direction="ltr">'+n2(w)+' m</text>';
+  s+='<text x="'+(W/2)+'" y="'+(y0+rh/2+6).toFixed(1)+'" text-anchor="middle" font-size="16" font-weight="700" fill="var(--text)" direction="ltr">'+n2(A)+' m²</text>';
+  $("gPlot").innerHTML=s;$("gxL").textContent="x = "+n2(x);
+  var I="⁦",O="⁩";
+  $("gB").innerHTML='<span>'+I+"f("+n2(x)+") = "+n2(A)+O+'</span><span class="'+(A<24?"yes":"no")+'">'+I+"f(x) &lt; 24"+O+(A<24?" نعم":" لا")+'</span><span class="'+(A>9?"yes":"no")+'">'+I+"f(x) &gt; 9"+O+(A>9?" نعم":" لا")+'</span>';
+}
+$("gx").addEventListener("input",garden);garden();
+window.addEventListener("masar-theme",function(){lab();garden();numberLines();});
+})();
+</script>
+</body>
+</html>
