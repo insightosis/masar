@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="biology">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>نمو النباتات · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+span[dir=ltr],bdi[dir=ltr],b[dir=ltr]{unicode-bidi:isolate}
+body{--leaf:#8fd16a;--leaf2:#5fb02a;--soil:#c99a6b;--soil2:#9c7047;--bk:#8a6d3b;--spr:#f6e2b0;--sum:#c98d4e;--heart:#8a4f24;--sapw:#f1cf8a;--vc:#2f9e4a;--phl:#e58a6a;--ccb:#7a5bb0;--cork:#8b6a52;--tag:#e2557a;--root:#e2b84f;--cap:#f2a65a;--cyto:#fff6dc;--wall:#8a6d3b;--hair:#b08a2a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--leaf:#4f8a37;--leaf2:#7cc350;--soil:#6b4f35;--soil2:#a07a52;--bk:#b08a55;--spr:#d9bf85;--sum:#8a5a2e;--heart:#5a3418;--sapw:#d8b46c;--vc:#5fd07a;--phl:#d9765a;--ccb:#a58be0;--cork:#6e5442;--tag:#ff8aa8;--root:#c9a24a;--cap:#d98a40;--cyto:#3a3420;--wall:#c9a86a;--hair:#d8b45a}}
+:root[data-theme="dark"] body{--leaf:#4f8a37;--leaf2:#7cc350;--soil:#6b4f35;--soil2:#a07a52;--bk:#b08a55;--spr:#d9bf85;--sum:#8a5a2e;--heart:#5a3418;--sapw:#d8b46c;--vc:#5fd07a;--phl:#d9765a;--ccb:#a58be0;--cork:#6e5442;--tag:#ff8aa8;--root:#c9a24a;--cap:#d98a40;--cyto:#3a3420;--wall:#c9a86a;--hair:#d8b45a}
+.stage{display:block;width:100%;height:auto;border-radius:22px;background:var(--sky);box-shadow:var(--press)}
+.stage.plain{background:var(--card)}
+.help{display:inline-block;font-size:12px;font-weight:700;padding:1px 9px;border-radius:9px;background:var(--p-sky);color:var(--text);margin-inline-end:6px}
+.xtra{margin-top:12px;padding:10px 16px;border-radius:20px;background:var(--card);box-shadow:var(--clay-sm)}
+.xtra summary{cursor:pointer;font-weight:700;color:var(--ink)}
+.grad{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:10px}
+.grad span{padding:5px 12px;border-radius:14px;font-weight:700;font-size:14px;box-shadow:var(--clay-sm);color:var(--text)}
+.grad b{color:var(--muted)}
+.keyrow{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-size:13.5px;font-weight:700}
+.keyrow span{display:inline-flex;align-items:center;gap:6px}
+.keyrow i{display:inline-block;width:16px;height:16px;border-radius:5px}
+.lay{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.lay .tg{display:inline-flex;align-items:center;gap:7px;font-size:14px;padding:7px 12px}
+.lay .tg i{display:inline-block;width:14px;height:14px;border-radius:4px;flex:none}
+.info{margin-top:12px;padding:12px 16px;border-radius:20px;background:var(--soft);box-shadow:var(--clay-sm);min-height:84px}
+.info h3{margin:0 0 4px;font-size:1.05rem}
+.info p{margin:0;font-size:15px}
+.tiles .tile b{font-size:clamp(1.3rem,5vw,1.8rem)}
+</style>
+</head>
+<body style="--sc:#5fb02a">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الأحياء</span><span class="chip">الدرس 1-4 · ص 51 إلى 59</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الأولى: علم النباتات</p>
+  <h1 id="t">نمو النباتات</h1>
+  <p>تخيّل إنك حفرت اسمك على جذع شجرة، على ارتفاع متر من الأرض. بعد عشر سنوات صارت الشجرة أطول منك بكثير. <mark>هل ارتفع اسمك معها؟</mark> وليش الجذع يصير أعرض كل سنة، ولو قطعته تلقى داخله حلقات مثل بصمة؟ الجواب في أماكن صغيرة في النبتة اسمها <b>الأنسجة الإنشائية</b>.</p>
+</section>
+
+<section class="panel" id="lab-sec" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">مختبر: شجرة تكبر أمامك</h2><span class="legend">حرّك السنوات، قصّ القمّة، أو غيّر نوع النبات</span></div>
+  <svg class="stage" id="treeLab" viewBox="0 0 400 270" role="img" aria-label="نبتة تنمو في الطول من قمّتها وفي العرض بحلقات، مع علامة اسم ثابتة على الجذع، ومقطع عرضي في الجذع يظهر حلقات النمو"></svg>
+  <div class="tiles" style="margin-top:10px">
+    <div class="tile"><span>طول النبتة</span><b id="tH" dir="ltr">0</b><small>m</small></div>
+    <div class="tile"><span>ارتفاع اسمك</span><b dir="ltr">1</b><small>m</small></div>
+    <div class="tile"><span>حلقات النمو</span><b id="tR" dir="ltr">0</b><small>حلقة</small></div>
+  </div>
+  <div class="controls"><div class="ctl"><label for="yr">مواسم النمو (سنوات) <b id="yrL">1</b></label><input type="range" id="yr" min="1" max="10" value="1" aria-describedby="yrL"></div></div>
+  <div class="btns"><button class="tg" type="button" id="prune" aria-pressed="false">قصّ القمّة</button><button class="tg" type="button" id="ptype" aria-pressed="false">اجعلها نبتة عشبية</button></div>
+  <p class="msg" id="pMsg" aria-live="polite"></p>
+  <p class="cap">نموذج مبسّط من عندنا للفهم، الأرقام مو من الكتاب. جرّب: حرّك السنوات للآخر وراقب اسمك، ثم قصّ القمّة وكمّل السنوات، ثم جرّب النبتة العشبية.</p>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">رموز الدرس</h2></div>
+  <div class="syms">
+    <div class="sym"><span class="bub"><span>✳</span></span><div><h3>الأنسجة الإنشائية (المرستيمية) <span class="en">Meristems</span></h3><p>الأنسجة النامية في النبات: تنتج خلايا جديدة بالانقسام الميتوزي.</p><span class="hook">مصنع الخلايا الجديدة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub"><span>⇡</span></span><div><h3>الأنسجة الإنشائية القمّية <span class="en">Apical Meristems</span></h3><p>في قمم السوق والجذور: تجعل الساق أطول والجذر أعمق.</p><span class="hook">القمّة تطوّل.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span>⤴</span></span><div><h3>الأنسجة الإنشائية البرعمية الإبطية <span class="en">Axillary Meristems</span></h3><p>في البراعم عند آباط الأوراق، تنمو منها الفروع الجانبية. براعمها تُسمّى البراعم الجانبية <span dir="ltr">(Lateral Buds)</span>.</p><span class="hook">الإبط يفرّع.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span>◎</span></span><div><h3>الأنسجة الإنشائية الجانبية <span class="en">Lateral Meristems</span></h3><p>أسطوانة جوفاء موازية لمحيط الساق والجذر في النباتات الخشبية، تزيد القطر.</p><span class="hook">الجوانب تعرّض.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub"><span>↕</span></span><div><h3>النمو الأوّلي (الابتدائي) <span class="en">Primary Growth</span></h3><p>استطالة السوق والجذور. يحدث في جميع النباتات.</p><span class="hook">أوّلي = طول، للكل.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub"><span>↔</span></span><div><h3>النمو الثانوي <span class="en">Secondary Growth</span></h3><p>زيادة عرض الجذور والسوق والفروع في نباتات بذرية معيّنة، وينتج عنه الخشب.</p><span class="hook">ثانوي = عرض، للخشبية.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub"><span>∩</span></span><div><h3>القلنسوة <span class="en">Rootcap</span></h3><p>خلايا بارنشيمية تغطي قمّة الجذر وتحميها، تتآكل وتتجدّد باستمرار.</p><span class="hook">خوذة الجذر.</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub"><span>◉</span></span><div><h3>الكمبيوم <span class="en">Cambium</span></h3><p>النسيج الإنشائي الذي ينتج خلايا جديدة للنمو الجانبي في النباتات الخشبية. نوعان: وعائي وفلّيني.</p><span class="hook">اسم الأنسجة الجانبية.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub"><span>⇄</span></span><div><h3>الكمبيوم الوعائي <span class="en">Vascular Cambium</span></h3><p>بين الخشب واللحاء: خشب ثانوي <span dir="ltr">(Secondary Xylem)</span> للداخل، ولحاء ثانوي <span dir="ltr">(Secondary Phloem)</span> للخارج.</p><span class="hook">خشب للداخل، لحاء للخارج.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub"><span>▦</span></span><div><h3>الكمبيوم الفلّيني <span class="en">Cork Cambium</span></h3><p>بين اللحاء والبشرة: يستبدل القشرة والبشرة بالفلّين الذي يحمي الشجرة.</p><span class="hook">مصنع الدرع.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span>◐</span></span><div><h3>الخشب العصاري وخشب القلب <span class="en">Sap Wood · Heart Wood</span></h3><p>العصاري: طبقات خارجية جديدة فاتحة تنقل الماء. القلب: طبقات قديمة داكنة في المركز لا تنقل الماء.</p><span class="hook">الجديد يشتغل، القديم يسند.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span>⊚</span></span><div><h3>حلقات النمو <span class="en">Growth Rings · Tree Rings</span></h3><p>نطاق فاتح (خشب الربيع) + نطاق داكن (خشب الصيف) = حلقة = سنة.</p><span class="hook">عُدّ الحلقات تعرف العمر.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub"><span>▢</span></span><div><h3>القلف <span class="en">Bark</span></h3><p>كل الأنسجة خارج الكمبيوم الوعائي: لحاء ثانوي + كمبيوم فلّيني + فلّين.</p><span class="hook">جلد الشجرة بطبقاته.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">الأنسجة الإنشائية: وين تنولد الخلايا؟</h2></div>
+  <p>فكّر في طريق جديد يبنونه في الصحراء: العمّال يشتغلون <b>عند آخره فقط</b>، فالطريق يطول من طرفه، والجزء القديم يبقى مكانه. النبتة كذلك: تطول من <b>أطرافها وقممها</b>، مو من وسطها. لهذا اسمك على الجذع ما يرتفع.</p>
+  <div class="qbox"><b>الأنسجة الإنشائية (أو المرستيمية)</b> <span dir="ltr">(Meristems)</span>: هي <b>الأنسجة النامية</b> للنباتات. وظيفتها <b>إنتاج خلايا جديدة بالانقسام الميتوزي</b>.</div>
+  <svg class="stage" viewBox="0 0 400 230" role="img" aria-label="نبتة عليها دوائر عند قمّة الساق وعند إبط ورقة وعند قمّة الجذر، ومقطع في جذع خشبي فيه حلقة خضراء هي الكمبيوم" style="margin-top:12px">
+    <rect x="0" y="150" width="262" height="80" fill="var(--soil)"/>
+    <g stroke="var(--root)" stroke-width="4" stroke-linecap="round" fill="none"><path d="M130 150 L130 212 M130 170 L110 190 M130 184 L150 204"/></g>
+    <rect x="126" y="34" width="8" height="118" rx="4" fill="var(--leaf2)"/>
+    <path d="M134 72 C150 54 176 56 184 66 C172 82 150 84 134 72Z" fill="var(--leaf)" stroke="var(--leaf2)" stroke-width="2"/>
+    <path d="M126 108 C110 92 84 94 76 104 C88 120 110 120 126 108Z" fill="var(--leaf)" stroke="var(--leaf2)" stroke-width="2"/>
+    <circle cx="138" cy="66" r="4" fill="var(--vc)"/>
+    <circle cx="130" cy="30" r="6" fill="var(--vc)"/>
+    <g fill="none" stroke="var(--text)" stroke-width="2" stroke-dasharray="4 3"><circle cx="130" cy="30" r="12"/><circle cx="138" cy="66" r="10"/><circle cx="130" cy="212" r="10"/></g>
+    <g stroke="var(--muted)" stroke-width="1.5"><line x1="142" y1="28" x2="188" y2="28"/><line x1="148" y1="64" x2="196" y2="88"/><line x1="140" y1="214" x2="186" y2="214"/></g>
+    <g font-size="12" font-weight="700" fill="var(--text)" text-anchor="middle">
+      <text x="236" y="32">نسيج إنشائي قمّي</text>
+      <text x="230" y="98">برعم إبطي</text>
+      <text x="226" y="210">نسيج إنشائي قمّي</text><text x="226" y="225">(قمّة الجذر)</text>
+      <text x="340" y="62">مقطع في جذع خشبي</text>
+      <text x="340" y="174">نسيج إنشائي جانبي</text><text x="340" y="190">(الكمبيوم)</text>
+    </g>
+    <circle cx="340" cy="112" r="38" fill="var(--cork)"/>
+    <circle cx="340" cy="112" r="32" fill="var(--phl)"/>
+    <circle cx="340" cy="112" r="27" fill="var(--vc)"/>
+    <circle cx="340" cy="112" r="24" fill="var(--sapw)"/>
+  </svg>
+  <div class="grid2" style="margin-top:12px">
+    <div class="box mint"><h3>1 · القمّية <span dir="ltr" style="font-size:13px">Apical</span></h3><p>عند <b>قمم السوق والفروع والجذور</b>. تسبّب النمو <b>في الطول</b>: الساق أطول والجذر أعمق في التربة.</p></div>
+    <div class="box sky"><h3>2 · البرعمية الإبطية <span dir="ltr" style="font-size:13px">Axillary</span></h3><p>في <b>البراعم عند مواضع اتصال الأوراق بالساق</b> (آباط الأوراق). تسبّب نمو <b>الفروع الجانبية</b>.</p></div>
+    <div class="box butter"><h3>3 · الجانبية <span dir="ltr" style="font-size:13px">Lateral</span></h3><p>في <b>النباتات الخشبية</b> فقط: بين الخشب واللحاء، وقرب أسطح السوق، <b>موازية لمحيط العضو</b>. مسؤولة عن النمو <b>في العرض</b> (ازدياد قطر الساق والجذور).</p></div>
+  </div>
+  <p class="tip" style="margin-top:12px">النباتات <b>العشبية والخشبية</b> كلها فيها النوعين 1 و 2. أما النوع 3 فخاص بالنباتات <b>الخشبية</b>.</p>
+
+  <h3 style="margin:20px 0 6px">خلية جديدة، شو تصير؟</h3>
+  <p>الخلايا اللي ينتجها الانقسام الميتوزي تكون <b>متشابهة في البداية</b>، مثل طلاب الصف الأول: كلهم شبه بعض. بعدين كل خلية <b>تتخصّص (تتمايز)</b> وتصير جزءاً من واحد من <b>ثلاثة أنواع</b> من الأنسجة:</p>
+  <div class="grad" aria-label="أنواع الأنسجة الثلاثة">
+    <span style="background:var(--p-sky)">النسيج الوعائي</span><b>·</b><span style="background:var(--p-mint)">البشرة (النسيج الجلدي)</span><b>·</b><span style="background:var(--p-butter)">النسيج الأساسي</span>
+  </div>
+  <div class="grid2" style="margin-top:12px">
+    <div class="box peach"><h3>الأنسجة الإنشائية</h3><p><b>مناطق نمو سريع</b>، خلاياها <b>تنقسم باستمرار</b> وتنتج خلايا جديدة <b>غير متخصّصة</b> في البداية. منها تنشأ كل الخلايا الجديدة.</p></div>
+    <div class="box lav"><h3>الأنسجة الأخرى</h3><p>الوعائي والجلدي والأساسي: خلاياها <b>متمايزة متخصّصة</b> لكل منها وظيفة (نقل، حماية، تخزين ودعامة)، وأصلها خلايا إنشائية.</p></div>
+  </div>
+  <p class="muted" style="font-size:14px;margin-top:8px"><span class="help">سؤال الكتاب</span>كيف يحافظ الانقسام الميتوزي على الرسالة الوراثية؟ في الانقسام الميتوزي تُنسخ المادة الوراثية كاملة، فتأخذ كل خلية جديدة نسخة مطابقة، ولهذا تحمل معظم خلايا النبتة الرسالة الوراثية نفسها.</p>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">النمو الأوّلي: أطول وأعمق</h2></div>
+  <p>في النباتات البذرية <b>نمطان</b> من النمو. الأول: <b>النمو الأوّلي أو الابتدائي</b> <span dir="ltr">(Primary Growth)</span>، وهو <b>استطالة السوق والجذور</b>: الساق تصير أطول والجذر أعمق. ويحدث في <b>جميع النباتات</b>.</p>
+  <p>أول ساق تطلع من البذرة اسمها <b>الساق الابتدائية (الأوّلية)</b>، ومنها تتكوّن السوق والأوراق. وفيها نوعان من الأنسجة الإنشائية:</p>
+  <ul class="pts">
+    <li style="--b:var(--vc)"><b>القمّية</b> في قمم جميع السوق: تكوّن الساق والأوراق.</li>
+    <li style="--b:var(--sc)"><b>البراعم الإبطية</b> عند قاعدة كل ورقة: يمكن أن تكوّن <b>فرعاً أو زهرة</b>. ولأنها تعطي فروعاً جانبية، تُسمّى أيضاً <b>البراعم الجانبية</b> <span dir="ltr">(Lateral Buds)</span>.</li>
+  </ul>
+
+  <h3 style="margin:18px 0 6px">القمّة هي المدير: هرمون الأكسين</h3>
+  <p>في معظم النباتات تبقى البراعم الإبطية <b>نائمة (غير نشطة)</b>، والسبب <b>هرمونات الأكسين</b> اللي تُفرَز في الأنسجة الإنشائية عند <b>قمّة الساق</b>. مثل مدير في الأعلى يقول للفروع: "انتظروا". لو <b>أُتلفت القمّة أو أُزيلت</b> يتوقّف إنتاج الهرمون، فتبدأ البراعم الإبطية تنمو فروعاً جانبية. جرّب "قصّ القمّة" في المختبر فوق.</p>
+  <div class="grad" aria-label="سلسلة التقليم">
+    <span style="background:var(--p-peach)">قصّ قمم الفروع</span><b>←</b><span style="background:var(--p-butter)">يتوقف الأكسين</span><b>←</b><span style="background:var(--p-mint)">يزول التثبيط</span><b>←</b><span style="background:var(--p-sky)">تنمو البراعم الإبطية</span><b>←</b><span style="background:var(--p-lav)">نبتة كثيفة</span>
+  </div>
+  <p style="margin-top:10px">عشان كذا عمّال البساتين <b>يقلّمون (يقصّون) قمم الفروع</b> ليجعلوا النبتة <b>كثيفة</b>، وبنفس الطريقة يصنعون <b>الأسوار</b> النباتية.</p>
+
+  <h3 style="margin:20px 0 6px">ثلاث خطوات في قمّة الجذر</h3>
+  <p>النمو الأوّلي للجذور والسوق يحتاج ثلاث خطوات بالترتيب: <b>الانقسام الخلوي، ثم الاستطالة، ثم التمايز</b>. وكل خطوة لها منطقة في الجذر:</p>
+  <svg class="stage plain" viewBox="0 0 400 250" role="img" aria-label="رسم قمّة جذر: القلنسوة في الطرف، فوقها منطقة الانقسام الخلوي بخلايا صغيرة، فوقها منطقة الاستطالة بخلايا طويلة، وفي الأعلى منطقة التمايز مع شعيرات جذرية" style="margin-top:10px">
+    <g id="rootCells"></g>
+    <g stroke="var(--muted)" stroke-width="2" fill="none">
+      <path d="M222 12 L230 12 L230 76 L222 76"/><path d="M222 80 L230 80 L230 144 L222 144"/><path d="M222 148 L230 148 L230 194 L222 194"/><path d="M222 200 L230 200 L230 238 L222 238"/>
+    </g>
+    <g stroke="var(--muted)" stroke-width="1.5"><line x1="112" y1="34" x2="128" y2="34"/><line x1="112" y1="172" x2="158" y2="172"/></g>
+    <g font-size="12.5" font-weight="700" fill="var(--text)" text-anchor="middle">
+      <text x="312" y="48">منطقة التمايز</text>
+      <text x="312" y="116">منطقة الاستطالة</text>
+      <text x="312" y="168">منطقة الانقسام</text><text x="312" y="184">الخلوي</text>
+      <text x="312" y="224">القلنسوة</text>
+      <text x="64" y="38">شعيرات جذرية</text>
+      <text x="64" y="168">نسيج إنشائي</text><text x="64" y="184">قمّي</text>
+    </g>
+  </svg>
+  <ol class="tline" style="margin-top:12px">
+    <li><span class="yr">1 · انقسام</span><div class="ev"><b>منطقة الانقسام الخلوي</b><span>في <strong>النسيج الإنشائي القمّي</strong>: الانقسام يكوّن خلايا جديدة صغيرة.</span></div></li>
+    <li><span class="yr">2 · استطالة</span><div class="ev"><b>منطقة الاستطالة</b><span>الخلايا <strong>تطول</strong>، واستطالتها <strong>تدفع الجذر خلال التربة</strong> مثل مسمار ينغرز.</span></div></li>
+    <li><span class="yr">3 · تمايز</span><div class="ev"><b>منطقة التمايز</b><span>الخلايا <strong>تتخصّص</strong>: نسيج وعائي (خشب أو لحاء)، أو نسيج جلدي (الشعيرات الجذرية)، أو نسيج أساسي (خلايا بارنشيمية أو دعامية).</span></div></li>
+  </ol>
+  <div class="box pink" style="margin-top:12px"><h3>القلنسوة <span dir="ltr" style="font-size:13px">Rootcap</span></h3><p>مجموعة <b>خلايا بارنشيمية</b> تحيط بقمّة الجذر <b>إحاطة كاملة</b> لتحمي القمّة النامية. مثل خوذة تحتكّ بالتربة: <b>تتآكل ثم تنشأ من جديد باستمرار</b> كلما تعمّق الجذر.</p></div>
+
+  <div class="act" data-act="order" data-key="order" data-rtl
+       data-answer='["القلنسوة","منطقة الانقسام الخلوي","منطقة الاستطالة","منطقة التمايز"]'
+       data-extra='["الكمبيوم الفلّيني"]'
+       data-ok="ممتاز! من الطرف: القلنسوة تحمي، فوقها الانقسام (النسيج الإنشائي القمّي)، ثم الاستطالة، ثم التمايز حيث الشعيرات الجذرية. والكمبيوم الفلّيني في الجذوع الخشبية، مو في قمّة الجذر."
+       data-no="القطع الحمراء في غير مكانها. ابدأ من أبعد نقطة في التربة (الخوذة)، ثم رتّب الخطوات: انقسام، استطالة، تمايز. والكمبيوم الفلّيني ما له مكان في قمّة الجذر.">
+    <h3>رتّب قمّة الجذر <span class="k">نشاط</span></h3>
+    <p>رتّب مناطق الجذر من الطرف المدفون في التربة صعوداً. فيه قطعة ما تنتمي لقمّة الجذر.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">النمو الثانوي: أعرض</h2></div>
+  <p>لو راقبت شجرة سنوات طويلة، تلاحظ إنها تنمو <b>في العرض</b> كما تنمو في الطول. هذا <b>النمو الثانوي</b> <span dir="ltr">(Secondary Growth)</span>: جذور <b>نباتات بذرية معيّنة</b> وسوقها وفروعها تنمو أكثر <b>في العرض</b>. ومثاله: <b>ازدياد عرض جذع شجرة</b>.</p>
+  <div class="grid2" style="margin-top:12px">
+    <div class="box mint"><h3>النمو الأوّلي</h3><p><b>طول</b> الساق و<b>عمق</b> الجذر. يحدث في <b>جميع النباتات</b>. سببه الأنسجة الإنشائية <b>القمّية</b>.</p></div>
+    <div class="box peach"><h3>النمو الثانوي</h3><p><b>عرض</b> الساق والجذر. <b>ليس في جميع النباتات</b>: عادة في <b>الكرمات والشجيرات والأشجار</b>، ومثلاً في <b>النباتات عارية البذور</b>. سببه الأنسجة الإنشائية <b>الجانبية</b>.</p></div>
+  </div>
+  <p class="tip" style="margin-top:10px"><b>معظم النباتات العشبية</b> يحدث فيها <b>نمو أوّلي فقط</b>. والنمو الثانوي ينتج عنه طبقات من <b>نسيج خلوي ميت</b> يُسمّى <b>الخشب</b> <span dir="ltr">(Wood)</span>.</p>
+  <h3 style="margin:18px 0 6px">ليش النمو الثانوي مفيد؟ تكيّف</h3>
+  <p>النمو الثانوي <b>تكيّف</b> يساعد بعض النباتات الخشبية تبقى على قيد الحياة في بيئات معيّنة. مثل عمود عمارة: كل ما صار أعرض، تقدر تبني أعلى:</p>
+  <div class="grad" aria-label="سلسلة فائدة النمو الثانوي">
+    <span style="background:var(--p-butter)">ساق أعرض</span><b>←</b><span style="background:var(--p-peach)">ساق أقوى</span><b>←</b><span style="background:var(--p-mint)">تنمو أطول</span><b>←</b><span style="background:var(--p-sky)">ضوء أكثر في التنافس</span><b>←</b><span style="background:var(--p-lav)">تتكاثر بنجاح</span>
+  </div>
+  <p style="margin-top:10px">لهذا النمو الثانوي يساهم في <b>سيادة النباتات الخشبية</b> في أنظمة بيئية عديدة.</p>
+</section>
+
+<section class="sec" aria-labelledby="s5">
+  <div class="sec-head"><span class="num">5</span><h2 id="s5">الأنسجة الإنشائية الجانبية: الكمبيوم</h2></div>
+  <p>النمو الثانوي سببه انقسام خلوي في <b>الأنسجة الإنشائية الجانبية</b> <span dir="ltr">(Lateral Meristems)</span>. وعكس القمّية اللي في القمم، الجانبية تتمركز <b>ضمن جوانب الجذور والسوق وبموازاتها</b>، وشكلها مثل <b>أسطوانة جوفاء</b> (مثل أنبوب ورق المطبخ الفارغ) داخل الساق أو الجذر، وتُسمّى <b>نسيج الكمبيوم</b>.</p>
+  <div class="qbox"><b>الكمبيوم</b> <span dir="ltr">(Cambium)</span>: هو النسيج الإنشائي الذي <b>ينتج خلايا جديدة للنمو الجانبي في النباتات الخشبية</b>. نوعاه الشائعان: <b>الكمبيوم الوعائي</b> و<b>الكمبيوم الفلّيني</b>.</div>
+  <p style="margin-top:12px">النباتات <b>ثنائية الفلقة</b> تُظهر نمواً ثانوياً في <b>الكمبيوم الوعائي</b>، اللي يتكوّن <b>بين الخشب الأوّلي واللحاء الأوّلي</b> ضمن الحزم الوعائية. تابع ساقاً صغيرة سنة بعد سنة:</p>
+  <ol class="tline">
+    <li><span class="yr">بعد العام 1</span><div class="ev"><b>الكمبيوم الوعائي يظهر</b><span>بين <strong>الخشب الأوّلي</strong> و<strong>اللحاء الأوّلي</strong>. في المركز النخاع، وتحت السطح القشرة، و<strong>البشرة</strong> هي الطبقة الخارجية.</span></div></li>
+    <li><span class="yr">بعد العام 2</span><div class="ev"><b>طبقات جديدة</b><span>الكمبيوم الوعائي ينتج <strong>خشباً ثانوياً</strong> نحو مركز الساق و<strong>لحاءً ثانوياً</strong> نحو الخارج، و<strong>الكمبيوم الفلّيني</strong> ينتج <strong>الفلّين</strong>.</span></div></li>
+    <li><span class="yr">بعد العام 3</span><div class="ev"><b>خشب وقلف</b><span>طبقات الخشب القديمة تصير <strong>خشب القلب</strong>، واللحاء القديم مع الفلّين المتجمّع يزيدان <strong>عرض القلف</strong>.</span></div></li>
+  </ol>
+
+  <h3 style="margin:20px 0 6px">(أ) الكمبيوم الوعائي <span dir="ltr" style="font-size:14px">Vascular Cambium</span></h3>
+  <p>يقع <b>بين الخشب واللحاء</b>. مثل خبّاز واقف في وسط مخبز: يحط الخبز الجديد على الطاولة اللي وراه (للداخل) والكعك على الطاولة اللي قدّامه (للخارج). كل <b>موسم نمو</b> يتكرّر هذا <b>بصورة دورية</b>، فيُنتج خشباً ولحاءً جديدين كل عام.</p>
+  <div class="grid2" style="margin-top:10px">
+    <div class="box butter"><h3>الخشب الثانوي <span dir="ltr" style="font-size:13px">Secondary Xylem</span></h3><p>ينتجه <b>نحو الداخل</b>. يُعرف عموماً باسم <b>الخشب</b>، و<b>ينقل الماء</b>.</p></div>
+    <div class="box pink"><h3>اللحاء الثانوي <span dir="ltr" style="font-size:13px">Secondary Phloem</span></h3><p>ينتجه <b>نحو الخارج</b>. ما له اسم شائع، و<b>ينقل السكريات</b>.</p></div>
+  </div>
+
+  <div class="act" data-act="gap" data-key="gap" data-ok="صح! الكمبيوم الوعائي ينقسم في اتجاهين: خشب ثانوي نحو الداخل (المركز)، ولحاء ثانوي نحو الخارج.">
+    <h3>أكمل الناقص <span class="k">نشاط</span></h3>
+    <p>الكمبيوم الوعائي ينقسم فينتج نحو <b>الداخل</b> <span class="gap">؟</span> ونحو <b>الخارج</b> لحاءً ثانوياً.</p>
+    <div class="opts">
+      <button class="pc" data-no="اللحاء الثانوي يتجه نحو الخارج، والجملة تسأل عن الداخل.">لحاءً ثانوياً</button>
+      <button class="pc" data-ok>خشباً ثانوياً</button>
+      <button class="pc" data-no="الفلّين ينتجه الكمبيوم الفلّيني اللي بين اللحاء والبشرة، مو الكمبيوم الوعائي.">فلّيناً</button>
+      <button class="pc" data-no="القلنسوة خلايا تحمي قمّة الجذر، ولا علاقة لها بالكمبيوم.">قلنسوة</button>
+    </div>
+  </div>
+
+  <h3 style="margin:22px 0 6px">(ب) الكمبيوم الفلّيني <span dir="ltr" style="font-size:14px">Cork Cambium</span></h3>
+  <p>هو النسيج الإنشائي الموجود <b>بين اللحاء والبشرة</b>. انقسامه <b>يستبدل طبقة القشرة وطبقة البشرة (النسيج الجلدي)</b> بـ<b>الفلّين</b> اللي يحمي الشجرة.</p>
+  <div class="qbox"><b>القلف</b> = <b>اللحاء الثانوي</b> + <b>الكمبيوم الفلّيني</b> + <b>الفلّين</b>، وهو اللي يحيط بجذع الشجرة.</div>
+  <p style="margin-top:12px">الفلّين <b>نسيج ميت</b> و<b>ما يقدر يتمدّد</b>. فلما يستمر الجذع ينمو في العرض، تنشقّ طبقات الفلّين الخارجية فينشقّ القلف، مثل قميص ضيّق على شخص يكبر. لهذا بعض الأشجار مثل <b>البلّوط</b> قلفها متشقّق.</p>
+  <details class="xtra"><summary>الفلّين الطبيعي وأشجار البلّوط الفلّينية</summary>
+    <p style="margin:8px 0 0">بعض الأشجار تُربّى ليُستخلص منها الفلّين (اللي تُصنع منه لوحات الإعلانات وسدّادات القناني). أشجار <b>البلّوط الفلّينية في البرتغال</b> تنتج حوالي <span dir="ltr">60 %</span> من الإنتاج العالمي. يُستخلص الفلّين <b>كل 7 إلى 10 سنوات</b> بعد أن تبلغ الشجرة <b>25 عاماً</b>، وتظل تنتجه حتى عمر <b>200 عام</b>. لكن لازم ما يتلف الجامع <b>طبقة الكمبيوم الوعائي</b>: <b>لو أُزيلت تموت الشجرة</b>.</p>
+  </details>
+</section>
+
+<section class="sec" aria-labelledby="s6">
+  <div class="sec-head"><span class="num">6</span><h2 id="s6">تكوّن الخشب وحلقات النمو</h2></div>
+  <p>النسيج الخشبي <b>يتراكم سنوياً</b> فيتكوّن <b>الخشب</b> <span dir="ltr">(Wood)</span>. لكن مو كل الخشب يشتغل:</p>
+  <div class="grid2" style="margin-top:10px">
+    <div class="box butter"><h3>الخشب العصاري <span dir="ltr" style="font-size:13px">Sap Wood</span></h3><p>الطبقات <b>الخارجية الجديدة</b> من الخشب الثانوي. <b>فاتحة اللون</b> و<b>تستمر في نقل الماء</b> والعناصر المعدنية.</p></div>
+    <div class="box peach"><h3>خشب القلب <span dir="ltr" style="font-size:13px">Heart Wood</span></h3><p>الطبقات <b>القديمة في المركز</b>: <b>مصمتة</b> و<b>لا تنقل الماء</b>، ولونها <b>داكن</b> لتراكم شوائب ما يتخلّص منها، مثل <b>الزيوت والأصباغ والمواد الراتينجية والتانينات</b>. لكنها <b>تدعم الشجرة</b>.</p></div>
+  </div>
+  <h3 style="margin:18px 0 6px">حلقات الشجرة <span dir="ltr" style="font-size:14px">Tree Rings · Growth Rings</span></h3>
+  <p>في معظم الأقاليم المعتدلة، نمو الشجرة <b>موسمي</b>. الكمبيوم الوعائي يشتغل بسرعتين:</p>
+  <div class="grid2" style="margin-top:10px">
+    <div class="box mint"><h3>خشب الربيع <span dir="ltr" style="font-size:13px">Spring Wood · Early Wood</span></h3><p>يُسمّى أيضاً <b>الخشب المبكر</b>. نمو <b>سريع</b>: خلايا <b>واسعة</b>، <b>جدرها رقيقة</b>، <b>فاتحة اللون</b>. تنقل <b>كمّيات كبيرة</b> من الماء.</p></div>
+    <div class="box lav"><h3>خشب الصيف <span dir="ltr" style="font-size:13px">Summer Wood · Late Wood</span></h3><p>يُسمّى أيضاً <b>الخشب المتأخر</b>. الجو <b>أجف وأحر</b>: خلايا <b>أصغر</b>، <b>جدرها أسمك</b>، <b>داكنة</b>. تنقل ماء <b>أقل</b>، وتنمو <b>بمعدّل أقل</b> لأنها في موسم الجفاف.</p></div>
+  </div>
+  <ul class="pts" style="margin-top:12px">
+    <li style="--b:var(--sum)">تعاقب الفاتح والداكن يصنع <b>حلقات النمو</b>. كل حلقة = <b>نطاق فاتح + نطاق داكن</b> = <b>سنة واحدة</b> من النمو.</li>
+    <li style="--b:var(--sc)"><b>عُدّ الحلقات</b> في مقطع عرضي من الساق تقدّر <b>عمر الشجرة</b>. وحلقات النمو تتكوّن <b>في الجذور أيضاً</b>.</li>
+    <li style="--b:var(--leaf2)"><b>حلقة واسعة</b>: سنة ممطرة وحرارة مناسبة. <b>حلقة ضيّقة</b>: سنة جفاف.</li>
+  </ul>
+  <p class="muted" style="font-size:14px;margin-top:8px">جرّب في المختبر فوق: بعض السنوات في النموذج جافة، شوف حلقاتها.</p>
+</section>
+
+<section class="sec" aria-labelledby="s7">
+  <div class="sec-head"><span class="num">7</span><h2 id="s7">تكوّن القلف</h2></div>
+  <p><b>القلف</b> يضم <b>جميع الأنسجة خارج الكمبيوم الوعائي</b>. وكيف يتكوّن؟ الكمبيوم الوعائي يضيف خشباً للداخل كل سنة، فيندفع هو نفسه <b>نحو الخارج</b> والجذع يعرض. هذا يضغط على الأنسجة الوعائية الأوّلية، فـ<b>اللحاء الأوّلي يتشقّق ويتفتّت</b>، ومعه <b>القشرة</b> و<b>النسيج الجلدي</b>. لو بقي الوضع كذا لخسرت الشجرة ماءً وغذاءً.</p>
+  <p>الحل: <b>الكمبيوم الفلّيني</b> يغلّف القشرة وينتج <b>طبقة سميكة من الفلّين</b>. خلايا الفلّين <b>جدرها سميكة</b> فيها <b>دهون وزيوت وشمع</b>: مواد <b>لا تنفذ الماء</b>، فتمنع فقدانه من الساق، مثل المعطف المشمّع. معظم خلايا الفلّين الخارجية <b>ميتة</b>، ومع ازدياد عرض الساق <b>يتمزّق الفلّين القديم ويُنزع على شكل شرائط أو رقع</b>.</p>
+  <h3 style="margin:18px 0 6px">افتح جذعاً: اضغط على أي طبقة</h3>
+  <svg class="stage plain" id="trunk" viewBox="0 0 400 220" role="img" aria-label="مقطع عرضي في جذع شجرة ناضجة بطبقات دائرية: خشب القلب في المركز، ثم الخشب العصاري، ثم الكمبيوم الوعائي، ثم اللحاء، ثم الكمبيوم الفلّيني، ثم الفلّين"></svg>
+  <div class="lay" id="layBtns" role="group" aria-label="طبقات الجذع"></div>
+  <div class="info" id="layInfo" aria-live="polite"></div>
+
+  <div class="act" data-act="sort" data-key="sort" data-bins='["الخشب (داخل الكمبيوم الوعائي)","القلف (خارج الكمبيوم الوعائي)"]'
+       data-items='[["خشب القلب",0,"خشب القلب في مركز الجذع، داخل الكمبيوم الوعائي، فهو من الخشب."],["الخشب العصاري",0,"الخشب العصاري هو الطبقات الخارجية من الخشب الثانوي، لكنه ما زال داخل الكمبيوم الوعائي."],["ينقل الماء والعناصر المعدنية",0,"نقل الماء وظيفة الخشب (الخشب العصاري)، أما القلف فينقل لحاؤه السكريات أو يحمي."],["حلقات خشب الربيع والصيف",0,"الحلقات طبقات خشب ثانوي ينتجها الكمبيوم الوعائي نحو الداخل."],["اللحاء الثانوي",1,"اللحاء الثانوي ينتجه الكمبيوم الوعائي نحو الخارج، فهو جزء من القلف."],["الكمبيوم الفلّيني",1,"الكمبيوم الفلّيني بين اللحاء والبشرة، خارج الكمبيوم الوعائي، فهو من القلف."],["الفلّين",1,"الفلّين الطبقة الواقية الخارجية، وهو جزء من القلف."],["ينقل السكريات",1,"نقل السكريات وظيفة اللحاء، واللحاء الثانوي جزء من القلف."]]'
+       data-ok="ممتاز! الخشب: القلب والعصاري والحلقات، وينقل الماء. القلف: لحاء ثانوي + كمبيوم فلّيني + فلّين، ولحاؤه ينقل السكريات.">
+    <h3>خشب أم قلف؟ <span class="k">نشاط</span></h3>
+    <p>الحدّ الفاصل هو الكمبيوم الوعائي. صنّف كل بطاقة في مكانها.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s8">
+  <div class="sec-head"><span class="num">8</span><h2 id="s8">مثال محلول: اقرأ جذعاً مقطوعاً</h2></div>
+  <div class="qbox">قطعوا جذعاً صغيراً في حديقة، وهذا مقطعه العرضي. كم عمره تقريباً؟ وأي سنوات كانت جافة، وأيها ممطرة؟</div>
+  <svg class="stage plain" viewBox="0 0 400 170" role="img" aria-label="مقطع عرضي فيه ست حلقات: الأولى والثانية واسعتان، الثالثة والرابعة ضيّقتان، الخامسة والسادسة واسعتان، ثم قلف" style="margin-top:12px"><g id="ringEx"></g></svg>
+  <div class="row"><button class="lite" id="hideSol" type="button" aria-pressed="false">أخفِ الحل وجرّب أولاً</button></div>
+  <ol class="steps" id="steps">
+    <li><span><b>القاعدة:</b> كل حلقة = نطاق فاتح (خشب الربيع) + نطاق داكن (خشب الصيف) = سنة.</span></li>
+    <li><span><b>العدّ:</b> نعدّ النطاقات الداكنة من المركز للخارج: <b>6</b>، إذن عمر الجذع حوالي <b>6 سنوات</b>.</span></li>
+    <li><span><b>الطقس:</b> الحلقتان <b>3 و 4</b> (من المركز) ضيّقتان: سنتا <b>جفاف</b>. الحلقات 1 و 2 و 5 و 6 واسعة: سنوات <b>ممطرة وحرارتها مناسبة</b>.</span></li>
+    <li><span><b>انتبه:</b> أقدم حلقة في <b>المركز</b> وأحدثها <b>تحت القلف</b> مباشرة، لأن الكمبيوم الوعائي يضيف الخشب الجديد من الخارج.</span></li>
+  </ol>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">9</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sd">
+  <div class="sec-head"><span class="num">10</span><h2 id="sd">في حياتك</h2></div>
+  <div class="life">
+    <div class="card"><h3>المرجيحة والمسمار</h3><p>مرجيحة مربوطة بين نخلتين أو لوحة مثبّتة بمسمار على جذع تبقى على الارتفاع نفسه سنوات، لأن الشجرة تطول من قممها فقط.</p></div>
+    <div class="card"><h3>سياج الحديقة</h3><p>البستاني يقصّ أطراف الشجيرات كل فترة: يوقف الأكسين القادم من القمم، فتنمو البراعم الإبطية ويصير السياج كثيفاً.</p></div>
+    <div class="card"><h3>خطوط الطاولة الخشبية</h3><p>الخطوط الفاتحة والداكنة في الخشب هي حلقات النمو مقطوعة بالطول: خشب ربيع وخشب صيف. وسدّادة الفلّين جاءت من قلف البلّوط.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">11</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>بستاني يريد أن تصير شجيرة الحديقة كثيفة بفروع جانبية كثيرة. ماذا يفعل؟</p>
+      <div class="opts"><button>يزيل جزءاً من القلف ليصل الضوء للكمبيوم</button><button data-ok>يقصّ قمم الفروع فيتوقف إنتاج الأكسين وتنمو البراعم الإبطية</button><button>يقصّ أطراف الجذور لتتوقف القلنسوة</button></div>
+      <p class="why" hidden>الصحيح: الأكسين يُفرَز في الأنسجة الإنشائية عند قمّة الساق ويُبقي البراعم الإبطية غير نشطة. قصّ القمّة يزيل هذا التثبيط فتنمو فروع جانبية. وإزالة القلف قد تتلف الكمبيوم الوعائي فتموت الشجرة.</p></div>
+    <div class="q"><p>سؤال الكتاب: في جذع شجرة ناضجة، أي طبقة تحتوي على خلايا إنشائية؟</p>
+      <div class="opts"><button>خشب القلب والفلّين</button><button>الخشب العصاري فقط</button><button data-ok>الكمبيوم الوعائي والكمبيوم الفلّيني</button></div>
+      <p class="why" hidden>الصحيح: الكمبيوم بنوعيه هو الأنسجة الإنشائية الجانبية اللي تنقسم وتنتج خلايا جديدة. خشب القلب والفلّين خلايا ميتة، والخشب العصاري ينقل الماء ولا ينقسم.</p></div>
+    <div class="q"><p>سؤال للتفكير من الكتاب: هل تتوقّع أن معظم النباتات أحادية الفلقة تنتج الفلّين؟</p>
+      <div class="opts"><button>نعم، لأن كل النباتات فيها نمو ثانوي</button><button data-ok>لا، لأن معظمها عشبية نموها أوّلي فقط، فلا كمبيوم يعرّض الساق ولا فلّين</button><button>نعم، لأن القلنسوة تتحوّل إلى فلّين</button></div>
+      <p class="why" hidden>الصحيح: الفلّين ينتجه الكمبيوم الفلّيني أثناء النمو الثانوي، والكتاب يربط النمو الثانوي بالنباتات ثنائية الفلقة الخشبية (الكرمات والشجيرات والأشجار). معظم النباتات العشبية، ومنها معظم أحادية الفلقة، نموها أوّلي فقط.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li><b>الأنسجة الإنشائية</b> تنتج الخلايا الجديدة بالانقسام الميتوزي، وتتمايز إلى وعائي أو جلدي أو أساسي: القمّية للطول، والإبطية للفروع الجانبية، والجانبية (الكمبيوم) للعرض.</li>
+      <li><b>النمو الأوّلي</b> (طول وعمق) في جميع النباتات بثلاث خطوات: انقسام، استطالة، تمايز. <b>النمو الثانوي</b> (عرض) في الكرمات والشجيرات والأشجار.</li>
+      <li><b>الكمبيوم الوعائي</b>: خشب ثانوي للداخل (حلقات النمو) ولحاء ثانوي للخارج. <b>الكمبيوم الفلّيني</b>: فلّين. <b>القلف</b> = لحاء ثانوي + كمبيوم فلّيني + فلّين.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الأحياء، الصف الحادي عشر، الوحدة الأولى، ص 51 إلى 59</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"bio-u1-1-4"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+function f1(n){return (Math.round(n*10)/10).toString();}
+function ring(cx,cy,r,fill,extra){return '<circle cx="'+cx+'" cy="'+cy+'" r="'+f1(r)+'" fill="'+fill+'"'+(extra||"")+'/>';}
+
+/* ---- lab: a growing plant. simplified model for understanding, not book numbers ---- */
+var yr=$("yr"), pb=$("prune"), tb=$("ptype"), woody=true, cutY=0;
+var WET=[1,1,0,1,1,0,0,1,1]; /* ring k (from the centre) is wide (1) or narrow, dry (0) */
+var G=228, CX=110, NAME=G-40;
+function hgt(y){return 46+y*14;}
+function draw(){
+  var Y=+yr.value, s="", i;
+  if(cutY&&Y<cutY) cutY=0;
+  var top=G-hgt(cutY?cutY:Y), w=woody?6+Y*2.2:5;
+  /* ground and roots */
+  s+='<rect x="0" y="'+G+'" width="222" height="'+(270-G)+'" fill="var(--soil)"/>';
+  var rd=10+Y*2.6;
+  s+='<g stroke="var(--root)" stroke-linecap="round" fill="none"><path d="M'+CX+' '+G+' L'+CX+' '+f1(G+rd)+'" stroke-width="'+f1(Math.max(3,w*0.45))+'"/>'+
+     '<path d="M'+CX+' '+(G+8)+' l-'+f1(8+Y*2)+' '+f1(6+Y)+' M'+CX+' '+(G+14)+' l'+f1(8+Y*2.2)+' '+f1(6+Y)+'" stroke-width="3"/></g>';
+  s+='<circle cx="'+CX+'" cy="'+f1(G+rd+1)+'" r="3.5" fill="var(--cap)"/><circle cx="'+CX+'" cy="'+f1(G+rd-3)+'" r="2.5" fill="var(--vc)"/>';
+  /* stem */
+  s+='<rect x="'+f1(CX-w/2)+'" y="'+top+'" width="'+f1(w)+'" height="'+(G-top)+'" rx="'+f1(Math.min(w/2,5))+'" fill="'+(woody?"var(--bk)":"var(--leaf2)")+'"/>';
+  /* leaves with axillary buds near the top */
+  var nodes=[];
+  for(i=0;;i++){var ny=top+18+i*26; if(ny>NAME-24||ny>top+132) break; nodes.push(ny);}
+  nodes.forEach(function(ny,k){
+    var sd=k%2?-1:1, x0=CX+sd*w/2;
+    var branch=cutY&&k<2;
+    if(branch){
+      var L=Math.min(80,18+(Y-cutY)*10), ex=x0+sd*L*0.8, ey=ny-5-L*0.6;
+      s+='<line x1="'+f1(x0)+'" y1="'+(ny-5)+'" x2="'+f1(ex)+'" y2="'+f1(ey)+'" stroke="'+(woody?"var(--bk)":"var(--leaf2)")+'" stroke-width="4" stroke-linecap="round"/>';
+      s+='<path d="M'+f1(ex)+' '+f1(ey)+' c'+(sd*10)+' -12 '+(sd*26)+' -8 '+(sd*30)+' -2 c'+(sd*-8)+' 8 '+(sd*-22)+' 10 '+(sd*-30)+' 2Z" fill="var(--leaf)" stroke="var(--leaf2)" stroke-width="2"/>';
+      s+='<circle cx="'+f1(ex)+'" cy="'+f1(ey-2)+'" r="3.5" fill="var(--vc)"/>';
+    }
+    s+='<path d="M'+f1(x0)+' '+ny+' C'+f1(x0+sd*14)+' '+(ny-14)+' '+f1(x0+sd*34)+' '+(ny-10)+' '+f1(x0+sd*40)+' '+(ny-2)+' C'+f1(x0+sd*30)+' '+(ny+8)+' '+f1(x0+sd*12)+' '+(ny+8)+' '+f1(x0)+' '+ny+'Z" fill="var(--leaf)" stroke="var(--leaf2)" stroke-width="2"/>';
+    if(!branch) s+='<circle cx="'+f1(x0+sd*2)+'" cy="'+(ny-5)+'" r="3" fill="var(--vc)"/>';
+  });
+  /* tip: apical meristem, or a flat cut */
+  if(cutY) s+='<rect x="'+f1(CX-w/2-1)+'" y="'+(top-2)+'" width="'+f1(w+2)+'" height="4" rx="2" fill="var(--sum)"/>';
+  else s+='<circle cx="'+CX+'" cy="'+(top-3)+'" r="5" fill="var(--vc)"/><circle cx="'+CX+'" cy="'+(top-3)+'" r="10" fill="none" stroke="var(--vc)" stroke-width="2" stroke-dasharray="3 3"/>';
+  /* the carved name stays at 1 m */
+  s+='<line x1="10" y1="'+NAME+'" x2="'+f1(CX-w/2-2)+'" y2="'+NAME+'" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="4 4"/>';
+  s+='<text x="24" y="'+(NAME-6)+'" font-size="12" font-weight="700" fill="var(--muted)" text-anchor="middle" direction="ltr">1 m</text>';
+  s+='<rect x="'+f1(CX-5)+'" y="'+(NAME-4)+'" width="10" height="8" rx="3" fill="var(--tag)"/>';
+  s+='<text x="'+f1(CX+w/2+24)+'" y="'+(NAME+5)+'" font-size="13" font-weight="800" fill="var(--tag)" text-anchor="middle">اسمك</text>';
+  /* cross-section panel */
+  s+='<rect x="228" y="8" width="164" height="254" rx="16" fill="var(--card)"/>';
+  s+='<text x="310" y="32" font-size="13" font-weight="700" fill="var(--text)" text-anchor="middle">مقطع في الساق</text>';
+  var cx=310, cy=136, rings=0, dry=0;
+  if(woody){
+    var L=[], r=7; L.push([r,"var(--cyto)"]);
+    for(i=1;i<Y;i++){var wide=WET[i-1], wd=wide?5.2:2.6; L.push([r+wd*0.66,"var(--spr)"]); r+=wd; L.push([r,"var(--sum)"]); rings++; if(!wide) dry++;}
+    var heartR=0; if(Y>=5){ var rr=7; for(i=1;i<=Y-4;i++) rr+=WET[i-1]?5.2:2.6; heartR=rr; }
+    var vcR=r+1.8, phR=vcR+3; L.push([vcR,"var(--vc)"]); L.push([phR,"var(--phl)"]);
+    var outR;
+    if(Y>=2){ var ccR=phR+1.6; L.push([ccR,"var(--ccb)"]); outR=ccR+2+Y*0.45; L.push([outR,"var(--cork)"]); }
+    else { L.push([phR+4,"var(--cyto)"]); outR=phR+5.6; L.push([outR,"var(--leaf2)"]); }
+    for(i=L.length-1;i>=0;i--) s+=ring(cx,cy,L[i][0],L[i][1]);
+    if(heartR) s+=ring(cx,cy,heartR,"var(--heart)",' opacity=".55"');
+    s+='<text x="'+cx+'" y="222" font-size="13" font-weight="700" fill="var(--text)" text-anchor="middle">'+(Y<2?"سنة أولى: لا حلقات بعد":("حلقات النمو: "+rings))+'</text>';
+    if(dry) s+='<text x="'+cx+'" y="244" font-size="12" font-weight="700" fill="var(--muted)" text-anchor="middle">الحلقات الضيّقة: سنوات جافة</text>';
+    else if(heartR) s+='<text x="'+cx+'" y="244" font-size="12" font-weight="700" fill="var(--muted)" text-anchor="middle">المركز الداكن: خشب القلب</text>';
+  } else {
+    s+=ring(cx,cy,22,"var(--leaf)",' stroke="var(--leaf2)" stroke-width="2"');
+    for(i=0;i<8;i++){var a=i*Math.PI/4; s+=ring(f1(cx+Math.cos(a)*14),f1(cy+Math.sin(a)*14),3,"var(--phl)");}
+    s+='<text x="'+cx+'" y="222" font-size="13" font-weight="700" fill="var(--text)" text-anchor="middle">لا حلقات: نمو أوّلي فقط</text>';
+  }
+  $("treeLab").innerHTML=s;
+  $("yrL").textContent=Y; $("tH").textContent=f1((G-top)/40); $("tR").textContent=woody?rings:0;
+  var msg, ok=false;
+  if(!woody&&cutY) msg="نبتة عشبية مقصوصة القمّة: توقّف الأكسين القادم من القمّة، فنشطت البراعم الإبطية وطلعت فروع جانبية. والساق ما عرضت: ما فيها كمبيوم.";
+  else if(!woody) msg="نبتة عشبية: نمو أوّلي فقط. النسيج الإنشائي القمّي يطوّل الساق ويعمّق الجذر، لكن ما في نسيج إنشائي جانبي (كمبيوم)، فلا عرض ولا حلقات.";
+  else if(cutY) {msg="قصصت القمّة: توقّف إنتاج الأكسين في النسيج الإنشائي القمّي، فزال التثبيط ونمت البراعم الإبطية فروعاً جانبية. الشجرة صارت أكثف بدل أن تطول، والجذع ما زال يعرض."; ok=true;}
+  else if(Y===1) msg="السنة الأولى: النسيج الإنشائي القمّي يطوّل الساق ويعمّق الجذر (نمو أوّلي). الكمبيوم الوعائي موجود لكن ما أنتج حلقات بعد. حرّك السنوات.";
+  else {msg="مرّت "+Y+" سنوات: الشجرة طالت من قمّتها (نمو أوّلي) وجذعها عرض بحلقات من الكمبيوم الوعائي (نمو ثانوي). واسمك؟ باقٍ على 1 m، لأن الجذع لا يطول من وسطه."+(dry?" والحلقات الضيّقة سنوات جافة.":""); ok=true;}
+  var e=$("pMsg"); e.textContent=msg; e.className=ok?"msg ok":"msg";
+  pb.setAttribute("aria-pressed",String(!!cutY)); pb.textContent=cutY?"أرجع القمّة":"قصّ القمّة";
+  tb.setAttribute("aria-pressed",String(!woody)); tb.textContent=woody?"اجعلها نبتة عشبية":"أرجعها شجرة خشبية";
+}
+yr.addEventListener("input",draw);
+pb.addEventListener("click",function(){cutY=cutY?0:+yr.value;draw();});
+tb.addEventListener("click",function(){woody=!woody;draw();});
+
+/* ---- root tip cells ---- */
+(function(){
+  var s="", x0=150, cw=15, c, y, i;
+  for(i=0;i<4;i++){y=20+i*14; s+='<line x1="150" y1="'+y+'" x2="'+(118-i%2*6)+'" y2="'+(y-4)+'" stroke="var(--hair)" stroke-width="2.5" stroke-linecap="round"/><line x1="210" y1="'+(y+6)+'" x2="'+(240+i%2*6)+'" y2="'+(y+2)+'" stroke="var(--hair)" stroke-width="2.5" stroke-linecap="round"/>';}
+  for(y=12;y<76;y+=16) for(c=0;c<4;c++) s+='<rect x="'+(x0+c*cw)+'" y="'+y+'" width="'+cw+'" height="16" fill="var(--cyto)" stroke="var(--wall)" stroke-width="1.5"/>';
+  for(y=76;y<146;y+=23.3) for(c=0;c<4;c++) s+='<rect x="'+(x0+c*cw)+'" y="'+f1(y)+'" width="'+cw+'" height="23.3" fill="var(--cyto)" stroke="var(--wall)" stroke-width="1.5"/>';
+  for(y=146;y<196;y+=7.5) for(c=0;c<8;c++) s+='<rect x="'+(x0+c*7.5)+'" y="'+f1(y)+'" width="7.5" height="7.5" fill="var(--cyto)" stroke="var(--wall)" stroke-width="1"/>';
+  s+='<path d="M148 198 L212 198 Q214 236 180 240 Q146 236 148 198Z" fill="var(--cap)" stroke="var(--wall)" stroke-width="1.5" opacity=".9"/>';
+  s+='<circle cx="180" cy="172" r="22" fill="none" stroke="var(--vc)" stroke-width="3" stroke-dasharray="5 4"/>';
+  $("rootCells").innerHTML=s;
+})();
+
+/* ---- worked example: 6 rings ---- */
+(function(){
+  var W=[1,1,0,0,1,1], cx=200, cy=85, r=6, L=[[6,"var(--cyto)"]], s="", i;
+  for(i=0;i<W.length;i++){var wd=W[i]?11:4.5; L.push([r+wd*0.66,"var(--spr)"]); r+=wd; L.push([r,"var(--sum)"]);}
+  L.push([r+3,"var(--phl)"]); L.push([r+8,"var(--cork)"]);
+  for(i=L.length-1;i>=0;i--) s+=ring(cx,cy,L[i][0],L[i][1]);
+  s+='<g font-size="12" font-weight="700" fill="var(--text)" text-anchor="middle"><text x="62" y="80">المركز = أقدم</text><text x="338" y="80">القلف</text></g>';
+  s+='<g stroke="var(--muted)" stroke-width="1.5"><line x1="104" y1="84" x2="194" y2="85"/><line x1="314" y1="84" x2="'+f1(cx+r+5)+'" y2="85"/></g>';
+  $("ringEx").innerHTML=s;
+})();
+
+/* ---- trunk layers ---- */
+var LAY=[
+  ["خشب القلب","var(--heart)",44,"طبقات خشب قديمة في المركز، مصمتة وداكنة بسبب الزيوت والأصباغ والمواد الراتينجية والتانينات. لا تنقل الماء والعناصر المعدنية، لكنها تدعم الشجرة."],
+  ["الخشب العصاري","var(--sapw)",66,"الطبقات الخارجية الجديدة من الخشب الثانوي، فاتحة اللون. نسيج خشب نشط ينقل الماء والعناصر المعدنية."],
+  ["الكمبيوم الوعائي","var(--vc)",71,"خلايا إنشائية بين الخشب واللحاء. ينتج خشباً ثانوياً للداخل ولحاءً ثانوياً للخارج فيزيد عرض الجذع. لو أُزيل تموت الشجرة."],
+  ["اللحاء","var(--phl)",80,"اللحاء الثانوي: ينقل السكريات الناتجة عن البناء الضوئي في الأوراق. أول طبقة من القلف."],
+  ["الكمبيوم الفلّيني","var(--ccb)",85,"خلايا إنشائية بين اللحاء والبشرة. ينتج طبقة واقية من الفلّين تحلّ محل القشرة والبشرة."],
+  ["الفلّين","var(--cork)",98,"خلايا ميتة جدرها سميكة فيها دهون وزيوت وشمع لا تنفذ الماء، فتمنع فقدان الماء وتحمي الشجرة. فيه لحاء مسنّ لا ينقل شيئاً. لا يتمدّد، فيتشقّق مع نمو الجذع."]
+];
+var sel=0, btns=$("layBtns");
+LAY.forEach(function(l,k){var b=document.createElement("button");b.type="button";b.className="tg";b.innerHTML='<i style="background:'+l[1]+'"></i>'+l[0];b.addEventListener("click",function(){sel=k;drawTrunk();});btns.appendChild(b);});
+function drawTrunk(){
+  var cx=200, cy=110, s="", i;
+  for(i=LAY.length-1;i>=0;i--) s+=ring(cx,cy,LAY[i][2],LAY[i][1],' data-k="'+i+'" style="cursor:pointer"');
+  var rin=sel?LAY[sel-1][2]:0, rout=LAY[sel][2];
+  s+=ring(cx,cy,rout,"none",' stroke="var(--text)" stroke-width="2.5" stroke-dasharray="6 4" pointer-events="none"');
+  if(rin) s+=ring(cx,cy,rin,"none",' stroke="var(--text)" stroke-width="2.5" stroke-dasharray="6 4" pointer-events="none"');
+  s+='<g font-size="12.5" font-weight="700" fill="var(--text)" text-anchor="middle"><text x="48" y="36">الخشب</text><text x="352" y="36">القلف</text></g>';
+  s+='<g stroke="var(--muted)" stroke-width="1.5" fill="none"><path d="M48 44 L48 60 L'+(cx-40)+' '+(cy-20)+'"/><path d="M352 44 L352 60 L'+(cx+86)+' '+(cy-30)+'"/></g>';
+  $("trunk").innerHTML=s;
+  [].forEach.call(btns.children,function(b,k){b.setAttribute("aria-pressed",String(k===sel));});
+  $("layInfo").innerHTML="<h3>"+LAY[sel][0]+"</h3><p>"+LAY[sel][3]+"</p>";
+}
+$("trunk").addEventListener("click",function(e){var t=e.target.closest("[data-k]"); if(t){sel=+t.getAttribute("data-k");drawTrunk();}});
+drawTrunk();
+draw();
+window.addEventListener("masar-theme",function(){draw();drawTrunk();});
+})();
+</script>
+</body>
+</html>

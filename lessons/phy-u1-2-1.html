@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="physics">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>وصف الحركة الدائرية · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+span[dir=ltr]{unicode-bidi:isolate;white-space:nowrap}
+.plab{display:block;width:100%;height:auto;border-radius:22px;background:var(--sky);box-shadow:var(--press)}
+.plab text,.mini text{direction:ltr}
+.mini{display:block;width:100%;max-width:360px;height:auto;margin:8px auto 0;border-radius:16px;background:var(--sky)}
+.help{display:inline-block;font-size:12px;font-weight:700;padding:1px 9px;border-radius:9px;background:var(--p-sky);color:var(--text);margin-inline-end:6px}
+.sm{font-size:1.05rem}
+.ctl label{display:flex;justify-content:space-between;gap:8px}
+.ctl input[type=range]{direction:ltr}
+.tile span{direction:rtl}
+.tiles.t4{grid-template-columns:repeat(2,1fr)}
+.tiles.t4 .tile:nth-child(4){background:var(--p-mint)}
+.law .f .frac{font-size:.9em}
+.xtra{margin-top:12px;padding:10px 16px;border-radius:20px;background:var(--card);box-shadow:var(--clay-sm)}
+.xtra summary{cursor:pointer;font-weight:700;color:var(--ink)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.cmp div{padding:10px 12px;border-radius:18px;background:var(--card);box-shadow:var(--clay-sm);font-size:14.5px}
+.cmp div:first-child{background:var(--p-sky)}.cmp div:last-child{background:var(--p-pink)}
+.cmp .hd{display:block;font-family:var(--display);color:var(--ink);margin-bottom:2px}
+@media (max-width:420px){.cmp{grid-template-columns:1fr}}
+.tbl{width:100%;max-width:420px;margin:12px auto 0;border-collapse:separate;border-spacing:0 6px;text-align:center;font-size:15px}
+.tbl th{font-weight:700;color:var(--muted);font-size:13.5px;padding:2px 8px}
+.tbl td{background:var(--card);box-shadow:var(--clay-sm);padding:6px 8px}
+.tbl td:first-child{border-radius:0 14px 14px 0}.tbl td:last-child{border-radius:14px 0 0 14px}
+.tbl td b{color:var(--ink)}
+</style>
+</head>
+<body style="--sc:#f07c2a">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الفيزياء</span><span class="chip">الدرس 2-1 · ص 43 إلى 53</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الأولى: الحركة · الفصل الثاني: الحركة الدائرية</p>
+  <h1 id="t">وصف الحركة الدائرية</h1>
+  <p>على دوّارة الخيل في المدينة الترفيهية: أخوك على حصان قريب من الوسط، وأنت على حصان عند الحافة. الاثنين تكمّلون الدورة <b>في نفس الوقت بالضبط</b>. <mark>إذن مين فيكم أسرع؟</mark> الجواب يعتمد على أي "سرعة" تقصد، وفي هذا الدرس بنعرف إن للدوران <b>سرعتين</b>.</p>
+</section>
+
+<section class="panel" id="lab-sec" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">الدوّارة من فوق</h2><span class="legend"><b class="x">v</b> السرعة الخطية، <b class="y">a<sub>c</sub></b> العجلة المركزية، <b class="gg">a<sub>t</sub></b> العجلة المماسية</span></div>
+  <svg class="plab" id="plab" viewBox="0 0 400 290" role="img" aria-label="منظر علوي لدوّارة عليها راكبان على بعدين مختلفين من المحور، مع أسهم السرعة والعجلة"></svg>
+  <div class="tiles t4" style="margin-top:10px">
+    <div class="tile"><span>السرعة الزاوية ω (للاثنين)</span><b id="tW" dir="ltr">0</b><small>rad/s</small></div>
+    <div class="tile"><span>v<sub>A</sub> القريب (r = 2 m)</span><b id="tA" dir="ltr">0</b><small>m/s</small></div>
+    <div class="tile"><span id="nB">v<sub>B</sub> البعيد</span><b id="tB" dir="ltr">0</b><small>m/s</small></div>
+    <div class="tile"><span>a<sub>c</sub> للبعيد B</span><b id="tC" dir="ltr">0</b><small>m/s²</small></div>
+  </div>
+  <div class="controls">
+    <div class="ctl"><label for="sT"><span>الزمن الدوري T (زمن الدورة)</span><b dir="ltr"><span id="lT">0</span> s</b></label><input type="range" id="sT" min="2" max="12" step="1" value="6"></div>
+    <div class="ctl"><label for="sR"><span>بُعد الراكب B عن المحور r<sub>B</sub></span><b dir="ltr"><span id="lR">0</span> m</b></label><input type="range" id="sR" min="0" max="5" step="0.5" value="4"></div>
+  </div>
+  <div class="btns">
+    <button class="go" id="play" type="button">إيقاف ⏸</button>
+    <button class="tg" id="tgAcc" type="button" aria-pressed="false">ابدأ من السكون (عجلة زاوية)</button>
+  </div>
+  <p class="msg" id="pMsg" aria-live="polite"></p>
+  <p class="cap">الأرقام محسوبة بـ <span dir="ltr">ω = 2π ÷ T</span> و <span dir="ltr">v = r ω</span> و <span dir="ltr">a<sub>c</sub> = v² ÷ r</span>. طول الأسهم للتوضيح، والأعمدة على اليمين تقارن السرعتين.</p>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">رموز الدرس</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي بتشوفها في القوانين والأمثلة.</p>
+  <div class="syms">
+    <div class="sym"><span class="bub"><span>r</span></span><div><h3>نصف قطر المسار <span class="en">Radius</span></h3><p>بُعد الجسم الثابت عن مركز (محور) الدوران.</p><span class="hook">طول الخيط اللي تلفّ فيه الكرة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub sm"><span>Δθ</span></span><div><h3>الإزاحة الزاوية <span class="en">Angular Displacement</span></h3><p>الزاوية بين الخط المرجعي والخط الواصل من المركز إلى الجسم، وتقاس بالراديان <b>rad</b>.</p><span class="hook">كم "فتح" نصف القطر مثل عقرب الساعة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span>s</span></span><div><h3>طول القوس <span class="en">Arc Length</span></h3><p>المسافة اللي قطعها الجسم فعلاً على المسار الدائري: <span dir="ltr">s = rθ</span>.</p><span class="hook">الخيط لو فرشته على الحافة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub"><span>v</span></span><div><h3>السرعة الخطية (المماسية) <span class="en">Linear / Tangential Speed</span></h3><p>طول القوس المقطوع في وحدة الزمن، <b>m/s</b>، واتجاهها مماس للدائرة.</p><span class="hook">لو انقطع الخيط تطير الكرة باتجاهها.</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub"><span>ω</span></span><div><h3>السرعة الدائرية (الزاوية) <span class="en">Rotational / Angular Speed</span></h3><p>الزاوية بالراديان اللي يمسحها نصف القطر في وحدة الزمن، <b>rad/s</b>.</p><span class="hook">ω أوميغا: كم دورة تلفّ، مو كم متر تمشي.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub sm"><span>a<sub>t</sub></span></span><div><h3>العجلة المماسية <span class="en">Tangential Acceleration</span></h3><p>مركبة العجلة باتجاه السرعة (مماس للمسار)، تغيّر <b>مقدار</b> السرعة.</p><span class="hook">t من tangent: دعسة البنزين على الدوّار.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub sm"><span>a<sub>c</sub></span></span><div><h3>العجلة المركزية <span class="en">Centripetal Acceleration</span></h3><p>مركبة العجلة العمودية على المماسية، باتجاه <b>مركز</b> الدائرة، تغيّر <b>اتجاه</b> السرعة.</p><span class="hook">c من center: دايماً تأشّر للوسط.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub sm"><span>θ″</span></span><div><h3>العجلة الزاوية <span class="en">Rotational Acceleration</span></h3><p>تغيّر السرعة الزاوية ω خلال الزمن، <b>rad/s²</b>.</p><span class="hook">الشرطتان: "تغيّر التغيّر"، مثل العجلة للمسافة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span>T</span></span><div><h3>الزمن الدوري <span class="en">Period</span></h3><p>زمن دورة كاملة واحدة على محيط الدائرة، <b>s</b>.</p><span class="hook">T من Time: كم ثانية للفّة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub"><span>f</span></span><div><h3>التردّد <span class="en">Frequency</span></h3><p>عدد الدورات الكاملة في الثانية الواحدة: <span dir="ltr">f = 1 ÷ T</span>.</p><span class="hook">كم لفّة في الثانية.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">ما هي الحركة الدائرية؟</h2></div>
+  <p>اربط مفتاحاً في طرف خيط ولفّه: المسار دائرة، و<b>المسافة بين المفتاح والمركز ما تتغيّر</b>. هذه هي <b>الحركة الدائرية</b>: حركة جسم على مسار دائري حول مركز دوران، مع المحافظة على مسافة ثابتة منه.</p>
+  <p>وإذا لفّ الجسم بسرعة <b>ثابتة القيمة</b> نسمّيها <b>حركة دائرية منتظمة</b>.</p>
+  <h3 style="margin-top:16px">محوري ولا مداري؟</h3>
+  <p>كل دوران يصير حول <b>محور</b>: خطّ مستقيم تصير حوله الحركة. السؤال: وين المحور؟</p>
+  <svg class="mini" viewBox="0 0 320 165" role="img" aria-label="يسار: قرص يدور حول محور يمرّ داخله. يمين: كرة تدور في مدار حول مركز خارجها">
+    <line x1="78" y1="22" x2="78" y2="132" stroke="var(--muted)" stroke-width="2" stroke-dasharray="5 4"/>
+    <ellipse cx="78" cy="92" rx="56" ry="18" fill="var(--p-peach)" stroke="var(--path)" stroke-width="2.5"/>
+    <circle cx="78" cy="92" r="4" fill="var(--text)"/>
+    <path d="M60 36 A18 7 0 1 0 96 36" fill="none" stroke="var(--path)" stroke-width="2.5"/><path d="M96 36 L88 30 L88 41Z" fill="var(--path)"/>
+    <text x="78" y="156" font-size="13" font-weight="700" text-anchor="middle" fill="var(--text)">محور داخلي: محوري</text>
+    <circle cx="240" cy="78" r="52" fill="none" stroke="var(--muted)" stroke-width="2" stroke-dasharray="5 4"/>
+    <circle cx="240" cy="78" r="13" fill="var(--p-butter)" stroke="var(--g)" stroke-width="2"/>
+    <circle cx="292" cy="78" r="8" fill="var(--path)"/>
+    <path d="M276 33 A52 52 0 0 1 290 55" fill="none" stroke="var(--path)" stroke-width="2.5"/><path d="M292 60 L284 52 L294 49Z" fill="var(--path)"/>
+    <text x="240" y="156" font-size="13" font-weight="700" text-anchor="middle" fill="var(--text)">محور خارجي: مداري</text>
+  </svg>
+  <div class="cmp">
+    <div><b class="hd">الدوران المحوري (المغزلي) <span class="en" dir="ltr">Rotation</span></b>الجسم يدور حول محور <b>داخله</b>: النحلة (الخذروف)، المتزلّج اللي يلفّ حول نفسه، مسطّح الساقية الدوّارة.</div>
+    <div><b class="hd">الدوران المداري <span class="en" dir="ltr">Revolution</span></b>الجسم يدور حول محور <b>خارجه</b>: كرة في طرف خيط، أو راكب على حافة مسطّح الساقية يدور حول محورها.</div>
+  </div>
+  <p class="tip" style="margin-top:12px"><b>الأرض تسوّي الاثنين:</b> تدور حول محورها مرّة كل <b>24 ساعة</b> (محوري، وهذا الليل والنهار)، وتدور حول الشمس مرّة كل <b>365.25 يوم</b> (مداري، وهذي السنة).</p>
+
+  <div class="act" data-act="sort" data-key="sort" data-bins='["محوري (محور داخلي)","مداري (محور خارجي)"]'
+       data-items='[["الأرض حول نفسها كل 24 ساعة",0,"محور الأرض يمرّ داخلها، فهذا دوران محوري."],["الأرض حول الشمس كل 365.25 يوم",1,"الشمس خارج الأرض، فالمحور خارجي والدوران مداري."],["متزلّج يلفّ حول نفسه",0,"المحور يمرّ في جسم المتزلّج نفسه."],["حشرة واقفة على حافة طاولة دوّارة",1,"الحشرة تلفّ حول محور الطاولة، وهو خارج الحشرة."],["عجلة الدرّاجة حول محورها",0,"المحور يمرّ في وسط العجلة نفسها."],["مفتاح مربوط بخيط تلفّه فوق رأسك",1,"المفتاح يلفّ حول يدك، والمحور خارجه."]]'
+       data-ok="ممتاز! السؤال دايماً: المحور يمرّ داخل الجسم (محوري) ولا خارجه (مداري)؟">
+    <h3>وين المحور؟ <span class="k">نشاط</span></h3>
+    <p>صنّف كل دوران: محوري ولا مداري؟</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">الإزاحة الزاوية وطول القوس</h2></div>
+  <div class="two">
+    <div>
+      <p>نقطة M تدور على دائرة نصف قطرها r. نقدر نحدّد مكانها بالمركبتين x و y، بس الاثنتين تتغيّران كل لحظة. الأسهل: بما إن <b>r ثابت</b>، تكفينا <b>زاوية واحدة θ</b> نقيسها من خطّ مرجعي (المحور الأفقي) باتجاه الدوران الموجب.</p>
+      <p style="text-align:center"><span class="f">x<sub>M</sub> = r cos θ</span><br><span class="f">y<sub>M</sub> = r sin θ</span></p>
+      <p><b>الإزاحة الزاوية Δθ</b>: الزاوية بين الخطّ المرجعي والخطّ المارّ بالنقطة والمركز. وإذا اخترنا <span dir="ltr">θ<sub>0</sub> = 0 rad</span> تصير الإزاحة ببساطة θ.</p>
+    </div>
+    <svg class="mini" viewBox="0 0 310 230" role="img" aria-label="دائرة مركزها C ونقطة M عليها، الزاوية θ من الخط المرجعي، طول القوس s، والمركبتان xM و yM">
+      <line x1="30" y1="125" x2="250" y2="125" stroke="var(--muted)" stroke-width="1.5"/><line x1="130" y1="222" x2="130" y2="18" stroke="var(--muted)" stroke-width="1.5"/>
+      <text x="244" y="141" font-size="13" fill="var(--muted)">x</text><text x="137" y="26" font-size="13" fill="var(--muted)">y</text>
+      <circle cx="130" cy="125" r="90" fill="none" stroke="var(--muted)" stroke-width="2"/>
+      <path d="M220 125 A90 90 0 0 0 187.9 56.1" fill="none" stroke="var(--path)" stroke-width="6" stroke-linecap="round"/>
+      <line x1="187.9" y1="56.1" x2="187.9" y2="125" stroke="var(--vx)" stroke-width="1.5" stroke-dasharray="4 4"/><line x1="187.9" y1="56.1" x2="130" y2="56.1" stroke="var(--vy)" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <line x1="130" y1="125" x2="187.9" y2="56.1" stroke="var(--text)" stroke-width="2.5"/>
+      <path d="M158 125 A28 28 0 0 0 148 103.6" fill="none" stroke="var(--g)" stroke-width="2.5"/>
+      <text x="162" y="116" font-size="14" font-weight="700" fill="var(--g)">θ</text>
+      <text x="146" y="84" font-size="14" font-weight="700" fill="var(--text)">r</text>
+      <text x="228" y="84" font-size="15" font-weight="700" fill="var(--path)">s</text>
+      <circle cx="187.9" cy="56.1" r="6" fill="var(--path)"/><text x="194" y="48" font-size="14" font-weight="700" fill="var(--text)">M</text>
+      <circle cx="130" cy="125" r="3.5" fill="var(--text)"/><text x="114" y="141" font-size="13" fill="var(--text)">C</text>
+      <text x="180" y="141" font-size="12" font-weight="700" fill="var(--vx)">xM</text><text x="102" y="60" font-size="12" font-weight="700" fill="var(--vy)">yM</text>
+      <text x="226" y="196" font-size="12" fill="var(--text)">s = r θ</text><text x="226" y="214" font-size="12" fill="var(--text)">θ بالراديان</text>
+    </svg>
+  </div>
+  <h3 style="margin-top:16px">من الزاوية إلى المسافة</h3>
+  <p>الزاوية تقول "كم لفّيت"، وطول القوس <b>s</b> يقول "كم متر مشيت على الدائرة". والجسر بينهما:</p>
+  <div class="laws">
+    <div class="law"><h3>طول القوس</h3><span class="f">s = r θ</span><p>θ لازم تكون <b>بالراديان rad</b> (النظام الدولي للوحدات)، مو بالدرجات.</p></div>
+    <div class="law"><h3>الدرجة والراديان</h3><span class="f">2π rad = 360°</span><p>الدورة الكاملة 360°، وكل درجة 60 دقيقة، وكل دقيقة 60 ثانية.</p></div>
+  </div>
+  <table class="tbl" aria-label="زوايا بالدرجة وبالراديان">
+    <tr><th>بالدرجة (°)</th><td><b>360</b></td><td><b>180</b></td><td><b>90</b></td><td><b>60</b></td><td><b>45</b></td><td><b>30</b></td></tr>
+    <tr><th>بالراديان</th><td dir="ltr">2π</td><td dir="ltr">π</td><td dir="ltr">π/2</td><td dir="ltr">π/3</td><td dir="ltr">π/4</td><td dir="ltr">π/6</td></tr>
+  </table>
+  <p class="tip" style="margin-top:12px"><span class="help">مساعدة للفهم</span>الراديان الواحد هو الزاوية اللي تخلّي القوس <b>بطول نصف القطر</b> بالضبط (<span dir="ltr">s = r</span> لما <span dir="ltr">θ = 1 rad</span>). ولفّة كاملة = محيط الدائرة <span dir="ltr">2πr</span>، ولهذا الدورة = <span dir="ltr">2π rad</span>.</p>
+
+  <div class="act" data-act="type" data-key="type" data-answer="15.7" data-tol="0.15"
+       data-ok="صح! 15 دقيقة = ربع دورة = 90° = ⁦π/2 rad⁩. ⁦s = rθ = 10 × 3.14 ÷ 2 = (15.7)cm⁩."
+       data-hint="عقرب الدقائق يلفّ دورة كاملة في 60 دقيقة، إذن 15 دقيقة كم من الدورة؟ حوّل الزاوية لراديان ثم ⁦s = rθ⁩."
+       data-no="ليست هذه. حوّل الزاوية للراديان (ربع دورة = ⁦π/2⁩) قبل الضرب في r. لا تضرب في 90.">
+    <h3>طرف عقرب الدقائق <span class="k">نشاط</span></h3>
+    <p>عقرب دقائق طوله <span dir="ltr">(10)cm</span>. كم <b>سنتيمتر</b> يقطع طرفه على القوس في 15 دقيقة؟ (خذ <span dir="ltr">π = 3.14</span>)</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">سرعتان للدوران</h2></div>
+  <div class="cmp">
+    <div><b class="hd">السرعة الخطية (المماسية) v</b>وتسمّى السرعة العددية: <b>طول القوس المقطوع في وحدة الزمن</b>. اتجاهها دايماً <b>مماس</b> للدائرة، ولهذا تسمّى مماسية. النقطة البعيدة عن المركز تقطع في الدورة مسافة أكبر، فسرعتها الخطية أكبر.</div>
+    <div><b class="hd">السرعة الدائرية (الزاوية) ω</b><b>الزاوية بالراديان اللي يمسحها نصف القطر في وحدة الزمن</b>، ووحدتها rad/s. كل أجزاء الجسم الصلب تلفّ <b>نفس عدد الدورات</b> في نفس الزمن، فلها <b>نفس ω</b>. وكثيراً نقولها بالدورات في الدقيقة <span class="en" dir="ltr">rev/min</span>.</div>
+  </div>
+  <div class="laws">
+    <div class="law"><h3>السرعة الزاوية</h3><span class="f">ω = <span class="frac"><span>Δθ</span><span>Δt</span></span> = <span class="frac"><span>θ</span><span>t</span></span></span><p>باعتبار <span dir="ltr">t<sub>0</sub> = 0 s</span> و <span dir="ltr">θ<sub>0</sub> = 0 rad</span>. تشبه <span dir="ltr">v = Δx ÷ Δt</span> في الخطّ المستقيم.</p></div>
+    <div class="law"><h3>العلاقة بينهما</h3><span class="f">v = r ω</span><p>السرعة المماسية = المسافة نصف القطرية × السرعة الزاوية. تناسب طردي مع r ومع ω.</p></div>
+  </div>
+  <svg class="mini" viewBox="0 0 300 200" role="img" aria-label="طاولة دوّارة عليها حشرتان، الأبعد بضعف المسافة سهم سرعتها ضعف الطول">
+    <circle cx="110" cy="105" r="88" fill="var(--p-peach)" stroke="var(--path)" stroke-width="2.5"/>
+    <circle cx="110" cy="105" r="4" fill="var(--text)"/>
+    <line x1="110" y1="105" x2="198" y2="105" stroke="var(--text)" stroke-width="1.5" stroke-dasharray="4 4"/>
+    <line x1="110" y1="122" x2="150" y2="122" stroke="var(--g)" stroke-width="2"/><text x="130" y="138" font-size="12" font-weight="700" text-anchor="middle" fill="var(--g)">r</text>
+    <line x1="110" y1="152" x2="190" y2="152" stroke="var(--g)" stroke-width="2"/><text x="150" y="168" font-size="12" font-weight="700" text-anchor="middle" fill="var(--g)">2r</text>
+    <line x1="150" y1="105" x2="150" y2="80" stroke="var(--vx)" stroke-width="4" stroke-linecap="round"/><path d="M150 70 L144 81 L156 81Z" fill="var(--vx)"/>
+    <line x1="190" y1="105" x2="190" y2="50" stroke="var(--vx)" stroke-width="4" stroke-linecap="round"/><path d="M190 40 L184 51 L196 51Z" fill="var(--vx)"/>
+    <circle cx="150" cy="105" r="6" fill="var(--vy)"/><circle cx="190" cy="105" r="6" fill="var(--vy)"/>
+    <text x="158" y="80" font-size="13" font-weight="700" fill="var(--vx)">v</text><text x="198" y="50" font-size="13" font-weight="700" fill="var(--vx)">2v</text>
+    <path d="M62 40 A70 70 0 0 0 44 62" fill="none" stroke="var(--path)" stroke-width="2.5"/><path d="M40 70 L39 58 L50 63Z" fill="var(--path)"/>
+    <text x="250" y="96" font-size="13" font-weight="700" text-anchor="middle" fill="var(--text)">ω نفسها</text><text x="250" y="116" font-size="13" font-weight="700" text-anchor="middle" fill="var(--text)">v مختلفة</text>
+  </svg>
+  <p class="cap">ضاعف البعد عن المحور تتضاعف السرعة الخطية، وثلاثة أضعاف البعد = ثلاثة أضعاف السرعة. و<b>في المركز نفسه</b> لا توجد سرعة مماسية (<span dir="ltr">r = 0</span>) لكن توجد سرعة زاوية.</p>
+  <ul class="pts">
+    <li style="--b:var(--vx)">صفّ متزلّجين متشابكين بالأيدي يلفّون: <b>اللي في طرف الصف</b> هو الأسرع والأصعب عليه.</li>
+    <li style="--b:var(--g)"><span dir="ltr">v = rω</span> مع "ω واحدة للكل" تنطبق على <b>النظام الدوّار الجاسئ</b> (قطعة وحدة). أما الكواكب فكل كوكب له ω مختلفة عن غيره.</li>
+  </ul>
+</section>
+
+<section class="sec" aria-labelledby="s5">
+  <div class="sec-head"><span class="num">5</span><h2 id="s5">العجلة في الحركة الدائرية</h2></div>
+  <p>العجلة = تغيّر <b>السرعة المتجهة</b> مع الزمن، والسرعة كمية متجهة، يعني لها <b>مقدار واتجاه</b>. فأي تغيّر في واحد منهما = عجلة.</p>
+  <div class="two">
+    <div>
+      <div class="laws" style="grid-template-columns:1fr">
+        <div class="law"><h3>العجلة الخطية (متجهة)</h3><span class="f">a = <span class="frac"><span>Δv</span><span>Δt</span></span></span><p>نحلّلها إلى مركبتين متعامدتين:</p></div>
+      </div>
+      <ul class="pts" style="margin-top:10px">
+        <li style="--b:var(--g)"><b>العجلة المماسية a<sub>t</sub></b>: لها اتجاه السرعة نفسه (مماس للمسار)، وتتغيّر قيمتها بتغيّر السرعة المماسية.</li>
+        <li style="--b:var(--vy)"><b>العجلة المركزية a<sub>c</sub></b>: عمودية على المماسية، باتجاه مركز الدائرة.</li>
+      </ul>
+    </div>
+    <svg class="mini" viewBox="0 0 300 210" role="img" aria-label="جسم على دائرة: سهم السرعة مماس، العجلة المماسية بنفس اتجاهه، والعجلة المركزية نحو المركز، ومحصلتهما العجلة الكلية">
+      <circle cx="150" cy="128" r="75" fill="none" stroke="var(--muted)" stroke-width="2"/>
+      <circle cx="150" cy="128" r="3.5" fill="var(--text)"/><text x="157" y="146" font-size="13" fill="var(--text)">C</text>
+      <line x1="150" y1="53" x2="150" y2="22" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="150" y1="22" x2="76" y2="22" stroke="var(--vx)" stroke-width="3.5" stroke-linecap="round"/><path d="M64 22 L76 16 L76 28Z" fill="var(--vx)"/><text x="58" y="18" font-size="14" font-weight="700" fill="var(--vx)">v</text>
+      <line x1="105" y1="53" x2="105" y2="103" stroke="var(--muted)" stroke-width="1.2" stroke-dasharray="4 4"/><line x1="150" y1="103" x2="105" y2="103" stroke="var(--muted)" stroke-width="1.2" stroke-dasharray="4 4"/>
+      <line x1="150" y1="53" x2="113" y2="53" stroke="var(--g)" stroke-width="3.5" stroke-linecap="round"/><path d="M103 53 L114 47 L114 59Z" fill="var(--g)"/><text x="112" y="45" font-size="13" font-weight="700" fill="var(--g)">at</text>
+      <line x1="150" y1="53" x2="150" y2="93" stroke="var(--vy)" stroke-width="3.5" stroke-linecap="round"/><path d="M150 103 L144 92 L156 92Z" fill="var(--vy)"/><text x="156" y="86" font-size="13" font-weight="700" fill="var(--vy)">ac</text>
+      <line x1="150" y1="53" x2="111" y2="96" stroke="var(--path)" stroke-width="3" stroke-linecap="round"/><path d="M105 103 L108 90 L117 98Z" fill="var(--path)"/><text x="90" y="120" font-size="13" font-weight="700" fill="var(--path)">a</text>
+      <circle cx="150" cy="53" r="7" fill="var(--path)"/>
+    </svg>
+  </div>
+  <h3 style="margin-top:16px">العجلة الزاوية</h3>
+  <div class="laws">
+    <div class="law"><h3>العجلة الزاوية θ″</h3><span class="f">θ″ = <span class="frac"><span>Δω</span><span>Δt</span></span></span><p>تغيّر السرعة الزاوية خلال الزمن، ووحدتها <b dir="ltr">rad/s²</b>.</p></div>
+    <div class="law"><h3>العجلة المركزية</h3><span class="f">a<sub>c</sub> = <span class="frac"><span>v²</span><span>r</span></span></span><p>v مقدار السرعة الخطية و r نصف قطر المسار.</p></div>
+  </div>
+  <h3 style="margin-top:16px">الحركة الدائرية المنتظمة: سرعة ثابتة وعجلة موجودة!</h3>
+  <p>في الحركة الدائرية المنتظمة <b>مقدار</b> السرعة الخطية ثابت، لكن <b>اتجاهها يتغيّر</b> كل لحظة. إذن العجلة <b>ما تساوي صفراً أبداً</b>:</p>
+  <ul class="pts">
+    <li style="--b:var(--g)"><span dir="ltr">a<sub>t</sub> = 0</span>: لأن مقدار السرعة ما يتغيّر.</li>
+    <li style="--b:var(--vy)"><span dir="ltr">a<sub>c</sub> = v² ÷ r</span>: مقدارها <b>ثابت</b>، واتجاهها <b>دايماً نحو المركز</b>.</li>
+    <li style="--b:var(--vx)"><span dir="ltr">θ″ = 0</span>: لأن ω ثابتة المقدار ما تتغيّر مع الزمن.</li>
+  </ul>
+  <p class="tip" style="margin-top:12px"><b>جرّبها في المختبر فوق:</b> الوضع العادي = منتظمة، فتشوف السهم الوردي a<sub>c</sub> بس. اضغط "ابدأ من السكون" وراقب السهم البنفسجي a<sub>t</sub>: يظهر طول ما الدوّارة تسرّع، ويختفي أول ما تثبت السرعة.</p>
+</section>
+
+<section class="sec" aria-labelledby="s6">
+  <div class="sec-head"><span class="num">6</span><h2 id="s6">التردّد والزمن الدوري</h2></div>
+  <p><b>التردّد f</b> عدد الدورات الكاملة في الثانية الواحدة، و<b>الزمن الدوري T</b> زمن دورة كاملة واحدة. الواحد مقلوب الثاني: دوّارة تكمّل الدورة في 4 ثوانٍ تردّدها ربع دورة في الثانية.</p>
+  <div class="laws">
+    <div class="law"><h3>التردّد والزمن الدوري</h3><span class="f">f = <span class="frac"><span>1</span><span>T</span></span></span></div>
+    <div class="law"><h3>T بدلالة v</h3><span class="f">T = <span class="frac"><span>2πr</span><span>v</span></span></span><p>لأن الجسم يقطع في زمن T محيط الدائرة <span dir="ltr">s = 2πr</span>.</p></div>
+    <div class="law"><h3>T بدلالة ω</h3><span class="f">T = <span class="frac"><span>2π</span><span>ω</span></span></span><p>وبالمقلوب: <span dir="ltr">ω = 2π ÷ T = 2πf</span>.</p></div>
+  </div>
+  <p class="tip" style="margin-top:12px"><b>تحويل الدورات في الدقيقة:</b> قسّم على 60 تحصل التردّد f (دورة في الثانية)، ثم اضرب في 2π تحصل ω بالـ rad/s. مثال: <span dir="ltr">300 rev/min → f = 5 → ω = 10π rad/s</span>.</p>
+</section>
+
+<section class="sec" aria-labelledby="s7">
+  <div class="sec-head"><span class="num">7</span><h2 id="s7">الحركة الدائرية منتظمة العجلة</h2></div>
+  <p>إذا تغيّرت ω <b>بانتظام</b> تكون θ″ <b>ثابتة</b>، والحركة <b>دائرية منتظمة العجلة</b>. والخبر الحلو: معادلاتها نفس معادلات الحركة الخطية منتظمة العجلة اللي تعرفها، بس نبدّل كل رمز بتوأمه الدائري:</p>
+  <table class="tbl" aria-label="الرموز الخطية ومقابلها الدائري">
+    <tr><th></th><th>الإزاحة</th><th>السرعة</th><th>العجلة</th></tr>
+    <tr><th>خطّي</th><td dir="ltr">x</td><td dir="ltr">v</td><td dir="ltr">a</td></tr>
+    <tr><th>دائري</th><td dir="ltr"><b>θ</b></td><td dir="ltr"><b>ω</b></td><td dir="ltr"><b>θ″</b></td></tr>
+  </table>
+  <div class="laws">
+    <div class="law"><h3>الإزاحة الزاوية</h3><span class="f">Δθ = ½ θ″t² + ω<sub>0</sub>t</span></div>
+    <div class="law"><h3>السرعة الزاوية</h3><span class="f">ω = θ″t + ω<sub>0</sub></span></div>
+  </div>
+  <p>إذا انطلق الجسم من نقطة المرجع: <span dir="ltr">θ<sub>0</sub> = 0 rad</span>. وإذا انطلق من السكون: <span dir="ltr">ω<sub>0</sub> = 0 rad/s</span>. ولعدد الدورات N: كل دورة <span dir="ltr">2π rad</span>، إذن <span dir="ltr">θ = 2πN</span> فـ <span dir="ltr">N = θ ÷ 2π</span>.</p>
+
+  <div class="act" data-act="order" data-key="order" data-answer='["Δθ","=","½","θ″","t²","+","ω₀","t"]' data-extra='["a","v₀"]'
+       data-ok="ممتاز! ⁦Δθ = ½θ″t² + ω₀t⁩: نفس ⁦Δx = ½at² + v₀t⁩ بعد ما بدّلنا a بـ θ″ و v₀ بـ ω₀."
+       data-no="القطع الحمراء في غير مكانها. ابدأ بـ Δθ =، ثم نصف العجلة الزاوية في مربع الزمن، ثم السرعة الزاوية الابتدائية في الزمن. a و v₀ رموز الحركة الخطية.">
+    <h3>رتّب القانون <span class="k">نشاط</span></h3>
+    <p>كوّن معادلة <b>الإزاحة الزاوية</b> في الحركة الدائرية منتظمة العجلة. فيه قطعتان دخيلتان من الحركة الخطية.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s8">
+  <div class="sec-head"><span class="num">8</span><h2 id="s8">مثال محلول: مروحة السقف</h2></div>
+  <div class="qbox">مروحة سقف طول ريشتها <span dir="ltr">(0.5)m</span> تدور بانتظام <span dir="ltr">90</span> دورة في الدقيقة. خذ <span dir="ltr">π = 3.14</span>. أوجد: (أ) التردّد والزمن الدوري، (ب) السرعة الزاوية، (ج) السرعة الخطية لطرف الريشة، (د) العجلة المركزية لطرف الريشة. (ه) طفّينا المروحة فتباطأت بانتظام حتى وقفت بعد <span dir="ltr">(6)s</span>: احسب العجلة الزاوية وعدد الدورات اللي لفّتها حتى وقفت.</div>
+  <div class="row"><button class="lite" id="hideSol" type="button" aria-pressed="false">أخفِ الحل وجرّب أولاً</button></div>
+  <ol class="steps" id="steps">
+    <li><span><b>حلّل:</b> المعلوم <span dir="ltr">r = (0.5)m</span> و 90 دورة في 60 ثانية. المطلوب f و T و ω و v و a<sub>c</sub> ثم θ″ و N.</span></li>
+    <li><span><b>(أ)</b> <span dir="ltr"><span class="f">f = 90 ÷ 60</span> = <span class="ans">(1.5)rev/s</span></span> و <span dir="ltr"><span class="f">T = 1 ÷ f = 1 ÷ 1.5</span> = <span class="ans">(0.67)s</span></span></span></li>
+    <li><span><b>(ب)</b> <span dir="ltr"><span class="f">ω = 2πf = 2 × 3.14 × 1.5</span> = <span class="ans">(9.42)rad/s</span></span></span></li>
+    <li><span><b>(ج)</b> <span dir="ltr"><span class="f">v = r ω = 0.5 × 9.42</span> = <span class="ans">(4.71)m/s</span></span>. ونقطة في نص الريشة لها ω نفسها ونصف هذه السرعة.</span></li>
+    <li><span><b>(د)</b> <span dir="ltr"><span class="f">a<sub>c</sub> = <span class="frac"><span>v²</span><span>r</span></span> = <span class="frac"><span>4.71²</span><span>0.5</span></span></span> = <span class="ans">(44.4)m/s²</span></span>، باتجاه محور المروحة.</span></li>
+    <li><span><b>(ه)</b> من <span class="f">ω = θ″t + ω<sub>0</sub></span>: <span dir="ltr">0 = θ″ × 6 + 9.42</span> فـ <span dir="ltr"><span class="ans">θ″ = (−1.57)rad/s²</span></span> (السالب: تباطؤ).<br>
+      <span dir="ltr"><span class="f">Δθ = ½ θ″t² + ω<sub>0</sub>t = ½(−1.57)(36) + 9.42 × 6</span> = (28.26)rad</span><br>
+      <span dir="ltr"><span class="f">N = Δθ ÷ 2π = 28.26 ÷ 6.28</span> = <span class="ans">(4.5)rev</span></span></span></li>
+    <li><span><b>قيّم:</b> <span dir="ltr">a<sub>c</sub></span> كبيرة مقارنة بعجلات الحركة الخطية اليومية، لكنها منطقية لطرف يلفّ مرة ونص كل ثانية. وأربع دورات ونص للتوقّف شي نشوفه فعلاً لما نطفّي المروحة.</span></li>
+  </ol>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">9</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sd">
+  <div class="sec-head"><span class="num">10</span><h2 id="sd">في حياتنا</h2></div>
+  <div class="life">
+    <div class="card"><h3>عجلات القطار</h3><p>عجلتا القطار على محور واحد فلهما ω نفسها، لكنهما <b>مخروطيتان (مدرّجتان)</b>. في المنعطف تركب العجلة الخارجية على جزئها العريض فتصير r أكبر، و <span dir="ltr">v = rω</span> أكبر، فيلفّ القطار بدون ما ينزلق.</p></div>
+    <div class="card"><h3>كوب يتدحرج</h3><p>دحرج كوباً ورقياً على الطاولة: الفتحة الواسعة (r أكبر) تقطع مسافة أكبر في كل دورة من القاعدة الضيّقة، فيمشي الكوب في <b>دائرة</b> بدل خطّ مستقيم. أما العلبة الأسطوانية فتمشي مستقيم.</p></div>
+    <div class="card"><h3>نشافة الغسالة</h3><p>الحوض يلفّ مئات الدورات في الدقيقة، فتكون العجلة المركزية على الملابس عند الجدار كبيرة جداً، والماء يطلع من الفتحات.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">11</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>ولدان على دوّارة خيل، الأول يبعد r عن المحور والثاني يبعد 3r. أي عبارة صحيحة؟</p>
+      <div class="opts"><button>الثاني سرعته الزاوية ثلاثة أضعاف الأول</button><button data-ok>لهما ω نفسها، والسرعة الخطية للثاني ثلاثة أضعاف الأول</button><button>لهما السرعة الخطية نفسها لأنهما يكمّلان الدورة معاً</button></div>
+      <p class="why" hidden>الصحيح: أجزاء الدوّارة كلها تلفّ نفس الدورات في نفس الزمن فلها ω واحدة، و <span dir="ltr">v = rω</span> فالبعد ثلاثة أضعاف يعطي سرعة خطية ثلاثة أضعاف.</p></div>
+    <div class="q"><p>قرص يدور 60 دورة في الدقيقة. سرعته الزاوية:</p>
+      <div class="opts"><button>(60)rad/s</button><button>(1)rad/s</button><button data-ok>2π rad/s، يعني تقريباً (6.28)rad/s</button></div>
+      <p class="why" hidden>الصحيح: 60 دورة في 60 ثانية = دورة كل ثانية، يعني <span dir="ltr">f = 1</span>. والدورة <span dir="ltr">2π rad</span>، إذن <span dir="ltr">ω = 2πf = 2π rad/s</span>.</p></div>
+    <div class="q"><p>كرة مربوطة بخيط تدور بحركة دائرية منتظمة. عجلتها:</p>
+      <div class="opts"><button>صفر، لأن مقدار سرعتها ثابت</button><button data-ok>نحو مركز الدائرة ومقدارها <span dir="ltr">v² ÷ r</span></button><button>مماسية باتجاه حركتها</button></div>
+      <p class="why" hidden>الصحيح: اتجاه السرعة يتغيّر كل لحظة، فيه عجلة مركزية <span dir="ltr">a<sub>c</sub> = v² ÷ r</span> نحو المركز. أما المماسية والزاوية فصفر لأن المقدار و ω ثابتان.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li><b>الحركة الدائرية</b>: مسار دائري ومسافة ثابتة عن المركز. محوري = محور داخل الجسم، مداري = محور خارجه. و <span dir="ltr">s = rθ</span> مع θ بالراديان، و <span dir="ltr">2π rad = 360°</span>.</li>
+      <li><b>السرعتان</b>: <span dir="ltr">ω = Δθ ÷ Δt</span> واحدة لكل أجزاء الجسم الجاسئ، و <span dir="ltr">v = rω</span> تكبر مع البعد. و <span dir="ltr">f = 1 ÷ T</span> و <span dir="ltr">T = 2πr ÷ v = 2π ÷ ω</span>.</li>
+      <li><b>العجلة</b>: في المنتظمة <span dir="ltr">a<sub>t</sub> = 0</span> و <span dir="ltr">θ″ = 0</span> و <span dir="ltr">a<sub>c</sub> = v² ÷ r</span> نحو المركز. ومنتظمة العجلة: <span dir="ltr">ω = θ″t + ω<sub>0</sub></span> و <span dir="ltr">Δθ = ½θ″t² + ω<sub>0</sub>t</span>.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الفيزياء، الصف الحادي عشر، الوحدة الأولى، ص 43 إلى 53</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"phy-u1-2-1"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+var svg=$("plab"),sT=$("sT"),sR=$("sR"),CX=140,CY=145,SC=25,RA=2,ACC=0.5;
+var st={run:true,acc:false,th:0.6,w:0,t:0},last=null,anim=0,reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+function f2(n){var v=Math.round(n*100)/100;return (Math.abs(v)<0.005?0:v).toFixed(2).replace(/\.?0+$/,"");}
+function arrow(x1,y1,x2,y2,c,w){var dx=x2-x1,dy=y2-y1,L=Math.hypot(dx,dy);if(L<4)return "";
+  var ux=dx/L,uy=dy/L,h=Math.min(9,L*.5),bx=x2-ux*h,by=y2-uy*h;
+  return '<line x1="'+x1.toFixed(1)+'" y1="'+y1.toFixed(1)+'" x2="'+bx.toFixed(1)+'" y2="'+by.toFixed(1)+'" stroke="'+c+'" stroke-width="'+w+'" stroke-linecap="round"/>'+
+   '<path d="M'+x2.toFixed(1)+' '+y2.toFixed(1)+' L'+(bx-uy*h*.6).toFixed(1)+' '+(by+ux*h*.6).toFixed(1)+' L'+(bx+uy*h*.6).toFixed(1)+' '+(by-ux*h*.6).toFixed(1)+'Z" fill="'+c+'"/>';}
+function target(){return 2*Math.PI/(+sT.value);}
+function rider(r,th,w,lab,col){
+  var x=CX+r*SC*Math.cos(th),y=CY-r*SC*Math.sin(th),v=r*w,ac=r*w*w,o='';
+  if(r>0){var tx=-Math.sin(th),ty=-Math.cos(th),lv=Math.min(6*v,72),la=Math.min(14*Math.sqrt(ac),58);
+    o+=arrow(x,y,x+tx*lv,y+ty*lv,"var(--vx)",3.5);
+    o+=arrow(x,y,x-(x-CX)/(r*SC)*la,y-(y-CY)/(r*SC)*la,"var(--vy)",3.5);
+    if(st.acc&&w<target()-1e-6){var nx=(x-CX)/(r*SC),ny=(y-CY)/(r*SC),ox=x+nx*12,oy=y+ny*12;o+=arrow(ox,oy,ox+tx*26,oy+ty*26,"var(--g)",4.5);}
+  }
+  o+='<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="9" fill="'+col+'" stroke="var(--card)" stroke-width="2"/>';
+  o+='<text x="'+x.toFixed(1)+'" y="'+(y+4).toFixed(1)+'" font-size="11" font-weight="800" text-anchor="middle" fill="#fff">'+lab+'</text>';
+  return o;}
+function draw(){
+  var rB=+sR.value,w=st.w,th=st.th,s='',R5=5.2*SC;
+  s+='<circle cx="'+CX+'" cy="'+CY+'" r="'+R5+'" fill="var(--p-peach)" stroke="var(--path)" stroke-width="3"/>';
+  for(var k=1;k<=5;k++)s+='<circle cx="'+CX+'" cy="'+CY+'" r="'+(k*SC)+'" fill="none" stroke="var(--gridline)" stroke-width="1.2"/>';
+  for(var j=0;j<6;j++){var a=th+j*Math.PI/3;s+='<line x1="'+CX+'" y1="'+CY+'" x2="'+(CX+R5*Math.cos(a)).toFixed(1)+'" y2="'+(CY-R5*Math.sin(a)).toFixed(1)+'" stroke="var(--gridline)" stroke-width="1.2"/>';}
+  s+='<line x1="'+CX+'" y1="'+CY+'" x2="'+(CX+R5+8)+'" y2="'+CY+'" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="5 4"/>';
+  var tm=((th%(2*Math.PI))+2*Math.PI)%(2*Math.PI);
+  if(rB>0&&tm>0.02){var rr=rB*SC,ex=CX+rr*Math.cos(tm),ey=CY-rr*Math.sin(tm);
+    s+='<path d="M'+(CX+rr)+' '+CY+' A'+rr+' '+rr+' 0 '+(tm>Math.PI?1:0)+' 0 '+ex.toFixed(1)+' '+ey.toFixed(1)+'" fill="none" stroke="var(--path)" stroke-width="5" stroke-linecap="round" opacity=".55"/>';}
+  s+='<circle cx="'+CX+'" cy="'+CY+'" r="5" fill="var(--text)"/>';
+  s+=rider(RA,th,w,"A","var(--muted)");
+  s+=rider(rB,th,w,"B","var(--path)");
+  s+='<text x="8" y="18" font-size="12" fill="var(--text)">θ = '+f2(tm)+' rad</text>';
+  s+='<text x="8" y="34" font-size="12" fill="var(--text)">N = '+((st.th-0.6)/(2*Math.PI)).toFixed(1)+' rev</text>';
+  var vA=RA*w,vB=rB*w,MX=16,BH=200,BY=250;
+  [[vA,"vA",318,"var(--muted)"],[vB,"vB",362,"var(--path)"]].forEach(function(b){var hgt=Math.min(b[0]/MX,1)*BH;
+    s+='<rect x="'+(b[2]-14)+'" y="'+(BY-BH)+'" width="28" height="'+BH+'" rx="10" fill="var(--card)"/>';
+    s+='<rect x="'+(b[2]-14)+'" y="'+(BY-hgt).toFixed(1)+'" width="28" height="'+hgt.toFixed(1)+'" rx="10" fill="'+b[3]+'"/>';
+    s+='<text x="'+b[2]+'" y="'+(BY+16)+'" font-size="12" font-weight="700" text-anchor="middle" fill="var(--text)">'+b[1]+'</text>';
+    s+='<text x="'+b[2]+'" y="'+(BY+31)+'" font-size="11" text-anchor="middle" fill="var(--text)">'+f2(b[0])+'</text>';});
+  svg.innerHTML=s;
+  $("tW").textContent=f2(w);$("tA").textContent=f2(vA);$("tB").textContent=f2(vB);$("tC").textContent=f2(rB*w*w);
+  $("lT").textContent=sT.value;$("lR").textContent=rB;
+}
+function msg(){var rB=+sR.value,m=$("pMsg"),t,ok=false,W=target();
+  if(st.acc&&st.w<W-1e-6){t="تسرّع من السكون: θ″ = 0.5 rad/s² ثابتة، و ω = θ″t تكبر. السهم البنفسجي at يكبّر مقدار السرعة، والوردي ac يكبر معها.";}
+  else if(rB===0){t="B في المركز: r = 0 فسرعته الخطية صفر، لكنه يلفّ مع الدوّارة بنفس ω.";ok=true;}
+  else if(rB===RA){t="A و B على نفس البعد (2 m): نفس v ونفس ω.";}
+  else if(rB===2*RA){t="B يبعد ضعف A: نفس ω، و vB ضعف vA بالضبط. هذا v = rω.";ok=true;}
+  else t=(rB>RA?"B أبعد":"B أقرب")+" من A: نفس ω = "+f2(W)+" rad/s، لكن v مختلفة لأن r مختلف. جرّب rB = 4 m.";
+  if(st.acc&&st.w>=W-1e-6)t="وصلت ω إلى "+f2(W)+" rad/s وثبتت: الحركة صارت منتظمة، فاختفت at وبقيت ac نحو المركز.";
+  m.textContent=t;m.className="msg"+(ok?" ok":"");}
+function tick(ts){
+  if(last===null)last=ts;var dt=Math.min((ts-last)/1000,0.05);last=ts;
+  var W=target();
+  if(st.acc){st.w=Math.min(W,st.w+ACC*dt);}else st.w=W;
+  st.th+=st.w*dt;draw();
+  if(st.acc&&Math.abs(st.w-W)<1e-9&&!st.done){st.done=true;msg();}
+  if(st.run)anim=requestAnimationFrame(tick);else anim=0;}
+function start(){if(anim)return;last=null;st.run=true;$("play").textContent="إيقاف ⏸";anim=requestAnimationFrame(tick);}
+function stop(){st.run=false;cancelAnimationFrame(anim);anim=0;$("play").textContent="تشغيل ▶";}
+$("play").addEventListener("click",function(){st.run?stop():start();});
+$("tgAcc").addEventListener("click",function(){st.acc=!st.acc;this.setAttribute("aria-pressed",String(st.acc));st.th=0.6;st.w=st.acc?0:target();st.done=false;msg();draw();start();});
+[sT,sR].forEach(function(el){el.addEventListener("input",function(){if(!st.acc)st.w=target();st.done=false;msg();draw();});});
+st.w=target();msg();draw();
+if(reduce)stop();else start();
+})();
+</script>
+</body>
+</html>
