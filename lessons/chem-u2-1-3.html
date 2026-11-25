@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="chemistry">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الأنظمة المائية غير المتجانسة · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+span[dir=ltr],bdi[dir=ltr]{unicode-bidi:isolate}
+body{--plate:#eefaf5;--glass:#fffdf2;--beak:#9a93b8;--liq:#cfeefb;--cloud:#e9f1f7;--pt:#5a5277;--sus:#b8865a;--beam:#ff3b5c;--neg:#5b8def;--pos:#ef5b5b;--blob:#c9c3dc;--mol:#9fc9e8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--plate:#1f2b2a;--glass:#3a3550;--beak:#8a83a8;--liq:#21404f;--cloud:#3a5566;--pt:#d6d0ee;--sus:#d9a878;--beam:#ff6b85;--neg:#7fa8ff;--pos:#ff7b7b;--blob:#6d6788;--mol:#4f7c9c}}
+:root[data-theme="dark"] body{--plate:#1f2b2a;--glass:#3a3550;--beak:#8a83a8;--liq:#21404f;--cloud:#3a5566;--pt:#d6d0ee;--sus:#d9a878;--beam:#ff6b85;--neg:#7fa8ff;--pos:#ff7b7b;--blob:#6d6788;--mol:#4f7c9c}
+.stage{display:block;width:100%;height:auto;border-radius:22px;background:var(--plate);box-shadow:var(--press)}
+.fx{direction:ltr;unicode-bidi:isolate;font-family:"Noto Serif",Georgia,serif;white-space:nowrap}
+.fx sub,.fx sup{font-size:.68em}
+.help{display:inline-block;font-size:12px;font-weight:700;padding:1px 9px;border-radius:9px;background:var(--p-sky);color:var(--text);margin-inline-end:6px}
+.pick{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.pick .tg{font-size:14px;padding:7px 12px}
+.labout{margin-top:10px;padding:12px 14px;border-radius:18px;background:var(--card);box-shadow:var(--clay-sm);font-size:15px;min-height:2.4em}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+.three .card{padding:12px}
+.three .card h3{margin:0 0 6px;font-size:1.05rem}
+.three dl{margin:0;font-size:13.5px}
+.three dt{font-weight:700;color:var(--muted);font-size:12.5px;margin-top:6px}
+.three dd{margin:0}
+@media (max-width:620px){.three{grid-template-columns:1fr}}
+.scale{display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:6px;margin-top:10px;text-align:center}
+.scale div{padding:10px 6px;border-radius:16px;box-shadow:var(--clay-sm);font-size:13.5px}
+.scale b{display:block;font-size:14.5px}
+.sysrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:10px}
+.sysrow .card{padding:10px 12px}
+.sysrow .card h3{margin:0;font-size:1rem}
+.sysrow .card p{margin:4px 0 0;font-size:13.5px}
+.sysrow .card .ph{display:inline-block;margin-top:4px;font-size:12.5px;font-weight:700;padding:1px 9px;border-radius:9px;background:var(--p-mint)}
+.act[data-act=match] .pc,.act[data-act=sort] .it,.act[data-act=gap] .opts .pc{font-family:var(--body);font-style:normal}
+</style>
+</head>
+<body style="--sc:#17b388">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الكيمياء</span><span class="chip">الدرس 1-3 · ص 39 إلى 43</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الثانية: المحاليل · الفصل الأول: المحاليل المائية المتجانسة وغير المتجانسة</p>
+  <h1 id="t">الأنظمة المائية غير المتجانسة</h1>
+  <p>الجيلي (الجيلاتين) يهتزّ لمّا تحرّك الصحن، ويذوب في فمك. هو مو محلول عادي ومو خليط عكر: هو <mark>محلول غروي</mark>. اليوم نفرّق بين ثلاثة: <b>المحلول الحقيقي</b> و<b>الغروي</b> و<b>المعلّق</b>، بثلاث تجارب بسيطة: اتركه، سلّط عليه ضوءاً، رشّحه.</p>
+</section>
+
+<section class="panel" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">مختبر الكؤوس الثلاث</h2><span class="legend">اختر تجربة</span></div>
+  <svg class="stage" id="cupSvg" viewBox="0 0 400 260" role="img" aria-label="ثلاث كؤوس: محلول وغروي ومعلّق" style="margin-top:8px"></svg>
+  <div class="pick" id="cupPick" role="group" aria-label="التجارب"></div>
+  <div class="labout" id="cupOut" aria-live="polite"></div>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">رموز الدرس ومصطلحاته</h2></div>
+  <div class="syms">
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span class="fx">nm</span></span><div><h3>النانومتر <span class="en">nanometer</span></h3><p>وحدة نقيس بها قطر الجسيمات. جزء من مليار من المتر.</p><span class="hook">أصغر من الشعرة بآلاف المرّات.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub"><span>⏬</span></span><div><h3>المعلّق <span class="en">Suspension</span></h3><p>خليط <b>غير متجانس</b>، إذا تُرك فترة قصيرة بدون رجّ <b>تترسّب</b> جسيماته في القاع. قطر الجسيم <b>أكبر من <span class="fx">1000 nm</span></b>.</p><span class="hook">طباشير في كوب: تنزل تحت.</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub"><span>☁</span></span><div><h3>الغروي <span class="en">Colloid</span></h3><p>خليط فيه جسيمات قطرها <b>بين <span class="fx">1 nm</span> و <span class="fx">1000 nm</span></b>: بين المحلول والمعلّق.</p><span class="hook">الوسط الذهبي: لا يترسّب ولا يذوب تماماً.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub"><span>💧</span></span><div><h3>المحلول الحقيقي <span class="en">True solution</span></h3><p>خليط <b>متجانس</b>، جسيماته صغيرة جداً (قطرها حوالى <span class="fx">1 nm</span>)، <b>لا تترسّب</b> مهما طال الزمن.</p><span class="hook">ملح ذاب واختفى.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span>•</span></span><div><h3>الصنف المنتشر <span class="en">Dispersed phase</span></h3><p>المادّة اللي تكوّن <b>الجسيمات الغروية</b>.</p><span class="hook">"الضيف" المنتشر.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub"><span>▭</span></span><div><h3>وسط الانتشار <span class="en">Dispersion medium</span></h3><p>الوسط اللي توجد فيه الجسيمات الغروية: <b>صلب أو سائل أو غاز</b>.</p><span class="hook">"البيت" اللي يستضيف.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span>⚡</span></span><div><h3>ظاهرة تندال <span class="en">Tyndall effect</span></h3><p>تشتيت جسيمات الغرويات للضوء المرئي <b>في جميع الاتّجاهات</b>، فيظهر مسار الشعاع.</p><span class="hook">شعاع الشمس في غرفة فيها غبار.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub"><span>⤳</span></span><div><h3>الحركة البراونية <span class="en">Brownian Motion</span></h3><p>حركة <b>دائمة غير منتظمة ومتعرّجة</b> للجسيمات الغروية، بسبب اصطدام جزيئات السائل بها.</p><span class="hook">كرة في زحمة: كل واحد يدفعها لجهة.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">المعلّقات Suspensions</h2></div>
+  <p>المعلّقات أمثلة على <b>المخاليط غير المتجانسة</b>. ضع دقيقاً أو طباشير في ماء ورجّه: تشوف الجسيمات بالعين المجرّدة أو بالمجهر. اتركه فترة قصيرة بدون رجّ: <b>تترسّب</b> في القاع. هذا لا يحدث في <b>المحاليل الحقيقية</b> (مخاليط متجانسة)، فجسيماتها لا تترسّب مهما طال الزمن.</p>
+  <div class="grid2" style="margin-top:10px">
+    <div class="box peach"><h3>ليش غير متجانس؟</h3><p>لأنك تقدر تتعرّف على <b>مادّتين على الأقل</b> فيه بوضوح، مثل البنّ والماء.</p></div>
+    <div class="box sky"><h3>نفصله بالترشيح</h3><p>ورقة الترشيح <b>تحجز</b> جسيمات البنّ المعلّقة، ويمرّ الماء الصافي إلى الدورق المخروطي.</p></div>
+  </div>
+  <p style="margin-top:12px">الفرق الأساسي هو <b>حجم الجسيم</b>:</p>
+  <div class="scale" aria-label="مقارنة قطر الجسيمات">
+    <div style="background:var(--p-mint)"><b>المحلول</b><span class="fx">0.1–1 nm</span></div>
+    <div style="background:var(--p-lav)"><b>الغروي</b><span class="fx">1–1000 nm</span></div>
+    <div style="background:var(--p-peach)"><b>المعلّق</b><span class="fx">1000 nm</span> وأكبر</div>
+  </div>
+  <p class="tip" style="margin-top:10px"><b>قاعدة سريعة:</b> رقمان تحفظهما: <span class="fx">1 nm</span> و <span class="fx">1000 nm</span>. أصغر من الأول = محلول، بينهما = غروي، أكبر من الثاني = معلّق.</p>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">الغرويات Colloids</h2></div>
+  <p>في الغروي جزءان: <b>الصنف المنتشر</b> (المادّة اللي تكوّن الجسيمات) و<b>وسط الانتشار</b> (اللي تنتشر فيه، صلب أو سائل أو غاز). وكان <b>الغراء</b> من أوّل الغرويات اللي تعرّف عليها العلماء.</p>
+  <p style="margin-top:6px">كثير من الغرويات <b>تشبه الحليب أو السحب</b> وهي مركّزة، لكنها تبدو <b>صافية</b> لمّا نخفّفها كثيراً. ورق الترشيح <b>لا يحجز</b> جسيماتها، ولو تركناها بدون رجّ <b>لا تترسّب</b> مثل المعلّقات.</p>
+  <h3 style="margin:14px 0 4px">أنظمة غروية شائعة (الصنف المنتشر في وسط الانتشار)</h3>
+  <div class="sysrow">
+    <div class="card"><h3>رغوة</h3><span class="ph">غاز في سائل</span><p>بعض أنواع الكريمة.</p></div>
+    <div class="card"><h3>هلام</h3><span class="ph">غاز في صلب</span><p>بعض الحلوى المصنوعة من السكّر والهلام وزلال البيض.</p></div>
+    <div class="card"><h3>مستحلب</h3><span class="ph">سائل في سائل</span><p>الحليب والمايونيز.</p></div>
+    <div class="card"><h3>أيروسول</h3><span class="ph">سائل في غاز</span><p>ضباب الأيروسولات المختلفة (البخّاخات).</p></div>
+    <div class="card"><h3>دخان</h3><span class="ph">صلب في غاز</span><p>الدخان في الهواء.</p></div>
+    <div class="card"><h3>محلول غروي هلامي القوام <span dir="ltr">(gel)</span></h3><span class="ph">صلب في سائل</span><p>الدهانات الجيلاتينية والدم والنشاء في الماء.</p></div>
+  </div>
+  <p class="note" style="margin-top:10px"><span class="help">حيلة للحفظ</span>اقرأ الاسم: <b>دخان</b> = صلب يطير في غاز، <b>أيروسول</b> = رذاذ سائل في غاز، <b>رغوة</b> = فقاعات غاز في سائل، <b>هلام</b> = فقاعات غاز محبوسة في صلب.</p>
+
+  <div class="act" data-act="match" data-key="match"
+       data-pairs='[["الكريمة المخفوقة","رغوة: غاز في سائل"],["الحليب والمايونيز","مستحلب: سائل في سائل"],["رذاذ البخّاخ","أيروسول: سائل في غاز"],["الدخان في الهواء","دخان: صلب في غاز"],["النشاء في الماء والدم","gel: صلب في سائل"],["حلوى من السكّر وزلال البيض","هلام: غاز في صلب"]]'
+       data-ok="ممتاز! كل نظام غروي = صنف منتشر داخل وسط انتشار.">
+    <h3>وصّل المثال بنظامه الغروي <span class="k">نشاط</span></h3>
+    <p>اختر مثالاً، ثم نوع النظام الغروي (المنتشر في الوسط).</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">ظاهرة تندال Tyndall effect</h2></div>
+  <p>جسيمات الغرويات <b>تشتّت الضوء المرئي في جميع الاتّجاهات</b>: هذه <b>ظاهرة تندال</b>. تشوف مسار الشعاع داخل الغروي، مثل ما تشوف شعاع الشمس في غرفة فيها <b>غبار</b>. و<b>الضباب</b> غروي، لذلك يشتّت ضوء السيّارات.</p>
+  <div class="grid2" style="margin-top:10px">
+    <div class="box lav"><h3>يتبعها</h3><p><b>الغرويات</b> و<b>المعلّقات</b> أيضاً.</p></div>
+    <div class="box mint"><h3>لا يتبعها</h3><p><b>المحاليل الحقيقية</b>، لأن جسيماتها <b>صغيرة جداً</b>.</p></div>
+  </div>
+  <p class="tip" style="margin-top:10px"><b>استخدامها:</b> نميّز بها <b>المحلول الحقيقي</b> عن <b>الغروي والمعلّق</b>. (لكن تندال وحدها ما تفرّق الغروي عن المعلّق: هنا نحتاج الترسيب أو الترشيح.)</p>
+
+  <div class="act" data-act="sort" data-key="sort" data-bins='["يحدث ظاهرة تندال","لا يحدث ظاهرة تندال"]'
+       data-items='[["الحليب",0,"الحليب مستحلب غروي، جسيماته تشتّت الضوء."],["الضباب",0,"الضباب غروي، لذلك يشتّت ضوء السيّارات."],["الدخان في الهواء",0,"الدخان نظام غروي: صلب في غاز."],["ماء وطباشير بعد الرجّ",0,"المعلّق يتبع ظاهرة تندال أيضاً."],["النشاء في الماء",0,"النشاء في الماء غروي هلامي القوام."],["ملح ذائب في الماء",1,"محلول حقيقي: جسيماته أصغر من أن تشتّت الضوء."],["سكّر ذائب في الماء",1,"محلول حقيقي متجانس، الشعاع لا يظهر فيه."]]'
+       data-ok="ممتاز! الغرويات والمعلّقات تشتّت الضوء، والمحاليل الحقيقية لا.">
+    <h3>صنّف الخليط <span class="k">نشاط</span></h3>
+    <p>لو سلّطنا شعاع ضوء خلاله، هل يظهر مساره (ظاهرة تندال)؟</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s5">
+  <div class="sec-head"><span class="num">5</span><h2 id="s5">الحركة البراونية Brownian Motion</h2></div>
+  <p>انظر إلى محلول غروي مضاء تحت <b>المجهر</b>: الجسيمات الغروية في <b>حركة دائمة غير منتظمة وبشكل متعرّج</b>. اسمها <b>الحركة البراونية</b>، نسبة إلى مكتشفها العالم <b>روبرت براون</b> <span dir="ltr">Robert Brown (1772–1858)</span>.</p>
+  <div class="panel" style="margin:10px 0 0">
+    <div class="lab-head"><h2 style="font-size:1.1rem">مختبر الزحمة</h2><span class="legend"><span><i style="background:var(--blob);width:10px;height:10px"></i>جسيم غروي</span><span><i style="background:var(--mol);width:10px;height:10px"></i>جزيئات السائل</span></span></div>
+    <svg class="stage" id="brSvg" viewBox="0 0 400 200" role="img" aria-label="جسيم غروي يتحرّك حركة متعرّجة بسبب اصطدام جزيئات السائل" style="margin-top:8px"></svg>
+    <div class="pick"><button class="tg" id="brGo" type="button" aria-pressed="false">شغّل</button><button class="lite" id="brClr" type="button">امسح المسار</button></div>
+    <p class="labout" id="brOut" aria-live="polite">جزيئات السائل المتحرّكة <b>تصطدم</b> بالجسيم الغروي من كل الجهات فتحرّكه. وهذه الاصطدامات <b>تمنع</b> الجسيمات الغروية من <b>الترسّب</b> في قاع الإناء.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s6">
+  <div class="sec-head"><span class="num">6</span><h2 id="s6">محبّ للماء وكاره للماء</h2></div>
+  <div class="grid2">
+    <div class="box sky"><h3>غرويات محبّة للماء</h3><p>فيها <b>جزيئات كبيرة</b> مثل <b>البروتين</b>، تتداخل مع الماء عن طريق <b>الأيون ثنائي قوى الاستقطاب</b> (شحنتان كهربائيتان متساويتان في القوّة ومتضادّتان، بينهما مسافة قصيرة)، مثل حمض الأمينوإيثانويك <span class="fx">H<sub>3</sub>N<sup>+</sup>CH<sub>2</sub>COO<sup>−</sup></span>.</p></div>
+    <div class="box peach"><h3>غرويات كارهة للماء</h3><p><b>غير ثابتة</b>، جزيئاتها تقدر <b>تتكتّل وتتجمّع</b> معاً، مثل <b>قطرات الزيت</b> على سطح الماء. ونجعلها <b>أكثر ثباتاً</b> بإضافة <b>محلول إلكتروليتي</b>.</p></div>
+  </div>
+  <p style="margin-top:10px">كيف يثبّتها المحلول الإلكتروليتي؟ الأيونات تتجمّع حول الجسيم الغروي (<b>امتزاز</b> كاتيونات أو أنيونات على سطحه، وهذا يجذب الأيون المخالف قريباً منه)، فيحمل الجسيم <b>نوعاً واحداً من الشحنات</b>. وكل جسيمات النظام الغروي الواحد تحمل <b>الشحنة نفسها</b>، فتتنافر، ولا تتجمّع لتكوّن جزيئات أكبر: يبقى حجمها ثابتاً و<b>لا تترسّب</b>.</p>
+  <div class="panel" style="margin:10px 0 0">
+    <div class="lab-head"><h2 style="font-size:1.1rem">مختبر التنافر</h2><span class="legend"><span><i style="background:var(--neg);width:10px;height:10px"></i>سالب</span><span><i style="background:var(--pos);width:10px;height:10px"></i>موجب</span></span></div>
+    <svg class="stage" id="chSvg" viewBox="0 0 400 200" role="img" aria-label="جسيمان غرويان يحملان الشحنة نفسها فيتنافران" style="margin-top:8px"></svg>
+    <div class="pick" id="chPick" role="group" aria-label="حالة النظام الغروي"></div>
+    <p class="labout" id="chOut" aria-live="polite"></p>
+  </div>
+
+  <div class="act" data-act="gap" data-key="gap" data-ok="صح! الأيونات المخالفة تعادل شحنات الغروي، فيختفي التنافر، فتتجمّع الجسيمات وتكبر وتترسّب في القاع.">
+    <h3>أكمل الناقص <span class="k">نشاط</span></h3>
+    <p>عند إضافة أيونات شحنتها <b>تختلف</b> عن شحنة النظام الغروي، فإن الجسيمات الغروية <span class="gap">؟</span></p>
+    <div class="opts">
+      <button class="pc" data-no="التنافر سببه أن كل الجسيمات تحمل الشحنة نفسها. الأيونات المخالفة تعادل هذه الشحنة، فيقلّ التنافر لا يزيد.">تتنافر أكثر وتبقى منتشرة</button>
+      <button class="pc" data-ok>تتجمّع لتكوّن جسيمات أكبر تترسّب في القاع</button>
+      <button class="pc" data-no="الغروي لا يتحوّل إلى محلول حقيقي. معادلة الشحنات تجعل جسيماته تتجمّع وتكبر.">تصغر وتصير محلولاً حقيقياً</button>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s7">
+  <div class="sec-head"><span class="num">7</span><h2 id="s7">المقارنة الكبيرة</h2></div>
+  <p>هذه أسس التمييز بين المحلول والغروي والمعلّق:</p>
+  <div class="three">
+    <div class="card" style="background:var(--p-mint)"><h3>المحلول</h3><dl>
+      <dt>نوع الجسيمات</dt><dd>أيونات، ذرّات، جزيئات صغيرة</dd>
+      <dt>حجم الجسيم</dt><dd><span class="fx">0.1–1 nm</span></dd>
+      <dt>تأثير الضوء</dt><dd>لا يشتّت</dd>
+      <dt>تأثير الجاذبية</dt><dd>ثابت لا ينفصل</dd>
+      <dt>الترشيح</dt><dd>لا تُحجز الجسيمات</dd>
+      <dt>التجانس</dt><dd>متجانس</dd></dl></div>
+    <div class="card" style="background:var(--p-lav)"><h3>الغروي</h3><dl>
+      <dt>نوع الجسيمات</dt><dd>جزيئات أو جسيمات أكبر من المحلول وأصغر من المعلّق</dd>
+      <dt>حجم الجسيم</dt><dd><span class="fx">1–1000 nm</span></dd>
+      <dt>تأثير الضوء</dt><dd>يُحدث ظاهرة تندال</dd>
+      <dt>تأثير الجاذبية</dt><dd>ثابت لا ينفصل</dd>
+      <dt>الترشيح</dt><dd>لا تُحجز الجسيمات</dd>
+      <dt>التجانس</dt><dd>بين متجانس وغير متجانس</dd></dl></div>
+    <div class="card" style="background:var(--p-peach)"><h3>المعلّق</h3><dl>
+      <dt>نوع الجسيمات</dt><dd>جسيمات كبيرة أو جسيمات متجمّعة</dd>
+      <dt>حجم الجسيم</dt><dd><span class="fx">1000 nm</span> وأكبر</dd>
+      <dt>تأثير الضوء</dt><dd>يُحدث ظاهرة تندال</dd>
+      <dt>تأثير الجاذبية</dt><dd>غير ثابت ويترسّب</dd>
+      <dt>الترشيح</dt><dd>تُحجز الجسيمات على ورقة الترشيح</dd>
+      <dt>التجانس</dt><dd>غير متجانس</dd></dl></div>
+  </div>
+  <p class="tip" style="margin-top:10px"><b>فخ:</b> الغروي يشبه المعلّق في <b>الضوء فقط</b> (تندال)، ويشبه المحلول في <b>الجاذبية والترشيح</b> (ثابت، لا يُحجز). والمعلّق هو الوحيد اللي <b>يترسّب ويُحجز</b>.</p>
+</section>
+
+<section class="sec" aria-labelledby="s8">
+  <div class="sec-head"><span class="num">8</span><h2 id="s8">مثال محلول: حدّد نوع الخليط</h2></div>
+  <div class="qbox">ثلاثة سوائل مجهولة A و B و C. سلّطنا عليها شعاع ضوء، ثم تركناها، ثم رشّحناها:<br>A: الشعاع لا يظهر، لا يترسّب، يمرّ كلّه من ورقة الترشيح.<br>B: الشعاع يظهر، لا يترسّب، يمرّ من ورقة الترشيح.<br>C: الشعاع يظهر، يترسّب بعد قليل، وتبقى جسيمات على ورقة الترشيح.</div>
+  <div class="row"><button class="lite" id="hideSol" type="button" aria-pressed="false">أخفِ الحل وجرّب أولاً</button></div>
+  <ol class="steps" id="steps">
+    <li><span>ابدأ بالضوء: <b>A</b> لا يُحدث ظاهرة تندال، فجسيماته صغيرة جداً: <b>محلول حقيقي</b>.</span></li>
+    <li><span>B و C يُحدثان تندال، إذن كل واحد منهما <b>غروي أو معلّق</b>. نحتاج اختباراً ثانياً.</span></li>
+    <li><span>الجاذبية والترشيح: <b>C</b> يترسّب وتُحجز جسيماته: <b>معلّق</b> (قطر جسيماته <span class="fx">1000 nm</span> وأكبر). <b>B</b> ثابت ولا يُحجز: <b>غروي</b> (<span class="fx">1–1000 nm</span>).</span></li>
+    <li><span><span class="ans">A محلول حقيقي، B غروي، C معلّق.</span></span></li>
+  </ol>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">9</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sd">
+  <div class="sec-head"><span class="num">10</span><h2 id="sd">في حياتك</h2></div>
+  <div class="life">
+    <div class="card"><h3>ضباب الصباح</h3><p>أضواء السيّارات تبيّن "أعمدة" ضوء: الضباب غروي يُحدث <b>ظاهرة تندال</b>.</p></div>
+    <div class="card"><h3>دواء "رجّ قبل الاستعمال"</h3><p>كثير منها <b>معلّقات</b>: تترسّب لو تُركت، فلازم ترجّها.</p></div>
+    <div class="card"><h3>المايونيز</h3><p><b>مستحلب</b>: قطرات سائل منتشرة في سائل آخر.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">11</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>خليط قطر جسيماته حوالى <span class="fx">500 nm</span>. نوعه:</p>
+      <div class="opts"><button>محلول حقيقي</button><button data-ok>غروي</button><button>معلّق</button></div>
+      <p class="why" hidden>الصحيح: غروي، لأن قطر جسيم الغروي بين <span class="fx">1 nm</span> و <span class="fx">1000 nm</span>. المحلول حوالى <span class="fx">1 nm</span>، والمعلّق أكبر من <span class="fx">1000 nm</span>.</p></div>
+    <div class="q"><p>ما الذي يمنع الجسيمات الغروية من الترسّب في قاع الإناء؟</p>
+      <div class="opts"><button>ورقة الترشيح تحجزها</button><button>تذوب تماماً في الماء</button><button data-ok>الحركة البراونية: اصطدام جزيئات السائل بها، وتنافرها لأنها تحمل الشحنة نفسها</button></div>
+      <p class="why" hidden>الصحيح: اصطدامات جزيئات السائل (الحركة البراونية) تمنعها من الترسّب، وكل جسيمات النظام الغروي تحمل الشحنة نفسها فتتنافر ولا تتجمّع. ورقة الترشيح لا تحجز جسيمات الغروي أصلاً.</p></div>
+    <div class="q"><p>نستخدم ظاهرة تندال للتمييز بين:</p>
+      <div class="opts"><button>الغروي والمعلّق</button><button data-ok>المحلول الحقيقي، وكلّ من الغروي والمعلّق</button><button>المعلّق والمحلول المركّز فقط</button></div>
+      <p class="why" hidden>الصحيح: الغروي والمعلّق كلاهما يُحدث ظاهرة تندال، والمحلول الحقيقي لا يُحدثها، فتميّز المحلول عن الاثنين.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li>قطر الجسيم: محلول <span class="fx">0.1–1 nm</span>، غروي <span class="fx">1–1000 nm</span>، معلّق <span class="fx">1000 nm</span> وأكبر. المعلّق وحده يترسّب وتحجزه ورقة الترشيح.</li>
+      <li>ظاهرة تندال: تشتيت الضوء في جميع الاتّجاهات، تحدث في الغروي والمعلّق لا في المحلول الحقيقي. والحركة البراونية: حركة دائمة غير منتظمة متعرّجة تمنع الغروي من الترسّب.</li>
+      <li>الغروي = صنف منتشر في وسط انتشار (رغوة، هلام، مستحلب، أيروسول، دخان، gel). الكاره للماء يثبت بمحلول إلكتروليتي، ويترسّب بأيونات مخالفة لشحنته.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الكيمياء، الصف الحادي عشر، الوحدة الثانية، ص 39 إلى 43</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"chem-u2-1-3"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+function pressed(box,k){[].forEach.call(box.children,function(x,j){x.setAttribute("aria-pressed",j===k?"true":"false");});}
+var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+function f1(x){return (+x).toFixed(1);}
+var seed=11;function rand(){seed=(seed*16807)%2147483647;return seed/2147483647;}
+
+/* ---------- lab 1: three cups ---------- */
+var CX=[80,205,330],TOP=78,BOT=212,HW=50,FL=132; /* FL: filter paper line */
+var CUPS=[["محلول","ماء وملح",0.9,40],["غروي","ماء ونشاء",1.8,70],["معلّق","ماء وطباشير",3.6,38]];
+var P=CUPS.map(function(c,k){var a=[];for(var i=0;i<c[3];i++)a.push({x:CX[k]-HW+6+rand()*(2*HW-12),y:TOP+14+rand()*(BOT-TOP-22)});return a;});
+var mode=0,cur=P.map(function(a){return a.map(function(p){return {x:p.x,y:p.y};});});
+function target(k,i){var p=P[k][i];
+  if(k===2&&mode===1)return {x:p.x,y:BOT-5-((i*7)%4)*4};           /* settles */
+  if(k===2&&mode===3)return {x:CX[k]-HW+8+((i*13)%84),y:FL-4-((i*5)%3)*4}; /* held on paper */
+  return {x:p.x,y:mode===3?Math.max(p.y,FL+8):p.y};}
+function drawCups(){
+  var h="";
+  if(mode===2)h+='<rect x="3" y="146" width="11" height="12" rx="2" fill="var(--pt)"/><text x="14" y="138" font-size="11" fill="var(--text)" text-anchor="middle">ضوء</text>';
+  CUPS.forEach(function(c,k){var x0=CX[k]-HW,x1=CX[k]+HW;
+    h+='<text x="'+CX[k]+'" y="26" font-size="15" font-weight="700" text-anchor="middle" fill="var(--text)">'+c[0]+'</text>';
+    h+='<text x="'+CX[k]+'" y="46" font-size="12" text-anchor="middle" fill="var(--muted)">'+c[1]+'</text>';
+    h+='<path d="M'+x0+' '+(TOP-8)+' L'+x0+' '+BOT+' Q'+x0+' '+(BOT+8)+' '+(x0+8)+' '+(BOT+8)+' L'+(x1-8)+' '+(BOT+8)+' Q'+x1+' '+(BOT+8)+' '+x1+' '+BOT+' L'+x1+' '+(TOP-8)+'" fill="var(--glass)" stroke="var(--beak)" stroke-width="2.5"/>';
+    var liq=(k===1)?"var(--cloud)":(k===2&&mode!==1&&mode!==3?"var(--cloud)":"var(--liq)");
+    h+='<rect x="'+(x0+2)+'" y="'+TOP+'" width="'+(2*HW-4)+'" height="'+(BOT-TOP+6)+'" rx="6" fill="'+liq+'" opacity=".9"/>';
+    if(mode===2&&k>0)h+='<line x1="'+(x0+2)+'" y1="152" x2="'+(x1-2)+'" y2="152" stroke="var(--beam)" stroke-width="4" stroke-linecap="round" opacity=".85"/><line x1="'+(x0+2)+'" y1="152" x2="'+(x1-2)+'" y2="152" stroke="var(--beam)" stroke-width="12" opacity=".18"/>';
+    if(mode===3)h+='<line x1="'+(x0+2)+'" y1="'+FL+'" x2="'+(x1-2)+'" y2="'+FL+'" stroke="var(--pt)" stroke-width="2" stroke-dasharray="5 4"/>';
+    cur[k].forEach(function(p){h+='<circle cx="'+f1(p.x)+'" cy="'+f1(p.y)+'" r="'+c[2]+'" fill="'+(k===2?"var(--sus)":"var(--pt)")+'" opacity="'+(k===0?.35:.8)+'"/>';});
+  });
+  if(mode===2)h+='<path d="M14 152 H30" stroke="var(--beam)" stroke-width="4"/>';
+  if(mode===3)h+='<text x="200" y="250" font-size="11.5" text-anchor="middle" fill="var(--text)">الخط المنقّط = ورقة الترشيح</text>';
+  if(mode===2)h+='<text x="200" y="250" font-size="11.5" text-anchor="middle" fill="var(--text)">الشعاع يمرّ في الكؤوس الثلاث، لكن نراه فقط حيث يتشتّت</text>';
+  $("cupSvg").innerHTML=h;
+}
+var MODES=[["رُجّ الكؤوس","بعد الرجّ: <b>المحلول</b> صافٍ، <b>الغروي</b> يبدو متعكّراً قليلاً، و<b>المعلّق</b> جسيماته تُرى بالعين. اختر تجربة."],
+ ["اتركها فترة","<b>المعلّق</b> فقط يترسّب في القاع (غير ثابت). <b>المحلول</b> و<b>الغروي</b> ثابتان لا ينفصلان مهما طال الزمن."],
+ ["سلّط شعاع ضوء","مسار الشعاع يظهر في <b>الغروي</b> و<b>المعلّق</b> (ظاهرة تندال)، ولا يظهر في <b>المحلول</b> لأن جسيماته صغيرة جداً."],
+ ["رشّحها","ورقة الترشيح تحجز جسيمات <b>المعلّق</b> فقط. جسيمات <b>الغروي</b> و<b>المحلول</b> تمرّ منها."]];
+var an=null;
+function setMode(m){mode=m;pressed($("cupPick"),m);$("cupOut").innerHTML=MODES[m][1];
+  var from=cur.map(function(a){return a.map(function(p){return {x:p.x,y:p.y};});}),t0=null,D=RM?1:900;
+  if(an)cancelAnimationFrame(an);
+  function st(ts){if(t0===null)t0=ts;var u=Math.min(1,(ts-t0)/D),e=1-Math.pow(1-u,3);
+    cur=from.map(function(a,k){return a.map(function(p,i){var q=target(k,i);return {x:p.x+(q.x-p.x)*e,y:p.y+(q.y-p.y)*e};});});
+    drawCups();if(u<1)an=requestAnimationFrame(st);}
+  an=requestAnimationFrame(st);}
+MODES.forEach(function(m,k){var b=document.createElement("button");b.type="button";b.className="tg";b.textContent=m[0];b.addEventListener("click",function(){setMode(k);});$("cupPick").appendChild(b);});
+drawCups();pressed($("cupPick"),0);$("cupOut").innerHTML=MODES[0][1];
+
+/* ---------- lab 2: Brownian motion ---------- */
+var B={x:200,y:100},trail=[[200,100]],dir=null,seg=0,run=false,MOL=[];
+for(var i=0;i<46;i++)MOL.push({x:rand()*400,y:rand()*200,vx:(rand()-.5)*3,vy:(rand()-.5)*3});
+function drawBr(hit){
+  var h='<polyline points="'+trail.map(function(p){return f1(p[0])+","+f1(p[1]);}).join(" ")+'" fill="none" stroke="var(--sc)" stroke-width="2"/>';
+  if(trail.length)h+='<circle cx="'+f1(trail[0][0])+'" cy="'+f1(trail[0][1])+'" r="4" fill="var(--sc)"/>';
+  MOL.forEach(function(m){h+='<circle cx="'+f1(m.x)+'" cy="'+f1(m.y)+'" r="3.2" fill="var(--mol)"/>';});
+  h+='<circle cx="'+f1(B.x)+'" cy="'+f1(B.y)+'" r="15" fill="var(--blob)" stroke="var(--pt)" stroke-width="1.5"/>';
+  if(hit)h+='<circle cx="'+f1(hit[0])+'" cy="'+f1(hit[1])+'" r="7" fill="none" stroke="var(--beam)" stroke-width="2"/>';
+  $("brSvg").innerHTML=h;}
+function newDir(){var a=rand()*Math.PI*2;dir=[Math.cos(a)*1.6,Math.sin(a)*1.6];seg=40+rand()*50;trail.push([B.x,B.y]);if(trail.length>16)trail.shift();}
+var bf=null,last=null;
+function stepBr(){
+  var hit=null;
+  MOL.forEach(function(m){m.x+=m.vx;m.y+=m.vy;if(m.x<0||m.x>400)m.vx*=-1;if(m.y<0||m.y>200)m.vy*=-1;
+    var dx=m.x-B.x,dy=m.y-B.y;if(dx*dx+dy*dy<18*18){m.vx=dx/9;m.vy=dy/9;hit=[m.x,m.y];}});
+  if(!dir||seg<=0)newDir();
+  B.x+=dir[0];B.y+=dir[1];seg-=1.6;
+  if(B.x<24||B.x>376){dir[0]*=-1;newDir();}if(B.y<24||B.y>176){dir[1]*=-1;newDir();}
+  B.x=Math.max(22,Math.min(378,B.x));B.y=Math.max(22,Math.min(178,B.y));
+  var t=trail.slice();trail.push([B.x,B.y]);drawBr(hit);trail=t;
+}
+function loop(){if(!run)return;stepBr();bf=requestAnimationFrame(loop);}
+if(RM){for(var s=0;s<6;s++){newDir();B.x=Math.max(30,Math.min(370,B.x+dir[0]*40));B.y=Math.max(30,Math.min(170,B.y+dir[1]*40));}trail.push([B.x,B.y]);}
+drawBr();
+$("brGo").addEventListener("click",function(){
+  if(RM){newDir();B.x=Math.max(30,Math.min(370,B.x+dir[0]*40));B.y=Math.max(30,Math.min(170,B.y+dir[1]*40));trail.push([B.x,B.y]);drawBr();return;}
+  run=!run;this.textContent=run?"أوقف":"شغّل";this.setAttribute("aria-pressed",run?"true":"false");if(run)loop();});
+$("brClr").addEventListener("click",function(){trail=[[B.x,B.y]];drawBr();});
+
+/* ---------- lab 3: charge and stability ---------- */
+var CH=[["كاره للماء بدون إلكتروليت","الجسيمات <b>غير ثابتة</b>: تتكتّل وتتجمّع معاً، مثل قطرات الزيت على سطح الماء."],
+ ["أضف محلولاً إلكتروليتياً","الأيونات تُمتزّ على سطح كل جسيم، فيحمل <b>نوعاً واحداً</b> من الشحنات. كلّها بالشحنة نفسها، فتتنافر، ولا تتجمّع، وتبقى منتشرة: <b>أكثر ثباتاً</b>."],
+ ["أضف أيونات مخالفة الشحنة","الأيونات المخالفة <b>تعادل</b> شحنات الغروي، فيختفي التنافر: الجسيمات تتجمّع لتكوّن جسيمات أكبر <b>تترسّب في القاع</b>."]];
+var cm=1,ca=null,cpos=[[110,90],[290,90]];
+function blob(cx,cy,r){var p="",n=10;for(var i=0;i<=n;i++){var a=i/n*Math.PI*2,rr=r*(0.86+0.14*Math.sin(i*2.3));p+=(i?"L":"M")+f1(cx+rr*Math.cos(a))+" "+f1(cy+rr*Math.sin(a));}return '<path d="'+p+'Z" fill="var(--blob)" stroke="var(--pt)" stroke-width="1.5"/>';}
+function ion(x,y,s){return '<circle cx="'+f1(x)+'" cy="'+f1(y)+'" r="7" fill="'+(s<0?"var(--neg)":"var(--pos)")+'"/><text x="'+f1(x)+'" y="'+f1(y+4)+'" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">'+(s<0?"−":"+")+'</text>';}
+function drawCh(){
+  var h="";
+  cpos.forEach(function(c,k){
+    h+=blob(c[0],c[1],cm===2?28:32);
+    if(cm===1)h+='<text x="'+c[0]+'" y="'+(c[1]+4)+'" font-size="10" text-anchor="middle" fill="var(--text)">جسيم غروي</text>';
+    if(cm===1){for(var i=0;i<6;i++){var a=i/6*Math.PI*2+.3;h+=ion(c[0]+40*Math.cos(a),c[1]+40*Math.sin(a),-1);}
+      for(var j=0;j<4;j++){var b=j/4*Math.PI*2+1.1;h+=ion(c[0]+62*Math.cos(b),c[1]+58*Math.sin(b),1);}}
+    if(cm===2){for(var m=0;m<3;m++){var d=m/3*Math.PI*2+.6;h+='<circle cx="'+f1(c[0]+34*Math.cos(d))+'" cy="'+f1(c[1]+30*Math.sin(d))+'" r="5" fill="var(--muted)" opacity=".6"/>';}}
+  });
+  if(cm===1)h+='<path d="M168 92 H232" stroke="var(--beam)" stroke-width="2.5"/><path d="M168 92 l9 -5 v10z M232 92 l-9 -5 v10z" fill="var(--beam)"/><text x="200" y="80" font-size="12" font-weight="700" text-anchor="middle" fill="var(--beam)">تنافر</text>';
+  if(cm===2)h+='<line x1="20" y1="192" x2="380" y2="192" stroke="var(--beak)" stroke-width="3"/><text x="200" y="40" font-size="12" text-anchor="middle" fill="var(--text)">تتجمّع وتترسّب</text>';
+  if(cm===0)h+='<text x="200" y="40" font-size="12" text-anchor="middle" fill="var(--text)">تتكتّل معاً</text>';
+  $("chSvg").innerHTML=h;}
+function goCh(m){cm=m;pressed($("chPick"),m);$("chOut").innerHTML=CH[m][1];
+  var to=m===1?[[110,90],[290,90]]:(m===0?[[170,95],[228,100]]:[[176,158],[230,160]]),from=cpos.map(function(p){return p.slice();}),t0=null,D=RM?1:900;
+  if(ca)cancelAnimationFrame(ca);
+  function st(ts){if(t0===null)t0=ts;var u=Math.min(1,(ts-t0)/D),e=1-Math.pow(1-u,3);cpos=from.map(function(p,k){return [p[0]+(to[k][0]-p[0])*e,p[1]+(to[k][1]-p[1])*e];});drawCh();if(u<1)ca=requestAnimationFrame(st);}
+  ca=requestAnimationFrame(st);}
+CH.forEach(function(c,k){var b=document.createElement("button");b.type="button";b.className="tg";b.textContent=c[0];b.addEventListener("click",function(){goCh(k);});$("chPick").appendChild(b);});
+drawCh();pressed($("chPick"),1);$("chOut").innerHTML=CH[1][1];
+})();
+</script>
+</body>
+</html>

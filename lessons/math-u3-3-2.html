@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="math">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الدوال الحدودية · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+span[dir=ltr],bdi[dir=ltr],b[dir=ltr]{unicode-bidi:isolate}
+body{--plane:#f1edff;--grid:#ddd5fb;--axis:#8b86b3;--curve:#3d8be0;--inv:#e0485f;--sym:#17b388;--ghost:#b9b1e6;--c6:#e39a1e}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--plane:#24203d;--grid:#363057;--axis:#a7a2cf;--curve:#6fb4ff;--inv:#ff7d8f;--sym:#4fd8ac;--ghost:#7a72aa;--c6:#ffc15a}}
+:root[data-theme="dark"] body{--plane:#24203d;--grid:#363057;--axis:#a7a2cf;--curve:#6fb4ff;--inv:#ff7d8f;--sym:#4fd8ac;--ghost:#7a72aa;--c6:#ffc15a}
+.stage{display:block;width:100%;height:auto;border-radius:20px;background:var(--plane);box-shadow:var(--press);margin-top:10px}
+.xtra{margin-top:12px;padding:10px 16px;border-radius:20px;background:var(--card);box-shadow:var(--clay-sm)}
+.xtra summary{cursor:pointer;font-weight:700;color:var(--ink)}
+.fbox{overflow-x:auto;text-align:center;padding:6px 0}
+.tbl{overflow-x:auto;margin-top:10px}
+.tbl table{border-collapse:separate;border-spacing:4px;margin:0 auto}
+.tbl td,.tbl th{padding:5px 9px;border-radius:10px;background:var(--card);box-shadow:var(--clay-sm);text-align:center;font-size:14px}
+.tbl th{background:var(--soft)}
+.tbl td.m{font-family:"Noto Serif",Georgia,serif;direction:ltr;white-space:nowrap;font-size:15px}
+.act .gap{direction:ltr;unicode-bidi:isolate}
+.act[data-act=gap] .pc{font-family:"Noto Serif",Georgia,serif}
+.srt .bins{grid-template-columns:repeat(2,1fr)}
+.srt .it{direction:ltr;unicode-bidi:isolate;font-family:"Noto Serif",Georgia,serif}
+.seg{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.seg button{font:inherit;font-size:14px;padding:6px 12px;border-radius:14px;border:0;background:var(--card);color:var(--text);box-shadow:var(--clay-sm);cursor:pointer;direction:ltr}
+.seg button[aria-pressed=true]{background:var(--p-lav);box-shadow:var(--press);font-weight:700}
+.anat{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;direction:ltr;margin:10px 0}
+.anat div{display:grid;gap:4px;justify-items:center;padding:8px 10px;border-radius:16px;box-shadow:var(--clay-sm);background:var(--bb,var(--card))}
+.anat b{font-family:"Noto Serif",Georgia,serif;font-size:1.15rem;font-weight:700;color:var(--text)}
+.anat small{font-size:12px;color:var(--text);direction:rtl}
+.ends{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:10px}
+.ends .card{text-align:center;padding:10px}
+.ends svg{width:100%;max-width:150px;height:auto;display:block;margin:0 auto}
+.ends p{font-size:14px;margin:4px 0 0}
+.arr{display:inline-block;direction:ltr;unicode-bidi:isolate;font-family:"Noto Serif",Georgia,serif;font-weight:700;letter-spacing:.06em;white-space:nowrap}
+.out{margin-top:10px;display:grid;gap:4px;text-align:center}
+.nw{white-space:nowrap}
+.out small{color:var(--muted);font-size:13px}
+</style>
+</head>
+<body style="--sc:#8a63f2">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الرياضيات</span><span class="chip">الدرس 3-2 · ص 97 إلى 101</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الثالثة: كثيرات الحدود</p>
+  <h1 id="t">الدوال الحدودية</h1>
+  <p>في الدرس الماضي كل دالة كان فيها حد واحد مثل <span dir="ltr">2x⁴</span>. الحين نجمع ونطرح عدة حدود: <span dir="ltr" class="nw">x⁴ − 3x³ + 5x</span>. الرسم يصير فيه طلعات ونزلات في الوسط مثل طريق جبلي. <mark>بس لو ابتعدت كثير، من يقرر وين يروح الطريق؟</mark> حدّ واحد فقط هو «الرئيس». جرّب بنفسك.</p>
+</section>
+
+<section class="panel" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">مختبر: ابتعد بالكاميرا</h2><span class="legend"><span><i style="background:var(--curve)"></i>الدالة كاملة</span><span><i style="background:var(--c6)"></i>الحد الرئيسي وحده</span></span></div>
+  <div class="seg" role="group" aria-label="اختر الدالة">
+    <button type="button" data-f="0" aria-pressed="true">x⁴ − 3x³ + 5x</button>
+    <button type="button" data-f="1" aria-pressed="false">−x² + 6x</button>
+    <button type="button" data-f="2" aria-pressed="false">x³</button>
+    <button type="button" data-f="3" aria-pressed="false">−0.3x³ + 4x + 2</button>
+  </div>
+  <svg class="stage" id="zoomPlot" viewBox="0 0 400 300" role="img" aria-label="بيان دالة كثيرة حدود مع حدها الرئيسي عند تكبير وتصغير المشهد"></svg>
+  <div class="controls"><div class="ctl"><label for="zm">ابتعد: <b id="zL">× 1</b></label><input type="range" dir="ltr" id="zm" min="0" max="5" step="1" value="0" aria-describedby="zL"></div></div>
+  <div class="out" id="zOut" aria-live="polite"></div>
+  <p class="cap">قريب: الحدود الصغيرة تصنع الطلعات والنزلات. بعيد: المنحنى الأزرق يلبس المنحنى البرتقالي تقريباً، لأن الحد الأعلى درجة يكبر أسرع من الباقي.</p>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">رموز الدرس ومصطلحاته</h2></div>
+  <div class="syms">
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub"><span dir="ltr">P(x)</span></span><div><h3>دالة حدودية (كثيرة حدود) <span class="en">Polynomial</span></h3><p>مجموع أو فرق دوال قوى وثوابت، مثل <span dir="ltr">2x³ − 5x² − 2x − 5</span>.</p><span class="hook">P أول حرف من Polynomial.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span>n</span></span><div><h3>الدرجة <span class="en">Degree</span></h3><p>الأُس في الحد هو درجة الحد، وأعلى درجة هي درجة كثيرة الحدود.</p><span class="hook">أكبر أُس يكسب.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub"><span dir="ltr">aₙ</span></span><div><h3>المعامل الرئيسي <span class="en">Leading Coefficient</span></h3><p>العدد المضروب في الحد الأعلى درجة. في <span dir="ltr">2x³ − 5x²...</span> هو 2.</p><span class="hook">معامل «الرئيس»، مو أول رقم مكتوب.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub"><span dir="ltr">a₀</span></span><div><h3>الحد الثابت <span class="en">Constant Term</span></h3><p>الحد اللي ما فيه x، درجته صفر. وقبله الحد الخطي (x) والتربيعي (x²) والتكعيبي (x³).</p><span class="hook">الثابت ما يتحرك مع x.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub sm"><span>تنازلي</span></span><div><h3>الصورة العامة <span class="en">General Form</span></h3><p>الحدود مرتبة تنازلياً حسب درجاتها، بعد جمع الحدود المتشابهة.</p><span class="hook">الكبير أولاً، مثل طابور من الأطول للأقصر.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub"><span class="arr">↙ ↗</span></span><div><h3>سلوك النهاية <span class="en">End Behavior</span></h3><p>اتجاه طرفي المنحنى: الأيسر والأيمن، لأعلى أو لأسفل.</p><span class="hook">وين تشير يداك لو كنت المنحنى؟</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">تشريح كثيرة الحدود</h2></div>
+  <div class="law wide" style="background:var(--p-lav);text-align:center">
+    <h3>تعريف الدالة الحدودية (كثيرة الحدود)</h3>
+    <div class="fbox"><span class="f">P(x) = aₙxⁿ + aₙ₋₁xⁿ⁻¹ + ... + a₁x + a₀</span></div>
+    <p style="color:var(--text)">حيث n عدد صحيح غير سالب، و <span dir="ltr">aₙ , aₙ₋₁ , ... , a₀</span> أعداد حقيقية.</p>
+  </div>
+  <p style="margin-top:12px">خذ مثالاً واحداً وفكّه قطعة قطعة:</p>
+  <div class="anat">
+    <div style="--bb:var(--p-pink)"><b>2</b><small>المعامل الرئيسي</small></div>
+    <div style="--bb:var(--p-lav)"><b>x³</b><small>مع 2: حد تكعيبي</small></div>
+    <div style="--bb:var(--p-mint)"><b>− 5x²</b><small>حد تربيعي</small></div>
+    <div style="--bb:var(--p-sky)"><b>− 2x</b><small>حد خطي</small></div>
+    <div style="--bb:var(--p-butter)"><b>− 5</b><small>حد ثابت</small></div>
+  </div>
+  <p>الحدود هنا مرتبة تنازلياً: 3 ثم 2 ثم 1 ثم 0. هذه <b>الصورة العامة</b>. ونصنّف كثيرة الحدود بطريقتين: <b>بأعلى درجة</b> فيها، أو <b>بعدد حدودها</b>.</p>
+  <div class="tbl"><table>
+    <tr><th>الحدودية</th><th>الدرجة</th><th>الاسم بالدرجة</th><th>الحدود</th><th>الاسم بالعدد</th></tr>
+    <tr><td class="m">6</td><td>الصفرية</td><td>ثابتة</td><td>1</td><td>أحادية</td></tr>
+    <tr><td class="m">x + 3</td><td>الأولى</td><td>خطية</td><td>2</td><td>ثنائية</td></tr>
+    <tr><td class="m">3x² + 5x − 2</td><td>الثانية</td><td>تربيعية</td><td>3</td><td>ثلاثية</td></tr>
+    <tr><td class="m">2x³ − 5x²</td><td>الثالثة</td><td>تكعيبية</td><td>2</td><td>ثنائية</td></tr>
+    <tr><td class="m">−x⁴ + x³ − 1</td><td>الرابعة</td><td>ذات القوة الرابعة</td><td>3</td><td>ثلاثية</td></tr>
+  </table></div>
+  <p class="tip" style="margin-top:10px"><b>ملاحظة:</b> إذا كانت الدالة الحدودية من الدرجة n فإن لها على الأكثر <span dir="ltr">(n + 1)</span> حداً. التكعيبية مثلاً: 4 حدود على الأكثر (x³ و x² و x وثابت).</p>
+
+  <h3 style="margin:16px 0 6px">مثال (1)</h3>
+  <div class="qbox">اكتب كل كثيرة حدود بالصورة العامة، ثم صنّفها تبعاً للدرجة وعدد الحدود.</div>
+  <ol class="steps">
+    <li><span><span class="f">−7x + 5x⁴ = 5x⁴ − 7x</span>: أعلى درجة <span dir="ltr">5x⁴</span> ⇐ <span class="ans">من الدرجة الرابعة، ثنائية</span></span></li>
+    <li><span><span class="f">5x³ − (4x² + 5x³) + 2x²</span><br><span class="f">= 5x³ − 4x² − 5x³ + 2x² = −2x²</span> ⇐ <span class="ans">من الدرجة الثانية، أحادية</span></span></li>
+    <li><span><span class="f">(2l − 5)(l² − 1) = 2l³ − 2l − 5l² + 5</span><br><span class="f">= 2l³ − 5l² − 2l + 5</span> ⇐ <span class="ans">من الدرجة الثالثة، رباعية</span> (4 حدود)</span></li>
+  </ol>
+  <p class="tip" style="margin-top:8px"><b>انتبه:</b> في (b) شكلها ثلاثية، لكن بعد فك القوس وجمع المتشابهة بقي حد واحد. بسّط دائماً قبل ما تصنّف.</p>
+
+  <div class="act" data-act="gap" data-key="gap" data-ok="صح! السالب قبل القوس يقلب الإشارتين: ⁦3x³ + x² − 4x − 2x³ = x³ + x² − 4x⁩. تكعيبية ثلاثية.">
+    <h3>أكمل الناقص <span class="k">نشاط</span></h3>
+    <p>حاول أن تحل (1b): الصورة العامة للحدودية <span dir="ltr" class="nw">3x³ + x² − (4x + 2x³)</span> هي <span class="f" style="font-size:1.05rem"><span class="gap">؟</span></span></p>
+    <div class="opts">
+      <button class="pc" dir="ltr" data-no="نسيت أن السالب يدخل على 2x³ أيضاً: ⁦3x³ − 2x³ = x³⁩، مو 5x³.">5x³ + x² − 4x</button>
+      <button class="pc" dir="ltr" data-ok>x³ + x² − 4x</button>
+      <button class="pc" dir="ltr" data-no="السالب قبل القوس يقلب إشارة 4x فتصير ⁦−4x⁩.">x³ + x² + 4x</button>
+    </div>
+  </div>
+  <details class="xtra"><summary>حاول أن تحل (1a) و (1c)</summary>
+    <ul class="pts">
+      <li style="--b:var(--sc)"><b>a)</b> <span dir="ltr">4x − 6x + 5 = −2x + 5</span>: من الدرجة الأولى (خطية)، ثنائية.</li>
+      <li style="--b:var(--sc)"><b>c)</b> <span dir="ltr">6 − 2x⁵ = −2x⁵ + 6</span>: من الدرجة الخامسة، ثنائية.</li>
+    </ul>
+  </details>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">نمذجة البيانات: إنتاج الذهب</h2></div>
+  <p>الخط المستقيم والقطع المكافئ ما يكفيان أحياناً لنقاط بيانات تتعرج. نستخدم كثيرة حدود من الدرجة الثالثة أو أكثر. الجدول يبين إنتاج العالم من الذهب بملايين الأونصات:</p>
+  <div class="tbl"><table>
+    <tr><th>السنة</th><th>x</th><th>الإنتاج (مليون أونصة)</th></tr>
+    <tr><td>1975</td><td>0</td><td>38.5</td></tr>
+    <tr><td>1980</td><td>5</td><td>39.2</td></tr>
+    <tr><td>1985</td><td>10</td><td>49.3</td></tr>
+    <tr><td>1990</td><td>15</td><td>70.2</td></tr>
+    <tr><td>1995</td><td>20</td><td>71.6</td></tr>
+    <tr><td>2000</td><td>25</td><td>82.6</td></tr>
+  </table></div>
+  <p class="cap">جعلنا <span dir="ltr">x = 0</span> يمثل سنة 1975، فكل سنة بعدها تساوي عدد السنوات من 1975. (الأونصة oz تزن حوالى 28.35 g.)</p>
+  <svg class="stage" id="gold-plot" viewBox="0 0 400 240" role="img" aria-label="نقاط إنتاج الذهب ومنحنى نموذج من الدرجة الرابعة"></svg>
+  <p style="margin-top:10px">الآلة الحاسبة البيانية (انحدار من الدرجة الرابعة) تعطي النموذج:</p>
+  <div class="fbox"><span class="f" style="font-size:.98rem">f(x) = 0.0009033x⁴ − 0.05193x³ + 0.959x² − 3.899x + 38.86</span></div>
+  <p>سنة 1988 تقابل <span dir="ltr">x = 13</span>: <span class="f">f(13) ≈ 61.96</span>، يعني الإنتاج حوالى <b>62 مليون أونصة</b>.</p>
+  <div class="act" data-act="type" data-key="type" data-answer="75.92" data-tol="0.8"
+       data-ok="صح! ⁦1997 − 1975 = 22⁩، و ⁦f(22) ≈ 75.9⁩ مليون أونصة. شوف النقطة على المنحنى بين 1995 و 2000."
+       data-hint="أولاً x = 1997 − 1975 = 22. ثم عوّض 22 في النموذج بالحاسبة، حداً حداً."
+       data-no="ليست هذه. تأكد أن x = 22 (عدد السنوات من 1975، مو 1997) وأن الإشارات السالبة محفوظة.">
+    <h3>اكتب الجواب <span class="k">نشاط</span></h3>
+    <p>استخدم النموذج لتقدير إنتاج الذهب سنة 1997 (بملايين الأونصات، رقم عشري واحد يكفي).</p>
+  </div>
+  <p class="note" style="margin-top:10px"><b>للفهم (مو للاختبار):</b> النموذج يقدّر جيداً داخل سنوات الجدول. بعيداً عنها يتحكم فيه الحد الرئيسي <span dir="ltr">0.0009033x⁴</span> ويطير لأعلى، وهذا بالضبط «سلوك النهاية» اللي بعده.</p>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">سلوك النهاية</h2></div>
+  <p>سلوك النهاية يصف امتداد طرفي المنحنى، الأيمن والأيسر. وفيه أربعة نماذج فقط، ويعيّنها <b>الحد الذي له أعلى درجة</b>. نكتبها بسهمين: الطرف الأيسر ثم الأيمن.</p>
+  <div class="ends" id="ends"></div>
+  <div class="rule" style="margin-top:12px"><h3>كيف تقرأها بسرعة؟</h3><p><b>الطرف الأيمن</b> يحدده المعامل الرئيسي: موجب ⇐ لأعلى، سالب ⇐ لأسفل.<br><b>الطرف الأيسر</b> تحدده الدرجة: زوجية ⇐ نفس اتجاه الأيمن، فردية ⇐ عكسه.</p></div>
+
+  <h3 style="margin:16px 0 6px">مثال (2): وضّح سلوك النهاية</h3>
+  <div class="row"><button class="lite" id="hideSol" type="button" aria-pressed="false">أخفِ الحل وجرّب أولاً</button></div>
+  <ol class="steps" id="steps">
+    <li><span><span class="f">y = 4x³ − 3x</span>: المعامل الرئيسي 4 موجب ⇐ اليمين لأعلى. الدرجة الثالثة فردية ⇐ اليسار عكسه، لأسفل. <span class="ans">سلوك النهاية <span class="arr">(↙ , ↗)</span></span></span></li>
+    <li><span><span class="f">f(x) = −2x⁴ + 8x³ − 8x²</span>: المعامل −2 سالب ⇐ اليمين لأسفل. الرابعة زوجية ⇐ اليسار مثله. <span class="ans">سلوك النهاية <span class="arr">(↙ , ↘)</span></span></span></li>
+    <li><span><span class="f">g(x) = x² − 4x + 3</span>: المعامل 1 موجب ⇐ اليمين لأعلى. الثانية زوجية ⇐ اليسار مثله. <span class="ans">سلوك النهاية <span class="arr">(↖ , ↗)</span></span></span></li>
+    <li><span><span class="f">h(x) = −x³ + 2x + 2</span>: المعامل −1 سالب ⇐ اليمين لأسفل. الثالثة فردية ⇐ اليسار عكسه، لأعلى. <span class="ans">سلوك النهاية <span class="arr">(↖ , ↘)</span></span></span></li>
+  </ol>
+
+  <div class="act" data-act="sort" data-key="sort"
+       data-bins='["⁦↖ ↗⁩ أعلى وأعلى","⁦↙ ↘⁩ أسفل وأسفل","⁦↙ ↗⁩ أسفل ثم أعلى","⁦↖ ↘⁩ أعلى ثم أسفل"]'
+       data-items='[["−x³ + 2x² + 6",3,"المعامل −1 سالب: اليمين لأسفل. والدرجة 3 فردية: اليسار عكسه، لأعلى."],["4x⁴ − 3x",0,"المعامل 4 موجب: اليمين لأعلى. والدرجة 4 زوجية: اليسار مثله."],["2x³ − x",2,"المعامل 2 موجب: اليمين لأعلى. والدرجة 3 فردية: اليسار عكسه."],["x − x⁴",1,"رتّبها أولاً: ⁦−x⁴ + x⁩. المعامل الرئيسي −1 مو 1."],["5x⁴ − 7x",0,"⁦5x⁴⁩ هو الرئيس: موجب وزوجي."],["−2x²",1,"قطع مكافئ مفتوح لأسفل: الطرفان لأسفل."],["7 − 3x + 2x³",2,"الرئيس ⁦2x³⁩ مو 7: موجب وفردي."],["−0.3x³ + 4x + 2",3,"المعامل −0.3 سالب والدرجة فردية."]]'
+       data-ok="ممتاز! كل مرة: لقيت الرئيس، إشارته للطرف الأيمن، ودرجته تقول هل اليسار مثله أو عكسه.">
+    <h3>صنّف حسب سلوك النهاية <span class="k">نشاط</span></h3>
+    <p>حاول أن تحل (2) وأكثر: ضع كل كثيرة حدود في صندوق سلوك نهايتها.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">5</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sd">
+  <div class="sec-head"><span class="num">6</span><h2 id="sd">في حياتك</h2></div>
+  <div class="life">
+    <div class="card"><h3>قطار الملاهي</h3><p>مسار القطار طلعات ونزلات. المهندس يرسمه بكثيرة حدود، والحدود الصغيرة هي اللي تصنع المتعة في الوسط.</p></div>
+    <div class="card"><h3>الكرة المقذوفة</h3><p>ارتفاعها دالة تربيعية معاملها الرئيسي سالب، فالطرفان لأسفل <span class="arr">(↙ , ↘)</span>: تطلع ثم ترجع للأرض.</p></div>
+    <div class="card"><h3>التوقعات</h3><p>شركات تتوقع المبيعات بنماذج مثل نموذج الذهب. والذكي يعرف أن النموذج يصدق قرب البيانات فقط.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">7</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>المعامل الرئيسي في <span class="f" style="font-size:1.1rem">P(x) = 7 − 3x + 2x³</span> هو:</p>
+      <div class="opts"><button dir="ltr">7</button><button dir="ltr" data-ok>2</button><button dir="ltr">−3</button></div>
+      <p class="why" hidden>الصحيح: 2. رتّبها بالصورة العامة: ⁦2x³ − 3x + 7⁩. المعامل الرئيسي معامل الحد الأعلى درجة، مو أول رقم مكتوب.</p></div>
+    <div class="q"><p>تصنيف <span class="f" style="font-size:1.1rem">6 − 2x⁵</span> حسب الدرجة وعدد الحدود:</p>
+      <div class="opts"><button>من الدرجة السادسة، ثنائية</button><button data-ok>من الدرجة الخامسة، ثنائية</button><button>من الدرجة الخامسة، أحادية</button></div>
+      <p class="why" hidden>الصحيح: الخامسة، ثنائية. أعلى أُس 5، وفيها حدان: ⁦−2x⁵⁩ و 6.</p></div>
+    <div class="q"><p>سلوك النهاية لبيان <span class="f" style="font-size:1.1rem">f(x) = −2x⁴ + 8x³ − 8x²</span>:</p>
+      <div class="opts"><button class="arr" data-ok>(↙ , ↘)</button><button class="arr">(↖ , ↘)</button><button class="arr">(↖ , ↗)</button></div>
+      <p class="why" hidden>الصحيح: ⁦(↙ , ↘)⁩. المعامل الرئيسي −2 سالب فاليمين لأسفل، والدرجة 4 زوجية فاليسار مثله.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li><b>كثيرة الحدود</b> <span dir="ltr">P(x) = aₙxⁿ + ... + a₁x + a₀</span>، n عدد صحيح غير سالب. الصورة العامة: الحدود تنازلياً بعد جمع المتشابهة.</li>
+      <li><b>التصنيف</b>: بالدرجة (ثابتة، خطية، تربيعية، تكعيبية، ذات القوة الرابعة) وبعدد الحدود (أحادية، ثنائية، ثلاثية...). درجة n ⇐ على الأكثر <span dir="ltr">n + 1</span> حداً.</li>
+      <li><b>سلوك النهاية</b> يحدده الحد الرئيسي: إشارة المعامل للطرف الأيمن، والدرجة الزوجية تكرره يساراً والفردية تعكسه.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الرياضيات، الصف الحادي عشر، الوحدة الثالثة، ص 97 إلى 101</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"math-u3-3-2"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+function fmt(v){var a=Math.abs(v),r=a>=1000?Math.round(v):a>=10?Math.round(v):Math.round(v*10)/10;if(Object.is(r,-0))r=0;return String(r).replace("-","−");}
+function mapper(W,H,X0,X1,Y0,Y1,pad){return {px:function(x){return pad+(x-X0)/(X1-X0)*(W-2*pad);},py:function(y){return H-pad-(y-Y0)/(Y1-Y0)*(H-2*pad);}};}
+function path(P,pts){return pts.map(function(p,i){return (i?"L":"M")+P.px(p[0]).toFixed(1)+" "+P.py(p[1]).toFixed(1);}).join("");}
+
+/* ---------- lab: zoom out ---------- */
+var F=[
+  {f:function(x){return Math.pow(x,4)-3*Math.pow(x,3)+5*x;},a:1,n:4,lead:"x⁴",X:4,Y0:-20,Y1:40},
+  {f:function(x){return -x*x+6*x;},a:-1,n:2,lead:"−x²",X:9,Y0:-40,Y1:20},
+  {f:function(x){return Math.pow(x,3);},a:1,n:3,lead:"x³",X:4,Y0:-40,Y1:40},
+  {f:function(x){return -0.3*Math.pow(x,3)+4*x+2;},a:-0.3,n:3,lead:"−0.3x³",X:7,Y0:-25,Y1:25}
+],cur=0,Z=[1,2,4,8,16,40];
+function arrows(a,n){var R=a>0?"↗":"↘",L=(n%2===0)===(a>0)?"↖":"↙";return "("+L+" , "+R+")";}
+function zoom(){
+  var o=F[cur],k=Z[+$("zm").value],kk=Math.pow(k,o.n),X=o.X*k,Y0=o.Y0*kk,Y1=o.Y1*kk,W=400,H=300,pad=14,P=mapper(W,H,-X,X,Y0,Y1,pad),s="";
+  s+='<defs><clipPath id="zc"><rect x="'+pad+'" y="'+pad+'" width="'+(W-2*pad)+'" height="'+(H-2*pad)+'"/></clipPath></defs>';
+  for(var i=0;i<=8;i++){var gx=pad+i*(W-2*pad)/8,gy=pad+i*(H-2*pad)/8;s+='<line x1="'+gx+'" y1="'+pad+'" x2="'+gx+'" y2="'+(H-pad)+'" stroke="var(--grid)"/><line x1="'+pad+'" y1="'+gy+'" x2="'+(W-pad)+'" y2="'+gy+'" stroke="var(--grid)"/>';}
+  s+='<line x1="'+pad+'" y1="'+P.py(0)+'" x2="'+(W-pad)+'" y2="'+P.py(0)+'" stroke="var(--axis)" stroke-width="1.8"/><line x1="'+P.px(0)+'" y1="'+pad+'" x2="'+P.px(0)+'" y2="'+(H-pad)+'" stroke="var(--axis)" stroke-width="1.8"/>';
+  s+='<g font-size="11" fill="var(--axis)" direction="ltr"><text x="'+(W-pad-4)+'" y="'+(P.py(0)+14)+'" text-anchor="end">'+fmt(X)+'</text><text x="'+(pad+4)+'" y="'+(P.py(0)+14)+'">'+fmt(-X)+'</text><text x="'+(P.px(0)+6)+'" y="'+(pad+12)+'">'+fmt(Y1)+'</text><text x="'+(P.px(0)+6)+'" y="'+(H-pad-5)+'">'+fmt(Y0)+'</text></g>';
+  var full=[],ld=[],c=o.a;for(var j=0;j<=300;j++){var x=-X*1.05+2.1*X*j/300,y=o.f(x),yl=c*Math.pow(x,o.n),lim=(Y1-Y0)*3;if(Math.abs(y)<lim)full.push([x,y]);if(Math.abs(yl)<lim)ld.push([x,yl]);}
+  s+='<g clip-path="url(#zc)"><path d="'+path(P,ld)+'" fill="none" stroke="var(--c6)" stroke-width="5" stroke-dasharray="9 7" opacity=".9"/><path d="'+path(P,full)+'" fill="none" stroke="var(--curve)" stroke-width="3"/></g>';
+  $("zoomPlot").innerHTML=s;
+  $("zL").textContent="× "+k;
+  var A=arrows(o.a,o.n);
+  $("zOut").innerHTML='<span>الحد الرئيسي: <b dir="ltr">'+o.lead+'</b> · سلوك النهاية: <span class="arr">'+A+'</span></span><small>'+(k<4?"ابتعد أكثر بالمؤشر وراقب المنحنيين.":"شبه متطابقين! الحدود الأخرى صارت صغيرة جداً مقارنة بالحد الرئيسي.")+'</small>';
+}
+[].forEach.call(document.querySelectorAll(".seg button"),function(b){b.addEventListener("click",function(){
+  cur=+b.dataset.f;[].forEach.call(document.querySelectorAll(".seg button"),function(x){x.setAttribute("aria-pressed",x===b?"true":"false");});zoom();});});
+$("zm").addEventListener("input",zoom);zoom();
+
+/* ---------- four end behaviours ---------- */
+function ends(){
+  var C=[
+    {a:1,n:4,t:"درجة زوجية، معامل موجب",eq:"y = x⁴ − 3x³ + 5x"},
+    {a:-1,n:2,t:"درجة زوجية، معامل سالب",eq:"y = −x² + 6x"},
+    {a:1,n:3,t:"درجة فردية، معامل موجب",eq:"y = x³"},
+    {a:-1,n:3,t:"درجة فردية، معامل سالب",eq:"y = −0.3x³ + 4x + 2"}
+  ],h="";
+  C.forEach(function(o,idx){
+    var P=mapper(150,100,-1.3,1.3,-1.25,1.25,8),pts=[];
+    for(var i=0;i<=80;i++){var x=-1.2+2.4*i/80,y=o.a*(o.n%2?Math.pow(x,3)-0.5*x:Math.pow(x,4)*1.0-0.9*x*x+0.25);if(o.n===2)y=o.a*(x*x*0.9-0.35);pts.push([x,Math.max(-1.25,Math.min(1.25,y))]);}
+    var s='<svg viewBox="0 0 150 100" role="img" aria-label="'+o.t+'"><rect x="0" y="0" width="150" height="100" rx="14" fill="var(--plane)"/><line x1="8" y1="'+P.py(0)+'" x2="142" y2="'+P.py(0)+'" stroke="var(--grid)" stroke-width="1.5"/><line x1="'+P.px(0)+'" y1="6" x2="'+P.px(0)+'" y2="94" stroke="var(--grid)" stroke-width="1.5"/>';
+    s+='<path d="'+path(P,pts)+'" fill="none" stroke="var(--curve)" stroke-width="3.2"/>';
+    var l=pts[0],r=pts[pts.length-1];
+    s+='<circle cx="'+P.px(l[0])+'" cy="'+P.py(l[1])+'" r="4.5" fill="var(--inv)"/><circle cx="'+P.px(r[0])+'" cy="'+P.py(r[1])+'" r="4.5" fill="var(--inv)"/></svg>';
+    h+='<div class="card">'+s+'<p><b class="arr">'+arrows(o.a,o.n)+'</b></p><p>'+o.t+'</p><p class="muted" dir="ltr" style="font-size:12.5px">'+o.eq+'</p></div>';
+  });
+  $("ends").innerHTML=h;
+}
+ends();
+
+/* ---------- gold data and model ---------- */
+function gold(){
+  var W=400,H=240,pad=30,P=mapper(W,H,-1,27,30,90,pad),s="";
+  for(var x=0;x<=25;x+=5)s+='<line x1="'+P.px(x)+'" y1="'+pad+'" x2="'+P.px(x)+'" y2="'+(H-pad)+'" stroke="var(--grid)"/><text x="'+P.px(x)+'" y="'+(H-pad+15)+'" font-size="11" fill="var(--axis)" text-anchor="middle" direction="ltr">'+x+'</text>';
+  for(var y=40;y<=90;y+=10)s+='<line x1="'+pad+'" y1="'+P.py(y)+'" x2="'+(W-pad)+'" y2="'+P.py(y)+'" stroke="var(--grid)"/><text x="'+(pad-5)+'" y="'+(P.py(y)+4)+'" font-size="11" fill="var(--axis)" text-anchor="end" direction="ltr">'+y+'</text>';
+  var A=[9.0333333e-4,-0.0519296296,0.9590277778,-3.898753421,38.85753968];
+  function f(x){return A[0]*Math.pow(x,4)+A[1]*Math.pow(x,3)+A[2]*x*x+A[3]*x+A[4];}
+  var pts=[];for(var i=0;i<=200;i++){var u=-0.5+26*i/200;pts.push([u,f(u)]);}
+  s+='<path d="'+path(P,pts)+'" fill="none" stroke="var(--c6)" stroke-width="3"/>';
+  [[0,38.5],[5,39.2],[10,49.3],[15,70.2],[20,71.6],[25,82.6]].forEach(function(p){s+='<rect x="'+(P.px(p[0])-5)+'" y="'+(P.py(p[1])-5)+'" width="10" height="10" rx="2" fill="var(--curve)"/>';});
+  s+='<circle cx="'+P.px(13)+'" cy="'+P.py(f(13))+'" r="6" fill="var(--inv)" stroke="var(--card)" stroke-width="2"/><text x="'+(P.px(13)-8)+'" y="'+(P.py(f(13))-10)+'" font-size="12" font-weight="700" fill="var(--inv)" text-anchor="end" direction="ltr">1988 ≈ 62</text>';
+  s+='<text x="'+(pad+6)+'" y="'+(pad-10)+'" font-size="11" fill="var(--axis)" text-anchor="end" direction="rtl">مليون أونصة</text><text x="'+(W-pad)+'" y="'+(pad-10)+'" font-size="11" fill="var(--axis)" text-anchor="start" direction="rtl">x: سنوات منذ 1975</text>';
+  $("gold-plot").innerHTML=s;
+}
+gold();
+window.addEventListener("masar-theme",function(){zoom();ends();gold();});
+})();
+</script>
+</body>
+</html>

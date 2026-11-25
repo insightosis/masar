@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="math">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>دوال القوى ومعكوساتها · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+span[dir=ltr],bdi[dir=ltr],b[dir=ltr]{unicode-bidi:isolate}
+body{--plane:#f1edff;--grid:#ddd5fb;--axis:#8b86b3;--curve:#3d8be0;--inv:#e0485f;--sym:#17b388;--ghost:#b9b1e6;--c6:#e39a1e;--zone:rgba(23,179,136,.13)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--plane:#24203d;--grid:#363057;--axis:#a7a2cf;--curve:#6fb4ff;--inv:#ff7d8f;--sym:#4fd8ac;--ghost:#5d5689;--c6:#ffc15a;--zone:rgba(79,216,172,.14)}}
+:root[data-theme="dark"] body{--plane:#24203d;--grid:#363057;--axis:#a7a2cf;--curve:#6fb4ff;--inv:#ff7d8f;--sym:#4fd8ac;--ghost:#5d5689;--c6:#ffc15a;--zone:rgba(79,216,172,.14)}
+.stage{display:block;width:100%;height:auto;border-radius:20px;background:var(--plane);box-shadow:var(--press);margin-top:10px}
+.sq{max-width:420px;margin-inline:auto}
+.small-plot{max-width:320px;margin-inline:auto}
+.xtra{margin-top:12px;padding:10px 16px;border-radius:20px;background:var(--card);box-shadow:var(--clay-sm)}
+.xtra summary{cursor:pointer;font-weight:700;color:var(--ink)}
+.fbox{overflow-x:auto;text-align:center;padding:6px 0}
+.tbl{overflow-x:auto;margin-top:10px}
+.tbl table{border-collapse:separate;border-spacing:4px;margin:0 auto;direction:ltr}
+.tbl td,.tbl th{padding:5px 10px;border-radius:10px;background:var(--card);box-shadow:var(--clay-sm);text-align:center;font-family:"Noto Serif",Georgia,serif;font-size:15px;white-space:nowrap}
+.tbl th{background:var(--soft);font-style:italic}
+.tbl td.hl{background:var(--p-mint)}
+.tbl td.hp{background:var(--p-pink)}
+.act .gap{direction:ltr;unicode-bidi:isolate}
+.act[data-act=gap] .pc{font-family:"Noto Serif",Georgia,serif}
+.srt .bins{grid-template-columns:repeat(auto-fit,minmax(92px,1fr))}
+.srt .it{direction:ltr;unicode-bidi:isolate;font-family:"Noto Serif",Georgia,serif}
+.seg{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.seg button{font:inherit;font-size:14px;padding:6px 12px;border-radius:14px;border:0;background:var(--card);color:var(--text);box-shadow:var(--clay-sm);cursor:pointer;direction:ltr}
+.seg button[aria-pressed=true]{background:var(--p-lav);box-shadow:var(--press);font-weight:700}
+.chk-line{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:14.5px}
+.disc{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin-top:10px}
+.disc .box p{font-size:14.5px}
+.legend i.ln{display:inline-block;width:16px;height:4px;border-radius:2px;vertical-align:middle;margin-inline-end:4px}
+.ex4{display:grid;gap:6px;margin-top:8px}
+.ex4 li{list-style:none}
+.ptl{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;direction:ltr;margin:8px 0}
+.ptl span{white-space:nowrap;padding:3px 10px;border-radius:12px;background:var(--card);box-shadow:var(--clay-sm);font-family:"Noto Serif",Georgia,serif;font-size:14.5px}
+</style>
+</head>
+<body style="--sc:#8a63f2">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الرياضيات</span><span class="chip">الدرس 3-1 · ص 90 إلى 96</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الثالثة: كثيرات الحدود</p>
+  <h1 id="t">دوال القوى ومعكوساتها</h1>
+  <p>عندك برتقالة وشريط قياس فقط، بدون ميزان. تلفّ الشريط حول أوسع جزء فيها فتعرف المحيط c. هل تقدر تعرف وزنها؟ <mark>نعم، بقانون فيه أُس واحد بس.</mark> هذا النوع من القوانين اسمه <b>دالة قوى</b>، ورسمها له شكلان فقط: <b>كوب</b> أو <b>درج ملتوي</b>. اليوم نعرف متى يطلع كل شكل، ونرجع من الوزن إلى المحيط بالمعكوس.</p>
+</section>
+
+<section class="panel" id="lab-sec" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">مختبر: عائلة <span dir="ltr">y = axⁿ</span></h2><span class="legend"><span><i style="background:var(--curve)"></i>الدالة</span><span><i style="background:var(--inv)"></i>معكوسها</span><span><i style="background:var(--sym)"></i>التماثل</span></span></div>
+  <p class="cap" style="margin-top:4px">اختر الأُس n:</p>
+  <div class="seg" role="group" aria-label="اختر الأس">
+    <button type="button" data-n="1" aria-pressed="false">n = 1</button>
+    <button type="button" data-n="2" aria-pressed="true">n = 2</button>
+    <button type="button" data-n="3" aria-pressed="false">n = 3</button>
+    <button type="button" data-n="4" aria-pressed="false">n = 4</button>
+    <button type="button" data-n="5" aria-pressed="false">n = 5</button>
+    <button type="button" data-n="6" aria-pressed="false">n = 6</button>
+  </div>
+  <svg class="stage sq" id="fam" viewBox="0 0 360 360" role="img" aria-label="بيان دالة القوى ونقطتان متقابلتان لفحص التماثل"></svg>
+  <div class="controls">
+    <div class="ctl"><label for="aa">المعامل: <b id="aL" dir="ltr">a = 1</b></label><input type="range" dir="ltr" id="aa" min="-2" max="2" step="0.5" value="1" aria-describedby="aL"></div>
+    <div class="ctl"><label for="xx">النقطة: <b id="xL" dir="ltr">x = 1</b></label><input type="range" dir="ltr" id="xx" min="0.25" max="2" step="0.25" value="1" aria-describedby="xL"></div>
+  </div>
+  <label class="chk-line"><input type="checkbox" id="showInv"> أظهر المعكوس (انعكاس حول <bdi dir="ltr">y = x</bdi>)</label>
+  <p class="msg" id="fMsg" aria-live="polite"></p>
+  <p class="cap">النقطة الزرقاء عند x، والخضراء عند −x. قارن ارتفاعيهما: نفس الارتفاع؟ أو نفس الرقم بإشارة معاكسة؟ (ما يصير <bdi dir="ltr">a = 0</bdi> لأن الدالة تصير صفراً، فالمؤشر يقفز عنه.)</p>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">رموز الدرس ومصطلحاته</h2></div>
+  <div class="syms">
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub"><span dir="ltr">axⁿ</span></span><div><h3>دالة القوى <span class="en">Power Function</span></h3><p>على الشكل <span dir="ltr">y = axⁿ</span> حيث <span dir="ltr">a ≠ 0</span> و <span dir="ltr">n ∈ ℤ⁺</span>. ونكتبها أيضاً <span dir="ltr">f(x) = axⁿ</span>.</p><span class="hook">رقم ضرب x مرفوعة لأُس واحد. بس.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span dir="ltr">ℤ⁺</span></span><div><h3>الأعداد الصحيحة الموجبة <span class="en">Positive Integers</span></h3><p>المجموعة <span dir="ltr">{1, 2, 3, ...}</span>. الأُس n في دالة القوى يأتي منها.</p><span class="hook">الزائد الصغير يعني: الموجبة فقط.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub sm"><span dir="ltr">f(−x) = f(x)</span></span><div><h3>دالة زوجية <span class="en">Even Function</span></h3><p>تعطي نفس القيمة لـ x و −x. المحور الصادي محور تماثل لبيانها.</p><span class="hook">وجه في المرآة: اليمين نسخة من اليسار.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub sm"><span dir="ltr">f(−x) = −f(x)</span></span><div><h3>دالة فردية <span class="en">Odd Function</span></h3><p>قيمتها عند −x هي سالب قيمتها عند x. نقطة الأصل نقطة تماثل لبيانها.</p><span class="hook">لفّ الرسم نصف لفّة (180°) حول الأصل، يرجع نفسه.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span>D</span></span><div><h3>المجال <span class="en">Domain</span></h3><p>قيم x المسموحة. لتكون الدالة زوجية أو فردية لازم: لكل x في D يكون −x في D أيضاً.</p><span class="hook">المجال لازم يكون متماثلاً حول الصفر أولاً.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub"><span dir="ltr">f⁻¹</span></span><div><h3>معكوس الدالة <span class="en">Inverse</span></h3><p>نبدّل x و y ثم نحل بالنسبة إلى y. مجال المعكوس هو مدى الدالة.</p><span class="hook">نفس فكرة الدرس 2-5، والجديد هنا جذور أعلى.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">ما هي دالة القوى؟</h2></div>
+  <p>دوال مثل <span dir="ltr">y = x⁴</span> و <span dir="ltr">w = 0.014c³</span> كلها من نوع واحد: <b>معامل</b> مضروب في المتغير مرفوعاً <b>لأُس صحيح موجب</b>.</p>
+  <div class="law wide" style="background:var(--p-lav);margin-top:12px;text-align:center">
+    <h3>تكون دوال القوى على الشكل</h3>
+    <div class="fbox"><span class="f">y = axⁿ ,  a ≠ 0 ,  n ∈ ℤ⁺</span></div>
+  </div>
+  <h3 style="margin:16px 0 6px">مثال (1): البرتقالة</h3>
+  <div class="qbox">الصيغة <span class="f" style="font-size:1.1rem">w = 0.014c³</span> تقدّر وزن البرتقالة w بالجرام (g) من محيط أكبر مقطع دائري فيها c بالسنتيمتر (cm). قدّر وزن برتقالة محيطها <span dir="ltr">20 cm</span>.</div>
+  <ol class="steps">
+    <li><span>عوّض <span dir="ltr">c = 20</span>: <span class="f">w = 0.014(20)³</span></span></li>
+    <li><span><span dir="ltr">20³ = 8000</span>، و <span class="f">0.014 × 8000 = 112</span></span></li>
+    <li><span><span class="ans">وزنها حوالى <b dir="ltr">112 g</b></span></span></li>
+  </ol>
+  <div class="act" data-act="type" data-key="type" data-answer="149.072" data-tol="0.6"
+       data-ok="صح! ⁦22³ = 10648⁩، و ⁦0.014 × 10648 ≈ 149 g⁩. لاحظ: المحيط زاد 10% بس، والوزن زاد 33% تقريباً، لأن الأُس 3 يكبّر الفرق."
+       data-hint="احسب ⁦22 × 22 × 22⁩ أولاً، ثم اضرب الناتج في 0.014."
+       data-no="ليست هذه. تأكد إنك رفعت 22 للأُس 3 (ضربته في نفسه ثلاث مرات) قبل ما تضرب في 0.014.">
+    <h3>اكتب الجواب <span class="k">نشاط</span></h3>
+    <p>حاول أن تحل (1): برتقالة محيط أكبر مقطع فيها <span dir="ltr">22 cm</span>. كم وزنها تقريباً بالجرام؟</p>
+  </div>
+  <h3 style="margin:16px 0 6px">مثال (2): الزرافة</h3>
+  <p>الدالة <span class="f" style="font-size:1.1rem">w(x) = 15.625x³</span> تقرّب وزن أنثى الزرافة بالكيلوجرام (kg) من طولها x بالمتر (m):</p>
+  <ul class="pts">
+    <li style="--b:var(--sc)">طولها <span dir="ltr">3.175 m</span>: <span dir="ltr">w(3.175) = 15.625 × (3.175)³ ≈ 500 kg</span></li>
+    <li style="--b:var(--sc)">طولها <span dir="ltr">3.268 m</span>: <span dir="ltr">w(3.268) = 15.625 × (3.268)³ ≈ 545.34 kg</span></li>
+  </ul>
+  <details class="xtra"><summary>حاول أن تحل (2): زرافة طولها <bdi dir="ltr">3.3 m</bdi>، جرّب قبل ما تفتح</summary>
+    <p><span dir="ltr">(3.3)³ = 35.937</span> ⇐ <span dir="ltr">w(3.3) = 15.625 × 35.937 ≈ 561.52 kg</span>. بالحاسبة البيانية: أدخل <span dir="ltr">y₁ = 15.625x³</span> واقرأ y عند <span dir="ltr">x = 3.3</span>.</p>
+  </details>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">سباق الأُسس: <bdi dir="ltr">x²</bdi> ضد <bdi dir="ltr">x⁴</bdi></h2></div>
+  <p>أيهما أكبر: <span dir="ltr">x²</span> أو <span dir="ltr">x⁴</span>؟ الجواب يعتمد على x. جرّب عدداً صغيراً: <span dir="ltr">0.5² = 0.25</span> لكن <span dir="ltr">0.5⁴ = 0.0625</span>. الكسر يصغر كل ما ضربته في نفسه أكثر!</p>
+  <div class="tbl"><table>
+    <tr><th>x</th><th>y₁ = x²</th><th>y₂ = x⁴</th></tr>
+    <tr><td>−1.6</td><td>2.56</td><td class="hp">6.5536</td></tr>
+    <tr><td>−1.2</td><td>1.44</td><td class="hp">2.0736</td></tr>
+    <tr><td>−0.8</td><td class="hl">0.64</td><td>0.4096</td></tr>
+    <tr><td>−0.4</td><td class="hl">0.16</td><td>0.0256</td></tr>
+    <tr><td>0</td><td>0</td><td>0</td></tr>
+    <tr><td>0.4</td><td class="hl">0.16</td><td>0.0256</td></tr>
+    <tr><td>0.8</td><td class="hl">0.64</td><td>0.4096</td></tr>
+    <tr><td>1.2</td><td>1.44</td><td class="hp">2.0736</td></tr>
+    <tr><td>1.6</td><td>2.56</td><td class="hp">6.5536</td></tr>
+  </table></div>
+  <p class="cap">الأخضر: <span dir="ltr">x²</span> هو الأكبر. الوردي: <span dir="ltr">x⁴</span> هو الأكبر.</p>
+  <svg class="stage" id="race" viewBox="0 0 400 250" role="img" aria-label="بيانات y يساوي x تربيع و x أس 4 و x أس 6 بين سالب 1.6 و 1.6"></svg>
+  <p class="cap"><span class="legend" style="display:inline-flex"><span><i style="background:var(--curve)"></i><bdi dir="ltr">x²</bdi></span><span><i style="background:var(--inv)"></i><bdi dir="ltr">x⁴</bdi></span><span><i style="background:var(--c6)"></i><bdi dir="ltr">x⁶</bdi></span></span> المنطقة المظللة بين −1 و 1.</p>
+  <div class="grid2" style="margin-top:8px">
+    <div class="box mint"><h3><bdi dir="ltr">x² &gt; x⁴</bdi></h3><p>داخل المنطقة، بدون الصفر: <span class="f">(−1, 0) ∪ (0, 1)</span></p></div>
+    <div class="box pink"><h3><bdi dir="ltr">x² &lt; x⁴</bdi></h3><p>خارجها: <span class="f">(−∞, −1) ∪ (1, ∞)</span></p></div>
+  </div>
+  <p style="margin-top:10px">المنحنيان <span dir="ltr">y = x²</span> و <span dir="ltr">y = x⁴</span> يتقاطعان في ثلاث نقاط، وهي حلول النظام:</p>
+  <p class="ptl"><span>(−1, 1)</span> <span>(0, 0)</span> <span>(1, 1)</span></p>
+  <p>ونفس الفكرة تعطي: حل المتباينة <span dir="ltr">x⁶ &lt; x⁴</span> هو <span class="f">(−1, 0) ∪ (0, 1)</span>. شوف المنحنى البرتقالي تحت الأحمر داخل المنطقة.</p>
+
+  <h3 style="margin:18px 0 6px">شكلان فقط</h3>
+  <p>من جدول <span dir="ltr">y = x³</span>:</p>
+  <p class="ptl"><span>(−3, −27)</span> <span>(−2, −8)</span> <span>(−1, −1)</span> <span>(0, 0)</span> <span>(1, 1)</span> <span>(2, 8)</span> <span>(3, 27)</span></p>
+  <p>الموجب يعطي موجباً والسالب يعطي سالباً، فالبيان في <b>الربعين الأول والثالث</b>. ولو <span dir="ltr">(4, 64)</span> على البيان، فإن <span dir="ltr">(−4, −64)</span> عليه أيضاً، وكذلك <span dir="ltr">(0.5, 0.125)</span> مع <span dir="ltr">(−0.5, −0.125)</span>.</p>
+  <div class="disc">
+    <div class="box mint"><h3>n عدد زوجي موجب</h3><p>مثل <span dir="ltr">x², x⁴</span>: شكل <b>كوب</b> يمر بنقطة الأصل. إذا <span dir="ltr">(a, b)</span> عليه فإن <span dir="ltr">(−a, b)</span> عليه.</p></div>
+    <div class="box pink"><h3>n عدد فردي موجب</h3><p>مثل <span dir="ltr">x³, x⁵</span>: شكل <b>درج ملتوي</b> يمر بالأصل. إذا <span dir="ltr">(a, b)</span> عليه فإن <span dir="ltr">(−a, −b)</span> عليه.</p></div>
+  </div>
+  <p class="tip" style="margin-top:10px">ارجع للمختبر فوق وبدّل n بين زوجي وفردي، وشوف الشكلين.</p>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">الدوال الزوجية والدوال الفردية</h2></div>
+  <div class="disc">
+    <div class="law" style="background:var(--p-mint)"><h3>تعريف: دالة زوجية</h3><p style="color:var(--text)">الدالة <span dir="ltr">y = f(x)</span> التي مجالها D زوجية إذا وفقط إذا:<br>① <span dir="ltr">∀x ∈ D , −x ∈ D</span><br>② <span dir="ltr">f(−x) = f(x)</span><br>المحور الصادي محور تماثل لبيانها.</p></div>
+    <div class="law" style="background:var(--p-pink)"><h3>تعريف: دالة فردية</h3><p style="color:var(--text)">الدالة <span dir="ltr">y = f(x)</span> التي مجالها D فردية إذا وفقط إذا:<br>① <span dir="ltr">∀x ∈ D , −x ∈ D</span><br>② <span dir="ltr">f(−x) = −f(x)</span><br>نقطة الأصل نقطة تماثل لبيانها.</p></div>
+  </div>
+  <ul class="pts" style="margin-top:10px">
+    <li style="--b:var(--sym)"><span dir="ltr">f(x) = x²</span> زوجية، لأن:<br><span dir="ltr">f(−x) = (−x)² = x² = f(x)</span></li>
+    <li style="--b:var(--inv)"><span dir="ltr">f(x) = x³</span> فردية، لأن:<br><span dir="ltr">f(−x) = (−x)³ = −x³ = −f(x)</span></li>
+  </ul>
+  <p class="note" style="margin-top:8px"><b>نقطة التماثل:</b> يكون لبيان دالة نقطة تماثل (مركز تناظر) إذا دار البيان 180° حول هذه النقطة وانطبق على نفسه. <b>وانتبه:</b> توجد دوال ليست زوجية وليست فردية.</p>
+
+  <h3 style="margin:16px 0 6px">مثال (3): بيّن نوع كل دالة</h3>
+  <ol class="steps">
+    <li><span><span class="f">f(x) = 2x⁷</span>: <span dir="ltr">f(−x) = 2(−x)⁷ = −2x⁷ = −f(x)</span> ⇐ <span class="ans">فردية</span></span></li>
+    <li><span><span class="f">y = −x⁸</span>: <span dir="ltr">g(−x) = −(−x)⁸ = −x⁸ = g(x)</span> ⇐ <span class="ans">زوجية</span></span></li>
+    <li><span><span class="f">y = (x + 2)²</span>: <span dir="ltr">v(−x) = (−x + 2)²</span> لا تساوي <span dir="ltr">v(x)</span> ولا <span dir="ltr">−v(x)</span> ⇐ <span class="ans">ليست زوجية وليست فردية</span></span></li>
+    <li><span><span class="f">h(x) = 4</span>: <span dir="ltr">h(−x) = 4 = h(x)</span> ⇐ <span class="ans">زوجية</span> (خط أفقي، والمحور الصادي يقسمه نصفين متطابقين)</span></li>
+  </ol>
+  <p class="tip" style="margin-top:8px"><b>تذكر:</b> إذا لم يُذكر المجال تكون الدالة معرّفة على مجالها (هنا كل الأعداد الحقيقية ℝ).</p>
+
+  <h3 style="margin:16px 0 6px">مثال (4): من الرسم</h3>
+  <ul class="pts ex4">
+    <li style="--b:var(--inv)"><span dir="ltr">y = x⁵ , x ∈ ℝ</span>: نقطة الأصل نقطة تماثل ⇐ <b>فردية</b></li>
+    <li style="--b:var(--sym)"><span dir="ltr">y = |x| , x ∈ [−3, 3]</span>: المحور الصادي محور تماثل ⇐ <b>زوجية</b></li>
+    <li style="--b:var(--c6)"><span dir="ltr">y = 2x⁴ , x ∈ (−1, ∞)</span>: لا نقطة تماثل ولا محور تماثل ⇐ <b>ليست زوجية وليست فردية</b></li>
+    <li style="--b:var(--inv)"><span dir="ltr">y = 2x , x ∈ ℝ</span>: نقطة الأصل نقطة تماثل ⇐ <b>فردية</b></li>
+  </ul>
+  <svg class="stage small-plot" id="cut" viewBox="0 0 320 240" role="img" aria-label="بيان y يساوي 2x أس 4 على المجال من سالب 1 إلى ما لا نهاية، مع الجزء الناقص منقطاً"></svg>
+  <p class="cap">الحالة (c) فخ: <span dir="ltr">2x⁴</span> أُسها زوجي، لكن المجال <span dir="ltr">(−1, ∞)</span> مقطوع. العدد 2 في المجال و −2 ليس فيه، فالشرط ① سقط. الجزء المنقّط هو اللي كان لازم يكون موجوداً عشان التماثل.</p>
+
+  <div class="act" data-act="sort" data-key="sort"
+       data-bins='["زوجية","فردية","ليست زوجية وليست فردية"]'
+       data-items='[["x⁵",1,"عوّض −x: ⁦(−x)⁵ = −x⁵⁩، الإشارة انقلبت."],["x",1,"⁦f(−x) = −x = −f(x)⁩، والبيان خط مستقيم يمر بالأصل."],["2x⁴",0,"⁦2(−x)⁴ = 2x⁴⁩: نفس القيمة بالضبط."],["(x + 3)³",2,"⁦(−x + 3)³⁩ لا تساوي ⁦(x + 3)³⁩ ولا سالبها، لأن 3 ما تتغير إشارتها."],["4x² + 1",0,"⁦4(−x)² + 1 = 4x² + 1⁩: الثابت 1 ما يخرّب الزوجية."],["2x³",1,"⁦2(−x)³ = −2x³⁩."],["3x",1,"⁦3(−x) = −3x⁩: خط يمر بالأصل."],["(x + 2)²",2,"الأُس زوجي لكن ⁦(−x + 2)²⁩ ليست ⁦(x + 2)²⁩. جرّب x = 1: تعطي 1 و 9."]]'
+       data-ok="ممتاز! القاعدة: عوّض −x مكان x. رجعت الدالة نفسها؟ زوجية. رجع سالبها؟ فردية. غير كذا؟ لا هذه ولا تلك.">
+    <h3>صنّف الدوال <span class="k">نشاط</span></h3>
+    <p>حاول أن تحل (3) و (4): ضع كل دالة في صندوقها (المجال ℝ في الكل).</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s5">
+  <div class="sec-head"><span class="num">5</span><h2 id="s5">معكوسات دوال القوى</h2></div>
+  <p>تذكّر من الوحدة الثانية: معكوس العلاقة <span dir="ltr">r⁻¹</span> يربط b بـ a، فإذا <span dir="ltr">(a, b)</span> في r فإن <span dir="ltr">(b, a)</span> في <span dir="ltr">r⁻¹</span>، ومجال المعكوس هو مدى العلاقة، والمستقيم <span dir="ltr">y = x</span> خط تناظر بينهما. ومعكوس الدالة <b>ليس بالضرورة دالة</b>.</p>
+
+  <h3 style="margin:14px 0 6px">مثال (5)</h3>
+  <div class="qbox">أوجد معكوس الدالة <span class="f" style="font-size:1.1rem">y = 2x⁴</span>.</div>
+  <ol class="steps">
+    <li><span>لاحظ أن <span dir="ltr">y ≥ 0</span> (أُس زوجي ومعامل موجب).</span></li>
+    <li><span>اعكس المتغيرين: <span class="f">x = 2y⁴</span></span></li>
+    <li><span>حلّ بالنسبة إلى y: <span class="f"><span class="frac"><span>x</span><span>2</span></span> = y⁴</span></span></li>
+    <li><span>الجذر الرابع للطرفين: <span class="f">(<span class="frac"><span>x</span><span>2</span></span>)<sup>¼</sup> = |y| , x ≥ 0</span></span></li>
+    <li><span><span class="ans">المعكوس: <span class="f" style="font-size:1.05rem">y = ± <span class="rad"><i>4</i><span><span class="frac"><span>x</span><span>2</span></span></span></span></span></span>، وهو ليس دالة (لكل x موجبة قيمتان).</span></li>
+  </ol>
+  <p class="tip" style="margin-top:8px"><b>لماذا ±؟</b> لأن الأُس زوجي: <span dir="ltr">2⁴ = 16</span> و <span dir="ltr">(−2)⁴ = 16</span>، فلما نرجع من 16 ما نعرف من أي واحد جينا. أما الأُس الفردي فما يحتاج ±: <span dir="ltr">(−2)³ = −8</span> وحدها.</p>
+
+  <div class="act" data-act="gap" data-key="gap" data-ok="صح! ⁦x = 5y³⁩ ⇐ ⁦y³ = x ÷ 5⁩ ⇐ الجذر التكعيبي. والأُس فردي فلا ± ، فالمعكوس دالة.">
+    <h3>أكمل الناقص <span class="k">نشاط</span></h3>
+    <p>حاول أن تحل (5): معكوس الدالة <span dir="ltr">y = 5x³</span> هو <span class="f" style="font-size:1.05rem">y = <span class="gap">؟</span></span></p>
+    <div class="opts">
+      <button class="pc" dir="ltr" data-no="الأُس 3 فردي، والجذر التكعيبي لكل عدد له قيمة واحدة فقط. الـ ± للأُس الزوجي.">± ∛(x ÷ 5)</button>
+      <button class="pc" dir="ltr" data-ok>∛(x ÷ 5)</button>
+      <button class="pc" dir="ltr" data-no="بعد التبديل ⁦x = 5y³⁩ نقسم على 5 أولاً، ما نضرب. القسمة هي عكس الضرب.">∛(5x)</button>
+      <button class="pc" dir="ltr" data-no="هذا رفع لأُس 3، والمطلوب العكس: الجذر التكعيبي.">(x ÷ 5)³</button>
+    </div>
+  </div>
+
+  <h3 style="margin:18px 0 6px">مثال محلول (6): معكوس دالة جذرية</h3>
+  <div class="qbox">أوجد معكوس الدالة <span class="f" style="font-size:1.1rem">f(x) = <span class="rad"><span>x + 2</span></span></span>.</div>
+  <div class="row"><button class="lite" id="hideSol" type="button" aria-pressed="false">أخفِ الحل وجرّب أولاً</button></div>
+  <ol class="steps" id="steps">
+    <li><span>المجال: <span class="f">x ≥ −2</span>، والمدى: <span class="f">y ≥ 0</span> (الجذر ما يعطي سالباً).</span></li>
+    <li><span>بالرمز y: <span class="f">y = <span class="rad"><span>x + 2</span></span></span></span></li>
+    <li><span>اعكس المتغيرين: <span class="f">x = <span class="rad"><span>y + 2</span></span></span></span></li>
+    <li><span>ربّع الطرفين: <span class="f">x² = y + 2</span> ⇐ <span class="f">y = x² − 2</span></span></li>
+    <li><span><span class="ans">المعكوس: <span class="f" style="font-size:1.05rem">f⁻¹(x) = x² − 2 , x ≥ 0</span></span> لأن مدى f صار مجال المعكوس.</span></li>
+  </ol>
+  <details class="xtra"><summary>حاول أن تحل (6): <bdi dir="ltr">f(x) = √(x − 4)</bdi></summary>
+    <p><span dir="ltr">x = √(y − 4)</span> ⇐ <span dir="ltr">x² = y − 4</span> ⇐ <span class="f" style="font-size:1.05rem">f⁻¹(x) = x² + 4 , x ≥ 0</span>.</p>
+  </details>
+
+  <h3 style="margin:18px 0 6px">تدريب: الجدول الكامل</h3>
+  <div class="tbl"><table>
+    <tr><th>الدالة</th><th>المعكوس</th><th>هل المعكوس دالة؟</th></tr>
+    <tr><td>y = x²</td><td>y = ± √x</td><td class="hp">لا</td></tr>
+    <tr><td>y = x³</td><td>y = ∛x</td><td class="hl">نعم</td></tr>
+    <tr><td>y = x⁴</td><td>y = ± ⁴√x</td><td class="hp">لا</td></tr>
+  </table></div>
+  <ul class="pts" style="margin-top:10px">
+    <li style="--b:var(--sc)">مدى الدالة هو مجال معكوسها: <span dir="ltr">x²</span> مداها <span dir="ltr">[0, ∞)</span>، فمعكوسها معرّف على <span dir="ltr">x ≥ 0</span> فقط.</li>
+    <li style="--b:var(--sc)">عندما يقطع مستقيم رأسي المنحنى في موضعين، فهذا المنحنى لا يمثل دالة. فعّل «أظهر المعكوس» في المختبر مع n زوجي وشوف الخط الرأسي.</li>
+  </ul>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">6</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sd">
+  <div class="sec-head"><span class="num">7</span><h2 id="sd">في حياتك</h2></div>
+  <div class="life">
+    <div class="card"><h3>صندوق مكعب</h3><p>حجم صندوق طول ضلعه s هو <span dir="ltr">V = s³</span>، دالة قوى. ولو تعرف الحجم وتبي الضلع؟ المعكوس: <span dir="ltr">s = ∛V</span>.</p></div>
+    <div class="card"><h3>بلاط الأرضية</h3><p>مساحة بلاطة مربعة <span dir="ltr">A = s²</span>. معكوسها فيه ± ، لكن الطول ما يكون سالباً، فنأخذ الجذر الموجب فقط.</p></div>
+    <div class="card"><h3>الفراشة والوجه</h3><p>جناحا الفراشة ونصفا الوجه مثل الدالة الزوجية: كل جهة نسخة الثانية في المرآة.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">8</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>النقطة <span dir="ltr">(a, b)</span> على بيان <span class="f" style="font-size:1.1rem">y = x³</span>. أي نقطة أخرى على البيان أكيد؟</p>
+      <div class="opts"><button dir="ltr">(a, −b)</button><button dir="ltr">(−a, b)</button><button dir="ltr" data-ok>(−a, −b)</button></div>
+      <p class="why" hidden>الصحيح: ⁦(−a, −b)⁩. الدالة فردية: ⁦(−a)³ = −a³ = −b⁩، ونقطة الأصل نقطة تماثل.</p></div>
+    <div class="q"><p>الدالة <span class="f" style="font-size:1.1rem">y = 2x⁴ , x ∈ (−1, ∞)</span> هي:</p>
+      <div class="opts"><button>زوجية</button><button>فردية</button><button data-ok>ليست زوجية وليست فردية</button></div>
+      <p class="why" hidden>الصحيح: ليست زوجية وليست فردية. الأُس زوجي، لكن المجال غير متماثل: 2 فيه و −2 ليس فيه.</p></div>
+    <div class="q"><p>معكوس الدالة <span class="f" style="font-size:1.1rem">f(x) = <span class="rad"><span>x − 4</span></span></span> هو:</p>
+      <div class="opts"><button dir="ltr" data-ok>x² + 4 , x ≥ 0</button><button dir="ltr">x² − 4 , x ≥ 0</button><button dir="ltr">x² + 4 , x ≥ 4</button></div>
+      <p class="why" hidden>الصحيح: ⁦x² + 4 , x ≥ 0⁩. بعد التبديل ⁦x = √(y − 4)⁩ نربّع: ⁦y = x² + 4⁩، ومجال المعكوس هو مدى f وهو ⁦[0, ∞)⁩.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li><b>دالة القوى</b> <span dir="ltr">y = axⁿ , a ≠ 0 , n ∈ ℤ⁺</span>: n زوجي ⇐ كوب متماثل حول المحور الصادي، n فردي ⇐ متماثل حول نقطة الأصل.</li>
+      <li><b>زوجية</b> إذا <span dir="ltr">f(−x) = f(x)</span>، <b>فردية</b> إذا <span dir="ltr">f(−x) = −f(x)</span>، وبشرط أن المجال متماثل. وفيه دوال لا هذه ولا تلك.</li>
+      <li><b>المعكوس</b>: بدّل ثم حل. أُس زوجي ⇐ ± والمعكوس ليس دالة، أُس فردي ⇐ جذر واحد ودالة. ومجال المعكوس هو مدى الدالة.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الرياضيات، الصف الحادي عشر، الوحدة الثالثة، ص 90 إلى 96</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"math-u3-3-1"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+function n2(v){var r=Math.round(v*1000)/1000;if(Object.is(r,-0))r=0;return String(r).replace("-","−");}
+var SUP={1:"",2:"²",3:"³",4:"⁴",5:"⁵",6:"⁶"},ROOT={2:"√",3:"∛",4:"⁴√",5:"⁵√",6:"⁶√"};
+/* plane with grid every `step`; labels at the given values */
+function plane(W,H,X0,X1,Y0,Y1,pad,step,lab,ylab){
+  var P={px:function(x){return pad+(x-X0)/(X1-X0)*(W-2*pad);},py:function(y){return H-pad-(y-Y0)/(Y1-Y0)*(H-2*pad);}},s="";
+  for(var gx=Math.ceil(X0/step)*step;gx<=X1+1e-9;gx+=step)s+='<line x1="'+P.px(gx).toFixed(1)+'" y1="'+pad+'" x2="'+P.px(gx).toFixed(1)+'" y2="'+(H-pad)+'" stroke="var(--grid)" stroke-width="1"/>';
+  for(var gy=Math.ceil(Y0/step)*step;gy<=Y1+1e-9;gy+=step)s+='<line x1="'+pad+'" y1="'+P.py(gy).toFixed(1)+'" x2="'+(W-pad)+'" y2="'+P.py(gy).toFixed(1)+'" stroke="var(--grid)" stroke-width="1"/>';
+  s+='<line x1="'+pad+'" y1="'+P.py(0)+'" x2="'+(W-pad)+'" y2="'+P.py(0)+'" stroke="var(--axis)" stroke-width="1.8"/><line x1="'+P.px(0)+'" y1="'+pad+'" x2="'+P.px(0)+'" y2="'+(H-pad)+'" stroke="var(--axis)" stroke-width="1.8"/>';
+  s+='<g font-size="11" fill="var(--axis)" direction="ltr" text-anchor="middle">';
+  (lab||[]).forEach(function(v){ if(v===0)return; s+='<text x="'+P.px(v)+'" y="'+(P.py(0)+13)+'">'+n2(v)+'</text>'; });
+  (ylab||lab||[]).forEach(function(v){ if(v===0)return; s+='<text x="'+(P.px(0)-12)+'" y="'+(P.py(v)+4)+'">'+n2(v)+'</text>'; });
+  s+='<text x="'+(W-pad-6)+'" y="'+(P.py(0)-6)+'" font-style="italic">x</text><text x="'+(P.px(0)+9)+'" y="'+(pad+10)+'" font-style="italic">y</text></g>';
+  var id="CP"+W+"_"+H;P.clip='<defs><clipPath id="'+id+'"><rect x="'+pad+'" y="'+pad+'" width="'+(W-2*pad)+'" height="'+(H-2*pad)+'"/></clipPath></defs>';P.cid=id;P.svg=s;
+  return P;
+}
+function path(P,pts){return pts.map(function(p,i){return (i?"L":"M")+P.px(p[0]).toFixed(1)+" "+P.py(p[1]).toFixed(1);}).join("");}
+function dot(P,x,y,col,r,hollow){return '<circle cx="'+P.px(x).toFixed(1)+'" cy="'+P.py(y).toFixed(1)+'" r="'+(r||6.5)+'" fill="'+(hollow?"var(--plane)":col)+'" stroke="'+(hollow?col:"var(--card)")+'" stroke-width="'+(hollow?2.5:2)+'"/>';}
+
+/* ---------- lab: family y = a x^n ---------- */
+var N=2,lastA=1;
+function fam(){
+  var sa=$("aa"),a=+sa.value; if(a===0){a=lastA>0?-0.5:0.5;sa.value=a;} lastA=a;
+  var t=+$("xx").value,inv=$("showInv").checked,P=plane(360,360,-3,3,-3,3,14,0.5,[-2,-1,1,2]),s=P.clip+P.svg;
+  function f(x){return a*Math.pow(x,N);}
+  var pts=[],ipts=[];for(var i=0;i<=360;i++){var x=-3.2+6.4*i/360,y=f(x);if(Math.abs(y)>60)continue;pts.push([x,y]);ipts.push([y,x]);}
+  s+='<g clip-path="url(#'+P.cid+')">';
+  var even=N%2===0;
+  if(even)s+='<line x1="'+P.px(0)+'" y1="14" x2="'+P.px(0)+'" y2="346" stroke="var(--sym)" stroke-width="3" stroke-dasharray="8 6"/>';
+  else s+='<circle cx="'+P.px(0)+'" cy="'+P.py(0)+'" r="9" fill="none" stroke="var(--sym)" stroke-width="3"/>';
+  if(inv){
+    s+='<line x1="'+P.px(-3)+'" y1="'+P.py(-3)+'" x2="'+P.px(3)+'" y2="'+P.py(3)+'" stroke="var(--ghost)" stroke-width="2" stroke-dasharray="5 5"/>';
+    s+='<path d="'+path(P,ipts)+'" fill="none" stroke="var(--inv)" stroke-width="3.2"/>';
+    if(even){var vx=a>0?1.5:-1.5,yy=Math.pow(vx/a,1/N);
+      s+='<line x1="'+P.px(vx)+'" y1="14" x2="'+P.px(vx)+'" y2="346" stroke="var(--inv)" stroke-width="1.6" stroke-dasharray="3 4"/>'+dot(P,vx,yy,"var(--inv)",5.5)+dot(P,vx,-yy,"var(--inv)",5.5);}
+  }
+  s+='<path d="'+path(P,pts)+'" fill="none" stroke="var(--curve)" stroke-width="3.6"/>';
+  var ft=f(t),fm=f(-t);
+  s+='<line x1="'+P.px(t)+'" y1="'+P.py(0)+'" x2="'+P.px(t)+'" y2="'+P.py(ft).toFixed(1)+'" stroke="var(--curve)" stroke-width="1.5" stroke-dasharray="3 4"/>';
+  s+='<line x1="'+P.px(-t)+'" y1="'+P.py(0)+'" x2="'+P.px(-t)+'" y2="'+P.py(fm).toFixed(1)+'" stroke="var(--sym)" stroke-width="1.5" stroke-dasharray="3 4"/>';
+  s+=dot(P,t,ft,"var(--curve)")+dot(P,-t,fm,"var(--sym)")+'</g>';
+  $("fam").innerHTML=s;
+  $("aL").textContent="a = "+n2(a);$("xL").textContent="x = "+n2(t);
+  var I="⁦",O="⁩",eq="y = "+(a===1?"":a===-1?"−":n2(a))+"x"+SUP[N];
+  var m=I+eq+O+": "+I+"f("+n2(t)+") = "+n2(ft)+O+" و "+I+"f(−"+n2(t)+") = "+n2(fm)+O+". ";
+  if(even)m+="نفس القيمة، فالدالة زوجية: المحور الصادي محور تماثل، والبيان كوب"+(a<0?" مقلوب":"")+".";
+  else m+="نفس الرقم بإشارة معاكسة، فالدالة فردية: نقطة الأصل نقطة تماثل.";
+  if(inv){var den=a<0?"("+n2(a)+")":n2(a),ie=N===1?"y = x ÷ "+den:"y = "+(even?"± ":"")+ROOT[N]+"(x ÷ "+den+")";
+    m+=" المعكوس "+I+ie+O+(even?" ليس دالة: الخط الرأسي الأحمر يقطعه في نقطتين.":(N===1?"، خط مستقيم وهو دالة.":" بدون ±، فهو دالة: أي خط رأسي يقطعه مرة واحدة."));}
+  $("fMsg").textContent=m;
+}
+[].forEach.call(document.querySelectorAll(".seg button"),function(b){b.addEventListener("click",function(){
+  N=+b.dataset.n;[].forEach.call(document.querySelectorAll(".seg button"),function(x){x.setAttribute("aria-pressed",x===b?"true":"false");});fam();});});
+$("aa").addEventListener("input",fam);$("xx").addEventListener("input",fam);$("showInv").addEventListener("change",fam);fam();
+
+/* ---------- race x^2, x^4, x^6 ---------- */
+function race(){
+  var P=plane(400,250,-1.6,1.6,-0.2,2.6,14,0.2,[-1.2,-0.8,-0.4,0.4,0.8,1.2],[1,2]),s=P.clip;
+  s+='<rect x="'+P.px(-1)+'" y="14" width="'+(P.px(1)-P.px(-1))+'" height="222" fill="var(--zone)"/>'+P.svg;
+  var C=[[2,"var(--curve)"],[4,"var(--inv)"],[6,"var(--c6)"]];
+  s+='<g clip-path="url(#'+P.cid+')">';
+  C.forEach(function(c){var pts=[];for(var i=0;i<=200;i++){var x=-1.7+3.4*i/200;pts.push([x,Math.pow(x,c[0])]);}s+='<path d="'+path(P,pts)+'" fill="none" stroke="'+c[1]+'" stroke-width="3"/>';});
+  [[-1,1],[0,0],[1,1]].forEach(function(p){s+=dot(P,p[0],p[1],"var(--text)",4.5);});
+  s+='</g>';
+  $("race").innerHTML=s;
+}
+race();
+
+/* ---------- 2x^4 on (-1, inf) ---------- */
+function cut(){
+  var P=plane(320,240,-3,3,-1,6,14,1,[-2,-1,1,2],[2,4]),s=P.clip+P.svg,real=[],miss=[];
+  for(var i=0;i<=200;i++){var x=-1+2.3*i/200;real.push([x,2*Math.pow(x,4)]);}
+  for(var j=0;j<=200;j++){var u=-1.3+0.3*j/200;miss.push([u,2*Math.pow(u,4)]);}
+  s+='<g clip-path="url(#'+P.cid+')"><path d="'+path(P,miss)+'" fill="none" stroke="var(--ghost)" stroke-width="3" stroke-dasharray="5 5"/>';
+  s+='<path d="'+path(P,real)+'" fill="none" stroke="var(--c6)" stroke-width="3.4"/>'+dot(P,-1,2,"var(--c6)",5.5,true)+'</g>';
+  $("cut").innerHTML=s;
+}
+cut();
+window.addEventListener("masar-theme",function(){fam();race();cut();});
+})();
+</script>
+</body>
+</html>
