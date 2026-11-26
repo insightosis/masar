@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="math">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>العوامل الخطية لكثيرات الحدود · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+span[dir=ltr],bdi[dir=ltr],b[dir=ltr]{unicode-bidi:isolate}
+body{--plane:#f1edff;--grid:#ddd5fb;--axis:#8b86b3;--curve:#3d8be0;--inv:#e0485f;--sym:#17b388;--ghost:#b9b1e6;--c6:#e39a1e}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--plane:#24203d;--grid:#363057;--axis:#a7a2cf;--curve:#6fb4ff;--inv:#ff7d8f;--sym:#4fd8ac;--ghost:#7a72aa;--c6:#ffc15a}}
+:root[data-theme="dark"] body{--plane:#24203d;--grid:#363057;--axis:#a7a2cf;--curve:#6fb4ff;--inv:#ff7d8f;--sym:#4fd8ac;--ghost:#7a72aa;--c6:#ffc15a}
+.stage{display:block;width:100%;height:auto;border-radius:20px;background:var(--plane);box-shadow:var(--press);margin-top:10px}
+.xtra{margin-top:12px;padding:10px 16px;border-radius:20px;background:var(--card);box-shadow:var(--clay-sm)}
+.xtra summary{cursor:pointer;font-weight:700;color:var(--ink)}
+.fbox{overflow-x:auto;text-align:center;padding:6px 0}
+.tbl{overflow-x:auto;margin-top:10px}
+.tbl table{border-collapse:separate;border-spacing:4px;margin:0 auto}
+.tbl td,.tbl th{padding:5px 9px;border-radius:10px;background:var(--card);box-shadow:var(--clay-sm);text-align:center;font-size:14px}
+.tbl th{background:var(--soft)}
+.tbl .m{font-family:"Noto Serif",Georgia,serif;direction:ltr;white-space:nowrap;font-size:15px}
+.tbl table.ltr{direction:ltr}
+.act .gap{direction:ltr;unicode-bidi:isolate}
+.act[data-act=gap] .pc{font-family:"Noto Serif",Georgia,serif}
+.act[data-act=match] .mt button{direction:ltr;unicode-bidi:isolate;text-align:center;font-family:"Noto Serif",Georgia,serif;font-size:16px}
+.anat{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;direction:ltr;margin:10px 0}
+.anat div{display:grid;gap:4px;justify-items:center;padding:8px 10px;border-radius:16px;box-shadow:var(--clay-sm);background:var(--bb,var(--card))}
+.anat b{font-family:"Noto Serif",Georgia,serif;font-size:1.15rem;font-weight:700;color:var(--text)}
+.anat small{font-size:12px;color:var(--text);direction:rtl}
+.arr{display:inline-block;direction:ltr;unicode-bidi:isolate;font-family:"Noto Serif",Georgia,serif;font-weight:700;letter-spacing:.06em;white-space:nowrap}
+.out{margin-top:10px;display:grid;gap:6px;text-align:center}
+.out .f{font-size:1.05rem;white-space:normal}
+.out small{color:var(--muted);font-size:13px}
+.nw{white-space:nowrap}
+.zs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.zs .ctl label{white-space:nowrap}
+.flip{margin-top:10px;display:flex;justify-content:center}
+.flip button{font:inherit;font-size:14px;padding:6px 14px;border-radius:14px;border:0;background:var(--card);color:var(--text);box-shadow:var(--clay-sm);cursor:pointer}
+.flip button[aria-pressed=true]{background:var(--p-pink);box-shadow:var(--press);font-weight:700}
+.four{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:10px}
+.four .card{padding:10px 12px;font-size:14.5px}
+.four .card b.n{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--soft);color:var(--ink);font-size:13px;margin-inline-end:6px}
+.sym .bub.xs{font-size:.92rem;white-space:nowrap}
+.law.fac{background:var(--p-mint);text-align:center}
+.law.fac p{color:var(--text)}
+</style>
+</head>
+<body style="--sc:#8a63f2">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الرياضيات</span><span class="chip">الدرس 3-3 · ص 102 إلى 106</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الثالثة: كثيرات الحدود</p>
+  <h1 id="t">العوامل الخطية لكثيرات الحدود</h1>
+  <p>في الدرس الماضي قرأت طرفي المنحنى. الحين نقرأ وسطه: النقاط اللي يلمس فيها المنحنى محور السينات. <mark>لو أعطيتك هذه النقاط فقط، تقدر تكتب معادلة الدالة؟</mark> نعم، وبسرعة. حرّك الأصفار بنفسك وشوف المعادلة تتكوّن.</p>
+</section>
+
+<section class="panel" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">مختبر: ابنِ دالة من أصفارها</h2><span class="legend"><span><i style="background:var(--curve)"></i>المنحنى</span><span><i style="background:var(--sym)"></i>الأصفار</span></span></div>
+  <div class="zs">
+    <div class="ctl"><label for="za">صفر 1: <b id="zaL" dir="ltr">−2</b></label><input type="range" dir="ltr" id="za" min="-4" max="4" step="1" value="-2"></div>
+    <div class="ctl"><label for="zb">صفر 2: <b id="zbL" dir="ltr">1</b></label><input type="range" dir="ltr" id="zb" min="-4" max="4" step="1" value="1"></div>
+    <div class="ctl"><label for="zc">صفر 3: <b id="zcL" dir="ltr">3</b></label><input type="range" dir="ltr" id="zc" min="-4" max="4" step="1" value="3"></div>
+  </div>
+  <svg class="stage" id="buildPlot" viewBox="0 0 400 260" role="img" aria-label="بيان دالة تكعيبية أصفارها تختارها بالمؤشرات"></svg>
+  <div class="flip"><button type="button" id="flipBtn" aria-pressed="false">اضرب الدالة في ⁦−1⁩</button></div>
+  <div class="out" id="buildOut" aria-live="polite"></div>
+  <p class="cap">كل صفر a يعطي عاملاً <span dir="ltr">(x − a)</span>. جرّب تخلّي صفرين متساويين وشوف المنحنى يلمس المحور ويرجع بدل ما يقطعه.</p>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">رموز الدرس ومصطلحاته</h2></div>
+  <div class="syms">
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub xs"><span dir="ltr">(x − a)</span></span><div><h3>عامل خطي <span class="en">Linear Factor</span></h3><p>قوس من الدرجة الأولى. نضرب عدة عوامل فتتكوّن كثيرة الحدود، وهذه هي <b>عوامل دالة حدودية</b>.</p><span class="hook">مثل الطوب: كثيرة الحدود مبنية من طوب خطي.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub"><span>a</span></span><div><h3>صفر الدالة <span class="en">Zero of a Polynomial Function</span></h3><p>قيمة x اللي تجعل الدالة تساوي صفراً. على الرسم: نقطة قطع محور السينات.</p><span class="hook">وين يلمس المنحنى الأرض؟</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span dir="ltr">⟺</span></span><div><h3>إذا وفقط إذا <span class="en">if and only if</span></h3><p>رمز يعني أن الجملة صحيحة في الاتجاهين: من اليمين لليسار ومن اليسار لليمين.</p><span class="hook">سهم رايح وسهم راجع.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub xs"><span dir="ltr">(x − a)²</span></span><div><h3>صفر مكرر <span class="en">Repeated Zero</span></h3><p>عندما يتكرر العامل الخطي يتكرر الصفر. والصفر اللي ما يتكرر اسمه <b>صفر بسيط</b>.</p><span class="hook">المكرر مرتين: المنحنى يلمس المحور ويرجع.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub"><span dir="ltr">V</span></span><div><h3>الحجم <span class="en">Volume</span></h3><p><span dir="ltr">V = l · w · h</span>: الطول × العرض × الارتفاع. كل بعد منها عامل خطي في دالة الحجم.</p><span class="hook">ثلاثة أبعاد = ثلاث طوبات.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub sm"><span>عظمى</span></span><div><h3>القيمة العظمى <span class="en">Maximum Value</span></h3><p>أكبر قيمة تصلها الدالة على مجال معيّن: أعلى قمة في المنحنى هناك.</p><span class="hook">قمة الجبل في الرسم.</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub sm"><span dir="ltr">(0, 6)</span></span><div><h3>المجال الواقعي <span class="en">Real Domain</span></h3><p>قيم x اللي لها معنى في المسألة الحياتية، مثل أطوال موجبة فقط.</p><span class="hook">علبة طولها سالب؟ مستحيل.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">كثيرة الحدود في صورة عوامل</h2></div>
+  <p>تعرف أن <span dir="ltr">6 = 2 × 3</span>. نفس الفكرة: كثيرة الحدود ممكن تنكتب كحاصل ضرب عوامل خطية. شوف:</p>
+  <div class="fbox"><span class="f">x³ − 7x − 6 = (x + 1)(x + 2)(x − 3)</span></div>
+  <div class="anat">
+    <div style="--bb:var(--p-mint)"><b>(x + 1)</b><small>ثابته 1</small></div>
+    <div style="--bb:var(--p-sky)"><b>(x + 2)</b><small>ثابته 2</small></div>
+    <div style="--bb:var(--p-pink)"><b>(x − 3)</b><small>ثابته ⁦−3⁩</small></div>
+    <div style="--bb:var(--p-butter)"><b>1 × 2 × (−3) = −6</b><small>= الحد الثابت</small></div>
+  </div>
+  <p>لاحظ: كل حد ثابت في العوامل (1 و 2 و ⁦−3⁩) هو <b>عامل من عوامل الحد الثابت</b> ⁦−6⁩، وحاصل ضربها يساويه.</p>
+  <p class="tip"><b>معلومة:</b> عوامل العدد تشمل الموجبة والسالبة. عوامل 6 هي <span dir="ltr">±1, ±2, ±3, ±6</span>.</p>
+
+  <h3 style="margin:16px 0 6px">كيف نتحقق أنها عوامله؟ نضربها</h3>
+  <p>نضرب أول قوسين: <span class="f" style="font-size:1.05rem">(x + 1)(x + 2) = x² + 3x + 2</span>. ثم نضرب الناتج في <span dir="ltr">(x − 3)</span> بجدول صغير: كل خانة = حاصل ضرب رأس الصف في رأس العمود.</p>
+  <div class="tbl"><table class="ltr">
+    <tr><th class="m">×</th><th class="m">x²</th><th class="m">+3x</th><th class="m">+2</th></tr>
+    <tr><th class="m">x</th><td class="m">x³</td><td class="m">3x²</td><td class="m">2x</td></tr>
+    <tr><th class="m">−3</th><td class="m">−3x²</td><td class="m">−9x</td><td class="m">−6</td></tr>
+  </table></div>
+  <p style="margin-top:8px">نجمع المتشابهة: <span dir="ltr">3x² − 3x² = 0</span> و <span dir="ltr">2x − 9x = −7x</span>، فالناتج <span class="f" style="font-size:1.05rem">x³ − 7x − 6</span> ✓ بالصورة العامة.</p>
+  <details class="xtra"><summary>حاول أن تحل (1): اكتب <span dir="ltr">(x + 1)(x + 1)(x − 2)</span> بالصورة العامة</summary>
+    <ul class="pts">
+      <li style="--b:var(--sc)"><span dir="ltr">(x + 1)(x + 1) = x² + 2x + 1</span></li>
+      <li style="--b:var(--sc)"><span dir="ltr">(x² + 2x + 1)(x − 2) = x³ − 2x² + 2x² − 4x + x − 2</span></li>
+      <li style="--b:var(--sc)"><span dir="ltr">= x³ − 3x − 2</span></li>
+    </ul>
+  </details>
+
+  <h3 style="margin:18px 0 6px">والعكس: حلّل إلى عوامل</h3>
+  <div class="qbox">حلّل <span class="f" style="font-size:1.1rem">3x³ − 3x² − 18x</span> إلى عوامل، ثم تحقق.</div>
+  <ol class="steps">
+    <li><span>عامل مشترك في كل الحدود: <span class="f">3x</span><br><span class="f">= 3x(x² − x − 6)</span></span></li>
+    <li><span>حلّل الثلاثية: عددان حاصل ضربهما ⁦−6⁩ ومجموعهما ⁦−1⁩، هما ⁦−3⁩ و 2<br><span class="f">= 3x(x − 3)(x + 2)</span></span></li>
+    <li><span>تحقق بالضرب: <span class="f">(x − 3)(x + 2) = x² − x − 6</span><br><span class="f">3x(x² − x − 6) = 3x³ − 3x² − 18x</span> <span class="ans">✓</span></span></li>
+  </ol>
+  <p class="tip" style="margin-top:10px"><b>قاعدة:</b> عندما تحلل كثيرة الحدود إلى <b>عوامل خطية</b> تكون انتهيت: ما في تحليل أكثر لإيجاد عوامل إضافية.</p>
+
+  <div class="act" data-act="gap" data-key="gap" data-ok="صح! 3x عامل مشترك، و ⁦4x² − 4x + 1 = (2x − 1)²⁩. تحقق: ⁦3x(4x² − 4x + 1) = 12x³ − 12x² + 3x⁩.">
+    <h3>أكمل الناقص <span class="k">نشاط</span></h3>
+    <p>حاول أن تحل (2): تحليل <span dir="ltr" class="nw">12x³ − 12x² + 3x</span> إلى عوامل هو <span class="f" style="font-size:1.05rem"><span class="gap">؟</span></span></p>
+    <div class="opts">
+      <button class="pc" dir="ltr" data-no="اضرب للتحقق: ⁦(2x + 1)² = 4x² + 4x + 1⁩، الحد الأوسط موجب ونحن نحتاج ⁦−4x⁩.">3x(2x + 1)²</button>
+      <button class="pc" dir="ltr" data-ok>3x(2x − 1)²</button>
+      <button class="pc" dir="ltr" data-no="⁦(4x − 1)(x − 1) = 4x² − 5x + 1⁩: الحد الأوسط ⁦−5x⁩ مو ⁦−4x⁩.">3x(4x − 1)(x − 1)</button>
+      <button class="pc" dir="ltr" data-no="هذا تحليل ناقص: كل الحدود فيها x أيضاً، والقوس ما صار عوامل خطية.">3(4x³ − 4x² + x)</button>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">مسائل حياتية: الحجم والقيمة العظمى</h2></div>
+  <p>حجم العلبة <span class="f" style="font-size:1.1rem">V = l · w · h</span>. لو كل بعد مكتوب بدلالة x، يصير كل بعد <b>عاملاً خطياً</b>، والحجم كثيرة حدود.</p>
+
+  <h3 style="margin:16px 0 6px">مثال محلول: علبة بدون غطاء</h3>
+  <div class="qbox">قطعة كرتون مربعة طول ضلعها 12 cm. نقص من كل زاوية مربعاً طول ضلعه x cm، ثم نطوي الحواف فتصير علبة بدون غطاء.<br>(a) كوّن الدالة V(x). (b) صف المجال الواقعي. (c) من البيان: ما القيمة العظمى للحجم؟</div>
+  <div class="row"><button class="lite" id="hideSol" type="button" aria-pressed="false">أخفِ الحل وجرّب أولاً</button></div>
+  <ol class="steps" id="steps">
+    <li><span>(a) قصّينا x من طرفي كل ضلع، فضلع القاعدة <span class="f">12 − 2x</span>. الأبعاد: <span class="f">x , (12 − 2x) , (12 − 2x)</span></span></li>
+    <li><span>عوّض في <span class="f">V = l · w · h</span>:<br><span class="f">V = (12 − 2x)(12 − 2x)x</span></span></li>
+    <li><span>بسّط: <span class="f">(12 − 2x)² = 4x² − 48x + 144</span><br><span class="ans"><span class="f">V(x) = 4x³ − 48x² + 144x</span></span></span></li>
+    <li><span>(b) الأبعاد أطوال، يعني موجبة: <span class="f">x &gt; 0</span> و <span class="f">12 − 2x &gt; 0</span> ⇐ <span class="f">x &lt; 6</span><br>المجال الواقعي: <span class="ans"><span class="f">(0 , 6)</span></span></span></li>
+    <li><span>(c) أعلى نقطة على البيان في المجال <span dir="ltr">(0 , 6)</span> عند <span dir="ltr">x = 2</span>: <span class="ans">القيمة العظمى 128 cm³</span>. الارتفاع 2 cm وضلع القاعدة <span dir="ltr" class="nw">12 − 2(2) = 8 cm</span>.</span></li>
+  </ol>
+
+  <div class="panel" style="margin-top:14px">
+    <div class="lab-head"><h3 style="margin:0">جرّب: كم تقص من الزاوية؟</h3><span class="legend"><span><i style="background:var(--inv)"></i>المقصوص</span><span><i style="background:var(--c6)"></i>القاعدة</span></span></div>
+    <svg class="stage" id="boxPlot" viewBox="0 0 400 230" role="img" aria-label="قطعة الكرتون مع الزوايا المقصوصة وبيان دالة الحجم"></svg>
+    <div class="controls"><div class="ctl"><label for="bx">طول ضلع المربع المقصوص: <b id="bxL" dir="ltr">1 cm</b></label><input type="range" dir="ltr" id="bx" min="0.25" max="5.75" step="0.25" value="1"></div></div>
+    <div class="out" id="boxOut" aria-live="polite"></div>
+  </div>
+  <p class="note">لاحظ على البيان: <span dir="ltr">V(x) = 4x(x − 6)²</span>، فالدالة تقطع محور السينات عند 0 (<b>صفر بسيط</b>) وتلمسه عند 6 (<b>صفر مكرر</b>). الأجزاء المقطوعة من محور السينات هي <b>أصفار الدالة</b>، لأن قيمة الدالة عندها صفر.</p>
+  <details class="xtra"><summary>حاول أن تحل (3): قطعة الخشب</summary>
+    <p style="margin:8px 0 4px">قطعة خشب على شكل متوازي مستطيلات أبعادها 12 cm و 8 cm وسماكتها x cm، قُصّ من إحدى زواياها مكعب طول حرفه x cm.</p>
+    <ul class="pts">
+      <li style="--b:var(--sc)">(a) الحجم الأصلي ناقص المكعب: <span dir="ltr">V(x) = 12 · 8 · x − x³ = −x³ + 96x</span></li>
+      <li style="--b:var(--sc)">(b) x طول موجب، والمكعب لازم ينقص من قطعة عرضها 8: <span dir="ltr">0 &lt; x &lt; 8</span>، المجال الواقعي <span dir="ltr">(0 , 8)</span>.</li>
+    </ul>
+  </details>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">الأصفار والعوامل</h2></div>
+  <p class="tip"><b>مراجعة سريعة:</b> خاصية الضرب في الصفر: إذا كان حاصل الضرب صفراً فأحد العوامل على الأقل يساوي صفراً. مثل <span dir="ltr">5 × 0 = 0</span>.</p>
+  <p style="margin-top:10px">فإذا كانت الدالة مكتوبة في صورة عوامل، نجعل كل عامل خطي يساوي صفراً، فنحصل على أصفارها مباشرة.</p>
+
+  <h3 style="margin:16px 0 6px">أوجد الأصفار وارسم بياناً تقريبياً</h3>
+  <div class="qbox"><span class="f" style="font-size:1.1rem">y = (x + 2)(x − 1)(x − 3)</span></div>
+  <ol class="steps">
+    <li><span>كل عامل = 0: <span class="f">x + 2 = 0</span> أو <span class="f">x − 1 = 0</span> أو <span class="f">x − 3 = 0</span><br>الأصفار: <span class="ans"><span dir="ltr">−2 , 1 , 3</span></span></span></li>
+    <li><span>المعامل الرئيسي موجب (لأن <span dir="ltr">1 × 1 × 1 = 1</span>) ⇐ الطرف الأيمن لأعلى.</span></li>
+    <li><span>ثلاثة عوامل في كل منها x ⇐ الدرجة الثالثة، فردية ⇐ الطرف الأيسر عكس الأيمن، لأسفل. سلوك النهاية <span class="arr">(↙ , ↗)</span></span></li>
+    <li><span>جدول قيم يساعدنا نرسم بدقة أكبر:</span></li>
+  </ol>
+  <div class="tbl"><table class="ltr">
+    <tr><th class="m">x</th><td class="m">−3</td><td class="m">−2</td><td class="m">−1</td><td class="m">0</td><td class="m">1</td><td class="m">2</td><td class="m">3</td><td class="m">4</td></tr>
+    <tr><th class="m">y</th><td class="m">−24</td><td class="m">0</td><td class="m">8</td><td class="m">6</td><td class="m">0</td><td class="m">−4</td><td class="m">0</td><td class="m">18</td></tr>
+  </table></div>
+  <svg class="stage" id="sketch" viewBox="0 0 400 260" role="img" aria-label="بيان تقريبي للدالة y = (x + 2)(x − 1)(x − 3) مع نقاط الجدول"></svg>
+  <p class="cap">النقاط الخضراء أصفار الدالة. كلما أوجدنا نقاطاً أكثر تنتمي إلى بيان الدالة يكون الرسم أدق.</p>
+  <details class="xtra"><summary>حاول أن تحل (4): <span dir="ltr">y = (x − 7)(x − 5)(3 − x)</span></summary>
+    <ul class="pts">
+      <li style="--b:var(--sc)">الأصفار: <span dir="ltr">7 , 5 , 3</span> (من <span dir="ltr">3 − x = 0</span> نحصل على <span dir="ltr">x = 3</span>).</li>
+      <li style="--b:var(--sc)">انتبه للعامل <span dir="ltr">(3 − x)</span>: فيه <span dir="ltr">−x</span>، فالمعامل الرئيسي <span dir="ltr">1 × 1 × (−1) = −1</span> سالب ⇐ اليمين لأسفل. والدرجة 3 فردية ⇐ اليسار لأعلى: <span class="arr">(↖ , ↘)</span></li>
+    </ul>
+  </details>
+
+  <h3 style="margin:18px 0 6px">نظرية العامل</h3>
+  <p>نقدر نعكس الطريق: إذا عرفنا الأصفار نكتب العوامل الخطية. هذه العلاقة اسمها <b>نظرية العامل</b>.</p>
+  <div class="law fac">
+    <h3>نظرية العامل <span class="en" style="font-size:12.5px;color:var(--muted);font-weight:500">Factor Theorem</span></h3>
+    <p>المقدار <span class="f" style="font-size:1.2rem">(x − a)</span> هو عامل خطي لكثيرة الحدود <span class="f" style="font-size:1.2rem">⟺</span> <span class="f" style="font-size:1.2rem">a</span> صفر من أصفار كثيرة الحدود.</p>
+  </div>
+  <p style="margin-top:10px">يعني الاتجاهين صحيحان: إذا كان <span dir="ltr">(x − a)</span> عاملاً فإن a صفر، وإذا كان a صفراً فإن <span dir="ltr">(x − a)</span> عامل.</p>
+  <div class="anat">
+    <div style="--bb:var(--p-sky)"><b>(x − 4) ⟺ 4</b><small>عامل ⟺ صفر</small></div>
+    <div style="--bb:var(--p-pink)"><b>(x + 1) ⟺ −1</b><small>الإشارة تنقلب</small></div>
+    <div style="--bb:var(--p-mint)"><b>x ⟺ 0</b><small>لأن x = x − 0</small></div>
+  </div>
+
+  <div class="act" data-act="match" data-key="match" data-pairs='[["(x − 5)","5"],["(x + 3)","−3"],["x","0"],["(x + 1.5)","−1.5"],["(x − 1.5)","1.5"]]' data-ok="ممتاز! الصفر دائماً عكس الإشارة اللي داخل القوس: ⁦(x + 3)⁩ صفره ⁦−3.⁩">
+    <h3>وصّل العامل بصفره <span class="k">نشاط</span></h3>
+    <p>اضغط عاملاً من العمود الأول ثم صفره من العمود الثاني. اجعل العامل يساوي صفراً في رأسك.</p>
+  </div>
+
+  <h3 style="margin:18px 0 6px">اكتب الدالة من أصفارها</h3>
+  <div class="qbox">اكتب دالة كثيرة حدود أصفارها <span dir="ltr">−1 , 2 , 2</span> في الصورة العامة.</div>
+  <ol class="steps">
+    <li><span>كل صفر a يعطي عاملاً <span class="f">(x − a)</span>:<br><span class="f">(x − (−1)) , (x − 2) , (x − 2)</span></span></li>
+    <li><span><span class="f">f(x) = (x + 1)(x − 2)(x − 2)</span></span></li>
+    <li><span>اضرب المكرر أولاً: <span class="f">(x − 2)(x − 2) = x² − 4x + 4</span></span></li>
+    <li><span>خاصية التوزيع: <span class="f">x(x² − 4x + 4) + 1(x² − 4x + 4)</span><br><span class="f">= x³ − 4x² + 4x + x² − 4x + 4</span></span></li>
+    <li><span>بسّط: <span class="ans"><span class="f">f(x) = x³ − 3x² + 4</span></span></span></li>
+  </ol>
+  <p class="tip" style="margin-top:10px"><b>معلومة:</b> عندما يتكرر عامل خطي في كثيرة الحدود يتكرر الصفر أيضاً، ويسمى <b>صفراً مكرراً</b>. هنا 2 صفر مكرر و ⁦−1⁩ صفر بسيط.</p>
+
+  <div class="act" data-act="type" data-key="type" data-answer="5" data-tol="0"
+       data-ok="صح! ⁦(x + 2)(x + 4) = x² + 6x + 8⁩، وبعد الضرب في ⁦(x − 1)⁩: ⁦x³ + 6x² − x² + ... = x³ + 5x² + 2x − 8⁩."
+       data-hint="العوامل ⁦(x − 1)(x + 2)(x + 4)⁩. اضرب ⁦(x + 2)(x + 4)⁩ أولاً، ثم في ⁦(x − 1)⁩ واجمع حدود x²."
+       data-no="ليست هذه. تأكد من العوامل: الصفر ⁦−2⁩ يعطي ⁦(x + 2)⁩، والصفر ⁦−4⁩ يعطي ⁦(x + 4)⁩، والصفر 1 يعطي ⁦(x − 1)⁩.">
+    <h3>اكتب الجواب <span class="k">نشاط</span></h3>
+    <p>حاول أن تحل (5a): الدالة اللي أصفارها <span dir="ltr">1 , −2 , −4</span> هي <span class="f" style="font-size:1.05rem;white-space:normal">f(x) = x³ + □x² + 2x − 8</span>. ما العدد في المربع؟</p>
+  </div>
+  <details class="xtra"><summary>حاول أن تحل (5b) إلى (5e)</summary>
+    <ul class="pts">
+      <li style="--b:var(--sc)"><b>b)</b> الأصفار <span dir="ltr">0 , −2 , −4</span>: <span dir="ltr">x(x + 2)(x + 4) = x³ + 6x² + 8x</span></li>
+      <li style="--b:var(--sc)"><b>c)</b> 3 مكرر مرتين و ⁦−1⁩ بسيط: <span dir="ltr">(x − 3)²(x + 1) = x³ − 5x² + 3x + 9</span></li>
+      <li style="--b:var(--sc)"><b>d) و e)</b> الإجابة مو وحيدة: لو ضربنا الدالة في أي عدد k لا يساوي صفراً تبقى الأصفار نفسها، مثل <span dir="ltr">2x(x + 2)(x + 4)</span>. والصفر 0 يعطي العامل x نفسه، وممكن يتكرر (x² مثلاً) فتتغير الدرجة والأصفار هي هي.</li>
+    </ul>
+  </details>
+
+  <h3 style="margin:18px 0 6px">أربع جمل تقول الشيء نفسه</h3>
+  <p>لنظرية العامل أربعة مفاهيم مرتبطة. هي <b>متكافئة</b>: إذا عرفت واحدة عرفت الكل. مثال: <span dir="ltr">x² − x − 6 = (x − 3)(x + 2)</span></p>
+  <div class="four">
+    <div class="card" style="background:var(--p-lav)"><b class="n">1</b><span dir="ltr">x = 3</span> حل للمعادلة <span dir="ltr">x² − x − 6 = 0</span></div>
+    <div class="card" style="background:var(--p-sky)"><b class="n">2</b>3 جزء مقطوع من محور السينات لمنحنى <span dir="ltr">y = x² − x − 6</span></div>
+    <div class="card" style="background:var(--p-mint)"><b class="n">3</b>3 صفر من أصفار الدالة <span dir="ltr">y = x² − x − 6</span></div>
+    <div class="card" style="background:var(--p-peach)"><b class="n">4</b><span dir="ltr">(x − 3)</span> عامل من عوامل <span dir="ltr">x² − x − 6</span></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">5</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sd">
+  <div class="sec-head"><span class="num">6</span><h2 id="sd">في حياتك</h2></div>
+  <div class="life">
+    <div class="card"><h3>علب التغليف</h3><p>مصنع يقص زوايا ألواح الكرتون. لو قص قليلاً صارت العلبة مسطحة، ولو قص كثيراً صارت القاعدة صغيرة. القيمة العظمى تقول له المقاس الأفضل.</p></div>
+    <div class="card"><h3>المسبح والخزان</h3><p>حجم خزان ماء = طول × عرض × عمق. لو غيّرت بعداً واحداً بمقدار x، كل بعد يصير عاملاً خطياً في دالة الحجم.</p></div>
+    <div class="card"><h3>مسار يلمس الأرض</h3><p>مصمم يبي مساراً (لعبة أو رسم) يلمس الأرض عند نقاط محددة؟ يكتب العوامل من النقاط مباشرة، تماماً مثل المختبر فوق.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">7</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>سلوك النهاية لبيان <span class="f" style="font-size:1.05rem">y = (x − 7)(x − 5)(3 − x)</span>:</p>
+      <div class="opts"><button class="arr">(↙ , ↗)</button><button class="arr" data-ok>(↖ , ↘)</button><button class="arr">(↙ , ↘)</button></div>
+      <p class="why" hidden>الصحيح: ⁦(↖ , ↘)⁩. العامل ⁦(3 − x)⁩ فيه ⁦−x⁩، فالمعامل الرئيسي ⁦−1⁩ سالب واليمين لأسفل. والدرجة 3 فردية فاليسار عكسه، لأعلى.</p></div>
+    <div class="q"><p>نقص مربعاً طول ضلعه x من كل زاوية لقطعة كرتون مربعة طول ضلعها 20 cm لنصنع علبة. المجال الواقعي لدالة الحجم:</p>
+      <div class="opts"><button dir="ltr">(0 , 20)</button><button dir="ltr" data-ok>(0 , 10)</button><button dir="ltr">(−10 , 10)</button></div>
+      <p class="why" hidden>الصحيح: ⁦(0 , 10)⁩. الأبعاد موجبة: ⁦x &gt; 0⁩ و ⁦20 − 2x &gt; 0⁩ أي ⁦x &lt; 10⁩. نقص من الجهتين، لذلك 10 مو 20.</p></div>
+    <div class="q"><p>في الدالة <span class="f" style="font-size:1.05rem">f(x) = x(x − 4)²</span>، أي عبارة صحيحة؟</p>
+      <div class="opts"><button>4 صفر بسيط و 0 صفر مكرر</button><button data-ok>4 صفر مكرر و 0 صفر بسيط</button><button>أصفارها 0 و 4 و ⁦−4⁩</button></div>
+      <p class="why" hidden>الصحيح: العامل ⁦(x − 4)⁩ مكرر مرتين، فالصفر 4 مكرر. والعامل x مرة واحدة، فالصفر 0 بسيط. و ⁦−4⁩ مو صفر لأن ⁦(x − 4)⁩ صفره 4 فقط.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li><b>التحليل</b>: أخرج العامل المشترك، ثم حلّل إلى عوامل خطية، وتحقق بالضرب. بعد العوامل الخطية ما في تحليل أكثر.</li>
+      <li><b>نظرية العامل</b>: <span dir="ltr">(x − a)</span> عامل خطي ⟺ a صفر. والأصفار نقاط قطع محور السينات، نجدها بخاصية الضرب في الصفر. العامل المكرر يعطي صفراً مكرراً.</li>
+      <li><b>الحجم</b> <span dir="ltr">V = l · w · h</span>: كل بعد عامل خطي. المجال الواقعي من شرط الأطوال الموجبة، والقيمة العظمى أعلى نقطة على البيان في هذا المجال.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الرياضيات، الصف الحادي عشر، الوحدة الثالثة، ص 102 إلى 106</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"math-u3-3-3"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+var SUP={2:"²",3:"³"};
+function num(v){var r=Math.round(Math.abs(v)*100)/100;return String(r);}
+function sgn(v){return v<0?"−"+num(v):num(v);}
+function mapper(W,H,X0,X1,Y0,Y1,pad){return {px:function(x){return pad+(x-X0)/(X1-X0)*(W-2*pad);},py:function(y){return H-pad-(y-Y0)/(Y1-Y0)*(H-2*pad);}};}
+function path(P,pts){return pts.map(function(p,i){return (i?"L":"M")+P.px(p[0]).toFixed(1)+" "+P.py(p[1]).toFixed(1);}).join("");}
+function poly(c){var d=c.length-1,s="";c.forEach(function(k,i){var p=d-i;if(Math.abs(k)<1e-9)return;var a=Math.abs(k),body=(a===1&&p>0?"":num(a))+(p===0?"":p===1?"x":"x"+SUP[p]);if(!s)s=(k<0?"−":"")+body;else s+=(k<0?" − ":" + ")+body;});return s||"0";}
+function fac(z){return z===0?"x":"(x "+(z>0?"− ":"+ ")+num(z)+")";}
+
+/* ---------- lab: build from zeros ---------- */
+var flip=1;
+function build(){
+  var z=[+$("za").value,+$("zb").value,+$("zc").value],s=flip;
+  $("zaL").textContent=sgn(z[0]);$("zbL").textContent=sgn(z[1]);$("zcL").textContent=sgn(z[2]);
+  function f(x){return s*(x-z[0])*(x-z[1])*(x-z[2]);}
+  var lo=Math.min.apply(null,z),hi=Math.max.apply(null,z),M=0,i;
+  for(i=0;i<=120;i++){var xx=lo+(hi-lo)*i/120;M=Math.max(M,Math.abs(f(xx)));}
+  var Y=Math.max(6,Math.ceil(M*1.35)),W=400,H=260,pad=16,X=5.5,P=mapper(W,H,-X,X,-Y,Y,pad),out="";
+  out+='<defs><clipPath id="bc"><rect x="'+pad+'" y="'+pad+'" width="'+(W-2*pad)+'" height="'+(H-2*pad)+'"/></clipPath></defs>';
+  for(i=-5;i<=5;i++){out+='<line x1="'+P.px(i)+'" y1="'+pad+'" x2="'+P.px(i)+'" y2="'+(H-pad)+'" stroke="var(--grid)"/>';}
+  for(i=1;i<=3;i++){var gy=Y*i/4;out+='<line x1="'+pad+'" y1="'+P.py(gy)+'" x2="'+(W-pad)+'" y2="'+P.py(gy)+'" stroke="var(--grid)"/><line x1="'+pad+'" y1="'+P.py(-gy)+'" x2="'+(W-pad)+'" y2="'+P.py(-gy)+'" stroke="var(--grid)"/>';}
+  out+='<line x1="'+pad+'" y1="'+P.py(0)+'" x2="'+(W-pad)+'" y2="'+P.py(0)+'" stroke="var(--axis)" stroke-width="1.8"/><line x1="'+P.px(0)+'" y1="'+pad+'" x2="'+P.px(0)+'" y2="'+(H-pad)+'" stroke="var(--axis)" stroke-width="1.8"/>';
+  out+='<g font-size="11" fill="var(--axis)" direction="ltr"><text x="'+(P.px(0)+5)+'" y="'+(pad+11)+'">'+Y+'</text><text x="'+(P.px(0)+5)+'" y="'+(H-pad-4)+'">−'+Y+'</text><text x="'+(W-pad-4)+'" y="'+(P.py(0)-6)+'" text-anchor="end" font-style="italic">x</text></g>';
+  var pts=[];for(i=0;i<=400;i++){var x=-X+2*X*i/400,y=f(x);if(Math.abs(y)<Y*4)pts.push([x,y]);}
+  out+='<g clip-path="url(#bc)"><path d="'+path(P,pts)+'" fill="none" stroke="var(--curve)" stroke-width="3.2"/></g>';
+  var cnt={};z.forEach(function(v){cnt[v]=(cnt[v]||0)+1;});
+  var keys=Object.keys(cnt).map(Number).sort(function(a,b){return a-b;});
+  keys.forEach(function(v){
+    var cx=P.px(v),cy=P.py(0);
+    if(cnt[v]>1)out+='<circle cx="'+cx+'" cy="'+cy+'" r="10" fill="none" stroke="var(--sym)" stroke-width="2.5"/>';
+    out+='<circle cx="'+cx+'" cy="'+cy+'" r="5.5" fill="var(--sym)" stroke="var(--card)" stroke-width="2"/>';
+    out+='<text x="'+cx+'" y="'+(cy+((f(v+0.4)>0||f(v-0.4)>0)?24:-14))+'" font-size="12.5" font-weight="700" fill="var(--text)" text-anchor="middle" direction="ltr">'+sgn(v)+'</text>';
+  });
+  $("buildPlot").innerHTML=out;
+  var factored=(s<0?"−":"")+keys.map(function(v){return fac(v)+(cnt[v]>1?SUP[cnt[v]]:"");}).join("");
+  var c=[s,-s*(z[0]+z[1]+z[2]),s*(z[0]*z[1]+z[1]*z[2]+z[0]*z[2]),-s*z[0]*z[1]*z[2]];
+  var R=s>0?"↗":"↘",L=s>0?"↙":"↖",note;
+  var rep=keys.filter(function(v){return cnt[v]===2;});
+  if(keys.length===1)note="الأصفار الثلاثة متساوية: صفر مكرر ثلاث مرات.";
+  else if(rep.length)note="الصفر ⁦"+sgn(rep[0])+"⁩ مكرر: لاحظ المنحنى يلمس المحور عنده ويرجع.";
+  else note="ثلاثة أصفار بسيطة: المنحنى يقطع المحور عند كل واحد.";
+  $("buildOut").innerHTML='<span>العوامل: <span class="f">y = '+factored+'</span></span><span>الصورة العامة: <span class="f">y = '+poly(c)+'</span></span><span>سلوك النهاية: <span class="arr">('+L+" , "+R+')</span></span><small>'+note+'</small>';
+}
+["za","zb","zc"].forEach(function(id){$(id).addEventListener("input",build);});
+$("flipBtn").addEventListener("click",function(){flip=-flip;this.setAttribute("aria-pressed",flip<0?"true":"false");build();});
+build();
+
+/* ---------- box lab ---------- */
+function V(x){return x*(12-2*x)*(12-2*x);}
+function box(){
+  var x=+$("bx").value,S=168,k=S/12,ox=12,oy=20,c=x*k,s="";
+  s+='<rect x="'+ox+'" y="'+oy+'" width="'+S+'" height="'+S+'" rx="4" fill="var(--card)" stroke="var(--axis)" stroke-width="1.5"/>';
+  s+='<rect x="'+(ox+c)+'" y="'+(oy+c)+'" width="'+(S-2*c)+'" height="'+(S-2*c)+'" fill="var(--c6)" opacity=".35"/>';
+  [[ox,oy],[ox+S-c,oy],[ox,oy+S-c],[ox+S-c,oy+S-c]].forEach(function(p){s+='<rect x="'+p[0]+'" y="'+p[1]+'" width="'+c+'" height="'+c+'" fill="var(--inv)" opacity=".45"/>';});
+  s+='<g stroke="var(--axis)" stroke-dasharray="5 4" stroke-width="1.2"><line x1="'+(ox+c)+'" y1="'+oy+'" x2="'+(ox+c)+'" y2="'+(oy+S)+'"/><line x1="'+(ox+S-c)+'" y1="'+oy+'" x2="'+(ox+S-c)+'" y2="'+(oy+S)+'"/><line x1="'+ox+'" y1="'+(oy+c)+'" x2="'+(ox+S)+'" y2="'+(oy+c)+'"/><line x1="'+ox+'" y1="'+(oy+S-c)+'" x2="'+(ox+S)+'" y2="'+(oy+S-c)+'"/></g>';
+  s+='<g font-size="12" fill="var(--text)" direction="ltr" text-anchor="middle"><text x="'+(ox+S/2)+'" y="'+(oy+S+17)+'">12 cm</text><text x="'+(ox+S/2)+'" y="'+(oy+S/2+4)+'" font-weight="700">'+num(12-2*x)+' cm</text>'+(c>=14?'<text x="'+(ox+S-c/2)+'" y="'+(oy+c/2+4)+'" font-style="italic">x</text>':'')+'</g>';
+  var gx0=222,gx1=390,gyB=196,gyT=24,fx=function(t){return gx0+t/6*(gx1-gx0);},fy=function(v){return gyB-v/140*(gyB-gyT);};
+  for(var t=0;t<=6;t++)s+='<line x1="'+fx(t)+'" y1="'+gyT+'" x2="'+fx(t)+'" y2="'+gyB+'" stroke="var(--grid)"/><text x="'+fx(t)+'" y="'+(gyB+14)+'" font-size="10.5" fill="var(--axis)" text-anchor="middle" direction="ltr">'+t+'</text>';
+  for(var v=0;v<=120;v+=40)s+='<line x1="'+gx0+'" y1="'+fy(v)+'" x2="'+gx1+'" y2="'+fy(v)+'" stroke="var(--grid)"/>'+(v>80?'':'<text x="'+(gx0-4)+'" y="'+(fy(v)+4)+'" font-size="10.5" fill="var(--axis)" text-anchor="end" direction="ltr">'+v+'</text>');
+  s+='<line x1="'+gx0+'" y1="'+gyB+'" x2="'+gx1+'" y2="'+gyB+'" stroke="var(--axis)" stroke-width="1.6"/><line x1="'+gx0+'" y1="'+gyT+'" x2="'+gx0+'" y2="'+gyB+'" stroke="var(--axis)" stroke-width="1.6"/>';
+  var pts=[];for(var i=0;i<=120;i++){var u=6*i/120;pts.push([fx(u),fy(V(u))]);}
+  s+='<path d="'+pts.map(function(p,i){return (i?"L":"M")+p[0].toFixed(1)+" "+p[1].toFixed(1);}).join("")+'" fill="none" stroke="var(--curve)" stroke-width="3"/>';
+  s+='<line x1="'+gx0+'" y1="'+fy(128)+'" x2="'+fx(2)+'" y2="'+fy(128)+'" stroke="var(--sym)" stroke-dasharray="3 3" stroke-width="1.4"/><text x="'+(gx0-4)+'" y="'+(fy(128)+4)+'" font-size="10.5" font-weight="700" fill="var(--sym)" text-anchor="end" direction="ltr">128</text>';
+  s+='<line x1="'+fx(x)+'" y1="'+fy(V(x))+'" x2="'+fx(x)+'" y2="'+gyB+'" stroke="var(--inv)" stroke-dasharray="4 3" stroke-width="1.5"/>';
+  s+='<circle cx="'+fx(x)+'" cy="'+fy(V(x))+'" r="6" fill="var(--inv)" stroke="var(--card)" stroke-width="2"/>';
+  s+='<text x="'+gx1+'" y="'+(gyT-8)+'" font-size="11" fill="var(--axis)" text-anchor="end" direction="ltr">V (cm³)</text><text x="'+gx1+'" y="'+(gyB+28)+'" font-size="11" fill="var(--axis)" text-anchor="end" direction="ltr">x (cm)</text>';
+  $("boxPlot").innerHTML=s;
+  $("bxL").textContent=num(x)+" cm";
+  var vol=Math.round(V(x)*100)/100;
+  $("boxOut").innerHTML='<span>الارتفاع <b dir="ltr">'+num(x)+' cm</b> · ضلع القاعدة <b dir="ltr">'+num(12-2*x)+' cm</b></span><span>الحجم <b dir="ltr">V = '+num(vol)+' cm³</b></span><small>'+(x===2?"هذه هي القيمة العظمى: أكبر حجم ممكن!":x<2?"العلبة واطية. زد القص وراقب الحجم.":"القاعدة صغرت كثير. قلّل القص.")+'</small>';
+}
+$("bx").addEventListener("input",box);box();
+
+/* ---------- sketch of y=(x+2)(x-1)(x-3) ---------- */
+function sketch(){
+  var W=400,H=260,pad=18,P=mapper(W,H,-4,5,-30,24,pad),s="",i;
+  function f(x){return (x+2)*(x-1)*(x-3);}
+  s+='<defs><clipPath id="sc"><rect x="'+pad+'" y="'+pad+'" width="'+(W-2*pad)+'" height="'+(H-2*pad)+'"/></clipPath></defs>';
+  for(i=-4;i<=5;i++)s+='<line x1="'+P.px(i)+'" y1="'+pad+'" x2="'+P.px(i)+'" y2="'+(H-pad)+'" stroke="var(--grid)"/>';
+  for(i=-30;i<=24;i+=6)s+='<line x1="'+pad+'" y1="'+P.py(i)+'" x2="'+(W-pad)+'" y2="'+P.py(i)+'" stroke="var(--grid)"/>';
+  s+='<line x1="'+pad+'" y1="'+P.py(0)+'" x2="'+(W-pad)+'" y2="'+P.py(0)+'" stroke="var(--axis)" stroke-width="1.8"/><line x1="'+P.px(0)+'" y1="'+pad+'" x2="'+P.px(0)+'" y2="'+(H-pad)+'" stroke="var(--axis)" stroke-width="1.8"/>';
+  s+='<g font-size="10.5" fill="var(--axis)" direction="ltr" text-anchor="middle">';
+  [-4,-3,-1,2,4,5].forEach(function(t){s+='<text x="'+P.px(t)+'" y="'+(P.py(0)+14)+'">'+sgn(t)+'</text>';});
+  s+='<text x="'+(P.px(0)-12)+'" y="'+(P.py(18)+4)+'">18</text><text x="'+(P.px(0)-14)+'" y="'+(P.py(-24)+4)+'">−24</text></g>';
+  var pts=[];for(i=0;i<=300;i++){var x=-4+9*i/300;pts.push([x,f(x)]);}
+  s+='<g clip-path="url(#sc)"><path d="'+path(P,pts)+'" fill="none" stroke="var(--curve)" stroke-width="3"/></g>';
+  [-3,-2,-1,0,1,2,3,4].forEach(function(x){var y=f(x),z=y===0;s+='<circle cx="'+P.px(x)+'" cy="'+P.py(y)+'" r="'+(z?6:4.5)+'" fill="'+(z?"var(--sym)":"var(--inv)")+'" stroke="var(--card)" stroke-width="2"/>';});
+  [-2,1,3].forEach(function(x){s+='<text x="'+(P.px(x)+(x===-2?-10:10))+'" y="'+(P.py(0)-9)+'" font-size="12.5" font-weight="700" fill="var(--text)" text-anchor="middle" direction="ltr">'+sgn(x)+'</text>';});
+  s+='<text x="'+(W-pad-6)+'" y="'+(pad+14)+'" font-size="12" fill="var(--axis)" text-anchor="end" direction="ltr">↗</text><text x="'+(pad+6)+'" y="'+(H-pad-6)+'" font-size="12" fill="var(--axis)" direction="ltr">↙</text>';
+  $("sketch").innerHTML=s;
+}
+sketch();
+window.addEventListener("masar-theme",function(){build();box();sketch();});
+})();
+</script>
+</body>
+</html>

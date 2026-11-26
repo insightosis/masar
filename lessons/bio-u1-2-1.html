@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="biology">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>التكاثر الجنسي في النباتات (1) · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+span[dir=ltr],bdi[dir=ltr],b[dir=ltr]{unicode-bidi:isolate}
+body{--leaf:#8fd16a;--leaf2:#5fb02a;--soil:#c99a6b;--capsule:#b07a3a;--spore:#d9a441;--sperm:#3d7fd1;--egg:#e2557a;--wat:#4a9be0;--cone:#c99a6b;--cone2:#7a5534;--pol:#f2c94a;--coat:#8a5a2e;--endo:#fbefcf;--cav:#f3dca6;--emb:#f2a33a;--rad:#c9661f;--sun:#f2b632}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--leaf:#4f8a37;--leaf2:#7cc350;--soil:#6b4f35;--capsule:#c98d4e;--spore:#d9b45a;--sperm:#7ab0ff;--egg:#ff8aa8;--wat:#7ab8f0;--cone:#8a6a4a;--cone2:#c9a27a;--pol:#e0c050;--coat:#b07a45;--endo:#4a4230;--cav:#5e5236;--emb:#e09a3a;--rad:#f0a060;--sun:#e0b040}}
+:root[data-theme="dark"] body{--leaf:#4f8a37;--leaf2:#7cc350;--soil:#6b4f35;--capsule:#c98d4e;--spore:#d9b45a;--sperm:#7ab0ff;--egg:#ff8aa8;--wat:#7ab8f0;--cone:#8a6a4a;--cone2:#c9a27a;--pol:#e0c050;--coat:#b07a45;--endo:#4a4230;--cav:#5e5236;--emb:#e09a3a;--rad:#f0a060;--sun:#e0b040}
+.stage{display:block;width:100%;height:auto;border-radius:22px;background:var(--sky);box-shadow:var(--press)}
+.stage.plain{background:var(--card)}
+.help{display:inline-block;font-size:12px;font-weight:700;padding:1px 9px;border-radius:9px;background:var(--p-sky);color:var(--text);margin-inline-end:6px}
+.grad{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:10px}
+.grad span{padding:5px 12px;border-radius:14px;font-weight:700;font-size:14px;box-shadow:var(--clay-sm);color:var(--text)}
+.grad b{color:var(--muted)}
+.lay{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.lay .tg{display:inline-flex;align-items:center;gap:7px;font-size:14px;padding:7px 12px}
+.lay .tg i{display:inline-block;width:14px;height:14px;border-radius:4px;flex:none}
+.info{margin-top:12px;padding:12px 16px;border-radius:20px;background:var(--soft);box-shadow:var(--clay-sm);min-height:84px}
+.info h3{margin:0 0 4px;font-size:1.05rem}
+.info p{margin:0;font-size:15px}
+.tiles .tile b{font-size:clamp(1.2rem,5vw,1.7rem)}
+.cmp{width:100%;border-collapse:separate;border-spacing:4px;table-layout:fixed;font-size:13.5px;margin-top:10px}
+.cmp th,.cmp td{background:var(--card);box-shadow:var(--clay-sm);border-radius:12px;padding:7px 5px;text-align:center;vertical-align:middle;color:var(--text);line-height:1.45}
+.cmp thead th{background:var(--soft);font-weight:800;color:var(--ink)}
+.cmp tbody th{background:var(--p-butter);font-weight:700}
+</style>
+</head>
+<body style="--sc:#5fb02a">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الأحياء</span><span class="chip">الدرس 2-1 · ص 61 إلى 67</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الأولى: علم النباتات</p>
+  <h1 id="t">التكاثر الجنسي في النباتات (1)</h1>
+  <p>في آخر الصيف، لو مشيت في غابة ممكن تسمع <b>فرقعة خفيفة</b>: شجرة <b>البندق الساحرة</b> تقذف بذورها بقوّة لمسافة تتجاوز <span dir="ltr">14 m</span>. البذرة هذي نتيجة <b>تكاثر جنسي</b>. لكن الحزازيات والسرخسيات ما عندها بذور ولا أزهار. <mark>كيف تتكاثر؟ وليش الحزازيات تحتاج مكاناً رطباً، والصنوبر يتكاثر على جبل جاف؟</mark></p>
+</section>
+
+<section class="panel" id="lab-sec" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">مختبر: دورة حياة بجيلين</h2><span class="legend">اختر النبات، ثم تقدّم خطوة خطوة، وجرّب توقيف المطر</span></div>
+  <div class="btns" role="group" aria-label="اختر النبات" id="plantBtns">
+    <button class="tg" type="button" data-p="moss" aria-pressed="true">الحزازيات</button>
+    <button class="tg" type="button" data-p="fern" aria-pressed="false">السرخسيات</button>
+    <button class="tg" type="button" data-p="pine" aria-pressed="false">الصنوبر</button>
+  </div>
+  <svg class="stage" id="cyc" viewBox="0 0 400 300" role="img" aria-label="دائرة دورة الحياة: نبتة مشيجية أحادية المجموعة، ثم أمشاج، ثم زيجوت ثنائي المجموعة، ثم نبتة جرثومية، ثم جراثيم أحادية المجموعة. النصف العلوي أحادي والسفلي ثنائي" style="margin-top:10px"></svg>
+  <div class="tiles" style="margin-top:10px">
+    <div class="tile"><span>الطور السائد</span><b id="tDom">المشيجي</b></div>
+    <div class="tile"><span>الإخصاب يحتاج ماء؟</span><b id="tWat">نعم</b></div>
+    <div class="tile"><span>النبتة المشيجية</span><b id="tInd">مستقلة</b></div>
+  </div>
+  <div class="btns"><button class="go" type="button" id="next">الخطوة التالية</button><button class="tg" type="button" id="rain" aria-pressed="false">أوقف المطر</button></div>
+  <p class="msg" id="cMsg" aria-live="polite"></p>
+  <p class="cap">رسم مبسّط من عندنا للفهم. الدائرة الأكبر = الطور السائد. النصف العلوي خلاياه أحادية المجموعة الكروموسومية (n)، والسفلي ثنائية (2n).</p>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">رموز الدرس</h2></div>
+  <div class="syms">
+    <div class="sym"><span class="bub"><span dir="ltr">n·2n</span></span><div><h3>أحادي وثنائي المجموعة الكروموسومية</h3><p><b>(n)</b> مجموعة واحدة من الكروموسومات، <b>(2n)</b> مجموعتان.</p><span class="hook">n نسخة واحدة، 2n نسختان.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub"><span>⟳</span></span><div><h3>تعاقب الأجيال <span class="en">Alternation of Generations</span></h3><p>تتحوّل النباتات في دورة حياتها من أجيال (2n) إلى أجيال (n) وبالعكس.</p><span class="hook">جيل ينتج أمشاجاً، وجيل ينتج جراثيم.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span>n</span></span><div><h3>الطور المشيجي <span class="en">Gametophyte</span></h3><p>خلاياه (n)، ينتج الأمشاج التي تتّحد في الإخصاب.</p><span class="hook">مشيجي من الأمشاج.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span>2n</span></span><div><h3>الطور الجرثومي (البوغي) <span class="en">Sporophyte</span></h3><p>خلاياه (2n)، تنقسم فيه خلايا معيّنة ميوزياً لإنتاج الجراثيم.</p><span class="hook">جرثومي من الجراثيم.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub"><span>∴</span></span><div><h3>الجراثيم (الأبواغ) <span class="en">Spores</span></h3><p>تراكيب تكاثرية (n) ناتجة عن انقسام ميوزي، تنقسم ميتوزياً فتنتج النبتة المشيجية.</p><span class="hook">بذرة صغيرة بلا جنين.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span>≈</span></span><div><h3>الأنثريدة <span class="en">Antheridium</span></h3><p>التركيب الذكري: تنتج السابحات الذكرية ذات الأسواط بالانقسام الميتوزي.</p><span class="hook">أنثريدة = سابحات.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub"><span>◉</span></span><div><h3>الأرشيجونة <span class="en">Archegonium</span></h3><p>التركيب الأنثوي: تنتج البويضة، وداخلها يحدث الإخصاب.</p><span class="hook">قارورة فيها بويضة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub"><span>◒</span></span><div><h3>البذرة <span class="en">Seed</span></h3><p>تركيب فيه جنين نباتي (2n)، ويخزّن الغذاء نشاً بصورة أساسية.</p><span class="hook">جنين + غذاء + غلاف.</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub"><span>◇</span></span><div><h3>عاريات البذور ومغطّاة البذور</h3><p>عاريات: بذورها غير مغلّفة بثمرة (المخروطيات). مغطّاة: بذورها مغلّفة بالثمار (الزهرية).</p><span class="hook">عارية بلا ثمرة، مغطّاة بثمرة.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span>·●</span></span><div><h3>الجراثيم الدقيقة والضخمة <span class="en">Microspores · Macrospores</span></h3><p>الدقيقة (n) تنتجها المخاريط الذكرية، والضخمة تنتجها المخاريط الأنثوية.</p><span class="hook">دقيقة = ذكر، ضخمة = أنثى.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub"><span>✦</span></span><div><h3>حبوب اللقاح <span class="en">Pollen</span></h3><p>تنتجها المخاريط الذكرية، وتنتقل في الهواء إلى المخاريط الأنثوية.</p><span class="hook">تطير بدل أن تسبح.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub"><span>◐</span></span><div><h3>الأندوسبرم</h3><p>الجزء المتبقي من النبتة المشيجية الأنثوية، يحيط بالجنين داخل بذرة الصنوبر.</p><span class="hook">بقية الأم حول الجنين.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">ليش التكاثر الجنسي؟</h2></div>
+  <p><b>معظم النباتات</b> تمرّ بطور من <b>التكاثر الجنسي</b> <span dir="ltr">(Sexual Reproduction)</span> في مرحلة من دورة حياتها. السبب: يعطي نباتات <b>متنوّعة وراثياً</b>، مثل عائلة فيها إخوة كل واحد يختلف شوي عن الثاني، فلو جاء مرض ممكن ينجو بعضهم.</p>
+  <div class="grid2" style="margin-top:10px">
+    <div class="box mint"><h3>التنوّع الوراثي يعزّز المقدرة على</h3><p><b>مقاومة الأمراض</b>، و<b>الافتراس</b>، و<b>التأقلم</b> مع تغيّرات البيئة.</p></div>
+    <div class="box pink"><h3>فتستمر النباتات وتنتشر</h3><p>على شكل نباتات <b>جديدة وهجينة</b>، صفاتها الوراثية تختلف إلى حدّ ما عن النباتات الأم. مثال: <b>وردة هجينة</b> من حبّة لقاح انتقلت من نوع ورد إلى نوع آخر.</p></div>
+  </div>
+  <p style="margin-top:12px">صحيح أن <b>الأزهار</b> أكثر التراكيب التكاثرية شيوعاً، لكن <b>الحزازيات والسرخسيات والنباتات المخروطية</b> تتكاثر <b>من دون أزهار</b>. عندها <b>تراكيب متخصّصة</b> لإيواء البويضات والأمشاج الذكرية.</p>
+  <p class="tip" style="margin-top:10px">التكاثر الجنسي في النباتات <b>أعقد</b> منه في معظم الحيوانات، لأن دورة حياتها تحتاج <b>طورين مختلفين</b>. وهذا اسمه <b>تعاقب الأجيال</b>.</p>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">تعاقب الأجيال</h2></div>
+  <div class="qbox"><b>تعاقب الأجيال</b> <span dir="ltr">(Alternation of Generations)</span>: ظاهرة تمرّ بها <b>جميع النباتات</b> أثناء دورة حياتها، تتحوّل خلالها من أجيال <b>ثنائية المجموعة الكروموسومية (2n)</b> إلى أجيال <b>أحادية المجموعة الكروموسومية (n)</b>. وتتضمّن طورين: <b>الطور المشيجي</b> و<b>الطور الجرثومي (البوغي)</b>.</div>
+  <p class="muted" style="font-size:14px;margin-top:8px"><span class="help">للفهم</span>تخيّل كتاب وصفات: الخلية (n) معها <b>نسخة واحدة</b>، والخلية (2n) معها <b>نسختان</b>، واحدة من كل والد. الانقسام <b>الميوزي</b> يقسم النسختين فيعطي (n)، والانقسام <b>الميتوزي</b> ينسخ الخلية كما هي.</p>
+  <p style="margin-top:10px">كل طور اسمه من <b>اللي ينتجه</b>: المشيجي ينتج <b>الأمشاج</b>، والجرثومي ينتج <b>الجراثيم (الأبواغ)</b>.</p>
+  <svg class="stage plain" viewBox="0 0 400 270" role="img" aria-label="دورة تعاقب الأجيال: النباتات المشيجية تنتج أمشاجاً بالانقسام الميتوزي، الإخصاب ينتج زيجوتاً ثنائي المجموعة ينمو إلى نباتات جرثومية، هذه تنقسم خلاياها ميوزياً لتنتج جراثيم أحادية المجموعة، والجراثيم تنمو بالانقسام الميتوزي إلى نباتات مشيجية" style="margin-top:12px">
+    <defs><marker id="ah1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--muted)"/></marker></defs>
+    <rect x="0" y="0" width="400" height="135" fill="var(--p-butter)"/>
+    <rect x="0" y="135" width="400" height="135" fill="var(--p-sky)"/>
+    <line x1="0" y1="135" x2="400" y2="135" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <g font-size="11.5" font-weight="700" fill="var(--muted)" text-anchor="middle"><text x="200" y="21">أحادي المجموعة (n)</text><text x="200" y="260">ثنائي المجموعة (2n)</text></g>
+    <g fill="var(--card)" stroke="var(--line)" stroke-width="1.5">
+      <rect x="135" y="30" width="130" height="36" rx="14"/><rect x="135" y="204" width="130" height="36" rx="14"/>
+      <rect x="290" y="70" width="96" height="30" rx="12"/><rect x="290" y="120" width="96" height="30" rx="12"/><rect x="290" y="170" width="96" height="30" rx="12"/>
+      <rect x="14" y="70" width="100" height="30" rx="12"/><rect x="14" y="120" width="100" height="30" rx="12"/>
+    </g>
+    <g font-size="12.5" font-weight="800" fill="var(--text)" text-anchor="middle">
+      <text x="200" y="53">النباتات المشيجية (n)</text><text x="200" y="227">النباتات الجرثومية (2n)</text>
+      <text x="338" y="90">أمشاج (n)</text><text x="338" y="140">الإخصاب</text><text x="338" y="190">زيجوت (2n)</text>
+      <text x="64" y="90">جراثيم (n)</text><text x="64" y="140">انقسام ميوزي</text>
+    </g>
+    <g fill="none" stroke="var(--muted)" stroke-width="2" marker-end="url(#ah1)">
+      <path d="M265 44 Q330 40 336 66"/><path d="M338 100 L338 116"/><path d="M338 150 L338 166"/><path d="M330 200 Q320 222 270 222"/>
+      <path d="M135 222 Q70 222 64 154"/><path d="M64 120 L64 104"/><path d="M64 70 Q70 44 131 46"/>
+    </g>
+    <g font-size="11" font-weight="700" fill="var(--muted)" text-anchor="middle">
+      <text x="318" y="32">ميتوزي</text><text x="306" y="250">نمو بالميتوزي</text><text x="96" y="32">نمو بالميتوزي</text>
+    </g>
+    <g font-size="12" font-weight="700" fill="var(--text)" text-anchor="middle"><text x="200" y="112">جيل ينتج أمشاجاً</text><text x="200" y="166">جيل ينتج جراثيم</text></g>
+  </svg>
+  <div class="grid2" style="margin-top:12px">
+    <div class="box butter"><h3>الطور المشيجي <span dir="ltr" style="font-size:13px">Gametophyte</span></h3><p>النبات مكوّن من خلايا <b>(n)</b>. ينتج <b>الأمشاج</b> اللي تتّحد أثناء <b>الإخصاب</b> لتكوّن <b>الزيجوت (اللاقحة)</b>.</p></div>
+    <div class="box sky"><h3>الطور الجرثومي (البوغي) <span dir="ltr" style="font-size:13px">Sporophyte</span></h3><p>النبات مكوّن من خلايا <b>(2n)</b>. خلايا معيّنة تنقسم <b>ميوزياً</b> لإنتاج <b>الجراثيم (الأبواغ)</b>، وهي تراكيب تكاثرية <b>(n)</b>.</p></div>
+  </div>
+  <p style="margin-top:12px">وتكمل الدورة: الجراثيم تنقسم <b>ميتوزياً</b> فتنتج النباتات المشيجية. وهذه النبتة المشيجية نوعان:</p>
+  <ul class="pts">
+    <li style="--b:var(--leaf2)"><b>مستقلة</b>: نبتة تعيش بنفسها، كما في <b>الحزازيات والسرخسيات</b>.</li>
+    <li style="--b:var(--cone2)"><b>مجموعة خلايا</b> تعتمد كلياً على خلايا النبتة الجرثومية، كما في <b>النباتات المخروطية والزهرية</b>.</li>
+  </ul>
+
+  <div class="act" data-act="order" data-key="order" data-rtl
+       data-answer='["جرثومة (n)","نبتة مشيجية (n)","أمشاج (n)","زيجوت (2n)","نبتة جرثومية (2n)"]'
+       data-extra='["أمشاج (2n)"]'
+       data-ok="ممتاز! الجرثومة (n) تنمو بالميتوزي نبتة مشيجية (n)، تنتج أمشاجاً (n)، الإخصاب يعطي زيجوت (2n) ينمو نبتة جرثومية (2n)، وهذه تنتج جراثيم جديدة بالميوزي. والأمشاج دائماً (n)."
+       data-no="القطع الحمراء في غير مكانها. الجرثومة تنمو نبتة مشيجية، المشيجية تنتج الأمشاج، الأمشاج تتّحد فتعطي زيجوت، والزيجوت ينمو نبتة جرثومية. وانتبه: الأمشاج دائماً (n)، لأنها تتّحد مثنى لتعطي (2n).">
+    <h3>رتّب الدورة <span class="k">نشاط</span></h3>
+    <p>ابدأ من الجرثومة ورتّب الدورة. فيه قطعة غلط.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">النبات مو مثل الحيوان</h2></div>
+  <p>دورة حياة النباتات تختلف عن دورة حياة الحيوانات في <b>أمرين</b>:</p>
+  <div class="grid2" style="margin-top:10px">
+    <div class="box peach"><h3>1 · مين السائد؟</h3><p>في الحيوانات الخلايا الجسمية <b>(2n)</b> دائماً. في النباتات قد يكون <b>الجرثومي</b> أو <b>المشيجي</b> هو السائد: في <b>معظم الأنواع</b> الجرثومي، أمّا في <b>الحزازيات</b> فالمشيجي.</p></div>
+    <div class="box lav"><h3>2 · الميوزي ينتج إيش؟</h3><p>في الحيوانات الانقسام الميوزي ينتج <b>الأمشاج مباشرة</b>. في النباتات ينتج <b>الجراثيم</b>، والجراثيم بعدين تعطي ما ينتج الأمشاج.</p></div>
+  </div>
+  <p style="margin-top:12px">الجراثيم ممكن تصير <b>نباتات مستقلة تنتج الأمشاج</b> (السرخسيات والحزازيات)، أو تنمو إلى <b>تراكيب تنتج الأمشاج</b> لكنها <b>ما تستقل</b> وتبقى معتمدة على الطور الجرثومي (المخروطية والزهرية).</p>
+  <p>وكما في الحيوانات، الإخصاب = اتّحاد <b>السابحات الذكرية</b> و<b>البويضة</b>، فينتج <b>زيجوت جديد (2n)</b>. لكن:</p>
+  <div class="grad" aria-label="الماء والإخصاب">
+    <span style="background:var(--p-sky)">الحزازيات والسرخسيات: الإخصاب في الماء</span><b>·</b><span style="background:var(--p-butter)">المخروطية والزهرية: بلا حاجة للماء</span>
+  </div>
+  <p class="muted" style="font-size:14px;margin-top:8px">جرّب في المختبر فوق: أوقف المطر ثم تقدّم بالحزازيات، وبعدين بالصنوبر.</p>
+</section>
+
+<section class="sec" aria-labelledby="s5">
+  <div class="sec-head"><span class="num">5</span><h2 id="s5">النباتات اللابذرية <span dir="ltr" style="font-size:14px">Seedless Plants</span></h2></div>
+  <h3 style="margin:4px 0 6px">(أ) الحزازيات: الفيوناريا</h3>
+  <p>في <b>الفيوناريا</b> (من الحزازيات) <b>الطور السائد هو المشيجي</b>. البساط الأخضر الناعم اللي تشوفه على الصخر الرطب هو النبتة المشيجية <b>(n)</b>: تنمو من جرثومة في مكان مناسب، <b>مستقلة</b> تصنع غذاءها لأن خلاياها فيها <b>بلاستيدات خضراء</b>، وتمتص الماء والمعادن.</p>
+  <svg class="stage plain" viewBox="0 0 400 230" role="img" aria-label="نبتة فيوناريا: بساط أخضر هو النبتة المشيجية، وفوقه ساق رفيعة ومحفظة جرثومية هما النبتة الجرثومية. وبجانبها رسم للأرشيجونة بشكل قارورة في قاعدتها بويضة، والأنثريدة كيس فيه سابحات ذكرية" style="margin-top:10px"><g id="mossFig"></g></svg>
+  <ol class="tline" style="margin-top:12px">
+    <li><span class="yr">1 · أمشاج</span><div class="ev"><b>الأنثريدة والأرشيجونة</b><span>بالانقسام <strong>الميتوزي</strong>: <strong>الأنثريدة</strong> (التركيب الذكري) تنتج <strong>سابحات ذكرية ذات أسواط</strong>، و<strong>الأرشيجونة</strong> (التركيب الأنثوي) تنتج <strong>البويضة</strong>.</span></div></li>
+    <li><span class="yr">2 · سباحة</span><div class="ev"><b>في فترة الخصوبة</b><span>السابحات تنفصل عن الأنثريدة و<strong>تسبح في ماء المطر</strong> نحو الأرشيجونة، وتخصّب البويضة <strong>عند قاعدتها</strong>.</span></div></li>
+    <li><span class="yr">3 · زيجوت</span><div class="ev"><b>بيضة مخصّبة (2n)</b><span>الزيجوت ينقسم <strong>ميتوزياً</strong> عدّة مرات فيصير <strong>جنيناً (2n)</strong> داخل الأرشيجونة.</span></div></li>
+    <li><span class="yr">4 · جرثومي</span><div class="ev"><b>نبتة جرثومية (2n)</b><span>الجنين ينمو <strong>على النبتة المشيجية</strong> و<strong>يعتمد عليها في الغذاء</strong>: ساق ومحفظة جرثومية (بوغية).</span></div></li>
+    <li><span class="yr">5 · جراثيم</span><div class="ev"><b>انقسامات ميوزية</b><span>داخل <strong>المحافظ البوغية</strong> تنتج جراثيم <strong>(n)</strong>. في الظروف المناسبة تنبت وتنمو نبتة مشيجية (ذكرية أو أنثوية).</span></div></li>
+  </ol>
+
+  <h3 style="margin:22px 0 6px">(ب) السرخسيات: الخنشار</h3>
+  <p>دورة حياة <b>الخنشار</b> تشبه الحزازيات، مع <b>فرق</b>: الأنثريدة والأرشيجونة تتكوّنان عند <b>السطح السفلي</b> للنبتة المشيجية. وهنا النبتة الكبيرة اللي تزرعها في البيت هي <b>الجرثومية</b>، والمشيجية صغيرة.</p>
+  <svg class="stage plain" viewBox="0 0 400 210" role="img" aria-label="يمين: ورقة سرخس كبيرة من الأسفل عليها بثرات بنية هي المحافظ البوغية. يسار: نبتة مشيجية صغيرة على شكل قلب، على سطحها السفلي أنثريدات وأرشيجونات" style="margin-top:10px"><g id="fernFig"></g></svg>
+  <ul class="pts" style="margin-top:12px">
+    <li style="--b:var(--wat)">عند <b>توفّر الماء</b> تسبح السابحات من الأنثريدة نحو الأرشيجونة، وتتّحد <b>إحداها</b> مع البويضة: <b>بويضة مخصّبة (2n)</b>، وهي <b>الخليّة الأولى للنبتة الجرثومية</b>.</li>
+    <li style="--b:var(--capsule)">في الطور الجرثومي تتكوّن <b>المحافظ البوغية</b> على شكل <b>بثرات</b> في <b>الجهة السفلى لأوراق</b> الخنشار. خلاياها تنقسم <b>ميوزياً</b> فتنتج جراثيم <b>(n)</b>.</li>
+    <li style="--b:var(--leaf2)">تنفجر المحافظ فـ<b>ينقل الهواء</b> الجراثيم الناضجة وينشرها في مساحات واسعة، وتنمو نباتات مشيجية جديدة <b>(n)</b>.</li>
+  </ul>
+
+  <div class="act" data-act="sort" data-key="sort" data-bins='["أحادي المجموعة (n)","ثنائي المجموعة (2n)"]'
+       data-items='[["الجرثومة (البوغ)",0,"الجرثومة تنتج عن انقسام ميوزي، فهي أحادية المجموعة (n)."],["السابحة الذكرية",0,"السابحات أمشاج تنتجها النبتة المشيجية (n) بالانقسام الميتوزي، فهي (n)."],["البويضة في الأرشيجونة",0,"البويضة مشيج، والأمشاج كلها (n)، لأنها تتّحد مثنى لتعطي (2n)."],["البساط الأخضر في الحزازيات",0,"البساط الأخضر هو الطور المشيجي السائد في الحزازيات، خلاياه (n)."],["الزيجوت",1,"الزيجوت من اتّحاد مشيجين (n) و(n)، فهو (2n)."],["المحفظة البوغية",1,"المحفظة جزء من النبتة الجرثومية، خلاياها (2n) تنقسم ميوزياً لتنتج جراثيم (n)."],["ورقة السرخس الكبيرة",1,"السرخس الكبير بأوراقه هو النبتة الجرثومية، خلاياها (2n)."],["شجرة الصنوبر",1,"شجرة الصنوبر هي النبتة الجرثومية، الطور السائد في المخروطيات (2n)."]]'
+       data-ok="ممتاز! الجراثيم والأمشاج والنبتة المشيجية (n). الزيجوت وكل النبتة الجرثومية (المحفظة، السرخس الكبير، شجرة الصنوبر) (2n).">
+    <h3>n أم 2n؟ <span class="k">نشاط</span></h3>
+    <p>صنّف كل بطاقة حسب عدد المجموعات الكروموسومية في خلاياها.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s6">
+  <div class="sec-head"><span class="num">6</span><h2 id="s6">التكاثر بالبذور <span dir="ltr" style="font-size:14px">Reproduction by Seeds</span></h2></div>
+  <p>أنواع كثيرة من النباتات تنتج <b>البذور</b> أثناء التكاثر الجنسي.</p>
+  <div class="qbox"><b>البذرة</b>: تركيب يحتوي على <b>جنين نباتي (2n)</b>، ويخزّن الغذاء <b>في شكل نشا بصورة أساسية</b>. ولمعظم البذور <b>غلاف واقٍ قوي</b>.</div>
+  <p style="margin-top:12px">مثل الجراثيم، البذور تنتقل بعيداً عن النبتة الأم بواسطة <b>الرياح أو الماء أو الحيوانات</b>، فتنتشر النباتات البذرية في مساحات واسعة. ومثل علبة غداء مع طفل في رحلة: البذرة فيها الجنين وأكله وغلافه.</p>
+  <div class="grid2" style="margin-top:10px">
+    <div class="box butter"><h3>عاريات البذور</h3><p>بذورها <b>غير مغلّفة بثمرة</b>. مثل <b>النباتات المخروطية</b>: بذورها داخل <b>المخاريط</b>.</p></div>
+    <div class="box mint"><h3>مغطّاة البذور</h3><p>بذورها <b>مغلّفة بالثمار</b>، مثل بذور <b>النباتات الزهرية</b>. منها <b>أحادية الفلقة</b> <span dir="ltr">(Monocots)</span> و<b>ثنائية الفلقة</b> <span dir="ltr">(Dicots)</span> حسب عدد الفلقات في البذرة.</p></div>
+  </div>
+
+  <h3 style="margin:20px 0 6px">الصنوبر: مخروطان على شجرة وحدة</h3>
+  <p>شجرة الصنوبر تحمل نوعين من <b>المخاريط</b>: <b>ذكرية</b> صغيرة و<b>أنثوية</b> أكبر، <b>منفصلة</b> بعضها عن بعض. المخاريط هي <b>التراكيب التكاثرية</b> في المخروطيات. وهذا مقطع طولي في كل منهما:</p>
+  <svg class="stage plain" viewBox="0 0 400 230" role="img" aria-label="مقطع طولي في مخروط ذكري صغير حراشفه تحمل حبوب اللقاح، ومقطع طولي في مخروط أنثوي أكبر على حراشفه بويضات" style="margin-top:10px"><g id="coneFig"></g></svg>
+  <div class="grid2" style="margin-top:12px">
+    <div class="box sky"><h3>المخروط الذكري</h3><p>في <b>الربيع</b> خلايا معيّنة <b>(2n)</b> فيه تنتج بالانقسام <b>الميوزي</b> <b>جراثيم ذكرية دقيقة</b> <span dir="ltr">(Microspores)</span> <b>(n)</b>، تنمو إلى نباتات مشيجية ذكرية تنتج <b>حبوب اللقاح</b> <span dir="ltr">(Pollen)</span>.</p></div>
+    <div class="box pink"><h3>المخروط الأنثوي</h3><p>في الوقت نفسه ينتج <b>جراثيم أنثوية ضخمة</b> <span dir="ltr">(Macrospores)</span>، تنمو إلى نباتات مشيجية أنثوية تنتج <b>البيض</b> <span dir="ltr">(Eggs)</span> داخل <b>البويضة</b>.</p></div>
+  </div>
+  <p class="tip" style="margin-top:10px">عكس الحزازيات والسرخسيات: جراثيم الصنوبر <b>ما تكوّن نباتات مشيجية مستقلة</b>، بل تنتج <b>مباشرة</b> حبوب اللقاح أو البيض.</p>
+</section>
+
+<section class="sec" aria-labelledby="s7">
+  <div class="sec-head"><span class="num">7</span><h2 id="s7">من حبّة لقاح إلى شجرة</h2></div>
+  <ol class="tline">
+    <li><span class="yr">1 · تلقيح</span><div class="ev"><b>حبوب اللقاح تطير</b><span>المخاريط الذكرية تطلق <strong>أعداداً كبيرة</strong> من حبوب اللقاح في <strong>الهواء</strong>. <strong>عدد قليل</strong> منها فقط يقع على المخاريط الأنثوية.</span></div></li>
+    <li><span class="yr">2 · أنبوبة</span><div class="ev"><b>أنبوبة اللقاح</b><span>تنمو من حبّة اللقاح نحو البيضة، وتطلق <strong>الأمشاج الذكرية</strong>. بدون سباحة، لهذا <strong>ما يحتاج ماء</strong>.</span></div></li>
+    <li><span class="yr">3 · إخصاب</span><div class="ev"><b>زيجوت (2n)</b><span>المشيج الذكري يتّحد بالبيضة داخل البويضة فتنتج <strong>بيضة مخصّبة (2n)</strong> (اللاقحة).</span></div></li>
+    <li><span class="yr">4 · جنين</span><div class="ev"><b>انقسامات ميتوزية</b><span>حتى يتكوّن <strong>جنين صغير</strong>: <strong>سويقة تحت فلقية</strong>، في طرف منها <strong>جذير</strong> وفي الآخر <strong>ريشة</strong> محاطة بعدد كبير من الأغلفة.</span></div></li>
+    <li><span class="yr">5 · بذرة</span><div class="ev"><b>الأندوسبرم والغلاف والجناح</b><span>بقية النبتة المشيجية الأنثوية تحيط بالجنين فتكوّن <strong>الأندوسبرم</strong>، و<strong>الغلاف البيضي يتصلّب</strong> فيصير <strong>غلاف البذرة</strong>، وفيه <strong>جناح رقيق</strong> يساعد الرياح على نشرها.</span></div></li>
+    <li><span class="yr">6 · انتظار</span><div class="ev"><b>وقت طويل</b><span>بين التلقيح وتكوّن البذرة قد <strong>يتجاوز السنة</strong>. خلاله <strong>تتساقط المخاريط الذكرية</strong> و<strong>تبقى الأنثوية</strong> معلّقة على الشجرة.</span></div></li>
+    <li><span class="yr">7 · إنبات</span><div class="ev"><b>بادرة ثم شجرة</b><span>يخرج <strong>الجذير</strong> ويخترق التربة، وتستطيل <strong>السويقة</strong> وتظهر فوق التربة، ثم تصير البادرة تدريجياً <strong>شجرة غير محدودة النموّ</strong>.</span></div></li>
+  </ol>
+
+  <h3 style="margin:20px 0 6px">افتح بذرة صنوبر: اضغط على أي جزء</h3>
+  <svg class="stage plain" id="seed" viewBox="0 0 400 190" role="img" aria-label="مقطع طولي في بذرة صنوبر: جناح رقيق، غلاف البذرة، الأندوسبرم، تجويف الجنين، والجنين بجذيره وريشته"></svg>
+  <div class="lay" id="seedBtns" role="group" aria-label="أجزاء البذرة"></div>
+  <div class="info" id="seedInfo" aria-live="polite"></div>
+
+  <div class="act" data-act="gap" data-key="gap" data-ok="صح! في المخروطيات حبوب اللقاح تنتقل بالهواء وأنبوبة اللقاح توصل الأمشاج الذكرية للبيضة، فالإخصاب لا يحتاج إلى الماء. والجنين محمي داخل البذرة بين الحراشف السميكة.">
+    <h3>أكمل الناقص <span class="k">نشاط</span></h3>
+    <p>الحزازيات تحتاج بيئة رطبة لتتكاثر، أمّا الصنوبر فيتكاثر على جبل جاف لأن الإخصاب فيه <span class="gap">؟</span>.</p>
+    <div class="opts">
+      <button class="pc" data-no="هذا في الحزازيات والسرخسيات، حيث تسبح السابحات الذكرية في الماء. الصنوبر عكسها.">يحدث في ماء المطر</button>
+      <button class="pc" data-ok>لا يحتاج إلى الماء</button>
+      <button class="pc" data-no="الانقسام الميوزي ينتج الجراثيم. الإخصاب اتّحاد مشيج ذكري مع بيضة، وهو اللي يعطي زيجوت (2n).">يحدث بالانقسام الميوزي</button>
+      <button class="pc" data-no="بالعكس: الصنوبر يعتمد على حبوب اللقاح اللي تنقلها الرياح.">لا يحتاج إلى حبوب لقاح</button>
+    </div>
+  </div>
+
+  <h3 style="margin:22px 0 6px">مقارنة سريعة</h3>
+  <table class="cmp">
+    <thead><tr><th></th><th>الحزازيات</th><th>السرخسيات</th><th>الصنوبر</th></tr></thead>
+    <tbody>
+      <tr><th>الطور السائد</th><td>المشيجي</td><td>الجرثومي</td><td>الجرثومي</td></tr>
+      <tr><th>النبتة المشيجية</th><td>مستقلة</td><td>مستقلة صغيرة</td><td>خلايا معتمدة</td></tr>
+      <tr><th>الإخصاب</th><td>في الماء</td><td>في الماء</td><td>بلا ماء</td></tr>
+      <tr><th>تنتشر بـ</th><td>جراثيم</td><td>جراثيم بالهواء</td><td>بذور بجناح</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="sec" aria-labelledby="s8">
+  <div class="sec-head"><span class="num">8</span><h2 id="s8">مثال محلول: مين السائد؟</h2></div>
+  <div class="qbox">سؤال الكتاب: ما الطور السائد في كلّ من <b>الحزازيات</b> و<b>السرخسيات</b> و<b>المخروطيات</b>؟</div>
+  <div class="row"><button class="lite" id="hideSol" type="button" aria-pressed="false">أخفِ الحل وجرّب أولاً</button></div>
+  <ol class="steps" id="steps">
+    <li><span><b>طريقة التفكير:</b> اسأل: النبتة الكبيرة اللي تشوفها، هل هي (n) أو (2n)؟ والطور الثاني صغير أو يعتمد عليها.</span></li>
+    <li><span><b>الحزازيات:</b> البساط الأخضر نبتة <b>مشيجية (n)</b> مستقلة، والنبتة الجرثومية مجرد ساق ومحفظة <b>تعتمد عليها</b> في الغذاء. إذن السائد: <b>الطور المشيجي</b>.</span></li>
+    <li><span><b>السرخسيات:</b> الأوراق الكبيرة اللي عليها بثرات المحافظ البوغية هي نبتة <b>جرثومية (2n)</b>، والمشيجية صغيرة. إذن السائد: <b>الطور الجرثومي</b>.</span></li>
+    <li><span><b>المخروطيات:</b> الشجرة نفسها <b>جرثومية (2n)</b>، والنباتات المشيجية خلايا داخل المخاريط <b>تعتمد كلياً</b> عليها. إذن السائد: <b>الطور الجرثومي</b>، مثل معظم الأنواع النباتية.</span></li>
+  </ol>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">9</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sd">
+  <div class="sec-head"><span class="num">10</span><h2 id="sd">في حياتك</h2></div>
+  <div class="life">
+    <div class="card"><h3>البساط الأخضر عند المكيّف</h3><p>تحت مكيّف يقطر ماء أو على جدار ظليل رطب، تلقى بساطاً أخضر ناعماً من الحزازيات. ما تنمو في الرمل الجاف، لأن سابحاتها لازم تسبح للبويضة.</p></div>
+    <div class="card"><h3>نقاط بنية تحت ورق السرخس</h3><p>السرخس في أصيص البيت قد تلقى تحت أوراقه بثرات بنية مرتّبة. مو مرض: هذي المحافظ البوغية اللي تنثر الجراثيم.</p></div>
+    <div class="card"><h3>حبّات الصنوبر في الأكل</h3><p>حبّات الصنوبر فوق الأرز والحلويات بذور من المخاريط الأنثوية: في كل حبّة جنين صغير محاط بالأندوسبرم.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">11</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>من الكتاب: قارن الانقسام الميوزي في النباتات بالانقسام الميوزي في الحيوانات.</p>
+      <div class="opts"><button>في الاثنين ينتج أمشاجاً مباشرة</button><button data-ok>في النباتات ينتج جراثيم (أبواغاً)، وفي الحيوانات ينتج أمشاجاً مباشرة</button><button>في النباتات ينتج أمشاجاً، وفي الحيوانات ينتج جراثيم</button></div>
+      <p class="why" hidden>الصحيح: في الحيوانات الميوزي يكوّن الأمشاج مباشرة. في النباتات تنقسم خلايا النبتة الجرثومية (2n) ميوزياً فتنتج جراثيم (n)، والأمشاج تنتجها النبتة المشيجية بعدين بالانقسام الميتوزي.</p></div>
+    <div class="q"><p>سرخس كبير في حديقة رطبة، وبساط حزازيات على صخرة. ما الطور السائد في كل منهما؟</p>
+      <div class="opts"><button>الاثنان: الطور المشيجي</button><button>السرخس: المشيجي، والحزازيات: الجرثومي</button><button data-ok>السرخس: الجرثومي، والحزازيات: المشيجي</button></div>
+      <p class="why" hidden>الصحيح: في معظم الأنواع النباتية، ومنها السرخسيات والمخروطيات، الطور الجرثومي (2n) هو السائد. الحزازيات هي الاستثناء: البساط الأخضر نبتة مشيجية (n) سائدة.</p></div>
+    <div class="q"><p>سؤال للتفكير الناقد من الكتاب: خلال أي مرحلة تحدث الارتباطات الجينية الجديدة، وأي نبتة ترثها أولاً؟</p>
+      <div class="opts"><button>أثناء الإخصاب، والنبتة الجرثومية ترثها أولاً</button><button data-ok>أثناء الانقسام الميوزي في النبتة الجرثومية، والنبتة المشيجية ترثها أولاً</button><button>أثناء الانقسام الميتوزي في النبتة المشيجية، والنبتة الجرثومية ترثها أولاً</button></div>
+      <p class="why" hidden>الصحيح: الانقسام الميوزي هو اللي يوزّع الكروموسومات ويعطي تراكيب جديدة، ويحدث في النبتة الجرثومية عند إنتاج الجراثيم. الجرثومة (n) تنمو مباشرة نبتة مشيجية، فهي أول من يحمل هذه التغيّرات. والانقسام الميتوزي ينسخ الخلية كما هي.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li><b>تعاقب الأجيال</b>: طور <b>مشيجي (n)</b> ينتج الأمشاج، والإخصاب يعطي زيجوت (2n) ينمو طوراً <b>جرثومياً (2n)</b> تنقسم خلاياه ميوزياً لإنتاج <b>الجراثيم (n)</b>.</li>
+      <li><b>الحزازيات</b>: السائد المشيجي. <b>الأنثريدة</b> تنتج السابحات و<b>الأرشيجونة</b> تنتج البويضة، والإخصاب <b>في الماء</b> (والسرخسيات كذلك، لكن السائد فيها الجرثومي).</li>
+      <li><b>البذرة</b>: جنين (2n) + غذاء نشوي + غلاف. <b>الصنوبر</b> (عاريات البذور): مخاريط ذكرية وأنثوية، حبوب لقاح بالهواء، والإخصاب <b>بلا ماء</b>.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الأحياء، الصف الحادي عشر، الوحدة الأولى، ص 61 إلى 67</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"bio-u1-2-1"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+function f1(n){return (Math.round(n*10)/10).toString();}
+
+/* ---------- lab: the two-generation cycle (simplified drawing for understanding) ---------- */
+var PL={
+  moss:{dom:0,water:1,indep:1,txt:[
+    "النبتة المشيجية (n): البساط الأخضر اللي تشوفه. تنمو من جرثومة، مستقلة، تصنع غذاءها بالبلاستيدات الخضراء. هي الطور السائد في الحزازيات.",
+    "الأنثريدة تنتج سابحات ذكرية بأسواط، والأرشيجونة تنتج البويضة، والاثنتان بالانقسام الميتوزي. السابحات لازم تسبح في ماء المطر لتصل للبويضة.",
+    "إخصاب داخل الأرشيجونة: سابحة + بويضة = زيجوت (2n). ينقسم ميتوزياً فيصير جنيناً.",
+    "النبتة الجرثومية (2n): ساق ومحفظة تنمو فوق النبتة المشيجية وتعتمد عليها في الغذاء.",
+    "داخل المحفظة البوغية: انقسام ميوزي ينتج جراثيم (n). في مكان مناسب تنبت كل جرثومة نبتة مشيجية."]},
+  fern:{dom:3,water:1,indep:1,txt:[
+    "النبتة المشيجية (n): صغيرة ومستقلة. الأنثريدة والأرشيجونة على سطحها السفلي.",
+    "الأنثريدة تطلق السابحات الذكرية، والأرشيجونة فيها البويضة. عند توفّر الماء تسبح السابحات نحو الأرشيجونة.",
+    "سابحة واحدة تتّحد مع البويضة: بويضة مخصّبة (2n)، وهي الخليّة الأولى للنبتة الجرثومية.",
+    "النبتة الجرثومية (2n): السرخس الكبير بأوراقه، وهي الطور السائد. تحت أوراقها بثرات هي المحافظ البوغية.",
+    "داخل المحافظ: انقسام ميوزي ينتج جراثيم (n). تنفجر المحافظ فينشرها الهواء، وكل جرثومة تنمو نبتة مشيجية."]},
+  pine:{dom:3,water:0,indep:0,txt:[
+    "النبتة المشيجية (n): خلايا داخل المخاريط تعتمد كلياً على الشجرة. الذكرية تنتج حبوب اللقاح، والأنثوية تنتج البيض.",
+    "حبوب اللقاح تطير في الهواء، وقليل منها يقع على المخروط الأنثوي. أنبوبة اللقاح تنمو نحو البيضة وتطلق الأمشاج الذكرية. بلا سباحة، بلا ماء.",
+    "إخصاب داخل البويضة: مشيج ذكري + بيضة = زيجوت (2n)، ينقسم ميتوزياً فيصير جنيناً داخل بذرة.",
+    "تنبت البذرة وينمو الجنين إلى نبتة جرثومية (2n): شجرة الصنوبر نفسها، الطور السائد. تحمل مخاريط ذكرية وأنثوية.",
+    "في الربيع: المخاريط الذكرية تنتج جراثيم دقيقة (n) والأنثوية جراثيم ضخمة، بالانقسام الميوزي. ما تصير نباتات مستقلة، بل تنتج مباشرة حبوب اللقاح أو البيض."]}
+};
+var NAMES=["نبتة مشيجية (n)","أمشاج (n)","زيجوت (2n)","نبتة جرثومية (2n)","جراثيم (n)"];
+var ANG=[-90,-30,54,126,210], CX=200, CY=152, R=100;
+var plant="moss", st=0, rain=true, blocked=false;
+function pos(i){var a=ANG[i]*Math.PI/180;return [CX+R*Math.cos(a),CY+R*Math.sin(a)];}
+function rr(i){return i===PL[plant].dom?36:24;}
+function tuft(x,y,k){var s="",j;for(j=-2;j<=2;j++){var cx=x+j*6*k;s+='<ellipse cx="'+f1(cx)+'" cy="'+f1(y)+'" rx="'+f1(3.2*k)+'" ry="'+f1(10*k)+'" fill="var(--leaf)" stroke="var(--leaf2)" stroke-width="1.5" transform="rotate('+(j*14)+' '+f1(cx)+' '+f1(y+8*k)+')"/>';}return s;}
+function sperm(x,y,k){return '<path d="M'+f1(x)+' '+f1(y)+' q'+f1(-3*k)+' '+f1(-3*k)+' '+f1(-6*k)+' 0 t'+f1(-6*k)+' 0" fill="none" stroke="var(--sperm)" stroke-width="1.6"/><circle cx="'+f1(x)+'" cy="'+f1(y)+'" r="'+f1(2.6*k)+'" fill="var(--sperm)"/>';}
+function icon(i,x,y,r){
+  var k=r/24, s="", p=plant;
+  if(i===0){
+    if(p==="moss") s=tuft(x,y,k*1.05);
+    else if(p==="fern") s='<path d="M'+f1(x)+' '+f1(y+13*k)+' C'+f1(x-22*k)+' '+f1(y-1*k)+' '+f1(x-15*k)+' '+f1(y-19*k)+' '+f1(x-3*k)+' '+f1(y-11*k)+' L'+f1(x)+' '+f1(y-6*k)+' L'+f1(x+3*k)+' '+f1(y-11*k)+' C'+f1(x+15*k)+' '+f1(y-19*k)+' '+f1(x+22*k)+' '+f1(y-1*k)+' '+f1(x)+' '+f1(y+13*k)+'Z" fill="var(--leaf)" stroke="var(--leaf2)" stroke-width="1.5"/>';
+    else s='<ellipse cx="'+f1(x)+'" cy="'+f1(y)+'" rx="'+f1(11*k)+'" ry="'+f1(16*k)+'" fill="var(--cone)" stroke="var(--cone2)" stroke-width="1.5"/><circle cx="'+f1(x-3*k)+'" cy="'+f1(y-4*k)+'" r="'+f1(2.4*k)+'" fill="var(--pol)"/><circle cx="'+f1(x+3*k)+'" cy="'+f1(y+2*k)+'" r="'+f1(2.4*k)+'" fill="var(--pol)"/><circle cx="'+f1(x-2*k)+'" cy="'+f1(y+8*k)+'" r="'+f1(2.4*k)+'" fill="var(--pol)"/>';
+  } else if(i===1){
+    if(p==="pine") s='<circle cx="'+f1(x-14*k)+'" cy="'+f1(y)+'" r="'+f1(3.4*k)+'" fill="var(--pol)"/><circle cx="'+f1(x-2*k)+'" cy="'+f1(y)+'" r="'+f1(3.4*k)+'" fill="var(--pol)"/><circle cx="'+f1(x-8*k)+'" cy="'+f1(y)+'" r="'+f1(5*k)+'" fill="var(--pol)" stroke="var(--cone2)" stroke-width="1"/><circle cx="'+f1(x+10*k)+'" cy="'+f1(y)+'" r="'+f1(6.5*k)+'" fill="var(--egg)"/>';
+    else s=sperm(x-4*k,y-7*k,k)+sperm(x-6*k,y+7*k,k)+'<circle cx="'+f1(x+10*k)+'" cy="'+f1(y)+'" r="'+f1(7*k)+'" fill="var(--egg)"/>';
+  } else if(i===2){
+    var zr=11*k;
+    s='<path d="M'+f1(x)+' '+f1(y-zr)+' A'+f1(zr)+' '+f1(zr)+' 0 0 0 '+f1(x)+' '+f1(y+zr)+'Z" fill="var(--sperm)"/><path d="M'+f1(x)+' '+f1(y-zr)+' A'+f1(zr)+' '+f1(zr)+' 0 0 1 '+f1(x)+' '+f1(y+zr)+'Z" fill="var(--egg)"/>';
+  } else if(i===3){
+    if(p==="moss") s=tuft(x,y+9*k,k*0.75)+'<path d="M'+f1(x)+' '+f1(y+4*k)+' Q'+f1(x-3*k)+' '+f1(y-6*k)+' '+f1(x+2*k)+' '+f1(y-12*k)+'" fill="none" stroke="var(--capsule)" stroke-width="2"/><ellipse cx="'+f1(x+4*k)+'" cy="'+f1(y-16*k)+'" rx="'+f1(3.6*k)+'" ry="'+f1(6*k)+'" fill="var(--capsule)" transform="rotate(25 '+f1(x+4*k)+' '+f1(y-16*k)+')"/>';
+    else if(p==="fern"){
+      s='<path d="M'+f1(x)+' '+f1(y+18*k)+' Q'+f1(x-3*k)+' '+f1(y)+' '+f1(x+2*k)+' '+f1(y-18*k)+'" fill="none" stroke="var(--leaf2)" stroke-width="2"/>';
+      for(var j=0;j<5;j++){var yy=y+12*k-j*7*k, L=(7-j)*1.3*k; s+='<ellipse cx="'+f1(x-L)+'" cy="'+f1(yy)+'" rx="'+f1(L)+'" ry="'+f1(2.6*k)+'" fill="var(--leaf)"/><ellipse cx="'+f1(x+L+1*k)+'" cy="'+f1(yy-2*k)+'" rx="'+f1(L)+'" ry="'+f1(2.6*k)+'" fill="var(--leaf)"/>';}
+    } else s='<rect x="'+f1(x-2.5*k)+'" y="'+f1(y+8*k)+'" width="'+f1(5*k)+'" height="'+f1(9*k)+'" fill="var(--cone2)"/><polygon points="'+f1(x)+','+f1(y-19*k)+' '+f1(x-15*k)+','+f1(y+9*k)+' '+f1(x+15*k)+','+f1(y+9*k)+'" fill="var(--leaf2)"/><polygon points="'+f1(x)+','+f1(y-19*k)+' '+f1(x-10*k)+','+f1(y-2*k)+' '+f1(x+10*k)+','+f1(y-2*k)+'" fill="var(--leaf)"/>';
+  } else {
+    var D=[[-9,-6],[0,-9],[9,-5],[-6,5],[5,6],[0,0]], m;
+    for(m=0;m<D.length;m++){var big=p==="pine"&&m>3; s+='<circle cx="'+f1(x+D[m][0]*k)+'" cy="'+f1(y+D[m][1]*k)+'" r="'+f1((big?4.6:2.6)*k)+'" fill="var(--spore)"/>';}
+  }
+  return s;
+}
+function arc(i,col,w,dash){
+  var j=(i+1)%5, a0=ANG[i], a1=(j===0?270:ANG[j]);
+  var d0=(rr(i)+6)/R*180/Math.PI, d1=(rr(j)+8)/R*180/Math.PI;
+  var b0=(a0+d0)*Math.PI/180, b1=(a1-d1)*Math.PI/180;
+  return '<path d="M'+f1(CX+R*Math.cos(b0))+' '+f1(CY+R*Math.sin(b0))+' A'+R+' '+R+' 0 0 1 '+f1(CX+R*Math.cos(b1))+' '+f1(CY+R*Math.sin(b1))+'" fill="none" stroke="'+col+'" stroke-width="'+w+'"'+(dash?' stroke-dasharray="5 4"':'')+' marker-end="url(#'+(col==="var(--bad)"?"ahb":col==="var(--sc)"?"ahs":"ahm")+')"/>';
+}
+function drawLab(){
+  var s='<defs><marker id="ahm" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--muted)"/></marker><marker id="ahs" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--sc)"/></marker><marker id="ahb" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--bad)"/></marker></defs>';
+  s+='<rect x="0" y="0" width="400" height="'+CY+'" fill="var(--p-butter)"/><rect x="0" y="'+CY+'" width="400" height="'+(300-CY)+'" fill="var(--p-sky)"/>';
+  s+='<line x1="0" y1="'+CY+'" x2="400" y2="'+CY+'" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="5 4"/>';
+  s+='<g font-size="12" font-weight="700" fill="var(--muted)" text-anchor="middle"><text x="200" y="140">أحادي المجموعة (n)</text><text x="200" y="172">ثنائي المجموعة (2n)</text><text x="364" y="146">إخصاب</text><text x="38" y="146">ميوزي</text></g>';
+  /* rain or dry corner */
+  if(rain) s+='<g><circle cx="36" cy="26" r="11" fill="var(--card)"/><circle cx="52" cy="22" r="13" fill="var(--card)"/><rect x="26" y="24" width="40" height="12" rx="6" fill="var(--card)"/><g stroke="var(--wat)" stroke-width="2.5" stroke-linecap="round"><line x1="34" y1="42" x2="31" y2="50"/><line x1="46" y1="42" x2="43" y2="50"/><line x1="58" y1="42" x2="55" y2="50"/></g></g><text x="46" y="68" font-size="11.5" font-weight="700" fill="var(--text)" text-anchor="middle">مطر</text>';
+  else s+='<g><circle cx="46" cy="32" r="10" fill="var(--sun)"/><g stroke="var(--sun)" stroke-width="2.5" stroke-linecap="round"><line x1="46" y1="12" x2="46" y2="16"/><line x1="46" y1="48" x2="46" y2="52"/><line x1="26" y1="32" x2="30" y2="32"/><line x1="62" y1="32" x2="66" y2="32"/></g></g><text x="46" y="68" font-size="11.5" font-weight="700" fill="var(--text)" text-anchor="middle">جاف</text>';
+  var i;
+  for(i=0;i<5;i++){
+    var cur=i===st;
+    if(blocked&&i===1) s+=arc(i,"var(--bad)",3,true);
+    else s+=arc(i,cur?"var(--sc)":"var(--muted)",cur?3:2,false);
+  }
+  for(i=0;i<5;i++){
+    var p=pos(i), r=rr(i), cur2=i===st;
+    s+='<circle cx="'+f1(p[0])+'" cy="'+f1(p[1])+'" r="'+r+'" fill="var(--card)" stroke="'+(cur2?"var(--text)":"var(--line)")+'" stroke-width="'+(cur2?3:1.5)+'"'+(cur2?' stroke-dasharray="6 4"':'')+'/>';
+    s+=icon(i,p[0],p[1],r);
+    s+='<text x="'+f1(p[0])+'" y="'+f1(p[1]+r+14)+'" font-size="11.5" font-weight="'+(cur2?800:700)+'" fill="var(--text)" text-anchor="middle">'+NAMES[i]+(i===PL[plant].dom?" · سائد":"")+'</text>';
+  }
+  $("cyc").innerHTML=s;
+  var P=PL[plant];
+  $("tDom").textContent=P.dom===0?"المشيجي":"الجرثومي";
+  $("tWat").textContent=P.water?"نعم":"لا";
+  $("tInd").textContent=P.indep?"مستقلة":"معتمدة";
+  var m=$("cMsg");
+  if(blocked){m.textContent="ما في مطر: السابحات الذكرية ما تقدر تسبح إلى البويضة، فلا إخصاب ولا زيجوت. شغّل المطر وجرّب مرة ثانية."; m.className="msg";}
+  else {m.textContent=P.txt[st]+(plant==="pine"&&st===2&&!rain?" وحتى بدون مطر، تم الإخصاب.":""); m.className=st===2?"msg ok":"msg";}
+  [].forEach.call($("plantBtns").children,function(b){b.setAttribute("aria-pressed",String(b.dataset.p===plant));});
+  $("rain").setAttribute("aria-pressed",String(!rain)); $("rain").textContent=rain?"أوقف المطر":"شغّل المطر";
+}
+$("next").addEventListener("click",function(){
+  if(st===1&&PL[plant].water&&!rain){blocked=true;drawLab();return;}
+  blocked=false; st=(st+1)%5; drawLab();
+});
+$("rain").addEventListener("click",function(){rain=!rain;blocked=false;drawLab();});
+[].forEach.call($("plantBtns").children,function(b){b.addEventListener("click",function(){plant=b.dataset.p;st=0;blocked=false;drawLab();});});
+
+/* ---------- moss figure ---------- */
+function mossFig(){
+  var s='<rect x="0" y="196" width="230" height="34" fill="var(--soil)"/>', j;
+  for(j=0;j<9;j++){var x=40+j*13; s+='<path d="M'+x+' 198 L'+(x+(j%2?3:-3))+' 150" stroke="var(--leaf2)" stroke-width="2"/>'; for(var q=0;q<4;q++){var yy=192-q*11; s+='<ellipse cx="'+(x-5)+'" cy="'+yy+'" rx="5" ry="2.4" fill="var(--leaf)" transform="rotate(-30 '+(x-5)+' '+yy+')"/><ellipse cx="'+(x+5)+'" cy="'+(yy-4)+'" rx="5" ry="2.4" fill="var(--leaf)" transform="rotate(30 '+(x+5)+' '+(yy-4)+')"/>';}}
+  s+='<path d="M92 152 Q86 100 96 48" fill="none" stroke="var(--capsule)" stroke-width="3"/><ellipse cx="100" cy="38" rx="7" ry="13" fill="var(--capsule)" transform="rotate(20 100 38)"/>';
+  s+='<path d="M120 156 Q128 110 122 70" fill="none" stroke="var(--capsule)" stroke-width="3"/><ellipse cx="120" cy="60" rx="6" ry="11" fill="var(--capsule)" transform="rotate(-12 120 60)"/>';
+  s+='<g stroke="var(--muted)" stroke-width="1.5"><line x1="110" y1="36" x2="150" y2="30"/><line x1="99" y1="96" x2="150" y2="96"/><line x1="150" y1="170" x2="162" y2="170"/></g>';
+  s+='<g font-size="12" font-weight="700" fill="var(--text)" text-anchor="middle"><text x="196" y="34">محفظة جرثومية</text><text x="182" y="100">ساق</text><text x="208" y="174">نبتة مشيجية (n)</text></g>';
+  s+='<rect x="150" y="112" width="96" height="26" rx="10" fill="var(--p-sky)"/><text x="198" y="130" font-size="12" font-weight="800" fill="var(--text)" text-anchor="middle">نبتة جرثومية (2n)</text>';
+  /* archegonium: flask with egg */
+  s+='<path d="M298 30 L306 30 L308 86 Q326 96 322 118 Q314 136 302 136 Q290 136 282 118 Q278 96 296 86 Z" fill="var(--p-pink)" stroke="var(--egg)" stroke-width="2"/><circle cx="302" cy="116" r="9" fill="var(--egg)"/>';
+  /* antheridium: sac with sperm */
+  s+='<ellipse cx="366" cy="84" rx="20" ry="46" fill="var(--p-sky)" stroke="var(--sperm)" stroke-width="2"/>';
+  var sp=[[360,56],[372,70],[358,88],[372,104],[362,118]];
+  sp.forEach(function(a){s+=sperm(a[0]+4,a[1],0.9);});
+  s+='<g font-size="12" font-weight="800" fill="var(--text)" text-anchor="middle"><text x="302" y="158">الأرشيجونة</text><text x="366" y="158">الأنثريدة</text></g>';
+  s+='<g font-size="11" font-weight="700" fill="var(--muted)" text-anchor="middle"><text x="302" y="176">بويضة</text><text x="366" y="176">سابحات</text><text x="334" y="210">تراكيب على النبتة المشيجية</text></g>';
+  $("mossFig").innerHTML=s;
+}
+/* ---------- fern figure ---------- */
+function fernFig(){
+  var s='<path d="M110 186 Q96 110 128 22" fill="none" stroke="var(--leaf2)" stroke-width="3"/>', j;
+  for(j=0;j<8;j++){
+    var t=j/8, x=110-14*Math.sin(t*3)+t*18, y=172-j*19, L=46-j*4;
+    s+='<path d="M'+f1(x)+' '+f1(y)+' Q'+f1(x-L*0.5)+' '+f1(y-14)+' '+f1(x-L)+' '+f1(y-4)+' Q'+f1(x-L*0.5)+' '+f1(y+6)+' '+f1(x)+' '+f1(y)+'Z" fill="var(--leaf)" stroke="var(--leaf2)" stroke-width="1.5"/>';
+    s+='<path d="M'+f1(x)+' '+f1(y)+' Q'+f1(x+L*0.5)+' '+f1(y-14)+' '+f1(x+L)+' '+f1(y-8)+' Q'+f1(x+L*0.5)+' '+f1(y+4)+' '+f1(x)+' '+f1(y)+'Z" fill="var(--leaf)" stroke="var(--leaf2)" stroke-width="1.5"/>';
+    for(var q=1;q<=2;q++){s+='<circle cx="'+f1(x-L*q*0.3)+'" cy="'+f1(y-3)+'" r="2.6" fill="var(--capsule)"/><circle cx="'+f1(x+L*q*0.3)+'" cy="'+f1(y-5)+'" r="2.6" fill="var(--capsule)"/>';}
+  }
+  s+='<g font-size="12" font-weight="800" fill="var(--text)" text-anchor="middle"><text x="110" y="204">نبتة جرثومية (2n)</text><text x="310" y="34">نبتة مشيجية (n)</text></g>';
+  s+='<text x="310" y="50" font-size="11" font-weight="700" fill="var(--muted)" text-anchor="middle">صغيرة، من الأسفل</text>';
+  /* heart-shaped gametophyte */
+  s+='<path d="M310 160 C250 130 262 70 298 78 L310 92 L322 78 C358 70 370 130 310 160Z" fill="var(--leaf)" stroke="var(--leaf2)" stroke-width="2"/>';
+  for(j=0;j<6;j++) s+='<path d="M'+(290+j*8)+' 150 l'+(j%2?3:-3)+' 18" stroke="var(--muted)" stroke-width="1.2"/>';
+  [[302,100],[318,100],[310,110]].forEach(function(a){s+='<circle cx="'+a[0]+'" cy="'+a[1]+'" r="4.5" fill="var(--egg)"/>';});
+  [[286,128],[296,138],[324,136],[334,126],[310,142]].forEach(function(a){s+='<circle cx="'+a[0]+'" cy="'+a[1]+'" r="3.5" fill="var(--sperm)"/>';});
+  s+='<g font-size="11.5" font-weight="700" fill="var(--text)"><circle cx="384" cy="186" r="4.5" fill="var(--egg)"/><text x="350" y="190" text-anchor="middle">أرشيجونة</text><circle cx="300" cy="186" r="3.5" fill="var(--sperm)"/><text x="270" y="190" text-anchor="middle">أنثريدة</text></g>';
+  s+='<g stroke="var(--muted)" stroke-width="1.5"><line x1="150" y1="40" x2="196" y2="70"/></g><g font-size="11.5" font-weight="700" fill="var(--text)" text-anchor="middle"><text x="214" y="84">بثرات = محافظ</text><text x="214" y="99">بوغية</text></g>';
+  $("fernFig").innerHTML=s;
+}
+/* ---------- cones: longitudinal sections ---------- */
+function coneFig(){
+  var s="", i;
+  /* female */
+  var fx=290;
+  s+='<path d="M'+fx+' 18 L'+(fx+6)+' 30 L'+(fx+6)+' 196 L'+(fx-6)+' 196 L'+(fx-6)+' 30 Z" fill="var(--cone2)"/>';
+  for(i=0;i<6;i++){
+    var y=40+i*26, w=62-Math.abs(i-2.5)*6;
+    s+='<path d="M'+(fx-5)+' '+y+' Q'+(fx-w*0.6)+' '+(y-16)+' '+(fx-w)+' '+(y-12)+' Q'+(fx-w+4)+' '+(y+4)+' '+(fx-5)+' '+(y+12)+'Z" fill="var(--cone)" stroke="var(--cone2)" stroke-width="1.5"/>';
+    s+='<path d="M'+(fx+5)+' '+(y+12)+' Q'+(fx+w*0.6)+' '+(y-4)+' '+(fx+w)+' '+y+' Q'+(fx+w-4)+' '+(y+16)+' '+(fx+5)+' '+(y+24)+'Z" fill="var(--cone)" stroke="var(--cone2)" stroke-width="1.5"/>';
+    s+='<ellipse cx="'+(fx-18)+'" cy="'+(y+1)+'" rx="7" ry="4.5" fill="var(--egg)"/><ellipse cx="'+(fx+18)+'" cy="'+(y+13)+'" rx="7" ry="4.5" fill="var(--egg)"/>';
+  }
+  /* male */
+  var mx=96;
+  s+='<rect x="'+(mx-4)+'" y="40" width="8" height="150" rx="4" fill="var(--cone2)"/>';
+  for(i=0;i<7;i++){
+    var yy=48+i*20;
+    s+='<path d="M'+(mx-4)+' '+yy+' L'+(mx-38)+' '+(yy-6)+' Q'+(mx-42)+' '+(yy+8)+' '+(mx-4)+' '+(yy+12)+'Z" fill="var(--cone)" stroke="var(--cone2)" stroke-width="1.2"/>';
+    s+='<path d="M'+(mx+4)+' '+yy+' L'+(mx+38)+' '+(yy-6)+' Q'+(mx+42)+' '+(yy+8)+' '+(mx+4)+' '+(yy+12)+'Z" fill="var(--cone)" stroke="var(--cone2)" stroke-width="1.2"/>';
+    s+='<ellipse cx="'+(mx-22)+'" cy="'+(yy+3)+'" rx="10" ry="4.5" fill="var(--pol)"/><ellipse cx="'+(mx+22)+'" cy="'+(yy+3)+'" rx="10" ry="4.5" fill="var(--pol)"/>';
+    s+='<circle cx="'+(mx-25)+'" cy="'+(yy+3)+'" r="1.2" fill="var(--cone2)"/><circle cx="'+(mx-19)+'" cy="'+(yy+2)+'" r="1.2" fill="var(--cone2)"/><circle cx="'+(mx+25)+'" cy="'+(yy+3)+'" r="1.2" fill="var(--cone2)"/><circle cx="'+(mx+19)+'" cy="'+(yy+2)+'" r="1.2" fill="var(--cone2)"/>';
+  }
+  s+='<g stroke="var(--muted)" stroke-width="1.5"><line x1="'+(mx+34)+'" y1="31" x2="'+(mx+24)+'" y2="48"/><line x1="'+(fx-60)+'" y1="98" x2="'+(fx-22)+'" y2="94"/></g>';
+  s+='<g font-size="11.5" font-weight="700" fill="var(--text)" text-anchor="middle"><text x="'+(mx+40)+'" y="26">حبوب اللقاح</text><text x="'+(fx-82)+'" y="102">بويضة</text></g>';
+  s+='<g font-size="12.5" font-weight="800" fill="var(--text)" text-anchor="middle"><text x="'+mx+'" y="214">مخروط ذكري</text><text x="'+fx+'" y="214">مخروط أنثوي</text></g>';
+  $("coneFig").innerHTML=s;
+}
+/* ---------- pine seed explorer ---------- */
+var PARTS=[
+  ["جناح البذرة","var(--cav)","جناح رقيق يلتصق بغلاف البذرة، يساعد على انتشارها بواسطة الرياح."],
+  ["غلاف البذرة","var(--coat)","يتكوّن من تصلّب الغلاف البيضي. يحمي ما بداخل البذرة."],
+  ["الأندوسبرم","var(--endo)","الجزء المتبقي من النبتة المشيجية الأنثوية، يظلّ محيطاً بالجنين."],
+  ["تجويف الجنين","var(--p-peach)","الفراغ داخل الأندوسبرم اللي يستقر فيه الجنين."],
+  ["الجنين","var(--emb)","نتج عن انقسامات ميتوزية للاقحة (البيضة المخصّبة 2n). هو سويقة تحت فلقية، في طرفها جذير وفي الطرف الآخر ريشة."],
+  ["الجذير","var(--rad)","طرف الجنين اللي يخرج أولاً عند إنبات البذرة ويخترق التربة."],
+  ["الريشة والفلقة","var(--leaf2)","الطرف الآخر من الجنين: ريشة محاطة بعدد كبير من الأغلفة. بعد خروج الجذير تستطيل السويقة وتظهر فوق التربة."]
+];
+var seedSel=4;
+function drawSeed(){
+  var s="", ring='fill="none" stroke="var(--text)" stroke-width="2.5" stroke-dasharray="6 4" pointer-events="none"';
+  s+='<path data-k="0" d="M160 84 C120 40 52 34 22 58 C36 92 104 124 164 116 Z" fill="var(--cav)" stroke="var(--coat)" stroke-width="1.5" opacity=".9" style="cursor:pointer"/>';
+  s+='<ellipse data-k="1" cx="258" cy="100" rx="108" ry="54" fill="var(--coat)" style="cursor:pointer"/>';
+  s+='<ellipse data-k="2" cx="258" cy="100" rx="98" ry="45" fill="var(--endo)" style="cursor:pointer"/>';
+  s+='<ellipse data-k="3" cx="262" cy="100" rx="76" ry="17" fill="var(--p-peach)" style="cursor:pointer"/>';
+  s+='<rect data-k="4" x="214" y="92" width="104" height="16" rx="8" fill="var(--emb)" style="cursor:pointer"/>';
+  s+='<path data-k="5" d="M312 92 Q336 100 312 108 Z" fill="var(--rad)" style="cursor:pointer"/><rect data-k="5" x="304" y="92" width="12" height="16" fill="var(--rad)" style="cursor:pointer"/>';
+  s+='<g data-k="6" stroke="var(--leaf2)" stroke-width="3" stroke-linecap="round" style="cursor:pointer"><line x1="216" y1="100" x2="194" y2="100"/><line x1="216" y1="98" x2="196" y2="90"/><line x1="216" y1="102" x2="196" y2="110"/><line x1="214" y1="96" x2="200" y2="84"/><line x1="214" y1="104" x2="200" y2="116"/></g>';
+  var H=[
+    '<path d="M160 84 C120 40 52 34 22 58 C36 92 104 124 164 116 Z" '+ring+'/>',
+    '<ellipse cx="258" cy="100" rx="112" ry="58" '+ring+'/>',
+    '<ellipse cx="258" cy="100" rx="98" ry="45" '+ring+'/>',
+    '<ellipse cx="262" cy="100" rx="80" ry="21" '+ring+'/>',
+    '<rect x="188" y="84" width="152" height="32" rx="14" '+ring+'/>',
+    '<circle cx="320" cy="100" r="16" '+ring+'/>',
+    '<circle cx="204" cy="100" r="22" '+ring+'/>'];
+  s+=H[seedSel];
+  s+='<text x="200" y="176" font-size="13" font-weight="800" fill="var(--text)" text-anchor="middle">'+PARTS[seedSel][0]+'</text>';
+  $("seed").innerHTML=s;
+  [].forEach.call($("seedBtns").children,function(b,k){b.setAttribute("aria-pressed",String(k===seedSel));});
+  $("seedInfo").innerHTML="<h3>"+PARTS[seedSel][0]+"</h3><p>"+PARTS[seedSel][2]+"</p>";
+}
+PARTS.forEach(function(p,k){var b=document.createElement("button");b.type="button";b.className="tg";b.innerHTML='<i style="background:'+p[1]+'"></i>'+p[0];b.addEventListener("click",function(){seedSel=k;drawSeed();});$("seedBtns").appendChild(b);});
+$("seed").addEventListener("click",function(e){var t=e.target.closest("[data-k]");if(t){seedSel=+t.getAttribute("data-k");drawSeed();}});
+
+function all(){drawLab();mossFig();fernFig();coneFig();drawSeed();}
+all();
+window.addEventListener("masar-theme",all);
+})();
+</script>
+</body>
+</html>
