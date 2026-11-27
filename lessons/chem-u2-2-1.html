@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="chemistry">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>التفاعلات في المحاليل المائية · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+span[dir=ltr],bdi[dir=ltr]{unicode-bidi:isolate}
+body{--plate:#eefaf5;--glass:#fffdf2;--beak:#9a93b8;--liq:#d8f1fb;--catF:#ffd9df;--catS:#d9536b;--anF:#d6e7ff;--anS:#4f7fd1;--ppY:#f5d33f;--ppW:#ffffff;--ppR:#b8572e;--ppS:#7a6f52;--bad2:#d63b5a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--plate:#1f2b2a;--glass:#3a3550;--beak:#8a83a8;--liq:#21404f;--catF:#5c2f3c;--catS:#ff8fa2;--anF:#2b3f66;--anS:#8fb4ff;--ppY:#c9a826;--ppW:#d9d9e4;--ppR:#b7643c;--ppS:#e6dcc0;--bad2:#ff7d96}}
+:root[data-theme="dark"] body{--plate:#1f2b2a;--glass:#3a3550;--beak:#8a83a8;--liq:#21404f;--catF:#5c2f3c;--catS:#ff8fa2;--anF:#2b3f66;--anS:#8fb4ff;--ppY:#c9a826;--ppW:#d9d9e4;--ppR:#b7643c;--ppS:#e6dcc0;--bad2:#ff7d96}
+.stage{display:block;width:100%;height:auto;border-radius:22px;background:var(--plate);box-shadow:var(--press)}
+.fx{direction:ltr;unicode-bidi:isolate;font-family:"Noto Serif",Georgia,serif;white-space:nowrap}
+.fx sub,.fx sup,.ce sub,.ce sup{font-size:.66em}
+.ce{direction:ltr;unicode-bidi:isolate;font-family:"Noto Serif",Georgia,serif;font-size:1.05rem;line-height:2.1;text-align:center;padding:6px 10px;border-radius:16px;background:var(--card);box-shadow:var(--clay-sm);margin:6px 0}
+.ce .t{white-space:nowrap;display:inline-block}
+.ce .op{margin:0 .25em}
+.ce s{text-decoration:line-through;text-decoration-color:var(--bad2);text-decoration-thickness:2px;color:var(--muted)}
+.ce.net{background:var(--p-mint);font-weight:700}
+.help{display:inline-block;font-size:12px;font-weight:700;padding:1px 9px;border-radius:9px;background:var(--p-sky);color:var(--text);margin-inline-end:6px}
+.pick{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.pick .tg{font-size:14px;padding:7px 12px}
+.pick .tg.ion{font-family:"Noto Serif",Georgia,serif;direction:ltr;min-width:52px}
+.labout{margin-top:10px;padding:12px 14px;border-radius:18px;background:var(--card);box-shadow:var(--clay-sm);font-size:15px;min-height:2.4em}
+.labout small{display:block;color:var(--muted);font-size:12.5px;margin-top:8px}
+.labout .ce{box-shadow:none;background:var(--plate);font-size:.98rem}
+.ind{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px;text-align:center}
+.ind div{padding:10px 6px;border-radius:18px;box-shadow:var(--clay-sm);font-size:14px;font-weight:700}
+.ind span{display:block;font-size:1.5rem;line-height:1.3}
+.ind .on{outline:3px solid var(--sc);outline-offset:-3px}
+@media (max-width:440px){.ind{grid-template-columns:repeat(2,1fr)}}
+.rules{display:grid;gap:8px;margin-top:8px}
+.rule{display:grid;grid-template-columns:86px 1fr;gap:10px;align-items:center;padding:8px 12px;border-radius:18px;background:var(--card);box-shadow:var(--clay-sm);font-size:14.5px}
+.rule .who{font-family:"Noto Serif",Georgia,serif;direction:ltr;text-align:center;font-weight:700;padding:6px 4px;border-radius:12px;background:var(--anF)}
+.rule .who.c{background:var(--catF)}
+.rule .ex{font-family:"Noto Serif",Georgia,serif;direction:ltr;unicode-bidi:isolate;display:inline-block;padding:0 8px;border-radius:9px;background:var(--p-pink);font-weight:700;white-space:nowrap}
+.rule .ex.k{background:var(--p-mint)}
+.rh{margin:14px 0 4px;font-size:1.05rem}
+.verdict{display:inline-block;padding:2px 12px;border-radius:12px;font-weight:700}
+.verdict.yes{background:var(--p-mint)}.verdict.no{background:var(--p-pink)}
+.big{font-size:1.35rem}
+.swap{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:8px}
+.swap span{padding:4px 12px;border-radius:12px;box-shadow:var(--clay-sm);font-size:14px;font-weight:700}
+.act[data-act=sort] .it,.act[data-act=gap] .opts .pc{font-family:"Noto Serif",Georgia,serif;font-style:normal}
+.act[data-act=order] .pc{font-style:normal;font-size:1.05rem}
+</style>
+</head>
+<body style="--sc:#17b388">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الكيمياء</span><span class="chip">الدرس 2-1 · ص 45 إلى 50</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الثانية: المحاليل · الفصل الثاني: التفاعلات في المحاليل المائية</p>
+  <h1 id="t">التفاعلات في المحاليل المائية</h1>
+  <p>خذ سائلين <b>شفّافين</b> وصبّ واحداً على الثاني: فجأة يطلع <mark>صلب ملوّن</mark> وينزل للقاع. ما في سحر: الأيونات <b>بدّلت شركاءها</b>، وواحد من الأزواج الجديدة ما يذوب. نفس الشي صنع <b>الصواعد والهوابط</b> في الكهوف. جرّب تحت.</p>
+</section>
+
+<section class="panel" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">مختبر الخلط: من يترسّب؟</h2><span class="legend"><span><i style="background:var(--catF);border:1.5px solid var(--catS);width:10px;height:10px"></i>كاتيون (+)</span><span><i style="background:var(--anF);border:1.5px solid var(--anS);width:10px;height:10px"></i>أنيون (−)</span></span></div>
+  <svg class="stage" id="mixSvg" viewBox="0 0 400 250" role="img" aria-label="كأس فيها أيونات محلولين قبل المزج وبعده" style="margin-top:8px"></svg>
+  <div class="pick" id="pairPick" role="group" aria-label="اختر محلولين"></div>
+  <div class="pick"><button class="chk" type="button" id="mixGo">امزج</button><button class="lite" type="button" id="mixBack">قبل المزج</button></div>
+  <div class="labout" id="mixOut" aria-live="polite"></div>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">رموز الدرس ومصطلحاته</h2></div>
+  <div class="syms">
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span class="fx">(aq)</span></span><div><h3>الحالة المائية <span class="en">aqueous</span></h3><p>المادّة <b>ذائبة في الماء</b>: أيوناتها تسبح بحرّية في المحلول.</p><span class="hook">aq من aqua: ماء.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub"><span class="fx">(s)</span></span><div><h3>الحالة الصلبة <span class="en">solid</span></h3><p>مادّة <b>صلبة</b>. في تفاعل الترسيب هي <b>الراسب</b> اللي ما يذوب.</p><span class="hook">s من solid: صلب.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span>↓</span></span><div><h3>سهم الراسب <span class="en">precipitate</span></h3><p>نضعه بجانب الناتج <b>الصلب</b> اللي ينزل في قاع الإناء.</p><span class="hook">سهم ينزل = صلب ينزل.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub"><span class="fx" style="font-size:.8em">H<sub>2</sub>O →</span></span><div><h3>الإذابة <span class="en">Dissolution</span></h3><p>الماء فوق السهم يعني: المركّب الأيوني <b>تفكّك في الماء</b> إلى أيونات.</p><span class="hook">الماء يفكّ الأزواج.</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub"><span>⛃</span></span><div><h3>الترسيب والراسب <span class="en">Precipitation</span></h3><p><b>الترسيب</b>: تكوّن صلب عند مزج محلولين مائيين. <b>الراسب</b>: هذا الصلب المتكوّن.</p><span class="hook">رمل ينزل في كوب ماء.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub"><span>📋</span></span><div><h3>قواعد الذوبانية <span class="en">Laws of Solubility</span></h3><p>إرشادات تقول لنا: هذا الملح <b>يذوب</b> أو <b>لا يذوب</b>، فنتوقّع الراسب.</p><span class="hook">قائمة "من يدخل ومن يبقى برّا".</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span class="fx" style="font-size:.8em"><s>Na<sup>+</sup></s></span></span><div><h3>الأيونات المتشابهة <span class="en">Spectator ions</span></h3><p>أيونات <b>موجودة في الطرفين كما هي</b>، ما شاركت في التفاعل، فنحذفها.</p><span class="hook">جمهور يتفرّج على المباراة وما يلعب.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub"><span>⚖</span></span><div><h3>المعادلة الأيونية النهائية <span class="en">Net Ionic Equation</span></h3><p>المعادلة اللي تبقى <b>بعد حذف الأيونات المتشابهة</b>: فيها فقط من شارك في التفاعل.</p><span class="hook">صورة اللاعبين فقط، بدون الجمهور.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">كيف نعرف أن تفاعلاً حدث؟</h2></div>
+  <p>تعلّمت قبل كذا أربع علامات (مؤشّرات) تقول لك "صار تفاعل":</p>
+  <div class="ind">
+    <div class="on" style="background:var(--p-butter)"><span>⛃</span>تكوّن راسب</div>
+    <div style="background:var(--p-sky)"><span>💧</span>تكوّن ماء</div>
+    <div style="background:var(--p-peach)"><span>♨</span>انبعاث حرارة</div>
+    <div style="background:var(--p-lav)"><span>◌</span>تكوّن غاز</div>
+  </div>
+  <p style="margin-top:10px">في المحاليل المائية تحدث <b>أربعة أنواع</b> من التفاعلات. نهتمّ في هذا الدرس بنوع واحد: <b>تفاعلات الترسيب</b>. وأغلب تفاعلات جسمك اللي تبقيك حيّاً تحدث هي بعد في محاليل مائية.</p>
+  <div class="grid2" style="margin-top:10px">
+    <div class="box lav"><h3>الترسيب</h3><p>عملية تكوّن <b>صلب</b> عند <b>مزج محلولين مائيين</b>.</p></div>
+    <div class="box butter"><h3>الراسب</h3><p>الصلب المتكوّن من هذا التفاعل، يُكتب في المعادلة <span class="fx">(s)</span> ومعه <b>↓</b>.</p></div>
+  </div>
+  <p class="note">لكتابة المعادلة النهائية لتفاعل ترسيب نحتاج أربعة أشياء: <b>صيغ المتفاعلات</b>، <b>صيغ النواتج</b>، <b>عملية الإذابة</b>، و<b>قواعد الذوبانية</b>. نمشي عليها واحدة واحدة.</p>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">إذابة مركّب أيوني في الماء</h2></div>
+  <p>ضع ملح الطعام <span class="fx">NaCl</span> الصلب في ماء. الماء (المذيب) يفكّ المركّب الأيوني (المذاب) إلى أيونات <span class="fx">Na<sup>+</sup></span> و <span class="fx">Cl<sup>−</sup></span> تسبح بحرّية. صار عندنا محلول <span class="fx">NaCl<sub>(aq)</sub></span>:</p>
+  <div class="ce" data-eq="NaCl{s} →H2O Na^+{aq} + Cl^-{aq}"></div>
+  <p>لكن المركّبات الأيونية تختلف: بعضها <b>ذوبانيته عالية</b>، وبعضها <b>قليل الذوبانية</b>، وبعضها <b>لا يذوب أبداً</b>.</p>
+  <p class="tip" style="margin-top:10px"><b>قاعدة الكتابة:</b> المركّب الصلب اللي <b>لا يذوب</b> نكتبه في المعادلة <b>صلباً</b> <span class="fx">(s)</span>، حتى لو كان موجوداً داخل المحلول.</p>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">قواعد الذوبانية Laws of Solubility</h2></div>
+  <p>بعض الناس يظنّ أن حفظ <b>ألوان</b> الرواسب يكفي ليعرف إذا كان سيتكوّن راسب. <b>لا يكفي.</b> مع المحاليل المائية نعتمد على <b>قواعد الذوبانية</b>.</p>
+  <p class="tip" style="margin-top:8px"><b>فخ:</b> "شحيح (قليل) الذوبان" و"لا يذوب" لهما <b>المعنى نفسه</b> عند كتابة المعادلات: كلاهما راسب <span class="fx">(s)</span>.</p>
+
+  <h3 class="rh">أولاً: أملاح تذوب في الماء</h3>
+  <div class="rules">
+    <div class="rule"><span class="who c">Na<sup>+</sup> K<sup>+</sup> NH<sub>4</sub><sup>+</sup></span><span>أي ملح فيه أحد هذه الكاتيونات <b>يذوب دائماً</b>.</span></div>
+    <div class="rule"><span class="who">NO<sub>3</sub><sup>−</sup> CH<sub>3</sub>COO<sup>−</sup><br>ClO<sub>3</sub><sup>−</sup> ClO<sub>4</sub><sup>−</sup></span><span>أي ملح فيه أحد هذه الأنيونات <b>يذوب دائماً</b>.</span></div>
+    <div class="rule"><span class="who">Cl<sup>−</sup> Br<sup>−</sup> I<sup>−</sup></span><span>تذوب، <b>إلّا</b> مع: <span class="ex">Pb<sup>2+</sup> Ag<sup>+</sup> Hg<sup>2+</sup></span> فتترسّب.</span></div>
+    <div class="rule"><span class="who">F<sup>−</sup></span><span>يذوب، <b>إلّا</b> مع: <span class="ex">Ca<sup>2+</sup> Sr<sup>2+</sup> Mg<sup>2+</sup> Pb<sup>2+</sup> Ba<sup>2+</sup></span></span></div>
+    <div class="rule"><span class="who">SO<sub>4</sub><sup>2−</sup></span><span>تذوب، <b>إلّا</b> مع: <span class="ex">Ag<sup>+</sup> Sr<sup>2+</sup> Ba<sup>2+</sup> Pb<sup>2+</sup> Ca<sup>2+</sup></span></span></div>
+  </div>
+  <p class="note"><span class="help">مثال</span>أضف محلول نيترات الفضّة <span class="fx">AgNO<sub>3</sub></span> إلى حمض الهيدروكلوريك <span class="fx">HCl</span>: يتكوّن فوراً راسب <b>أبيض</b> من كلوريد الفضّة <span class="fx">AgCl</span>، لأن <span class="fx">Ag<sup>+</sup></span> من استثناءات الكلوريد.</p>
+
+  <h3 class="rh">ثانياً: أملاح شحيحة (قليلة) الذوبان</h3>
+  <div class="rules">
+    <div class="rule"><span class="who">S<sup>2−</sup><br><small>كبريتيد</small></span><span>لا يذوب، <b>ما عدا</b> مع: <span class="ex k">1A</span> و <span class="ex k">2A</span> و <span class="ex k">NH<sub>4</sub><sup>+</sup></span></span></div>
+    <div class="rule"><span class="who">CO<sub>3</sub><sup>2−</sup><br><small>كربونات</small></span><span>لا تذوب، <b>ما عدا</b> مع: <span class="ex k">1A</span> و <span class="ex k">NH<sub>4</sub><sup>+</sup></span></span></div>
+    <div class="rule"><span class="who">SO<sub>3</sub><sup>2−</sup><br><small>كبريتيت</small></span><span>لا تذوب، <b>ما عدا</b> مع: <span class="ex k">1A</span> و <span class="ex k">NH<sub>4</sub><sup>+</sup></span></span></div>
+    <div class="rule"><span class="who">PO<sub>4</sub><sup>3−</sup><br><small>فوسفات</small></span><span>لا تذوب، <b>ما عدا</b> مع: <span class="ex k">1A</span> و <span class="ex k">NH<sub>4</sub><sup>+</sup></span></span></div>
+    <div class="rule"><span class="who">OH<sup>−</sup><br><small>هيدروكسيد</small></span><span>لا يذوب، <b>ما عدا</b> مع: <span class="ex k">1A</span> وهيدروكسيدات <span class="ex k">Ba Sr Ca</span> (تذوب لكن أقلّ من 1A).</span></div>
+  </div>
+  <p class="note"><span class="help">حيلة للحفظ</span>عناصر <b>1A</b> (مثل <span class="fx">Na</span> و <span class="fx">K</span>) و<b>الأمونيوم</b> "مفتاح عام": يذوّبون أي ملح. والنيترات <span class="fx">NO<sub>3</sub><sup>−</sup></span> كذلك.</p>
+
+  <div class="panel" style="margin:12px 0 0">
+    <div class="lab-head"><h2 style="font-size:1.1rem">آلة الذوبانية</h2><span class="legend">اختر كاتيوناً وأنيوناً</span></div>
+    <p class="muted" style="margin:6px 0 0;font-size:14px">الكاتيون:</p>
+    <div class="pick" id="catPick" role="group" aria-label="الكاتيونات" style="margin-top:4px"></div>
+    <p class="muted" style="margin:8px 0 0;font-size:14px">الأنيون:</p>
+    <div class="pick" id="anPick" role="group" aria-label="الأنيونات" style="margin-top:4px"></div>
+    <div class="labout" id="solOut" aria-live="polite"></div>
+  </div>
+
+  <div class="act" data-act="sort" data-key="sort" data-bins='["يذوب في الماء","لا يذوب (راسب)"]'
+       data-items='[["KNO₃",0,"K⁺ و NO₃⁻ أملاحهما تذوب دائماً."],["NH₄Cl",0,"أملاح الأمونيوم NH₄⁺ تذوب دائماً."],["MgSO₄",0,"الكبريتات تذوب إلّا مع Ag⁺ و Sr²⁺ و Ba²⁺ و Pb²⁺ و Ca²⁺، والمغنيسيوم ليس منها."],["Na₂CO₃",0,"الكربونات لا تذوب إلّا مع 1A والأمونيوم، والصوديوم من 1A."],["AgCl",1,"الكلوريد يذوب إلّا مع Pb²⁺ و Ag⁺ و Hg²⁺: هذا راسب أبيض."],["BaSO₄",1,"Ba²⁺ من استثناءات الكبريتات، فلا يذوب."],["CaCO₃",1,"الكربونات لا تذوب إلّا مع 1A والأمونيوم، والكالسيوم من 2A."],["PbI₂",1,"اليوديد يذوب إلّا مع Pb²⁺ و Ag⁺ و Hg²⁺."]]'
+       data-ok="ممتاز! تذكّر: Na⁺ و K⁺ و NH₄⁺ و NO₃⁻ تذوب دائماً، والباقي حسب الاستثناءات.">
+    <h3>صنّف الملح <span class="k">نشاط</span></h3>
+    <p>استخدم قواعد الذوبانية: هل يذوب الملح في الماء، أم يكون راسباً؟</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s5">
+  <div class="sec-head"><span class="num">5</span><h2 id="s5">تحديد الراسب Precipitate Determination</h2></div>
+  <p>تخيّل حفلة رقص: كل زوج يرقص مع شريكه. لمّا تختلط الحفلتان، كل واحد <b>يبدّل شريكه</b>. بعض الأزواج الجديدة "تلتصق" وتنزل للأرض: هذا هو <b>الراسب</b>. مثال: نمزج محلولي <b>كلوريد الباريوم</b> و<b>كرومات الصوديوم</b>:</p>
+  <ol class="steps">
+    <li><span>اكتب صيغ مركّبات المحلولين: <span class="fx">BaCl<sub>2</sub></span> و <span class="fx">Na<sub>2</sub>CrO<sub>4</sub></span>.</span></li>
+    <li><span>فكّك كل محلول إلى كاتيونات وأنيونات:<div class="ce" data-eq="BaCl2{aq} → Ba^2+{aq} + 2Cl^-{aq}"></div><div class="ce" data-eq="Na2CrO4{aq} → 2Na^+{aq} + CrO4^2-{aq}"></div></span></li>
+    <li><span>بدّل الشركاء: كل كاتيون مع أنيون <b>المحلول الثاني</b> (لا ترجعه لشريكه الأصلي).</span></li>
+    <li><span>طبّق قواعد الذوبانية على الناتجين: أيّهما راسب، وأيّهما يبقى ذائباً.</span></li>
+    <li><span>اكتب المعادلة الموزونة، وضع <span class="fx">(s)</span> و ↓ عند الراسب.</span></li>
+  </ol>
+  <svg class="stage" id="swapSvg" viewBox="0 0 400 180" role="img" aria-label="تبديل الشركاء: الباريوم مع الكرومات، والصوديوم مع الكلوريد" style="margin-top:12px;max-width:460px;margin-inline:auto"></svg>
+  <div class="swap"><span style="background:var(--ppY);color:#3b3000"><span class="fx">BaCrO<sub>4</sub></span> لا يذوب: راسب أصفر ↓</span><span style="background:var(--card)"><span class="fx">NaCl</span> يذوب: <span class="fx">Na<sup>+</sup></span> و <span class="fx">Cl<sup>−</sup></span> تبقى في المحلول</span></div>
+  <div class="ce" data-eq="BaCl2{aq} + Na2CrO4{aq} → BaCrO4{s}↓ + 2NaCl{aq}" style="margin-top:10px"></div>
+  <p class="tip" style="margin-top:10px"><b>قاعدة سريعة:</b> من المعادلة الموزونة تعرف اسم الراسب وصيغته: هو المادّة اللي حالتها <span class="fx">(s)</span> وبجانبها <b>↓</b>.</p>
+
+  <div class="act" data-act="gap" data-key="gap" data-ok="صح! الشركاء الجدد: PbSO₄ و KNO₃. الكبريتات لا تذوب مع Pb²⁺، أما KNO₃ فيذوب دائماً.">
+    <h3>أكمل الناقص <span class="k">نشاط</span></h3>
+    <p>خلطنا محلول نيترات الرصاص <span class="fx">Pb(NO<sub>3</sub>)<sub>2</sub></span> مع محلول كبريتات البوتاسيوم <span class="fx">K<sub>2</sub>SO<sub>4</sub></span>. الراسب المتكوّن هو: <span class="gap">؟</span></p>
+    <div class="opts">
+      <button class="pc" data-no="أملاح K⁺ وأملاح NO₃⁻ تذوب دائماً، فـ KNO₃ يبقى ذائباً.">KNO₃</button>
+      <button class="pc" data-ok>PbSO₄</button>
+      <button class="pc" style="font-family:var(--body)" data-no="الكبريتات تذوب إلّا مع Ag⁺ و Sr²⁺ و Ba²⁺ و Pb²⁺ و Ca²⁺، والرصاص منها، فيتكوّن راسب.">لا يتكوّن راسب</button>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s6">
+  <div class="sec-head"><span class="num">6</span><h2 id="s6">المعادلة الأيونية النهائية Net Ionic Equation</h2></div>
+  <p>المعادلة الموزونة تذكر كل شي، حتى الأيونات اللي ما سوّت شي. المعادلة الأيونية النهائية تبيّن <b>فقط</b> اللي شارك. الخطوات:</p>
+  <div class="grid2" style="margin-top:8px">
+    <div class="box sky"><h3>1 إلى 3: توقّع</h3><p>1. اكتب صيغ المتفاعلات. 2. توقّع صيغ النواتج. 3. توقّع أيّ ناتج يترسّب، وأيّها يبقى ذائباً في المحلول النهائي.</p></div>
+    <div class="box mint"><h3>4 إلى 6: اكتب واحذف</h3><p>4. اكتب المعادلة الموزونة مع الحالات. 5. أعد كتابة الصيغ <b>المائية <span class="fx">(aq)</span></b> على شكل أيونات. 6. احذف <b>الأيونات المتشابهة</b> في الطرفين.</p></div>
+  </div>
+  <p style="margin-top:10px">على مثال الباريوم والكرومات:</p>
+  <p class="muted" style="margin:6px 0 0;font-size:13.5px">المعادلة الموزونة</p>
+  <div class="ce" data-eq="BaCl2{aq} + Na2CrO4{aq} → BaCrO4{s}↓ + 2NaCl{aq}"></div>
+  <p class="muted" style="margin:6px 0 0;font-size:13.5px">المعادلة الأيونية: المائي صار أيونات، والمشطوب أيونات متشابهة</p>
+  <div class="ce" data-eq="Ba^2+{aq} + ~2Cl^-{aq} + ~2Na^+{aq} + CrO4^2-{aq} → BaCrO4{s}↓ + ~2Na^+{aq} + ~2Cl^-{aq}"></div>
+  <p class="muted" style="margin:6px 0 0;font-size:13.5px">المعادلة الأيونية النهائية</p>
+  <div class="ce net" data-eq="Ba^2+{aq} + CrO4^2-{aq} → BaCrO4{s}↓"></div>
+  <p class="tip" style="margin-top:10px"><b>فخ:</b> الراسب <span class="fx">BaCrO<sub>4(s)</sub></span> <b>لا يُفكّك</b> إلى أيونات، لأنه صلب لا يذوب. نفكّك فقط ما حالته <span class="fx">(aq)</span>.</p>
+
+  <div class="act" data-act="order" data-key="order"
+       data-answer='["Ca²⁺(aq)","+","CO₃²⁻(aq)","→","CaCO₃(s) ↓"]' data-extra='["2Na⁺(aq)"]'
+       data-ok="ممتاز! Na⁺ و Cl⁻ أيونات متشابهة حذفناها، وبقي من كوّن الراسب: الكالسيوم والكربونات."
+       data-no="ابدأ بالكاتيون ثم الأنيون، والراسب بعد السهم. و Na⁺ أيون متشابه لا يدخل المعادلة النهائية.">
+    <h3>رتّب المعادلة <span class="k">نشاط</span></h3>
+    <p>نمزج <span class="fx">CaCl<sub>2(aq)</sub></span> مع <span class="fx">Na<sub>2</sub>CO<sub>3(aq)</sub></span> فيتكوّن كربونات الكالسيوم (مادّة الصواعد والهوابط). ابنِ المعادلة الأيونية النهائية. انتبه: قطعة واحدة زائدة.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s7">
+  <div class="sec-head"><span class="num">7</span><h2 id="s7">مثال محلول: راسب يحتاج وزناً</h2></div>
+  <div class="qbox">اكتب المعادلة الأيونية النهائية الموزونة الناتجة عن مزج محلول فوسفات الصوديوم <span class="fx">Na<sub>3</sub>PO<sub>4</sub></span> مع محلول كلوريد الكالسيوم <span class="fx">CaCl<sub>2</sub></span>.</div>
+  <div class="row"><button class="lite" id="hideSol" type="button" aria-pressed="false">أخفِ الحل وجرّب أولاً</button></div>
+  <ol class="steps" id="steps">
+    <li><span><b>حلّل:</b> نبدّل الشركاء، ونحدّد الراسب بقواعد الذوبانية، ثم نحذف الأيونات المتشابهة.</span></li>
+    <li><span><b>النواتج المتوقّعة:</b> <span class="fx">Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub></span> و <span class="fx">NaCl</span>. الفوسفات لا تذوب إلّا مع 1A والأمونيوم، والكالسيوم ليس منها: <b><span class="fx">Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub></span> راسب</b>. و<span class="fx">NaCl</span> يذوب.</span></li>
+    <li><span><b>المعادلة الموزونة</b> (3 كالسيوم و 2 فوسفات و 6 صوديوم و 6 كلور في كل طرف):<div class="ce" data-eq="2Na3PO4{aq} + 3CaCl2{aq} → Ca3(PO4)2{s}↓ + 6NaCl{aq}"></div></span></li>
+    <li><span><b>المعادلة الأيونية</b> واحذف المتشابه:<div class="ce" data-eq="~6Na^+{aq} + 2PO4^3-{aq} + 3Ca^2+{aq} + ~6Cl^-{aq} → Ca3(PO4)2{s}↓ + ~6Na^+{aq} + ~6Cl^-{aq}"></div></span></li>
+    <li><span><span class="ans">المعادلة الأيونية النهائية:</span><div class="ce net" data-eq="3Ca^2+{aq} + 2PO4^3-{aq} → Ca3(PO4)2{s}↓"></div></span></li>
+    <li><span><b>قيّم:</b> الأيونات المتشابهة <span class="fx">Na<sup>+</sup></span> و <span class="fx">Cl<sup>−</sup></span> لم تتغيّر قبل التفاعل وبعده. <span class="help">تأكّد</span>الشحنات في اليسار: <span class="fx">3×(+2) + 2×(−3) = 0</span>، والراسب متعادل.</span></li>
+  </ol>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">8</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sd">
+  <div class="sec-head"><span class="num">9</span><h2 id="sd">في حياتك</h2></div>
+  <div class="life">
+    <div class="card"><h3>الصواعد والهوابط</h3><p>ماء فيه أيونات الكالسيوم يقطر في الكهف، فتترسّب <b>كربونات الكالسيوم</b> شوي شوي حتى تصير أعمدة.</p></div>
+    <div class="card"><h3>القشرة البيضاء في الغلّاية</h3><p>طبقة <b>راسب</b> من أملاح شحيحة الذوبان كانت في ماء الحنفية.</p></div>
+    <div class="card"><h3>كشف الكلوريد في الماء</h3><p>نقطة من <span class="fx">AgNO<sub>3</sub></span>: إذا تعكّر الماء <b>بأبيض</b>، ففيه أيونات <span class="fx">Cl<sup>−</sup></span>.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">10</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>أيّ المركّبات التالية يكون <b>راسباً</b> حسب قواعد الذوبانية؟</p>
+      <div class="opts"><button><span class="fx">NH<sub>4</sub>Cl</span></button><button data-ok><span class="fx">PbCl<sub>2</sub></span></button><button><span class="fx">NaNO<sub>3</sub></span></button></div>
+      <p class="why" hidden>الصحيح: <span class="fx">PbCl<sub>2</sub></span>، لأن الكلوريد لا يذوب مع <span class="fx">Pb<sup>2+</sup></span>. أملاح الأمونيوم والصوديوم والنيترات تذوب دائماً.</p></div>
+    <div class="q"><p>عند مزج <span class="fx">K<sub>2</sub>SO<sub>4(aq)</sub></span> مع <span class="fx">Ba(NO<sub>3</sub>)<sub>2(aq)</sub></span>، الأيونات المتشابهة هي:</p>
+      <div class="opts"><button><span class="fx">Ba<sup>2+</sup></span> و <span class="fx">SO<sub>4</sub><sup>2−</sup></span></button><button data-ok><span class="fx">K<sup>+</sup></span> و <span class="fx">NO<sub>3</sub><sup>−</sup></span></button><button><span class="fx">K<sup>+</sup></span> فقط</button></div>
+      <p class="why" hidden>الصحيح: <span class="fx">K<sup>+</sup></span> و <span class="fx">NO<sub>3</sub><sup>−</sup></span> تبقى ذائبة كما هي في الطرفين. أما <span class="fx">Ba<sup>2+</sup></span> و <span class="fx">SO<sub>4</sub><sup>2−</sup></span> فتكوّن الراسب <span class="fx">BaSO<sub>4</sub></span>.</p></div>
+    <div class="q"><p>نمزج محلول <span class="fx">Na<sub>2</sub>S</span> مع محلول <span class="fx">MgCl<sub>2</sub></span>. ماذا يحدث؟</p>
+      <div class="opts"><button>يترسّب <span class="fx">MgS</span></button><button>يترسّب <span class="fx">NaCl</span></button><button data-ok>لا يتكوّن راسب</button></div>
+      <p class="why" hidden>الصحيح: لا يتكوّن راسب. الكبريتيد لا يذوب إلّا مع 1A و 2A والأمونيوم، والمغنيسيوم من 2A فـ <span class="fx">MgS</span> يذوب، و <span class="fx">NaCl</span> يذوب أيضاً.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li>الترسيب: تكوّن صلب (راسب) عند مزج محلولين مائيين، ويُكتب الراسب <span class="fx">(s)</span> مع ↓. ومؤشّرات التفاعل: راسب، ماء، حرارة، غاز.</li>
+      <li>قواعد الذوبانية: <span class="fx">Na<sup>+</sup> K<sup>+</sup> NH<sub>4</sub><sup>+</sup> NO<sub>3</sub><sup>−</sup></span> تذوب دائماً، والكلوريد والفلوريد والكبريتات تذوب إلّا مع استثناءاتها، والكبريتيد والكربونات والكبريتيت والفوسفات والهيدروكسيد لا تذوب إلّا مع 1A (وغيرها في استثناءاتها).</li>
+      <li>المعادلة الأيونية النهائية: فكّك ما هو <span class="fx">(aq)</span> إلى أيونات، واحذف الأيونات المتشابهة، مثل <span class="fx">Ba<sup>2+</sup> + CrO<sub>4</sub><sup>2−</sup> → BaCrO<sub>4</sub>↓</span>.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الكيمياء، الصف الحادي عشر، الوحدة الثانية، ص 45 إلى 50</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"chem-u2-2-1"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+function pressed(box,k){[].forEach.call(box.children,function(x,j){x.setAttribute("aria-pressed",j===k?"true":"false");});}
+var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+function f1(x){return (+x).toFixed(1);}
+var seed=17;function rand(){seed=(seed*16807)%2147483647;return seed/2147483647;}
+function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(rand()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;}return a;}
+
+/* ---------- formula notation: Na2CrO4{aq}, Ba^2+, ~ = struck spectator ---------- */
+function F(s){return s.replace(/\^(\d*)([+-])/g,function(m,d,g){return "<sup>"+d+(g==="-"?"−":"+")+"</sup>";})
+  .replace(/\{(\w+)\}/g,"<sub>($1)</sub>").replace(/([A-Za-z\)])(\d+)/g,"$1<sub>$2</sub>");}
+function EQ(s){return s.split(" ").map(function(t){
+  if(t==="+")return '<span class="op">+</span>';
+  if(t==="→")return '<span class="op">→</span>';
+  if(t==="→H2O")return '<span class="op" style="display:inline-flex;flex-direction:column;align-items:center;line-height:1;vertical-align:middle"><small style="font-size:.6em">H<sub>2</sub>O</small>⟶</span>';
+  if(t.charAt(0)==="~")return '<s class="t">'+F(t.slice(1))+'</s>';
+  return '<span class="t">'+F(t)+'</span>';}).join(" ");}
+[].forEach.call(document.querySelectorAll("[data-eq]"),function(el){el.innerHTML=EQ(el.dataset.eq);});
+
+/* ---------- lab 1: mix two solutions ---------- */
+var PAIRS=[
+ {n:"BaCl₂ + Na₂CrO₄",a:"BaCl₂",b:"Na₂CrO₄",ia:[["Ba²⁺",1,2],["Cl⁻",-1,4]],ib:[["Na⁺",1,4],["CrO₄²⁻",-1,2]],pc:"Ba²⁺",pa:"CrO₄²⁻",rc:1,ra:1,pf:"BaCrO4",col:"var(--ppY)",cn:"أصفر",name:"كرومات الباريوم",
+  dA:"BaCl2{aq} → Ba^2+{aq} + 2Cl^-{aq}",dB:"Na2CrO4{aq} → 2Na^+{aq} + CrO4^2-{aq}",eq:"BaCl2{aq} + Na2CrO4{aq} → BaCrO4{s}↓ + 2NaCl{aq}",
+  ion:"Ba^2+{aq} + ~2Cl^-{aq} + ~2Na^+{aq} + CrO4^2-{aq} → BaCrO4{s}↓ + ~2Na^+{aq} + ~2Cl^-{aq}",net:"Ba^2+{aq} + CrO4^2-{aq} → BaCrO4{s}↓",sp:["Na^+","Cl^-"]},
+ {n:"Pb(NO₃)₂ + NaI",a:"Pb(NO₃)₂",b:"NaI",ia:[["Pb²⁺",1,2],["NO₃⁻",-1,4]],ib:[["Na⁺",1,4],["I⁻",-1,4]],pc:"Pb²⁺",pa:"I⁻",rc:1,ra:2,pf:"PbI2",col:"var(--ppY)",cn:"أصفر",name:"يوديد الرصاص",
+  dA:"Pb(NO3)2{aq} → Pb^2+{aq} + 2NO3^-{aq}",dB:"NaI{aq} → Na^+{aq} + I^-{aq}",eq:"Pb(NO3)2{aq} + 2NaI{aq} → PbI2{s}↓ + 2NaNO3{aq}",
+  ion:"Pb^2+{aq} + ~2NO3^-{aq} + ~2Na^+{aq} + 2I^-{aq} → PbI2{s}↓ + ~2Na^+{aq} + ~2NO3^-{aq}",net:"Pb^2+{aq} + 2I^-{aq} → PbI2{s}↓",sp:["Na^+","NO3^-"]},
+ {n:"AgNO₃ + NaCl",a:"AgNO₃",b:"NaCl",ia:[["Ag⁺",1,3],["NO₃⁻",-1,3]],ib:[["Na⁺",1,3],["Cl⁻",-1,3]],pc:"Ag⁺",pa:"Cl⁻",rc:1,ra:1,pf:"AgCl",col:"var(--ppW)",cn:"أبيض",name:"كلوريد الفضّة",
+  dA:"AgNO3{aq} → Ag^+{aq} + NO3^-{aq}",dB:"NaCl{aq} → Na^+{aq} + Cl^-{aq}",eq:"AgNO3{aq} + NaCl{aq} → AgCl{s}↓ + NaNO3{aq}",
+  ion:"Ag^+{aq} + ~NO3^-{aq} + ~Na^+{aq} + Cl^-{aq} → AgCl{s}↓ + ~Na^+{aq} + ~NO3^-{aq}",net:"Ag^+{aq} + Cl^-{aq} → AgCl{s}↓",sp:["Na^+","NO3^-"]},
+ {n:"Fe(NO₃)₃ + NaOH",a:"Fe(NO₃)₃",b:"NaOH",ia:[["Fe³⁺",1,2],["NO₃⁻",-1,6]],ib:[["Na⁺",1,6],["OH⁻",-1,6]],pc:"Fe³⁺",pa:"OH⁻",rc:1,ra:3,pf:"Fe(OH)3",col:"var(--ppR)",cn:"بنّي محمرّ",name:"هيدروكسيد الحديد (III)",
+  dA:"Fe(NO3)3{aq} → Fe^3+{aq} + 3NO3^-{aq}",dB:"NaOH{aq} → Na^+{aq} + OH^-{aq}",eq:"Fe(NO3)3{aq} + 3NaOH{aq} → Fe(OH)3{s}↓ + 3NaNO3{aq}",
+  ion:"Fe^3+{aq} + ~3NO3^-{aq} + ~3Na^+{aq} + 3OH^-{aq} → Fe(OH)3{s}↓ + ~3Na^+{aq} + ~3NO3^-{aq}",net:"Fe^3+{aq} + 3OH^-{aq} → Fe(OH)3{s}↓",sp:["Na^+","NO3^-"]},
+ {n:"KNO₃ + NaCl",a:"KNO₃",b:"NaCl",ia:[["K⁺",1,3],["NO₃⁻",-1,3]],ib:[["Na⁺",1,3],["Cl⁻",-1,3]],pf:null,
+  dA:"KNO3{aq} → K^+{aq} + NO3^-{aq}",dB:"NaCl{aq} → Na^+{aq} + Cl^-{aq}"}];
+var X5=[100,150,200,250,300],Y5=[90,115,140,165,190],Y6=[88,112,136,160,184,208];
+var pk=0,st=0,ions=[],blocks=[],bop=0,dop=1,anim=null,tmr=null;
+function wOf(t){return t.length*6.6+16;}
+function build(){
+  var p=PAIRS[pk];ions=[];blocks=[];seed=17+pk*31;
+  [p.ia,p.ib].forEach(function(list,side){list.forEach(function(sp){for(var i=0;i<sp[2];i++)ions.push({t:sp[0],q:sp[1],side:side,pp:0});});});
+  var sl=[[],[]];[[106,170],[232,296]].forEach(function(xs,s){Y6.forEach(function(y){xs.forEach(function(x){sl[s].push([x,y]);});});shuffle(sl[s]);});
+  var c=[0,0];ions.forEach(function(o){o.b=sl[o.side][c[o.side]++];});
+  var ms=[];Y5.forEach(function(y){X5.forEach(function(x){ms.push([x+(rand()-.5)*6,y+(rand()-.5)*6]);});});shuffle(ms);
+  ions.forEach(function(o,i){o.m=ms[i];});
+  if(p.pf){
+    var cs=ions.filter(function(o){return o.t===p.pc;}),as=ions.filter(function(o){return o.t===p.pa;}),groups=[];
+    for(var u=0;u<cs.length/p.rc;u++)groups.push(cs.slice(u*p.rc,(u+1)*p.rc).concat(as.slice(u*p.ra,(u+1)*p.ra)));
+    var rows=[[]],rw=[0];
+    groups.forEach(function(g){g.forEach(function(o){o.pp=1;});var gw=g.reduce(function(s,o){return s+wOf(o.t);},0)+8;
+      if(rw[rw.length-1]+gw>246&&rows[rows.length-1].length){rows.push([]);rw.push(0);}rows[rows.length-1].push(g);rw[rw.length-1]+=gw;});
+    rows.forEach(function(r,ri){var y=212-ri*23,x=200-rw[ri]/2+4;r.forEach(function(g){var x0=x;g.forEach(function(o){var w=wOf(o.t);o.a=[x+w/2,y];x+=w;});blocks.push([x0-3,y-12,x-x0+6,24]);x+=8;});});
+  }
+  var ss=[];Y5.slice(0,4).forEach(function(y){X5.forEach(function(x){ss.push([x+(rand()-.5)*6,y+(rand()-.5)*6]);});});shuffle(ss);
+  var k=0;ions.forEach(function(o){if(!o.pp)o.a=p.pf?ss[k++]:o.m;o.c=o.b.slice();});
+}
+function draw(){
+  var p=PAIRS[pk],h="";
+  if(st===0){h+='<text x="140" y="34" font-size="15" font-weight="700" text-anchor="middle" fill="var(--text)" direction="ltr">'+p.a+'</text><text x="260" y="34" font-size="15" font-weight="700" text-anchor="middle" fill="var(--text)" direction="ltr">'+p.b+'</text>';}
+  else h+='<text x="200" y="34" font-size="15" font-weight="700" text-anchor="middle" fill="var(--text)" direction="ltr">'+p.a+' + '+p.b+'</text>';
+  h+='<path d="M68 58 L68 222 Q68 232 78 232 L322 232 Q332 232 332 222 L332 58" fill="var(--glass)" stroke="var(--beak)" stroke-width="3"/>';
+  h+='<rect x="71" y="72" width="258" height="157" rx="8" fill="var(--liq)"/>';
+  if(dop>0.01)h+='<line x1="200" y1="66" x2="200" y2="228" stroke="var(--beak)" stroke-width="2.5" stroke-dasharray="6 5" opacity="'+f1(dop)+'"/>';
+  if(bop>0.01)blocks.forEach(function(b){h+='<rect x="'+f1(b[0])+'" y="'+f1(b[1])+'" width="'+f1(b[2])+'" height="'+b[3]+'" rx="7" fill="'+p.col+'" stroke="var(--ppS)" stroke-width="1.5" opacity="'+f1(bop)+'"/>';});
+  ions.forEach(function(o){var w=wOf(o.t),cat=o.q>0,spec=st===2&&p.pf&&!o.pp;
+    h+='<g opacity="'+(spec?.6:1)+'"><rect x="'+f1(o.c[0]-w/2)+'" y="'+f1(o.c[1]-9)+'" width="'+f1(w)+'" height="18" rx="9" fill="'+(cat?"var(--catF)":"var(--anF)")+'" stroke="'+(cat?"var(--catS)":"var(--anS)")+'" stroke-width="1.5"'+(spec?' stroke-dasharray="4 3"':'')+'/>'+
+      '<text x="'+f1(o.c[0])+'" y="'+f1(o.c[1]+4)+'" font-size="11.5" font-weight="700" text-anchor="middle" fill="var(--text)" direction="ltr">'+o.t+'</text></g>';});
+  $("mixSvg").innerHTML=h;
+}
+function out(){
+  var p=PAIRS[pk],h;
+  if(st===0)h='<b>قبل المزج:</b> كل محلول أيوناته تسبح بحرّية (الخط المنقّط يفصل المحلولين).<div class="ce">'+EQ(p.dA)+'</div><div class="ce">'+EQ(p.dB)+'</div>اضغط <b>امزج</b>.';
+  else if(st===1)h='الأيونات تختلط: كل كاتيون يقابل أنيونات <b>جديدة</b> من المحلول الآخر...';
+  else if(p.pf)h='<b>تكوّن راسب '+p.name+' <span class="fx">'+F(p.pf)+'</span> لونه '+p.cn+' ↓</b><small>المعادلة الموزونة</small><div class="ce">'+EQ(p.eq)+'</div><small>المعادلة الأيونية (المشطوب = أيونات متشابهة، المنقّطة في الكأس)</small><div class="ce">'+EQ(p.ion)+'</div><small>المعادلة الأيونية النهائية</small><div class="ce net">'+EQ(p.net)+'</div>الأيونات المتشابهة: '+p.sp.map(function(s){return '<span class="fx">'+F(s)+'</span>';}).join(" و ")+'.';
+  else h='<b>لا يتكوّن راسب.</b> الشركاء الجدد <span class="fx">KCl</span> و <span class="fx">NaNO<sub>3</sub></span> يذوبان (أملاح <span class="fx">K<sup>+</sup></span> و <span class="fx">Na<sup>+</sup></span> و <span class="fx">NO<sub>3</sub><sup>−</sup></span> تذوب دائماً)، فتبقى كل الأيونات تسبح: لا يحدث تفاعل ترسيب.';
+  $("mixOut").innerHTML=h;
+}
+function go(s){
+  st=s;var from=ions.map(function(o){return o.c.slice();}),d0=dop,b0=bop,d1=s===0?1:0,b1=s===2?1:0,t0=null,D=RM?1:900;
+  if(anim)cancelAnimationFrame(anim);out();
+  function step(ts){if(t0===null)t0=ts;var u=Math.min(1,(ts-t0)/D),e=u<.5?2*u*u:1-Math.pow(-2*u+2,2)/2;
+    ions.forEach(function(o,i){var to=s===0?o.b:(s===1?o.m:o.a);o.c=[from[i][0]+(to[0]-from[i][0])*e,from[i][1]+(to[1]-from[i][1])*e];});
+    dop=d0+(d1-d0)*e;bop=b0+(b1-b0)*e;draw();if(u<1)anim=requestAnimationFrame(step);}
+  anim=requestAnimationFrame(step);
+}
+function pick(k){pk=k;if(tmr)clearTimeout(tmr);if(anim)cancelAnimationFrame(anim);st=0;dop=1;bop=0;build();draw();out();pressed($("pairPick"),k);}
+PAIRS.forEach(function(p,k){var b=document.createElement("button");b.type="button";b.className="tg ion";b.textContent=p.n;b.addEventListener("click",function(){pick(k);});$("pairPick").appendChild(b);});
+$("mixGo").addEventListener("click",function(){if(st!==0)return;go(1);if(tmr)clearTimeout(tmr);tmr=setTimeout(function(){go(2);},RM?10:1100);});
+$("mixBack").addEventListener("click",function(){if(tmr)clearTimeout(tmr);go(0);});
+pick(0);
+
+/* ---------- partner swap drawing ---------- */
+(function(){
+  var P=[["Ba²⁺",80,42,1],["Cl⁻",320,42,-1],["Na⁺",80,138,1],["CrO₄²⁻",320,138,-1]],h="";
+  h+='<line x1="80" y1="42" x2="320" y2="138" stroke="var(--ppY)" stroke-width="22" stroke-linecap="round" opacity=".9"/>';
+  h+='<line x1="80" y1="138" x2="320" y2="42" stroke="var(--beak)" stroke-width="22" stroke-linecap="round" opacity=".45"/>';
+  h+='<text x="200" y="20" font-size="12" text-anchor="middle" fill="var(--muted)" direction="ltr">BaCl₂</text><text x="200" y="172" font-size="12" text-anchor="middle" fill="var(--muted)" direction="ltr">Na₂CrO₄</text>';
+  h+='<line x1="112" y1="42" x2="290" y2="42" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="3 5" opacity=".7"/><line x1="112" y1="138" x2="280" y2="138" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="3 5" opacity=".7"/>';
+  P.forEach(function(q){var w=wOf(q[0])+10;h+='<rect x="'+f1(q[1]-w/2)+'" y="'+(q[2]-14)+'" width="'+f1(w)+'" height="28" rx="14" fill="'+(q[3]>0?"var(--catF)":"var(--anF)")+'" stroke="'+(q[3]>0?"var(--catS)":"var(--anS)")+'" stroke-width="2"/><text x="'+q[1]+'" y="'+(q[2]+5)+'" font-size="14" font-weight="700" text-anchor="middle" fill="var(--text)" direction="ltr">'+q[0]+'</text>';});
+  $("swapSvg").innerHTML=h;
+})();
+
+/* ---------- lab 2: solubility machine ---------- */
+var CAT=[["Na⁺","Na",1,0,"الصوديوم"],["K⁺","K",1,0,"البوتاسيوم"],["NH₄⁺","NH4",1,1,"الأمونيوم"],["Ag⁺","Ag",1,0,"الفضّة"],["Pb²⁺","Pb",2,0,"الرصاص"],["Ba²⁺","Ba",2,0,"الباريوم"],["Ca²⁺","Ca",2,0,"الكالسيوم"],["Mg²⁺","Mg",2,0,"المغنيسيوم"],["Cu²⁺","Cu",2,0,"النحاس (II)"],["Fe³⁺","Fe",3,0,"الحديد (III)"]];
+var AN=[["NO₃⁻","NO3",1,1,"نيترات"],["Cl⁻","Cl",1,0,"كلوريد"],["I⁻","I",1,0,"يوديد"],["F⁻","F",1,0,"فلوريد"],["SO₄²⁻","SO4",2,1,"كبريتات"],["S²⁻","S",2,0,"كبريتيد"],["CO₃²⁻","CO3",2,1,"كربونات"],["PO₄³⁻","PO4",3,1,"فوسفات"],["OH⁻","OH",1,1,"هيدروكسيد"]];
+var ci=3,ai=1;
+function gcd(a,b){return b?gcd(b,a%b):a;}
+function part(s,n,poly){return n>1?(poly?"("+s+")"+n:s+n):s;}
+function rule(c,a){
+  var cs=c[1],as=a[1],in_=function(l){return l.indexOf(cs)>=0;};
+  if(in_(["Na","K","NH4"]))return [1,"أملاح <span class=\"fx\">Na<sup>+</sup></span> و <span class=\"fx\">K<sup>+</sup></span> و <span class=\"fx\">NH<sub>4</sub><sup>+</sup></span> تذوب دائماً."];
+  if(as==="NO3")return [1,"أملاح النيترات <span class=\"fx\">NO<sub>3</sub><sup>−</sup></span> تذوب دائماً."];
+  if(as==="Cl"||as==="I")return in_(["Pb","Ag"])?[0,"الكلوريد واليوديد يذوبان إلّا مع <span class=\"fx\">Pb<sup>2+</sup> Ag<sup>+</sup> Hg<sup>2+</sup></span>، وهذا منها."]:[1,"الكلوريد واليوديد يذوبان إلّا مع <span class=\"fx\">Pb<sup>2+</sup> Ag<sup>+</sup> Hg<sup>2+</sup></span>، وهذا ليس منها."];
+  if(as==="F")return in_(["Ca","Mg","Pb","Ba"])?[0,"الفلوريد يذوب إلّا مع <span class=\"fx\">Ca<sup>2+</sup> Sr<sup>2+</sup> Mg<sup>2+</sup> Pb<sup>2+</sup> Ba<sup>2+</sup></span>، وهذا منها."]:[1,"الفلوريد يذوب إلّا مع <span class=\"fx\">Ca<sup>2+</sup> Sr<sup>2+</sup> Mg<sup>2+</sup> Pb<sup>2+</sup> Ba<sup>2+</sup></span>، وهذا ليس منها."];
+  if(as==="SO4")return in_(["Ag","Ba","Pb","Ca"])?[0,"الكبريتات تذوب إلّا مع <span class=\"fx\">Ag<sup>+</sup> Sr<sup>2+</sup> Ba<sup>2+</sup> Pb<sup>2+</sup> Ca<sup>2+</sup></span>، وهذا منها."]:[1,"الكبريتات تذوب إلّا مع <span class=\"fx\">Ag<sup>+</sup> Sr<sup>2+</sup> Ba<sup>2+</sup> Pb<sup>2+</sup> Ca<sup>2+</sup></span>، وهذا ليس منها."];
+  if(as==="S")return in_(["Ba","Ca","Mg"])?[1,"الكبريتيد لا يذوب إلّا مع 1A و 2A والأمونيوم، وهذا العنصر من 2A."]:[0,"الكبريتيد لا يذوب إلّا مع 1A و 2A والأمونيوم."];
+  if(as==="OH")return in_(["Ba","Ca"])?[1,"الهيدروكسيد لا يذوب إلّا مع 1A وهيدروكسيدات Ba و Sr و Ca (تذوب لكن أقلّ من 1A)."]:[0,"الهيدروكسيد لا يذوب إلّا مع 1A وهيدروكسيدات Ba و Sr و Ca."];
+  return [0,(as==="CO3"?"الكربونات":"الفوسفات")+" لا تذوب إلّا مع 1A والأمونيوم."];
+}
+function sol(){
+  var c=CAT[ci],a=AN[ai],g=gcd(c[2],a[2]),f=part(c[1],a[2]/g,c[3])+part(a[1],c[2]/g,a[3]),r=rule(c,a);
+  $("solOut").innerHTML='<span class="fx big">'+F(f)+'</span> &nbsp;'+a[4]+' '+c[4]+'<br><span class="verdict '+(r[0]?"yes":"no")+'">'+(r[0]?"يذوب في الماء: يبقى أيونات <span class=\"fx\">(aq)</span>":"لا يذوب: راسب <span class=\"fx\">(s)</span> ↓")+'</span><br><small>'+r[1]+'</small>';
+  pressed($("catPick"),ci);pressed($("anPick"),ai);
+}
+CAT.forEach(function(c,k){var b=document.createElement("button");b.type="button";b.className="tg ion";b.textContent=c[0];b.addEventListener("click",function(){ci=k;sol();});$("catPick").appendChild(b);});
+AN.forEach(function(a,k){var b=document.createElement("button");b.type="button";b.className="tg ion";b.textContent=a[0];b.addEventListener("click",function(){ai=k;sol();});$("anPick").appendChild(b);});
+sol();
+})();
+</script>
+</body>
+</html>

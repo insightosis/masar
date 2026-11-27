@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="geology">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>تكوّن الصخور النارية · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+span[dir=ltr],bdi[dir=ltr]{unicode-bidi:isolate}
+body{--plate:#fff4ea;--crust:#f3dcc4;--crust2:#e8c9a8;--mantle:#f4bfa6;--cone:#bfa48e;--magma:#f0552c;--magma2:#ffae42;--rockI:#8f8597;--rockE:#5d5662;--spk:#f4f0f8;--hi:#2f8fd8;--line:#7d6a92;--lay1:#f1ddbf;--lay2:#e4c79f;--lay3:#d9c3b0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--plate:#2a2238;--crust:#4a3a36;--crust2:#5a4740;--mantle:#5e3833;--cone:#6e5a4e;--magma:#ff7448;--magma2:#ffc266;--rockI:#a99fb4;--rockE:#8a7f94;--spk:#2a2238;--hi:#7cc4ff;--line:#c9b6e6;--lay1:#4d4038;--lay2:#5c4c40;--lay3:#3f3640}}
+:root[data-theme="dark"] body{--plate:#2a2238;--crust:#4a3a36;--crust2:#5a4740;--mantle:#5e3833;--cone:#6e5a4e;--magma:#ff7448;--magma2:#ffc266;--rockI:#a99fb4;--rockE:#8a7f94;--spk:#2a2238;--hi:#7cc4ff;--line:#c9b6e6;--lay1:#4d4038;--lay2:#5c4c40;--lay3:#3f3640}
+.stage{display:block;width:100%;height:auto;border-radius:22px;background:var(--plate);box-shadow:var(--press)}
+.pick{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.pick .tg{font-size:14px;padding:7px 12px}
+.labout{margin-top:10px;padding:12px 14px;border-radius:18px;background:var(--card);box-shadow:var(--clay-sm);font-size:15px;min-height:2.4em}
+.help{display:inline-block;font-size:12px;font-weight:700;padding:1px 9px;border-radius:9px;background:var(--p-sky);color:var(--text);margin-inline-end:6px}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
+.stats .card{text-align:center;padding:12px 8px}
+.stats .big{display:block;font-family:var(--display,inherit);font-size:2rem;font-weight:800;color:var(--sc);line-height:1.2}
+.stats p{margin:2px 0 0;font-size:14px}
+.bar{height:14px;border-radius:8px;background:var(--p-lav);overflow:hidden;margin-top:6px}
+.bar i{display:block;height:100%;border-radius:8px;background:var(--sc)}
+.shp{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}
+.shp .card{padding:10px}
+.shp .card h3{margin:0 0 2px;font-size:1rem}
+.shp .card p{margin:0;font-size:13.5px}
+@media (max-width:420px){.shp{grid-template-columns:1fr}}
+.act[data-act=match] .pc,.act[data-act=gap] .opts .pc{font-family:var(--body);font-style:normal}
+</style>
+</head>
+<body style="--sc:#e2653f">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الجيولوجيا</span><span class="chip">الدرس 1-1 · ص 67 إلى 69</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الثالثة: مواد الأرض (2) · الفصل الأول: الصخور النارية</p>
+  <h1 id="t">تكوّن الصخور النارية</h1>
+  <p>تخيّل شمعة: تذوب بالحرارة، ولمّا تبرد <b>تتجمّد</b> من جديد. الصخور النارية نفس الفكرة، بس بدل الشمع عندنا <mark>صخور منصهرة</mark> تحت الأرض. والسؤال: هل تبرد <b>في الأعماق</b> أو <b>على السطح</b>؟ جرّب في المختبر.</p>
+</section>
+
+<section class="panel" id="lab-sec" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">مختبر المصعد الناري</h2><span class="legend"><span><i style="background:var(--magma);width:10px;height:10px"></i>صهارة أو لافا</span><span><i style="background:var(--rockI);width:10px;height:10px"></i>صخر صلب</span></span></div>
+  <svg class="stage" id="riseSvg" viewBox="0 0 400 240" role="img" aria-label="مقطع في الأرض: صهارة تتكوّن في العمق وتصعد، فتتصلّب في الأعماق أو على السطح" style="margin-top:8px"></svg>
+  <div class="pick" id="pathPick" role="group" aria-label="أين تتصلّب الصهارة؟">
+    <button class="tg" type="button" aria-pressed="true" data-p="0">تتوقّف في الأعماق</button>
+    <button class="tg" type="button" aria-pressed="false" data-p="1">تصل إلى السطح</button>
+  </div>
+  <div class="row" style="margin-top:8px"><button class="go" type="button" id="riseGo">ابدأ</button><button class="lite" type="button" id="eroGo" hidden>شغّل التعرية</button></div>
+  <div class="labout" id="riseOut" aria-live="polite"></div>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">مصطلحات الدرس</h2></div>
+  <div class="syms">
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub"><span>♨</span></span><div><h3>الصخور النارية <span class="en">Igneous Rocks</span></h3><p>صخور تتكوّن لمّا <b>تبرد</b> المادّة المنصهرة <b>وتتصلّب</b>.</p><span class="hook">شمعة ذابت ثم تجمّدت.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub"><span>●</span></span><div><h3>الصهارة <span class="en">Magma</span></h3><p>المادّة الأم للصخور النارية: صخور منصهرة <b>تحت</b> سطح الأرض.</p><span class="hook">"أم" كل صخر ناري.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span>◐</span></span><div><h3>الانصهار الجزئي <span class="en">Partial Melting</span></h3><p>انصهار <b>جزء</b> من الصخور (لا كلّها)، ومنه تتكوّن الصهارة.</p><span class="hook">آيس كريم ذاب طرفه بس.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub"><span>≋</span></span><div><h3>اللافا (الحمم البركانية) <span class="en">Lava</span></h3><p>الصهارة نفسها لمّا <b>تصل إلى سطح الأرض</b>.</p><span class="hook">طلعت برّا؟ غيّرت اسمها.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub"><span>▲</span></span><div><h3>صخور بركانية (طفحية) <span class="en">Extrusive / Volcanic</span></h3><p>تتصلّب فيها المادّة المنصهرة <b>عند السطح</b>.</p><span class="hook">طفحت برّا، فهي طفحية.</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub"><span>▼</span></span><div><h3>صخور متداخلة (جوفية) <span class="en">Intrusive / Plutonic</span></h3><p>صهارة <b>فقدت قدرتها على الحركة</b> قبل السطح فتبلّرت في الأعماق.</p><span class="hook">في جوف الأرض، فهي جوفية.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">ليش ندرس الصخور النارية أوّلاً؟</h2></div>
+  <div class="stats">
+    <div class="card"><span class="big">⁦95%⁩</span><p>تقريباً من <b>القشرة الأرضية</b>: صخور نارية + صخور متحوّلة أصلها ناري.</p><div class="bar" aria-hidden="true"><i style="width:95%"></i></div></div>
+    <div class="card"><span class="big">⁦&gt;82%⁩</span><p>من <b>حجم الأرض</b> هو <b>الوشاح</b>، ويتكوّن من مادّة صخرية نارية.</p><div class="bar" aria-hidden="true"><i style="width:82%"></i></div></div>
+  </div>
+  <p style="margin-top:10px">يعني الغلاف الصخري مثل <b>كيكة ضخمة من الصخور النارية</b>، فوقها طبقة رقيقة من الكريمة هي <b>الصخور الرسوبية</b>. عشان نفهم تكوين الأرض وتركيبها، لازم نبدأ بالنارية.</p>
+  <p class="tip" style="margin-top:10px"><b>فخ:</b> نسبة ⁦95%⁩ ليست للصخور النارية وحدها، بل للنارية <b>والمتحوّلة المشتقّة من أصل ناري</b> معاً.</p>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">كيف تتكوّن الصخور النارية؟</h2></div>
+  <ol class="pts" style="padding-inline-start:20px">
+    <li><b>انصهار جزئي:</b> جزء من الصخور ينصهر عند مستويات مختلفة داخل <b>القشرة الأرضية</b> و<b>الوشاح العلوي</b>، على أعماق قد تصل إلى <b>⁦250⁩ كيلومتراً</b> (حوالى ⁦150⁩ ميلاً). الناتج: <b>الصهارة</b>.</li>
+    <li><b>الصعود:</b> الصهارة <b>أقل كثافة</b> من الصخور المحيطة بها، فتتصاعد نحو السطح. مثل نقطة زيت في كوب ماء: تطلع فوق لوحدها.</li>
+    <li><b>الوصول للسطح:</b> أحياناً تندفع المواد المنصهرة وتسبّب <b>ثوراناً بركانياً</b>. والصهارة اللي توصل السطح اسمها <b>اللافا</b> أو الحمم البركانية.</li>
+    <li><b>التبريد والتصلّب:</b> تبرد المادّة المنصهرة وتتصلّب، فيتكوّن <b>الصخر الناري</b>.</li>
+  </ol>
+
+  <div class="vs" style="margin-top:12px">
+    <div class="box peach"><h3>ثوران متفجّر</h3><p>قذف متفجّر للصهارة من <b>فوهة البركان</b>، يسبّب ثوراناً بركانياً <b>مدمّراً</b>.</p></div>
+    <span class="mid">أو</span>
+    <div class="box sky"><h3>ثوران هادئ</h3><p>ليس كل ثوران عنيفاً: براكين كثيرة تطلق <b>سيلاً</b> من اللافا المائعة والهادئة، مثل لافا <b>بركان كيلاويا</b> البازلتية في جزر هاواي.</p></div>
+  </div>
+
+  <div class="act" data-act="order" data-key="order" data-rtl
+       data-answer='["انصهار جزئي للصخور","تتكوّن الصهارة","تصعد لأنها أقل كثافة","تصل السطح فتسمّى لافا","تبرد وتتصلّب"]'
+       data-extra='["تهبط لأنها أكثر كثافة"]'
+       data-ok="ممتاز! انصهار جزئي، صهارة، صعود (أقل كثافة)، لافا عند السطح، ثم تبريد وتصلّب."
+       data-no="راجع الترتيب: كل شي يبدأ بالانصهار الجزئي، والصهارة تصعد لأنها أقل كثافة لا أكثر.">
+    <h3>رتّب القصّة <span class="k">نشاط</span></h3>
+    <p>رتّب مراحل تكوّن صخر ناري <b>بركاني</b> من البداية للنهاية. انتبه: في قطعة زائدة.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">بركانية أم متداخلة؟</h2></div>
+  <p>المكان اللي تتصلّب فيه المادّة المنصهرة يحدّد اسم الصخر:</p>
+  <div class="vs" style="margin-top:10px">
+    <div class="box mint"><h3>بركانية أو طفحية</h3><p><span dir="ltr">Extrusive or Volcanic</span><br>تتصلّب المادّة المنصهرة <b>عند السطح</b>.</p></div>
+    <span class="mid">↕</span>
+    <div class="box lav"><h3>متداخلة أو جوفية</h3><p><span dir="ltr">Intrusive or Plutonic</span><br>الصهارة <b>تفقد القدرة على الحركة</b> قبل بلوغ السطح، فتتبلّر <b>في الأعماق</b>.</p></div>
+  </div>
+  <p class="note" style="margin-top:10px"><span class="help">معلومة</span>كلمة <span dir="ltr">Plutonic</span> نسبة إلى <b>بلوتو</b>، إله أحد الآلهة في الأساطير الكلاسيكية (إله العالم السفلي).</p>
+  <p class="tip" style="margin-top:10px"><b>قاعدة:</b> الصخور المتداخلة <b>لا يمكن رؤيتها عند السطح إلا عبر عوامل التعرية</b>. في المختبر فوق، اختر "تتوقّف في الأعماق" ثم "شغّل التعرية" وشوف.</p>
+
+  <div class="act" data-act="sort" data-key="sort" data-bins='["بركانية (طفحية)","متداخلة (جوفية)"]'
+       data-items='[["لافا تصلّبت على منحدرات بركان كيلاويا",0,"اللافا تصلّبت عند السطح، فهي بركانية."],["صهارة فقدت قدرتها على الحركة قبل السطح",1,"توقّفت في الأعماق وتبلّرت هناك، فهي متداخلة."],["الحجر الخفّاف (البيوميس) اللي دفن بومبي",0,"قذفه بركان فيزوفيوز وتصلّب عند السطح، فهو بركاني."],["صخر لا نراه على السطح إلا بعد التعرية",1,"هذه صفة الصخور الجوفية: مدفونة حتى تزيل التعرية ما فوقها."],["باثوليت في أعماق القشرة",1,"الباثوليت كتلة جوفية تصلّبت في باطن الأرض."],["صهارة تصلّبت بعد ما سالت على سطح الأرض",0,"تصلّبت عند السطح، فهي بركانية."]]'
+       data-ok="ممتاز! عند السطح = بركانية (طفحية)، في الأعماق = متداخلة (جوفية).">
+    <h3>صنّف الصخر <span class="k">نشاط</span></h3>
+    <p>وين تصلّبت المادّة المنصهرة؟ ضع كل بطاقة في صندوقها.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s5">
+  <div class="sec-head"><span class="num">5</span><h2 id="s5">أشكال الصخور النارية في الطبيعة</h2></div>
+  <p>الصهارة تتصلّب <b>بالشكل اللي كانت فيه</b> لحظة ما وقفت، مثل الجيلي اللي ياخذ شكل القالب. لذلك كتل الصخور النارية الجوفية لها أشكال مختلفة. اضغط على كل شكل:</p>
+  <div class="panel" style="margin:8px 0 0">
+    <svg class="stage" id="shapeSvg" viewBox="0 0 400 250" role="img" aria-label="مقطع يبيّن أشكال الصخور النارية: باثوليت، قاطع، سدّ، لاكوليث، لوبوليث، عنق البركان، وانسياب الحمم"></svg>
+    <div class="pick" id="shapePick" role="group" aria-label="أشكال الصخور النارية"></div>
+    <div class="labout" id="shapeOut" aria-live="polite"></div>
+  </div>
+  <div class="shp">
+    <div class="card"><h3>الباثوليت <span class="en" dir="ltr">Batholith</span></h3><p>أضخم كتلة، في <b>الأعماق</b> تحت الكل.</p></div>
+    <div class="card"><h3>القاطع <span class="en" dir="ltr">Dike</span></h3><p>لوح رقيق <b>يقطع</b> الطبقات رأسياً أو مائلاً.</p></div>
+    <div class="card"><h3>السدّ <span class="en" dir="ltr">Sill</span></h3><p>لوح رقيق <b>موازٍ</b> للطبقات، محشور بينها.</p></div>
+    <div class="card"><h3>اللاكوليث <span class="en" dir="ltr">Laccolith</span></h3><p>قبّة محدّبة <b>ترفع</b> الطبقات فوقها.</p></div>
+    <div class="card"><h3>اللوبوليث <span class="en" dir="ltr">Lopolith</span></h3><p>كتلة على شكل <b>صحن مقعّر</b>.</p></div>
+    <div class="card"><h3>عنق (قصبة) البركان</h3><p>القناة اللي تصعد فيها الصهارة إلى <b>الفوهة</b>.</p></div>
+  </div>
+  <p class="note" style="margin-top:10px"><span class="help">مساعدة</span>الأوصاف القصيرة فوق من رسم الكتاب (شكل 64) لتسهيل الحفظ. والكتاب يذكر كذلك <b>انسيابات الحمم البركانية</b> اللي تتّخذ أشكالاً مختلفة <b>على سطح الأرض</b>.</p>
+
+  <div class="act" data-act="match" data-key="match"
+       data-pairs='[["القاطع","يقطع الطبقات رأسياً أو مائلاً"],["السدّ","لوح موازٍ للطبقات بينها"],["اللاكوليث","قبّة ترفع الطبقات فوقها"],["اللوبوليث","كتلة على شكل صحن مقعّر"],["الباثوليت","أضخم كتلة جوفية في الأعماق"],["عنق البركان","قناة تصعد فيها الصهارة إلى الفوهة"]]'
+       data-ok="ممتاز! وانتبه للفخ: القاطع يقطع الطبقات، والسدّ يوازيها.">
+    <h3>وصّل الشكل بوصفه <span class="k">نشاط</span></h3>
+    <p>اختر شكلاً، ثم وصفه الصحيح.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s6">
+  <div class="sec-head"><span class="num">6</span><h2 id="s6">مثال محلول: مراجعة الدرس</h2></div>
+  <div class="qbox">(1) ما هي الصهارة؟ (2) كيف تختلف اللافا (الحمم البركانية) عن الصهارة؟ (3) لماذا تتصاعد الصهارة نحو السطح؟</div>
+  <div class="row"><button class="lite" id="hideSol" type="button" aria-pressed="false">أخفِ الحل وجرّب أولاً</button></div>
+  <ol class="steps" id="steps">
+    <li><span><b>الصهارة</b>: المادّة الأم للصخور النارية، مادّة منصهرة تتكوّن عبر <b>الانصهار الجزئي</b> للصخور في القشرة الأرضية والوشاح العلوي، على أعماق قد تصل إلى ⁦250 km⁩.</span></li>
+    <li><span><b>الفرق</b>: الصهارة <b>تحت</b> سطح الأرض، أما <b>اللافا</b> فهي الصهارة اللي <b>وصلت إلى سطح الأرض</b>.</span></li>
+    <li><span><b>سبب الصعود</b>: الصهارة <b>أقل كثافة</b> من الصخور المحيطة بها.</span></li>
+    <li><span><span class="ans">الصهارة تحت السطح، واللافا فوقه. تتصلّب الأولى في الأعماق إلى صخور متداخلة (جوفية)، والثانية عند السطح إلى صخور بركانية (طفحية).</span></span></li>
+  </ol>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">7</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sd">
+  <div class="sec-head"><span class="num">8</span><h2 id="sd">في حياتك</h2></div>
+  <div class="life">
+    <div class="card"><h3>مدينة بومبي</h3><p>في عام ⁦79⁩ م ثار بركان <b>فيزوفيوز</b> ودفن بومبي (قرب نابولي في إيطاليا) تحت أمتار من <b>الحجر الخفّاف</b> والرماد البركاني. ظهرت بقاياها بعد عام ⁦1595⁩، واليوم يزورها آلاف السيّاح.</p></div>
+    <div class="card"><h3>حجر الحمّام الخفيف</h3><p>الحجر الخفّاف (البيوميس) صخر <b>بركاني</b>: لافا تصلّبت بسرعة عند السطح.</p></div>
+    <div class="card"><h3>هاواي</h3><p>بركان <b>كيلاويا</b> مثال للثوران الهادئ: سيل من اللافا البازلتية المائعة ينزل على منحدراته.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">9</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>الصهارة التي تصل إلى سطح الأرض تسمّى:</p>
+      <div class="opts"><button>باثوليت</button><button data-ok>اللافا (الحمم البركانية)</button><button>صخراً متداخلاً</button></div>
+      <p class="why" hidden>الصحيح: اللافا. الصهارة تحت السطح، ولمّا توصل السطح يصير اسمها لافا أو حمم بركانية. الباثوليت كتلة جوفية في الأعماق.</p></div>
+    <div class="q"><p>صخور نارية تكوّنت من صهارة فقدت القدرة على الحركة قبل بلوغ السطح فتبلّرت في الأعماق:</p>
+      <div class="opts"><button>بركانية (طفحية)</button><button data-ok>متداخلة (جوفية)</button><button>رسوبية</button></div>
+      <p class="why" hidden>الصحيح: متداخلة أو جوفية (Plutonic نسبة إلى بلوتو)، ولا نراها عند السطح إلا عبر التعرية. البركانية تتصلّب عند السطح.</p></div>
+    <div class="q"><p>تتصاعد كتلة الصهارة نحو السطح لأنها:</p>
+      <div class="opts"><button>أكثر كثافة من الصخور المحيطة بها</button><button>أبرد من الصخور المحيطة بها</button><button data-ok>أقل كثافة من الصخور المحيطة بها</button></div>
+      <p class="why" hidden>الصحيح: أقل كثافة من الصخور المحيطة، فتطفو لفوق مثل نقطة الزيت في الماء.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li><b>الصهارة</b> المادّة الأم للصخور النارية، تتكوّن بالانصهار الجزئي في القشرة والوشاح العلوي (حتى ⁦250 km⁩)، وتصعد لأنها أقل كثافة.</li>
+      <li>الصهارة اللي توصل السطح اسمها <b>لافا</b>. تتصلّب عند السطح: صخور <b>بركانية (طفحية)</b>. تتبلّر في الأعماق: صخور <b>متداخلة (جوفية)</b>، لا تظهر إلا بالتعرية.</li>
+      <li>أشكال الكتل الجوفية: <b>باثوليت، قاطع، سدّ، لاكوليث، لوبوليث</b>، إضافة إلى انسيابات الحمم على السطح.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الجيولوجيا، الصف الحادي عشر، الوحدة الثالثة، ص 67 إلى 69</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"geo-u3-1-1"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+function pressed(box,k){[].forEach.call(box.children,function(x,j){x.setAttribute("aria-pressed",j===k?"true":"false");});}
+var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+function f1(x){return (+x).toFixed(1);}
+function cl(x){return Math.max(0,Math.min(1,x));}
+function ease(u){return u<.5?2*u*u:1-Math.pow(-2*u+2,2)/2;}
+
+/* ---------- lab 1: magma rises, cools deep or at the surface ---------- */
+var path=0,T=0,ER=0,anim=null,CX=310;
+var SPK=[[-18,-4],[-6,6],[8,-6],[18,3],[-12,8],[2,0],[12,-1]];
+function draw(){
+  var h="",surf=60+52*ER;
+  h+='<rect x="0" y="0" width="400" height="240" fill="var(--sky)"/>';
+  h+='<rect x="0" y="'+f1(surf)+'" width="400" height="'+f1(170-surf)+'" fill="var(--crust)"/>';
+  if(ER<1){h+='<line x1="0" y1="95" x2="400" y2="95" stroke="var(--crust2)" stroke-width="5" opacity="'+(1-ER)+'"/>';}
+  h+='<line x1="0" y1="138" x2="400" y2="138" stroke="var(--crust2)" stroke-width="5"/>';
+  h+='<rect x="0" y="170" width="400" height="70" fill="var(--mantle)"/>';
+  h+='<line x1="0" y1="'+f1(surf)+'" x2="400" y2="'+f1(surf)+'" stroke="var(--line)" stroke-width="2"/>';
+  /* volcano cone */
+  if(ER<1)h+='<polygon points="250,60 302,22 318,22 370,60" fill="var(--cone)" stroke="var(--line)" stroke-width="2" opacity="'+f1(1-ER)+'"/>';
+  /* labels */
+  h+='<text x="8" y="'+f1(surf+16)+'" font-size="12" fill="var(--text)" text-anchor="end">'+(ER>.5?"سطح جديد بعد التعرية":"سطح الأرض")+'</text>';
+  h+='<text x="8" y="158" font-size="12" fill="var(--text)" text-anchor="end">القشرة الأرضية</text>';
+  h+='<text x="8" y="196" font-size="12" fill="var(--text)" text-anchor="end">الوشاح العلوي</text>';
+  h+='<text x="8" y="230" font-size="11" fill="var(--text)" text-anchor="end">عمق يصل إلى ⁦250 km⁩</text>';
+  /* melting zone */
+  var mz=cl(T/.15);
+  if(T>0)h+='<ellipse cx="'+CX+'" cy="214" rx="44" ry="12" fill="var(--magma2)" opacity="'+f1(mz*.55*(1-cl((T-.3)/.4)))+'"/>';
+  var top=path?22:120,riseEnd=path?.55:.7,u=ease(cl((T-.2)/(riseEnd-.2))),y=212+(top-212)*u,cool=cl((T-.72)/.28);
+  if(T>0){
+    if(T>.2&&u<1)h+='<line x1="'+CX+'" y1="212" x2="'+CX+'" y2="'+f1(y)+'" stroke="var(--magma)" stroke-width="2" stroke-dasharray="4 5" opacity=".6"/>';
+    if(!path){
+      var rx=20+14*u,ry=12+4*u;
+      h+='<ellipse cx="'+CX+'" cy="'+f1(y)+'" rx="'+f1(rx)+'" ry="'+f1(ry)+'" fill="var(--magma)" opacity="'+f1(mz*(1-cool))+'"/>';
+      if(cool>0){h+='<ellipse cx="'+CX+'" cy="'+f1(y)+'" rx="'+f1(rx)+'" ry="'+f1(ry)+'" fill="var(--rockI)" opacity="'+f1(cool)+'"/>';
+        SPK.forEach(function(s){h+='<circle cx="'+(CX+s[0])+'" cy="'+f1(y+s[1])+'" r="2.2" fill="var(--spk)" opacity="'+f1(cool)+'"/>';});}
+      if(u<1)h+='<text x="'+(CX+40)+'" y="'+f1(y+4)+'" font-size="12" font-weight="700" fill="var(--text)" text-anchor="end">صهارة</text>';
+      if(cool>.5)h+='<text x="'+(CX-42)+'" y="'+f1(y+5)+'" font-size="12" font-weight="700" fill="var(--text)">صخر جوفي</text>';
+    }else{
+      if(u<1){h+='<ellipse cx="'+CX+'" cy="'+f1(y)+'" rx="14" ry="11" fill="var(--magma)" opacity="'+f1(mz)+'"/>';
+        h+='<text x="'+(CX+22)+'" y="'+f1(y+4)+'" font-size="12" font-weight="700" fill="var(--text)" text-anchor="end">'+(y<62?"لافا":"صهارة")+'</text>';}
+      else{
+        var fl=cl((T-.55)/.17);
+        h+='<rect x="'+(CX-4)+'" y="22" width="8" height="38" fill="var(--magma)" opacity="'+f1(1-cool)+'"/>';
+        h+='<rect x="'+(CX-4)+'" y="22" width="8" height="38" fill="var(--rockE)" opacity="'+f1(cool)+'"/>';
+        var d="M312 23 L356 56 L396 57";
+        h+='<path d="'+d+'" pathLength="1" fill="none" stroke="var(--magma)" stroke-width="7" stroke-linecap="round" stroke-dasharray="1 1" stroke-dashoffset="'+f1(1-fl)+'" opacity="'+f1(1-cool)+'"/>';
+        if(cool>0)h+='<path d="'+d+'" fill="none" stroke="var(--rockE)" stroke-width="7" stroke-linecap="round" opacity="'+f1(cool)+'"/>';
+        if(fl>.4&&cool<.5)h+='<text x="372" y="46" font-size="12" font-weight="700" fill="var(--text)" text-anchor="middle">لافا</text>';
+        if(cool>.5)h+='<text x="180" y="36" font-size="12" font-weight="700" fill="var(--text)" text-anchor="middle">صخر بركاني (طفحي)</text>';
+      }
+    }
+  }
+  $("riseSvg").innerHTML=h;
+}
+var TX={
+  start:'اختر أين تتصلّب الصهارة، ثم اضغط <b>ابدأ</b>.',
+  melt:'<b>انصهار جزئي:</b> جزء من الصخور ينصهر داخل القشرة الأرضية أو الوشاح العلوي، على عمق قد يصل إلى ⁦250 km⁩. تكوّنت <b>الصهارة Magma</b>.',
+  rise:'الصهارة <b>أقل كثافة</b> من الصخور المحيطة بها، فتتصاعد نحو السطح مثل نقطة زيت في كوب ماء.',
+  deep:'الصهارة <b>فقدت القدرة على الحركة</b> قبل السطح، فتبلّرت في الأعماق: <b>صخر ناري متداخل (جوفي)</b>. لا نراه على السطح إلا عبر <b>التعرية</b>. جرّب زر "شغّل التعرية".',
+  lava:'وصلت السطح! الصهارة هنا صار اسمها <b>لافا Lava</b> (حمم بركانية)، وسالت على منحدر البركان.',
+  surf:'اللافا بردت وتصلّبت <b>عند السطح</b>: <b>صخر ناري بركاني (طفحي)</b>.',
+  ero:'التعرية أزالت الطبقات والبركان اللي فوقه، فصار الصخر الجوفي <b>ظاهراً على السطح</b>.'};
+function text(){
+  var k="start";
+  if(ER>0)k="ero";
+  else if(T>0){if(T<.2)k="melt";else if(path){k=T<.55?"rise":(T<.72?"lava":"surf");}else k=T<.72?"rise":"deep";}
+  $("riseOut").innerHTML=TX[k];
+}
+function run(){
+  if(anim)cancelAnimationFrame(anim);
+  ER=0;$("eroGo").hidden=true;
+  if(RM){T=1;draw();text();if(!path)$("eroGo").hidden=false;return;}
+  var t0=null,D=5200;
+  function st(ts){if(t0===null)t0=ts;T=cl((ts-t0)/D);draw();text();if(T<1)anim=requestAnimationFrame(st);else if(!path)$("eroGo").hidden=false;}
+  anim=requestAnimationFrame(st);
+}
+[].forEach.call($("pathPick").children,function(b){b.addEventListener("click",function(){path=+b.dataset.p;pressed($("pathPick"),path);if(anim)cancelAnimationFrame(anim);T=0;ER=0;$("eroGo").hidden=true;draw();text();});});
+$("riseGo").addEventListener("click",run);
+$("eroGo").addEventListener("click",function(){
+  if(anim)cancelAnimationFrame(anim);
+  if(RM){ER=1;draw();text();return;}
+  var t0=null;function st(ts){if(t0===null)t0=ts;ER=ease(cl((ts-t0)/2200));draw();text();if(ER<1)anim=requestAnimationFrame(st);}
+  anim=requestAnimationFrame(st);
+});
+draw();text();
+
+/* ---------- shapes of igneous bodies (own drawing after fig. 64) ---------- */
+var SH=[
+ ["الباثوليت","Batholith",'<path d="M30 250 C34 206 88 190 150 196 C210 202 250 184 300 198 C342 210 372 214 384 250 Z"/>',"أضخم كتلة نارية جوفية، تصلّبت في <b>الأعماق</b> وتغذّي باقي الأشكال من تحت."],
+ ["القاطع","Dike",'<polygon points="246,196 257,196 238,64 227,64"/><polygon points="179,198 187,198 185,156 178,156"/>',"لوح رقيق من الصخر الناري <b>يقطع</b> الطبقات رأسياً أو مائلاً."],
+ ["السدّ","Sill",'<rect x="236" y="107" width="84" height="7"/>',"لوح رقيق <b>موازٍ</b> للطبقات، محشور بين طبقتين. (لا تخلطه مع القاطع.)"],
+ ["اللاكوليث","Laccolith",'<path d="M316 114 Q353 62 392 114 Z"/>',"كتلة على شكل <b>قبّة</b> قاعدتها مستوية وسطحها محدّب، ترفع الطبقات اللي فوقها."],
+ ["اللوبوليث","Lopolith",'<path d="M144 136 Q182 180 220 136 Q182 160 144 136 Z"/>',"كتلة على شكل <b>صحن أو حوض مقعّر</b> بين الطبقات."],
+ ["عنق البركان","Volcanic neck",'<rect x="95" y="22" width="10" height="174"/>',"<b>القناة</b> (القصبة) اللي تصعد فيها الصهارة من الأعماق إلى فوهة البركان."],
+ ["انسياب الحمم","Lava flow",'<polygon points="104,22 112,22 152,47 214,46 216,51 148,51"/>',"لافا سالت على <b>سطح الأرض</b> وتصلّبت. هذه ليست جوفية، بل <b>بركانية</b>."]];
+var sk=0;
+function drawShapes(){
+  var h='<rect x="0" y="0" width="400" height="50" fill="var(--sky)"/>';
+  var L=[[50,80,"--lay1"],[80,110,"--lay2"],[110,140,"--lay1"],[140,170,"--lay2"],[170,250,"--lay3"]];
+  L.forEach(function(l){h+='<rect x="0" y="'+l[0]+'" width="400" height="'+(l[1]-l[0])+'" fill="var('+l[2]+')"/>';});
+  [80,110,140,170].forEach(function(y){h+='<line x1="0" y1="'+y+'" x2="400" y2="'+y+'" stroke="var(--line)" stroke-width="1" opacity=".35"/>';});
+  h+='<polygon points="40,50 94,18 106,18 160,50" fill="var(--cone)" stroke="var(--line)" stroke-width="1.5"/>';
+  h+='<line x1="0" y1="50" x2="400" y2="50" stroke="var(--line)" stroke-width="2"/>';
+  SH.forEach(function(s,k){
+    var on=k===sk;
+    h+='<g fill="'+(on?"var(--magma)":"var(--rockI)")+'" stroke="'+(on?"var(--hi)":"none")+'" stroke-width="'+(on?3:0)+'" opacity="'+(on?1:.8)+'">'+s[2]+'</g>';
+  });
+  $("shapeSvg").innerHTML=h;
+  $("shapeOut").innerHTML='<b>'+SH[sk][0]+'</b> <span dir="ltr" class="muted">'+SH[sk][1]+'</span>: '+SH[sk][3];
+  pressed($("shapePick"),sk);
+}
+SH.forEach(function(s,k){var x=document.createElement("button");x.type="button";x.className="tg";x.textContent=s[0];x.addEventListener("click",function(){sk=k;drawShapes();});$("shapePick").appendChild(x);});
+drawShapes();
+})();
+</script>
+</body>
+</html>
