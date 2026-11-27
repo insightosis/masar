@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="math">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>قسمة كثيرات الحدود · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+span[dir=ltr],bdi[dir=ltr],b[dir=ltr]{unicode-bidi:isolate}
+body{--plane:#f1edff;--line:#6d5bd0;--hi:#ffd3e0;--zero:#c9ecff;--red:#d9435a;--grn:#139a74}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--plane:#24203d;--line:#b4a6ff;--hi:#6b3150;--zero:#1f4a63;--red:#ff8597;--grn:#4fd8ac}}
+:root[data-theme="dark"] body{--plane:#24203d;--line:#b4a6ff;--hi:#6b3150;--zero:#1f4a63;--red:#ff8597;--grn:#4fd8ac}
+.xtra{margin-top:12px;padding:10px 16px;border-radius:20px;background:var(--card);box-shadow:var(--clay-sm)}
+.xtra summary{cursor:pointer;font-weight:700;color:var(--ink)}
+.fbox{overflow-x:auto;text-align:center;padding:6px 0}
+.nw{white-space:nowrap}
+.act .gap{direction:ltr;unicode-bidi:isolate}
+.act[data-act=gap] .pc{font-family:"Noto Serif",Georgia,serif}
+.sym .bub.xs{font-size:.92rem;white-space:nowrap}
+.law.rem{background:var(--p-mint);text-align:center}
+.law.rem p{color:var(--text)}
+/* division boards */
+.board{overflow-x:auto;margin-top:10px;padding:12px 8px;border-radius:20px;background:var(--plane);box-shadow:var(--press)}
+.board table{margin:0 auto;border-collapse:collapse;direction:ltr;font-family:"Noto Serif",Georgia,serif;font-size:17px;color:var(--text)}
+.board td{padding:4px 9px;text-align:center;white-space:nowrap;min-width:34px}
+.ld td.dv{color:var(--ink);font-weight:700;text-align:right}
+.ld td.br{border-top:2.5px solid var(--line)}
+.ld td.bl{border-left:2.5px solid var(--line)}
+.ld td.ln{border-top:1.8px solid var(--line)}
+.ld td.qt{color:var(--red);font-weight:700}
+.ld td.mi{color:var(--red);font-weight:700;text-align:right}
+.ld td.res{color:var(--grn);font-weight:700}
+.syn td.za{border-right:2.5px solid var(--line);border-bottom:2.5px solid var(--line);color:var(--ink);font-weight:800;background:var(--zero);border-radius:10px 0 0 0}
+.syn tr.tot td{border-top:2px solid var(--line)}
+.syn tr.tot td.lead0{border-top:0}
+.syn td.rem{outline:2px dashed var(--red);outline-offset:-3px;color:var(--red);font-weight:800}
+.syn td.cur{background:var(--hi);border-radius:10px}
+.syn td.e::after{content:"";display:inline-block;width:18px;height:18px;border:1.6px solid var(--muted);border-radius:4px;vertical-align:middle;opacity:.55}
+.syn tr.lab td{font-size:13px;color:var(--red);font-weight:700;padding-top:0}
+.pick{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:6px}
+.pick button{font:inherit;font-size:14px;padding:6px 12px;border-radius:14px;border:0;background:var(--card);color:var(--text);box-shadow:var(--clay-sm);cursor:pointer;direction:ltr;font-family:"Noto Serif",Georgia,serif}
+.pick button[aria-pressed=true]{background:var(--p-pink);box-shadow:var(--press);font-weight:700}
+.say{margin:10px 0 0;padding:10px 14px;border-radius:16px;background:var(--card);box-shadow:var(--clay-sm);min-height:48px;font-size:15px}
+.out{margin-top:10px;display:grid;gap:6px;text-align:center}
+.out .f{font-size:1.05rem;white-space:normal}
+.out small{color:var(--muted);font-size:13px}
+.num-anat{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:10px 0}
+.num-anat .card{padding:10px 14px;text-align:center;font-size:14.5px}
+.num-anat .card b{display:block;font-family:"Noto Serif",Georgia,serif;font-size:1.2rem;direction:ltr}
+.two-c{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:10px}
+.two-c .card{padding:12px 14px;font-size:14.5px}
+.two-c .card h4{margin:0 0 6px;font-size:15px}
+.cyc{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:10px 0}
+.cyc span{padding:6px 12px;border-radius:14px;box-shadow:var(--clay-sm);background:var(--bb);font-weight:700;color:var(--text)}
+.cyc i{align-self:center;font-style:normal;color:var(--muted)}
+</style>
+</head>
+<body style="--sc:#8a63f2">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الرياضيات</span><span class="chip">الدرس 3-4 · ص 107 إلى 115</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الثالثة: كثيرات الحدود</p>
+  <h1 id="t">قسمة كثيرات الحدود</h1>
+  <p>تعرف أن <span dir="ltr">56 ÷ 8 = 7</span> بدون باقٍ، فالعدد 8 عامل من عوامل 56. اليوم نسوي نفس الشي مع كثيرات الحدود. <mark>كيف تعرف إذا كان <span dir="ltr">(x + 4)</span> عاملاً من عوامل <span dir="ltr">x³ + 64</span> بدون ما تحلّل؟</mark> نقسم ونشوف الباقي. جرّب الآلة تحت.</p>
+</section>
+
+<section class="panel" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">مختبر: آلة القسمة التركيبية</h2><span class="legend"><span><i style="background:var(--zero)"></i>صفر المقسوم عليه</span><span><i style="background:var(--hi)"></i>الخطوة الحالية</span></span></div>
+  <p class="cap" style="margin-top:4px">اختر المقسوم:</p>
+  <div class="pick" id="pick">
+    <button type="button" data-i="0" aria-pressed="true">x³ − 13x + 12</button>
+    <button type="button" data-i="1" aria-pressed="false">x³ − 3x² − 6x + 8</button>
+    <button type="button" data-i="2" aria-pressed="false">x⁴ − 5x² + 4x + 12</button>
+  </div>
+  <div class="controls"><div class="ctl"><label for="za">المقسوم عليه: <b id="zaL" dir="ltr">(x + 4)</b> وصفره <b id="zaV" dir="ltr">a = −4</b></label><input type="range" dir="ltr" id="za" min="-4" max="4" step="1" value="-4"></div></div>
+  <div class="board"><table class="syn" id="synT" aria-live="polite"></table></div>
+  <p class="say" id="say"></p>
+  <div class="row" style="justify-content:center;margin-top:10px"><button class="chk" type="button" id="stepBtn">الخطوة التالية</button><button class="lite" type="button" id="allBtn">أظهر الكل</button><button class="lite" type="button" id="resetBtn">من جديد</button></div>
+  <div class="out" id="synOut" aria-live="polite"></div>
+  <p class="cap">جرّب كل قيم a للمقسوم الأول: متى يصير الباقي صفراً؟ هذه القيم هي أصفار كثيرة الحدود.</p>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">رموز الدرس ومصطلحاته</h2></div>
+  <div class="syms">
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub xs"><span dir="ltr">f(x)</span></span><div><h3>المقسوم <span class="en">Dividend</span></h3><p>كثيرة الحدود اللي نقسمها. نكتبها بالصورة العامة مرتبة.</p><span class="hook">الكعكة اللي نقطّعها.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub xs"><span dir="ltr">(x − a)</span></span><div><h3>المقسوم عليه <span class="en">Divisor</span></h3><p>اللي نقسم عليه. في هذا الدرس غالباً عامل خطي، وصفره a.</p><span class="hook">السكين اللي نقطّع فيه.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub xs"><span dir="ltr">q(x)</span></span><div><h3>ناتج القسمة <span class="en">Quotient</span></h3><p>نتيجة القسمة. درجته أقل من درجة المقسوم بواحد عندما نقسم على عامل من الدرجة الأولى.</p><span class="hook">كم قطعة طلعت.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub sm"><span>الباقي</span></span><div><h3>باقي القسمة <span class="en">Remainder</span></h3><p>اللي يتبقى في النهاية. لو صفر: المقسوم عليه وناتج القسمة من عوامل المقسوم.</p><span class="hook">الفتات اللي بقي في الصحن.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub"><span>÷</span></span><div><h3>القسمة المطولة <span class="en">Long Division</span></h3><p>نفس قسمة الأعداد الطويلة: اقسم، اضرب، اطرح، أنزل.</p><span class="hook">الطريقة اللي تعرفها من الابتدائي.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub"><span dir="ltr">a|</span></span><div><h3>القسمة التركيبية <span class="en">Synthetic Division</span></h3><p>طريقة مختصرة للقسمة على <span dir="ltr">(x − a)</span>: معاملات فقط، بلا متغيرات، ونجمع بدل ما نطرح.</p><span class="hook">نسخة سريعة: أرقام بس.</span></div></div>
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub xs"><span dir="ltr">f(a)</span></span><div><h3>نظرية الباقي <span class="en">Remainder Theorem</span></h3><p>باقي قسمة <span dir="ltr">f(x)</span> على <span dir="ltr">(x − a)</span> يساوي <span dir="ltr">f(a)</span>.</p><span class="hook">عوّض بالصفر، يطلع لك الباقي.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">نبدأ من قسمة الأعداد</h2></div>
+  <p>قسمة كثيرات الحدود تشبه قسمة الأعداد تماماً. شوف المثالين:</p>
+  <div class="num-anat">
+    <div class="card" style="background:var(--p-mint)"><b>56 ÷ 8 = 7</b>الباقي 0<br>⇐ 8 و 7 من عوامل 56</div>
+    <div class="card" style="background:var(--p-peach)"><b>42 ÷ 5 = 8</b>الباقي 2<br>⇐ 5 و 8 ليسا من عوامل 42</div>
+  </div>
+  <p>في <span dir="ltr">42 ÷ 5</span>: العدد 42 هو <b>المقسوم</b>، و 5 <b>المقسوم عليه</b>، و 8 <b>ناتج القسمة</b>، و 2 <b>باقي القسمة</b>. والتحقق: <span dir="ltr">5 × 8 + 2 = 42</span>.</p>
+  <p class="tip"><b>الفكرة كلها:</b> إذا كان الباقي صفراً، فالمقسوم عليه وناتج القسمة <b>عاملان</b> من عوامل المقسوم. ونفس الشي مع كثيرات الحدود: <span dir="ltr">2x² ÷ x = 2x</span>، فالمقداران <span dir="ltr">x</span> و <span dir="ltr">2x</span> من عوامل <span dir="ltr">2x²</span>.</p>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">القسمة المطولة</h2></div>
+  <p>نتبع نفس خطوات قسمة الأعداد الكلية، ونكررها دورة بعد دورة:</p>
+  <div class="cyc"><span style="--bb:var(--p-lav)">اقسم</span><i>←</i><span style="--bb:var(--p-sky)">اضرب</span><i>←</i><span style="--bb:var(--p-pink)">اطرح</span><i>←</i><span style="--bb:var(--p-mint)">أنزل</span><i>↺</i></div>
+
+  <h3 style="margin:14px 0 6px">مثال: اقسم <span dir="ltr">x² + 6x + 8</span> على <span dir="ltr">(x + 4)</span></h3>
+  <div class="board"><table class="ld" aria-label="القسمة المطولة: x² + 6x + 8 على x + 4">
+    <tr><td></td><td></td><td class="qt">x</td><td class="qt">+ 2</td></tr>
+    <tr><td class="dv">x + 4</td><td class="br bl">x²</td><td class="br">+ 6x</td><td class="br">+ 8</td></tr>
+    <tr><td class="mi">−</td><td>(x²</td><td>+ 4x)</td><td></td></tr>
+    <tr><td></td><td></td><td class="ln res">2x</td><td class="ln res">+ 8</td></tr>
+    <tr><td class="mi">−</td><td></td><td>(2x</td><td>+ 8)</td></tr>
+    <tr><td></td><td></td><td></td><td class="ln res">0</td></tr>
+  </table></div>
+  <ol class="steps">
+    <li><span><b>اقسم</b> أول حد على أول حد: <span class="f">x² ÷ x = x</span> نكتبه فوق.</span></li>
+    <li><span><b>اضرب</b>: <span class="f">x(x + 4) = x² + 4x</span> ثم <b>اطرح</b>: <span class="f">(x² + 6x) − (x² + 4x) = 2x</span> ثم <b>أنزل</b> <span dir="ltr">+8</span>.</span></li>
+    <li><span>دورة ثانية: <span class="f">2x ÷ x = 2</span>، اضرب <span class="f">2(x + 4) = 2x + 8</span>، اطرح: الباقي <b>صفر</b>.</span></li>
+    <li><span>ناتج القسمة <span class="ans"><span dir="ltr">(x + 2)</span></span> والباقي صفر. تحقق: <span class="f">(x + 2)(x + 4) = x² + 6x + 8</span> ✓</span></li>
+  </ol>
+
+  <h3 style="margin:16px 0 6px">ولو الباقي مو صفر؟</h3>
+  <div class="qbox">اقسم <span class="f" style="font-size:1.05rem">x² + 3x − 12</span> على <span dir="ltr">(x − 2)</span></div>
+  <ol class="steps">
+    <li><span><span class="f">x² ÷ x = x</span>، اضرب <span class="f">x(x − 2) = x² − 2x</span>، اطرح <span class="f">(x² + 3x) − (x² − 2x) = 5x</span>، أنزل <span dir="ltr">−12</span>.</span></li>
+    <li><span><span class="f">5x ÷ x = 5</span>، اضرب <span class="f">5(x − 2) = 5x − 10</span>، اطرح <span class="f">(5x − 12) − (5x − 10) = −2</span></span></li>
+    <li><span>ناتج القسمة <span class="ans"><span dir="ltr">(x + 5)</span></span> والباقي <span class="ans"><span dir="ltr">−2</span></span></span></li>
+    <li><span>تحقق: المقسوم عليه × ناتج القسمة + الباقي = المقسوم<br><span class="f">(x + 5)(x − 2) + (−2) = x² − 2x + 5x − 10 − 2 = x² + 3x − 12</span> ✓</span></li>
+  </ol>
+
+  <div class="act" data-act="order" data-key="order" data-rtl data-answer='["اقسم","اضرب","اطرح","أنزل"]' data-extra='["اجمع"]' data-ok="صح! اقسم ثم اضرب ثم اطرح ثم أنزل، وكرر. و«اجمع» نستخدمها في القسمة التركيبية مو المطولة." data-no="القطع الحمراء في غير مكانها. ابدأ بقسمة أول حد على أول حد، وتذكر: في المطولة نطرح ولا نجمع.">
+    <h3>رتّب دورة القسمة المطولة <span class="k">نشاط</span></h3>
+    <p>اضغط الكلمات بالترتيب الصحيح لدورة واحدة. انتبه: في قطعة زائدة ما لها مكان هنا.</p>
+  </div>
+
+  <details class="xtra"><summary>حاول أن تحل (1): <span dir="ltr">(x² + 5x + 6) ÷ (x + 2)</span> و <span dir="ltr">(2x² − 19x + 24) ÷ (x − 8)</span></summary>
+    <ul class="pts">
+      <li style="--b:var(--sc)">(a) <span dir="ltr">x² ÷ x = x</span>، نطرح <span dir="ltr">x² + 2x</span> فيبقى <span dir="ltr">3x + 6</span>، ثم <span dir="ltr">3(x + 2) = 3x + 6</span>: ناتج القسمة <span dir="ltr">(x + 3)</span> والباقي صفر.</li>
+      <li style="--b:var(--sc)">(b) <span dir="ltr">2x² ÷ x = 2x</span>، نطرح <span dir="ltr">2x² − 16x</span> فيبقى <span dir="ltr">−3x + 24</span>، ثم <span dir="ltr">−3(x − 8) = −3x + 24</span>: ناتج القسمة <span dir="ltr">(2x − 3)</span> والباقي صفر.</li>
+    </ul>
+  </details>
+
+  <h3 style="margin:18px 0 6px">هل هو عامل؟ القسمة تجاوب</h3>
+  <p>نستخدم القسمة المطولة لإيجاد عوامل كثيرة الحدود: <b>الباقي صفر ⇐ عامل</b>، <b>الباقي غير صفر ⇐ ليس عاملاً</b>. هل <span dir="ltr">(x + 4)</span> عامل من عوامل:</p>
+  <div class="two-c">
+    <div class="card" style="background:var(--p-peach)"><h4><span dir="ltr">x³ + 3x² − 6x − 7</span></h4>ناتج القسمة <span dir="ltr">x² − x − 2</span> والباقي <b>1</b><br>الباقي ≠ 0 ⇐ <span dir="ltr">(x + 4)</span> <b>ليس</b> من عوامله.</div>
+    <div class="card" style="background:var(--p-mint)"><h4><span dir="ltr">x³ + 64</span></h4>نكتبها أولاً <span dir="ltr">x³ + 0x² + 0x + 64</span><br>ناتج القسمة <span dir="ltr">x² − 4x + 16</span> والباقي <b>0</b><br>⇐ <span dir="ltr">(x + 4)</span> عامل من عوامله.</div>
+  </div>
+  <p class="tip" style="margin-top:10px"><b>معلومة:</b> إذا كان المقسوم من الدرجة n والمقسوم عليه من الدرجة الأولى، فناتج القسمة من الدرجة <span dir="ltr">(n − 1)</span> حيث <span dir="ltr">n ≥ 1</span>. وأي حد ناقص نكتبه بمعامل صفر حتى ما تتلخبط الأعمدة.</p>
+  <details class="xtra"><summary>حاول أن تحل (2): هل المقسوم عليه عامل؟</summary>
+    <ul class="pts">
+      <li style="--b:var(--sc)">(a) <span dir="ltr">(x³ + 4x² + x − 6) ÷ (x + 2)</span>: ناتج القسمة <span dir="ltr">x² + 2x − 3</span> والباقي 0 ⇐ <b>عامل</b>.</li>
+      <li style="--b:var(--sc)">(b) <span dir="ltr">(x³ − x + 1) ÷ (x + 1)</span>: نكتب <span dir="ltr">x³ + 0x² − x + 1</span>، ناتج القسمة <span dir="ltr">x² − x</span> والباقي 1 ⇐ <b>ليس عاملاً</b>.</li>
+    </ul>
+  </details>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">القسمة التركيبية: الطريق المختصر</h2></div>
+  <p>عندما نقسم على عامل خطي على الصورة <span dir="ltr">(x − a)</span> نقدر نختصر: نهمل كل المتغيرات والأسس، ونكتب المعاملات فقط، ونستخدم <b>صفر العامل الخطي a</b>، و<b>نجمع بدل ما نطرح</b>.</p>
+  <h3 style="margin:14px 0 6px">مثال: اقسم <span dir="ltr">x³ − 13x + 12</span> على <span dir="ltr">(x + 4)</span></h3>
+  <ol class="steps">
+    <li><span>المقسوم بالصورة العامة مع صفر مكان الحد الناقص: <span class="f">x³ + 0x² − 13x + 12</span>، المعاملات <span dir="ltr">1 , 0 , −13 , 12</span></span></li>
+    <li><span>صفر المقسوم عليه: <span class="f">x + 4 = 0 ⇐ x = −4</span>. نكتب ⁦−4⁩ في الزاوية.</span></li>
+    <li><span><b>أنزل</b> أول معامل (1). ثم كرر: <b>اضرب</b> آخر ناتج في ⁦−4⁩، اكتبه تحت المعامل التالي، و<b>اجمع</b>.</span></li>
+  </ol>
+  <div class="board"><table class="syn" aria-label="القسمة التركيبية لـ x³ − 13x + 12 على x + 4">
+    <tr><td class="za">−4</td><td>1</td><td>0</td><td>−13</td><td>12</td></tr>
+    <tr><td></td><td></td><td>−4</td><td>16</td><td>−12</td></tr>
+    <tr class="tot"><td class="lead0"></td><td>1</td><td>−4</td><td>3</td><td class="rem">0</td></tr>
+    <tr class="lab"><td></td><td>x²</td><td>−4x</td><td>+3</td><td>الباقي</td></tr>
+  </table></div>
+  <p style="margin-top:10px">الأعداد الناتجة هي <b>معاملات</b> ناتج القسمة بالصورة العامة: <span class="f" style="font-size:1.1rem">x² − 4x + 3</span>، والباقي 0. ناتج القسمة من الدرجة الثانية لأن المقسوم من الدرجة الثالثة: <span dir="ltr">3 − 1 = 2</span>.</p>
+
+  <h3 style="margin:18px 0 6px">نقسم ثم نكمل التحليل</h3>
+  <div class="qbox">اقسم <span class="f" style="font-size:1.05rem">x³ − 3x² − 6x + 8</span> على <span dir="ltr">(x + 2)</span>، ثم أوجد باقي العوامل.</div>
+  <div class="board"><table class="syn" aria-label="القسمة التركيبية لـ x³ − 3x² − 6x + 8 على x + 2">
+    <tr><td class="za">−2</td><td>1</td><td>−3</td><td>−6</td><td>8</td></tr>
+    <tr><td></td><td></td><td>−2</td><td>10</td><td>−8</td></tr>
+    <tr class="tot"><td class="lead0"></td><td>1</td><td>−5</td><td>4</td><td class="rem">0</td></tr>
+  </table></div>
+  <ol class="steps">
+    <li><span>صفر المقسوم عليه: اعكس إشارة الحد الثابت في <span dir="ltr">(x + 2)</span> فيصبح ⁦−2⁩.</span></li>
+    <li><span>ناتج القسمة <span class="f">x² − 5x + 4</span> والباقي صفر.</span></li>
+    <li><span>نحلل: <span class="f">x² − 5x + 4 = (x − 1)(x − 4)</span>. باقي العوامل: <span class="ans"><span dir="ltr">(x − 1) , (x − 4)</span></span></span></li>
+  </ol>
+
+  <div class="act" data-act="gap" data-key="gap" data-ok="صح! ⁦−2 | 1 −2 −5 6⁩ يعطي ⁦1 , −4 , 3⁩ والباقي 0، فناتج القسمة ⁦x² − 4x + 3 = (x − 1)(x − 3)⁩ والتحليل ⁦(x + 2)(x − 1)(x − 3)⁩.">
+    <h3>أكمل الناقص <span class="k">نشاط</span></h3>
+    <p>حاول أن تحل (3): ناتج قسمة <span dir="ltr" class="nw">x³ − 2x² − 5x + 6</span> على <span dir="ltr">(x + 2)</span> هو <span class="f" style="font-size:1.05rem"><span class="gap">؟</span></span></p>
+    <div class="opts">
+      <button class="pc" dir="ltr" data-no="هذا لو قسمنا على ⁦(x − 2)⁩ واستخدمنا 2. صفر ⁦(x + 2)⁩ هو ⁦−2⁩.">x² − 5</button>
+      <button class="pc" dir="ltr" data-ok>x² − 4x + 3</button>
+      <button class="pc" dir="ltr" data-no="في القسمة التركيبية نجمع: ⁦−2 + (−2) = −4⁩ مو صفر. أعد الخطوة الثانية.">x² − 4x − 3</button>
+      <button class="pc" dir="ltr" data-no="ناتج قسمة كثيرة حدود من الدرجة الثالثة على عامل خطي يكون من الدرجة الثانية، مو الثالثة.">x³ − 4x + 3</button>
+    </div>
+  </div>
+
+  <h3 style="margin:18px 0 6px">وإذا طلع باقٍ</h3>
+  <p>اقسم <span dir="ltr">x³ + 2x² + x − 5</span> على <span dir="ltr">(x + 3)</span>: نستخدم ⁦−3⁩.</p>
+  <div class="board"><table class="syn" aria-label="القسمة التركيبية لـ x³ + 2x² + x − 5 على x + 3">
+    <tr><td class="za">−3</td><td>1</td><td>2</td><td>1</td><td>−5</td></tr>
+    <tr><td></td><td></td><td>−3</td><td>3</td><td>−12</td></tr>
+    <tr class="tot"><td class="lead0"></td><td>1</td><td>−1</td><td>4</td><td class="rem">−17</td></tr>
+  </table></div>
+  <p style="margin-top:8px">ناتج القسمة <span class="f" style="font-size:1.05rem">x² − x + 4</span> والباقي <span dir="ltr">−17</span>. الباقي مو صفر، فـ <span dir="ltr">(x + 3)</span> ليس عاملاً.</p>
+  <details class="xtra"><summary>حاول أن تحل (4): <span dir="ltr">(x³ + 4x² + x − 6) ÷ (x + 1)</span></summary>
+    <ul class="pts">
+      <li style="--b:var(--sc)">نستخدم ⁦−1⁩: <span dir="ltr">−1 | 1 4 1 −6</span>، الصف الأخير <span dir="ltr">1 , 3 , −2 , −4</span></li>
+      <li style="--b:var(--sc)">ناتج القسمة <span dir="ltr">x² + 3x − 2</span> والباقي <span dir="ltr">−4</span>.</li>
+    </ul>
+  </details>
+</section>
+
+<section class="sec" aria-labelledby="s5">
+  <div class="sec-head"><span class="num">5</span><h2 id="s5">مسائل الحجم</h2></div>
+  <p>الحجم = حاصل ضرب الأبعاد الثلاثة. لو عرفنا الحجم كثيرة حدود وعرفنا بعداً واحداً، <b>نقسم</b> فنحصل على حاصل ضرب البعدين الآخرين، ثم نحلل.</p>
+  <h3 style="margin:14px 0 6px">مثال محلول: حجر ضخم في بعلبك</h3>
+  <div class="qbox">يعطى حجم أحد الحجارة الضخمة قرب قلعة بعلبك بالعلاقة <span class="f" style="font-size:1.05rem">V = x³ + 21x² + 56x + 36</span>.<br>(a) إذا كان <span dir="ltr">(x + 2) m</span> أحد أبعاده، فأوجد البعدين الآخرين. (b) إذا كان أكبر أبعاده 21 m، فأوجد البعدين الآخرين.</div>
+  <div class="row"><button class="lite" id="hideSol" type="button" aria-pressed="false">أخفِ الحل وجرّب أولاً</button></div>
+  <ol class="steps" id="steps">
+    <li><span>(a) نقسم تركيبياً على <span dir="ltr">(x + 2)</span> باستخدام ⁦−2⁩: <span dir="ltr" class="nw">−2 | 1 21 56 36</span>، النواتج <span dir="ltr">−2 , −38 , −36</span>، الصف الأخير <span dir="ltr">1 , 19 , 18 | 0</span></span></li>
+    <li><span>ناتج القسمة <span class="f">x² + 19x + 18</span> والباقي صفر.</span></li>
+    <li><span>نحلل: <span class="f">x² + 19x + 18 = (x + 1)(x + 18)</span><br>البعدان الآخران: <span class="ans"><span dir="ltr">(x + 1) m , (x + 18) m</span></span></span></li>
+    <li><span>(b) أكبر الأبعاد <span dir="ltr">x + 18</span>: <span class="f">x + 18 = 21 ⇐ x = 3</span></span></li>
+    <li><span>نعوض: <span class="f">x + 1 = 4</span> و <span class="f">x + 2 = 5</span>. البعدان الآخران <span class="ans">4 m و 5 m</span></span></li>
+  </ol>
+  <details class="xtra"><summary>حاول أن تحل (5): هل يمكن أن يكون <span dir="ltr">(x + 3)</span> أحد أبعاد هذا الحجر؟</summary>
+    <ul class="pts">
+      <li style="--b:var(--sc)">نقسم على <span dir="ltr">(x + 3)</span> باستخدام ⁦−3⁩: <span dir="ltr">−3 | 1 21 56 36</span>، الصف الأخير <span dir="ltr">1 , 18 , 2 | 30</span></li>
+      <li style="--b:var(--sc)">الباقي 30 ≠ 0، فـ <span dir="ltr">(x + 3)</span> ليس عاملاً من عوامل V، <b>لا يمكن</b> أن يكون أحد الأبعاد.</li>
+    </ul>
+  </details>
+
+  <h3 style="margin:18px 0 6px">منحوتة قُصّ منها مكعب</h3>
+  <div class="qbox">منحوتة على شكل شبه مكعب أبعاده <span dir="ltr">h = 2x + 7 , w = x + 5 , l = x + 8</span>، قُصّ من إحدى زواياه مكعب طول ضلعه x (الأبعاد بالـ cm)، فأصبح حجمها <span dir="ltr">762 cm³</span>. (a) أثبت أن <span dir="ltr">x = 2</span> هي القيمة الوحيدة المقبولة. (b) أوجد أبعاد شبه المكعب.</div>
+  <ol class="steps">
+    <li><span>حجم المنحوتة = حجم شبه المكعب − حجم المكعب:<br><span class="f">(x + 8)(x + 5)(2x + 7) − x³ = 762</span></span></li>
+    <li><span>بالتبسيط: <span class="f">x³ + 33x² + 171x = 482</span>. نعوض 2: <span dir="ltr">8 + 132 + 342 = 482</span> ✓ فالقيمة 2 مقبولة.</span></li>
+    <li><span>هل في قيم ثانية؟ نقسم <span dir="ltr">x³ + 33x² + 171x − 482</span> على <span dir="ltr">(x − 2)</span>: <span dir="ltr" class="nw">2 | 1 33 171 −482</span> يعطي <span dir="ltr">1 , 35 , 241 | 0</span></span></li>
+    <li><span><span class="f">q(x) = x² + 35x + 241</span>، جذراه بالآلة الحاسبة <span dir="ltr">x ≈ −9.42 , x ≈ −25.58</span>: سالبان، وطول المكعب لا يكون سالباً، فهما <b>مرفوضتان</b>.</span></li>
+    <li><span>(b) نعوض <span dir="ltr">x = 2</span>: <span class="ans"><span dir="ltr">h = 11 cm , w = 7 cm , l = 10 cm</span></span></span></li>
+  </ol>
+  <details class="xtra"><summary>حاول أن تحل (6): مبنى حجمه <span dir="ltr">V = x³ + 4x² − x − 4</span></summary>
+    <ul class="pts">
+      <li style="--b:var(--sc)">(a) <span dir="ltr">(x + 4)</span> أحد الأبعاد: <span dir="ltr">−4 | 1 4 −1 −4</span> يعطي <span dir="ltr">1 , 0 , −1 | 0</span>، فناتج القسمة <span dir="ltr">x² − 1 = (x − 1)(x + 1)</span>. البعدان الآخران <span dir="ltr">(x − 1)</span> و <span dir="ltr">(x + 1)</span>.</li>
+      <li style="--b:var(--sc)">(b) أصغر الأبعاد <span dir="ltr">x − 1 = 10</span> ⇐ <span dir="ltr">x = 11</span>، فالبعدان الآخران <span dir="ltr">x + 1 = 12 m</span> و <span dir="ltr">x + 4 = 15 m</span>.</li>
+    </ul>
+  </details>
+</section>
+
+<section class="sec" aria-labelledby="s6">
+  <div class="sec-head"><span class="num">6</span><h2 id="s6">نظرية الباقي</h2></div>
+  <p>خذ <span class="f" style="font-size:1.05rem">f(x) = x² − 2x − 8</span>. لو قسمناها على <span dir="ltr">(x − 4)</span> الباقي صفر، يعني <span dir="ltr">(x − 4)</span> عامل، و 4 صفر، أي <span dir="ltr">f(4) = 0</span>. ولو قسمناها على <span dir="ltr">(x + 1)</span> الباقي ⁦−5⁩، وفعلاً <span dir="ltr">f(−1) = 1 + 2 − 8 = −5</span>. الباقي هو قيمة الدالة عند صفر المقسوم عليه!</p>
+  <div class="law rem" style="margin-top:10px">
+    <h3>نظرية الباقي <span class="en" style="font-size:12.5px;color:var(--muted);font-weight:500">Remainder Theorem</span></h3>
+    <p>إذا قسمت كثيرة الحدود <span dir="ltr">f(x)</span> من الدرجة <span dir="ltr">n ≥ 1</span> على <span class="f" style="font-size:1.2rem">(x − a)</span> حيث a ثابت، فإن باقي القسمة هو <span class="f" style="font-size:1.3rem">f(a)</span></p>
+  </div>
+  <h3 style="margin:16px 0 6px">مثال: أوجد باقي قسمة <span dir="ltr">f(x) = x⁴ − 5x² + 4x + 12</span> على <span dir="ltr">(x + 4)</span></h3>
+  <ol class="steps">
+    <li><span>صفر المقسوم عليه ⁦−4⁩. نعوض: <span class="f">f(−4) = (−4)⁴ − 5(−4)² + 4(−4) + 12</span></span></li>
+    <li><span><span class="f">= 256 − 80 − 16 + 12 = 172</span>. الباقي <span class="ans">172</span></span></li>
+    <li><span>نتحقق تركيبياً (مع صفر مكان <span dir="ltr">x³</span>):</span></li>
+  </ol>
+  <div class="board"><table class="syn" aria-label="التحقق بالقسمة التركيبية: الباقي 172">
+    <tr><td class="za">−4</td><td>1</td><td>0</td><td>−5</td><td>4</td><td>12</td></tr>
+    <tr><td></td><td></td><td>−4</td><td>16</td><td>−44</td><td>160</td></tr>
+    <tr class="tot"><td class="lead0"></td><td>1</td><td>−4</td><td>11</td><td>−40</td><td class="rem">172</td></tr>
+  </table></div>
+  <p class="tip" style="margin-top:10px"><b>متى أستخدم أيهما؟</b> لو بس تبي الباقي: عوّض <span dir="ltr">f(a)</span>. لو تبي ناتج القسمة أيضاً: القسمة التركيبية تعطيك الاثنين.</p>
+
+  <div class="act" data-act="type" data-key="type" data-answer="-69" data-tol="0"
+       data-ok="صح! ⁦f(−1) = 2(1) + 6(−1) − 5(1) − 60 = 2 − 6 − 5 − 60 = −69⁩. وتركيبياً: ⁦−1 | 2 6 −5 0 −60⁩ يعطي ⁦2 , 4 , −9 , 9 | −69⁩."
+       data-hint="صفر ⁦(x + 1)⁩ هو ⁦−1⁩. انتبه: ⁦(−1)⁴ = 1⁩ و ⁦(−1)³ = −1⁩ و ⁦(−1)² = 1⁩."
+       data-no="ليست هذه. عوّض ⁦x = −1⁩ (مو 1)، وانتبه لإشارة كل قوة: الزوجية موجبة والفردية سالبة.">
+    <h3>اكتب الجواب <span class="k">نشاط</span></h3>
+    <p>حاول أن تحل (7): باستخدام نظرية الباقي، ما باقي قسمة <span class="f" style="font-size:1.05rem;white-space:normal">f(x) = 2x⁴ + 6x³ − 5x² − 60</span> على <span dir="ltr">(x + 1)</span>؟</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">7</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sd">
+  <div class="sec-head"><span class="num">8</span><h2 id="sd">في حياتك</h2></div>
+  <div class="life">
+    <div class="card"><h3>توزيع بلا باقٍ</h3><p>56 طالباً على 8 باصات: كل باص 7 ولا يتبقى أحد، لأن 8 عامل من عوامل 56. مع 42 طالباً يبقى 2 بلا مكان. الباقي يقول لك إذا القسمة «مضبوطة».</p></div>
+    <div class="card"><h3>صناديق المستودع</h3><p>تعرف حجم الصندوق وأحد أبعاده بدلالة x؟ اقسم الحجم على هذا البعد، يطلع لك حاصل ضرب البعدين الباقيين، مثل حجر بعلبك.</p></div>
+    <div class="card"><h3>الحاسوب يحب الطريقة التركيبية <span class="chip" style="font-size:11px">للفهم فقط</span></h3><p>نفس خطوات «اضرب واجمع» يستخدمها الحاسوب ليحسب قيمة كثيرة حدود بسرعة، لأنها أقل عمليات من حساب كل قوة لوحدها.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">9</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>لقسمة <span class="f" style="font-size:1.05rem">2x³ − 7x + 1</span> على <span dir="ltr">(x − 3)</span> تركيبياً نكتب:</p>
+      <div class="opts"><button dir="ltr">−3 | 2 0 −7 1</button><button dir="ltr" data-ok>3 | 2 0 −7 1</button><button dir="ltr">3 | 2 −7 1</button></div>
+      <p class="why" hidden>الصحيح: ⁦3 | 2 0 −7 1⁩. صفر ⁦(x − 3)⁩ هو 3، والحد ⁦x²⁩ ناقص فنكتب مكانه صفراً.</p></div>
+    <div class="q"><p>باقي قسمة <span class="f" style="font-size:1.05rem">f(x) = x³ − 2x + 4</span> على <span dir="ltr">(x + 2)</span> هو:</p>
+      <div class="opts"><button data-ok>0</button><button>8</button><button>−4</button></div>
+      <p class="why" hidden>الصحيح: 0. نظرية الباقي: ⁦f(−2) = −8 + 4 + 4 = 0⁩، فـ ⁦(x + 2)⁩ عامل. الـ 8 هي ⁦f(2)⁩: عوّضنا بالإشارة الخطأ.</p></div>
+    <div class="q"><p>قسمنا كثيرة الحدود <span dir="ltr">P(x)</span> على <span dir="ltr">(x − 5)</span> فكان الباقي صفراً. أي عبارة صحيحة؟</p>
+      <div class="opts"><button>⁦−5⁩ صفر من أصفار P</button><button data-ok>5 صفر من أصفار P و ⁦(x − 5)⁩ عامل من عوامله</button><button>⁦P(0) = 5⁩</button></div>
+      <p class="why" hidden>الصحيح: الباقي ⁦P(5) = 0⁩ فالعدد 5 صفر، و ⁦(x − 5)⁩ عامل (نظرية العامل من الدرس الماضي).</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li><b>القسمة المطولة</b>: اقسم، اضرب، اطرح، أنزل، وكرر. تحقق: المقسوم عليه × ناتج القسمة + الباقي = المقسوم. الباقي صفر ⇐ المقسوم عليه وناتج القسمة عاملان.</li>
+      <li><b>القسمة التركيبية</b> على <span dir="ltr">(x − a)</span>: معاملات فقط (صفر للحد الناقص)، نستخدم a، أنزل ثم اضرب واجمع. الصف الأخير معاملات ناتج القسمة وآخر عدد هو الباقي.</li>
+      <li><b>نظرية الباقي</b>: باقي قسمة <span dir="ltr">f(x)</span> على <span dir="ltr">(x − a)</span> هو <span dir="ltr">f(a)</span>.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الرياضيات، الصف الحادي عشر، الوحدة الثالثة، ص 107 إلى 115</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"math-u3-3-4"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+var SUP={2:"²",3:"³",4:"⁴"};
+function sg(v){return v<0?"−"+Math.abs(v):String(v);}
+function par(v){return v<0?"("+sg(v)+")":String(v);}
+function poly(c){var d=c.length-1,s="";c.forEach(function(k,i){var p=d-i;if(k===0)return;var a=Math.abs(k),body=(a===1&&p>0?"":String(a))+(p===0?"":p===1?"x":"x"+SUP[p]);if(!s)s=(k<0?"−":"")+body;else s+=(k<0?" − ":" + ")+body;});return s||"0";}
+function full(c){var d=c.length-1;return c.map(function(k,i){var p=d-i,a=Math.abs(k),body=(a===1&&p>0?"":String(a))+(p===0?"":p===1?"x":"x"+SUP[p]);return (i===0?(k<0?"−":""):(k<0?" − ":" + "))+body;}).join("");}
+function fac(a){return a===0?"x":"(x "+(a>0?"− ":"+ ")+Math.abs(a)+")";}
+var POLY=[[1,0,-13,12],[1,-3,-6,8],[1,0,-5,4,12]];
+var pi=0,a=-4,step=0,c,n,b,p,T;
+function compute(){c=POLY[pi];n=c.length-1;b=[c[0]];p=[null];for(var i=1;i<=n;i++){p[i]=a*b[i-1];b[i]=c[i]+p[i];}T=1+2*n;}
+function cell(v,shown,cls){return '<td class="'+(cls||"")+(shown?"":" e")+'">'+(shown?sg(v):"")+"</td>";}
+function render(){
+  var i,h="",cur=null;
+  if(step>=1){if(step===1)cur="b0";else{var k=Math.floor(step/2);cur=(step%2===0?"p":"b")+k;}}
+  h+='<tr><td class="za">'+sg(a)+'</td>';for(i=0;i<=n;i++)h+="<td"+(c[i]===0?' style="color:var(--red)"':"")+">"+sg(c[i])+"</td>";h+="</tr>";
+  h+="<tr><td></td><td></td>";for(i=1;i<=n;i++){var sp=step>=2*i;h+=cell(p[i],sp,cur==="p"+i?"cur":"");}h+="</tr>";
+  h+='<tr class="tot"><td class="lead0"></td>';for(i=0;i<=n;i++){var sb=i===0?step>=1:step>=2*i+1;h+=cell(b[i],sb,(i===n?"rem ":"")+(cur==="b"+i?"cur":""));}h+="</tr>";
+  $("synT").innerHTML=h;
+  var msg;
+  if(step===0)msg="المعاملات في الصف الأول"+(c.indexOf(0)>=0?" (الصفر الأحمر مكان الحد الناقص)":"")+"، وصفر المقسوم عليه ⁦"+sg(a)+"⁩ في الزاوية. اضغط «الخطوة التالية».";
+  else if(step===1)msg="أنزل أول معامل كما هو: "+sg(b[0])+".";
+  else{var k2=Math.floor(step/2);
+    if(step%2===0)msg="اضرب آخر ناتج في a: ⁦"+par(b[k2-1])+" × "+par(a)+" = "+sg(p[k2])+"⁩، واكتبه تحت ⁦"+sg(c[k2])+"⁩.";
+    else msg="اجمع: ⁦"+sg(c[k2])+" + "+par(p[k2])+" = "+sg(b[k2])+"⁩."+(k2===n?" هذا آخر عدد: إنه الباقي.":"");}
+  $("say").textContent=msg;
+  $("stepBtn").disabled=step>=T;
+  var o="";
+  if(step>=T){
+    var q=b.slice(0,n),R=b[n];
+    var sub=c.map(function(k,i){var pw=n-i;return k===0?null:(i===0?"":(k<0?" − ":" + "))+(Math.abs(k)===1&&pw>0?"":Math.abs(k))+(pw===0?"":(pw===1?"("+sg(a)+")":"("+sg(a)+")"+SUP[pw]));}).filter(function(x){return x!==null;}).join("");
+    o+='<span>ناتج القسمة: <span class="f">q(x) = '+poly(q)+'</span> · الباقي: <b dir="ltr">'+sg(R)+'</b></span>';
+    o+='<span>نظرية الباقي: <span class="f">f('+sg(a)+') = '+sub+' = '+sg(R)+'</span></span>';
+    o+='<small>'+(R===0?"الباقي صفر ⇐ ⁦"+fac(a)+"⁩ عامل، و ⁦"+sg(a)+"⁩ صفر من أصفار كثيرة الحدود.":"الباقي ليس صفراً ⇐ ⁦"+fac(a)+"⁩ ليس عاملاً. جرّب قيمة a ثانية.")+'</small>';
+  } else o='<small>المقسوم: <span dir="ltr">'+full(c)+'</span> · المقسوم عليه: <span dir="ltr">'+fac(a)+'</span></small>';
+  $("synOut").innerHTML=o;
+}
+function reset(){compute();step=0;$("zaL").textContent=fac(a);$("zaV").textContent="a = "+sg(a);render();}
+$("za").addEventListener("input",function(){a=+this.value;reset();});
+$("stepBtn").addEventListener("click",function(){if(step<T){step++;render();}});
+$("allBtn").addEventListener("click",function(){step=T;render();});
+$("resetBtn").addEventListener("click",reset);
+[].forEach.call($("pick").querySelectorAll("button"),function(bt){bt.addEventListener("click",function(){pi=+bt.dataset.i;[].forEach.call($("pick").querySelectorAll("button"),function(x){x.setAttribute("aria-pressed",x===bt?"true":"false");});reset();});});
+reset();
+})();
+</script>
+</body>
+</html>

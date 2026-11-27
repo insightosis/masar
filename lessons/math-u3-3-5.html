@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="math">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>حل معادلات كثيرات الحدود · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+span[dir=ltr],bdi[dir=ltr],b[dir=ltr]{unicode-bidi:isolate}
+body{--plane:#f1edff;--grid:#ddd5fb;--axis:#8b86b3;--curve:#3d8be0;--line:#e0485f;--hit:#17b388;--zero:#c9ecff;--red:#d9435a;--bar:#6d5bd0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{--plane:#24203d;--grid:#363057;--axis:#a7a2cf;--curve:#6fb4ff;--line:#ff7d8f;--hit:#4fd8ac;--zero:#1f4a63;--red:#ff8597;--bar:#b4a6ff}}
+:root[data-theme="dark"] body{--plane:#24203d;--grid:#363057;--axis:#a7a2cf;--curve:#6fb4ff;--line:#ff7d8f;--hit:#4fd8ac;--zero:#1f4a63;--red:#ff8597;--bar:#b4a6ff}
+.stage{display:block;width:100%;height:auto;border-radius:20px;background:var(--plane);box-shadow:var(--press);margin-top:10px}
+.xtra{margin-top:12px;padding:10px 16px;border-radius:20px;background:var(--card);box-shadow:var(--clay-sm)}
+.xtra summary{cursor:pointer;font-weight:700;color:var(--ink)}
+.nw{white-space:nowrap}
+.act .gap{direction:ltr;unicode-bidi:isolate}
+.act[data-act=gap] .pc{font-family:"Noto Serif",Georgia,serif;direction:ltr}
+.act[data-act=match] .mt button{direction:ltr;unicode-bidi:isolate;text-align:center;font-family:"Noto Serif",Georgia,serif;font-size:15px}
+.sym .bub.xs{font-size:.92rem;white-space:nowrap}
+.law.rz{background:var(--p-mint);text-align:center}
+.law.rz p{color:var(--text)}
+.flip{margin-top:10px;display:flex;justify-content:center}
+.flip button{font:inherit;font-size:14px;padding:6px 14px;border-radius:14px;border:0;background:var(--card);color:var(--text);box-shadow:var(--clay-sm);cursor:pointer}
+.flip button[aria-pressed=true]{background:var(--p-pink);box-shadow:var(--press);font-weight:700}
+.out{margin-top:10px;display:grid;gap:6px;text-align:center}
+.out .f{font-size:1.05rem;white-space:normal}
+.out small{color:var(--muted);font-size:13px}
+.chk3{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:10px}
+.chk3 .card{padding:10px 12px;font-size:14px;text-align:center;direction:ltr;font-family:"Noto Serif",Georgia,serif}
+.chk3 .card b{display:block;font-family:var(--body);direction:rtl;font-size:13px;color:var(--ink)}
+.board{overflow-x:auto;margin-top:10px;padding:12px 8px;border-radius:20px;background:var(--plane);box-shadow:var(--press)}
+.board table{margin:0 auto;border-collapse:collapse;direction:ltr;font-family:"Noto Serif",Georgia,serif;font-size:17px;color:var(--text)}
+.board td{padding:4px 9px;text-align:center;white-space:nowrap;min-width:34px}
+.syn td.za{border-right:2.5px solid var(--bar);border-bottom:2.5px solid var(--bar);color:var(--ink);font-weight:800;background:var(--zero);border-radius:10px 0 0 0}
+.syn tr.tot td{border-top:2px solid var(--bar)}
+.syn tr.tot td.lead0{border-top:0}
+.syn td.rem{outline:2px dashed var(--red);outline-offset:-3px;color:var(--red);font-weight:800}
+.frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;line-height:1.15;margin:0 2px}
+.frac>span:first-child{border-bottom:1.5px solid currentColor;padding:0 3px}
+.rz-grid{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:10px}
+.rz-grid .card{padding:10px 14px;text-align:center;font-size:14px}
+.rz-grid .card b{display:block;direction:ltr;font-family:"Noto Serif",Georgia,serif;font-size:1.05rem;margin-top:4px}
+</style>
+</head>
+<body style="--sc:#8a63f2">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الدرس"><span class="chip">الرياضيات</span><span class="chip">الدرس 3-5 · ص 116 إلى 122</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">الوحدة الثالثة: كثيرات الحدود</p>
+  <h1 id="t">حل معادلات كثيرات الحدود</h1>
+  <p>عندك الحين كل الأدوات: التحليل، نظرية العامل، القسمة. اليوم نجمعها لنحل معادلات من الدرجة الثالثة والرابعة. <mark>ولو المعادلة صعبة التحليل؟ ارسمها، والرسم يدلّك على الحلول.</mark></p>
+</section>
+
+<section class="panel" aria-labelledby="lab-title">
+  <div class="lab-head"><h2 id="lab-title">مختبر: الحل البياني</h2><span class="legend"><span><i style="background:var(--curve)"></i>الطرف الأيسر</span><span><i style="background:var(--line)"></i>الطرف الأيمن</span><span><i style="background:var(--hit)"></i>الحلول</span></span></div>
+  <p class="cap" style="margin-top:4px">المعادلة: <span class="f" style="font-size:1.05rem" id="eqTxt">x³ + 3x² = x + 3</span></p>
+  <div class="controls"><div class="ctl"><label for="cc">الحد الثابت في الطرف الأيمن: <b id="ccL" dir="ltr">3</b></label><input type="range" dir="ltr" id="cc" min="-3" max="7" step="0.5" value="3"></div></div>
+  <svg class="stage" id="gPlot" viewBox="0 0 400 270" role="img" aria-label="بيان طرفي المعادلة ونقاط تقاطعهما"></svg>
+  <div class="flip"><button type="button" id="oneBtn" aria-pressed="false">انقل كل الحدود لطرف واحد</button></div>
+  <div class="out" id="gOut" aria-live="polite"></div>
+  <p class="cap">الحلول هي الإحداثيات السينية لنقاط التقاطع. اضغط الزر: لما ننقل كل الحدود لطرف واحد، الحلول تصير أصفار الدالة الجديدة، ونفس القيم بالضبط.</p>
+</section>
+
+<section class="sec" aria-labelledby="s1">
+  <div class="sec-head"><span class="num">1</span><h2 id="s1">رموز الدرس ومصطلحاته</h2></div>
+  <div class="syms">
+    <div class="sym" style="--bb:var(--p-lav)"><span class="bub xs"><span dir="ltr">aₙ</span></span><div><h3>المعامل الرئيسي <span class="en">Leading Coefficient</span></h3><p>معامل الحد ذي أعلى أس، بعد ترتيب كثيرة الحدود تنازلياً. في <span dir="ltr">2x³ + 5x² + x − 6</span> هو 2.</p><span class="hook">رئيس الطابور: أول واحد بعد الترتيب.</span></div></div>
+    <div class="sym" style="--bb:var(--p-sky)"><span class="bub xs"><span dir="ltr">a₀</span></span><div><h3>الحد الثابت <span class="en">Constant Term</span></h3><p>الحد اللي ما فيه x. في المثال نفسه هو ⁦−6⁩.</p><span class="hook">آخر واحد في الطابور.</span></div></div>
+    <div class="sym" style="--bb:var(--p-mint)"><span class="bub xs"><span dir="ltr">3x(…)</span></span><div><h3>عامل مشترك <span class="en">Common Factor</span></h3><p>مقدار موجود في كل الحدود، نخرجه خارج قوس. مثل <span dir="ltr">3x</span> في <span dir="ltr">3x³ + 6x² − 9x</span>.</p><span class="hook">الشي اللي يتكرر عند الكل، طلّعه برّا.</span></div></div>
+    <div class="sym" style="--bb:var(--p-pink)"><span class="bub sm"><span>( )+( )</span></span><div><h3>التحليل بالتقسيم <span class="en">Factorising by Division</span></h3><p>نقسّم الحدود إلى مجموعتين، ونخرج من كل مجموعة عاملها، فيظهر قوس مشترك.</p><span class="hook">قسّم الفريق اثنين اثنين.</span></div></div>
+    <div class="sym" style="--bb:var(--p-peach)"><span class="bub"><span dir="ltr">a/b</span></span><div><h3>أصفار نسبية ممكنة <span class="en">Possible Rational Zeros</span></h3><p>قائمة أعداد مرشّحة لتكون أصفاراً: a من عوامل الحد الثابت، و b من عوامل المعامل الرئيسي.</p><span class="hook">قائمة المشتبه فيهم، نفحصهم واحد واحد.</span></div></div>
+    <div class="sym" style="--bb:var(--p-butter)"><span class="bub xs"><span dir="ltr">{ … }</span></span><div><h3>مجموعة الحل <span class="en">Solution Set</span></h3><p>كل قيم x اللي تحقق المعادلة، نكتبها بين قوسين { }.</p><span class="hook">قائمة كل الأجوبة الصحيحة.</span></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">الحل البياني</h2></div>
+  <p>لحل <span class="f" style="font-size:1.05rem">x³ + 3x² = x + 3</span> بيانياً: نرسم <span dir="ltr">f(x) = x³ + 3x²</span> و <span dir="ltr">g(x) = x + 3</span> على الشبكة نفسها. هناك <b>3 نقاط تقاطع</b> إحداثياتها السينية <span dir="ltr">−3 , −1 , 1</span>.</p>
+  <p>إذن للمعادلة ثلاثة حلول، ومجموعة الحل <span class="ans"><span dir="ltr">{−3 , −1 , 1}</span></span>.</p>
+  <p class="tip"><b>قارن:</b> لو رسمنا <span dir="ltr">f(x) = x³ + 3x² − x − 3</span> وحلّينا <span dir="ltr">x³ + 3x² − x − 3 = 0</span>، نحصل على المجموعة نفسها، لأنها نفس المعادلة بعد نقل <span dir="ltr">x + 3</span> للطرف الأيسر. الحلول هنا أصفار الدالة: نقاط قطع محور السينات.</p>
+  <p class="note">في الآلة الحاسبة البيانية: نكتب كل طرف في <span dir="ltr">y₁</span> و <span dir="ltr">y₂</span>، ثم نختار التقاطع (Intersect) فتظهر الإحداثيات. المختبر فوق يسوي نفس الشي.</p>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">الحل بالتحليل</h2></div>
+  <p>التحليل يحوّل كثيرة الحدود من <b>مجموع</b> حدود إلى <b>حاصل ضرب</b> عوامل. وبعدها خاصية الضرب في الصفر (أو نظرية العامل) تعطينا الحلول مباشرة.</p>
+
+  <div class="act" data-act="match" data-key="match" data-pairs='[["x² − x − 6","(x + 2)(x − 3)"],["2x³ − 8x","2x(x − 2)(x + 2)"],["2x² + 7x + 3","(2x + 1)(x + 3)"],["x³ + 3x² + 2x","x(x + 1)(x + 2)"]]' data-ok="ممتاز! وتقدر تتأكد دائماً بالضرب: اضرب العوامل وارجع للصورة العامة.">
+    <h3>وصّل الصورة العامة بصورة التحليل <span class="k">نشاط</span></h3>
+    <p>اضغط كثيرة حدود من العمود الأول، ثم عواملها من العمود الثاني. نصيحة: ابدأ بالعامل المشترك.</p>
+  </div>
+
+  <h3 style="margin:16px 0 6px">مثال: <span dir="ltr">3x³ + 6x² − 9x = 0</span></h3>
+  <ol class="steps">
+    <li><span>أخرج العامل المشترك الأعلى <span dir="ltr">3x</span>: <span class="f">3x(x² + 2x − 3) = 0</span></span></li>
+    <li><span>حلّل الثلاثية: <span class="f">3x(x + 3)(x − 1) = 0</span></span></li>
+    <li><span>نظرية العامل: <span class="f">x = 0 , x = −3 , x = 1</span>. مجموعة الحل <span class="ans"><span dir="ltr">{1 , −3 , 0}</span></span></span></li>
+  </ol>
+  <p style="margin-top:8px">تحقق: عوّض كل حل في المعادلة الأصلية:</p>
+  <div class="chk3">
+    <div class="card" style="background:var(--p-lav)"><b>x = 1</b>3 + 6 − 9 = 0 ✓</div>
+    <div class="card" style="background:var(--p-sky)"><b>x = −3</b>−81 + 54 + 27 = 0 ✓</div>
+    <div class="card" style="background:var(--p-mint)"><b>x = 0</b>0 + 0 − 0 = 0 ✓</div>
+  </div>
+  <details class="xtra"><summary>حاول أن تحل (1)</summary>
+    <ul class="pts">
+      <li style="--b:var(--sc)">(a) <span dir="ltr">4x³ − 16x² − 20x = 0</span> ⇐ <span dir="ltr">4x(x² − 4x − 5) = 4x(x − 5)(x + 1) = 0</span>، مجموعة الحل <span dir="ltr">{0 , 5 , −1}</span>. تحقق: <span dir="ltr">4(125) − 16(25) − 100 = 0</span> ✓</li>
+      <li style="--b:var(--sc)">(b) <span dir="ltr">2x³ + 10x² + 8x = 0</span> نحلها بطريقتين: بالتحليل <span dir="ltr">2x(x + 1)(x + 4) = 0</span> ⇐ <span dir="ltr">{0 , −1 , −4}</span>، أو بيانياً من نقاط قطع محور السينات. التحليل أسرع هنا لأن العوامل أعداد صحيحة.</li>
+    </ul>
+  </details>
+
+  <h3 style="margin:18px 0 6px">لما يبقى عامل تربيعي ما يتحلل</h3>
+  <p>ما يلزم تحلل المعادلة التكعيبية تحليلاً كاملاً. متى أوجدت عاملاً، الباقي تربيعي، وتقدر تستخدم <b>القانون العام</b>:</p>
+  <div class="fbox" style="text-align:center;margin:6px 0"><span class="f" style="font-size:1.2rem">x = <span class="frac"><span>−b ± √(b² − 4ac)</span><span>2a</span></span></span></div>
+  <div class="qbox">أوجد مجموعة حل <span class="f" style="font-size:1.05rem">2x³ − 4x² = 10x</span></div>
+  <ol class="steps">
+    <li><span>اجعل أحد الطرفين صفراً: <span class="f">2x³ − 4x² − 10x = 0</span></span></li>
+    <li><span>حلّل: <span class="f">2x(x² − 2x − 5) = 0</span> ⇐ <span class="f">2x = 0</span> أو <span class="f">x² − 2x − 5 = 0</span></span></li>
+    <li><span>القانون العام مع <span dir="ltr">a = 1 , b = −2 , c = −5</span>:<br><span class="f">x = (2 ± √(4 + 20)) / 2 = (2 ± 2√6) / 2 = 1 ± √6</span></span></li>
+    <li><span>مجموعة الحل <span class="ans"><span dir="ltr">{0 , 1 + √6 , 1 − √6}</span></span></span></li>
+  </ol>
+  <details class="xtra"><summary>حاول أن تحل (2)</summary>
+    <ul class="pts">
+      <li style="--b:var(--sc)">(a) <span dir="ltr">2x³ = 3x − 5x²</span> ⇐ <span dir="ltr">2x³ + 5x² − 3x = 0</span> ⇐ <span dir="ltr">x(2x − 1)(x + 3) = 0</span>، مجموعة الحل <span dir="ltr">{0 , 1/2 , −3}</span>.</li>
+      <li style="--b:var(--sc)">(b) <span dir="ltr">x³ − x² − 3x = 0</span> ⇐ <span dir="ltr">x(x² − x − 3) = 0</span>، والقانون العام يعطي <span dir="ltr">x = (1 ± √13) / 2</span>. مجموعة الحل <span dir="ltr">{0 , (1 + √13)/2 , (1 − √13)/2}</span>.</li>
+    </ul>
+  </details>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">التحليل بالتقسيم</h2></div>
+  <p>أربعة حدود وما في عامل مشترك للكل؟ <b>قسّمها</b> إلى مجموعتين، كل مجموعة فيها عامل مشترك، فيظهر قوس متكرر نخرجه.</p>
+  <div class="qbox">أوجد مجموعة حل <span class="f" style="font-size:1.05rem">x³ + 3x² = x + 3</span></div>
+  <ol class="steps">
+    <li><span>اجعل أحد الطرفين صفراً: <span class="f">x³ + 3x² − x − 3 = 0</span></span></li>
+    <li><span>قسّم: <span class="f">(x³ + 3x²) + (−x − 3) = 0</span></span></li>
+    <li><span>من الأولى <span dir="ltr">x²</span> ومن الثانية <span dir="ltr">−1</span>: <span class="f">x²(x + 3) − (x + 3) = 0</span></span></li>
+    <li><span>خذ العامل المشترك <span dir="ltr">(x + 3)</span>: <span class="f">(x + 3)(x² − 1) = 0</span> ثم حلّل: <span class="f">(x + 3)(x + 1)(x − 1) = 0</span></span></li>
+    <li><span>خاصية الضرب في الصفر: مجموعة الحل <span class="ans"><span dir="ltr">{−3 , 1 , −1}</span></span>، نفس جواب المختبر!</span></li>
+  </ol>
+  <h3 style="margin:16px 0 6px">ومثال فيه جذور</h3>
+  <div class="qbox"><span class="f" style="font-size:1.05rem">x³ − 3x = 6 − 2x²</span></div>
+  <ol class="steps">
+    <li><span><span class="f">x³ − 3x − 6 + 2x² = 0</span> ثم خاصية التجميع: <span class="f">(x³ − 3x) + (−6 + 2x²) = 0</span></span></li>
+    <li><span><span class="f">x(x² − 3) + 2(x² − 3) = 0</span> ⇐ <span class="f">(x² − 3)(x + 2) = 0</span></span></li>
+    <li><span><span class="f">(x − √3)(x + √3)(x + 2) = 0</span>، مجموعة الحل <span class="ans"><span dir="ltr">{√3 , −√3 , −2}</span></span></span></li>
+  </ol>
+
+  <div class="act" data-act="order" data-key="order" data-rtl data-answer='["اجعل أحد الطرفين صفراً","قسّم الحدود إلى مجموعتين","أخرج القوس المشترك","حلّل باقي العوامل","خاصية الضرب في الصفر"]' data-extra='["اقسم الطرفين على x"]' data-ok="صح! وقسمة الطرفين على x غلط: تضيّع الحل x = 0. نخرج x عاملاً مشتركاً بدلاً منها." data-no="القطع الحمراء في غير مكانها. أول شي لازم يكون أحد الطرفين صفراً، وآخر شي خاصية الضرب في الصفر.">
+    <h3>رتّب خطوات الحل بالتقسيم <span class="k">نشاط</span></h3>
+    <p>اضغط الخطوات بالترتيب. في خطوة زائدة خطيرة: لا تستخدمها.</p>
+  </div>
+  <details class="xtra"><summary>حاول أن تحل (3): <span dir="ltr">x³ + 2x² − 4x = 8</span></summary>
+    <ul class="pts">
+      <li style="--b:var(--sc)"><span dir="ltr">x³ + 2x² − 4x − 8 = 0</span> ⇐ <span dir="ltr">x²(x + 2) − 4(x + 2) = 0</span></li>
+      <li style="--b:var(--sc)"><span dir="ltr">(x + 2)(x² − 4) = (x + 2)(x + 2)(x − 2) = 0</span>، مجموعة الحل <span dir="ltr">{−2 , 2}</span> و ⁦−2⁩ صفر مكرر.</li>
+    </ul>
+  </details>
+</section>
+
+<section class="sec" aria-labelledby="s5">
+  <div class="sec-head"><span class="num">5</span><h2 id="s5">الأصفار النسبية الممكنة</h2></div>
+  <p>أحياناً لا التحليل ولا التقسيم ينفع. هنا نخمّن الأصفار بذكاء: النظرية تعطينا <b>قائمة مرشحين</b>، ونفحصهم بنظرية الباقي.</p>
+  <div class="law rz">
+    <h3>نظرية <span class="en" style="font-size:12.5px;color:var(--muted);font-weight:500">Possible Rational Zeros</span></h3>
+    <p>إذا كانت <span class="f" style="font-size:1.05rem;white-space:normal">f(x) = aₙxⁿ + aₙ₋₁xⁿ⁻¹ + … + a₁x + a₀ ; aₙ ≠ 0</span> وكل المعاملات أعداد صحيحة، فإن مجموعة الأصفار النسبية الممكنة هي الأعداد <span class="f" style="font-size:1.2rem">a / b</span> حيث a عامل من عوامل الحد الثابت <span dir="ltr">a₀</span>، و b عامل من عوامل المعامل الرئيسي <span dir="ltr">aₙ</span>.</p>
+  </div>
+  <h3 style="margin:16px 0 6px">مثال: <span dir="ltr">f(x) = 2x³ + 5x² + x − 6</span></h3>
+  <div class="rz-grid">
+    <div class="card" style="background:var(--p-lav)">أولاً: عوامل المعامل الرئيسي 2<b>±1 , ±2</b></div>
+    <div class="card" style="background:var(--p-sky)">ثانياً: عوامل الحد الثابت 6<b>±1 , ±2 , ±3 , ±6</b></div>
+    <div class="card" style="background:var(--p-mint)">ثالثاً: الأصفار النسبية الممكنة<b>±1 , ±2 , ±3 , ±6 , ±1/2 , ±3/2</b></div>
+  </div>
+  <p class="cap">القسمة على 1 تعيد عوامل 6 نفسها، والقسمة على 2 تعطي <span dir="ltr">±1/2 , ±3/2</span> (و <span dir="ltr">2/2 , 6/2</span> مكررة).</p>
+
+  <div class="act" data-act="gap" data-key="gap" data-ok="صح! المعامل الرئيسي 1 فعوامله ±1، والحد الثابت ⁦−27⁩ عوامله ⁦±1 , ±3 , ±9 , ±27⁩. (والصفر الحقيقي هنا 3.)">
+    <h3>أكمل الناقص <span class="k">نشاط</span></h3>
+    <p>تدريب (b): الأصفار النسبية الممكنة لـ <span class="f" style="font-size:1.05rem">g(x) = x³ − 27</span> هي <span class="gap">؟</span></p>
+    <div class="opts">
+      <button class="pc" data-no="نسيت بعض عوامل 27: ⁦27 = 1 × 27 = 3 × 9⁩.">±1 , ±3</button>
+      <button class="pc" data-ok>±1 , ±3 , ±9 , ±27</button>
+      <button class="pc" data-no="هذه مقلوبة: a من الحد الثابت فوق، و b من المعامل الرئيسي تحت. هنا المعامل الرئيسي 1.">±1 , ±1/3 , ±1/9 , ±1/27</button>
+      <button class="pc" data-no="العوامل تشمل الموجبة والسالبة، فلازم ± قبل كل عدد.">1 , 3 , 9 , 27</button>
+    </div>
+  </div>
+  <p class="cap">وتدريب (a): <span dir="ltr">f(x) = x³ + 5x − 3</span> أصفارها النسبية الممكنة <span dir="ltr">±1 , ±3</span>.</p>
+
+  <h3 style="margin:18px 0 6px">مثال محلول: <span dir="ltr">x³ − 4x² + 3 = 0</span></h3>
+  <div class="row"><button class="lite" id="hideSol" type="button" aria-pressed="false">أخفِ الحل وجرّب أولاً</button></div>
+  <ol class="steps" id="steps">
+    <li><span>عوامل الحد الثابت 3: <span dir="ltr">±1 , ±3</span>. عوامل المعامل الرئيسي 1: <span dir="ltr">±1</span>. الأصفار النسبية الممكنة: <span dir="ltr">±1 , ±3</span></span></li>
+    <li><span>لتكن <span class="f">P(x) = x³ − 4x² + 3</span>. نجرب 1: <span class="f">P(1) = 1 − 4 + 3 = 0</span><br>إذن 1 صفر و <span dir="ltr">(x − 1)</span> عامل.</span></li>
+    <li><span>نقسم <span dir="ltr">P(x)</span> على <span dir="ltr">(x − 1)</span> تركيبياً، مع صفر مكان <span dir="ltr">0x</span>: <span dir="ltr" class="nw">1 | 1 −4 0 3</span> يعطي <span dir="ltr">1 , −3 , −3 | 0</span><br><span class="f">q(x) = x² − 3x − 3</span></span></li>
+    <li><span>القانون العام: <span class="f">x = (3 ± √(9 + 12)) / 2 = (3 ± √21) / 2</span></span></li>
+    <li><span>مجموعة الحل <span class="ans"><span dir="ltr">{1 , (3 − √21)/2 , (3 + √21)/2}</span></span></span></li>
+  </ol>
+  <p class="tip" style="margin-top:10px"><b>معلومة:</b> إذا كان مجموع معاملات الحدودية صفراً، فإن 1 أحد أصفارها و <span dir="ltr">(x − 1)</span> أحد عواملها. هنا <span dir="ltr">1 − 4 + 0 + 3 = 0</span>.</p>
+
+  <h3 style="margin:18px 0 6px">من الدرجة الرابعة: <span dir="ltr">x⁴ − 3x³ + x² + 3x = 2</span></h3>
+  <ol class="steps">
+    <li><span><span class="f">x⁴ − 3x³ + x² + 3x − 2 = 0</span>. الأصفار النسبية الممكنة: <span dir="ltr">±1 , ±2</span></span></li>
+    <li><span><span class="f">P(1) = 1 − 3 + 1 + 3 − 2 = 0</span> و <span class="f">P(−1) = 1 + 3 + 1 − 3 − 2 = 0</span><br>إذن <span dir="ltr">(x − 1)</span> و <span dir="ltr">(x + 1)</span> عاملان، وحاصل ضربهما <span dir="ltr">x² − 1</span></span></li>
+    <li><span>نقسم على <span dir="ltr">x² − 1</span> بالقسمة المطولة: ناتج القسمة <span class="f">q(x) = x² − 3x + 2</span> والباقي 0</span></li>
+    <li><span><span class="f">x² − 3x + 2 = (x − 1)(x − 2) = 0</span> ⇐ <span dir="ltr">x = 1 , x = 2</span>. لاحظ أن 1 <b>صفر مكرر</b>.</span></li>
+    <li><span>مجموعة الحل <span class="ans"><span dir="ltr">{−1 , 1 , 2}</span></span></span></li>
+  </ol>
+  <details class="xtra"><summary>حاول أن تحل (4)</summary>
+    <ul class="pts">
+      <li style="--b:var(--sc)">(a) نعم، طرق أخرى: نقسم تركيبياً على <span dir="ltr">(x − 1)</span> ثم على <span dir="ltr">(x + 1)</span> مرة ثانية، أو نرسم الدالة ونقرأ نقاط قطع محور السينات.</li>
+      <li style="--b:var(--sc)">(b1) <span dir="ltr">x³ + x² − 4x − 4 = 0</span> بالتقسيم: <span dir="ltr">x²(x + 1) − 4(x + 1) = (x + 1)(x − 2)(x + 2)</span>، مجموعة الحل <span dir="ltr">{−1 , 2 , −2}</span>.</li>
+      <li style="--b:var(--sc)">(b2) <span dir="ltr">x⁴ − 3x³ − 7x² + 27x − 18 = 0</span>: مجموع المعاملات 0 فـ 1 صفر. <span dir="ltr">1 | 1 −3 −7 27 −18</span> يعطي <span dir="ltr">1 , −2 , −9 , 18 | 0</span>، ثم <span dir="ltr">x³ − 2x² − 9x + 18 = (x − 2)(x − 3)(x + 3)</span>. مجموعة الحل <span dir="ltr">{1 , 2 , 3 , −3}</span>.</li>
+    </ul>
+  </details>
+</section>
+
+<section class="sec" aria-labelledby="s6">
+  <div class="sec-head"><span class="num">6</span><h2 id="s6">مسائل الحجم</h2></div>
+  <p>نكتب الحجم <span dir="ltr">V = l · w · h</span> بدلالة x، نساويه بالقيمة المعطاة، ثم نحل بيانياً أو بالتحليل.</p>
+  <h3 style="margin:14px 0 6px">المرشد لحل المسائل: قالب الجبنة</h3>
+  <div class="qbox">قالب جبنة عرضه x وارتفاعه x وطوله 4x (بالـ cm). قُصّت منه قطعة سماكتها 2 cm من طرفه، فصار حجم الباقي <span dir="ltr">224 cm³</span>. أوجد أبعاد القالب الأساسي.</div>
+  <ol class="steps">
+    <li><span><b>كيف أفكر؟</b> العرض والارتفاع ما تغيّرا. الطول المتبقي = <span class="f">4x − 2</span></span></li>
+    <li><span><b>ماذا أكتب؟</b> <span class="f">224 = (4x − 2)(x)(x) = 4x³ − 2x²</span></span></li>
+    <li><span>بيانياً: نرسم <span dir="ltr">y₁ = 4x³ − 2x²</span> و <span dir="ltr">y₂ = 224</span>، التقاطع عند <span dir="ltr">x = 4</span>. تحقق: <span dir="ltr">4(64) − 2(16) = 256 − 32 = 224</span> ✓</span></li>
+    <li><span>العرض = الارتفاع = <span dir="ltr">4 cm</span>، والطول <span dir="ltr">4x = 16 cm</span>. أبعاد القالب: <span class="ans">4 cm , 4 cm , 16 cm</span></span></li>
+  </ol>
+  <details class="xtra"><summary>تطبيق حياتي (إثرائي): قفص القطة</summary>
+    <ul class="pts">
+      <li style="--b:var(--sc)">أبعاد قفص: الطول <span dir="ltr">l = x + 7</span>، العرض <span dir="ltr">w = x + 1</span>، العمق <span dir="ltr">h = x</span> (cm)، وحجمه <span dir="ltr">11340 cm³</span>.</li>
+      <li style="--b:var(--sc)"><span dir="ltr">11340 = (x + 7)(x + 1)(x)</span>. نرسم <span dir="ltr">y₁ = 11340</span> و <span dir="ltr">y₂ = (x + 7)(x + 1)(x)</span>، التقاطع عند <span dir="ltr">x = 20</span>.</li>
+      <li style="--b:var(--sc)">الأبعاد: <span dir="ltr">27 cm , 21 cm , 20 cm</span>. تحقق: <span dir="ltr">27 × 21 × 20 = 11340</span> ✓</li>
+    </ul>
+  </details>
+  <details class="xtra"><summary>مسألة إضافية: قطعة خشب مكعبة</summary>
+    <ul class="pts">
+      <li style="--b:var(--sc)">مكعب خشب طول ضلعه x (عدد صحيح)، قُصّت منه 4 قطع سماكة كل منها <span dir="ltr">1/2 cm</span>، فصار حجم الباقي <span dir="ltr">7200 cm³</span>.</li>
+      <li style="--b:var(--sc)">القطع الأربع تنقص بعداً واحداً بمقدار <span dir="ltr">4 × 1/2 = 2 cm</span>: <span dir="ltr">x · x · (x − 2) = 7200</span></li>
+      <li style="--b:var(--sc)">نجرب: <span dir="ltr">x = 20</span> ⇐ <span dir="ltr">20 × 20 × 18 = 7200</span> ✓. طول ضلع القطعة الأساسية <span dir="ltr">20 cm</span>.</li>
+    </ul>
+  </details>
+</section>
+
+<section class="sec" aria-labelledby="sg">
+  <div class="sec-head"><span class="num">7</span><h2 id="sg">النقاط الذهبية</h2></div>
+  <p class="muted" style="margin-top:-4px">اللي يحبّه الاختبار، والفخاخ اللي يطيح فيها أغلب الطلاب.</p>
+  <div class="gold" id="gold"></div>
+</section>
+
+<section class="sec" aria-labelledby="sd">
+  <div class="sec-head"><span class="num">8</span><h2 id="sd">في حياتك</h2></div>
+  <div class="life">
+    <div class="card"><h3>علبة بحجم محدد</h3><p>مصنع يبي علبة حجمها بالضبط 224 cm³ وأبعادها مرتبطة ببعض؟ يكتب معادلة تكعيبية ويحلها، تماماً مثل قالب الجبنة.</p></div>
+    <div class="card"><h3>تطبيقات الرسم</h3><p>برامج الرسم البياني في الجوال والآلة الحاسبة تحل أي معادلة بنقاط التقاطع. لكن التحليل يعطيك الجواب الدقيق مثل <span dir="ltr">1 + √6</span> بدل رقم تقريبي.</p></div>
+    <div class="card"><h3>المحقق الذكي</h3><p>الأصفار النسبية الممكنة مثل قائمة مشتبه فيهم: بدل ما تجرّب كل الأعداد، تجرّب قائمة قصيرة وتتأكد بنظرية الباقي.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sq">
+  <div class="sec-head"><span class="num">9</span><h2 id="sq">اختبر فهمك</h2></div>
+  <div class="quiz">
+    <div class="q"><p>مجموعة حل المعادلة <span class="f" style="font-size:1.05rem">x³ − 9x = 0</span>:</p>
+      <div class="opts"><button dir="ltr">{3 , −3}</button><button dir="ltr" data-ok>{0 , 3 , −3}</button><button dir="ltr">{0 , 9}</button></div>
+      <p class="why" hidden>الصحيح: ⁦{0 , 3 , −3}⁩. ⁦x(x² − 9) = x(x − 3)(x + 3) = 0⁩. لو قسمت على x تضيع الحل 0.</p></div>
+    <div class="q"><p>الأصفار النسبية الممكنة لـ <span class="f" style="font-size:1.05rem">f(x) = 3x³ − x + 2</span>:</p>
+      <div class="opts"><button dir="ltr">±1 , ±3 , ±1/2 , ±3/2</button><button dir="ltr" data-ok>±1 , ±2 , ±1/3 , ±2/3</button><button dir="ltr">±1 , ±2 , ±3</button></div>
+      <p class="why" hidden>الصحيح: a من عوامل الحد الثابت 2 ⁦(±1 , ±2)⁩ فوق، و b من عوامل المعامل الرئيسي 3 ⁦(±1 , ±3)⁩ تحت.</p></div>
+    <div class="q"><p>بيانا <span dir="ltr">y = x³</span> و <span dir="ltr">y = 4x</span> يتقاطعان عند <span dir="ltr">x = −2 , 0 , 2</span>. مجموعة حل <span class="f" style="font-size:1.05rem">x³ − 4x = 0</span> هي:</p>
+      <div class="opts"><button dir="ltr" data-ok>{−2 , 0 , 2}</button><button dir="ltr">{0 , 4}</button><button dir="ltr">{−2 , 2}</button></div>
+      <p class="why" hidden>الصحيح: ⁦{−2 , 0 , 2}⁩. المعادلة ⁦x³ = 4x⁩ هي نفسها ⁦x³ − 4x = 0⁩، فحلولها الإحداثيات السينية لنقاط التقاطع الثلاث.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li><b>بالتحليل</b>: اجعل أحد الطرفين صفراً، أخرج العامل المشترك، حلّل (أو قسّم الحدود إلى مجموعتين)، ثم خاصية الضرب في الصفر. العامل التربيعي اللي ما يتحلل: القانون العام.</li>
+      <li><b>بيانياً</b>: حلول <span dir="ltr">f(x) = g(x)</span> هي الإحداثيات السينية لنقاط تقاطع البيانين، أو أصفار <span dir="ltr">f(x) − g(x)</span>.</li>
+      <li><b>الأصفار النسبية الممكنة</b> <span dir="ltr">a/b</span>: a من عوامل الحد الثابت و b من عوامل المعامل الرئيسي. جرّبها بنظرية الباقي، ثم اقسم وأكمل الحل.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">يرتبط بهذا الدرس</h2></div>
+  <div class="links" id="links"></div>
+  <div class="finish"><p id="finMsg">خلّصت الدرس؟ سجّله ليظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل الدرس كمنجز</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: كتاب الطالب، الرياضيات، الصف الحادي عشر، الوحدة الثالثة، ص 116 إلى 122</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+Lesson.init({id:"math-u3-3-5"});
+(function(){
+"use strict";
+function $(i){return document.getElementById(i);}
+function fmt(v){var r=Math.round(v*100)/100;if(Math.abs(r)<1e-9)r=0;return (r<0?"−":"")+String(Math.abs(r));}
+var one=false,W=400,H=270,pad=16,X0=-4.6,X1=2.6,Y0=-6,Y1=10;
+function px(x){return pad+(x-X0)/(X1-X0)*(W-2*pad);}
+function py(y){return H-pad-(y-Y0)/(Y1-Y0)*(H-2*pad);}
+function f(x){return x*x*x+3*x*x;}
+function roots(h){var r=[],N=1400,a=X0,ha=h(a);for(var i=1;i<=N;i++){var b=X0+(X1-X0)*i/N,hb=h(b);if(ha===0)r.push(a);else if(ha*hb<0){var lo=a,hi=b;for(var k=0;k<50;k++){var m=(lo+hi)/2;if(h(lo)*h(m)<=0)hi=m;else lo=m;}r.push((lo+hi)/2);}a=b;ha=hb;}
+  /* tangent (touching) roots: local min of |h| close to 0 */
+  for(var j=1;j<N;j++){var x0=X0+(X1-X0)*(j-1)/N,x1=X0+(X1-X0)*j/N,x2=X0+(X1-X0)*(j+1)/N,v0=Math.abs(h(x0)),v1=Math.abs(h(x1)),v2=Math.abs(h(x2));if(v1<v0&&v1<v2&&v1<2e-3&&!r.some(function(q){return Math.abs(q-x1)<0.02;}))r.push(x1);}
+  return r.sort(function(p,q){return p-q;});}
+function curve(fn){var s="";for(var i=0;i<=360;i++){var x=X0+(X1-X0)*i/360,y=fn(x);y=Math.max(Y0-40,Math.min(Y1+40,y));s+=(i?"L":"M")+px(x).toFixed(1)+" "+py(y).toFixed(1);}return s;}
+function draw(){
+  var c=+$("cc").value,h=function(x){return f(x)-x-c;},r=roots(h),s="",i;
+  $("ccL").textContent=fmt(c);
+  var cs=(c===0?"":(c>0?" + ":" − ")+fmt(Math.abs(c)));
+  $("eqTxt").textContent=one?"x³ + 3x² − x"+(c===0?"":(c>0?" − ":" + ")+fmt(Math.abs(c)))+" = 0":"x³ + 3x² = x"+cs;
+  s+='<defs><clipPath id="gc"><rect x="'+pad+'" y="'+pad+'" width="'+(W-2*pad)+'" height="'+(H-2*pad)+'"/></clipPath></defs>';
+  for(i=-4;i<=2;i++)s+='<line x1="'+px(i)+'" y1="'+pad+'" x2="'+px(i)+'" y2="'+(H-pad)+'" stroke="var(--grid)"/>';
+  for(i=-6;i<=10;i+=2)s+='<line x1="'+pad+'" y1="'+py(i)+'" x2="'+(W-pad)+'" y2="'+py(i)+'" stroke="var(--grid)"/>';
+  s+='<line x1="'+pad+'" y1="'+py(0)+'" x2="'+(W-pad)+'" y2="'+py(0)+'" stroke="var(--axis)" stroke-width="1.8"/><line x1="'+px(0)+'" y1="'+pad+'" x2="'+px(0)+'" y2="'+(H-pad)+'" stroke="var(--axis)" stroke-width="1.8"/>';
+  s+='<g font-size="10.5" fill="var(--axis)" direction="ltr" text-anchor="middle">';[-4,-3,-2,-1,1,2].forEach(function(t){s+='<text x="'+px(t)+'" y="'+(py(0)+14)+'">'+fmt(t)+'</text>';});
+  s+='<text x="'+(px(0)-10)+'" y="'+(py(8)+4)+'">8</text><text x="'+(px(0)-10)+'" y="'+(py(-4)+4)+'">−4</text></g>';
+  s+='<g clip-path="url(#gc)">';
+  if(one){s+='<path d="'+curve(h)+'" fill="none" stroke="var(--curve)" stroke-width="3.2"/>';s+='<line x1="'+pad+'" y1="'+py(0)+'" x2="'+(W-pad)+'" y2="'+py(0)+'" stroke="var(--line)" stroke-width="3" stroke-dasharray="7 5"/>';}
+  else{s+='<path d="'+curve(f)+'" fill="none" stroke="var(--curve)" stroke-width="3.2"/>';s+='<path d="'+curve(function(x){return x+c;})+'" fill="none" stroke="var(--line)" stroke-width="3"/>';}
+  r.forEach(function(x){var y=one?0:x+c;if(y<Y0||y>Y1)return;s+='<line x1="'+px(x)+'" y1="'+py(y)+'" x2="'+px(x)+'" y2="'+py(0)+'" stroke="var(--hit)" stroke-width="1.4" stroke-dasharray="3 3"/><circle cx="'+px(x)+'" cy="'+py(y)+'" r="6" fill="var(--hit)" stroke="var(--card)" stroke-width="2"/>';});
+  s+='</g>';
+  $("gPlot").innerHTML=s;
+  var set=r.map(fmt).join(" , ");
+  $("gOut").innerHTML='<span>عدد نقاط '+(one?"قطع محور السينات":"التقاطع")+': <b>'+r.length+'</b></span><span>مجموعة الحل: <span class="f">{'+set+'}</span></span><small>'+(c===3?"هذه حلول المثال: ⁦−3 , −1 , 1⁩ بالضبط.":r.length<3?"قلّت الحلول: المستقيم ما عاد يقطع المنحنى ثلاث مرات.":"القيم مقرّبة لأقرب جزء من مئة.")+'</small>';
+}
+$("cc").addEventListener("input",draw);
+$("oneBtn").addEventListener("click",function(){one=!one;this.setAttribute("aria-pressed",one?"true":"false");this.textContent=one?"ارجع للطرفين":"انقل كل الحدود لطرف واحد";draw();});
+draw();
+window.addEventListener("masar-theme",draw);
+})();
+</script>
+</body>
+</html>
