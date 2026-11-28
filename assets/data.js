@@ -18,6 +18,20 @@ window.LAB = {
   /* Lessons not published yet are looked up in PLAN.catalog (assets/plan.js), so links to them show as "قريباً". */
   lessons: [
     {
+      "id": "weekly-2026-11-28-am",
+      "date": "2026-11-28",
+      "subject": "mixed",
+      "unit": "مراجعة الأسبوع الثاني · 20 درساً من 22 إلى 27 نوفمبر",
+      "title": "مراجعة الأسبوع: النقاط الأساسية والرموز والقوانين",
+      "url": "lessons/weekly-2026-11-28-am.html",
+      "minutes": 45,
+      "prereq": [],
+      "related": [],
+      "next": [],
+      "terms": [],
+      "gold": []
+    },
+    {
       "id": "math-u3-3-5",
       "date": "2026-11-27",
       "subject": "math",

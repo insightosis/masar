@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-subject="mixed">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مراجعة الأسبوع الثاني · مسار</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/lesson.css">
+<script>try{var t=localStorage.getItem("masar.theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+.dots{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.dots a{width:26px;height:26px;border-radius:50%;background:var(--c);box-shadow:var(--clay-sm);display:block}
+.dots a.done{outline:3px solid var(--ok);outline-offset:2px}
+.plan4{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:12px}
+.plan4 div{padding:10px 14px;border-radius:20px;background:var(--card);box-shadow:var(--clay-sm);font-size:14.5px}
+.plan4 b{display:block;font-family:var(--display);font-size:1.3rem;color:var(--ink)}
+.fil{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.fil .tg{font-size:14px;padding:6px 14px}
+.fil .tg[aria-pressed=true]{background:var(--sb,var(--p-sky))}
+.deck{padding:18px;border-radius:28px;background:var(--card);box-shadow:var(--clay);min-height:230px;display:flex;flex-direction:column;gap:10px}
+.deck .meta{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:13px;color:var(--muted)}
+.deck .meta .chip{font-size:12.5px}
+.deck .front{font-family:var(--display);font-weight:800;font-size:clamp(1.5rem,6vw,2.1rem);line-height:1.3;color:var(--text)}
+.deck .en{direction:ltr;unicode-bidi:isolate;display:block;font-size:14px;color:var(--muted);font-weight:500;font-family:var(--body)}
+.deck .back{padding:12px 14px;border-radius:18px;background:var(--p-mint);box-shadow:var(--press);font-size:1.02rem;line-height:1.75}
+.deck .back[hidden]{display:none}
+.deck .row{margin-top:auto}
+.yes{cursor:pointer;font:inherit;font-weight:800;border:0;border-radius:16px;padding:8px 18px;background:var(--ok-soft);color:var(--ok);box-shadow:var(--clay-sm)}
+.count{font-size:14px;color:var(--muted);margin:10px 4px 0;font-weight:600}
+.law .f{white-space:normal}
+.law ul{margin:0;padding-inline-start:1.1em;font-size:14.5px;color:var(--muted)}
+.law ul .f{font-size:1.15rem;color:var(--text)}
+.sbj{display:inline-block;font-size:12.5px;font-weight:700;padding:1px 10px;border-radius:10px;background:var(--card);color:var(--text);box-shadow:var(--clay-sm);margin-bottom:6px}
+.glist{display:grid;gap:10px}
+.glist h3{margin:10px 0 0;font-size:1.05rem}
+.glist h3 a{color:inherit}
+.wl{display:grid;gap:10px}
+</style>
+</head>
+<body style="--sc:#d1557a">
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="../index.html"><span class="dot"></span>→ لوحة التتبع</a>
+  <nav class="nav" aria-label="معلومات الصفحة"><span class="chip">مراجعة الأسبوع</span><span class="chip">20 درساً · 22 إلى 27 نوفمبر</span></nav>
+</header>
+
+<section class="hero" aria-labelledby="t">
+  <p class="eyebrow">السبت · الصباح · الأسبوع الثاني</p>
+  <h1 id="t">أسبوعك الثاني في 45 دقيقة</h1>
+  <p>هذا الأسبوع لفّت معك دوّارة، وصعد الماء في شجرة، وانقسمت كثيرات حدود، وترسّب ملح في كأس. <mark>تقدر تقول قانون القوة الجاذبة المركزية ونظرية الباقي من غير ما تفتح شي؟</mark> اليوم ما فيه درس جديد: نلمّ الرموز والقوانين والفخاخ، ونختبر نفسنا بسرعة.</p>
+  <div class="dots" id="dots" aria-label="دروس الأسبوع، كل دائرة درس"></div>
+  <div class="plan4">
+    <div><b>15 د</b>بطاقات سريعة</div>
+    <div><b>10 د</b>قوانين الأسبوع</div>
+    <div><b>10 د</b>النقاط الذهبية والفخاخ</div>
+    <div><b>10 د</b>تحدّي سريع</div>
+  </div>
+</section>
+
+<section class="panel" aria-labelledby="s1">
+  <div class="lab-head"><h2 id="s1">بطاقات سريعة</h2><span class="legend">شوف المصطلح، قول معناه بصوت، ثم اقلب</span></div>
+  <div class="fil" id="deckFil"></div>
+  <div class="deck" id="deck" aria-live="polite"></div>
+  <p class="count" id="deckCount"></p>
+  <p class="cap">«عرفتها» تشيلها من الكومة. «راجعها» ترجعها آخر الكومة لين تعرفها.</p>
+</section>
+
+<section class="sec" aria-labelledby="s2">
+  <div class="sec-head"><span class="num">2</span><h2 id="s2">قوانين الأسبوع ورموزه</h2></div>
+  <p>اقرأ عنوان البطاقة، غطِّ القوانين بيدك، واكتبها من راسك على ورقة. بعدين اكشف وتأكّد.</p>
+  <div class="laws">
+    <div class="law" style="background:var(--p-peach)">
+      <span class="sbj">الفيزياء</span><h3>وصف الحركة الدائرية</h3>
+      <ul>
+        <li><span class="f">s = r θ</span> و θ بالراديان: <span class="f">2π rad = 360°</span></li>
+        <li><span class="f">ω = Δθ ÷ Δt</span> و <span class="f">v = r ω</span> (ω واحدة لكل أجزاء الجسم)</li>
+        <li><span class="f">f = 1 ÷ T</span> و <span class="f">ω = 2πf</span></li>
+        <li><span class="f">a<sub>c</sub> = v² ÷ r</span> نحو المركز، و <span class="f">θ″ = Δω ÷ Δt</span></li>
+        <li><span class="f">ω = θ″t + ω<sub>0</sub></span> و <span class="f">Δθ = ½θ″t² + ω<sub>0</sub>t</span></li>
+      </ul>
+    </div>
+    <div class="law" style="background:var(--p-peach)">
+      <span class="sbj">الفيزياء</span><h3>القوة الجاذبة المركزية <small style="font-weight:500">(<span dir="ltr">g = 10 m/s²</span>)</small></h3>
+      <ul>
+        <li><span class="f">F<sub>c</sub> = m a<sub>c</sub> = m v² ÷ r</span> ودايماً نحو المركز</li>
+        <li>منعطف أفقي: <span class="f">f = μ m g</span> و <span class="f">v<sub>max</sub> = √(μ g r)</span></li>
+        <li>منعطف مائل: <span class="f">N cosθ = m g</span> و <span class="f">N sinθ = m v² ÷ r</span></li>
+        <li>سرعة التصميم: <span class="f">tanθ = v² ÷ (r g)</span></li>
+      </ul>
+    </div>
+    <div class="law" style="background:var(--p-lav)">
+      <span class="sbj">الرياضيات</span><h3>المعكوسات والجذور والمتباينات</h3>
+      <ul>
+        <li><span class="f">(a, b)</span> في الدالة ⇐ <span class="f">(b, a)</span> في معكوسها، والتماثل حول <span class="f">y = x</span></li>
+        <li><span class="f">y = √(x − h) + k</span>: إزاحة h أفقياً و k رأسياً</li>
+        <li>المتباينة التربيعية: حلّل، ثم جدول الإشارات</li>
+        <li>أصفار المقام خارج الحل دائماً، وما تحت الجذر <span class="f">≥ 0</span></li>
+      </ul>
+    </div>
+    <div class="law" style="background:var(--p-lav)">
+      <span class="sbj">الرياضيات</span><h3>دوال القوى والحدوديات</h3>
+      <ul>
+        <li>دالة القوى: <span class="f">y = a x<sup>n</sup></span> و <span class="f">a ≠ 0</span></li>
+        <li>زوجية: <span class="f">f(−x) = f(x)</span>، فردية: <span class="f">f(−x) = −f(x)</span></li>
+        <li><span class="f">P(x) = a<sub>n</sub>x<sup>n</sup> + … + a<sub>1</sub>x + a<sub>0</sub></span> وعدد حدودها <span class="f">≤ n + 1</span></li>
+        <li>سلوك النهاية من الحد الأعلى درجة: إشارته وزوجية الدرجة</li>
+      </ul>
+    </div>
+    <div class="law" style="background:var(--p-lav)">
+      <span class="sbj">الرياضيات</span><h3>العوامل والقسمة والأصفار</h3>
+      <ul>
+        <li>نظرية العامل: <span class="f">(x − a)</span> عامل ⟺ <span class="f">P(a) = 0</span></li>
+        <li>نظرية الباقي: باقي قسمة <span class="f">f(x)</span> على <span class="f">(x − a)</span> هو <span class="f">f(a)</span></li>
+        <li>القسمة التركيبية: صفر المقسوم عليه a، ونجمع لا نطرح</li>
+        <li>الأصفار النسبية الممكنة <span class="f">a ÷ b</span>: a من عوامل الحد الثابت، b من عوامل المعامل الرئيسي</li>
+      </ul>
+    </div>
+    <div class="law" style="background:var(--p-mint)">
+      <span class="sbj">الكيمياء</span><h3>المحاليل والغرويات</h3>
+      <ul>
+        <li>الشبيه يذيب الشبيه: القطبي يذيب القطبي والأيوني</li>
+        <li>إلكتروليت قوي يتفكّك كاملاً <span dir="ltr">(NaCl)</span>، ضعيف جزئياً <span dir="ltr">(HgCl₂)</span>، والجلوكوز غير إلكتروليت</li>
+        <li>معلّق <span dir="ltr">&gt; 1000 nm</span>، غروي بين <span dir="ltr">1 nm</span> و <span dir="ltr">1000 nm</span></li>
+        <li>تندال في الغروي والمعلّق فقط، والحركة البراونية تمنع ترسّب الغروي</li>
+      </ul>
+    </div>
+    <div class="law" style="background:var(--p-mint)">
+      <span class="sbj">الكيمياء</span><h3>الترسيب</h3>
+      <ul>
+        <li>تذوب دائماً: أملاح <span dir="ltr">Na⁺</span> و <span dir="ltr">K⁺</span> و <span dir="ltr">NH₄⁺</span> و <span dir="ltr">NO₃⁻</span></li>
+        <li>المعادلة الأيونية النهائية: فكّك المائي <span dir="ltr">(aq)</span>، احذف المتشابه، واترك الصلب <span dir="ltr">(s)</span></li>
+        <li><span class="f">Ba²⁺(aq) + CrO₄²⁻(aq) → BaCrO₄(s)↓</span></li>
+      </ul>
+    </div>
+    <div class="law" style="background:var(--p-mint)">
+      <span class="sbj">الأحياء</span><h3>النقل والنمو وتعاقب الأجيال</h3>
+      <ul>
+        <li>الماء من الجهد المائي العالي إلى المنخفض، ويصعد في الخشب أساساً بالشد النتحي</li>
+        <li>السكروز في اللحاء من المنبع إلى المصرف (التدفّق بالضغط)</li>
+        <li>الكمبيوم الوعائي: خشب ثانوي للداخل ولحاء ثانوي للخارج</li>
+        <li>جرثومي <span dir="ltr">2n</span> ← ميوزي ← جراثيم <span dir="ltr">n</span> ← مشيجي <span dir="ltr">n</span> ← أمشاج ← زيجوت <span dir="ltr">2n</span></li>
+      </ul>
+    </div>
+    <div class="law" style="background:var(--p-pink)">
+      <span class="sbj">الجيولوجيا</span><h3>المعادن والصخور النارية</h3>
+      <ul>
+        <li>موهس: التلك 1 إلى الألماس 10، والمخدش لون المسحوق</li>
+        <li>8 عناصر تكوّن أكثر من 98% من القشرة، والسيليكاتية أكثر المعادن انتشاراً</li>
+        <li>6 نظم بلّورية، والأحجار الكريمة تُقيَّم بالصفاء واللون والقطع والقيراط</li>
+        <li>صهارة ← لافا عند السطح؛ بركانية (طفحية) عند السطح وجوفية في الأعماق</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="act" data-act="match" data-key="match" data-pairs='[["⁦ω⁩","⁦Δθ ÷ Δt⁩"],["⁦Fc⁩","⁦m v² ÷ r⁩"],["باقي قسمة ⁦f(x)⁩ على ⁦(x − a)⁩","⁦f(a)⁩"],["دالة زوجية","⁦f(−x) = f(x)⁩"],["الغروي","جسيمات بين ⁦1 nm⁩ و ⁦1000 nm⁩"],["مقياس موهس","الصلادة من 1 إلى 10"]]'
+       data-ok="ممتاز! ستة رموز من أربع مواد في دقيقة.">
+    <h3>وصّل الرمز بمعناه <span class="k">نشاط 1</span></h3>
+    <p>اضغط رمزاً من العمود الأول، ثم معناه من العمود الثاني.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s3">
+  <div class="sec-head"><span class="num">3</span><h2 id="s3">النقاط الذهبية</h2></div>
+  <p>اختر مادة. ابدأ بـ <span class="lb trap">فخ</span> لأنها أكثر شي يضيّع درجات، ثم <span class="lb exam">سؤال مكرر</span>.</p>
+  <div class="fil" id="goldFil"></div>
+  <div class="fil" id="goldType"></div>
+  <div class="glist" id="goldList"></div>
+
+  <div class="act srt" data-act="sort" data-key="sort" data-bins='["صحيحة","فخ: خطأ"]'
+       data-items='[["في الحركة الدائرية المنتظمة العجلة صفر",1,"فخ: ⁦at = 0⁩ لكن ⁦ac = v² ÷ r⁩ موجودة دائماً نحو المركز لأن اتجاه السرعة يتغيّر."],["عند قطع الخيط ينطلق الحجر في اتجاه المماس",0,"هذه صحيحة: القانون الأول لنيوتن، يكمل في خط مستقيم مماس لحظة القطع."],["الصفر ⁦−2⁩ عامله ⁦(x − 2)⁩",1,"فخ: عامله ⁦(x − (−2)) = (x + 2)⁩."],["أصفار المقام تدخل الحل إذا كانت العلاقة ≥",1,"فخ: أصفار المقام لا تدخل الحل أبداً لأن الكسر غير معرّف عندها."],["الغروي يُحدث ظاهرة تندال ولا يترسّب",0,"هذه صحيحة: يشتّت الضوء مثل المعلّق، ولا يترسّب مثل المحلول."],["الانقسام الميوزي في النبات ينتج أمشاجاً",1,"فخ: الميوزي في النبات ينتج جراثيم (أبواغاً)، والأمشاج تنتجها النبتة المشيجية بالميتوزي."],["الألماس أصلب المعادن لكنه قابل للكسر",0,"هذه صحيحة: الصلادة غير المتانة، والألماس متوسط المتانة."],["الذهب والفضّة من الأحجار الكريمة",1,"فخ: هي معادن نفيسة لسهولة تشكيلها وصياغتها، لا أحجار كريمة."]]'
+       data-ok="كل البطاقات في مكانها! الفخاخ صارت مكشوفة لك.">
+    <h3>صحيحة أم فخ؟ <span class="k">نشاط 2</span></h3>
+    <p>جمل من دروس الأسبوع. بعضها صح، وبعضها فخ يقع فيه كثيرون.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s4">
+  <div class="sec-head"><span class="num">4</span><h2 id="s4">تحدّي سريع</h2></div>
+  <div class="act" data-act="order" data-key="order" data-rtl data-answer='["نبتة جرثومية 2n","انقسام ميوزي","جراثيم n","نبتة مشيجية n","أمشاج","إخصاب: زيجوت 2n"]' data-extra='["ميوزي ينتج أمشاجاً"]'
+       data-ok="صح! الميوزي يعطي جراثيم، والنبتة المشيجية تعطي الأمشاج، والإخصاب يرجعنا إلى 2n."
+       data-no="القطع الحمراء في غير مكانها. تذكّر: في النبات الميوزي ينتج جراثيم، لا أمشاجاً.">
+    <h3>رتّب دورة تعاقب الأجيال <span class="k">نشاط 3</span></h3>
+    <p>ابدأ من النبتة الجرثومية وارجع لها. فيه قطعة زائدة خطأ.</p>
+  </div>
+
+  <div class="quiz" style="margin-top:16px">
+    <div class="q"><p>ما باقي قسمة ⁦x³ − 2x + 1⁩ على ⁦(x − 2)⁩؟</p>
+      <div class="opts"><button>⁦−3⁩</button><button data-ok>5</button><button>1</button></div>
+      <p class="why" hidden>الصحيح: 5. نظرية الباقي: نعوّض ⁦x = 2⁩: ⁦8 − 4 + 1 = 5⁩. (⁦−3⁩ هي ⁦f(−2)⁩، يعني أخذت إشارة العامل بالغلط.)</p></div>
+    <div class="q"><p>سيارة كتلتها ⁦(1000)kg⁩ تلفّ بسرعة ⁦(10)m/s⁩ في منعطف نصف قطره ⁦(50)m⁩. كم القوة الجاذبة المركزية؟</p>
+      <div class="opts"><button>⁦(200)N⁩</button><button data-ok>⁦(2000)N⁩</button><button>⁦(20 000)N⁩</button></div>
+      <p class="why" hidden>الصحيح: ⁦Fc = m v² ÷ r = 1000 × 100 ÷ 50 = (2000)N⁩. لا تنسَ تربيع السرعة.</p></div>
+    <div class="q"><p>عند مزج محلول ⁦Ba(NO₃)₂⁩ مع محلول ⁦K₂CrO₄⁩، الراسب هو:</p>
+      <div class="opts"><button>⁦KNO₃⁩</button><button data-ok>⁦BaCrO₄⁩</button><button>لا يتكوّن راسب</button></div>
+      <p class="why" hidden>الصحيح: ⁦BaCrO₄⁩. أملاح ⁦K⁺⁩ والنترات تذوب دائماً، فيبقى ⁦Ba²⁺ + CrO₄²⁻ → BaCrO₄(s)↓⁩.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sum">
+    <h2>احفظ هذه الثلاث</h2>
+    <ol>
+      <li>الفيزياء: <bdi dir="ltr" style="white-space:nowrap">v = rω</bdi> و <bdi dir="ltr" style="white-space:nowrap">Fc = mv² ÷ r</bdi> نحو المركز، وبدونها يكمل الجسم على المماس.</li>
+      <li>الرياضيات: <bdi dir="ltr" style="white-space:nowrap">(x − a)</bdi> عامل ⟺ <bdi dir="ltr" style="white-space:nowrap">P(a) = 0</bdi>، والباقي <bdi dir="ltr" style="white-space:nowrap">f(a)</bdi>.</li>
+      <li>الكيمياء والأحياء والجيولوجيا: الغروي بين 1 و 1000 nm، الميوزي في النبات يعطي جراثيم، والصلادة غير المتانة.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="sl">
+  <div class="sec-head"><span class="num">↔</span><h2 id="sl">دروس الأسبوع</h2></div>
+  <p>أي بطاقة أو نقطة ما عرفتها؟ ارجع لدرسها من هنا.</p>
+  <div class="wl" id="weekLinks"></div>
+  <div class="finish"><p id="finMsg">خلّصت المراجعة؟ سجّلها لتظهر في لوحة التتبع.</p><button id="finBtn" type="button">سجّل المراجعة كمنجزة</button></div>
+</section>
+
+<footer><a href="../index.html">لوحة التتبع</a> · <a href="../plan.html">الخطة</a> · <a href="../review.html">المراجعة</a> · المصدر: دروس الأسبوع من كتب الطالب للصف الحادي عشر (الفيزياء، الكيمياء، الأحياء، الرياضيات، الجيولوجيا)، 22 إلى 27 نوفمبر</footer>
+</div>
+
+<script src="../assets/plan.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/lab.js"></script>
+<script src="../assets/lesson.js"></script>
+<script>
+var LESSON_ID=window.LESSON_ID="weekly-2026-11-28-am";
+Lesson.init({id:"weekly-2026-11-28-am"});
+(function(){
+"use strict";
+var WEEK=["chem-u2-1-2","bio-u1-1-3","math-u2-2-5","geo-u2-1-2","math-u2-2-6","geo-u2-1-3","phy-u1-2-1","bio-u1-1-4","geo-u2-1-4","math-u3-3-1","chem-u2-1-3","math-u3-3-2","math-u3-3-3","phy-u1-2-2","bio-u1-2-1","geo-u2-1-5","chem-u2-2-1","geo-u3-1-1","math-u3-3-4","math-u3-3-5"];
+var SUBJ=["physics","math","chemistry","biology","geology"];
+var SOFT={physics:"var(--p-peach)",math:"var(--p-lav)",chemistry:"var(--p-mint)",biology:"var(--p-mint)",geology:"var(--p-pink)"};
+var S=LAB.subjects, LS=WEEK.map(function(id){return Lab.lesson(id);}).filter(Boolean);
+function $(i){return document.getElementById(i);}
+function esc(x){return String(x).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function chip(s){return '<span class="chip" style="--sc:'+S[s].color+'">'+Lab.icon(S[s].icon,14)+esc(S[s].name)+'</span>';}
+function filters(el,withAll,cur,on){
+  var keys=(withAll?["all"]:[]).concat(SUBJ.filter(function(s){return LS.some(function(l){return l.subject===s;});}));
+  el.innerHTML=keys.map(function(k){return '<button class="tg" type="button" data-k="'+k+'" aria-pressed="'+(k===cur)+'" style="--sb:'+(k==="all"?"var(--p-sky)":SOFT[k])+'">'+(k==="all"?"الكل":esc(S[k].name))+'</button>';}).join("");
+  el.addEventListener("click",function(e){var b=e.target.closest(".tg");if(!b)return;[].forEach.call(el.children,function(x){x.setAttribute("aria-pressed",String(x===b));});on(b.dataset.k);});
+}
+
+/* week dots */
+$("dots").innerHTML=WEEK.map(function(id){var n=Lab.node(id,"../");if(!n)return "";return '<a href="'+esc(n.url||"#")+'" style="--c:'+S[n.subject].color+'" class="'+(n.done?"done":"")+'" title="'+esc(n.title)+'" aria-label="'+esc(n.title)+'"></a>';}).join("");
+
+/* quick-fire deck from the terms of the week's lessons */
+var ALL=[];LS.forEach(function(l){(l.terms||[]).forEach(function(t){ALL.push({s:l.subject,lt:l.title,ar:t.ar,en:t.en,def:t.def});});});
+var pile=[],known=0,open=false,subj="all";
+function deal(k){subj=k;pile=shuffle(ALL.filter(function(c){return k==="all"||c.s===k;}));known=0;open=false;draw();}
+function draw(){
+  var d=$("deck");
+  if(!pile.length){d.innerHTML='<p class="front">خلصت الكومة!</p><p>عرفت '+known+' بطاقة. جرّب مادة ثانية أو ابدأ من جديد.</p><div class="row"><button class="chk" type="button" id="again">ابدأ من جديد</button></div>';
+    $("again").addEventListener("click",function(){deal(subj);});$("deckCount").textContent="";return;}
+  var c=pile[0];
+  d.innerHTML='<div class="meta">'+chip(c.s)+'<span>'+esc(c.lt)+'</span></div><p class="front" style="margin:0">'+esc(c.ar)+'<span class="en">'+esc(c.en)+'</span></p>'
+    +'<p class="back"'+(open?"":" hidden")+'>'+esc(c.def)+'</p>'
+    +'<div class="row">'+(open?'<button class="yes" type="button" id="yes">عرفتها ✓</button><button class="lite" type="button" id="no">راجعها ↺</button>':'<button class="chk" type="button" id="flip">اقلب البطاقة</button>')+'</div>';
+  if(open){$("yes").addEventListener("click",function(){pile.shift();known++;open=false;draw();});
+           $("no").addEventListener("click",function(){pile.push(pile.shift());open=false;draw();});}
+  else $("flip").addEventListener("click",function(){open=true;draw();$("yes").focus();});
+  $("deckCount").textContent="باقي "+pile.length+" بطاقة · عرفت "+known;
+}
+filters($("deckFil"),true,"all",deal);deal("all");
+
+/* golden points by subject and label */
+var gs="physics",gt="trap",TAG={exam:"سؤال مكرر",fast:"قاعدة سريعة",trap:"فخ"};
+var star='<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 20.9l1.6-7L2 9.2l7.1-.6z" fill="#f2a51f"/></svg>';
+function gold(){
+  var h=LS.filter(function(l){return l.subject===gs;}).map(function(l){
+    var g=(l.gold||[]).filter(function(x){return gt==="all"||x.type===gt;});
+    if(!g.length)return "";
+    return '<h3><a href="../'+esc(l.url)+'">'+esc(l.title)+'</a></h3>'+g.map(function(x){return '<div class="gp">'+star+'<p><span class="lb '+x.type+'">'+TAG[x.type]+'</span>'+esc(x.text)+'</p></div>';}).join("");
+  }).join("");
+  $("goldList").innerHTML=h||'<p class="muted">لا نقاط من هذا النوع في هذه المادة.</p>';
+}
+filters($("goldFil"),false,"physics",function(k){gs=k;gold();});
+var ty=$("goldType");
+ty.innerHTML=[["trap","الفخاخ"],["exam","سؤال مكرر"],["fast","قاعدة سريعة"],["all","الكل"]].map(function(x){return '<button class="tg" type="button" data-k="'+x[0]+'" aria-pressed="'+(x[0]===gt)+'">'+x[1]+'</button>';}).join("");
+ty.addEventListener("click",function(e){var b=e.target.closest(".tg");if(!b)return;[].forEach.call(ty.children,function(x){x.setAttribute("aria-pressed",String(x===b));});gt=b.dataset.k;gold();});
+gold();
+
+/* links to every lesson of the week, by subject */
+$("weekLinks").innerHTML=SUBJ.map(function(s){
+  var ids=WEEK.filter(function(id){var n=Lab.node(id);return n&&n.subject===s;});
+  if(!ids.length)return "";
+  return '<div class="lrow"><span>'+esc(S[s].name)+'</span>'+ids.map(function(id){var n=Lab.node(id,"../"),st='style="--sc:'+S[s].color+'"',ic=Lab.icon(S[s].icon,15);
+    return n.url?'<a class="node" '+st+' href="'+esc(n.url)+'">'+ic+esc(n.title)+(n.done?" ✓":"")+'</a>':'<span class="node soon" '+st+'>'+ic+esc(n.title)+'</span>';}).join("")+'</div>';
+}).join("");
+})();
+</script>
+</body>
+</html>
